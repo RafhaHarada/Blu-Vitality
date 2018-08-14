@@ -24,8 +24,7 @@ CREATE TABLE cargos(
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
     salario DOUBLE NOT NULL,
-    carga_horaria DATE,
-    ativo BOOLEAN
+    carga_horaria DATE
 );
 
 CREATE TABLE funcionarios(
