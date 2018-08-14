@@ -22,27 +22,27 @@ CREATE TABLE usuarios(
 
 CREATE TABLE cargos(
     id INT AUTO_INCREMENT PRIMARY KEY,
-	nome VARCHAR(100) NOT NULL,
-	salario DOUBLE NOT NULL,
-	carga_horaria DATE,
-	ativo BOOLEAN
+    nome VARCHAR(100) NOT NULL,
+    salario DOUBLE NOT NULL,
+    carga_horaria DATE,
+    ativo BOOLEAN
 );
 
 CREATE TABLE funcionarios(
     id INT AUTO_INCREMENT PRIMARY KEY,
-	id_usuario INT NOT NULL,
-	id_cargo INT NOT NULL,
-	ativo BOOLEAN,
-	FOREIGN KEY(id_usuario) REFERENCES usuarios(id),
-	FOREIGN KEY(id_cargo) REFERENCES cargos(id)
+    id_usuario INT NOT NULL,
+    id_cargo INT NOT NULL,
+    ativo BOOLEAN,
+    FOREIGN KEY(id_usuario) REFERENCES usuarios(id),
+    FOREIGN KEY(id_cargo) REFERENCES cargos(id)
 );
 
 CREATE TABLE servicos(
     id INT AUTO_INCREMENT PRIMARY KEY,
-	id_funcionario INT NOT NULL,
-	nome VARCHAR(100) NOT NULL,
-	descricao VARCHAR(100) NOT NULL,
-	tempo_execucao  VARCHAR(100) NOT NULL,
-	FOREIGN KEY(id_funcionario) REFERENCES funcionarios(id)
+    id_funcionario INT NOT NULL,
+    nome VARCHAR(100) NOT NULL,
+    descricao VARCHAR(100) NOT NULL,
+    tempo_execucao  VARCHAR(100) NOT NULL,
+    FOREIGN KEY(id_funcionario) REFERENCES funcionarios(id)
 );
 	
