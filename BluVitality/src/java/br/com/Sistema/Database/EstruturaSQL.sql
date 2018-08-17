@@ -10,14 +10,17 @@ CREATE TABLE usuarios(
     sexo CHAR NOT NULL,
     login VARCHAR(100) NOT NULL,
     senha VARCHAR(100) NOT NULL,
-    cpf VARCHAR(100) NOT NULL,
+    cpf VARCHAR(13) NOT NULL,
     rg VARCHAR(100) NOT NULL,
     telefone VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL,
     endereco VARCHAR(100) NOT NULL,
+    uf VARCHAR(2) NOT NULL,
+    cidade VARCHAR(100) NOT NULL,
+    complemento VARCHAR(100) NOT NULL,
     naturalidade VARCHAR(100) NOT NULL,
-    data_nascimento DATE NOT NULL,
-    nome_fic VARCHAR(100) NOT NULL
+    data_nascimento DATE,
+    nome_ficticional VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE cargos(
@@ -41,6 +44,6 @@ CREATE TABLE servicos(
     id_funcionario INT NOT NULL,
     nome VARCHAR(100) NOT NULL,
     descricao VARCHAR(100) NOT NULL,
-    tempo_execucao  VARCHAR(100) NOT NULL,
+    tempo_execucao  DATE,
     FOREIGN KEY(id_funcionario) REFERENCES funcionarios(id)
 );
