@@ -44,4 +44,3 @@ CREATE TABLE servicos(
     tempo_execucao  VARCHAR(100) NOT NULL,
     FOREIGN KEY(id_funcionario) REFERENCES funcionarios(id)
 );
-	
