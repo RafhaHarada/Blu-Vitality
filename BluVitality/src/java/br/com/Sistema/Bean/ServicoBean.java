@@ -1,24 +1,17 @@
 package br.com.Sistema.Bean;
 
+import java.sql.Date;
+
 /**
  * @author Nattana Matos
  */
 public class ServicoBean {
 
-    private int id ;
+    private int id;
+    private int id_funcionario;
     private String nome;
-    private String estado_civil;
-    private int idade;
-    private char  sexo;
-    private String login;
-    private String senha;
-    private int cpf;
-    private int rg;
-    private int telefone;
-    private String email;
-    private String endereco;
-    private String naturalidade;
-    private String nome_fic;
+    private String descricao;
+    private Date tempo_execucao;
 
     public int getId() {
         return id;
@@ -26,6 +19,14 @@ public class ServicoBean {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getId_funcionario() {
+        return id_funcionario;
+    }
+
+    public void setId_funcionario(int id_funcionario) {
+        this.id_funcionario = id_funcionario;
     }
 
     public String getNome() {
@@ -36,100 +37,20 @@ public class ServicoBean {
         this.nome = nome;
     }
 
-    public String getEstado_civil() {
-        return estado_civil;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public void setEstado_civil(String estado_civil) {
-        this.estado_civil = estado_civil;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
-    public int getIdade() {
-        return idade;
+    public Date getTempo_execucao() {
+        return tempo_execucao;
     }
 
-    public void setIdade(int idade) {
-        this.idade = idade;
-    }
-
-    public char getSexo() {
-        return sexo;
-    }
-
-    public void setSexo(char sexo) {
-        this.sexo = sexo;
-    }
-
-    public String getLogin() {
-        return login;
-    }
-
-    public void setLogin(String login) {
-        this.login = login;
-    }
-
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
-
-    public int getCpf() {
-        return cpf;
-    }
-
-    public void setCpf(int cpf) {
-        this.cpf = cpf;
-    }
-
-    public int getRg() {
-        return rg;
-    }
-
-    public void setRg(int rg) {
-        this.rg = rg;
-    }
-
-    public int getTelefone() {
-        return telefone;
-    }
-
-    public void setTelefone(int telefone) {
-        this.telefone = telefone;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
-    }
-
-    public String getNaturalidade() {
-        return naturalidade;
-    }
-
-    public void setNaturalidade(String naturalidade) {
-        this.naturalidade = naturalidade;
-    }
-
-    public String getNome_fic() {
-        return nome_fic;
-    }
-
-    public void setNome_fic(String nome_fic) {
-        this.nome_fic = nome_fic;
+    public void setTempo_execucao(Date tempo_execucao) {
+        this.tempo_execucao = tempo_execucao;
     }
     
 }

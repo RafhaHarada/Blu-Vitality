@@ -49,7 +49,7 @@ public class UsuariosBean {
     }
 
     public void setIdade(int idade) {
-        this.idade = idade;
+        this.idade = (byte) idade;
     }
 
     public char getSexo() {
@@ -76,19 +76,19 @@ public class UsuariosBean {
         this.senha = senha;
     }
 
-    public int getCpf() {
+    public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(int cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
-    public int getRg() {
+    public String getRg() {
         return rg;
     }
 
-    public void setRg(int rg) {
+    public void setRg(String rg) {
         this.rg = rg;
     }
 
@@ -97,7 +97,7 @@ public class UsuariosBean {
     }
 
     public void setTelefone(int telefone) {
-        this.telefone = telefone;
+        this.telefone = (byte) telefone;
     }
 
     public String getEmail() {
