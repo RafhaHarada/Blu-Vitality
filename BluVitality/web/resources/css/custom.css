@@ -10,9 +10,17 @@ and open the template in the editor.
 
 .sub-menu-mobile{
     padding-right: 40%; 
-    margin-left: 20%
+    margin-left: 20%;
+    color: black;
 }
 
 .text-bold{
-     -webkit-text-stroke-width: 0.3px;
+    -webkit-text-stroke-width: 0.3px;
+}
+
+.fixed-action-btn {
+    position: relative;
+    padding-top: 15px;
+    margin-bottom: 0;
+    z-index: 997;
 }
