@@ -30,7 +30,7 @@ public class UsuariosDAO {
             usuario.setNome(resultSet.getString("nome"));
             usuario.setEstado_civil(resultSet.getString("estado_civil"));
             usuario.setIdade(resultSet.getByte("idade"));
-            usuario.setSexo(resultSet.getString("sexo"));
+            usuario.setSexo(resultSet.getString("sexo").charAt(0));
             usuario.setLogin(resultSet.getString("login"));
             usuario.setSenha(resultSet.getString("senha"));
             usuario.setCpf(resultSet.getString("cpf"));
@@ -65,8 +65,8 @@ public class UsuariosDAO {
             int quantidade = 1;
             ps.setString(quantidade++, usuario.getNome());
             ps.setString(quantidade++, usuario.getEstado_civil());
-            ps.setByte(quantidade++, (byte) usuario.getIdade());
-            ps.setString(quantidade++, usuario.getSexo());
+            ps.setByte  (quantidade++, (byte) usuario.getIdade());
+            ps.setString(quantidade++, String.valueOf(usuario.getSexo()));
             ps.setString(quantidade++, usuario.getLogin());
             ps.setString(quantidade++, usuario.getSenha());
             ps.setString(quantidade++, usuario.getCpf());
@@ -78,7 +78,7 @@ public class UsuariosDAO {
             ps.setString(quantidade++, usuario.getUf());
             ps.setString(quantidade++, usuario.getCidade());
             ps.setString(quantidade++, usuario.getNaturalidade());
-            ps.setDate(quantidade++, usuario.getData_nascimento());
+            ps.setDate  (quantidade++, usuario.getData_nascimento());
             ps.setString(quantidade++, usuario.getNome_fic());
             ps.execute();
             ResultSet resultSet = ps.getGeneratedKeys();
@@ -119,8 +119,8 @@ public class UsuariosDAO {
             
             ps.setString(quantidade++, usuario.getNome());
             ps.setString(quantidade++, usuario.getEstado_civil());
-            ps.setByte(quantidade++, (byte)usuario.getIdade());
-            ps.setChar(quantidade++, usuario.getSexo());
+            ps.setByte(quantidade++,   (byte)usuario.getIdade());
+            ps.setString(quantidade++, String.valueOf(usuario.getSexo()));
             ps.setString(quantidade++, usuario.getLogin());
             ps.setString(quantidade++, usuario.getSenha());
             ps.setString(quantidade++, usuario.getCpf());
@@ -132,9 +132,9 @@ public class UsuariosDAO {
             ps.setString(quantidade++, usuario.getUf());
             ps.setString(quantidade++, usuario.getCidade());
             ps.setString(quantidade++, usuario.getNaturalidade());
-            ps.setDate(quantidade++, usuario.getData_nascimento());
+            ps.setDate  (quantidade++, usuario.getData_nascimento());
             ps.setString(quantidade++, usuario.getNome_fic());
-            ps.setInt(quantidade++, usuario.getId());
+            ps.setInt   (quantidade++, usuario.getId());
             
             return ps.executeUpdate() == 1;
         }catch(SQLException e){
@@ -158,7 +158,7 @@ public class UsuariosDAO {
             usuario.setNome(resultSet.getString("nome"));
             usuario.setEstado_civil(resultSet.getString("estado_civil"));
             usuario.setIdade(resultSet.getByte("idade"));
-            usuario.setSexo(resultSet.getCharacterStream("sexo"));
+            usuario.setSexo(resultSet.getString("sexo").charAt(0));
             usuario.setLogin(resultSet.getString("login"));
             usuario.setSenha(resultSet.getString("senha"));
             usuario.setCpf(resultSet.getString("cpf"));

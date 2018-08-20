@@ -3,6 +3,6 @@ package br.com.Sistema.DAO;
 /**
  * @author Cidmar
  */
-public class FuncionariosDAO{
+public class FuncionariosDAO {
     
 }
