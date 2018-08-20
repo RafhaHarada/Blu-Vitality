@@ -49,21 +49,30 @@ $(document).ready(function () {
             weekdaysAbbrev: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'],
             today: 'Hoje',
             clear: 'Limpar',
-                    close: 'Fechar',
+            close: 'Fechar',
             //The format to show on the `input` element
         }
 
     });
-    $(document).ready(function () {
-        $('.pushpin').pushpin();
+
+    $('.pushpin').pushpin();
+
+    $('.scrollspy').scrollSpy();
+
+    $('.dropdown-trigger').dropdown({
+        hover: true,
+        constrainWidth: false,
+        coverTrigger: false
     });
+    
+    $('.tabs').tabs();
 });
 
-$('.pushpin-demo-nav').each(function() {
+$('.pushpin-demo-nav').each(function () {
     var $this = $(this);
     var $target = $('#' + $(this).attr('data-target'));
     $this.pushpin({
-      top: $target.offset().top,
-      bottom: $target.offset().top + $target.outerHeight() - $this.height()
+        top: $target.offset().top,
+        bottom: $target.offset().top + $target.outerHeight() - $this.height()
     });
-  });
+});
