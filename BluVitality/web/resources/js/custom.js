@@ -13,6 +13,9 @@ document.addEventListener('DOMContentLoaded', function () {
 $(document).ready(function () {
     //Menu retratil
     $('.collapsible').collapsible();
+    
+    //modal
+    $('.modal').modal();
 
     //Efeito parallax
     $('.parallax').parallax();
@@ -49,7 +52,7 @@ $(document).ready(function () {
             weekdaysAbbrev: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'],
             today: 'Hoje',
             clear: 'Limpar',
-            close: 'Fechar',
+                    close: 'Fechar',
             //The format to show on the `input` element
         }
 
@@ -65,7 +68,10 @@ $(document).ready(function () {
         coverTrigger: false
     });
     
-    $('.tabs').tabs();
+    $('.tabs').tabs({
+        swipeable: true,
+        onShow: true
+    });
 });
 
 $('.pushpin-demo-nav').each(function () {

@@ -71,7 +71,7 @@ and open the template in the editor.
                                 <li><a href="#!">Trabalhe Conosco</a></li>
                             </ul>
                         </li>
-                        <li><a class='dropdown-trigger' href='#' data-target='dropdown5'>Sobre</a>
+                        <li><a class='dropdown-trigger' data-target='dropdown5'>Sobre</a>
                             <ul id='dropdown5' class='dropdown-content'>
                                 <li><a href="#Sobre1">Nossa História</a></li>
                                 <li><a href="#Sobre2">Nossas fotos</a></li>
@@ -189,7 +189,7 @@ and open the template in the editor.
                             </div>
                         </div>
                         <ul id="nav-mobile" class="left hide-on-med-and-up">
-                            <li><a href="#!">Serviços 1</a></li>
+                            <li><a href="#Servicos1">Serviços 1</a></li>
                             <li><a href="#!">Serviços 2</a></li>
                             <li><a href="#!">Serviços 3</a></li>
                             <li><a href="#!">Serviços 1</a></li>
@@ -232,40 +232,49 @@ and open the template in the editor.
                     </nav>
                     <div class="row">
                         <div class="container">
-                            <div class="col hide-on-small-only m3">
-                                <ul class="tabs tabs-transparent">
-                                    <li class="tab"><a href="#Sobre1">Nossa História</a></li>
-                                    <li class="tab"><a href="#Sobre2">Nossas fotos</a></li>
-                                    <li class="tab"><a href="#Sobre3">Missão, Visão e Valores</a></li>
-                                </ul>
-                            </div>
-                            <div class="col s12 m9">
-                                <div id="Sobre1" class="">
-                                    <p>Fusce convallis, mauris imperdiet gravida bibendum, nisl turpis suscipit mauris, sed placerat ipsum urna sed risus. In convallis tellus a mauris. Curabitur non elit ut libero tristique sodales. Mauris a lacus. Donec mattis semper leo. In hac habitasse platea dictumst. Vivamus facilisis diam at odio. Mauris dictum, nisi eget consequat elementum, lacus ligula molestie metus, non feugiat orci magna ac sem. Donec turpis. Donec vitae metus. Morbi tristique neque eu mauris. Quisque gravida ipsum non sapien. Proin turpis lacus, scelerisque vitae, elementum at, lobortis ac, quam. Aliquam dictum eleifend risus. In hac habitasse platea dictumst. Etiam sit amet diam. Suspendisse odio. Suspendisse nunc. In semper bibendum libero.</p>
-                                </div>
+                            <ul id="tabs-swipe-demo" class="tabs tabs-transparent">
+                                <li class="tab"><a href="#test-swipe-1" class="text-tab">Nossa História</a></li>
+                                <li class="tab"><a class="active text-tab" href="#test-swipe-2" >Nossas fotos</a></li>
+                                <li class="tab"><a href="#test-swipe-3" class="text-tab">Missão, Visão e Valores</a></li>
+                            </ul>
+                            <div id="test-swipe-1" class="col s10 container blue">Test 1</div>
+                            <div id="test-swipe-2" class="col s10 container red">Test 2</div>
+                            <div id="test-swipe-3" class="col s10 container green">Test 3</div>
 
-                                <div id="Sobre2" class="">
-                                    <p>Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula. Donec lobortis risus a elit. Etiam tempor. Ut ullamcorper, ligula eu tempor congue, eros est euismod turpis, id tincidunt sapien risus a quam. Maecenas fermentum consequat mi. Donec fermentum. Pellentesque malesuada nulla a mi. Duis sapien sem, aliquet nec, commodo eget, consequat quis, neque. Aliquam faucibus, elit ut dictum aliquet, felis nisl adipiscing sapien, sed malesuada diam lacus eget erat. Cras mollis scelerisque nunc. Nullam arcu. Aliquam consequat. Curabitur augue lorem, dapibus quis, laoreet et, pretium ac, nisi. Aenean magna nisl, mollis quis, molestie eu, feugiat in, orci. In hac habitasse platea dictumst.</p>
-                                </div>
-
-                                <div id="Sobre3" class="section">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                </div>
-                            </div>
                         </div>
+
                     </div>
+                    <!--div class="col hide-on-small-only">
+                        <div class="mytab">
+                            <button class="tablinks" onclick="openContent(event,'Sobre1')" id="defaultOpen"><a href="#Sobre1">Nossa História</a></button>
+                            <button class="tablinks" onclick="openContent(event,'Sobre2')"><a href="#Sobre2">Nossas fotos</a></button>
+                            <button class="tablinks" onclick="openContent(event,'Sobre3')"><a href="#Sobre3">Missão, Visão e Valores</a></button>
+                        </div>
+                        <div id="Sobre1" class="tabcontent">
+                            <p>Fusce convallis, mauris imperdiet gravida bibendum, nisl turpis suscipit mauris, sed placerat ipsum urna sed risus. In convallis tellus a mauris. Curabitur non elit ut libero tristique sodales. Mauris a lacus. Donec mattis semper leo. In hac habitasse platea dictumst. Vivamus facilisis diam at odio. Mauris dictum, nisi eget consequat elementum, lacus ligula molestie metus, non feugiat orci magna ac sem. Donec turpis. Donec vitae metus. Morbi tristique neque eu mauris. Quisque gravida ipsum non sapien. Proin turpis lacus, scelerisque vitae, elementum at, lobortis ac, quam. Aliquam dictum eleifend risus. In hac habitasse platea dictumst. Etiam sit amet diam. Suspendisse odio. Suspendisse nunc. In semper bibendum libero.</p>
+                        </div>
+
+                        <div id="Sobre2" class="tabcontent">
+                            <p>Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula. Donec lobortis risus a elit. Etiam tempor. Ut ullamcorper, ligula eu tempor congue, eros est euismod turpis, id tincidunt sapien risus a quam. Maecenas fermentum consequat mi. Donec fermentum. Pellentesque malesuada nulla a mi. Duis sapien sem, aliquet nec, commodo eget, consequat quis, neque. Aliquam faucibus, elit ut dictum aliquet, felis nisl adipiscing sapien, sed malesuada diam lacus eget erat. Cras mollis scelerisque nunc. Nullam arcu. Aliquam consequat. Curabitur augue lorem, dapibus quis, laoreet et, pretium ac, nisi. Aenean magna nisl, mollis quis, molestie eu, feugiat in, orci. In hac habitasse platea dictumst.</p>
+                        </div>
+
+                        <div id="Sobre3" class="tabcontent">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        </div>
+                    </div-->
                 </div>
             </div>
         </main>
 
 
         <!--Roda pé-->
-        <footer class='page-footer light-green lighten-2'>
+        <footer class='page-footer green lighten-2'>
             <div class='container'>
                 <div class='row'>
                     <div class='col l6 s12'>
                         <h5 class='white-text'>Footer Content</h5>
-                        <p class='grey-text text-lighten-4'>You can use rows and columns here to organize your footer content.</p>
+                        <p class='grey-text text-lighten-4'>Telefone +55 (xx) xxxx-xxxx</p>
+                        <p class='grey-text text-lighten-4'>E-mail: blu.vitality.com.br</p>
                     </div>
                     <div class='col l4 offset-l2 s12'>
                         <h5 class='white-text'>Links</h5>
