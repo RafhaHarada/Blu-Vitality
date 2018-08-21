@@ -13,6 +13,9 @@ document.addEventListener('DOMContentLoaded', function () {
 $(document).ready(function () {
     //Menu retratil
     $('.collapsible').collapsible();
+    
+    //modal
+    $('.modal').modal();
 
     //Efeito parallax
     $('.parallax').parallax();
