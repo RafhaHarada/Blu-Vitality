@@ -14,14 +14,9 @@ import java.util.List;
  * @author Cidmar
  */
 public class FuncionariosDAO {
-    private int id;
-    public void usuarios(){
-        new UsuariosDAO().obterTodos();
-        new UsuariosDAO().adicionar(null);
-        new UsuariosDAO().alterar(null);
-        new UsuariosDAO().excluir(id);
-        new UsuariosDAO().obterPeloId(id);
-    }
+
+       
+
     
     public void cargos(){
         new CargosDAO().obterTodos();
@@ -45,6 +40,7 @@ public class FuncionariosDAO {
                 funcionario.setId(resultSet.getInt("id"));
                 funcionario.setId_cargo(resultSet.getInt("id_cargo"));
                 funcionario.setId_usuario(resultSet.getInt("id_usuario"));
+                 funcionario.setUsuario(new UsuariosDAO().obterPeloId(funcionario.getId_usuario()));
             }
         }catch(SQLException e){
             e.printStackTrace();
