@@ -8,6 +8,20 @@ and open the template in the editor.
     Author     : Alunos
 */
 
+::-webkit-scrollbar-thumb{
+    background-color: lightcyan;
+    background-image: url(/BluVitality/resources/images/cat6-1.gif), url(/BluVitality/resources/images/cat6-2.gif);
+    background-size: 100%, 100% 99%;
+    background-repeat: no-repeat, no-repeat;
+    background-origin: inherit, content-box;
+    background-position-y: 0, 20px;
+} 
+::-webkit-scrollbar{
+    height:20px;
+    width:20px;
+    background-color: lightblue;
+}
+
 .sub-menu-mobile{
     padding-right: 40%; 
     margin-left: 20%;
@@ -27,7 +41,18 @@ and open the template in the editor.
 
 .tabs{
     height: 60px;
+    z-index: 1;
 }
 .tabs .tab a {
     height: 60px;
+}
+
+.pin-top, .pin-bottom {
+  position: relative;
+  z-index: 2;
+}
+
+.pinned {
+  position: fixed !important;
+  z-index: 2;
 }
