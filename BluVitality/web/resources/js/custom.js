@@ -5,7 +5,6 @@
  */
 document.addEventListener('DOMContentLoaded', function () {
     var elems = document.querySelectorAll('.parallax');
-    var instances = M.Parallax.init(elems, options);
 });
 
 // Or with jQuery
@@ -13,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
 $(document).ready(function () {
     //Menu retratil
     $('.collapsible').collapsible();
-    
+
     //modal
     $('.modal').modal();
 
@@ -67,12 +66,32 @@ $(document).ready(function () {
         constrainWidth: false,
         coverTrigger: false
     });
-    
-    $('.tabs').tabs({
+
+    var tab = $('.tabs').tabs({
         swipeable: true,
         onShow: true
     });
+    
+    $("#botao-1").on("click", function () {
+        changeTab('Sobre1');
+    });
+
+    $("#botao-2").on("click", function () {
+        changeTab('Sobre2');
+    });
+    
+    $("#botao-3").on("click", function () {
+        changeTab('Sobre3');
+    });
+
+    function changeTab(id) {
+        var instance = M.Tabs.getInstance($('.tabs'));
+        instance.select(id);
+        instance.updateTabIndicator();
+    }
 });
+
+
 
 $('.pushpin-demo-nav').each(function () {
     var $this = $(this);
