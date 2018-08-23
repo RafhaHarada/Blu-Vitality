@@ -73,9 +73,9 @@ and open the template in the editor.
                         </li>
                         <li><a class='dropdown-trigger' data-target='dropdown5'>Sobre</a>
                             <ul id='dropdown5' class='dropdown-content'>
-                                <li><a href="#Sobre1">Nossa História</a></li>
-                                <li><a href="#Sobre2">Nossas fotos</a></li>
-                                <li><a href="#Sobre3">Missão, Visão e Valores</a></li>
+                                <li class="tab"><a href="#Sobre" id="botao-1">Nossa História</a></li>
+                                <li class="tab"><a href="#Sobre" id="botao-2">Nossas fotos</a></li>
+                                <li class="tab"><a href="#Sobre" id="botao-3">Missão, Visão e Valores</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -167,20 +167,8 @@ and open the template in the editor.
 
         <!--Conteúdo-->
         <main>
-            <!--div class="fixed-action-btn toolbar">
-                <a class="btn-block btn-large red">
-                    <i class="large material-icons">mode_edit</i>
-                    <div class="fab-backdrop"></div>
-                </a>
-                <ul>
-                    <li class="waves-effect waves-light"><a href="#!"><i class="material-icons">insert_chart</i></a></li>
-                    <li class="waves-effect waves-light"><a href="#!"><i class="material-icons">format_quote</i></a></li>
-                    <li class="waves-effect waves-light"><a href="#!"><i class="material-icons">publish</i></a></li>
-                    <li class="waves-effect waves-light"><a href="#!"><i class="material-icons">attach_file</i></a></li>
-                </ul>
-    
-            </div-->
-            <div class="row">
+
+            <div>
                 <div id="blue" class="block blue">
                     <nav class="pushpin-demo-nav pinned" data-target="blue" id="Servicos">
                         <div class="nav-wrapper light-blue">
@@ -188,20 +176,27 @@ and open the template in the editor.
                                 <a href="#" class="brand-logo">Serviços</a>
                             </div>
                         </div>
-                        <ul id="nav-mobile" class="left hide-on-med-and-up">
-                            <li><a href="#Servicos1">Serviços 1</a></li>
-                            <li><a href="#!">Serviços 2</a></li>
-                            <li><a href="#!">Serviços 3</a></li>
-                            <li><a href="#!">Serviços 1</a></li>
-                            <li><a href="#!">Serviços 2</a></li>
-                            <li><a href="#!">Serviços 3</a></li>
-                            <li><a href="#!">Serviços 1</a></li>
-                            <li><a href="#!">Serviços 2</a></li>
-                            <li><a href="#!">Serviços 3</a></li>
-                        </ul>
                     </nav>
-                </div>
+                    <div class="container">
+                        <ul id="tabs-swipe-demo" class="tabs tabs-transparent">
+                            <li class="tab"><a href="#Servicos1" class="active">Nossa História</a></li>
+                            <li class="tab"><a href="#Servicos2">Nossas fotos</a></li>
+                            <li class="tab"><a href="#Servicos3">Missão, Visão e Valores</a></li>
+                        </ul>
+                        <div id="Servicos1" class="col s10 container blue">Test 1
 
+                        </div>
+                        <div id="Servicos2" class="col s10 container red">Test 2
+
+                        </div>
+                        <div id="Servicos3" class="col s10 container green">Test 3
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
                 <div id="red" class="block red lighten-1">
                     <nav class="pushpin-demo-nav pin-top" data-target="red" id="Exames">
                         <div class="nav-wrapper red">
@@ -209,59 +204,50 @@ and open the template in the editor.
                                 <a href="#" class="brand-logo">Exames</a>
                             </div>
                         </div>
-                        <ul id="nav-mobile" class="right hide-on-med-and-up">
-                            <li><a href="#!">Exame 1</a></li>
-                            <li><a href="#!">Exame 2</a></li>
-                            <li><a href="#!">Exame 3</a></li>
-                        </ul>
                     </nav>
-                </div>
+                    <div class="container">
+                        <ul id="tabs-swipe-demo" class="tabs tabs-transparent">
+                            <li class="tab"><a href="#Exame1" class="active">Nossa História</a></li>
+                            <li class="tab"><a href="#Exame2">Nossas fotos</a></li>
+                            <li class="tab"><a href="#Exame3">Missão, Visão e Valores</a></li>
+                        </ul>
+                        <div id="Exame1" class="col s10 container blue">Test 1
 
+                        </div>
+                        <div id="Exame2" class="col s10 container red">Test 2
+
+                        </div>
+                        <div id="Exame3" class="col s10 container green">Test 3
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
                 <div id="green" class="block green lighten-1">
                     <nav class="pushpin-demo-nav pin-top" data-target="green" id="Sobre">
                         <div class="nav-wrapper green">
                             <div class="container">
-                                <a href="#" class="brand-logo">Sobre</a>
+                                <a href="#" class="brand-logo" id="Sobre">Sobre</a>
                             </div>
                         </div>
-                        <ul id="nav-mobile" class="right hide-on-med-and-up">
-                            <li><a href="#Sobre1">Nossa História</a></li>
-                            <li><a href="#Sobre3">Nossas fotos</a></li>
-                            <li><a href="#Sobre2">Missão, Visão e Valores</a></li>
-                        </ul>
                     </nav>
-                    <div class="row">
-                        <div class="container">
-                            <ul id="tabs-swipe-demo" class="tabs tabs-transparent">
-                                <li class="tab"><a href="#test-swipe-1" class="text-tab">Nossa História</a></li>
-                                <li class="tab"><a class="active text-tab" href="#test-swipe-2" >Nossas fotos</a></li>
-                                <li class="tab"><a href="#test-swipe-3" class="text-tab">Missão, Visão e Valores</a></li>
-                            </ul>
-                            <div id="test-swipe-1" class="col s10 container blue">Test 1</div>
-                            <div id="test-swipe-2" class="col s10 container red">Test 2</div>
-                            <div id="test-swipe-3" class="col s10 container green">Test 3</div>
+                    <div class="container">
+                        <ul id="tabs-swipe-demo" class="tabs tabs-transparent">
+                            <li class="tab"><a href="#Sobre1" class="active">Nossa História</a></li>
+                            <li class="tab"><a href="#Sobre2">Nossas fotos</a></li>
+                            <li class="tab"><a href="#Sobre3">Missão, Visão e Valores</a></li>
+                        </ul>
+                        <div id="Sobre1" class="col s10 container blue">Test 1
 
                         </div>
+                        <div id="Sobre2" class="col s10 container red">Test 2
 
+                        </div>
+                        <div id="Sobre3" class="col s10 container green">Test 3
+
+                        </div>
                     </div>
-                    <!--div class="col hide-on-small-only">
-                        <div class="mytab">
-                            <button class="tablinks" onclick="openContent(event,'Sobre1')" id="defaultOpen"><a href="#Sobre1">Nossa História</a></button>
-                            <button class="tablinks" onclick="openContent(event,'Sobre2')"><a href="#Sobre2">Nossas fotos</a></button>
-                            <button class="tablinks" onclick="openContent(event,'Sobre3')"><a href="#Sobre3">Missão, Visão e Valores</a></button>
-                        </div>
-                        <div id="Sobre1" class="tabcontent">
-                            <p>Fusce convallis, mauris imperdiet gravida bibendum, nisl turpis suscipit mauris, sed placerat ipsum urna sed risus. In convallis tellus a mauris. Curabitur non elit ut libero tristique sodales. Mauris a lacus. Donec mattis semper leo. In hac habitasse platea dictumst. Vivamus facilisis diam at odio. Mauris dictum, nisi eget consequat elementum, lacus ligula molestie metus, non feugiat orci magna ac sem. Donec turpis. Donec vitae metus. Morbi tristique neque eu mauris. Quisque gravida ipsum non sapien. Proin turpis lacus, scelerisque vitae, elementum at, lobortis ac, quam. Aliquam dictum eleifend risus. In hac habitasse platea dictumst. Etiam sit amet diam. Suspendisse odio. Suspendisse nunc. In semper bibendum libero.</p>
-                        </div>
-
-                        <div id="Sobre2" class="tabcontent">
-                            <p>Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula. Donec lobortis risus a elit. Etiam tempor. Ut ullamcorper, ligula eu tempor congue, eros est euismod turpis, id tincidunt sapien risus a quam. Maecenas fermentum consequat mi. Donec fermentum. Pellentesque malesuada nulla a mi. Duis sapien sem, aliquet nec, commodo eget, consequat quis, neque. Aliquam faucibus, elit ut dictum aliquet, felis nisl adipiscing sapien, sed malesuada diam lacus eget erat. Cras mollis scelerisque nunc. Nullam arcu. Aliquam consequat. Curabitur augue lorem, dapibus quis, laoreet et, pretium ac, nisi. Aenean magna nisl, mollis quis, molestie eu, feugiat in, orci. In hac habitasse platea dictumst.</p>
-                        </div>
-
-                        <div id="Sobre3" class="tabcontent">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        </div>
-                    </div-->
                 </div>
             </div>
         </main>
