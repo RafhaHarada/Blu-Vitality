@@ -21,6 +21,8 @@ $(document).ready(function () {
 
     //Mobile Nav Menu
     $('.sidenav').sidenav();
+    
+    $('.sidenav').sidenav();
 
     $('.fixed-action-btn').floatingActionButton({
         direction: 'left',
