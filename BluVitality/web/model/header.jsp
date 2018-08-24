@@ -1,16 +1,13 @@
 <%-- 
     Document   : header
     Created on : 23/08/2018, 10:11:41
-    Author     : Alunos
+    Author     : Rafael Alipio Harada
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+
 <html>
     <head>
         <title>Blu Vitality</title>
@@ -26,10 +23,10 @@ and open the template in the editor.
     <body>
         <!--Cabeçalho-->
         <header>
-            <nav class='nav-extended light-green lighten-2'>
-                <div class='nav-wrapper container'>
-                    <a href='#Inicio' class='brand-logo'>Logo</a>
-                    <a href='#' data-target='mobile' class='sidenav-trigger'><i class='material-icons'>menu</i></a>
+            <nav class='nav-extended white lighten-2 z-depth-0'>
+                <div class='nav-wrapper'>
+                    <a href='#Inicio' class='brand-logo'><img src="resources/images/logo.gif" class="imagem-logo"></a>
+                    <a href='#' data-target='mobile' class='sidenav-trigger teal-text'><i class='material-icons'>menu</i></a>
                     <ul id='nav-mobile' class='right hide-on-med-and-down'>
                         <li><a class='dropdown-trigger' href='#' data-target='dropdown1'>Inicio</a>
                             <!-- Dropdown Structure -->
@@ -67,8 +64,7 @@ and open the template in the editor.
                                 <li><a href="#!">Urológicos</a></li>
                             </ul>
                         </li>
-
-
+                        
                         <li><a class='dropdown-trigger' href='#' data-target='dropdown4'>Contatos</a>
                             <!-- Dropdown Structure -->
                             <ul id='dropdown4' class='dropdown-content'>
@@ -113,7 +109,7 @@ and open the template in the editor.
                                 <div class='divider'></div>
                                 <div class='waves-effect'><a href="#!" class='sub-menu-mobile'>Clínica de Saúde Mental</a></div>
                                 <div class='divider'></div>
-                                <div class='waves-effect'><a href="#!" class='sub-menu-mobile'>Pronto Atendimento</a></div>   
+                                <div class='waves-effect'><a href="#!" class='sub-menu-mobile'>Pronto Atendimento</a></div>
                             </div>
                         </li>
                         <li>
@@ -169,4 +165,29 @@ and open the template in the editor.
                         </li>
                     </ul>
             </ul>
+            <div class="slider">
+                <ul class="slides">
+                    <li>
+                        <img src="/BluVitality/resources/images/slider1.jpg" alt=''> <!-- random image -->
+                        <div class="caption left-align black-text">
+                            <h3>Blu Vitality</h3>
+                            <h5>Vital para você, vital para nós.</h5>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="/BluVitality/resources/images/slider2.png" alt=''> <!-- random image -->
+                        <div class="caption left-align black-text">
+                            <h3>Alta Tecnologia e Gestão</h3>
+                            <h5>Tenha mais mobilidade e eficiência.</h5>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="/BluVitality/resources/images/slider3.jpg" alt=''> <!-- random image -->
+                        <div class="caption left-align black-text">
+                            <h3>Visite Nosso Hospital</h3>
+                            <h5>Estruturado,organizado e preparado!</h5>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </header>
