@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Blu Vitality</title>
+        <meta charset='UTF-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+
+        <!--Import Google Icon Font-->
+        <link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>
+
+        <link rel='stylesheet' type='text/css' href='resources/css/materialize.min.css'>
+        <link rel='stylesheet' type='text/css' href='resources/css/custom.css'>
+    </head>
+    <body>
+        <!--Cabeçalho-->
+        <header>
+            <nav class="nav-extended light-green lighten-2">
+                <div class="nav-content right">
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li><a  class="waves-effect waves-light modal-trigger" href="#modallogin">Entrar</a></li>
+
+
+                        <li><a class="waves-effect waves-light modal-trigger" href="#modalregistro">Registrar</a></li>
+
+                    </ul>
+                </div>
+                <nav class='nav-extended light-green lighten-2'>
+                    <div class='nav-wrapper container'>
+
+                        <ul id='nav-mobile' class ='right hide-on-med-and-down'>
+                            <li><a class='dropdown-trigger' href='#' data-target='dropdown1'>Inicio</a>
+                                <!-- Dropdown Structure -->
+                                <ul id='dropdown1' class='dropdown-content'>
+                                    <li><a href="#!">Institucional</a></li>
+                                </ul>
+                            </li>
+
+                            <li><a class='dropdown-trigger' href='#' data-target='dropdown2'>Serviços</a>
+                                <!-- Dropdown Structure -->
+                                <ul id='dropdown2' class='dropdown-content'>
+                                    <li><a href="#!">Agência Transfuncional</a></li>
+                                    <li><a href="#!">Centro Cirurgico</a></li>
+                                    <li><a href="#!">Centro Check-up</a></li>
+                                    <li><a href="#!">Centro Diagnostico por imagem</a></li>
+                                    <li><a href="#!">Centro de Oncologia</a></li>
+                                    <li><a href="#!">Clínica de Saúde Mental</a></li>
+                                    <li><a href="#!">CTI Adulto</a></li>
+                                    <li><a href="#!">CTI Infantil</a></li>
+                                    <li><a href="#!">Fármacia</a></li>
+                                    <li><a href='#!'>Fisioterapia</a></li>
+                                    <li><a href='#!'>Internação</a></li>
+                                    <li><a href='#!'>Pronto Atendimento</a></li>
+                                </ul>    
+                            </li>
+
+                            <li><a class='dropdown-trigger' href='#' data-target='dropdown3'>Exames</a>
+                                <!-- Dropdown Structure -->
+                                <ul id='dropdown3' class='dropdown-content'>
+                                    <li><a href="#!">Cardiológicos</a></li>
+                                    <li><a href="#!">Cintilografia</a></li>
+                                    <li><a href="#!">Diagnóstico por Imagem</a></li>
+                                    <li><a href="#!">Endoscopia</a></li>
+                                    <li><a href="#!">Laboratoriais</a></li>
+                                    <li><a href="#!">Urológicos</a></li>
+                                </ul>
+                            </li>
+
+
+                            <li><a class='dropdown-trigger' href='#' data-target='dropdown4'>Contatos</a>
+                                <!-- Dropdown Structure -->
+                                <ul id='dropdown4' class='dropdown-content'>
+                                    <li><a href="#!">Agende uma consulta</a></li>
+                                    <li><a href="#!">Agende um exame</a></li>
+                                    <li><a href="#!">Central de Orçamento</a></li>
+                                    <li><a href="#!">Trabalhe Conosco</a></li>
+                                </ul>
+                            </li>
+                            <li><a class='dropdown-trigger' href='#' data-target='dropdown5'>Sobre</a>
+                                <ul id='dropdown5' class='dropdown-content'>
+                                    <li><a href="#Sobre1">Nossa História</a></li>
+                                    <li><a href="#Sobre2">Nossas fotos</a></li>
+                                    <li><a href="#Sobre3">Missão, Visão e Valores</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+
+                <!--mobile e tablet side nav-->
+                <ul class='sidenav' id='mobile'>
+                    <li><a href='#modallogin' class='waves-effect'><i class='material-icons'>assignment_ind</i>Entrar</a></li>
+                    <li><a href='#modalregistro' class='waves-effect'><i class='material-icons'>assignment</i>Registrar</a></li>
+
+                    <li><a href='#Inicio' class='waves-effect'><i class='material-icons'>home</i>Inicio</a></li>
+                    <li></li>
+                    <li>
+                        <ul class='collapsible text-bold'>
+                            <li>
+                                <div class='collapsible-header waves-effect'><i class='material-icons'>add</i>Serviços</div>
+                                <div class='collapsible-body'>
+                                    <div class='waves-effect'><a href="#!" class='sub-menu-mobile'>Agência Transfuncional</a></div>
+                                    <div class='divider'></div>
+                                    <div class='waves-effect'><a href="#!" class='sub-menu-mobile'>Centro Cirurgico</a></div>
+                                    <div class='divider'></div>
+                                    <div class='waves-effect'><a href="#!" class='sub-menu-mobile'>Centro Check-up</a></div>
+                                    <div class='divider'></div>
+                                    <div class='waves-effect'><a href="#!" class='sub-menu-mobile'>Centro Diagnostico por imagem</a></div>
+                                    <div class='divider'></div>
+                                    <div class='waves-effect'><a href="#!" class='sub-menu-mobile'>Centro de Oncologia</a></div>
+                                    <div class='divider'></div>
+                                    <div class='waves-effect'><a href="#!" class='sub-menu-mobile'>Clínica de Saúde Mental</a></div>
+                                    <div class='divider'></div>
+                                    <div class='waves-effect'><a href="#!" class='sub-menu-mobile'>Pronto Atendimento</a></div>   
+                                </div>
+                            </li>
+                            <li>
+                                <div class='collapsible-header waves-effect'><i class='material-icons'>add</i>Exames</div>
+                                <div class='collapsible-body'>            
+                                    <div class='waves-effect'><a href="#!" class='sub-menu-mobile'>Cardiológicos</a></div>
+                                    <div class='divider'></div>
+                                    <div class='waves-effect'><a href="#!" class='sub-menu-mobile'>Cintilografia</a></div>
+                                    <div class='divider'></div>
+                                    <div class='waves-effect'><a href="#!" class='sub-menu-mobile'>Diagnóstico por Imagem</a></div>
+                                    <div class='divider'></div>
+                                    <div class='waves-effect'><a href="#!" class='sub-menu-mobile'>Endoscopia</a></div>
+                                    <div class='divider'></div>
+                                    <div class='waves-effect'><a href="#!" class='sub-menu-mobile'>Laboratoriais</a></div>
+                                    <div class='divider'></div>
+                                    <div class='waves-effect'><a href="#!" class='sub-menu-mobile'>Urológicos</a></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class='collapsible-header waves-effect'><i class='material-icons'>add</i>Sobre</div>
+                                <div class='collapsible-body'>
+                                    <div class='waves-effect'><a href="#!" class='sub-menu-mobile'>Blu Vitallity</a></div>
+                                    <div class='divider'></div>
+                                    <div class='waves-effect'><a href="#!" class='sub-menu-mobile'>Conheça nossa história</a></div>
+                                    <div class='divider'></div>
+                                    <div class='waves-effect'><a href="#!" class='sub-menu-mobile'>Missão</a></div>
+                                    <div class='divider'></div>
+                                    <div class='waves-effect'><a href="#!" class='sub-menu-mobile'>Visão</a></div>
+                                    <div class='divider'></div>
+                                    <div class='waves-effect'><a href="#!" class='sub-menu-mobile'>Valores</a></div>
+                                    <div class='divider'></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class='collapsible-header waves-effect'><i class='material-icons'>add</i>Contatos</div>
+                                <div class='collapsible-body'>
+                                    <div class='waves-effect'><a href="#!" class='sub-menu-mobile'>Agende uma consulta</a></div>
+                                    <div class='divider'></div>
+                                    <div class='waves-effect'><a href="#!" class='sub-menu-mobile'>Agende um exame</a></div>
+                                    <div class='divider'></div>
+                                    <div class='waves-effect'><a href="#!" class='sub-menu-mobile'>Central de Orçamento:</a></div>
+                                    <div class='divider'></div>
+                                    <div class='waves-effect'><a href="#!" class='sub-menu-mobile'>Trabalhe Conosco</a></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class='collapsible-header waves-effect'><i class='material-icons'>add</i>Sobre</div>
+                                <div class='collapsible-body'>
+                                    <p><a href='#Sobre1' class='waves-effect sub-menu-mobile'><i class='material-icons left'>cached</i>  Nossa História</a></p>
+                                    <p><a href='#Sobre2' class='waves-effect sub-menu-mobile'><i class='material-icons left'>dashboard</i>  Nossas fotos</a></p>
+                                    <p><a href='#Sobre3' class='waves-effect sub-menu-mobile'><i class='material-icons left'>dns</i>  Missão, Visão e Valores</a></p>
+                                </div>
+                            </li>
+                        </ul>
+                </ul>
+            </nav>
+        </header>
+
+
+        <!--Conteúdo-->
+        <main>
+            <!--div class="fixed-action-btn toolbar">
+                <a class="btn-block btn-large red">
+                    <i class="large material-icons">mode_edit</i>
+                    <div class="fab-backdrop"></div>
+                </a>
+                <ul>
+                    <li class="waves-effect waves-light"><a href="#!"><i class="material-icons">insert_chart</i></a></li>
+                    <li class="waves-effect waves-light"><a href="#!"><i class="material-icons">format_quote</i></a></li>
+                    <li class="waves-effect waves-light"><a href="#!"><i class="material-icons">publish</i></a></li>
+                    <li class="waves-effect waves-light"><a href="#!"><i class="material-icons">attach_file</i></a></li>
+                </ul>
+    
+            </div-->
+            <div class="row">
+                <div id="blue" class="block blue">
+                    <nav class="pushpin-demo-nav pinned" data-target="blue" id="Servicos">
+                        <div class="nav-wrapper light-blue">
+                            <div class="container">
+                                <a href="#" class="brand-logo">Serviços</a>
+                            </div>
+                        </div>
+                        <ul id="nav-mobile" class="left hide-on-med-and-up">
+                            <li><a href="#!">Serviços 1</a></li>
+                            <li><a href="#!">Serviços 2</a></li>
+                            <li><a href="#!">Serviços 3</a></li>
+                            <li><a href="#!">Serviços 1</a></li>
+                            <li><a href="#!">Serviços 2</a></li>
+                            <li><a href="#!">Serviços 3</a></li>
+                            <li><a href="#!">Serviços 1</a></li>
+                            <li><a href="#!">Serviços 2</a></li>
+                            <li><a href="#!">Serviços 3</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div id="red" class="block red lighten-1">
+                    <nav class="pushpin-demo-nav pin-top" data-target="red" id="Exames">
+                        <div class="nav-wrapper red">
+                            <div class="container">
+                                <a href="#" class="brand-logo">Exames</a>
+                            </div>
+                        </div>
+                        <ul id="nav-mobile" class="right hide-on-med-and-up">
+                            <li><a href="#!">Exame 1</a></li>
+                            <li><a href="#!">Exame 2</a></li>
+                            <li><a href="#!">Exame 3</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div id="green" class="block green lighten-1">
+                    <nav class="pushpin-demo-nav pin-top" data-target="green" id="Sobre">
+                        <div class="nav-wrapper green">
+                            <div class="container">
+                                <a href="#" class="brand-logo">Sobre</a>
+                            </div>
+                        </div>
+                        <ul id="nav-mobile" class="right hide-on-med-and-up">
+                            <li><a href="#Sobre1">Nossa História</a></li>
+                            <li><a href="#Sobre3">Nossas fotos</a></li>
+                            <li><a href="#Sobre2">Missão, Visão e Valores</a></li>
+                        </ul>
+                    </nav>
+                    <div class="row">
+                        <div class="container">
+                            <div class="col hide-on-small-only m3">
+                                <ul class="tabs tabs-transparent">
+                                    <li class="tab"><a href="#Sobre1">Nossa História</a></li>
+                                    <li class="tab"><a href="#Sobre2">Nossas fotos</a></li>
+                                    <li class="tab"><a href="#Sobre3">Missão, Visão e Valores</a></li>
+                                </ul>
+                            </div>
+                            <div class="col s12 m9">
+                                <div id="Sobre1" class="">
+                                    <p>Fusce convallis, mauris imperdiet gravida bibendum, nisl turpis suscipit mauris, sed placerat ipsum urna sed risus. In convallis tellus a mauris. Curabitur non elit ut libero tristique sodales. Mauris a lacus. Donec mattis semper leo. In hac habitasse platea dictumst. Vivamus facilisis diam at odio. Mauris dictum, nisi eget consequat elementum, lacus ligula molestie metus, non feugiat orci magna ac sem. Donec turpis. Donec vitae metus. Morbi tristique neque eu mauris. Quisque gravida ipsum non sapien. Proin turpis lacus, scelerisque vitae, elementum at, lobortis ac, quam. Aliquam dictum eleifend risus. In hac habitasse platea dictumst. Etiam sit amet diam. Suspendisse odio. Suspendisse nunc. In semper bibendum libero.</p>
+                                </div>
+
+                                <div id="Sobre2" class="">
+                                    <p>Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula. Donec lobortis risus a elit. Etiam tempor. Ut ullamcorper, ligula eu tempor congue, eros est euismod turpis, id tincidunt sapien risus a quam. Maecenas fermentum consequat mi. Donec fermentum. Pellentesque malesuada nulla a mi. Duis sapien sem, aliquet nec, commodo eget, consequat quis, neque. Aliquam faucibus, elit ut dictum aliquet, felis nisl adipiscing sapien, sed malesuada diam lacus eget erat. Cras mollis scelerisque nunc. Nullam arcu. Aliquam consequat. Curabitur augue lorem, dapibus quis, laoreet et, pretium ac, nisi. Aenean magna nisl, mollis quis, molestie eu, feugiat in, orci. In hac habitasse platea dictumst.</p>
+                                </div>
+
+                                <div id="Sobre3" class="section">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <main>
+            <!-- Modal inicio -->
+            <!-- Modal login -->
+
+            <div class="container">
+                <div id="modallogin" class="modal">
+                    <div class='row blue'>
+                        <div class="col s3 center">
+                            <h4>Login</h4>
+                        </div>
+                        <div class="col s9 right-align">
+                            <a href="#" class='modal-close waves-effect waves-light black-text'>X</a>
+                        </div>
+                    </div>
+                    <div class="row modal-content col s12 ">
+                        <div class="col s9 ">
+                            <div class="input-field col s9 ">
+
+                                <input id="username" type="text" class="validate" >
+                                <label for="username" data-target=''>Email ou nome de usuario</label>
+                            </div>
+                            <div class="input-field col s9">
+                                <input id="password" type="text" class="validate">
+                                <label for="password">Senha</label>
+                            </div>
+                            <div class="viewport">
+                                <div class="col s5 left">
+                                    <a href="#modalregistro" class='center'>Cadastrar</a>
+                                </div>
+                                <div class="col s5 center">
+                                    <a href="#modalRecuperarsenha">Esqueceu a senha?</a>
+                                </div>
+                                <div class="col s4 left">
+                                    <br>
+                                    
+                                    </br>
+                                    <a href="#!" class="waves-effect waves-light btn black-text">Entrar</a>     
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col s3">
+                            <!--mudar função botão modal-->
+                            <div class="row">
+                                <div class='col s12'>
+                                    <ul>
+                                        <li><a href="#" class="col s10 center btn red long">Google</a></li>
+                                        <li><a href="#" class="btn blue">Facebook</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!--Final modal login -->
+            <!--Modal Registro -->
+
+            <div id="modalregistro" class="modal">
+                <div class='row blue'>
+                    <div class="col s3 center">
+                        <h4>Login</h4>
+                    </div>
+                    <div class="col s9 right-align">
+                        <a href="#" class='modal-close waves-effect waves-light black-text'>X</a>
+                    </div>
+                </div>
+                <div class="row modal-content col s12 ">
+                    <div class="col s9 ">
+                        <div class="input-field col s8 ">
+                            <input id="name" type="text" class="validate" >
+                            <label for="name" data-target=''>Nome</label>
+                        </div>
+                        <div class="input-field col s8">
+                            <input id="username" type="text" class="validate">
+                            <label for="username">Username</label>
+                        </div>
+                        <div class="input-field col s8">
+                            <input id="email" type="text" class="validate">
+                            <label for="email">Email</label>
+                        </div>
+                        <div class="input-field col s8">
+                            <input id="password" type="text" class="validate">
+                            <label for="password">Senha</label>
+                        </div>
+                        <div class="col s12 right">
+                            <!--add page cadastro -->
+                            <a href="#!" class="waves-effect waves-light btn black-text "><i class="material-icons right">done_outline</i>Cadastrar</a> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+
+        <!--Roda pé-->
+        <footer class='page-footer light-green lighten-2'>
+            <div class='container'>
+                <div class='row'>
+                    <div class='col l6 s12'>
+                        <h5 class='white-text'>Footer Content</h5>
+                        <p class='grey-text text-lighten-4'>You can use rows and columns here to organize your footer content.</p>
+                    </div>
+                    <div class='col l4 offset-l2 s12'>
+                        <h5 class='white-text'>Links</h5>
+                        <ul>
+                            <li><a class='grey-text text-lighten-3' href='#!'>Link 1</a></li>
+                            <li><a class='grey-text text-lighten-3' href='#!'>Link 2</a></li>
+                            <li><a class='grey-text text-lighten-3' href='#!'>Link 3</a></li>
+                            <li><a class='grey-text text-lighten-3' href='#!'>Link 4</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class='footer-copyright'>
+                <div class='container'>
+                    © 2019 Copyright Text
+                    <a class='grey-text text-lighten-4 right' href='#!'>More Links</a>
+                </div>
+            </div>
+        </footer>
+
+
+        <!--   JavaScript Setup  -->
+        <script type='text/javascript' src='resources/js/jquery.min.js'></script>
+        <script type='text/javascript' src='resources/js/materialize.min.js'></script>
+        <script type='text/javascript' src='resources/js/custom.js'></script>
+    </body>
+</html>

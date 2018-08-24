@@ -1,0 +1,58 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 16/08/2018, 11:07:40
+    Author     : Alunos
+*/
+
+::-webkit-scrollbar-thumb{
+    background-color: lightcyan;
+    background-image: url(/BluVitality/resources/images/cat6-1.gif), url(/BluVitality/resources/images/cat6-2.gif);
+    background-size: 100%, 100% 99%;
+    background-repeat: no-repeat, no-repeat;
+    background-origin: inherit, content-box;
+    background-position-y: 0, 20px;
+} 
+::-webkit-scrollbar{
+    height:20px;
+    width:20px;
+    background-color: lightblue;
+}
+
+.sub-menu-mobile{
+    padding-right: 40%; 
+    margin-left: 20%;
+    color: black;
+}
+
+.text-bold{
+    -webkit-text-stroke-width: 0.3px;
+}
+
+.fixed-action-btn {
+    position: relative;
+    padding-top: 15px;
+    margin-bottom: 0;
+    z-index: 997;
+}
+
+.tabs{
+    height: 60px;
+    z-index: 1;
+}
+.tabs .tab a {
+    height: 60px;
+}
+
+.pin-top, .pin-bottom {
+  position: relative;
+  z-index: 2;
+}
+
+.pinned {
+  position: fixed !important;
+  z-index: 2;
+}
