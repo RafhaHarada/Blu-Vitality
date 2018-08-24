@@ -1,5 +1,5 @@
 <!--Roda pé-->
-        <footer class='page-footer green lighten-2'>
+        <footer class='page-footer teal accent-4'>
             <div class='container'>
                 <div class='row'>
                     <div class='col l6 s12'>
@@ -28,8 +28,8 @@
 
 
         <!--   JavaScript Setup  -->
-        <script type='text/javascript' src='/BluVitality/resources/js/jquery.min.js'></script>
-        <script type='text/javascript' src='/BluVitality/resources/js/materialize.min.js'></script>
-        <script type='text/javascript' src='/BluVitality/resources/js/custom.js'></script>
+        <script type='text/javascript' src='resources/js/jquery.min.js'></script>
+        <script type='text/javascript' src='resources/js/materialize.min.js'></script>
+        <script type='text/javascript' src='resources/js/custom.js'></script>
     </body>
 </html>
