@@ -8,6 +8,12 @@ and open the template in the editor.
     Author     : Alunos
 */
 
+.imagem-logo{
+    margin-left: 60px;
+    width: 200px;
+    height: 100px;
+}
+
 ::-webkit-scrollbar-thumb{
     background-color: lightcyan;
     background-image: url(/BluVitality/resources/images/cat6-1.gif), url(/BluVitality/resources/images/cat6-2.gif);
@@ -47,6 +53,10 @@ and open the template in the editor.
     height: 60px;
 }
 
+.tabs-transparent .tab a {
+    color: blue;
+}
+
 .pin-top, .pin-bottom {
   position: relative;
   z-index: 2;
@@ -55,4 +65,15 @@ and open the template in the editor.
 .pinned {
   position: fixed !important;
   z-index: 2;
+}
+div ul a{
+    color:teal
+}
+nav a.sidenav-trigger{
+    display:block
+}
+
+.nav-wrapper{
+    margin-bottom: 40px;
+    
 }
