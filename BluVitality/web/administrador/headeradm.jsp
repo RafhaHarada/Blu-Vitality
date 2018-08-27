@@ -1,8 +1,8 @@
 <%-- 
     Document   : headeradm
     Created on : 26/08/2018, 17:47:02
-    Author     :@Gustavo Rodrigues (gugaaroodrigues@gmail.com) 
-
+    Author     : <!-- @Gustavo Rodrigues (gugaaroodrigues@gmail.com) 
+-->
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -49,6 +49,5 @@
                     <li><a class="subheader">Subheader</a></li>
                     <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
                 </ul>
-
             </div>
         </header>
