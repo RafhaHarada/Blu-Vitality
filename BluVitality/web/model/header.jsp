@@ -64,7 +64,7 @@
                                 <li><a href="#!">Urológicos</a></li>
                             </ul>
                         </li>
-                        
+
                         <li><a class='dropdown-trigger' href='#' data-target='dropdown4'>Contatos</a>
                             <!-- Dropdown Structure -->
                             <ul id='dropdown4' class='dropdown-content'>
@@ -87,11 +87,15 @@
 
             <!--mobile e tablet side nav-->
             <ul class='sidenav' id='mobile'>
-                <li><a href='#Login' class='waves-effect'><i class='material-icons'>assignment_ind</i>Entrar</a></li>
-                <li><a href='#Registrar' class='waves-effect'><i class='material-icons'>assignment</i>Registrar</a></li>
-
-                <li><a href='#Inicio' class='waves-effect'><i class='material-icons'>home</i>Inicio</a></li>
-                <li></li>
+                <li><div class="user-view">
+                        <div class="background">
+                            <img src="images/office.jpg">
+                        </div>
+                        <a href="#user"><img class="circle" src="images/yuna.jpg"></a>
+                        <a href="#name"><span class="white-text name">John Doe</span></a>
+                        <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+                    </div>
+                </li>
                 <li>
                     <ul class='collapsible text-bold'>
                         <li>
