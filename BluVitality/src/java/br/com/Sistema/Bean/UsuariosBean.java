@@ -1,7 +1,5 @@
 package br.com.Sistema.Bean;
 
-import java.sql.Date;
-
 /**
  * @author Nattana Matos
  */
@@ -16,47 +14,11 @@ public class UsuariosBean {
     private String senha;
     private String cpf;
     private String rg;
-    private String telefone;
+    private byte telefone;
     private String email;
     private String endereco;
-    private String complemento;
-    private String UF;
-    private String cidade;
     private String naturalidade;
-    private Date data_nascimento;
     private String nome_fic;
-
-    public String getComplemento() {
-        return complemento;
-    }
-
-    public void setComplemento(String complemento) {
-        this.complemento = complemento;
-    }
-
-    public String getUF() {
-        return UF;
-    }
-
-    public void setUF(String UF) {
-        this.UF = UF;
-    }
-
-    public String getCidade() {
-        return cidade;
-    }
-
-    public void setCidade(String cidade) {
-        this.cidade = cidade;
-    }
-
-    public Date getData_nascimento() {
-        return data_nascimento;
-    }
-
-    public void setData_nascimento(Date data_nascimento) {
-        this.data_nascimento = data_nascimento;
-    }
 
     public int getId() {
         return id;
@@ -130,12 +92,12 @@ public class UsuariosBean {
         this.rg = rg;
     }
 
-    public String getTelefone() {
+    public int getTelefone() {
         return telefone;
     }
 
-    public void setTelefone(String telefone) {
-        this.telefone =  telefone;
+    public void setTelefone(int telefone) {
+        this.telefone = (byte) telefone;
     }
 
     public String getEmail() {
