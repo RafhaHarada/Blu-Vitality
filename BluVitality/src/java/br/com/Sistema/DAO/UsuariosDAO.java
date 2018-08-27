@@ -38,6 +38,9 @@ public class UsuariosDAO {
             usuario.setTelefone(resultSet.getString("telefone"));
             usuario.setEmail(resultSet.getString("email"));
             usuario.setEndereco(resultSet.getString("endereco"));
+            usuario.setComplemento(resultSet.getString("complemento"));
+            usuario.setUF(resultSet.getString("uf"));
+            usuario.setCidade(resultSet.getString("cidade"));
             usuario.setNaturalidade(resultSet.getString("naturalidade"));
             usuario.setData_nascimento(resultSet.getDate("data_nascimento"));
             usuario.setNome_fic(resultSet.getString("nome_fic"));
@@ -55,7 +58,7 @@ public class UsuariosDAO {
 
     
     public int adicionar(UsuariosBean usuario){
-        String sql = "INSERT INTO usuarios(Nome, estado_civil, idade, sexo, login, senha, "
+        String sql = "INSERT INTO usuarios(nome, estado_civil, idade, sexo, login, senha, "
                    + "cpf, rg, telefone, email, endereco, complemento = ?, uf = ?, cidade = ?, naturalidade, data_nascimento, nome_fic)" 
                    + "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)";
         
@@ -76,7 +79,7 @@ public class UsuariosDAO {
             ps.setString(quantidade++, usuario.getEmail());
             ps.setString(quantidade++, usuario.getEndereco());
             ps.setString(quantidade++, usuario.getComplemento());
-            ps.setString(quantidade++, usuario.getUf());
+            ps.setString(quantidade++, usuario.getUF());
             ps.setString(quantidade++, usuario.getCidade());
             ps.setString(quantidade++, usuario.getNaturalidade());
             ps.setDate  (quantidade++, usuario.getData_nascimento());
@@ -130,7 +133,7 @@ public class UsuariosDAO {
             ps.setString(quantidade++, usuario.getEmail());
             ps.setString(quantidade++, usuario.getEndereco());
             ps.setString(quantidade++, usuario.getComplemento());
-            ps.setString(quantidade++, usuario.getUf());
+            ps.setString(quantidade++, usuario.getUF());
             ps.setString(quantidade++, usuario.getCidade());
             ps.setString(quantidade++, usuario.getNaturalidade());
             ps.setDate  (quantidade++, usuario.getData_nascimento());
@@ -168,7 +171,7 @@ public class UsuariosDAO {
             usuario.setEmail(resultSet.getString("email"));
             usuario.setEndereco(resultSet.getString("endereco"));
             usuario.setComplemento(resultSet.getString("complemento"));
-            usuario.setUf(resultSet.getString("uf"));
+            usuario.setUF(resultSet.getString("uf"));
             usuario.setCidade(resultSet.getString("cidade"));
             usuario.setNaturalidade(resultSet.getString("naturalidade"));
             usuario.setData_nascimento(resultSet.getDate("data_nascimento"));
