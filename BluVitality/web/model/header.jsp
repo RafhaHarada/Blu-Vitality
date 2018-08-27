@@ -25,7 +25,7 @@
         <header>
             <nav class='nav-extended white lighten-2 z-depth-0'>
                 <div class='nav-wrapper'>
-                    <a href='#Inicio' class='brand-logo'><img src="resources/images/logo.gif" class="imagem-logo"></a>
+                    <a href='#Inicio' class='brand-logo'><img src="../resources/images/logo.gif" class="imagem-logo"></a>
                     <a href='#' data-target='mobile' class='sidenav-trigger teal-text'><i class='material-icons'>menu</i></a>
                     <ul id='nav-mobile' class='right hide-on-med-and-down'>
                         <li><a class='dropdown-trigger' href='#' data-target='dropdown1'>Inicio</a>

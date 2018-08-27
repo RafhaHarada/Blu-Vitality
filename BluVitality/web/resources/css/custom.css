@@ -74,3 +74,9 @@ nav a.sidenav-trigger{
 .parallax-imagem{
     background-size: 100% 100px;
 }
+.card .card-action p {
+    margin: 0;    
+}
+
+
+
