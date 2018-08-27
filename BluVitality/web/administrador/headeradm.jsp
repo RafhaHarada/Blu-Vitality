@@ -21,7 +21,6 @@
             <div class="navbar-fixed">
                 <nav class='nav-extended white lighten-2 z-depth-0'>
                     <div class='nav-wrapper'>
-                        
                         <a href='#Inicio' class='brand-logo'><img src="../resources/images/logo.gif" class="imagem-logo"></a>
                         <ul id="slide-out" class="sidenav">
                         <li><div class="user-view ">
