@@ -28,8 +28,8 @@
 
 
         <!--   JavaScript Setup  -->
-        <script type='text/javascript' src='resources/js/jquery.min.js'></script>
-        <script type='text/javascript' src='resources/js/materialize.min.js'></script>
-        <script type='text/javascript' src='resources/js/custom.js'></script>
+        <script type='text/javascript' src='../resources/js/jquery.min.js'></script>
+        <script type='text/javascript' src='../resources/js/materialize.min.js'></script>
+        <script type='text/javascript' src='../resources/js/custom.js'></script>
     </body>
 </html>

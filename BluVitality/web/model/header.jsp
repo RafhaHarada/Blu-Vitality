@@ -17,8 +17,8 @@
         <!--Import Google Icon Font-->
         <link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>
 
-        <link rel='stylesheet' type='text/css' href='resources/css/materialize.min.css'>
-        <link rel='stylesheet' type='text/css' href='resources/css/custom.css'>
+        <link rel='stylesheet' type='text/css' href='../resources/css/materialize.min.css'>
+        <link rel='stylesheet' type='text/css' href='../resources/css/custom.css'>
     </head>
     <body>
         <!--Cabeçalho-->
