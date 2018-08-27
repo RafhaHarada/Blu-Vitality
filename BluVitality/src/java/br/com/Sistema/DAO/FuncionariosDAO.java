@@ -14,18 +14,6 @@ import java.util.List;
  * @author Cidmar
  */
 public class FuncionariosDAO {
-
-       
-
-    
-    public void cargos(){
-        new CargosDAO().obterTodos();
-        new CargosDAO().obterPeloId(id);
-        new CargosDAO().adicionar(null);
-        new CargosDAO().alterar(null);
-        new CargosDAO().apagar(id);
-        new CargosDAO().servicos();
-    }
     
     public List<FuncionariosBean> obterTodos(){
         List<FuncionariosBean> funcionarios = new ArrayList<>();
@@ -40,7 +28,6 @@ public class FuncionariosDAO {
                 funcionario.setId(resultSet.getInt("id"));
                 funcionario.setId_cargo(resultSet.getInt("id_cargo"));
                 funcionario.setId_usuario(resultSet.getInt("id_usuario"));
-                 funcionario.setUsuario(new UsuariosDAO().obterPeloId(funcionario.getId_usuario()));
             }
         }catch(SQLException e){
             e.printStackTrace();
@@ -70,7 +57,7 @@ public class FuncionariosDAO {
     }
     
     public int adicionar(FuncionariosBean funcionario){
-        String sql = "INSERT INTO funcionarios(id, id_cargo, id_usuario) VALUES(?, ?)";
+        String sql = "INSERT INTO funcionarios(id, id_cargo, id_usuario) VALUES(?, ?, ?)";
         try{
         PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql, RETURN_GENERATED_KEYS);
         ps.setInt(1, funcionario.getId_cargo());

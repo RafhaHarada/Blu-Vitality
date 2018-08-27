@@ -40,6 +40,7 @@ public class UsuariosDAO {
             usuario.setEndereco(resultSet.getString("endereco"));
             usuario.setNaturalidade(resultSet.getString("naturalidade"));
             usuario.setData_nascimento(resultSet.getDate("data_nascimento"));
+            usuario.setNome_fic(resultSet.getString("nome_fic"));
             usuarios.add(usuario);
             }
     }catch(SQLException e){
@@ -110,8 +111,8 @@ public class UsuariosDAO {
     
     public boolean alterar(UsuariosBean usuario){
         String sql = "UPDATE usuarios SET nome = ?, estado_civil = ?, idade = ?, "
-                + "sexo = ?, login = ?, senha = ?, cpf = ?, rg = ?, telefone = ?, "
-                + "email = ?, endereco = ?, complemento = ?, uf = ?, cidade = ?, naturalidade = ?, data_nascimento = ? WHERE id = ?";
+                   + "sexo = ?, login = ?, senha = ?, cpf = ?, rg = ?, telefone = ?, "
+                   + "email = ?, endereco = ?, complemento = ?, uf = ?, cidade = ?, naturalidade = ?, data_nascimento = ?, nome_fic = ? WHERE id = ?";
         
         try{
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);
@@ -171,6 +172,7 @@ public class UsuariosDAO {
             usuario.setCidade(resultSet.getString("cidade"));
             usuario.setNaturalidade(resultSet.getString("naturalidade"));
             usuario.setData_nascimento(resultSet.getDate("data_nascimento"));
+            usuario.setNome_fic(resultSet.getString("nome_fic"));
             return usuario;
         }
             

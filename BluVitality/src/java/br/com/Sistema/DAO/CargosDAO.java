@@ -14,13 +14,6 @@ import static java.sql.Statement.RETURN_GENERATED_KEYS;
  * @author Cidmar
  */
 public class CargosDAO {
-    public void servicos(){
-        new ServiçosDAO().obterTodos();
-        new ServiçosDAO().obterPeloId(RETURN_GENERATED_KEYS);
-        new ServiçosDAO().adicionar(null);
-        new ServiçosDAO().alterar(null);
-        new ServiçosDAO().apagar(RETURN_GENERATED_KEYS);
-    }
     public List<CargosBean> obterTodos() {
         List<CargosBean> cargos = new ArrayList<>();
         String sql = "SELECT id, nome, salario, carga_horaria FROM cargos";

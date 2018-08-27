@@ -1,28 +1,60 @@
 <%-- 
     Document   : index
-    Created on : 21/08/2018, 08:14:38
-    Author     : Alunos
+    Created on : 27/08/2018, 08:14:38
+    Author     : Nattana Matos
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <!--   JavaScript Setup  -->
-        <script type='text/javascript' src='/BluVitality/resources/js/jquery.min.js'></script>
-        <script type='text/javascript' src='/BluVitality/resources/js/materialize.min.js'></script>
-        <script type='text/javascript' src='/BluVitality/resources/js/custom.js'></script>
-        <!--Import Google Icon Font-->
-        <link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>
+<jsp:include page="../model/header.jsp"/>
 
-        <link rel='stylesheet' type='text/css' href='/BluVitality/resources/css/materialize.min.css'>
-        <link rel='stylesheet' type='text/css' href='/BluVitality/resources/css/custom.css'>
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <h1>Hello World!</h1>
+<div class="container center" style="margin-left:50px;">
+    <h1>Usuarios</h1>
+
+    <div class="row">
+        <div class="col s12">
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">textsms</i>
+                    <input type="text" id="autocomplete-input" class="autocomplete">
+                    <label for="autocomplete-input">Nome completo</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p>
+        <label>
+            <input class="with-gap" name="group1" type="radio"  />
+            <span>Solteiro(a)</span>
+        </label>
+    </p
+    <p>
+        <label>
+            <input class="with-gap" name="group1" type="radio"  />
+            <span>Casado(a)</span>
+        </label>
+    </p
+    <p>
+        <label>
+            <input class="with-gap" name="group1" type="radio"  />
+            <span>Divorciado(a)</span>
+        </label>
+    </p
+    <p>
+        <label>
+            <input class="with-gap" name="group1" type="radio"  />
+            <span>Viúvo(a)</span>
+        </label>
+    </p
+
+
+
+    <div class="container med left "style="margin-left:150px;">
+        <a class="waves-effect waves-light btn-large" href="#">Cadastrar</a>
         
-   
-    </body>
-</html>
+    </div>
+    
+
+
+ <input type="text" class="datepicker">
+
+
+<a href="../model/footer.jsp"></a>
