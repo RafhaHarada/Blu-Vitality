@@ -23,8 +23,9 @@ $(document).ready(function () {
     $('.parallax').parallax();
 
     //Mobile Nav Menu
-    $('.sidenav').sidenav();
-    preventScrolling(false);
+    $('.sidenav').sidenav({
+        preventScrolling : true
+    });
 
     $('.fixed-action-btn').floatingActionButton({
         direction: 'left',
@@ -55,13 +56,11 @@ $(document).ready(function () {
             weekdaysAbbrev: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'],
             today: 'Hoje',
             clear: 'Limpar',
-                    close: 'Fechar',
+                    close: 'Fechar'
             //The format to show on the `input` element
         }
 
     });
-
-    $('.pushpin').pushpin();
 
     $('.scrollspy').scrollSpy();
 
@@ -93,15 +92,4 @@ $(document).ready(function () {
         instance.select(id);
         instance.updateTabIndicator();
     }
-});
-
-
-
-$('.pushpin-demo-nav').each(function () {
-    var $this = $(this);
-    var $target = $('#' + $(this).attr('data-target'));
-    $this.pushpin({
-        top: $target.offset().top,
-        bottom: $target.offset().top + $target.outerHeight() - $this.height()
-    });
 });
