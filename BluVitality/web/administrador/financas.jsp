@@ -4,6 +4,6 @@
     Author     : Alunos
 --%>
 
-<jsp:include page="headeradm.jsp"/>
+<jsp:include page="../model/header.jsp"/>
 
-<jsp:include page="footer.jsp"/>
+<jsp:include page="../model/footer.jsp"/>
