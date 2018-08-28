@@ -13,15 +13,15 @@
 <!--JSP IF implementation.-->
 <%
     int id_usuario = 0/*Integer.parseInt(request.getParameter("id"))*/;
-    List<FuncionariosBean> funcionarios = new FuncionariosDAO().obterTodos();
+    /*List<FuncionariosBean> funcionarios = new FuncionariosDAO().obterTodos();*/
     String cargoDoFuncionario = "";
-    for (int i = 0; i < 10; i++) {
+    /*for (int i = 0; i < 10; i++) {
         if (id_usuario == funcionarios.get(i).getId_usuario()) {
             int id_cargo = funcionarios.get(i).getId_cargo();
             cargoDoFuncionario = new CargosDAO().obterPeloId(id_cargo).getNome();
             break;
         }
-    }
+    }*/
     if (cargoDoFuncionario.equals("Administração")) {
 %>
 <li>
