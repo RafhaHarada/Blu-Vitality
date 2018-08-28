@@ -13,15 +13,15 @@
 <!--JSP IF implementation.-->
 <%
     int id_usuario = 0/*Integer.parseInt(request.getParameter("id"))*/;
-    List<FuncionariosBean> funcionarios = new FuncionariosDAO().obterTodos();
-    String cargoDoFuncionario = "";
-    for (int i = 0; i < 10; i++) {
-        if (id_usuario == funcionarios.get(i).getId_usuario()) {
-            int id_cargo = funcionarios.get(i).getId_cargo();
-            cargoDoFuncionario = new CargosDAO().obterPeloId(id_cargo).getNome();
-            break;
-        }
-    }
+    /*List<FuncionariosBean> funcionarios = new FuncionariosDAO().obterTodos();*/
+    String cargoDoFuncionario = "Administração";
+    /*for (int i = 0; i < 10; i++) {
+     if (id_usuario == funcionarios.get(i).getId_usuario()) {
+     int id_cargo = funcionarios.get(i).getId_cargo();
+     cargoDoFuncionario = new CargosDAO().obterPeloId(id_cargo).getNome();
+     break;
+     }
+     }*/
     if (cargoDoFuncionario.equals("Administração")) {
 %>
 <li>
@@ -34,17 +34,56 @@
         <a href="#Cadastrar"><span class="white-text">admin@admin.com</span></a>
     </div>
 </li>
-<li>
-    <a href='#'>Perfil</a>
-</li>
-<li>
-    <a href='#'>Pendências</a>
-</li>
-<li>
-    <a href='#'>Funcionários</a>
-</li>
-<li>
-    <a href='#'>Pacientes</a>
+<li class="no-padding">
+    <ul class="collapsible collapsible-accordion">
+        <li>
+            <a class="collapsible-header waves-effect">Hospital<i class="material-icons">arrow_drop_down</i></a>
+            <div class="collapsible-body">
+                <ul>
+                    <li><a href="#!">Configurações local</a></li>
+                    <li><a href="#!">Eventos</a></li>
+                    <li><a href="#!">Equipamentos</a></li>
+                    <li><a href="#!">Funcionarios</a></li>
+                </ul>
+            </div>
+        </li>
+        <div class="divider"></div>
+        <li>
+            <a class="collapsible-header waves-effect">Pacientes<i class="material-icons">arrow_drop_down</i></a>
+            <div class="collapsible-body">
+                <ul>
+                    <li><a href="#!">Perfil</a></li>
+                    <li><a href="#!">Prontuario</a></li>
+                    <li><a href="#!">Localização</a></li>
+                    <li><a href="#!">Geral B.O</a></li>
+                </ul>
+            </div>
+        </li>
+        <div class="divider"></div>
+        <li>
+            <a class="collapsible-header waves-effect">Pendencias<i class="material-icons">arrow_drop_down</i></a>
+            <div class="collapsible-body">
+                <ul>
+                    <li><a href="#!">Adicionar</a></li>
+                    <li><a href="#!">Solicitar</a></li>
+                    <li><a href="#!">Pedidos</a></li>
+                </ul>
+            </div>
+        </li>
+        <div class="divider"></div>
+        <li>
+            <a class="collapsible-header waves-effect">Estoque<i class="material-icons">arrow_drop_down</i></a>
+            <div class="collapsible-body">
+                <ul>
+                    <li><a href="#!" class="waves-effect">Medicamentos</a></li>
+                    <li><a href="#!">Equipamentos</a></li>
+                    <li><a href="#!">Solicitar M.</a></li>
+                    <li><a href="#!">Cadastrar</a></li>
+                </ul>
+            </div>
+        </li>
+        <div class="divider"></div>
+    </ul>
 </li>
 <%
 } else if (cargoDoFuncionario.equals("Médico")) {
@@ -110,7 +149,7 @@
     <a href='#'>Pendências</a>
 </li>
 <%
-    }else {
+} else {
 %>
 <li>
     <div class="user-view">
