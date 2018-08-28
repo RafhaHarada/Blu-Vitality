@@ -47,6 +47,7 @@
                 </ul>
             </div>
         </li>
+        <div class="divider"></div>
         <li>
             <a class="collapsible-header">Pacientes<i class="material-icons">arrow_drop_down</i></a>
             <div class="collapsible-body">
@@ -58,6 +59,7 @@
                 </ul>
             </div>
         </li>
+        <div class="divider"></div>
         <li>
             <a class="collapsible-header">Pendencias<i class="material-icons">arrow_drop_down</i></a>
             <div class="collapsible-body">
@@ -68,20 +70,21 @@
                 </ul>
             </div>
         </li>
+        <div class="divider"></div>
         <li>
-            <a class="collapsible-header">Estoque<i class="material-icons">arrow_drop_down</i></a>
+            <a class="collapsible-header waves-effect">Estoque<i class="material-icons">arrow_drop_down</i></a>
             <div class="collapsible-body">
                 <ul>
-                    <li><a href="#!">Medicamentos</a></li>
+                    <li><a href="#!" class="waves-effect">Medicamentos</a></li>
                     <li><a href="#!">Equipamentos</a></li>
                     <li><a href="#!">Solicitar M.</a></li>
                     <li><a href="#!">Cadastrar</a></li>
                 </ul>
             </div>
         </li>
+        <div class="divider"></div>
     </ul>
 </li>
-</ul>
 <%
 } else if (cargoDoFuncionario.equals("Médico")) {
 %>
