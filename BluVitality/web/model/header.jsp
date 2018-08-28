@@ -1,8 +1,9 @@
 <%-- 
     Document   : header
     Created on : 23/08/2018, 10:11:41
-    Author     : Rafael Alipio Harada
+    Author     : Rafael Alipio Harada @Gustavo Rodrigues 
 --%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
@@ -87,69 +88,67 @@
 
             <!--mobile e tablet side nav-->
             <ul class='sidenav' id='mobile'>
-                <%@include file="sidenavcard.jsp"%>
                 <li>
                     <a href='#'>Inicio</a>
                 </li>
+                <%@include file="sidenavcard.jsp"%>
                 <li>
-                    <ul class='collapsible text-bold'>
+                    <ul class="collapsible collapsible-accordion">
                         <li>
-                            <div class='collapsible-header waves-effect'><i class='material-icons'>add</i>Serviços</div>
-                            <div class='collapsible-body'>
-                                <div class='waves-effect'><a href="#!" class='sub-menu-mobile'>Agência Transfuncional</a></div>
-                                <div class='divider'></div>
-                                <div class='waves-effect'><a href="#!" class='sub-menu-mobile'>Centro Cirurgico</a></div>
-                                <div class='divider'></div>
-                                <div class='waves-effect'><a href="#!" class='sub-menu-mobile'>Centro Check-up</a></div>
-                                <div class='divider'></div>
-                                <div class='waves-effect'><a href="#!" class='sub-menu-mobile'>Centro Diagnostico por imagem</a></div>
-                                <div class='divider'></div>
-                                <div class='waves-effect'><a href="#!" class='sub-menu-mobile'>Centro de Oncologia</a></div>
-                                <div class='divider'></div>
-                                <div class='waves-effect'><a href="#!" class='sub-menu-mobile'>Clínica de Saúde Mental</a></div>
-                                <div class='divider'></div>
-                                <div class='waves-effect'><a href="#!" class='sub-menu-mobile'>Pronto Atendimento</a></div>
+                            <a class="collapsible-header waves-effect">Serviços<i class="material-icons">arrow_drop_down</i></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="#!" >Agência Transfuncional</a></li>
+                                    <li><a href="#!">Centro Cirurgico</a></li>
+                                    <li><a href="#!" >Centro Check-up</a></li>
+                                    <li><a href="#!" >Centro Diagnostico por imagem</a></li>
+                                    <li><a href="#!" >Centro de Oncologia</a></li>
+                                    <li><a href="#!">Clínica de Saúde Mental</a></li>
+                                    <li><a href="#!">Pronto Atendimento</a></li>
+                                </ul>
                             </div>
                         </li>
+                         <div class="divider"></div>
                         <li>
-                            <div class='collapsible-header waves-effect'><i class='material-icons'>add</i>Exames</div>
-                            <div class='collapsible-body'>            
-                                <div class='waves-effect'><a href="#!" class='sub-menu-mobile'>Cardiológicos</a></div>
-                                <div class='divider'></div>
-                                <div class='waves-effect'><a href="#!" class='sub-menu-mobile'>Cintilografia</a></div>
-                                <div class='divider'></div>
-                                <div class='waves-effect'><a href="#!" class='sub-menu-mobile'>Diagnóstico por Imagem</a></div>
-                                <div class='divider'></div>
-                                <div class='waves-effect'><a href="#!" class='sub-menu-mobile'>Endoscopia</a></div>
-                                <div class='divider'></div>
-                                <div class='waves-effect'><a href="#!" class='sub-menu-mobile'>Laboratoriais</a></div>
-                                <div class='divider'></div>
-                                <div class='waves-effect'><a href="#!" class='sub-menu-mobile'>Urológicos</a></div>
+                            <a class="collapsible-header waves-effect">Exames<i class="material-icons">arrow_drop_down</i></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="#!">Cardiológicos</a></li>
+                                    <li><a href="#!">Cintilografia</a></li>
+                                    <li><a href="#!">Diagnóstico por Imagem</a></li>
+                                    <li><a href="#!">Endoscopia</a></li>
+                                    <li><a href="#!">Laboratoriais</a></li>
+                                    <li><a href="#!">Urológicos</a></li>
+                                </ul>
                             </div>
                         </li>
+                         <div class="divider"></div>
                         <li>
-                            <div class='collapsible-header waves-effect'><i class='material-icons'>add</i>Contatos</div>
-                            <div class='collapsible-body'>
-                                <div class='waves-effect'><a href="#!" class='sub-menu-mobile'>Agende uma consulta</a></div>
-                                <div class='divider'></div>
-                                <div class='waves-effect'><a href="#!" class='sub-menu-mobile'>Agende um exame</a></div>
-                                <div class='divider'></div>
-                                <div class='waves-effect'><a href="#!" class='sub-menu-mobile'>Central de Orçamento:</a></div>
-                                <div class='divider'></div>
-                                <div class='waves-effect'><a href="#!" class='sub-menu-mobile'>Trabalhe Conosco</a></div>
+                            <a class="collapsible-header waves-effect">Contato<i class="material-icons">arrow_drop_down</i></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="#!">Agende uma consulta</a></li>
+                                    <li><a href="#!">Agende um exame</a></li>
+                                    <li><a href="#!">Central de Orçamento:</a></li>
+                                    <li><a href="#!">Trabalhe Conosco</a></li>
+                                </ul>
                             </div>
                         </li>
+                         <div class="divider"></div>
                         <li>
-                            <div class='collapsible-header waves-effect'><i class='material-icons'>add</i>Sobre</div>
-                            <div class='collapsible-body'>
-                                <p><a href='#Sobre1' class='waves-effect'><i class='material-icons left'></i>Nossa História</a></p>
-                                <p><a href='#Sobre2' class='waves-effect'><i class='material-icons left'></i>Nossas fotos</a></p>
-                                <p><a href='#Sobre3' class='waves-effect'><i class='material-icons left'></i>Missão, Visão e Valores</a></p>
+                            <a class="collapsible-header waves-effect">Sobre<i class="material-icons">arrow_drop_down</i></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="#sobre1">Nossa História</a></li>
+                                    <li><a href="#sobre2">Nossas Fotos</a></li>
+                                    <li><a href="#sobre3">MIssão, Visão e Valores</a></li>
+                                </ul>
                             </div>
                         </li>
+                         <div class="divider"></div>
                     </ul>
-                </li>
             </ul>
+
             <div class="slider">
                 <ul class="slides">
                     <li>
