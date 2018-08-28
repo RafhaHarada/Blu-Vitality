@@ -37,7 +37,7 @@
 <li class="no-padding">
     <ul class="collapsible collapsible-accordion">
         <li>
-            <a class="collapsible-header">Hospital<i class="material-icons">arrow_drop_down</i></a>
+            <a class="collapsible-header waves-effect">Hospital<i class="material-icons">arrow_drop_down</i></a>
             <div class="collapsible-body">
                 <ul>
                     <li><a href="#!">Configurações local</a></li>
@@ -49,7 +49,7 @@
         </li>
         <div class="divider"></div>
         <li>
-            <a class="collapsible-header">Pacientes<i class="material-icons">arrow_drop_down</i></a>
+            <a class="collapsible-header waves-effect">Pacientes<i class="material-icons">arrow_drop_down</i></a>
             <div class="collapsible-body">
                 <ul>
                     <li><a href="#!">Perfil</a></li>
@@ -61,7 +61,7 @@
         </li>
         <div class="divider"></div>
         <li>
-            <a class="collapsible-header">Pendencias<i class="material-icons">arrow_drop_down</i></a>
+            <a class="collapsible-header waves-effect">Pendencias<i class="material-icons">arrow_drop_down</i></a>
             <div class="collapsible-body">
                 <ul>
                     <li><a href="#!">Adicionar</a></li>

@@ -1,11 +1,12 @@
 <%-- 
-    Document   : hospital
-    Created on : 28/08/2018, 09:46:37
-    Author     : Alunos
+    Document   : headeradm
+    Created on : 26/08/2018, 17:47:02
+    Author     :@Gustavo Rodrigues (gugaaroodrigues@gmail.com)
+
 --%>
 
 
-        <jsp:include page="headeradm.jsp"/> 
+        <jsp:include page="../model/header.jsp"/>
         
         
         gdrgd grz rgrdg

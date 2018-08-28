@@ -1,11 +1,11 @@
 <%-- 
     Document   : headeradm
     Created on : 26/08/2018, 17:47:02
-    Author     :@Gustavo Rodrigues (gugaaroodrigues@gmail.com) 
+    Author     :@Gustavo Rodrigues (gugaaroodrigues@gmail.com) Rafhael Harada
 
 --%>
-<%@include file="headeradm.jsp" %>
-
+<!--%@include file="headeradm.jsp" %>-->
+<jsp:include page="../model/header.jsp"/>
 <!--INICIO MAIN-->
 <main>
     <!--Slider-->
