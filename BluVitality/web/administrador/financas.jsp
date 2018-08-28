@@ -20,7 +20,7 @@
     </div>
     <div class="card-content grey lighten-4 row">
         <div id="test4">
-            <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+            <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Lucro</a>
 
   <!-- Modal Structure -->
   <div id="modal1" class="modal">
