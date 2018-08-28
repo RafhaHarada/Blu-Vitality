@@ -87,14 +87,9 @@
 
             <!--mobile e tablet side nav-->
             <ul class='sidenav' id='mobile'>
-                <li><div class="user-view">
-                        <div class="background">
-                            <img src="images/office.jpg">
-                        </div>
-                        <a href="#user"><img class="circle" src="images/yuna.jpg"></a>
-                        <a href="#name"><span class="white-text name">John Doe</span></a>
-                        <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
-                    </div>
+                <%@include file="sidenavcard.jsp"%>
+                <li>
+                    <a href='#'>Inicio</a>
                 </li>
                 <li>
                     <ul class='collapsible text-bold'>
@@ -133,21 +128,6 @@
                             </div>
                         </li>
                         <li>
-                            <div class='collapsible-header waves-effect'><i class='material-icons'>add</i>Sobre</div>
-                            <div class='collapsible-body'>
-                                <div class='waves-effect'><a href="#!" class='sub-menu-mobile'>Blu Vitallity</a></div>
-                                <div class='divider'></div>
-                                <div class='waves-effect'><a href="#!" class='sub-menu-mobile'>Conheça nossa história</a></div>
-                                <div class='divider'></div>
-                                <div class='waves-effect'><a href="#!" class='sub-menu-mobile'>Missão</a></div>
-                                <div class='divider'></div>
-                                <div class='waves-effect'><a href="#!" class='sub-menu-mobile'>Visão</a></div>
-                                <div class='divider'></div>
-                                <div class='waves-effect'><a href="#!" class='sub-menu-mobile'>Valores</a></div>
-                                <div class='divider'></div>
-                            </div>
-                        </li>
-                        <li>
                             <div class='collapsible-header waves-effect'><i class='material-icons'>add</i>Contatos</div>
                             <div class='collapsible-body'>
                                 <div class='waves-effect'><a href="#!" class='sub-menu-mobile'>Agende uma consulta</a></div>
@@ -162,12 +142,13 @@
                         <li>
                             <div class='collapsible-header waves-effect'><i class='material-icons'>add</i>Sobre</div>
                             <div class='collapsible-body'>
-                                <p><a href='#Sobre1' class='waves-effect sub-menu-mobile'><i class='material-icons left'>cached</i>  Nossa História</a></p>
-                                <p><a href='#Sobre2' class='waves-effect sub-menu-mobile'><i class='material-icons left'>dashboard</i>  Nossas fotos</a></p>
-                                <p><a href='#Sobre3' class='waves-effect sub-menu-mobile'><i class='material-icons left'>dns</i>  Missão, Visão e Valores</a></p>
+                                <p><a href='#Sobre1' class='waves-effect'><i class='material-icons left'></i>Nossa História</a></p>
+                                <p><a href='#Sobre2' class='waves-effect'><i class='material-icons left'></i>Nossas fotos</a></p>
+                                <p><a href='#Sobre3' class='waves-effect'><i class='material-icons left'></i>Missão, Visão e Valores</a></p>
                             </div>
                         </li>
                     </ul>
+                </li>
             </ul>
             <div class="slider">
                 <ul class="slides">
