@@ -23,12 +23,12 @@ CREATE TABLE usuarios(
     nome_fic VARCHAR(100) NOT NULL
 );
 
-INSERT INTO usuario (nome,estado_civil,idade,sexo,login,senha,cpf,rg,telefone,email,endereco,naturalidade,data_nascimento,nome_fic) VALUES
-('Rafael','solteiro',18,'M','RafhaHarada','R#h467913','123.456.789-09','54.321.987-2','47997835153','rafaelegal22@outlook.com','Rua Alguma Coisa Que Não Sei, 244, Jardim Inexistente','-','Blumenau','SC','SP','24-03-2000','-'),
-('Cidmar','solteiro',19,'M','CidmarDeBoa','C#b789456','789.456.123-09','321.987.54-2','47978945612','cidmardeboa@outlook.com','Rua Alguma Coisa Que Não Sei, 255, Jardim Inexistente','-','Blumenau','SC','MS','10-12-1999','Bl A Apto 100'),
-('Nattana','solteira',20,'F','NattanaNaLagoa','N#l123456','456.123.789-09','32.154.987-2','47932165498','nattananalagoa@outlook.com','Rua Alguma Coisa Que Não Sei, 266, Jardim Inexistente','-','Blumenau','SC','MG','25-05-1998','-'),
-('Gustavo','solteiro',21,'M','GustavoBeleza','G#b147896','123.789.456-09','984.321.75-2','47974185296','gustavobeleza@outlook.com','Rua Alguma Coisa Que Não Sei, 277, Jardim Inexistente','-','Blumenau','SC','AC','04-11-1997','-'),
-('Luana','solteira',22,'F','LuanaJoinha','L#j123698','789.123.456-09','987.421.35-2','47936925814','luanajoinha@outlook.com','Rua Alguma Coisa Que Não Sei, 288, Jardim Inexistente','-','Blumenau','SC','PE','30-08-1996','-');
+INSERT INTO usuarios (nome,estado_civil,idade,sexo,login,senha,cpf,rg,telefone,email,endereco,complemento,cidade,UF,naturalidade,data_nascimento,nome_fic) VALUES
+('Rafael','solteiro',18,'M','RafhaHarada','R#h467913','123.456.789-09','54.321.987-2','47997835153','rafaelegal22@outlook.com','Rua Alguma Coisa Que Não Sei, 244, Jardim Inexistente','-','Blumenau','SC','SP','2000-03-24','-'),
+('Cidmar','solteiro',19,'M','CidmarDeBoa','C#b789456','789.456.123-09','321.987.54-2','47978945612','cidmardeboa@outlook.com','Rua Alguma Coisa Que Não Sei, 255, Jardim Inexistente','Bl A Apto 100','Blumenau','SC','MS','1999-12-10','-'),
+('Nattana','solteira',20,'F','NattanaNaLagoa','N#l123456','456.123.789-09','32.154.987-2','47932165498','nattananalagoa@outlook.com','Rua Alguma Coisa Que Não Sei, 266, Jardim Inexistente','-','Blumenau','SC','MG','1998-05-25','-'),
+('Gustavo','solteiro',21,'M','GustavoBeleza','G#b147896','123.789.456-09','984.321.75-2','47974185296','gustavobeleza@outlook.com','Rua Alguma Coisa Que Não Sei, 277, Jardim Inexistente','-','Blumenau','SC','AC','1997-11-04','-'),
+('Luana','solteira',22,'F','LuanaJoinha','L#j123698','789.123.456-09','987.421.35-2','47936925814','luanajoinha@outlook.com','Rua Alguma Coisa Que Não Sei, 288, Jardim Inexistente','-','Blumenau','SC','PE','1996-08-30','-');
 
 CREATE TABLE cargos(
     id INT AUTO_INCREMENT PRIMARY KEY,
