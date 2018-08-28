@@ -75,17 +75,11 @@ $(document).ready(function () {
         onShow: true
     });
     
-    $("#botao-1").on("click", function () {
-        changeTab('Sobre1');
-    });
-
-    $("#botao-2").on("click", function () {
-        changeTab('Sobre2');
-    });
-    
-    $("#botao-3").on("click", function () {
-        changeTab('Sobre3');
-    });
+    for (var i = 0; i <= 3; i++) { 
+        $("#botao-"+i).on("click", function () {
+            changeTab("Sobre"+i);
+        });
+    }
 
     function changeTab(id) {
         var instance = M.Tabs.getInstance($('.tabs'));
