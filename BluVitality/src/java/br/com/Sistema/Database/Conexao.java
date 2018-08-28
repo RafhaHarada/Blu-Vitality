@@ -9,7 +9,7 @@ import java.sql.SQLException;
  */
 public class Conexao {
     
-    private static final String HOST = "jdbc:mysql://localhost/bancoAlunos";
+    private static final String HOST = "jdbc:mysql://localhost/bluVitalityDatabase";
     private static final String USER = "root";
     private static final String PASSWORD = "";
     private static final String CLASS = "com.mysql.jdbc.Driver";
