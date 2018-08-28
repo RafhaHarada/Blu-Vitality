@@ -40,14 +40,53 @@
                                 <img src="/BluVitality/resources/images/bg1.gif">
                             </div>
                             <a href="#user"><img class="circle" src="/BluVitality/resources/images/logo.gif"</a>
-                            <a href="#name"><span class="white-text name">John Doe</span></a>
+                            <a href="#name"><span class="white-text name">Alguem</span></a>
                             <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
-                        </div></li>
-                    <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-                    <li><a href="#!">Second Link</a></li>
-                    <li><div class="divider"></div></li>
-                    <li><a class="subheader">Subheader</a></li>
-                    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
-                </ul>
+                        </div><li><a href="#!">Perfil</a></li>
+                    <li class="no-padding">
+                        <ul class="collapsible collapsible-accordion">
+                            <li>
+                                <a class="collapsible-header">Hospital<i class="material-icons">arrow_drop_down</i></a>
+                                <div class="collapsible-body">
+                                    <ul>
+                                        <li><a href="#!">Configurações local</a></li>
+                                        <li><a href="#!">Eventos</a></li>
+                                        <li><a href="#!">Equipamentos</a></li>
+                                        <li><a href="#!">Funcionarios</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a class="collapsible-header">Pacientes<i class="material-icons">arrow_drop_down</i></a>
+                                <div class="collapsible-body">
+                                    <ul>
+                                        <li><a href="#!">Perfil</a></li>
+                                        <li><a href="#!">Prontuario</a></li>
+                                        <li><a href="#!">Localização</a></li>
+                                        <li><a href="#!">Geral B.O</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a class="collapsible-header">Pendencias<i class="material-icons">arrow_drop_down</i></a>
+                                <div class="collapsible-body">
+                                    <ul>
+                                        <li><a href="#!">Adicionar</a></li>
+                                        <li><a href="#!">Solicitar</a></li>
+                                        <li><a href="#!">Pedidos</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a class="collapsible-header">Estoque<i class="material-icons">arrow_drop_down</i></a>
+                                <div class="collapsible-body">
+                                    <ul>
+                                        <li><a href="#!">Medicamentos</a></li>
+                                        <li><a href="#!">Equipamentos</a></li>
+                                        <li><a href="#!">Solicitar M.</a></li>
+                                        <li><a href="#!">Cadastrar</a></li>
+                                    </ul>
+                                </div>
+                            </li>
             </div>
         </header>
