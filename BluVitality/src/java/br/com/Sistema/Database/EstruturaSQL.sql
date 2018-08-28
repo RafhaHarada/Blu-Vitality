@@ -10,25 +10,39 @@ CREATE TABLE usuarios(
     sexo CHAR NOT NULL,
     login VARCHAR(100) NOT NULL,
     senha VARCHAR(100) NOT NULL,
-    cpf VARCHAR(13) NOT NULL,
+    cpf VARCHAR(14) NOT NULL,
     rg VARCHAR(100) NOT NULL,
     telefone VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL,
     endereco VARCHAR(100) NOT NULL,
-    uf VARCHAR(2) NOT NULL,
-    cidade VARCHAR(100) NOT NULL,
-    complemento VARCHAR(100) NOT NULL,
+	complemento VARCHAR(100) NOT NULL,
+	cidade VARCHAR(100) NOT NULL,
+	UF VARCHAR(2) NOT NULL,
     naturalidade VARCHAR(100) NOT NULL,
-    data_nascimento DATE,
-    nome_ficticional VARCHAR(100) NOT NULL
+    data_nascimento DATE NOT NULL,
+    nome_fic VARCHAR(100) NOT NULL
 );
+
+INSERT INTO usuario (nome,estado_civil,idade,sexo,login,senha,cpf,rg,telefone,email,endereco,naturalidade,data_nascimento,nome_fic) VALUES
+('Rafael','solteiro',18,'M','RafhaHarada','R#h467913','123.456.789-09','54.321.987-2','47997835153','rafaelegal22@outlook.com','Rua Alguma Coisa Que Não Sei, 244, Jardim Inexistente','-','Blumenau','SC','SP','24-03-2000','-'),
+('Cidmar','solteiro',19,'M','CidmarDeBoa','C#b789456','789.456.123-09','321.987.54-2','47978945612','cidmardeboa@outlook.com','Rua Alguma Coisa Que Não Sei, 255, Jardim Inexistente','-','Blumenau','SC','MS','10-12-1999','Bl A Apto 100'),
+('Nattana','solteira',20,'F','NattanaNaLagoa','N#l123456','456.123.789-09','32.154.987-2','47932165498','nattananalagoa@outlook.com','Rua Alguma Coisa Que Não Sei, 266, Jardim Inexistente','-','Blumenau','SC','MG','25-05-1998','-'),
+('Gustavo','solteiro',21,'M','GustavoBeleza','G#b147896','123.789.456-09','984.321.75-2','47974185296','gustavobeleza@outlook.com','Rua Alguma Coisa Que Não Sei, 277, Jardim Inexistente','-','Blumenau','SC','AC','04-11-1997','-'),
+('Luana','solteira',22,'F','LuanaJoinha','L#j123698','789.123.456-09','987.421.35-2','47936925814','luanajoinha@outlook.com','Rua Alguma Coisa Que Não Sei, 288, Jardim Inexistente','-','Blumenau','SC','PE','30-08-1996','-');
 
 CREATE TABLE cargos(
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
     salario DOUBLE NOT NULL,
-    carga_horaria DATE
+    carga_horaria TIME
 );
+
+INSERT INTO cargos (nome,salario,carga_horaria) VALUES
+('Médico',99999.05,'20:00:00'),
+('Gerente',999999.05,'10:00:00'),
+('Dono',9999999.05,'03:00:00'),
+('Recepcionista',2100,'08:00:00'),
+('Limpeza',1100,'08:00:00');
 
 CREATE TABLE funcionarios(
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -39,11 +53,23 @@ CREATE TABLE funcionarios(
     FOREIGN KEY(id_cargo) REFERENCES cargos(id)
 );
 
+INSERT INTO funcionarios (id_usuario,id_cargo,ativo) VALUES
+(1,2,TRUE),
+(3,1,TRUE),
+(4,1,TRUE),
+(5,1,TRUE);
+
 CREATE TABLE servicos(
     id INT AUTO_INCREMENT PRIMARY KEY,
     id_funcionario INT NOT NULL,
     nome VARCHAR(100) NOT NULL,
     descricao VARCHAR(100) NOT NULL,
-    tempo_execucao  DATE,
+    tempo_execucao TIME,
     FOREIGN KEY(id_funcionario) REFERENCES funcionarios(id)
 );
+
+INSERT INTO servicos (id_funcionario,nome,descricao,tempo_execucao) VALUES
+(1,'Recrutar recrutadores','Recrutar recrutadores eficientes.','02:00:00'),
+(2,'"Trocar" um pulmão','Paciente levou um tiro de escopeta no pulmão direito, trocar o pulmão inteiro.','00:30:00'),
+(3,'Lavagem cerebral','Paciente jogou League of Legends, limpar toda a sujeira do cerebro, colocar Dark Souls no lugar.','22:50:00'),
+(4,'"Trocar" um coração','Paciente foi traido, dar remédios anti depressivos.','03:00:00');
