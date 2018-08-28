@@ -1,3 +1,9 @@
+<%-- 
+    Document   : footer
+    Created on : 23/08/2018, 10:12:23
+    Author     : Rafael Alipio Harada
+--%>
+
 <!--Roda pé-->
         <footer class='page-footer teal accent-4'>
             <div class='container'>
