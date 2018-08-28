@@ -1,11 +1,11 @@
 <%-- 
     Document   : headeradm
     Created on : 26/08/2018, 17:47:02
-    Author     :@Gustavo Rodrigues (gugaaroodrigues@gmail.com) 
+    Author     :@Gustavo Rodrigues (gugaaroodrigues@gmail.com) Rafhael Harada
 
 --%>
-<%@include file="headeradm.jsp" %>
-
+<!--%@include file="headeradm.jsp" %>-->
+<jsp:include page="../model/header.jsp"/>
 <!--INICIO MAIN-->
 <main>
     <!--Slider-->
@@ -44,7 +44,7 @@
                 <div id="card-stats">
                     <div class="row">
                         <div class="col s12 m6 l4">
-                            <div class="card"><a href="#">
+                            <div class="card"><a href="/BluVitality/administrador/hospital.jsp#">
                                     <div class="card-action blue-grey darken-1 white-text">
 
                                         <p class="card-stats-title">
