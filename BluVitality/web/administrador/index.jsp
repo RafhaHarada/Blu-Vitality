@@ -44,7 +44,7 @@
                 <div id="card-stats">
                     <div class="row">
                         <div class="col s12 m6 l4">
-                            <div class="card"><a href="#">
+                            <div class="card"><a href="/BluVitality/administrador/hospital.jsp#">
                                     <div class="card-action blue-grey darken-1 white-text">
 
                                         <p class="card-stats-title">
