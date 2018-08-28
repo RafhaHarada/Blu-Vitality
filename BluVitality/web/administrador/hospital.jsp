@@ -4,9 +4,11 @@
     Author     : Alunos
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-        <jsp:include page="../model/header.jsp"/>    
+        <jsp:include page="headeradm.jsp"/> 
         
-    </body>
-</html>
+        
+        gdrgd grz rgrdg
+        <jsp:include page="../model/footer.jsp"/>    
+        
+   
