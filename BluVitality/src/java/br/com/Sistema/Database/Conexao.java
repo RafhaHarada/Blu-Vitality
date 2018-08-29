@@ -9,21 +9,23 @@ import java.sql.SQLException;
  */
 public class Conexao {
     
+    private static final String CLASS = "com.mysql.jdbc.Driver";
     private static final String HOST = "jdbc:mysql://localhost/bluVitalityDatabase";
     private static final String USER = "root";
     private static final String PASSWORD = "";
-    private static final String CLASS = "com.mysql.jdbc.Driver";
     private static Connection conexao;
     
     public static Connection abrirConexao(){
         try {
             Class.forName(CLASS);
             conexao = DriverManager.getConnection(HOST, USER, PASSWORD);
-            return conexao;
-        } catch (Exception e) {
+        } catch (SQLException e) {
             e.printStackTrace();
+        }catch (ClassNotFoundException e){
+            
         }
-        return null;
+            return conexao;
+        
     }
     
     public static void fecharConexao(){

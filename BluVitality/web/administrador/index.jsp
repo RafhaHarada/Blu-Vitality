@@ -4,11 +4,13 @@
     Author     :@Gustavo Rodrigues (gugaaroodrigues@gmail.com) Rafhael Harada
 
 --%>
-<%@page import="java.util.List"%>
 <!--%@include file="headeradm.jsp" %>-->
 <%@ page import="br.com.Sistema.Bean.FuncionariosBean" %>
 <%@ page import="br.com.Sistema.Bean.UsuariosBean" %>
 <%@ page import="br.com.Sistema.Bean.CargosBean" %>
+<%@page import="java.util.List"%>
+
+
 <jsp:include page="../model/header.jsp"/>
 <!--INICIO MAIN-->
 <main>
@@ -93,15 +95,22 @@
                                     </thead>
                                     <tbody>
 
-                                        <% for (UsuariosBean usuario : (List<UsuariosBean>) request.getAttribute("usuarios")) {%>
+                                        <% for (FuncionariosBean funcionario : (List<FuncionariosBean>) request.getAttribute("funcionarios")) {%>
                                         <tr>
-                                            <td><%=usuario.getNome()%></td>
-                                            <td><%=usuario.getIdade()%></td>
+                                            <td><%=funcionario.getUsuario()%></td>
+                                            <td><%=funcionario.getId_cargo()%></td>
                                             <td><a href=""><i class="material-icons">edit</i>Editar</a><a href=""><i class="material-icons">delete</i>Deletar</a></td>
                                             <td><a href=""><i class="material-icons">edit</i>Editar</a><a href=""><i class="material-icons">delete</i>Deletar</a></td>
                                         </tr>
-
+                                        <% } %>
                                     </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Paciente</th>
+                                            <th>idade</th>
+                                            <th>Ação</th>
+                                        </tr>
+                                    </tfoot>
                                 </table>    
 
                             </div>
@@ -154,15 +163,23 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                         <% for (FuncionariosBean funcionario : (List<FuncionariosBean>) request.getAttribute("funcionarios")) {%>
+                                        <% for (FuncionariosBean funcionario : (List<FuncionariosBean>) request.getAttribute("funcionarios")) {%>
                                         <tr>
                                             <td><%=funcionario.getUsuario()%></td>
                                             <td><%=funcionario.getCargo()%></td>
                                             <td><a href=""><i class="material-icons">edit</i>Editar</a><a href=""><i class="material-icons">delete</i>Deletar</a></td>
                                             <td><a href=""><i class="material-icons">edit</i>Editar</a><a href=""><i class="material-icons">delete</i>Deletar</a></td>
                                         </tr>
+                                        <% }%>
                                     </tbody>
-                                </table>    
+                                    <tfoot>
+                                        <tr>
+                                            <th>Paciente</th>
+                                            <th>idade</th>
+                                            <th>Ação</th>
+                                        </tr>
+                                    </tfoot>
+                                </table>      
 
                             </div>
                         </div>
