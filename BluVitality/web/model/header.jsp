@@ -29,57 +29,54 @@
                     <a href='#Inicio' class='brand-logo'><img src="../resources/images/logo.gif" class="imagem-logo"></a>
                     <a href='#' data-target='mobile' class='sidenav-trigger teal-text'><i class='material-icons'>menu</i></a>
                     <ul id='nav-mobile' class='right hide-on-med-and-down'>
-                        <li><a class='dropdown-trigger' href='#' data-target='dropdown1'>Inicio</a>
-                            <!-- Dropdown Structure -->
-                            <ul id='dropdown1' class='dropdown-content'>
-                                <li><a href="#!">Institucional</a></li>
-                            </ul>
+                        <li>
+                            <a href='#Inicio'>Inicio</a>
                         </li>
 
                         <li><a class='dropdown-trigger' href='#' data-target='dropdown2'>Serviços</a>
                             <!-- Dropdown Structure -->
                             <ul id='dropdown2' class='dropdown-content'>
-                                <li><a href="#!">Agência Transfuncional</a></li>
-                                <li><a href="#!">Centro Cirurgico</a></li>
-                                <li><a href="#!">Centro Check-up</a></li>
-                                <li><a href="#!">Centro Diagnostico por imagem</a></li>
-                                <li><a href="#!">Centro de Oncologia</a></li>
-                                <li><a href="#!">Clínica de Saúde Mental</a></li>
-                                <li><a href="#!">CTI Adulto</a></li>
-                                <li><a href="#!">CTI Infantil</a></li>
-                                <li><a href="#!">Fármacia</a></li>
-                                <li><a href='#!'>Fisioterapia</a></li>
-                                <li><a href='#!'>Internação</a></li>
-                                <li><a href='#!'>Pronto Atendimento</a></li>
+                                <li><a href="#Servicos">Agência Transfuncional</a></li>
+                                <li><a href="#Servicos">Centro Cirurgico</a></li>
+                                <li><a href="#Servicos">Centro Check-up</a></li>
+                                <li><a href="#Servicos">Centro Diagnostico por imagem</a></li>
+                                <li><a href="#Servicos">Centro de Oncologia</a></li>
+                                <li><a href="#Servicos">Clínica de Saúde Mental</a></li>
+                                <li><a href="#Servicos">CTI Adulto</a></li>
+                                <li><a href="#Servicos">CTI Infantil</a></li>
+                                <li><a href="#Servicos">Fármacia</a></li>
+                                <li><a href='#Servicos'>Fisioterapia</a></li>
+                                <li><a href='#Servicos'>Internação</a></li>
+                                <li><a href='#Servicos'>Pronto Atendimento</a></li>
                             </ul>    
                         </li>
 
                         <li><a class='dropdown-trigger' href='#' data-target='dropdown3'>Exames</a>
                             <!-- Dropdown Structure -->
                             <ul id='dropdown3' class='dropdown-content'>
-                                <li><a href="#!">Cardiológicos</a></li>
-                                <li><a href="#!">Cintilografia</a></li>
-                                <li><a href="#!">Diagnóstico por Imagem</a></li>
-                                <li><a href="#!">Endoscopia</a></li>
-                                <li><a href="#!">Laboratoriais</a></li>
-                                <li><a href="#!">Urológicos</a></li>
+                                <li><a href="#Exames">Cardiológicos</a></li>
+                                <li><a href="#Exames">Cintilografia</a></li>
+                                <li><a href="#Exames">Diagnóstico por Imagem</a></li>
+                                <li><a href="#Exames">Endoscopia</a></li>
+                                <li><a href="#Exames">Laboratoriais</a></li>
+                                <li><a href="#Exames">Urológicos</a></li>
                             </ul>
                         </li>
 
                         <li><a class='dropdown-trigger' href='#' data-target='dropdown4'>Contatos</a>
                             <!-- Dropdown Structure -->
                             <ul id='dropdown4' class='dropdown-content'>
-                                <li><a href="#!">Agende uma consulta</a></li>
-                                <li><a href="#!">Agende um exame</a></li>
-                                <li><a href="#!">Central de Orçamento</a></li>
-                                <li><a href="#!">Trabalhe Conosco</a></li>
+                                <li><a href="#Contatos">Agende uma consulta</a></li>
+                                <li><a href="#Contatos">Agende um exame</a></li>
+                                <li><a href="#Contatos">Central de Orçamento</a></li>
+                                <li><a href="#Contatos">Trabalhe Conosco</a></li>
                             </ul>
                         </li>
                         <li><a class='dropdown-trigger' data-target='dropdown5'>Sobre</a>
                             <ul id='dropdown5' class='dropdown-content'>
-                                <li class="tab"><a href="#Sobre" id="botao-1">Nossa História</a></li>
-                                <li class="tab"><a href="#Sobre" id="botao-2">Nossas fotos</a></li>
-                                <li class="tab"><a href="#Sobre" id="botao-3">Missão, Visão e Valores</a></li>
+                                <li class="tab"><a href="#Sobre">Nossa História</a></li>
+                                <li class="tab"><a href="#Sobre">Nossas fotos</a></li>
+                                <li class="tab"><a href="#Sobre">Missão, Visão e Valores</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -89,64 +86,67 @@
             <!--mobile e tablet side nav-->
             <ul class='sidenav' id='mobile'>
                 <li>
-                    <a href='#'>Inicio</a>
+                    <a href="#" class="sidenav-close waves-effect waves-teal red lighten-3 white-text center-align"><i class="large material-icons">arrow_back</i></a>
                 </li>
                 <%@include file="sidenavcard.jsp"%>
-                <li>
-                    <ul class="collapsible collapsible-accordion">
                         <li>
                             <a class="collapsible-header waves-effect">Serviços<i class="material-icons">arrow_drop_down</i></a>
                             <div class="collapsible-body">
                                 <ul>
-                                    <li><a href="#!" >Agência Transfuncional</a></li>
-                                    <li><a href="#!">Centro Cirurgico</a></li>
-                                    <li><a href="#!" >Centro Check-up</a></li>
-                                    <li><a href="#!" >Centro Diagnostico por imagem</a></li>
-                                    <li><a href="#!" >Centro de Oncologia</a></li>
-                                    <li><a href="#!">Clínica de Saúde Mental</a></li>
-                                    <li><a href="#!">Pronto Atendimento</a></li>
+                                    <li><a href="#Servicos">Agência Transfuncional</a></li>
+                                    <li><a href="#Servicos">Centro Cirurgico</a></li>
+                                    <li><a href="#Servicos">Centro Check-up</a></li>
+                                    <li><a href="#Servicos">Centro Diagnostico por imagem</a></li>
+                                    <li><a href="#Servicos">Centro de Oncologia</a></li>
+                                    <li><a href="#Servicos">Clínica de Saúde Mental</a></li>
+                                    <li><a href="#Servicos">CTI Adulto</a></li>
+                                    <li><a href="#Servicos">CTI Infantil</a></li>
+                                    <li><a href="#Servicos">Fármacia</a></li>
+                                    <li><a href="#Servicos">Fisioterapia</a></li>
+                                    <li><a href="#Servicos">Internação</a></li>
+                                    <li><a href="#Servicos">Pronto Atendimento</a></li>
                                 </ul>
                             </div>
                         </li>
-                         <div class="divider"></div>
+                        <div class="divider"></div>
                         <li>
                             <a class="collapsible-header waves-effect">Exames<i class="material-icons">arrow_drop_down</i></a>
                             <div class="collapsible-body">
                                 <ul>
-                                    <li><a href="#!">Cardiológicos</a></li>
-                                    <li><a href="#!">Cintilografia</a></li>
-                                    <li><a href="#!">Diagnóstico por Imagem</a></li>
-                                    <li><a href="#!">Endoscopia</a></li>
-                                    <li><a href="#!">Laboratoriais</a></li>
-                                    <li><a href="#!">Urológicos</a></li>
+                                    <li><a href="#Exames">Cardiológicos</a></li>
+                                    <li><a href="#Exames">Cintilografia</a></li>
+                                    <li><a href="#Exames">Diagnóstico por Imagem</a></li>
+                                    <li><a href="#Exames">Endoscopia</a></li>
+                                    <li><a href="#Exames">Laboratoriais</a></li>
+                                    <li><a href="#Exames">Urológicos</a></li>
                                 </ul>
                             </div>
                         </li>
-                         <div class="divider"></div>
+                        <div class="divider"></div>
                         <li>
-                            <a class="collapsible-header waves-effect">Contato<i class="material-icons">arrow_drop_down</i></a>
+                            <a class="collapsible-header waves-effect">Contatos<i class="material-icons">arrow_drop_down</i></a>
                             <div class="collapsible-body">
                                 <ul>
-                                    <li><a href="#!">Agende uma consulta</a></li>
-                                    <li><a href="#!">Agende um exame</a></li>
-                                    <li><a href="#!">Central de Orçamento:</a></li>
-                                    <li><a href="#!">Trabalhe Conosco</a></li>
+                                    <li><a href="#Contatos">Agende uma consulta</a></li>
+                                    <li><a href="#Contatos">Agende um exame</a></li>
+                                    <li><a href="#Contatos">Central de Orçamento:</a></li>
+                                    <li><a href="#Contatos">Trabalhe Conosco</a></li>
                                 </ul>
                             </div>
                         </li>
-                         <div class="divider"></div>
+                        <div class="divider"></div>
                         <li>
                             <a class="collapsible-header waves-effect">Sobre<i class="material-icons">arrow_drop_down</i></a>
                             <div class="collapsible-body">
                                 <ul>
-                                    <li><a href="#sobre1">Nossa História</a></li>
-                                    <li><a href="#sobre2">Nossas Fotos</a></li>
-                                    <li><a href="#sobre3">MIssão, Visão e Valores</a></li>
+                                    <li><a href="#Sobre">Nossa História</a></li>
+                                    <li><a href="#Sobre">Nossas Fotos</a></li>
+                                    <li><a href="#Sobre">Missão, Visão e Valores</a></li>
                                 </ul>
                             </div>
                         </li>
-                         <div class="divider"></div>
                     </ul>
+                </li>
             </ul>
 
             <div class="slider">
