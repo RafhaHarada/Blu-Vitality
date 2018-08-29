@@ -83,8 +83,6 @@
             </div>
         </li>
         <div class="divider"></div>
-    </ul>
-</li>
 <%
 } else if (cargoDoFuncionario.equals("Médico")) {
 %>
@@ -107,6 +105,8 @@
 <li>
     <a href='#'>Pacientes</a>
 </li>
+                <li>
+                    <ul class="collapsible collapsible-accordion">
 <%
 } else if (cargoDoFuncionario.equals("Recepção")) {
 %>
@@ -129,6 +129,8 @@
 <li>
     <a href='#'>Pacientes</a>
 </li>
+                <li>
+                    <ul class="collapsible collapsible-accordion">
 <%
 } else if (cargoDoFuncionario.equals("Limpeza")) {
 %>
@@ -148,6 +150,8 @@
 <li>
     <a href='#'>Pendências</a>
 </li>
+                <li>
+                    <ul class="collapsible collapsible-accordion">
 <%
 } else {
 %>
@@ -161,6 +165,8 @@
         <a href="#signup"><span class="white-text email">Cadastrar</span></a>
     </div>
 </li>
+                <li>
+                    <ul class="collapsible collapsible-accordion">
 <%
     }
 %>
