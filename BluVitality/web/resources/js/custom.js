@@ -26,7 +26,7 @@ $(document).ready(function () {
     $('.sidenav').sidenav({
         preventScrolling : true
     });
-
+    
     $('.fixed-action-btn').floatingActionButton({
         direction: 'left',
         toolbarEnabled: true
@@ -75,8 +75,26 @@ $(document).ready(function () {
         onShow: true
     });
     
-    for (var i = 0; i <= 3; i++) { 
-        $("#botao-"+i).on("click", function () {
+    for (var i = 1; i <= 12; i++) { 
+        $("#botao-servicos-"+i).on("click", function () {
+            changeTab("Servicos"+i);
+        });
+    }
+    
+    for (var i = 1; i <= 6; i++) { 
+        $("#botao-exames-"+i).on("click", function () {
+            changeTab("Exames"+i);
+        });
+    }
+    
+    for (var i = 1; i <= 4; i++) { 
+        $("#botao-contatos-"+i).on("click", function () {
+            changeTab("Contatos"+i);
+        });
+    }
+    
+    for (var i = 1; i <= 3; i++) { 
+        $("#botao-sobre-"+i).on("click", function () {
             changeTab("Sobre"+i);
         });
     }
