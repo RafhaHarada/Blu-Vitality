@@ -11,11 +11,11 @@
             <!--mobile e tablet side nav-->
             <ul class='sidenav' id='mobile'>
                 <li>
-                    <a href="#" class="sidenav-close waves-effect waves-teal red lighten-3 white-text center-align"><i class="large material-icons">arrow_back</i></a>
+                    <a href="#" class="sidenav-close waves-effect waves-teal teal"><i class="material-icons white-text">arrow_back</i></a>
                 </li>
                 <%@include file="sidenavcard.jsp"%>
                         <li>
-                            <a class="collapsible-header waves-effect">Serviços<i class="material-icons">arrow_drop_down</i></a>
+                            <a class="collapsible-header waves-effect waves-teal">Serviços<i class="material-icons">arrow_drop_down</i></a>
                             <div class="collapsible-body">
                                 <ul>
                                     <li><a href="#Servicos">Agência Transfuncional</a></li>
@@ -35,7 +35,7 @@
                         </li>
                         <div class="divider"></div>
                         <li>
-                            <a class="collapsible-header waves-effect">Exames<i class="material-icons">arrow_drop_down</i></a>
+                            <a class="collapsible-header waves-effect waves-teal">Exames<i class="material-icons">arrow_drop_down</i></a>
                             <div class="collapsible-body">
                                 <ul>
                                     <li><a href="#Exames">Cardiológicos</a></li>
@@ -49,7 +49,7 @@
                         </li>
                         <div class="divider"></div>
                         <li>
-                            <a class="collapsible-header waves-effect">Contatos<i class="material-icons">arrow_drop_down</i></a>
+                            <a class="collapsible-header waves-effect waves-teal">Contatos<i class="material-icons">arrow_drop_down</i></a>
                             <div class="collapsible-body">
                                 <ul>
                                     <li><a href="#Contatos">Agende uma consulta</a></li>
@@ -61,7 +61,7 @@
                         </li>
                         <div class="divider"></div>
                         <li>
-                            <a class="collapsible-header waves-effect">Sobre<i class="material-icons">arrow_drop_down</i></a>
+                            <a class="collapsible-header waves-effect waves-teal">Sobre<i class="material-icons">arrow_drop_down</i></a>
                             <div class="collapsible-body">
                                 <ul>
                                     <li><a href="#Sobre">Nossa História</a></li>

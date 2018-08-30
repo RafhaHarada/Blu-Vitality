@@ -8,11 +8,13 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // Or with jQuery
-
+var i = 0;
 $(document).ready(function () {
-    
+
+    $('.stepper').activateStepper();
+
     $('.slider').slider();
-    
+
     //Menu retratil
     $('.collapsible').collapsible();
 
@@ -24,9 +26,9 @@ $(document).ready(function () {
 
     //Mobile Nav Menu
     $('.sidenav').sidenav({
-        preventScrolling : true
+        preventScrolling: true
     });
-    
+
     $('.fixed-action-btn').floatingActionButton({
         direction: 'left',
         toolbarEnabled: true
@@ -56,8 +58,8 @@ $(document).ready(function () {
             weekdaysAbbrev: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'],
             today: 'Hoje',
             clear: 'Limpar',
-                    close: 'Fechar'
-            //The format to show on the `input` element
+            close: 'Fechar'
+                    //The format to show on the `input` element
         }
 
     });
@@ -70,34 +72,25 @@ $(document).ready(function () {
         coverTrigger: false
     });
 
-    var tab = $('.tabs').tabs({
+    $('.tabs').tabs({
         swipeable: true,
         onShow: true
     });
-    
-    for (var i = 1; i <= 12; i++) { 
-        $("#botao-servicos-"+i).on("click", function () {
-            changeTab("Servicos"+i);
-        });
-    }
-    
-    for (var i = 1; i <= 6; i++) { 
-        $("#botao-exames-"+i).on("click", function () {
-            changeTab("Exames"+i);
-        });
-    }
-    
-    for (var i = 1; i <= 4; i++) { 
-        $("#botao-contatos-"+i).on("click", function () {
-            changeTab("Contatos"+i);
-        });
-    }
-    
-    for (var i = 1; i <= 3; i++) { 
-        $("#botao-sobre-"+i).on("click", function () {
-            changeTab("Sobre"+i);
-        });
-    }
+
+    $(".botao-servicos").on("click", function () {
+        changeTab("Servicos" + $(this).data("id"));
+    });
+    $(".botao-exames").on("click", function () {
+        changeTab("Exames" + $(this).data("id"));
+    });
+
+    $(".botao-contatos").on("click", function () {
+        changeTab("Contatos" + $(this).data("id"));
+    });
+
+    $(".botao-sobre").on("click", function () {
+        changeTab("Sobre" + $(this).data("id"));
+    });
 
     function changeTab(id) {
         var instance = M.Tabs.getInstance($('.tabs'));
