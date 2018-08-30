@@ -11,76 +11,113 @@
         <li class="tab"><a href="#Sobre1" class="active teal-text">Paciente</a></li>
         <li class="tab"><a href="#Sobre2" class="teal-text">Acompanhante</a></li>
         <li class="tab"><a href="#Sobre3" class="teal-text">Observações</a></li>
-        <li class="tab"><a href="#Sobre4" class="teal-text">Consultas</a></li>
+        <li class="tab"><a href="#Sobre4" class="teal-text">Consultas Anteriores</a></li>
+        <li class="tab"><a href="#Sobre5" class="teal-text">Exames Anteriores</a></li>
+        <li class="tab"><a href="#Sobre6" class="teal-text">Agendar Consultas/Exames</a></li>
     </ul>
-    <div id="Sobre1" class="col s12 blue">
+    <div id="Sobre1" class="col s12">
 
-        <!--div class="row">
-            <div class="collection">
-                <div class="col s6 left">
-                    <div class="collection-item col s12">
-                        <div class="col s3">
-                            <div class="teal-text">Nome</div>
-                        </div>
-                        <div class="col s9">
-                            <div>Nattana</div>
-                        </div>
-                    </div>
-                    <div class="collection-item">CPF:123.456.789-10</div>
-                    <div class="collection-item">RG:12.346-567</div>
-                    <div class="collection-item">Endereço:Rua das flores,345,Jardim</div>
-                    <div class="collection-item">Cidade:Nova Jesse</div>
-                    <div class="collection-item">Estado:NY</div>
-                </div>
-            </div-->
+        <ul class="collection col s6">
+            <li class="collection-item avatar teal lighten-4">
+                <img src="" alt="" class="circle red">
+                <span class="nome">Nome:</span>
+                <span>First Line</span>
+                <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
+            </li>
+            <li class="collection-item teal lighten-5">
+                <span class="data-nascimento">Data de nascimento:</span>
+                <span>First Line</span>
+                <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
 
-        <ul class="collection">
-    <li class="collection-item avatar">
-      <img src="images/yuna.jpg" alt="" class="circle">
-      <span class="Nome">Nome</span>
-      <p>First Line <br>
-         Second Line
-      </p>
-      <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-    </li>
-    <li class="collection-item avatar">
-      <i class="material-icons circle">folder</i>
-      <span class="Nome">Nome</span>
-      <p>First Line <br>
-         Second Line
-      </p>
-      <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-    </li>
-    <li class="collection-item avatar">
-      <i class="material-icons circle green">insert_chart</i>
-      <span class="title">Title</span>
-      <p>First Line <br>
-         Second Line
-      </p>
-      <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-    </li>
-    <li class="collection-item avatar">
-      <i class="material-icons circle red">play_arrow</i>
-      <span class="title">Title</span>
-      <p>First Line <br>
-         Second Line
-      </p>
-      <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-    </li>
-  </ul>
+            </li>
+            <li class="collection-item teal lighten-4">
+                <span class="cpf">CPF:</span>
+                <span>First Line</span>
+                <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
+
+            </li>
+            <li class="collection-item teal lighten-5">
+                <span class="rg">RG:</span>
+                <span>First Line</span>
+                <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
+
+            </li>
+            <li class="collection-item teal lighten-4">
+                <span class="naturalidade">Naturalidade:</span>
+                <span>First Line</span>
+                <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
+
+            </li>
+            <li class="collection-item teal lighten-5">
+                <span class="endereco">Endereço:</span>
+                <span>First Line</span>
+                <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
+            </li>
+            <li class="collection-item teal lighten-4">
+                <span class="cidade">Cidade:</span>
+                <span>First Line</span>
+                <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
+            </li>
+        </ul>
+        <ul class="collection col s6">
+            <li class="collection-item teal lighten-4">
+                <span class="uf">UF:</span>
+                <span>First Line</span>
+                <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
+            </li>
+            <li class="collection-item teal lighten-5">
+                <span class="telefone">telefone:</span>
+                <span>First Line</span>
+                <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
+
+            </li>
+            <li class="collection-item teal lighten-4">
+                <span class="email">Email:</span>
+                <span>First Line</span>
+                <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
+
+            </li>
+            <li class="collection-item teal lighten-5">
+                <span class="">RG:</span>
+                <span>First Line</span>
+                <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
+
+            </li>
+            <li class="collection-item teal lighten-4">
+                <span class="telefone">Telefone:</span>
+                <span>First Line</span>
+                <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
+
+            </li>
+            <li class="collection-item teal lighten-5">
+                <span class="email">Email:</span>
+                <span>First Line</span>
+                <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
+            </li>
+            <li class="collection-item teal lighten-4">
+                <span class="endereco">Endereço:</span>
+                <span>First Line</span>
+                <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
+            </li>
+            <li class="collection-item teal lighten-5">
+                <span class="convenio">Covenio:</span>
+                <span>First Line</span>
+                <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
+            </li>
+        </ul>
 
 
-        <div class="col s12 right">
-            <a class="btn-floating btn-large cyan pulse right"><i class="material-icons">edit</i></a>
+        <div class="col s1 right">
+            <a class="btn-floating btn cyan pulse right margin-botao"><i class="material-icons">edit</i></a>
         </div>
     </div>
 </div>
-<div id="Sobre2" class="col s12 container red">
+<div id="Sobre2" class="col s12 container ">
 
     <nav>
         <div class="nav-wrapper">
             <form>
-                <div class="input-field">
+                <div class="input-field teal lighten-4">
                     <input id="search" type="search" required>
                     <label class="label-icon" for="search"><i class="material-icons">search</i></label>
                     <i class="material-icons">close</i>
@@ -91,14 +128,92 @@
 
 
 </div>
-<div id="Sobre3" class="col s12 container green">
-
+<div id="Sobre3" class="col s12 container white">
+    <ul class="collection teal-text teatl lighten-4">
+        <ul class="collection with-header">
+            <li class="collection-header"><h4>Observações:</h4></li>
+            <li class="collection-item"></li>
+            <li class="collection-item"></li>
+            <li class="collection-item"></li>
+            <li class="collection-item"></li>
+        </ul>
 
 </div>
-<div id="Sobre4" class="col s12 container green">
+<div id="Sobre4" class="col s12 container white">
 
+    <table class="striped teal lighten-4">
+        <thead>
+            <tr>
+                <th>Especialidade</th>
+                <th>Médico</th>
+                <th>Data</th>
+                <th>Hora</th>
+                <th>Sala</th>
+            </tr>
+        </thead>
 
-</div>
+        <tbody>
+            <tr>
+                <td>Cardiologico</td>
+                <td>Eclair</td>
+                <td>30/08/2018</td>
+                <td>10:00</td>
+                <td>12</td>
+            </tr>
+            <tr>
+                <td>Alan</td>
+                <td>Jellybean</td>
+                <td>$3.76</td>
+                <td>$3.76</td>
+                <td>$3.76</td>
+            </tr>
+            <tr>
+                <td>Jonathan</td>
+                <td>Lollipop</td>
+                <td>Lollipop</td>
+                <td>$7.00</td>
+                <td>$7.00</td>
+            </tr>
+            <tr>
+                <td>Jonathan</td>
+                <td>Lollipop</td>
+                <td>$7.00</td>
+                <td>$7.00</td>
+                <td>$7.00</td>
+            </tr>
+        <td>Jonathan</td>
+        <td>Lollipop</td>
+        <td>$7.00</td>
+        <td>$7.00</td>
+        <td>$7.00</td>
+        </tbody>
+    </table>
+
+    <div id="Sobre5" class="col s12 container white">
+        
+      
+    
+    <div id="Sobre6" class="col s12 container white">
+        
+       <div class="card-panel teal lighten-4">
+    <span class="teal-text teatl lighten-4 ">Você deseja agendar*</span>
+  </div>
+      
+        <p>
+      <label>
+        <input class="with-gap" name="group1" type="radio"  />
+        <span class="teal-text">Exame</span>
+      </label>
+    </p>
+    
+    <p>
+      <label>
+        <input class="with-gap" name="group1" type="radio"  />
+        <span class="teal-text">Consulta</span>
+      </label>
+    </p>
+    
+    </div>
 </div>
 
 

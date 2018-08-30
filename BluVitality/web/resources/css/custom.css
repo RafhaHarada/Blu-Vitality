@@ -78,5 +78,10 @@ nav a.sidenav-trigger{
     margin: 0;    
 }
 
+.collection{
+    border: none;
+}
 
-
+.margin-botao{
+    margin-top: 350px;
+}
