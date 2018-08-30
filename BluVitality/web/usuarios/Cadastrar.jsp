@@ -53,7 +53,7 @@
     </div>
 </div>
 <!--Conteúdo-->
-<form action="/BluVitality/doGetForm1" method="get">
+<form action="/doGetForm1" method="get">
     <ul class="stepper linear">
         <li class="step active">
             <div class="step-title waves-effect">E-mail</div>

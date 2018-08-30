@@ -23,8 +23,8 @@ public class PageRuler {
 "        <!--Import Google Icon Font-->" +
 "        <link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>" +
 "" +
-"        <link rel='stylesheet' type='text/css' href='/BluVitality/resources/css/myCss.css'>" +
-"        <link rel='stylesheet' type='text/css' href='/BluVitality/resources/css/materialize.min.css'>" +
+"        <link rel='stylesheet' type='text/css' href='/resources/css/myCss.css'>" +
+"        <link rel='stylesheet' type='text/css' href='/resources/css/materialize.min.css'>" +
 "    </head>" +
 "    <body>" +
 "        <nav class='nav-extended light-green lighten-2'>" +

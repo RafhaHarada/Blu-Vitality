@@ -13,8 +13,8 @@
         <!--Import Google Icon Font-->
         <link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>
 
-        <link rel='stylesheet' type='text/css' href='/BluVitality/resources/css/materialize.min.css'>
-        <link rel='stylesheet' type='text/css' href='/BluVitality/resources/css/custom.css'>
+        <link rel='stylesheet' type='text/css' href='/resources/css/materialize.min.css'>
+        <link rel='stylesheet' type='text/css' href='/resources/css/custom.css'>
     </head>
     <body>
         <header id="header" class="page-topbar">
@@ -37,9 +37,9 @@
                 <ul id="slide-out" class="sidenav">
                     <li><div class="user-view">
                             <div class="background">
-                                <img src="/BluVitality/resources/images/bg1.gif">
+                                <img src="/resources/images/bg1.gif">
                             </div>
-                            <a href="#user"><img class="circle" src="/BluVitality/resources/images/logo.gif"</a>
+                            <a href="#user"><img class="circle" src="/resources/images/logo.gif"</a>
                             <a href="#name"><span class="white-text name">Alguem</span></a>
                             <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
                         </div><li><a href="#!">Perfil</a></li>

@@ -37,10 +37,10 @@
 <<<<<<< HEAD
 <!--   JavaScript Setup  -->
 
-<script type="text/javascript" src="/BluVitality/resources/js/jquery.min.js"></script>
-<script type="text/javascript" src="/BluVitality/resources/js/materialize.min.js"></script>
+<script type="text/javascript" src="/resources/js/jquery.min.js"></script>
+<script type="text/javascript" src="/resources/js/materialize.min.js"></script>
 
-<script type="text/javascript" src="/BluVitality/resources/js/custom.js"></script>
+<script type="text/javascript" src="/resources/js/custom.js"></script>
 <script>  $(document).ready(function () {
         $('.modal').modal();
     });

@@ -23,7 +23,7 @@
 //        //                new NomeDAO.atividade(nome);
 //        boolean mudanca = true;
 //        if(mudanca){
-//            resp.sendRedirect("/BluVitality/'Anterior a esta pagina'");
+//            resp.sendRedirect("/'Anterior a esta pagina'");
 //        }
 //        else{
 //            System.out.println("Erro");
