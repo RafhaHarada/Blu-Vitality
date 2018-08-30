@@ -14,7 +14,7 @@
 <%
     int id_usuario = 0/*Integer.parseInt(request.getParameter("id"))*/;
     /*List<FuncionariosBean> funcionarios = new FuncionariosDAO().obterTodos();*/
-    String cargoDoFuncionario = "Administração";
+    String cargoDoFuncionario = "Limpeza";
     /*for (int i = 0; i < 10; i++) {
      if (id_usuario == funcionarios.get(i).getId_usuario()) {
      int id_cargo = funcionarios.get(i).getId_cargo();
@@ -37,7 +37,7 @@
 <li class="no-padding">
     <ul class="collapsible collapsible-accordion">
         <li>
-            <a class="collapsible-header waves-effect">Hospital<i class="material-icons">arrow_drop_down</i></a>
+            <a class="collapsible-header waves-effect waves-teal">Hospital<i class="material-icons">arrow_drop_down</i></a>
             <div class="collapsible-body">
                 <ul>
                     <li><a href="#!">Configurações local</a></li>
@@ -49,7 +49,7 @@
         </li>
         <div class="divider"></div>
         <li>
-            <a class="collapsible-header waves-effect">Pacientes<i class="material-icons">arrow_drop_down</i></a>
+            <a class="collapsible-header waves-effect waves-teal">Pacientes<i class="material-icons">arrow_drop_down</i></a>
             <div class="collapsible-body">
                 <ul>
                     <li><a href="#!">Perfil</a></li>
@@ -61,7 +61,7 @@
         </li>
         <div class="divider"></div>
         <li>
-            <a class="collapsible-header waves-effect">Pendencias<i class="material-icons">arrow_drop_down</i></a>
+            <a class="collapsible-header waves-effect waves-teal">Pendencias<i class="material-icons">arrow_drop_down</i></a>
             <div class="collapsible-body">
                 <ul>
                     <li><a href="#!">Adicionar</a></li>
@@ -72,7 +72,7 @@
         </li>
         <div class="divider"></div>
         <li>
-            <a class="collapsible-header waves-effect">Estoque<i class="material-icons">arrow_drop_down</i></a>
+            <a class="collapsible-header waves-effect waves-teal">Estoque<i class="material-icons">arrow_drop_down</i></a>
             <div class="collapsible-body">
                 <ul>
                     <li><a href="#!" class="waves-effect">Medicamentos</a></li>
@@ -83,90 +83,90 @@
             </div>
         </li>
         <div class="divider"></div>
-<%
-} else if (cargoDoFuncionario.equals("Médico")) {
-%>
-<li>
-    <div class="user-view">
-        <div class="background">
-            <img src="../resources/images/bg1.gif">
-        </div>
-        <a href="#user"><img class="circle" src="../resources/images/cat6.gif"></a>
-        <a href="#name"><span class="white-text name">Médico</span></a>
-        <a href="#email"><span class="white-text email">medico@medico.com</span></a>
-    </div>
-</li>
-<li>
-    <a href='#'>Perfil</a>
-</li>
-<li>
-    <a href='#'>Pendências</a>
-</li>
-<li>
-    <a href='#'>Pacientes</a>
-</li>
+        <%
+        } else if (cargoDoFuncionario.equals("Médico")) {
+        %>
+        <li>
+            <div class="user-view">
+                <div class="background">
+                    <img src="../resources/images/bg1.gif">
+                </div>
+                <a href="#user"><img class="circle" src="../resources/images/cat6.gif"></a>
+                <a href="#name"><span class="white-text name">Médico</span></a>
+                <a href="#email"><span class="white-text email">medico@medico.com</span></a>
+            </div>
+        </li>
+        <li>
+            <a href='#'>Perfil</a>
+        </li>
+        <li>
+            <a href='#'>Pendências</a>
+        </li>
+        <li>
+            <a href='#'>Pacientes</a>
+        </li>
+        <li>
+            <ul class="collapsible collapsible-accordion">
+                <%
+                } else if (cargoDoFuncionario.equals("Recepção")) {
+                %>
+                <li>
+                    <div class="user-view">
+                        <div class="background">
+                            <img src="../resources/images/bg1.gif">
+                        </div>
+                        <a href="#user"><img class="circle" src="../resources/images/cat6.gif"></a>
+                        <a href="#name"><span class="white-text name">Recepção</span></a>
+                        <a href="#email"><span class="white-text email">recepcao@recepcao.com</span></a>
+                    </div>
+                </li>
+                <li>
+                    <a href='#'>Perfil</a>
+                </li>
+                <li>
+                    <a href='#'>Pendências</a>
+                </li>
+                <li>
+                    <a href='#'>Pacientes</a>
+                </li>
                 <li>
                     <ul class="collapsible collapsible-accordion">
-<%
-} else if (cargoDoFuncionario.equals("Recepção")) {
-%>
-<li>
-    <div class="user-view">
-        <div class="background">
-            <img src="../resources/images/bg1.gif">
-        </div>
-        <a href="#user"><img class="circle" src="../resources/images/cat6.gif"></a>
-        <a href="#name"><span class="white-text name">Recepção</span></a>
-        <a href="#email"><span class="white-text email">recepcao@recepcao.com</span></a>
-    </div>
-</li>
-<li>
-    <a href='#'>Perfil</a>
-</li>
-<li>
-    <a href='#'>Pendências</a>
-</li>
-<li>
-    <a href='#'>Pacientes</a>
-</li>
-                <li>
-                    <ul class="collapsible collapsible-accordion">
-<%
-} else if (cargoDoFuncionario.equals("Limpeza")) {
-%>
-<li>
-    <div class="user-view">
-        <div class="background">
-            <img src="../resources/images/bg1.gif">
-        </div>
-        <a href="#user"><img class="circle" src="../resources/images/cat6.gif"></a>
-        <a href="#name"><span class="white-text name">Limpeza</span></a>
-        <a href="#email"><span class="white-text email">limpeza@limpeza.com</span></a>
-    </div>
-</li>
-<li>
-    <a href='#'>Perfil</a>
-</li>
-<li>
-    <a href='#'>Pendências</a>
-</li>
-                <li>
-                    <ul class="collapsible collapsible-accordion">
-<%
-} else {
-%>
-<li>
-    <div class="user-view">
-        <div class="background">
-            <img src="../resources/images/bg1.gif">
-        </div>
-        <a href="#user"><img class="circle" src="../resources/images/cat6.gif"></a>
-        <a href="#signin"><span class="white-text name">Entrar</span></a>
-        <a href="#signup"><span class="white-text email">Cadastrar</span></a>
-    </div>
-</li>
-                <li>
-                    <ul class="collapsible collapsible-accordion">
-<%
-    }
-%>
+                        <%
+                        } else if (cargoDoFuncionario.equals("Limpeza")) {
+                        %>
+                        <li>
+                            <div class="user-view">
+                                <div class="background">
+                                    <img src="../resources/images/bg1.gif">
+                                </div>
+                                <a href="#user"><img class="circle" src="../resources/images/cat6.gif"></a>
+                                <a href="#name"><span class="white-text name">Limpeza</span></a>
+                                <a href="#email"><span class="white-text email">limpeza@limpeza.com</span></a>
+                            </div>
+                        </li>
+                        <li>
+                            <a href='#'>Perfil</a>
+                        </li>
+                        <li>
+                            <a href='#'>Pendências</a>
+                        </li>
+                        <li>
+                            <ul class="collapsible collapsible-accordion">
+                                <%
+                                } else {
+                                %>
+                                <li>
+                                    <div class="user-view">
+                                        <div class="background">
+                                            <img src="../resources/images/bg1.gif">
+                                        </div>
+                                        <a href="#user"><img class="circle" src="../resources/images/cat6.gif"></a>
+                                        <a href="#signin"><span class="white-text name">Entrar</span></a>
+                                        <a href="#signup"><span class="white-text email">Cadastrar</span></a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <ul class="collapsible collapsible-accordion">
+                                        <%
+                                            }
+                                        %>
