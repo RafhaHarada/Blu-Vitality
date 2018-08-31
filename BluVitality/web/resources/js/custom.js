@@ -3,38 +3,35 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-document.addEventListener('DOMContentLoaded', function () {
-    var elems = document.querySelectorAll('.parallax');
-});
 
 // Or with jQuery
-var i = 0;
-$(document).ready(function () {
 
-    //$('.stepper').activateStepper();
+var jQuery_2_1_1 = $.noConflict(true);
 
-    $('.slider').slider();
+jQuery_2_1_1(document).ready(function () {
+
+    jQuery_2_1_1('.slider').slider();
 
     //Menu retratil
-    $('.collapsible').collapsible();
+    jQuery_2_1_1('.collapsible').collapsible();
 
     //modal
-    $('.modal').modal();
+    jQuery_2_1_1('.modal').modal();
 
     //Efeito parallax
-    $('.parallax').parallax();
+    jQuery_2_1_1('.parallax').parallax();
 
     //Mobile Nav Menu
-    $('.sidenav').sidenav({
+    jQuery_2_1_1('.sidenav').sidenav({
         preventScrolling: true
     });
 
-    $('.fixed-action-btn').floatingActionButton({
+    jQuery_2_1_1('.fixed-action-btn').floatingActionButton({
         direction: 'left',
         toolbarEnabled: true
     });
 
-    $('.datepicker').datepicker({
+    jQuery_2_1_1('.datepicker').datepicker({
         format: 'dd/mm/yyyy',
         i18n: {
             selectMonths: true, //Creates a dropdown to control month
@@ -64,37 +61,63 @@ $(document).ready(function () {
 
     });
 
-    $('.scrollspy').scrollSpy();
+    jQuery_2_1_1('.scrollspy').scrollSpy();
 
-    $('.dropdown-trigger').dropdown({
+    jQuery_2_1_1('.dropdown-trigger').dropdown({
         hover: true,
         constrainWidth: false,
         coverTrigger: false
     });
 
-    $('.tabs').tabs({
+    jQuery_2_1_1('.tabs').tabs({
         swipeable: true,
         onShow: true
     });
 
-    $(".botao-servicos").on("click", function () {
-        changeTab("Servicos" + $(this).data("id"));
+    jQuery_2_1_1(".botao-servicos").on("click", function () {
+        changeTab("Servicos" + jQuery_2_1_1(this).data("id"));
     });
-    $(".botao-exames").on("click", function () {
-        changeTab("Exames" + $(this).data("id"));
-    });
-
-    $(".botao-contatos").on("click", function () {
-        changeTab("Contatos" + $(this).data("id"));
+    jQuery_2_1_1(".botao-exames").on("click", function () {
+        changeTab("Exames" + jQuery_2_1_1(this).data("id"));
     });
 
-    $(".botao-sobre").on("click", function () {
-        changeTab("Sobre" + $(this).data("id"));
+    jQuery_2_1_1(".botao-contatos").on("click", function () {
+        changeTab("Contatos" + jQuery_2_1_1(this).data("id"));
+    });
+
+    jQuery_2_1_1(".botao-sobre").on("click", function () {
+        changeTab("Sobre" + jQuery_2_1_1(this).data("id"));
     });
 
     function changeTab(id) {
-        var instance = M.Tabs.getInstance($('.tabs'));
+        var instance = M.Tabs.getInstance(jQuery_2_1_1('.tabs'));
         instance.select(id);
         instance.updateTabIndicator();
     }
+
 });
+var apresentacao = 0;
+function onSignIn(googleUser) {
+    var profile = googleUser.getBasicProfile();
+    console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+    console.log('Name: ' + profile.getName());
+    console.log('Image URL: ' + profile.getImageUrl());
+    console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+    var userId = profile.getId();
+    var userName = profile.getName();
+    var userEmail = profile.getEmail();
+    var userPicture = profile.getImageUrl();
+    var userPicture = profile.getImageUrl();
+    document.getElementById('user-photo').src = userPicture;
+    document.getElementById('user-name').innerText = userName;
+    document.getElementById('user-email').innerText = userEmail;
+
+    // Recebendo o TOKEN que você usará nas demais requisições à API:
+    var LoR = response.getAuthResponse().id_token;
+    console.log("~ le Tolkien: " + LoR);
+}
+function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+    });
+  }

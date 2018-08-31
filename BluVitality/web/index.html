@@ -5,6 +5,8 @@
         <title>Blu Vitality</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="google-signin-scope" content="profile email">
+        <meta name="google-signin-client_id" content="377062664693-qt543mqqgviu416aaqij0sbk642k5tnn.apps.googleusercontent.com">
 
         <!--Import Google Icon Font-->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -86,9 +88,9 @@
                             <img src="resources/images/slider1.jpg">
                         </div>
 
-                        <a href="#Entrar" class="modal-trigger"><img class="circle" alt="" src="resources/images/Gameboy_Nyan_Cat.gif"></a>
-                        <a href="#Entrar" class="modal-trigger"><span class="white-text name">Entrar</span></a>
-                        <a href="usuarios/Cadastrar.jsp"><span class="white-text email">Cadastrar</span></a>
+                        <a href="#Entrar" class="modal-trigger"><img id="user-photo" class="circle" alt="" src="resources/images/Gameboy_Nyan_Cat.gif"></a>
+                        <a href="#Entrar" class="modal-trigger"><span id="user-name" class="white-text name">Entrar</span></a>
+                        <a href="usuarios/cadastro"><span id="user-email" class="white-text email">Cadastrar</span></a>
                     </div>
                 </li>
                 <li>
@@ -188,9 +190,7 @@
                     <div class="row">
                         <form class="col s12">
                             <div class="row">
-                                <div class="col s12 m5 btn white left">
-                                    <a href="#" class="red-text">Login com Google+</a>
-                                </div>
+                                <div class="g-signin2 modal-close" data-onsuccess="onSignIn"></div>
                                 <div class="col s12 m5 btn white right">
                                     <a href="#" class="blue-text">Login com Facebook</a>
                                 </div>
@@ -391,7 +391,8 @@
 
 
         <!--   JavaScript Setup  -->
-        <script type="text/javascript" src="resources/js/jquery.min.js"></script>
+        <script type="text/javascript" src="resources/js/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="resources/js/google-platform.js"></script>
         <script type="text/javascript" src="resources/js/materialize.min.js"></script>
         <script type="text/javascript" src="resources/js/custom.js"></script>
     </body>

@@ -14,6 +14,8 @@
         <title>Blu Vitality</title>
         <meta charset='UTF-8'>
         <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+        <meta name="google-signin-scope" content="profile email">
+        <meta name="google-signin-client_id" content="377062664693-qt543mqqgviu416aaqij0sbk642k5tnn.apps.googleusercontent.com">
 
         <!--Import Google Icon Font-->
         <link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>
@@ -148,30 +150,4 @@
                     </ul>
                 </li>
             </ul>
-
-            <div class="slider">
-                <ul class="slides">
-                    <li>
-                        <img src="../resources/images/slider1.jpg" alt=''> <!-- random image -->
-                        <div class="caption left-align black-text">
-                            <h3>Blu Vitality</h3>
-                            <h5>Vital para você, vital para nós.</h5>
-                        </div>
-                    </li>
-                    <li>
-                        <img src="../resources/images/slider2.png" alt=''> <!-- random image -->
-                        <div class="caption left-align black-text">
-                            <h3>Alta Tecnologia e Gestão</h3>
-                            <h5>Tenha mais mobilidade e eficiência.</h5>
-                        </div>
-                    </li>
-                    <li>
-                        <img src="../resources/images/slider3.jpg" alt=''> <!-- random image -->
-                        <div class="caption left-align black-text">
-                            <h3>Visite Nosso Hospital</h3>
-                            <h5>Estruturado,organizado e preparado!</h5>
-                        </div>
-                    </li>
-                </ul>
-            </div>
         </header>
