@@ -85,3 +85,7 @@ nav a.sidenav-trigger{
 .margin-botao{
     margin-top: 350px;
 }
+
+.scrollBarOnDiv{
+    overflow-y: scroll;
+}

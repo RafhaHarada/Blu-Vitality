@@ -55,7 +55,7 @@ jQuery_2_1_1(document).ready(function () {
             weekdaysAbbrev: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'],
             today: 'Hoje',
             clear: 'Limpar',
-            close: 'Fechar'
+                    close: 'Fechar'
                     //The format to show on the `input` element
         }
 
@@ -95,6 +95,17 @@ jQuery_2_1_1(document).ready(function () {
         instance.updateTabIndicator();
     }
 
+    jQuery_2_1_1(".algumaCoisa").hide();
+    jQuery_2_1_1(".algumaCoisa2").hide();
+    
+    jQuery_2_1_1(".exameRadio").on("click", function () {
+        jQuery_2_1_1(".algumaCoisa").show();
+        jQuery_2_1_1(".algumaCoisa2").hide();
+    });
+    jQuery_2_1_1(".consultaRadio").on("click", function () {
+        jQuery_2_1_1(".algumaCoisa2").show();
+        jQuery_2_1_1(".algumaCoisa").hide();
+    });
 });
 var apresentacao = 0;
 function onSignIn(googleUser) {
@@ -120,4 +131,4 @@ function signOut() {
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(function () {
     });
-  }
+}

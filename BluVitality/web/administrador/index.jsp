@@ -13,38 +13,18 @@
 <%@page import="java.util.List"%>
 
 
-<jsp:include page="../model/header.jsp"/>
+<jsp:include page="../model/headerStart.jsp"/>
+<li><a class='dropdown-trigger' href='#' data-target='dropdownCadastro'>Opções</a>
+    <!-- Dropdown Structure -->
+    <ul id='dropdownCadastro' class='dropdown-content'>
+        <li><a href="#Entrar">Login</a></li>
+        <li><a href="../">Voltar</a></li>
+    </ul>
+</li>
+<%@include file="../model/headerEnd.jsp" %>
 <!--INICIO MAIN-->
 <main>
     <!--Slider-->
-
-    <div class="container">
-        <div class="slider">
-            <ul class="slides">
-                <li>
-                    <img src="/resources/images/slider1.jpg" alt=''> <!-- random image -->
-                    <div class="caption left-align black-text">
-                        <h3>Blu Vitality</h3>
-                        <h5>Vital para você, vital para nós.</h5>
-                    </div>
-                </li>
-                <li>
-                    <img src="/resources/images/slider2.png" alt=''> <!-- random image -->
-                    <div class="caption left-align black-text">
-                        <h3>Alta Tecnologia e Gestão</h3>
-                        <h5>Tenha mais mobilidade e eficiência.</h5>
-                    </div>
-                </li>
-                <li>
-                    <img src="/resources/images/slider3.jpg" alt=''> <!-- random image -->
-                    <div class="caption left-align black-text">
-                        <h3>Visite Nosso Hospital</h3>
-                        <h5>Estruturado,organizado e preparado!</h5>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
     <div class="wrapper">
         <!--Inicio section-->
         <div id="content">
@@ -226,12 +206,4 @@
 
 </body>
 
-<!--   JavaScript Setup  -->
-<link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>
-
-<link rel='stylesheet' type='text/css' href='../resources/css/materialize.min.css'>
-<link rel='stylesheet' type='text/css' href='../resources/css/custom.css'>
-<script type='text/javascript' src='../resources/js/jquery.min.js'></script>
-<script type='text/javascript' src='../resources/js/materialize.min.js'></script>
-<script type='text/javascript' src='../resources/js/custom.js'></script>
-</html>
+<jsp:include page="../model/footer.jsp"/>
