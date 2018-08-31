@@ -168,11 +168,12 @@
                                         <% for (FuncionariosBean funcionario : funcionarios) {%>
                                         <tr>
                                             <td><%=funcionario.getUsuario().getNome()%></td>
-                                            <td><%=funcionario.getId_cargo()%></td>
+                                            <td><%=funcionario.getCargo().getNome() %></td>
                                             <td><a href=""><i class="material-icons">edit</i>Editar</a><a href=""><i class="material-icons">delete</i>Deletar</a></td>
                                         </tr>
                                         <% }%>
                                     </tbody>
+                                    
                                     <tfoot>
                                         <tr>
                                             <th>Paciente</th>
