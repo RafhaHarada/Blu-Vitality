@@ -53,50 +53,70 @@
     </div>
 </div>
 <!--Conteúdo-->
-<form action="/doGetForm1" method="get">
-    <ul class="stepper linear">
-        <li class="step active">
-            <div class="step-title waves-effect">E-mail</div>
-            <div class="step-content">
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input id="email" name="email" type="email" class="validate" required>
-                        <label for="first_name">Your e-mail</label>
-                    </div>
-                </div>
-                <div class="step-actions">
-                    <button class="waves-effect waves-dark btn next-step">CONTINUE</button>
-                </div>
+<div class="row"></div>
+<div class="container col s12">
+    <form action="/doGetForm1" method="get">
+        <div class="row">
+            <div class="input-field col s6">
+                <i class="material-icons prefix">account_circle</i>
+                <input id="icon_prefix" type="text" class="validate">
+                <label for="icon_prefix">Nome Completo</label>
             </div>
-        </li>
-        <li class="step">
-            <div class="step-title waves-effect">Passo 2</div>
-            <div class="step-content">
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input id="password" name="password" type="password" class="validate" required>
-                        <label for="password">Your password</label>
-                    </div>
-                </div>
-                <div class="step-actions">
-                    <button class="waves-effect waves-dark btn next-step">CONTINUE</button>
-                    <button class="waves-effect waves-dark btn-flat previous-step">BACK</button>
-                </div>
+            <div class="input-field col s6">
+                <i class="material-icons prefix">phone</i>
+                <input id="icon_telephone" type="tel" class="validate">
+                <label for="icon_telephone">Telephone</label>
             </div>
-        </li>
-        <li class="step">
-            <div class="step-title waves-effect">Fim!</div>
-            <div class="step-content">
-                Finish!
-                <div class="step-actions">
-                    <button class="waves-effect waves-dark btn" type="submit">SUBMIT</button>
-                </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <i class="material-icons prefix">account_circle</i>
+                <input id="icon_prefix" type="text" class="validate">
+                <label for="icon_prefix">First Name</label>
             </div>
-        </li>
-    </ul>
-</form>
-</ul>
-
-
+            <div class="input-field col s6">
+                <i class="material-icons prefix">phone</i>
+                <input id="icon_telephone" type="tel" class="validate">
+                <label for="icon_telephone">Telephone</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <i class="material-icons prefix">account_circle</i>
+                <input id="icon_prefix" type="text" class="validate">
+                <label for="icon_prefix">First Name</label>
+            </div>
+            <div class="input-field col s6">
+                <i class="material-icons prefix">phone</i>
+                <input id="icon_telephone" type="tel" class="validate">
+                <label for="icon_telephone">Telephone</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <i class="material-icons prefix">account_circle</i>
+                <input id="icon_prefix" type="text" class="validate">
+                <label for="icon_prefix">First Name</label>
+            </div>
+            <div class="input-field col s6">
+                <i class="material-icons prefix">phone</i>
+                <input id="icon_telephone" type="tel" class="validate">
+                <label for="icon_telephone">Telephone</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <i class="material-icons prefix">account_circle</i>
+                <input id="icon_prefix" type="text" class="validate">
+                <label for="icon_prefix">First Name</label>
+            </div>
+            <div class="input-field col s6">
+                <i class="material-icons prefix">phone</i>
+                <input id="icon_telephone" type="tel" class="validate">
+                <label for="icon_telephone">Telephone</label>
+            </div>
+        </div>
+    </form>
+</div>
 
 <jsp:include page="../model/footer.jsp"/>
