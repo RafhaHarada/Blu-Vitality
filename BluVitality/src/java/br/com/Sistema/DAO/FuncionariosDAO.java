@@ -1,5 +1,6 @@
 package br.com.Sistema.DAO;
 
+import br.com.Sistema.Bean.CargosBean;
 import br.com.Sistema.Bean.FuncionariosBean;
 import br.com.Sistema.Bean.UsuariosBean;
 import br.com.Sistema.Database.Conexao;
@@ -18,7 +19,7 @@ public class FuncionariosDAO {
     
     public List<FuncionariosBean> obterTodos(){
         List<FuncionariosBean> funcionarios = new ArrayList<>();
-        String sql = "SELECT * FROM funcionarios fn JOIN usuarios us ON us.id = fn.id_usuario";
+        String sql = "SELECT * FROM funcionarios fn JOIN cargos cr ON cr.id = fn.id_cargo JOIN usuarios us ON us.id = fn.id_usuario";
         try{
             Statement st = Conexao.abrirConexao().createStatement();
             st.execute(sql);
@@ -33,6 +34,37 @@ public class FuncionariosDAO {
                 UsuariosBean usuario = new UsuariosBean();
                 usuario.setNome(resultSet.getString("us.nome"));
                 funcionario.setUsuario(usuario);
+                
+                CargosBean cargo = new CargosBean();
+                cargo.setNome(resultSet.getString("cr.nome"));
+                funcionario.setCargo(cargo);
+                
+                funcionarios.add(funcionario);
+                
+            }
+        }catch(SQLException e){
+            e.printStackTrace();
+        }finally{
+            Conexao.fecharConexao();
+        }return funcionarios;
+    }
+    public List<FuncionariosBean> obterCargos(){
+        List<FuncionariosBean> funcionarios = new ArrayList<>();
+        String sql = "SELECT * FROM funcionarios fn JOIN cargos us ON us.id = fn.id_cargo";
+        try{
+            Statement st = Conexao.abrirConexao().createStatement();
+            st.execute(sql);
+            ResultSet resultSet = st.getResultSet();
+            
+            while(resultSet.next()){
+                FuncionariosBean funcionario = new FuncionariosBean();
+                funcionario.setId(resultSet.getInt("fn.id"));
+                funcionario.setId_cargo(resultSet.getInt("fn.id_cargo"));
+                funcionario.setId_usuario(resultSet.getInt("fn.id_usuario"));
+                
+                CargosBean cargo = new CargosBean();
+                cargo.setNome(resultSet.getString("us.nome"));
+                funcionario.setCargo(cargo);
                 
                 funcionarios.add(funcionario);
                 
