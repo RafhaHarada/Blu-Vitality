@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
 var i = 0;
 $(document).ready(function () {
 
-    $('.stepper').activateStepper();
+    //$('.stepper').activateStepper();
 
     $('.slider').slider();
 

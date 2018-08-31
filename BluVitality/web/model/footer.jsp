@@ -33,8 +33,6 @@
     </div>
 </footer>
 
-
-<<<<<<< HEAD
 <!--   JavaScript Setup  -->
 
 <script type="text/javascript" src="/resources/js/jquery.min.js"></script>
@@ -46,7 +44,6 @@
     });
 </script>
 </body>
-=======
         <!--   JavaScript Setup  -->
         <script type="text/javascript" src="../resources/js/jquery.min.js"></script>
         <script type="text/javascript" src="../resources/js/materialize.min.js"></script>
@@ -55,5 +52,4 @@
         <script type="text/javascript" src="../resources/js/jquery.validate.min.js"></script>
         <script type="text/javascript" src="../resources/js/custom.js"></script>
     </body>
->>>>>>> acf8fbbea011863aa33e19a6c32f53ef49d5e11d
 </html>
