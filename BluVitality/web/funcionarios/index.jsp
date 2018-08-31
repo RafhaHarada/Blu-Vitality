@@ -115,16 +115,6 @@
 </div>
 <div id="Sobre2" class="col s12 container ">
 
-    <nav>
-        <div class="nav-wrapper">
-            <form>
-                
-            </form>
-        </div>
-    
-        
-        
-         
         </div>
         <div id="Servicos2" class="container">
             <div class="row">
