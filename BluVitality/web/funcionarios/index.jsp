@@ -118,11 +118,7 @@
     <nav>
         <div class="nav-wrapper">
             <form>
-                <div class="input-field teal lighten-4">
-                    <input id="search" type="search" required>
-                    <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-                    <i class="material-icons">close</i>
-                </div>
+                
             </form>
         </div>
     
@@ -189,7 +185,7 @@
                 </tbody>
             </table>
         </div>
-        <div id="Servicos4" class="col s12 container">Test 4
+        <div id="Servicos4" class="col s12 container">
 
         </div>
     </div>
