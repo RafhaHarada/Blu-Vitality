@@ -21,87 +21,86 @@
             <li class="collection-item avatar teal lighten-4">
                 <img src="" alt="" class="circle red">
                 <span class="nome">Nome:</span>
-                <span>First Line</span>
-                <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
+                <span></span>
+                
             </li>
             <li class="collection-item teal lighten-5">
                 <span class="data-nascimento">Data de nascimento:</span>
-                <span>First Line</span>
-                <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
+                <span></span>
+                
 
             </li>
             <li class="collection-item teal lighten-4">
                 <span class="cpf">CPF:</span>
-                <span>First Line</span>
-                <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
+                <span></span>
+               
 
             </li>
             <li class="collection-item teal lighten-5">
                 <span class="rg">RG:</span>
-                <span>First Line</span>
-                <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
-
+                <span></span>
+               
             </li>
             <li class="collection-item teal lighten-4">
                 <span class="naturalidade">Naturalidade:</span>
-                <span>First Line</span>
-                <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
+                <span></span>
+                
 
             </li>
             <li class="collection-item teal lighten-5">
-                <span class="endereco">Endereço:</span>
-                <span>First Line</span>
-                <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
+                <span class="sexo">Sexo:</span>
+                <span></span>
+                
             </li>
             <li class="collection-item teal lighten-4">
-                <span class="cidade">Cidade:</span>
-                <span>First Line</span>
-                <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
+                <span class="sanguineo">Tipo Sanguíneo:</span>
+                <span></span>
+               
             </li>
         </ul>
         <ul class="collection col s6">
             <li class="collection-item teal lighten-4">
-                <span class="uf">UF:</span>
-                <span>First Line</span>
+                <span class="cidade">Cidade:</span>
+                <span> </span>
                 <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
             </li>
             <li class="collection-item teal lighten-5">
-                <span class="telefone">telefone:</span>
-                <span>First Line</span>
+                <span class="uf">UF:</span>
+                <span> </span>
                 <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
 
             </li>
             <li class="collection-item teal lighten-4">
-                <span class="email">Email:</span>
-                <span>First Line</span>
+                <span class="endereco">Endereço</span>
+                <span> </span>
                 <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
 
             </li>
             <li class="collection-item teal lighten-5">
-                <span class="">RG:</span>
-                <span>First Line</span>
+                <span class="email">Email:</span>
+                <span> </span>
                 <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
 
             </li>
             <li class="collection-item teal lighten-4">
                 <span class="telefone">Telefone:</span>
-                <span>First Line</span>
+                <span> </span>
                 <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
 
             </li>
             <li class="collection-item teal lighten-5">
-                <span class="email">Email:</span>
-                <span>First Line</span>
+                <span class="contato-emergencia">Contato de emergência:</span>
+                <span> </span>
                 <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
             </li>
             <li class="collection-item teal lighten-4">
-                <span class="endereco">Endereço:</span>
-                <span>First Line</span>
+                <span class="estado-civil">Estado Civil:</span>
+                <span> </span>
                 <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
             </li>
             <li class="collection-item teal lighten-5">
                 <span class="convenio">Covenio:</span>
-                <span>First Line</span>
+                <span> </span>
                 <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
             </li>
         </ul>
@@ -136,6 +135,12 @@
             <li class="collection-item"></li>
             <li class="collection-item"></li>
             <li class="collection-item"></li>
+            <li class="collection-item"></li>
+            <li class="collection-item"></li>
+            <p> 
+                <span> </span>
+             <a class="btn-floating pulse"><i class="material-icons">edit</i></a>
+
         </ul>
 
 </div>
@@ -188,10 +193,56 @@
         <td>$7.00</td>
         </tbody>
     </table>
+   </div>
 
     <div id="Sobre5" class="col s12 container white">
         
-      
+      <table class="striped teal lighten-4">
+        <thead>
+          <tr>
+              <th>Nome do exame</th>
+              <th>Dia da coleta</th>
+              <th>Dia recebido</th>
+              <th>Sala</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Alvin</td>
+            <td>Eclair</td>
+            <td>$0.87</td>
+            <td>$0.87</td>
+           
+          </tr>
+          <tr>
+            <td>Alan</td>
+            <td>Jellybean</td>
+            <td>$3.76</td>
+            <td>$3.76</td>
+           
+          </tr>
+          <tr>
+            <td>Jonathan</td>
+            <td>Lollipop</td>
+            <td>$7.00</td>
+            <td>$7.00</td>
+          </tr>
+          <tr>
+            <td>Jonathan</td>
+            <td>Lollipop</td>
+            <td>$7.00</td>
+            <td>$7.00</td>
+          </tr>
+          <tr>
+            <td>Jonathan</td>
+            <td>Lollipop</td>
+            <td>$7.00</td>
+            <td>$7.00</td>
+          </tr>
+        </tbody>
+      </table>
+            
     
     <div id="Sobre6" class="col s12 container white">
         
@@ -215,9 +266,5 @@
     
     </div>
 </div>
-
-
-
-
 
 <jsp:include page="../model/footer.jsp"/>
