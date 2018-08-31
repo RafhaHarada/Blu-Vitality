@@ -15,9 +15,9 @@ CREATE TABLE usuarios(
     telefone VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL,
     endereco VARCHAR(100) NOT NULL,
-	complemento VARCHAR(100) NOT NULL,
-	cidade VARCHAR(100) NOT NULL,
-	UF VARCHAR(2) NOT NULL,
+    complemento VARCHAR(100) NOT NULL,
+    cidade VARCHAR(100) NOT NULL,
+    UF VARCHAR(2) NOT NULL,
     naturalidade VARCHAR(100) NOT NULL,
     data_nascimento DATE NOT NULL,
     nome_fic VARCHAR(100) NOT NULL
