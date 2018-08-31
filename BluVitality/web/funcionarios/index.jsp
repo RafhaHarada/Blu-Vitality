@@ -3,7 +3,7 @@
     Created on : 26/08/2018, 17:47:02
     Author     : @Luana Patricia Duarte
     @Gustavo Rodrigues (gugaaroodrigues@gmail.com) 
-    @Rafhael Harada
+    @Rafhael
 
 --%>
 <jsp:include page="../model/header.jsp"/>
@@ -148,7 +148,7 @@
                 </div>
         </div>     
         <div id="Servicos3" class="col s12 container">
-            <table>
+            <table class="striped teal lighten-4">
                 <thead>
                     <tr>
                         <th>Cursos</th>
