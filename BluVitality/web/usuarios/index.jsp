@@ -4,7 +4,15 @@
     Author     : Nattana Matos
 --%>
 
-<jsp:include page="../model/header.jsp"/>
+<jsp:include page="../model/headerStart.jsp"/>
+<li><a class='dropdown-trigger' href='#' data-target='dropdownCadastro'>Opções</a>
+    <!-- Dropdown Structure -->
+    <ul id='dropdownCadastro' class='dropdown-content'>
+        <li><a href="#Entrar">Login</a></li>
+        <li><a href="../">Voltar</a></li>
+    </ul>
+</li>
+<%@include file="../model/headerEnd.jsp" %>
 
 <div class="row container">
     <ul class="tabs tabs-transparent">
@@ -22,40 +30,40 @@
                 <img src="" alt="" class="circle red">
                 <span class="nome">Nome:</span>
                 <span></span>
-                
+
             </li>
             <li class="collection-item teal lighten-5">
                 <span class="data-nascimento">Data de nascimento:</span>
                 <span></span>
-                
+
 
             </li>
             <li class="collection-item teal lighten-4">
                 <span class="cpf">CPF:</span>
                 <span></span>
-               
+
 
             </li>
             <li class="collection-item teal lighten-5">
                 <span class="rg">RG:</span>
                 <span></span>
-               
+
             </li>
             <li class="collection-item teal lighten-4">
                 <span class="naturalidade">Naturalidade:</span>
                 <span></span>
-                
+
 
             </li>
             <li class="collection-item teal lighten-5">
                 <span class="sexo">Sexo:</span>
                 <span></span>
-                
+
             </li>
             <li class="collection-item teal lighten-4">
                 <span class="sanguineo">Tipo Sanguíneo:</span>
                 <span></span>
-               
+
             </li>
         </ul>
         <ul class="collection col s6">
@@ -136,11 +144,10 @@
             <li class="collection-item"></li>
             <li class="collection-item"></li>
             <li class="collection-item"></li>
-            <li class="collection-item"></li>
             <p> 
-                <span> </span>
-             <a class="btn-floating pulse"><i class="material-icons">edit</i></a>
+            <ul class="col s1 right">
 
+            </ul>
         </ul>
 
 </div>
@@ -193,77 +200,82 @@
         <td>$7.00</td>
         </tbody>
     </table>
-   </div>
+</div>
 
-    <div id="Sobre5" class="col s12 container white">
-        
-      <table class="striped teal lighten-4">
+<div id="Sobre5" class="col s12 container white">
+
+    <table class="striped teal lighten-4">
         <thead>
-          <tr>
-              <th>Nome do exame</th>
-              <th>Dia da coleta</th>
-              <th>Dia recebido</th>
-              <th>Sala</th>
-          </tr>
+            <tr>
+                <th>Nome do exame</th>
+                <th>Dia da coleta</th>
+                <th>Dia recebido</th>
+                <th>Sala</th>
+            </tr>
         </thead>
 
         <tbody>
-          <tr>
-            <td>Alvin</td>
-            <td>Eclair</td>
-            <td>$0.87</td>
-            <td>$0.87</td>
-           
-          </tr>
-          <tr>
-            <td>Alan</td>
-            <td>Jellybean</td>
-            <td>$3.76</td>
-            <td>$3.76</td>
-           
-          </tr>
-          <tr>
-            <td>Jonathan</td>
-            <td>Lollipop</td>
-            <td>$7.00</td>
-            <td>$7.00</td>
-          </tr>
-          <tr>
-            <td>Jonathan</td>
-            <td>Lollipop</td>
-            <td>$7.00</td>
-            <td>$7.00</td>
-          </tr>
-          <tr>
-            <td>Jonathan</td>
-            <td>Lollipop</td>
-            <td>$7.00</td>
-            <td>$7.00</td>
-          </tr>
+            <tr>
+                <td>Alvin</td>
+                <td>Eclair</td>
+                <td>$0.87</td>
+                <td>$0.87</td>
+
+            </tr>
+            <tr>
+                <td>Alan</td>
+                <td>Jellybean</td>
+                <td>$3.76</td>
+                <td>$3.76</td>
+
+            </tr>
+            <tr>
+                <td>Jonathan</td>
+                <td>Lollipop</td>
+                <td>$7.00</td>
+                <td>$7.00</td>
+            </tr>
+            <tr>
+                <td>Jonathan</td>
+                <td>Lollipop</td>
+                <td>$7.00</td>
+                <td>$7.00</td>
+            </tr>
+            <tr>
+                <td>Jonathan</td>
+                <td>Lollipop</td>
+                <td>$7.00</td>
+                <td>$7.00</td>
+            </tr>
         </tbody>
-      </table>
-            
-    
-    <div id="Sobre6" class="col s12 container white">
-        
-       <div class="card-panel teal lighten-4">
-    <span class="teal-text teatl lighten-4 ">Você deseja agendar*</span>
-  </div>
-      
+    </table>
+
+
+    <div id="Sobre6" class="col s12 container white scrollBarOnDiv">
+
+        <div class="card-panel teal lighten-4">
+            <span class="teal-text teatl lighten-4 ">Você deseja agendar<span class="red-text">*</span></span>
+        </div>
+
         <p>
-      <label>
-        <input class="with-gap" name="group1" type="radio"  />
-        <span class="teal-text">Exame</span>
-      </label>
-    </p>
-    
-    <p>
-      <label>
-        <input class="with-gap" name="group1" type="radio"  />
-        <span class="teal-text">Consulta</span>
-      </label>
-    </p>
-    
+            <label>
+                <input class="with-gap exameRadio" name="group1" type="radio" />
+                <span class="teal-text">Exame</span>
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input class="with-gap consultaRadio" name="group1" type="radio" />
+                <span class="teal-text">Consulta</span>
+            </label>
+        </p>
+        <div class="algumaCoisa blue">
+            
+        </div>
+        <div class="algumaCoisa2 red">
+            
+        </div>
     </div>
 </div>
 
