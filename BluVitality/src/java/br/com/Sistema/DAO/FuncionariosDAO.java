@@ -1,6 +1,7 @@
 package br.com.Sistema.DAO;
 
 import br.com.Sistema.Bean.FuncionariosBean;
+import br.com.Sistema.Bean.UsuariosBean;
 import br.com.Sistema.Database.Conexao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -17,7 +18,7 @@ public class FuncionariosDAO {
     
     public List<FuncionariosBean> obterTodos(){
         List<FuncionariosBean> funcionarios = new ArrayList<>();
-        String sql = "SELECT id, id_usuario, id_cargo FROM funcionarios";
+        String sql = "SELECT * FROM funcionarios fn JOIN usuarios us ON us.id = fn.id_usuario";
         try{
             Statement st = Conexao.abrirConexao().createStatement();
             st.execute(sql);
@@ -25,9 +26,16 @@ public class FuncionariosDAO {
             
             while(resultSet.next()){
                 FuncionariosBean funcionario = new FuncionariosBean();
-                funcionario.setId(resultSet.getInt("id"));
-                funcionario.setId_cargo(resultSet.getInt("id_cargo"));
-                funcionario.setId_usuario(resultSet.getInt("id_usuario"));
+                funcionario.setId(resultSet.getInt("fn.id"));
+                funcionario.setId_cargo(resultSet.getInt("fn.id_cargo"));
+                funcionario.setId_usuario(resultSet.getInt("fn.id_usuario"));
+                
+                UsuariosBean usuario = new UsuariosBean();
+                usuario.setNome(resultSet.getString("us.nome"));
+                funcionario.setUsuario(usuario);
+                
+                funcionarios.add(funcionario);
+                
             }
         }catch(SQLException e){
             e.printStackTrace();

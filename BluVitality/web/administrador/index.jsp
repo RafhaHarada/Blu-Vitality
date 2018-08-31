@@ -4,8 +4,10 @@
     Author     :@Gustavo Rodrigues (gugaaroodrigues@gmail.com) Rafhael Harada
 
 --%>
+<%@page import="br.com.Sistema.DAO.UsuariosDAO"%>
 <!--%@include file="headeradm.jsp" %>-->
 <%@ page import="br.com.Sistema.Bean.FuncionariosBean" %>
+<%@ page import="br.com.Sistema.DAO.FuncionariosDAO" %>
 <%@ page import="br.com.Sistema.Bean.UsuariosBean" %>
 <%@ page import="br.com.Sistema.Bean.CargosBean" %>
 <%@page import="java.util.List"%>
@@ -85,6 +87,7 @@
                         <div class="move-up cyan darken-1">
                             <span class="chart-title white-text"><h5>Pacientes</h5></span>
                             <div class="chart-revenue cyan darken-2 white-text">
+                                <% List<UsuariosBean> usuarios  = new UsuariosDAO().obterTodos();%>
                                 <table class="responsive-table striped">
                                     <thead>
                                         <tr>
@@ -94,12 +97,10 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-
-                                        <% for (FuncionariosBean funcionario : (List<FuncionariosBean>) request.getAttribute("funcionarios")) {%>
+                                        <% for (UsuariosBean usuario : usuarios) {%>
                                         <tr>
-                                            <td><%=funcionario.getUsuario()%></td>
-                                            <td><%=funcionario.getId_cargo()%></td>
-                                            <td><a href=""><i class="material-icons">edit</i>Editar</a><a href=""><i class="material-icons">delete</i>Deletar</a></td>
+                                            <td><%=usuario.getNome()%></td>
+                                            <td><%=usuario.getCpf()%></td>
                                             <td><a href=""><i class="material-icons">edit</i>Editar</a><a href=""><i class="material-icons">delete</i>Deletar</a></td>
                                         </tr>
                                         <% } %>
@@ -154,6 +155,7 @@
                         <div class="move-up cyan darken-1">
                             <span class="chart-title white-text"><h5>Funcinarios</h5></span>
                             <div class="chart-revenue cyan darken-2 white-text">
+                                <% List<FuncionariosBean> funcionarios  = new FuncionariosDAO().obterTodos();%>
                                 <table class="responsive-table striped">
                                     <thead>
                                         <tr>
@@ -163,11 +165,10 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <% for (FuncionariosBean funcionario : (List<FuncionariosBean>) request.getAttribute("funcionarios")) {%>
+                                        <% for (FuncionariosBean funcionario : funcionarios) {%>
                                         <tr>
-                                            <td><%=funcionario.getUsuario()%></td>
-                                            <td><%=funcionario.getCargo()%></td>
-                                            <td><a href=""><i class="material-icons">edit</i>Editar</a><a href=""><i class="material-icons">delete</i>Deletar</a></td>
+                                            <td><%=funcionario.getUsuario().getNome()%></td>
+                                            <td><%=funcionario.getId_cargo()%></td>
                                             <td><a href=""><i class="material-icons">edit</i>Editar</a><a href=""><i class="material-icons">delete</i>Deletar</a></td>
                                         </tr>
                                         <% }%>

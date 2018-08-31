@@ -24,7 +24,7 @@
 
             </div>
             
-            <div id="hospital2" class="col s12 container">
+            <div id="hospitalConfig" class="col s12 container">
                 <div class="">
                     
                 </div>
