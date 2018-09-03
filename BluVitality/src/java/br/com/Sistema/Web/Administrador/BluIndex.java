@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Alunos
  */
-@WebServlet ("/administrador/index")
+@WebServlet ("/administrador")
 public class BluIndex extends HttpServlet{
 
     @Override

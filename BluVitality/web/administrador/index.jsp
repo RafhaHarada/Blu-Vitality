@@ -81,14 +81,14 @@
                                         <tr>
                                             <td><%=usuario.getNome()%></td>
                                             <td><%=usuario.getCpf()%></td>
-                                            <td><a href=""><i class="material-icons">edit</i>Editar</a><a href=""><i class="material-icons">delete</i>Deletar</a></td>
+                                            <td><a href=""><i class="material-icons">edit</i></a><a href=""><i class="material-icons">delete</i></a></td>
                                         </tr>
                                         <% } %>
                                     </tbody>
                                     <tfoot>
                                         <tr>
                                             <th>Paciente</th>
-                                            <th>idade</th>
+                                            <th>CPF</th>
                                             <th>Ação</th>
                                         </tr>
                                     </tfoot>
