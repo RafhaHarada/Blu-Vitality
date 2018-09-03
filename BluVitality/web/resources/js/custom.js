@@ -20,6 +20,11 @@ jQuery_2_1_1(document).ready(function () {
 
     //Efeito parallax
     jQuery_2_1_1('.parallax').parallax();
+    
+    jQuery_2_1_1('select').formSelect({
+        direction: 'left'
+      
+    });
 
     //Mobile Nav Menu
     jQuery_2_1_1('.sidenav').sidenav({
@@ -95,16 +100,16 @@ jQuery_2_1_1(document).ready(function () {
         instance.updateTabIndicator();
     }
 
-    jQuery_2_1_1(".algumaCoisa").hide();
-    jQuery_2_1_1(".algumaCoisa2").hide();
+    jQuery_2_1_1(".agendarE").hide();
+    jQuery_2_1_1(".agendarC").hide();
     
     jQuery_2_1_1(".exameRadio").on("click", function () {
-        jQuery_2_1_1(".algumaCoisa").show();
-        jQuery_2_1_1(".algumaCoisa2").hide();
+        jQuery_2_1_1(".agendarE").show();
+        jQuery_2_1_1(".agendarC").hide();
     });
     jQuery_2_1_1(".consultaRadio").on("click", function () {
-        jQuery_2_1_1(".algumaCoisa2").show();
-        jQuery_2_1_1(".algumaCoisa").hide();
+        jQuery_2_1_1(".agendarE").show();
+        jQuery_2_1_1(".agendarC").hide();
     });
 });
 var apresentacao = 0;

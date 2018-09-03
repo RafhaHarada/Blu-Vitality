@@ -270,11 +270,27 @@
                 <span class="teal-text">Consulta</span>
             </label>
         </p>
-        <div class="algumaCoisa blue">
+        <div class="agendarE teal lighten-4">
+             <label></label>
+  <select class="browser-default">
+    <option value="" disabled selected>Agendar Exame</option>
+    <option value="1">Option 1</option>
+    <option value="2">Option 2</option>
+    <option value="3">Option 3</option>
+  </select>
             
+            </div>
         </div>
-        <div class="algumaCoisa2 red">
-            
+        <div class="agendarC lighten-4">
+           
+            <select class="browser-default">
+                <option value="" disabled selected>Agenda Consulta</option>
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+            </select>
+
+
         </div>
     </div>
 </div>
