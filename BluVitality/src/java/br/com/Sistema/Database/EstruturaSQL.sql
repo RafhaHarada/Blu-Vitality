@@ -73,3 +73,17 @@ INSERT INTO servicos (id_funcionario,nome,descricao,tempo_execucao) VALUES
 (2,'"Trocar" um pulmão','Paciente levou um tiro de escopeta no pulmão direito, trocar o pulmão inteiro.','00:30:00'),
 (3,'Lavagem cerebral','Paciente jogou League of Legends, limpar toda a sujeira do cerebro, colocar Dark Souls no lugar.','22:50:00'),
 (4,'"Trocar" um coração','Paciente foi traido, dar remédios anti depressivos.','03:00:00');
+
+CREATE TABLE eventos(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    data_evento DATE NOT NULL,
+    custo DOUBLE NOT NULL,
+    receita DOUBLE NOT NULL,
+);
+
+INSERT INTO eventos (nome,data_evento,custo,receita) VALUES
+('Abertura do Hospital','2018-09-09',250000,0),
+('Exercícios ao Ar Livre','2018-09-30',100000,256579),
+('Palestra Sobre a Empresa','2018-10-15',350,0),
+('Workshop','2018-10-20',590,0);

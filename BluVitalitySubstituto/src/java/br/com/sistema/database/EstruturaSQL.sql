@@ -20,15 +20,18 @@ CREATE TABLE usuarios(
     UF VARCHAR(2) NOT NULL,
     naturalidade VARCHAR(100) NOT NULL,
     data_nascimento DATE NOT NULL,
-    nome_fic VARCHAR(100) NOT NULL
+    nome_fic VARCHAR(100) NOT NULL,
+    tipo_sanguineo VARCHAR(3) NOT NULL,
+    contato_emergencia VARCHAR(100) NOT NULL,
+    convenio VARCHAR(100) NOT NULL
 );
 
 INSERT INTO usuarios (nome,estado_civil,idade,sexo,login,senha,cpf,rg,telefone,email,endereco,complemento,cidade,UF,naturalidade,data_nascimento,nome_fic) VALUES
-('Rafael','solteiro',18,'M','RafhaHarada','R#h467913','123.456.789-09','54.321.987-2','47997835153','rafaelegal22@outlook.com','Rua Alguma Coisa Que Não Sei, 244, Jardim Inexistente','-','Blumenau','SC','SP','2000-03-24','-'),
-('Cidmar','solteiro',19,'M','CidmarDeBoa','C#b789456','789.456.123-09','321.987.54-2','47978945612','cidmardeboa@outlook.com','Rua Alguma Coisa Que Não Sei, 255, Jardim Inexistente','Bl A Apto 100','Blumenau','SC','MS','1999-12-10','-'),
-('Nattana','solteira',20,'F','NattanaNaLagoa','N#l123456','456.123.789-09','32.154.987-2','47932165498','nattananalagoa@outlook.com','Rua Alguma Coisa Que Não Sei, 266, Jardim Inexistente','-','Blumenau','SC','MG','1998-05-25','-'),
-('Gustavo','solteiro',21,'M','GustavoBeleza','G#b147896','123.789.456-09','984.321.75-2','47974185296','gustavobeleza@outlook.com','Rua Alguma Coisa Que Não Sei, 277, Jardim Inexistente','-','Blumenau','SC','AC','1997-11-04','-'),
-('Luana','solteira',22,'F','LuanaJoinha','L#j123698','789.123.456-09','987.421.35-2','47936925814','luanajoinha@outlook.com','Rua Alguma Coisa Que Não Sei, 288, Jardim Inexistente','-','Blumenau','SC','PE','1996-08-30','-');
+('Rafael','solteiro',18,'M','RafhaHarada','R#h467913','123.456.789-09','54.321.987-2','47997835153','rafaelegal22@outlook.com','Rua Alguma Coisa Que Não Sei, 244, Jardim Inexistente','-','Blumenau','SC','SP','2000-03-24','-','A+'),
+('Cidmar','solteiro',19,'M','CidmarDeBoa','C#b789456','789.456.123-09','321.987.54-2','47978945612','cidmardeboa@outlook.com','Rua Alguma Coisa Que Não Sei, 255, Jardim Inexistente','Bl A Apto 100','Blumenau','SC','MS','1999-12-10','-''O+'),
+('Nattana','solteira',20,'F','NattanaNaLagoa','N#l123456','456.123.789-09','32.154.987-2','47932165498','nattananalagoa@outlook.com','Rua Alguma Coisa Que Não Sei, 266, Jardim Inexistente','-','Blumenau','SC','MG','1998-05-25','-''A+'),
+('Gustavo','solteiro',21,'M','GustavoBeleza','G#b147896','123.789.456-09','984.321.75-2','47974185296','gustavobeleza@outlook.com','Rua Alguma Coisa Que Não Sei, 277, Jardim Inexistente','-','Blumenau','SC','AC','1997-11-04','-''A+'),
+('Luana','solteira',22,'F','LuanaJoinha','L#j123698','789.123.456-09','987.421.35-2','47936925814','luanajoinha@outlook.com','Rua Alguma Coisa Que Não Sei, 288, Jardim Inexistente','-','Blumenau','SC','PE','1996-08-30','-''A+');
 
 CREATE TABLE cargos(
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -47,7 +50,7 @@ INSERT INTO cargos (nome,salario,carga_horaria) VALUES
 CREATE TABLE funcionarios(
     id INT AUTO_INCREMENT PRIMARY KEY,
     id_usuario INT NOT NULL,
-    id_cargo INT NOT NULL,
+    id_cargo INT,
     ativo BOOLEAN,
     FOREIGN KEY(id_usuario) REFERENCES usuarios(id),
     FOREIGN KEY(id_cargo) REFERENCES cargos(id)
@@ -73,3 +76,17 @@ INSERT INTO servicos (id_funcionario,nome,descricao,tempo_execucao) VALUES
 (2,'"Trocar" um pulmão','Paciente levou um tiro de escopeta no pulmão direito, trocar o pulmão inteiro.','00:30:00'),
 (3,'Lavagem cerebral','Paciente jogou League of Legends, limpar toda a sujeira do cerebro, colocar Dark Souls no lugar.','22:50:00'),
 (4,'"Trocar" um coração','Paciente foi traido, dar remédios anti depressivos.','03:00:00');
+
+CREATE TABLE eventos(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    data_evento DATE NOT NULL,
+    custo DOUBLE NOT NULL,
+    receita DOUBLE NOT NULL,
+);
+
+INSERT INTO eventos (nome,data_evento,custo,receita) VALUES
+('Abertura do Hospital','2018-09-09',250000,0),
+('Exercícios ao Ar Livre','2018-09-30',100000,256579),
+('Palestra Sobre a Empresa','2018-10-15',350,0),
+('Workshop','2018-10-20',590,0);
