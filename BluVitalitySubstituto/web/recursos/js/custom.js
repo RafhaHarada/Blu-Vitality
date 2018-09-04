@@ -83,6 +83,10 @@ jQuery_2_1_1(document).ready(function () {
     jQuery_2_1_1(".botao-sobre").on("click", function () {
         changeTab("Sobre" + jQuery_2_1_1(this).data("id"));
     });
+    
+    jQuery_2_1_1(".botao-contatos").on("click", function () {
+        changeTab("Contatos" + jQuery_2_1_1(this).data("id"));
+    });
 
     function changeTab(id) {
         var instance = M.Tabs.getInstance(jQuery_2_1_1('.tabs'));
@@ -112,7 +116,6 @@ function onSignIn(googleUser) {
     var userId = profile.getId();
     var userName = profile.getName();
     var userEmail = profile.getEmail();
-    var userPicture = profile.getImageUrl();
     var userPicture = profile.getImageUrl();
     document.getElementById('user-photo').src = userPicture;
     document.getElementById('user-name').innerText = userName;
