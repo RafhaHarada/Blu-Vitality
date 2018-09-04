@@ -1,7 +1,7 @@
 package br.com.Sistema.dao;
 
-import br.com.Sistema.Bean.CargosBean;
-import br.com.Sistema.Database.Conexao;
+import br.com.Sistema.bean.CargoBean;
+import br.com.Sistema.database.Conexao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -14,8 +14,8 @@ import static java.sql.Statement.RETURN_GENERATED_KEYS;
  * @author Cidmar
  */
 public class CargosDAO {
-    public List<CargosBean> obterTodos() {
-        List<CargosBean> cargos = new ArrayList<>();
+    public List<CargoBean> obterTodos() {
+        List<CargoBean> cargos = new ArrayList<>();
         String sql = "SELECT id, nome, salario, carga_horaria FROM cargos";
         
         try{
@@ -23,7 +23,7 @@ public class CargosDAO {
             st.execute(sql);
             ResultSet resultSet = st.getResultSet();
             while(resultSet.next()){
-                CargosBean cargo = new CargosBean();
+                CargoBean cargo = new CargoBean();
                 cargo.setId(resultSet.getInt("id"));
                 cargo.setNome(resultSet.getString("nome"));
                 cargo.setSalario(resultSet.getDouble("salario"));
@@ -36,15 +36,15 @@ public class CargosDAO {
         }return cargos;
     }
     
-    public CargosBean obterPeloId(int id){
-        CargosBean cargo = null;
+    public CargoBean obterPeloId(int id){
+        CargoBean cargo = null;
         String sql = "SELECT id, nome, salario, carga_horaria FROM cargos WHERE id = ?";
         try{
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);
             ps.setInt(1, id);
             ResultSet resultSet = ps.getResultSet();
             while(resultSet.next()){
-                cargo = new CargosBean();
+                cargo = new CargoBean();
                 cargo.setId(resultSet.getInt("id"));
                 cargo.setNome(resultSet.getString("nome"));
                 cargo.setSalario(resultSet.getDouble("salario"));
@@ -57,7 +57,7 @@ public class CargosDAO {
         }return cargo;
     }
     
-    public int adicionar(CargosBean cargo) {
+    public int adicionar(CargoBean cargo) {
         String sql = "INSERT INTO cargos (id, nome, salario, carga_horaria) "
                 + "VALUES(?,?,?,?)";
         try{
@@ -77,7 +77,7 @@ public class CargosDAO {
             Conexao.fecharConexao();
         }return -1;
     }
-    public boolean alterar(CargosBean cargo){
+    public boolean alterar(CargoBean cargo){
         try{
             String sql = "UPDATE cargos SET nome = ?, salario = ?, carga_horaria = ? WHERE id = ?";
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);

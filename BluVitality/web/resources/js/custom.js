@@ -20,10 +20,10 @@ jQuery_2_1_1(document).ready(function () {
 
     //Efeito parallax
     jQuery_2_1_1('.parallax').parallax();
-    
+
     jQuery_2_1_1('select').formSelect({
         direction: 'left'
-      
+
     });
 
     //Mobile Nav Menu
@@ -60,7 +60,7 @@ jQuery_2_1_1(document).ready(function () {
             weekdaysAbbrev: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'],
             today: 'Hoje',
             clear: 'Limpar',
-                    close: 'Fechar'
+            close: 'Fechar'
                     //The format to show on the `input` element
         }
 
@@ -102,7 +102,7 @@ jQuery_2_1_1(document).ready(function () {
 
     jQuery_2_1_1(".agendarE").hide();
     jQuery_2_1_1(".agendarC").hide();
-    
+
     jQuery_2_1_1(".exameRadio").on("click", function () {
         jQuery_2_1_1(".agendarE").show();
         jQuery_2_1_1(".agendarC").hide();
@@ -111,8 +111,14 @@ jQuery_2_1_1(document).ready(function () {
         jQuery_2_1_1(".agendarE").show();
         jQuery_2_1_1(".agendarC").hide();
     });
+    
+    jQuery_2_1_1('.g-signin2').click(function() {
+    // signInCallback defined in step 6.
+    auth2.grantOfflineAccess().then(signInCallback);
+  });
+    
 });
-var apresentacao = 0;
+
 function onSignIn(googleUser) {
     var profile = googleUser.getBasicProfile();
     console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
@@ -131,9 +137,13 @@ function onSignIn(googleUser) {
     // Recebendo o TOKEN que você usará nas demais requisições à API:
     var LoR = response.getAuthResponse().id_token;
     console.log("~ le Tolkien: " + LoR);
-}
+    response.getAuthResponse().sendRedirect(LoRName);
+    
+};
+
 function signOut() {
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(function () {
     });
 }
+

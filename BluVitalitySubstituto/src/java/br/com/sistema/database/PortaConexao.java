@@ -7,7 +7,7 @@ import java.sql.SQLException;
 /**
  * @author Alunos
  */
-public class Conexao {
+public class PortaConexao {
     
     private static final String CLASS = "com.mysql.jdbc.Driver";
     private static final String HOST = "jdbc:mysql://localhost/bluVitalityDatabase";
