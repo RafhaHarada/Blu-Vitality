@@ -1,7 +1,7 @@
 package br.com.Sistema.DAO;
 
-import br.com.Sistema.bean.QuartoBean;
-import br.com.Sistema.database.Conexao;
+import br.com.Sistema.Bean.QuartoBean;
+import br.com.Sistema.Database.Conexao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
