@@ -52,13 +52,13 @@ and open the template in the editor.
 }
 
 .pin-top, .pin-bottom {
-  position: relative;
-  z-index: 2;
+    position: relative;
+    z-index: 2;
 }
 
 .pinned {
-  position: fixed !important;
-  z-index: 2;
+    position: fixed !important;
+    z-index: 2;
 }
 div ul a{
     color:teal

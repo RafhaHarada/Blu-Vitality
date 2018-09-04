@@ -1,7 +1,7 @@
 package br.com.Sistema.DAO;
 
-import br.com.Sistema.bean.QuartoBean;
-import br.com.Sistema.database.Conexao;
+import br.com.Sistema.Bean.QuartoBean;
+import br.com.Sistema.Database.Conexao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -25,8 +25,9 @@ public class QuartoDAO {
             while(resultSet.next()){
                 QuartoBean quarto = new QuartoBean();
                 quarto.setId(resultSet.getInt("id"));
-                quarto.setId_usuario(resultSet.getString("id_usuario"));
+                quarto.setId_usuario(resultSet.getInt("id_usuario"));
                 quarto.setId_funcionario(resultSet.getInt("id_funcionario"));
+                quarto.setNumero_quarto(resultSet.getInt("numero_quarto"));
                 quarto.setData_entrada(resultSet.getDate("data_entrada"));
                 quarto.setData_saida(resultSet.getDate("data_saida"));
                 quarto.setStatus(resultSet.getString("status"));
@@ -48,8 +49,9 @@ public class QuartoDAO {
             while(resultSet.next()){
                 quarto = new QuartoBean();
                 quarto.setId(resultSet.getInt("id"));
-                quarto.setId_usuario(resultSet.getString("id_usuario"));
+                quarto.setId_usuario(resultSet.getInt("id_usuario"));
                 quarto.setId_funcionario(resultSet.getInt("id_funcionario"));
+                quarto.setNumero_quarto(resultSet.getInt("numero_quarto"));
                 quarto.setData_entrada(resultSet.getDate("data_entrada"));
                 quarto.setData_saida(resultSet.getDate("data_saida"));
                 quarto.setStatus(resultSet.getString("status"));
@@ -62,15 +64,17 @@ public class QuartoDAO {
     }
     
     public int adicionar(QuartoBean quarto) {
-        String sql = "INSERT INTO quartos (id, id_usuario, id_funcionario, data_entrada, data_saida, status) "
-                + "VALUES(?,?,?,?,?,?)";
+        String sql = "INSERT INTO quartos (numero_quarto, data_entrada, data_saida, status, tipo) "
+                + "VALUES(?,?,?,?,?,?)";//id_usuario, id_funcionario,
         try{
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql, RETURN_GENERATED_KEYS);
-            ps.setString(1, quarto.getId_usuario());
-            ps.setInt(2, quarto.getId_funcionario());
-            ps.setDate(3, quarto.getData_entrada());
-            ps.setDate(4, quarto.getData_saida());
-            ps.setDate(5, quarto.getStatus());
+            //ps.setInt(2, quarto.getId_usuario());
+            //ps.setInt(3, quarto.getId_funcionario());
+            ps.setInt(1, quarto.getNumero_quarto());
+            ps.setDate(2, quarto.getData_entrada());
+            ps.setDate(3, quarto.getData_saida());
+            ps.setString(4, quarto.getStatus());
+            ps.setString(5, quarto.getTipo());
             
             ps.execute();
             ResultSet resultSet = ps.getGeneratedKeys();
@@ -87,12 +91,13 @@ public class QuartoDAO {
         try{
             String sql = "UPDATE quartos SET id_usuario = ?, id_funcionario = ?, data_entrada = ? WHERE id = ?";
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);
-            ps.setString(1, quarto.getId_usuario());
-            ps.setInt(2, quarto.getId_funcionario());
-            ps.setInt(3, quarto.getData_entrada());
-            ps.setDate(4, quarto.getData_saida());
-            ps.setString(5, quarto.getStatus());
-            ps.setInt(6, quarto.getId());
+            ps.setInt(1, quarto.getId());
+            ps.setInt(2, quarto.getId_usuario());
+            ps.setInt(3, quarto.getId_funcionario());
+            ps.setInt(4, quarto.getNumero_quarto());
+            ps.setDate(5, quarto.getData_entrada());
+            ps.setDate(6, quarto.getData_saida());
+            ps.setString(7, quarto.getStatus());
             
             return ps.executeUpdate() ==1;
         }catch(SQLException e){

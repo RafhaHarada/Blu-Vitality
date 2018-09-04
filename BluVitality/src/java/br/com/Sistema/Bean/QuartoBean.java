@@ -12,11 +12,23 @@ public class QuartoBean {
     private int id;
     private int id_usuario;
     private int id_funcionario;
+    private int numero_quarto;
+
     private String tipo;
     private Date data_entrada;
     private Date data_saida;
     private String status;
 
+    
+    
+    public int getNumero_quarto() {
+        return numero_quarto;
+    }
+
+    public void setNumero_quarto(int numero_quarto) {
+        this.numero_quarto = numero_quarto;
+    }
+    
     public int getId() {
         return id;
     }

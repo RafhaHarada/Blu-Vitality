@@ -87,9 +87,7 @@
                                     </tbody>
                                     <tfoot>
                                         <tr>
-                                            <th>Paciente</th>
-                                            <th>CPF</th>
-                                            <th>Ação</th>
+                                            
                                         </tr>
                                     </tfoot>
                                 </table>    
@@ -156,9 +154,6 @@
                                     
                                     <tfoot>
                                         <tr>
-                                            <th>Paciente</th>
-                                            <th>idade</th>
-                                            <th>Ação</th>
                                         </tr>
                                     </tfoot>
                                 </table>      
