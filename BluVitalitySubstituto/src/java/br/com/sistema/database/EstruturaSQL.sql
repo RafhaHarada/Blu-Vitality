@@ -102,8 +102,8 @@ CREATE TABLE expedicao(
     FOREIGN KEY(id_funcionario) REFERENCES funcionarios(id)
 );
 
-INSERT INTO expedicao (tipo,data_expedicao,custo) VALUES
-('Exame','2018-09-10',250000),
-('Exame','2018-09-31',100000),
-('Consulta','2018-10-16',350),
-('Consulta','2018-10-21',590);
+INSERT INTO expedicao (id_usuario,id_funcionario,tipo,data_expedicao,custo) VALUES
+(1,2,'Exame','2018-09-10',250000),
+(3,4'Exame','2018-09-31',100000),
+(2,3'Consulta','2018-10-16',350),
+(4,2'Consulta','2018-10-21',590);
