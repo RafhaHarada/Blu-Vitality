@@ -44,6 +44,9 @@ public class UsuariosDAO {
             usuario.setNaturalidade(resultSet.getString("naturalidade"));
             usuario.setData_nascimento(resultSet.getDate("data_nascimento"));
             usuario.setNome_fic(resultSet.getString("nome_fic"));
+            usuario.setTipo_sanguineo(resultSet.getString("tipo_sanguineo"));
+            usuario.setContato_emergencia(resultSet.getString("contato_emergencia"));
+            usuario.setConvenio(resultSet.getInt("convenio"));
             usuarios.add(usuario);
             }
     }catch(SQLException e){
@@ -59,8 +62,8 @@ public class UsuariosDAO {
     
     public int adicionar(UsuariosBean usuario){
         String sql = "INSERT INTO usuarios(nome, estado_civil, idade, sexo, login, senha, "
-                   + "cpf, rg, telefone, email, endereco, complemento = ?, uf = ?, cidade = ?, naturalidade, data_nascimento, nome_fic)" 
-                   + "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)";
+                   + "cpf, rg, telefone, email, endereco, complemento = ?, uf = ?, cidade = ?, naturalidade, data_nascimento, nome_fic, tipo_sanguineo, contato_emergencia, convenio)" 
+                   + "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?, ?, ?, ?)";
         
         try{
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql, 
@@ -84,6 +87,9 @@ public class UsuariosDAO {
             ps.setString(quantidade++, usuario.getNaturalidade());
             ps.setDate  (quantidade++, usuario.getData_nascimento());
             ps.setString(quantidade++, usuario.getNome_fic());
+            ps.setString(quantidade++, usuario.getTipo_sanguineo());
+            ps.setString(quantidade++, usuario.getContato_emergencia());
+            ps.setInt(quantidade++, usuario.getConvenio());
             ps.execute();
             ResultSet resultSet = ps.getGeneratedKeys();
             
@@ -115,7 +121,7 @@ public class UsuariosDAO {
     public boolean alterar(UsuariosBean usuario){
         String sql = "UPDATE usuarios SET nome = ?, estado_civil = ?, idade = ?, "
                    + "sexo = ?, login = ?, senha = ?, cpf = ?, rg = ?, telefone = ?, "
-                   + "email = ?, endereco = ?, complemento = ?, uf = ?, cidade = ?, naturalidade = ?, data_nascimento = ?, nome_fic = ? WHERE id = ?";
+                   + "email = ?, endereco = ?, complemento = ?, uf = ?, cidade = ?, naturalidade = ?, data_nascimento = ?, nome_fic = ?, tipo_sanguineo = ?, contato_emergencia = ?, convenio = ? WHERE id = ?";
         
         try{
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);
@@ -138,6 +144,9 @@ public class UsuariosDAO {
             ps.setString(quantidade++, usuario.getNaturalidade());
             ps.setDate  (quantidade++, usuario.getData_nascimento());
             ps.setString(quantidade++, usuario.getNome_fic());
+            ps.setString(quantidade++, usuario.getTipo_sanguineo());
+            ps.setString(quantidade++, usuario.getContato_emergencia());
+            ps.setInt(quantidade++, usuario.getConvenio());
             ps.setInt   (quantidade++, usuario.getId());
             
             return ps.executeUpdate() == 1;
@@ -176,6 +185,9 @@ public class UsuariosDAO {
             usuario.setNaturalidade(resultSet.getString("naturalidade"));
             usuario.setData_nascimento(resultSet.getDate("data_nascimento"));
             usuario.setNome_fic(resultSet.getString("nome_fic"));
+            usuario.setTipo_sanguineo(resultSet.getString("tipo_sanguineo"));
+            usuario.setContato_emergencia(resultSet.getString("contato_emergencia"));
+            usuario.setConvenio(resultSet.getInt("convenio"));
             return usuario;
         }
             
