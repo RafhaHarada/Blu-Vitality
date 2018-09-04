@@ -107,3 +107,14 @@ INSERT INTO expedicao (id_usuario,id_funcionario,tipo,data_expedicao,custo) VALU
 (3,4,'Exame','2018-10-01',100000),
 (2,3,'Consulta','2018-10-16',350),
 (4,2,'Consulta','2018-10-21',590);
+
+CREATE TABLE quarto(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_usuario INT NOT NULL,
+    tipo VARCHAR(100) NOT NULL,
+    data_entrada DATE NOT NULL,
+    data_saida DATE NOT NULL,
+    status VARCHAR(100) NOT NULL,
+    FOREIGN KEY(id_usuario) REFERENCES usuarios(id),
+    FOREIGN KEY(id_funcionario) REFERENCES funcionarios(id)
+);
