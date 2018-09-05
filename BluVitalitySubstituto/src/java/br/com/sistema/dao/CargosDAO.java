@@ -1,7 +1,7 @@
 package br.com.Sistema.dao;
 
 import br.com.Sistema.bean.CargoBean;
-import br.com.Sistema.database.Conexao;
+import br.com.Sistema.database.PortaConexao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -19,7 +19,7 @@ public class CargosDAO {
         String sql = "SELECT id, nome, salario, carga_horaria FROM cargos";
         
         try{
-            Statement st = Conexao.abrirConexao().createStatement();
+            Statement st = PortaConexao.abrirConexao().createStatement();
             st.execute(sql);
             ResultSet resultSet = st.getResultSet();
             while(resultSet.next()){
@@ -32,7 +32,7 @@ public class CargosDAO {
             }catch(SQLException e){
                     e.printStackTrace();
             }finally{
-            Conexao.fecharConexao();
+            PortaConexao.fecharConexao();
         }return cargos;
     }
     
@@ -40,7 +40,7 @@ public class CargosDAO {
         CargoBean cargo = null;
         String sql = "SELECT id, nome, salario, carga_horaria FROM cargos WHERE id = ?";
         try{
-            PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);
+            PreparedStatement ps = PortaConexao.abrirConexao().prepareStatement(sql);
             ps.setInt(1, id);
             ResultSet resultSet = ps.getResultSet();
             while(resultSet.next()){
@@ -53,7 +53,7 @@ public class CargosDAO {
         }catch(SQLException e){
             e.printStackTrace();
         }finally{
-            Conexao.fecharConexao();
+            PortaConexao.fecharConexao();
         }return cargo;
     }
     
@@ -61,7 +61,7 @@ public class CargosDAO {
         String sql = "INSERT INTO cargos (id, nome, salario, carga_horaria) "
                 + "VALUES(?,?,?,?)";
         try{
-            PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql, RETURN_GENERATED_KEYS);
+            PreparedStatement ps = PortaConexao.abrirConexao().prepareStatement(sql, RETURN_GENERATED_KEYS);
             ps.setString(1, cargo.getNome());
             ps.setDouble(2, cargo.getSalario());
             ps.setDate(3, cargo.getCarga_horaria());
@@ -74,13 +74,13 @@ public class CargosDAO {
         }catch(SQLException e){
             e.printStackTrace();
         }finally{
-            Conexao.fecharConexao();
+            PortaConexao.fecharConexao();
         }return -1;
     }
     public boolean alterar(CargoBean cargo){
         try{
             String sql = "UPDATE cargos SET nome = ?, salario = ?, carga_horaria = ? WHERE id = ?";
-            PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);
+            PreparedStatement ps = PortaConexao.abrirConexao().prepareStatement(sql);
             ps.setString(1, cargo.getNome());
             ps.setDouble(2, cargo.getSalario());
             ps.setDate(3, cargo.getCarga_horaria());
@@ -90,20 +90,20 @@ public class CargosDAO {
         }catch(SQLException e){
             e.printStackTrace();
         }finally{
-            Conexao.fecharConexao();
+            PortaConexao.fecharConexao();
         }return false;
     }
     
     public boolean apagar(int id){
         String sql = "DELETE FROM cargos WHERE id = ?";
         try{
-            PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);
+            PreparedStatement ps = PortaConexao.abrirConexao().prepareStatement(sql);
             ps.setInt(1, id);
             return ps.executeUpdate() ==1;
         }catch(SQLException e){
             e.printStackTrace();
         }finally{
-            Conexao.fecharConexao();
+            PortaConexao.fecharConexao();
         }return false;
     }
 }
