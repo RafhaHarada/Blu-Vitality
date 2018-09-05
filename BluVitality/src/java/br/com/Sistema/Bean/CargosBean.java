@@ -4,6 +4,7 @@ import java.sql.Date;
 
 /**
  * @author Nattana Matos
+ * @author Gustavo Rodrigues (gugaaroodrigues@gmail.com)
  */
 public class CargosBean {
 

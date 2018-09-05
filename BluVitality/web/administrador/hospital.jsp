@@ -135,7 +135,7 @@
                                             <input type="number" name="numero">
                                             <span>TIPO:</span>
                                         </form>
-                                        <select>
+                                        <select id="tipo">
                                             <option value="UTI">UTI</option>
                                             <option value="SemiIntencivo">Semi - Intensivo</option>
                                             <option value="salaDeOperacao"> Sala de Cirurgia</option>
@@ -144,7 +144,7 @@
                                             <option value="recuperacao">Sala de recuperação</option>
                                         </select>
                                         <span>STATUS</span>
-                                        <select>
+                                        <select id="status">
                                             <option value="ativo">Ativo</option>
                                             <option value="inativo">Inativo</option>
                                         </select>

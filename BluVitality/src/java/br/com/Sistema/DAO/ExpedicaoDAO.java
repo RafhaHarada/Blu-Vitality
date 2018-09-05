@@ -1,6 +1,9 @@
 package br.com.Sistema.DAO;
 
-import br.com.Sistema.bean.ExpedicaoBean;
+import br.com.Sistema.Bean.CargosBean;
+import br.com.Sistema.Bean.ExpedicaoBean;
+import br.com.Sistema.Bean.FuncionariosBean;
+import br.com.Sistema.Bean.UsuariosBean;
 import br.com.Sistema.Database.Conexao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -16,7 +19,7 @@ import java.util.List;
 public class ExpedicaoDAO {
     public List<ExpedicaoBean> obterTodos() {
         List<ExpedicaoBean> expedicoes = new ArrayList<>();
-        String sql = "SELECT id, id_usuario, id_funcionario, tipo, data_expedicao, custo FROM expedicoes";
+        String sql = "SELECT * FROM expedicoes fn JOIN usuarios cr ON cr.id = fn.id_usuario JOIN funcionarios us ON us.id =fn.id_funcionario";
         
         try{
             Statement st = Conexao.abrirConexao().createStatement();
@@ -24,12 +27,19 @@ public class ExpedicaoDAO {
             ResultSet resultSet = st.getResultSet();
             while(resultSet.next()){
                 ExpedicaoBean expedicao = new ExpedicaoBean();
-                expedicao.setId(resultSet.getInt("id"));
-                expedicao.setId_usuario(resultSet.getInt("id_usuario"));
-                expedicao.setId_funcionario(resultSet.getInt("id_funcionario"));
+                expedicao.setId(resultSet.getInt("fn.id"));
+                expedicao.setId_usuario(resultSet.getInt("fn.id_usuario"));
                 expedicao.setTipo(resultSet.getString("tipo"));
                 expedicao.setData_expedicao(resultSet.getDate("data_expedicao"));
                 expedicao.setCusto(resultSet.getDouble("custo"));
+                
+                UsuariosBean usuario = new UsuariosBean();
+                usuario.setId(resultSet.getInt("us.id"));
+                
+                FuncionariosBean funcionario = new FuncionariosBean();
+                funcionario.setId(resultSet.getInt("cr.id"));
+                
+                expedicoes.add(expedicao);
             }
             }catch(SQLException e){
                     e.printStackTrace();
@@ -47,9 +57,9 @@ public class ExpedicaoDAO {
             ResultSet resultSet = ps.getResultSet();
             while(resultSet.next()){
                 expedicao = new ExpedicaoBean();
-                expedicao.setId(resultSet.getInt("id"));
-                expedicao.setId_usuario(resultSet.getInt("id_usuario"));
-                expedicao.setId_funcionario(resultSet.getInt("id_funcionario"));
+                expedicao.setId(resultSet.getInt("fn.id"));
+                expedicao.setId_usuario(resultSet.getInt("fn.id_usuario"));
+                expedicao.setId_funcionario(resultSet.getInt("fn.id_funcionario"));
                 expedicao.setTipo(resultSet.getString("tipo"));
                 expedicao.setData_expedicao(resultSet.getDate("data_expedicao"));
                 expedicao.setCusto(resultSet.getDouble("custo"));

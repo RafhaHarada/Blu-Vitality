@@ -1,5 +1,10 @@
 package br.com.Sistema.DAO;
 
+/**
+ * @author Cidimar
+ * @author Gustavo Rodrigues (gugaaroodrigues@gmail.com)
+ */
+
 import br.com.Sistema.Bean.UsuariosBean;
 import br.com.Sistema.Database.Conexao;
 import java.sql.PreparedStatement;
@@ -46,7 +51,7 @@ public class UsuariosDAO {
             usuario.setNome_fic(resultSet.getString("nome_fic"));
             usuario.setTipo_sanguineo(resultSet.getString("tipo_sanguineo"));
             usuario.setContato_emergencia(resultSet.getString("contato_emergencia"));
-            usuario.setConvenio(resultSet.getInt("convenio"));
+            usuario.setConvenio(resultSet.getString("convenio"));
             usuarios.add(usuario);
             }
     }catch(SQLException e){
@@ -89,7 +94,7 @@ public class UsuariosDAO {
             ps.setString(quantidade++, usuario.getNome_fic());
             ps.setString(quantidade++, usuario.getTipo_sanguineo());
             ps.setString(quantidade++, usuario.getContato_emergencia());
-            ps.setInt(quantidade++, usuario.getConvenio());
+            ps.setString(quantidade++, usuario.getConvenio());
             ps.execute();
             ResultSet resultSet = ps.getGeneratedKeys();
             
@@ -146,7 +151,7 @@ public class UsuariosDAO {
             ps.setString(quantidade++, usuario.getNome_fic());
             ps.setString(quantidade++, usuario.getTipo_sanguineo());
             ps.setString(quantidade++, usuario.getContato_emergencia());
-            ps.setInt(quantidade++, usuario.getConvenio());
+            ps.setString(quantidade++, usuario.getConvenio());
             ps.setInt   (quantidade++, usuario.getId());
             
             return ps.executeUpdate() == 1;
@@ -187,7 +192,7 @@ public class UsuariosDAO {
             usuario.setNome_fic(resultSet.getString("nome_fic"));
             usuario.setTipo_sanguineo(resultSet.getString("tipo_sanguineo"));
             usuario.setContato_emergencia(resultSet.getString("contato_emergencia"));
-            usuario.setConvenio(resultSet.getInt("convenio"));
+            usuario.setConvenio(resultSet.getString("convenio"));
             return usuario;
         }
             

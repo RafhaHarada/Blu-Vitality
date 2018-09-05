@@ -4,7 +4,9 @@ import java.sql.Date;
 
 /**
  * @author Nattana Matos
+ * @author Gustavo Rodrigues (gugaaroodrigues@gmail.com)
  */
+
 public class UsuariosBean {
     
     private int id ;
@@ -25,7 +27,33 @@ public class UsuariosBean {
     private String naturalidade;
     private Date data_nascimento;
     private String nome_fic;
+    private String tipo_sanguineo;
+    private String contato_emergencia;
+    private String convenio;
+    
 
+    
+    public String getTipo_sanguineo() {
+        return complemento;
+    }
+
+    public void setTipo_sanguineo(String complemento) {
+        this.complemento = tipo_sanguineo;
+    }
+    public String getContato_emergencia() {
+        return complemento;
+    }
+
+    public void setContato_emergencia(String complemento) {
+        this.complemento = contato_emergencia;
+    }
+    public String getConvenio() {
+        return complemento;
+    }
+
+    public void setConvenio(String complemento) {
+        this.complemento = convenio;
+    }
     public String getComplemento() {
         return complemento;
     }

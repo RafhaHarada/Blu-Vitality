@@ -14,6 +14,7 @@ import java.util.List;
 
 /**
  * @author Cidmar
+ * @author Gustavo Rodrigues (gugaaroodrigues@gmail.com)
  */
 public class FuncionariosDAO {
     

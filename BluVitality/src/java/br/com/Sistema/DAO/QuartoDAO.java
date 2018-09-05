@@ -1,5 +1,10 @@
 package br.com.Sistema.DAO;
 
+/**
+ * @author Cidimar
+ * @author Gustavo Rodrigues (gugaaroodrigues@gmail.com)
+ */
+
 import br.com.Sistema.Bean.QuartoBean;
 import br.com.Sistema.Database.Conexao;
 import java.sql.PreparedStatement;

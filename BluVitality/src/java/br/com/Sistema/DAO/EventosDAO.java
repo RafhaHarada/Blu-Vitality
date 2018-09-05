@@ -1,6 +1,6 @@
 package br.com.Sistema.DAO;
 
-import br.com.Sistema.bean.EventosBean;
+import br.com.Sistema.Bean.EventosBean;
 import br.com.Sistema.Database.Conexao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -11,7 +11,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author Alunos
+ * @author Cidimar
+ * @author Gustavo Rodrigues (gugaaroodrigues@gmail.com)
  */
 public class EventosDAO {
     public List<EventosBean> obterTodos() {
