@@ -63,5 +63,6 @@
 <script type="text/javascript" src="../resources/js/materialize.min.js"></script>
 <script type="text/javascript" src="../resources/js/google-platform.js"></script>
 <script type="text/javascript" src="../resources/js/custom.js"></script>
+<script type="text/javascript" src="../resources/js/quarto-cadastro.js"></script>
 </body>
 </html>

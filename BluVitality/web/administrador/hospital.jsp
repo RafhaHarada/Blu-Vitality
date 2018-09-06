@@ -97,32 +97,7 @@
                         <div class="collapsible-body">
                             <ul class="collapsible">
                                 <li>
-                                    <div class="collapsible-header">
-                                        <i class="material-icons"></i>
-                                        Adicionar
-                                        <span class="badge"></span></div>
-                                    <div class="collapsible-body">
-                                        <form>
-                                            <label for="numero">Numero do Quarto:</label>
-                                            <input type="number" name="numero">
-                                            <label>TIPO:</label>
-                                        </form>
-                                        <select>
-                                            <option value="UTI">UTI</option>
-                                            <option value="SemiIntencivo">Semi - Intensivo</option>
-                                            <option value="salaDeOperacao"> Sala de Cirurgia</option>
-                                            <option value="leito">Leito</option>
-                                            <option value="consultorio">Consultorio</option>
-                                            <option value="recuperacao">Sala de recuperação</option>
-                                        </select>
-                                        <span class="flow-text">STATUS</span>
-                                        <select>
-                                            <option value="ativo">Ativo</option>
-                                            <option value="inativo">Inativo</option>
-                                        </select>
-
-                                        <a class="waves-effect waves-light btn-small">SALVAR</a>
-                                    </div>
+                                    <%@include file="quarto-formulario-cadastro.jsp" %>
                                 </li>
                                 <li>
                                     <div class="collapsible-header">
