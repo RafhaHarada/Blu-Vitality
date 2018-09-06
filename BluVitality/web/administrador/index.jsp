@@ -44,7 +44,7 @@
                             <div class="card"><a href="#hospitalFuncionarios">
                                     <div class="card-action blue-grey darken-2 white-text">
                                         <p class="card-stats-title">
-                                            <i class="material-icons">people</i>Funcionarios</p>
+                                            <i class="material-icons">people</i> Funcionarios</p>
                                     </div>
                             </div></a>
                         </div>
