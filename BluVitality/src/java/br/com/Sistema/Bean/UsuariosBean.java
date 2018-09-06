@@ -22,7 +22,7 @@ public class UsuariosBean {
     private String email;
     private String endereco;
     private String complemento;
-    private String UF;
+    private String uf;
     private String cidade;
     private String naturalidade;
     private Date data_nascimento;
@@ -31,28 +31,26 @@ public class UsuariosBean {
     private String contato_emergencia;
     private String convenio;
     
-
-    
     public String getTipo_sanguineo() {
-        return complemento;
+        return tipo_sanguineo;
     }
 
-    public void setTipo_sanguineo(String complemento) {
-        this.complemento = tipo_sanguineo;
+    public void setTipo_sanguineo(String tipo_sanguineo) {
+        this.tipo_sanguineo = tipo_sanguineo;
     }
     public String getContato_emergencia() {
-        return complemento;
+        return contato_emergencia;
     }
 
-    public void setContato_emergencia(String complemento) {
-        this.complemento = contato_emergencia;
+    public void setContato_emergencia(String contato_emergencia) {
+        this.contato_emergencia = contato_emergencia;
     }
     public String getConvenio() {
-        return complemento;
+        return convenio;
     }
 
-    public void setConvenio(String complemento) {
-        this.complemento = convenio;
+    public void setConvenio(String convenio) {
+        this.convenio = convenio;
     }
     public String getComplemento() {
         return complemento;
@@ -62,12 +60,12 @@ public class UsuariosBean {
         this.complemento = complemento;
     }
 
-    public String getUF() {
-        return UF;
+    public String getUf() {
+        return uf;
     }
 
-    public void setUF(String UF) {
-        this.UF = UF;
+    public void setUf(String uf) {
+        this.uf = uf;
     }
 
     public String getCidade() {
@@ -108,14 +106,6 @@ public class UsuariosBean {
 
     public void setEstado_civil(String estado_civil) {
         this.estado_civil = estado_civil;
-    }
-
-    public int getIdade() {
-        return idade;
-    }
-
-    public void setIdade(int idade) {
-        this.idade = (byte) idade;
     }
 
     public char getSexo() {
@@ -196,6 +186,14 @@ public class UsuariosBean {
 
     public void setNome_fic(String nome_fic) {
         this.nome_fic = nome_fic;
+    }
+
+    public byte getIdade() {
+        return idade;
+    }
+
+    public void setIdade(byte idade) {
+        this.idade = idade;
     }
     
 }
