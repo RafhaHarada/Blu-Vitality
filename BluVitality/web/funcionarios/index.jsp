@@ -6,182 +6,196 @@
     @Rafhael
 
 --%>
-<jsp:include page="../model/header.jsp"/>
-
-<h4>Funcionários</h4>
+<jsp:include page="../model/headerStart.jsp"/>
+<li><a class='dropdown-trigger' href='#' data-target='dropdownCadastro'>Opções</a>
+    <!-- Dropdown Structure -->
+    <ul id='dropdownCadastro' class='dropdown-content'>
+        <li><a href="../">Voltar</a></li>
+    </ul>
+</li>
+<%@include file="../model/headerEnd.jsp" %>
 
 <div class="row">
-    <div class="container">
-        <ul class="tabs tabs-transparent">
+    <div class="">
+        <ul class="tabs tabs-transparent center">
             <li class="tab"><a href="#Servicos1" class="active teal-text">Perfil</a></li>
             <li class="tab"><a href="#Servicos2" class="teal-text">Acesso ao Prontuário</a></li>
             <li class="tab"><a href="#Servicos3" class="teal-text">Cursos e Eventos</a></li>
-            <li class="tab"><a href="#Servicos4" class="teal-text">Informações</a></li>
         </ul>
 
         <div id="Servicos1" class="col s12 container">
             <ul class="collection col s6">
-            <li class="collection-item avatar teal lighten-4">
-                <img src="" alt="" class="circle red">
-                <span class="nome">Nome:</span>
-                <span></span>
-                
-            </li>
-            <li class="collection-item teal lighten-5">
-                <span class="data-nascimento">Data de nascimento:</span>
-                <span></span>
-                
+                <li class="collection-item avatar teal lighten-4">
+                    <img src="" alt="" class="circle red">
+                    <span class="nome">Nome:</span>
+                    <span></span>
 
-            </li>
-            <li class="collection-item teal lighten-4">
-                <span class="cpf">CPF:</span>
-                <span></span>
-               
-
-            </li>
-            <li class="collection-item teal lighten-5">
-                <span class="rg">RG:</span>
-                <span></span>
-               
-            </li>
-            <li class="collection-item teal lighten-4">
-                <span class="naturalidade">Naturalidade:</span>
-                <span></span>
-                
-
-            </li>
-            <li class="collection-item teal lighten-5">
-                <span class="sexo">Sexo:</span>
-                <span></span>
-                
-            </li>
-            <li class="collection-item teal lighten-4">
-                <span class="sanguineo">Tipo Sanguíneo:</span>
-                <span></span>
-               
-            </li>
-        </ul>
-        <ul class="collection col s6">
-            <li class="collection-item teal lighten-4">
-                <span class="cidade">Cidade:</span>
-                <span> </span>
-                <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
-            </li>
-            <li class="collection-item teal lighten-5">
-                <span class="uf">UF:</span>
-                <span> </span>
-                <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
-
-            </li>
-            <li class="collection-item teal lighten-4">
-                <span class="endereco">Endereço</span>
-                <span> </span>
-                <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
-
-            </li>
-            <li class="collection-item teal lighten-5">
-                <span class="email">Email:</span>
-                <span> </span>
-                <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
-
-            </li>
-            <li class="collection-item teal lighten-4">
-                <span class="telefone">Telefone:</span>
-                <span> </span>
-                <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
-
-            </li>
-            <li class="collection-item teal lighten-5">
-                <span class="contato-emergencia">Contato de emergência:</span>
-                <span> </span>
-                <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
-            </li>
-            <li class="collection-item teal lighten-4">
-                <span class="estado-civil">Estado Civil:</span>
-                <span> </span>
-                <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
-            </li>
-            <li class="collection-item teal lighten-5">
-                <span class="convenio">Covenio:</span>
-                <span> </span>
-                <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
-            </li>
-        </ul>
+                </li>
+                <li class="collection-item teal lighten-5">
+                    <span class="data-nascimento">Data de nascimento:</span>
+                    <span></span>
 
 
-        <div class="col s1 right">
-            <a class="btn-floating btn cyan pulse right margin-botao"><i class="material-icons">edit</i></a>
+                </li>
+                <li class="collection-item teal lighten-4">
+                    <span class="cpf">CPF:</span>
+                    <span></span>
+
+
+                </li>
+                <li class="collection-item teal lighten-5">
+                    <span class="rg">RG:</span>
+                    <span></span>
+
+                </li>
+                <li class="collection-item teal lighten-4">
+                    <span class="naturalidade">Naturalidade:</span>
+                    <span></span>
+
+
+                </li>
+                <li class="collection-item teal lighten-5">
+                    <span class="sexo">Sexo:</span>
+                    <span></span>
+
+                </li>
+                <li class="collection-item teal lighten-4">
+                    <span class="sanguineo">Tipo Sanguíneo:</span>
+                    <span></span>
+
+                </li>
+            </ul>
+            <ul class="collection col s6">
+                <li class="collection-item teal lighten-4">
+                    <span class="cidade">Cidade:</span>
+                    <span> </span>
+                    <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
+                </li>
+                <li class="collection-item teal lighten-5">
+                    <span class="uf">UF:</span>
+                    <span> </span>
+                    <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
+
+                </li>
+                <li class="collection-item teal lighten-4">
+                    <span class="endereco">Endereço</span>
+                    <span> </span>
+                    <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
+
+                </li>
+                <li class="collection-item teal lighten-5">
+                    <span class="email">Email:</span>
+                    <span> </span>
+                    <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
+
+                </li>
+                <li class="collection-item teal lighten-4">
+                    <span class="telefone">Telefone:</span>
+                    <span> </span>
+                    <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
+
+                </li>
+                <li class="collection-item teal lighten-5">
+                    <span class="contato-emergencia">Contato de emergência:</span>
+                    <span> </span>
+                    <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
+                </li>
+                <li class="collection-item teal lighten-4">
+                    <span class="estado-civil">Estado Civil:</span>
+                    <span> </span>
+                    <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
+                </li>
+                <li class="collection-item teal lighten-5">
+                    <span class="convenio">Covenio:</span>
+                    <span> </span>
+                    <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
+                </li>
+            </ul>
+
+
+            <div class="col s1 right">
+                <a class="btn-floating btn cyan pulse right margin-botao"><i class="material-icons">edit</i></a>
+            </div>
         </div>
     </div>
-</div>
-<div id="Sobre2" class="col s12 container ">
+    <div id="Sobre2" class="col s12 container ">
 
-        </div>
-        <div id="Servicos2" class="container">
-            <div class="row">
-                     <form class="col s12">
-                        <div class="row">
-                            <div class="input-field col s6">
-                                <input placeholder="Digite aqui" id="nome" type="text" class="validate">
-                                <label for="nome">Nome</label>
-                            </div>
-                            <div class="input-field col s4">
-                                <input placeholder="Digite aqui" type="text" class="validate">
-                                <label for="data-nascimento">Data de Nascimento</label>
-                            </div>
-                            <div class="input-field col s6">
-                                <input placeholder="Digite aqui" id="telefone" type="text" class="validate">
-                                <label for="telefone">Telefone</label>
-                            </div>
-                            <div class="input-field col s5">
-                                <input placeholder="Digite aqui" id="convenio" type="text" class="validate">
-                                <label for="convenio">Convênio</label>
-                            </div>
-                                <div class="input-field col s12">
-                                    <input id="email" type="email" class="validate">
-                                    <label for="email">Email</label>
-                                </div>
-                            </div>
+    </div>
+    <div id="Servicos2" class="container">
+        <div class="row">
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input placeholder="Digite aqui" id="nome" type="text" class="validate">
+                        <label for="nome">Nome</label>
+                    </div>
+                    <div class="input-field col s4">
+                        <input placeholder="Digite aqui" type="text" class="validate">
+                        <label for="data-nascimento">Data de Nascimento</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input placeholder="Digite aqui" id="telefone" type="text" class="validate">
+                        <label for="telefone">Telefone</label>
+                    </div>
+                    <div class="input-field col s5">
+                        <input placeholder="Digite aqui" id="convenio" type="text" class="validate">
+                        <label for="convenio">Convênio</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="email" type="email" class="validate">
+                        <label for="email">Email</label>
+                    <a class="waves-effect waves-light btn modal-trigger right" href="#modal1">OK</a>
+                    </div>
+                    <!-- Modal Trigger -->
 
-                        </div>  
-                    </form>    
-                </div>
-        </div>     
-        <div id="Servicos3" class="col s12 container">
-            <table class="striped teal lighten-4">
-                <thead>
-                    <tr>
-                        <th>Cursos</th>
-                        <th>Data</th>
-                        <th>Local</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    <tr>
-                        <td>Palestra 1</td>
-                        <td>01/01/2019</td>
-                        <td>Hospital Blu Vitality</td>
-                    </tr>
-                    <tr>
-                        <td>Palestra 2</td>
-                        <td>05/10/2018</td>
-                        <td>Hospital Blu Vitality</td>
-                    </tr>
-                    <tr>
-                        <td>Palestra 3</td>
-                        <td>10/12/2018</td>
-                        <td>Hospital Blu Vitality</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div id="Servicos4" class="col s12 container">Teste 4
-
+                    <!-- Modal Structure -->
+                    <div id="modal1" class="modal">
+                        <div class="modal-content">
+                            <h4>Modal Header</h4>
+                            <p>A bunch of text</p>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                        </div>
+                    </div>
+                </div>  
+            </form>    
         </div>
     </div>
+</div>     
+<div id="Servicos3" class="col s12 container">
+    <table class="striped teal lighten-4">
+        <thead>
+            <tr>
+                <th>Cursos</th>
+                <th>Data</th>
+                <th>Local</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Palestra 1</td>
+                <td>01/01/2019</td>
+                <td>Hospital Blu Vitality</td>
+            </tr>
+            <tr>
+                <td>Palestra 2</td>
+                <td>05/10/2018</td>
+                <td>Hospital Blu Vitality</td>
+            </tr>
+            <tr>
+                <td>Palestra 3</td>
+                <td>10/12/2018</td>
+                <td>Hospital Blu Vitality</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>
 </div>
 
 
-
+<div>
 <jsp:include page="../model/footer.jsp"/>
+</div>
