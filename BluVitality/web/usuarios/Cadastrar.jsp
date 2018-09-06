@@ -55,7 +55,7 @@
 <!--Conteúdo-->
 <div class="row"></div>
 <div class="container col s12">
-    <form action="/doGetForm1" method="get">
+    <form action="/usuarios/store" method="POST">
         <div class="row">
             <div class="input-field col s12 m7">
                 <i class="material-icons prefix">account_circle</i>
@@ -89,20 +89,19 @@
 
             <div class="col s11 m5">
                 <div class="col s3">
-                    <span for="group1" class="flow-text">Sexo</span>
+                    <span for="cadastro-sexo" class="flow-text">Sexo</span>
                 </div>
                 <div class="col s9">
                     <label>
-                        <input class="blue-text" name="group1" type="radio" value="Masculino" checked />
+                        <input class="blue-text" name="cadastro-sexo" type="radio" value="M" checked />
                         <span>Masculino</span>
                     </label>
-                    <br>
                     <label>
-                        <input class="pink-text" name="group1" type="radio" value="Feminino"/>
+                        <input class="pink-text" name="cadastro-sexo" type="radio" value="F"/>
                         <span>Feminino</span>
                     </label>
                     <label>
-                        <input class="pink-text" name="group1" type="radio" value="Indefinido"/>
+                        <input class="pink-text" name="cadastro-sexo" type="radio" value="I"/>
                         <span>Não Tenho Certeza</span>
                     </label>
                 </div>
@@ -124,7 +123,7 @@
                 <input id="cadastro-rg" type="tel" class="validate">
                 <label for="cadastro-rg">RG</label>
             </div>
-            
+
         </div>
         <div class="row">
             <div class="input-field col s6 m4">
@@ -137,11 +136,11 @@
                 <input id="cadastro-uf" type="text" class="validate">
                 <label for="cadastro-uf">UF</label>
             </div>
-            
+
             <div class="input-field col s12 m4 right">
                 <i class="material-icons prefix">phone</i>
-                <input id="cadastro-contato-emergencia" type="tel" class="validate">
-                <label for="cadastro-contato-emergencia">Telefone</label>
+                <input id="cadastro-telefone" type="tel" class="validate">
+                <label for="cadastro-telefone">Telefone</label>
             </div>
         </div>
         <div class="row">
@@ -164,16 +163,12 @@
             </div>
             <div class="input-field col s12 m8">
                 <i class="material-icons prefix">phone</i>
-                <input id="cadastro-contato-convenio" type="tel" class="validate">
-                <label for="cadastro-contato-convenio">Convênio</label>
+                <input id="cadastro-convenio" type="tel" class="validate">
+                <label for="cadastro-convenio">Convênio</label>
             </div>
         </div>
-        <div class="row">
-            <div class="container">
-                <div class="input-field container">
-                    <input type="submit" class="btn col s12" value="Cadastrar">
-                </div>
-            </div>
+        <div class="row col s12 center input-field">
+            <input type="submit" class="btn col s4" value="Cadastrar">
         </div>
     </form>
 </div>
