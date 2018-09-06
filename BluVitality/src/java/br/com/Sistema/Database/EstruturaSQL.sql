@@ -17,7 +17,7 @@ CREATE TABLE usuarios(
     endereco VARCHAR(100) NOT NULL,
     complemento VARCHAR(100) NOT NULL,
     cidade VARCHAR(100) NOT NULL,
-    UF VARCHAR(2) NOT NULL,
+    uf VARCHAR(2) NOT NULL,
     naturalidade VARCHAR(100) NOT NULL,
     data_nascimento DATE NOT NULL,
     nome_fic VARCHAR(100) NOT NULL,
