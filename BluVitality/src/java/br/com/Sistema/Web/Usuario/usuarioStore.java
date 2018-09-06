@@ -4,6 +4,7 @@ import br.com.Sistema.Bean.UsuariosBean;
 import br.com.Sistema.DAO.UsuariosDAO;
 import java.io.IOException;
 import java.sql.Date;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -37,7 +38,8 @@ public class usuarioStore extends HttpServlet {
         usuario.setContato_emergencia(req.getParameter("cadastro-contato-emergencia"));
         usuario.setConvenio(req.getParameter("cadastro-convenio"));
         
-        usuario.setId(new UsuariosDAO.adicionar(usuario));
+        
+        usuario.setId(new UsuariosDAO().adicionar(usuario));
         
         resp.setContentType("text/html;charset=UTF-8");
     }
