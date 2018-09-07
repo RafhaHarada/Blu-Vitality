@@ -81,10 +81,15 @@
                 <input id="cadastro-idade" type="number" class="validate" min="0" max="100" name="idade">
                 <label for="cadastro-idade">Idade</label>
             </div>
-            <div class="input-field col s12 m5">
+            <div class="input-field col s12 m3">
                 <i class="material-icons prefix">date_range</i>
                 <input name="data-nascimento" id="cadastro-data-nascimento" type="text" class="datepicker validate" min="01/01/1905" max="01/01/2130">
                 <label for="cadastro-data-nascimento">Data de Nascimento</label>
+            </div>
+            <div class="input-field col s12 m2">
+                <i class="material-icons prefix">date_range</i>
+                <input name="estado-civil" id="cadastro-estado-civil" type="text" class="validate">
+                <label for="cadastro-estado-civil">Estado Civil</label>
             </div>
 
             <div class="col s11 m5">
@@ -93,7 +98,7 @@
                 </div>
                 <div class="col s9">
                     <label>
-                        <input class="blue" id="cadastro-sexo" name="sexo" type="radio" value="M" checked />
+                        <input class="blue" id="cadastro-sexo" name="sexo" type="radio" value="M" />
                         <span>Masculino</span>
                     </label>
                     <label>
@@ -115,7 +120,7 @@
             </div>
             <div class="input-field col s12 m3">
                 <i class="material-icons prefix">art_track</i>
-                <input id="cadastro-cpf" type="text" class="validate" name="cpf">
+                <input id="cadastro-cpf" type="text" class="validate" name="cpf" minlength="14">
                 <label for="cadastro-cpf">CPF</label>
             </div>
             <div class="input-field col s12 m3">
@@ -144,10 +149,15 @@
             </div>
         </div>
         <div class="row">
-            <div class="input-field col s12 m8">
+            <div class="input-field col s12 m5">
                 <i class="material-icons prefix">location_on</i>
                 <input id="cadastro-endereco" type="tel"  class="validate" name="endereco">
                 <label for="cadastro-endereco">Endereço</label>
+            </div>
+            <div class="input-field col s12 m3">
+                <i class="material-icons prefix">location_on</i>
+                <input id="cadastro-complemento" type="tel"  class="validate" name="complemento">
+                <label for="cadastro-complemento">Complemento</label>
             </div>
             <div class="input-field col s12 m4 right">
                 <i class="material-icons prefix">phone</i>
