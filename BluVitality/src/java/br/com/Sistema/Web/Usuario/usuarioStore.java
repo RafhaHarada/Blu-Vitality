@@ -24,9 +24,11 @@ public class usuarioStore extends HttpServlet {
         usuario.setSexo(req.getParameter("sexo").charAt(0));
         usuario.setCpf(req.getParameter("cpf"));
         usuario.setRg(req.getParameter("rg"));
+        usuario.setEstado_civil(req.getParameter("estado-civil"));
         usuario.setTelefone(req.getParameter("telefone"));
         usuario.setEmail(req.getParameter("email"));
         usuario.setEndereco(req.getParameter("endereco"));
+        usuario.setComplemento(req.getParameter("complemento"));
         usuario.setUf(req.getParameter("uf"));
         usuario.setCidade(req.getParameter("nome-completo"));
         usuario.setNaturalidade(req.getParameter("naturalidade"));
@@ -37,9 +39,9 @@ public class usuarioStore extends HttpServlet {
         usuario.setContato_emergencia(req.getParameter("contato-emergencia"));
         usuario.setConvenio(req.getParameter("convenio"));
         
-        
         usuario.setId(new UsuariosDAO().adicionar(usuario));
         
         resp.setContentType("text/html;charset=UTF-8");
+        resp.sendRedirect("/usuarios?id="+usuario.getId());
     }
 }
