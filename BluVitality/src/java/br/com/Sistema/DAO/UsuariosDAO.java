@@ -162,7 +162,7 @@ public class UsuariosDAO {
     }
 
     public UsuariosBean obterPeloId(int id) {
-        String sql = "SELECT * FROM alunos WHERE id = ?";
+        String sql = "SELECT * FROM usuarios WHERE id = ?";
         try {
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);
             ps.setInt(1, id);
