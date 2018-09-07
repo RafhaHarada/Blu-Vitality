@@ -4,6 +4,8 @@
     Author     : Rafael Alipio Harada
 --%>
 
+<%@page import="br.com.Sistema.DAO.UsuariosDAO"%>
+<%@page import="br.com.Sistema.Bean.UsuariosBean"%>
 <%@page import="br.com.Sistema.DAO.CargosDAO"%>
 <%@page import="br.com.Sistema.Bean.CargosBean"%>
 <%@page import="br.com.Sistema.Bean.FuncionariosBean"%>
@@ -12,16 +14,19 @@
 <%@page import="java.util.List"%>
 <!--JSP IF implementation.-->
 <%
-    int id_usuario = 0/*Integer.parseInt(request.getParameter("id"))*/;
-    /*List<FuncionariosBean> funcionarios = new FuncionariosDAO().obterTodos();*/
-    String cargoDoFuncionario = "Limpeza";
-    /*for (int i = 0; i < 10; i++) {
-     if (id_usuario == funcionarios.get(i).getId_usuario()) {
-     int id_cargo = funcionarios.get(i).getId_cargo();
-     cargoDoFuncionario = new CargosDAO().obterPeloId(id_cargo).getNome();
-     break;
-     }
-     }*/
+    int id_usuario = Integer.parseInt(request.getParameter("id") == null ? "0" : request.getParameter("id"));
+    String cargoDoFuncionario = "";
+    UsuariosBean usuario = new UsuariosDAO().obterPeloId(id_usuario);
+    if (id_usuario != 0) {
+        List<FuncionariosBean> funcionarios = new FuncionariosDAO().obterTodos();
+        for (int i = 0; i < funcionarios.size(); i++) {
+            if (id_usuario == funcionarios.get(i).getId_usuario()) {
+                int id_cargo = funcionarios.get(i).getId_cargo();
+                cargoDoFuncionario = new CargosDAO().obterPeloId(id_cargo).getNome();
+                break;
+            }
+        }
+    }
     if (cargoDoFuncionario.equals("Administração")) {
 %>
 <li>
@@ -29,9 +34,25 @@
         <div class="background">
             <img src="../resources/images/slider1.jpg">
         </div>
-        <a href="#Entrar"><img class="circle" src="../resources/images/Gameboy_Nyan_Cat.gif"></a>
-        <a href="#Entrar"><span class="white-text">Administração</span></a>
-        <a href="#Cadastrar"><span class="white-text">admin@admin.com</span></a>
+        <a href="#EditarPerfil">
+            <!--%if(usuario.getImage() == null){%-->
+            <img class="circle" src="../resources/images/cat6.gif">
+            <!--%}else{%-->
+            <!--%=usuario.getImage()%-->
+            <!--%}%-->
+        </a>
+        <a href="#EditarPerfil"><span class="white-text">
+                <%if (id_usuario != 0) {%>
+                <%=usuario.getNome()%>
+                <%}%>
+            </span>
+        </a>
+        <a href="#EditarPerfil"><span class="white-text">
+                <%if (id_usuario != 0) {%>
+                <%=usuario.getEmail()%>
+                <%}%>
+            </span>
+        </a>
     </div>
 </li>
 <li class="no-padding">
@@ -91,9 +112,25 @@
                 <div class="background">
                     <img src="../resources/images/bg1.gif">
                 </div>
-                <a href="#user"><img class="circle" src="../resources/images/cat6.gif"></a>
-                <a href="#name"><span class="white-text name">Médico</span></a>
-                <a href="#email"><span class="white-text email">medico@medico.com</span></a>
+                <a href="#EditarPerfil">
+                    <!--%if(usuario.getImage() == null){%-->
+                    <img class="circle" src="../resources/images/cat6.gif">
+                    <!--%}else{%-->
+                    <!--%=usuario.getImage()%-->
+                    <!--%}%-->
+                </a>
+                <a href="#EditarPerfil"><span class="white-text">
+                        <%if (id_usuario != 0) {%>
+                        <%=usuario.getNome()%>
+                        <%}%>
+                    </span>
+                </a>
+                <a href="#EditarPerfil"><span class="white-text">
+                        <%if (id_usuario != 0) {%>
+                        <%=usuario.getEmail()%>
+                        <%}%>
+                    </span>
+                </a>
             </div>
         </li>
         <li>
@@ -115,9 +152,25 @@
                         <div class="background">
                             <img src="../resources/images/bg1.gif">
                         </div>
-                        <a href="#user"><img class="circle" src="../resources/images/cat6.gif"></a>
-                        <a href="#name"><span class="white-text name">Recepção</span></a>
-                        <a href="#email"><span class="white-text email">recepcao@recepcao.com</span></a>
+                        <a href="#EditarPerfil">
+                            <!--%if(usuario.getImage() == null){%-->
+                            <img class="circle" src="../resources/images/cat6.gif">
+                            <!--%}else{%-->
+                            <!--%=usuario.getImage()%-->
+                            <!--%}%-->
+                        </a>
+                        <a href="#EditarPerfil"><span class="white-text">
+                                <%if (id_usuario != 0) {%>
+                                <%=usuario.getNome()%>
+                                <%}%>
+                            </span>
+                        </a>
+                        <a href="#EditarPerfil"><span class="white-text">
+                                <%if (id_usuario != 0) {%>
+                                <%=usuario.getEmail()%>
+                                <%}%>
+                            </span>
+                        </a>
                     </div>
                 </li>
                 <li>
@@ -139,9 +192,25 @@
                                 <div class="background">
                                     <img src="../resources/images/bg1.gif">
                                 </div>
-                                <a href="#user"><img class="circle" src="../resources/images/cat6.gif"></a>
-                                <a href="#name"><span class="white-text name">Limpeza</span></a>
-                                <a href="#email"><span class="white-text email">limpeza@limpeza.com</span></a>
+                                <a href="#EditarPerfil">
+                                    <!--%if(usuario.getImage() == null){%-->
+                                    <img class="circle" src="../resources/images/cat6.gif">
+                                    <!--%}else{%-->
+                                    <!--%=usuario.getImage()%-->
+                                    <!--%}%-->
+                                </a>
+                                <a href="#EditarPerfil"><span class="white-text">
+                                        <%if (id_usuario != 0) {%>
+                                        <%=usuario.getNome()%>
+                                        <%}%>
+                                    </span>
+                                </a>
+                                <a href="#EditarPerfil"><span class="white-text">
+                                        <%if (id_usuario != 0) {%>
+                                        <%=usuario.getEmail()%>
+                                        <%}%>
+                                    </span>
+                                </a>
                             </div>
                         </li>
                         <li>
@@ -160,9 +229,25 @@
                                         <div class="background">
                                             <img src="../resources/images/bg1.gif">
                                         </div>
-                                        <a href="#user"><img class="circle" src="../resources/images/cat6.gif"></a>
-                                        <a href="#signin"><span class="white-text name">Entrar</span></a>
-                                        <a href="#signup"><span class="white-text email">Cadastrar</span></a>
+                                        <a href="#EditarPerfil">
+                                            <!--%if(usuario.getImage() == null){%-->
+                                            <img class="circle" src="../resources/images/cat6.gif">
+                                            <!--%}else{%-->
+                                            <!--%=usuario.getImage()%-->
+                                            <!--%}%-->
+                                        </a>
+                                        <a href="#EditarPerfil"><span class="white-text">
+                                                <%if (id_usuario != 0) {%>
+                                                <%=usuario.getNome()%>
+                                                <%}%>
+                                            </span>
+                                        </a>
+                                        <a href="#EditarPerfil"><span class="white-text">
+                                                <%if (id_usuario != 0) {%>
+                                                <%=usuario.getEmail()%>
+                                                <%}%>
+                                            </span>
+                                        </a>
                                     </div>
                                 </li>
                                 <li>
