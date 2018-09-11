@@ -1,6 +1,5 @@
 package br.com.Sistema.DAO;
 
-import br.com.Sistema.Bean.CargosBean;
 import br.com.Sistema.Bean.ExpedicaoBean;
 import br.com.Sistema.Bean.FuncionariosBean;
 import br.com.Sistema.Bean.UsuariosBean;
@@ -79,8 +78,8 @@ public class ExpedicaoDAO {
             ps.setInt(1, expedicao.getId_usuario());
             ps.setInt(2, expedicao.getId_funcionario());
             ps.setString(3, expedicao.getTipo());
-            ps.setDate(3, expedicao.getData_expedicao());
-            ps.setDouble(3, expedicao.getCusto());
+            ps.setDate(4, expedicao.getData_expedicao());
+            ps.setDouble(5, expedicao.getCusto());
             
             ps.execute();
             ResultSet resultSet = ps.getGeneratedKeys();
@@ -100,9 +99,9 @@ public class ExpedicaoDAO {
             ps.setInt(1, expedicao.getId_usuario());
             ps.setInt(2, expedicao.getId_funcionario());
             ps.setString(3, expedicao.getTipo());
-            ps.setDate(3, expedicao.getData_expedicao());
-            ps.setDouble(3, expedicao.getCusto());
-            ps.setInt(4, expedicao.getId());
+            ps.setDate(4, expedicao.getData_expedicao());
+            ps.setDouble(5, expedicao.getCusto());
+            ps.setInt(6, expedicao.getId());
             
             return ps.executeUpdate() ==1;
         }catch(SQLException e){
