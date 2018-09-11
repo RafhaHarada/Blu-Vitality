@@ -4,13 +4,6 @@
     Author     :@Gustavo Rodrigues (gugaaroodrigues@gmail.com) Rafhael Harada
 
 --%>
-<%@page import="br.com.Sistema.DAO.UsuariosDAO"%>
-<!--%@include file="headeradm.jsp" %>-->
-<%@ page import="br.com.Sistema.Bean.FuncionariosBean" %>
-<%@ page import="br.com.Sistema.DAO.FuncionariosDAO" %>
-<%@ page import="br.com.Sistema.Bean.UsuariosBean" %>
-<%@ page import="br.com.Sistema.Bean.CargosBean" %>
-<%@page import="java.util.List"%>
 
 
 <jsp:include page="../model/headerStart.jsp"/>
@@ -77,10 +70,10 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <% for (UsuariosBean usuario : usuarios) {%>
+                                        <% for (UsuariosBean administradorUsuario : usuarios) {%>
                                         <tr>
-                                            <td><%=usuario.getNome()%></td>
-                                            <td><%=usuario.getCpf()%></td>
+                                            <td><%=administradorUsuario.getNome()%></td>
+                                            <td><%=administradorUsuario.getCpf()%></td>
                                             <td><a href=""><i class="material-icons">edit</i></a><a href=""><i class="material-icons">delete</i></a></td>
                                         </tr>
                                         <% } %>
