@@ -1,8 +1,8 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * uand open the template in the editor.
- */
+    Document   : headeradm
+    Created on : 26/08/2018, 17:47:02
+    Author     :@Gustavo Rodrigues (gugaaroodrigues@gmail.com)
+*/
 package br.com.Sistema.Web.Administrador;
 
 import br.com.Sistema.Bean.FuncionariosBean;
@@ -15,12 +15,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author Alunos
- */
+
 @WebServlet ("/administrador")
-public class BluIndex extends HttpServlet{
+public class AdministradorIndex extends HttpServlet{
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

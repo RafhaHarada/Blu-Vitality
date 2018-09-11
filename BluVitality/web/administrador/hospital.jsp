@@ -1,8 +1,6 @@
-<%-- 
-    Document   : headeradm
+<%-- Document   : headeradm
     Created on : 26/08/2018, 17:47:02
     Author     :@Gustavo Rodrigues (gugaaroodrigues@gmail.com)
-
 --%>
 
 <%@page import="br.com.Sistema.DAO.QuartoDAO"%>
@@ -10,8 +8,14 @@
 <%@page import="br.com.Sistema.DAO.UsuariosDAO"%>
 <%@page import="br.com.Sistema.Bean.UsuariosBean"%>
 <%@page import="java.util.List"%>
-<jsp:include page="../model/header.jsp"/>
-
+<jsp:include page="../model/headerStart.jsp"/>
+<li><a class='dropdown-trigger' href='#' data-target='dropdownCadastro'>Opções</a>
+    <!-- Dropdown Structure -->
+    <ul id='dropdownCadastro' class='dropdown-content'>
+        <li><a href="../">Voltar</a></li>
+    </ul>
+</li>
+<%@include file="../model/headerEnd.jsp" %>
 <div class="row">
     <div class="  center" style="margin-top: auto">
         <div class="divider"></div>
@@ -46,30 +50,7 @@
                                         <i class="material-icons"></i>
                                         Quartos
                                         <span class="badge"></span></div>
-                                    <div class="collapsible-body">
-                                        <span class="chart-title white-text"><h5>Pacientes</h5></span>
-                                        <div class="chart-revenue cyan darken-2 white-text">
-                                            <% List<QuartoBean> quartos = new QuartoDAO().obterTodos();%>
-                                            <table class="responsive-table striped">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Quarto</th>
-                                                        <th>Tipo</th>
-                                                        <th>STATUS</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <% for (QuartoBean quarto : quartos) {%>
-                                                    <tr>
-                                                        <td><%=quarto.getNumero_quarto()%></td>
-                                                        <td><%=quarto.getTipo()%></td>
-                                                        <td><%=quarto.getStatus()%></td>
-                                                    </tr>
-                                                    <% }%>
-                                                </tbody>
-                                            </table>    
-                                        </div>
-                                    </div>
+                                        <%@include file="quarto/ListarQuartos.jsp" %>
                                 </li>
                                 <li>
                                     <div class="collapsible-header">
@@ -100,45 +81,10 @@
                                     <%@include file="quarto-formulario-cadastro.jsp" %>
                                 </li>
                                 <li>
-                                    <div class="collapsible-header">
-                                        <i class="material-icons"></i>
-                                        Remover
-                                        <span class="badge "></span></div>
-                                    <div class="collapsible-body">
-                                        <form>
-                                            <span>Numero do Quarto:</span>
-                                            <input type="number" name="numero">
-                                            <span>TIPO:</span>
-                                        </form>
-                                        <select id="tipo">
-                                            <option value="UTI">UTI</option>
-                                            <option value="SemiIntencivo">Semi - Intensivo</option>
-                                            <option value="salaDeOperacao"> Sala de Cirurgia</option>
-                                            <option value="leito">Leito</option>
-                                            <option value="consultorio">Consultorio</option>
-                                            <option value="recuperacao">Sala de recuperação</option>
-                                        </select>
-                                        <span>STATUS</span>
-                                        <select id="status">
-                                            <option value="ativo">Ativo</option>
-                                            <option value="inativo">Inativo</option>
-                                        </select>
-                                        <a class="waves-effect waves-light btn-small">Remover</a>
-                                    </div>
+                                    <%@include file="quarto-formulario-remover.jsp" %>
                                 </li>
                                 <li>
-                                    <div class="collapsible-header">
-                                        <i class="material-icons"></i>
-                                        Mover Quarentena
-                                        <span class="badge"></span></div>
-                                    <div class="collapsible-body"></div>
-                                </li>
-                                <li>
-                                    <div class="collapsible-header">
-                                        <i class="material-icons"></i>
-                                        Remover Quarentena
-                                        <span class="badge"></span></div>
-                                    <div class="collapsible-body"></div>
+                                    <%@include file="quarto-formulario-quarentena.jsp" %>
                                 </li>
                             </ul>
                         </div>
