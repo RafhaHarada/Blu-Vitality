@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
     Author     :@Gustavo Rodrigues (gugaaroodrigues@gmail.com)
 */
 @WebServlet ("/quarto")
-public class QuartoIndex extends HttpServlet{
+public class QuartoCadastro extends HttpServlet{
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

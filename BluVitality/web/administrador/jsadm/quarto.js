@@ -3,7 +3,7 @@ jQuery_2_1_1(function () {
 
     jQuery_2_1_1("#quarto-cadastro-salvar").on('click', function () {
         jQuery_2_1_1.ajax({
-            url: '/hospital/store',
+            url: '/quarto/store',
             method: 'post',
             data: {
                 'numeroQuarto': jQuery_2_1_1('#quarto-cadastro-numero-quarto').val(),
