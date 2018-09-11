@@ -137,7 +137,7 @@
                                 <li>
                                     <div class="collapsible-header">
                                         <i class="material-icons"></i>
-                                        Adicinar
+                                        Solicitar
                                         <span class="badge"></span></div>
                                     <div class="collapsible-body"></div>
                                 </li>
@@ -151,14 +151,6 @@
                                 <li>
                                     <div class="collapsible-header">
                                         <i class="material-icons"></i>
-                                        Mover Quarentena
-                                        <span class="badge"></span></div>
-                                    <div class="collapsible-body"></div>
-                                </li>
-                                <li>
-                                    <div class="collapsible-header">
-                                        <i class="material-icons"></i>
-                                        Remover Quarentena
                                         <span class="badge"></span></div>
                                     <div class="collapsible-body"></div>
                                 </li>
