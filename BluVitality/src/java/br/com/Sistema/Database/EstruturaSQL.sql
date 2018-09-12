@@ -108,7 +108,7 @@ INSERT INTO expedicao (id_usuario,id_funcionario,tipo,data_expedicao,custo) VALU
 (2,3,'Consulta','2018-10-16',350),
 (4,2,'Consulta','2018-10-21',590);
 
-CREATE TABLE quarto(
+CREATE TABLE quartos(
     id INT AUTO_INCREMENT PRIMARY KEY,
     -- id_usuario INT NOT NULL,
     -- id_funcionario INT NOT NULL,
@@ -120,6 +120,6 @@ CREATE TABLE quarto(
     -- FOREIGN KEY(id_usuario) REFERENCES usuarios(id),
     -- FOREIGN KEY(id_funcionario) REFERENCES funcionarios(id)
 );
-INSERT INTO quarto (numero_quarto, tipo ,data_entrada, data_saida, status) VALUES
+INSERT INTO quartos (numero_quarto, tipo ,data_entrada, data_saida, status) VALUES
 (1001,'UTI','2018-09-20','2018-09-10','ativo'),
 (1002,'UTI','2018-10-11','2018-10-03','inativo');

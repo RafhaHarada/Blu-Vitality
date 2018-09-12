@@ -50,6 +50,7 @@
                                         <i class="material-icons"></i>
                                         Quartos
                                         <span class="badge"></span></div>
+                                        <%@include file="ListarQuartos.jsp" %>
                                 </li>
                                 <li>
                                     <div class="collapsible-header">

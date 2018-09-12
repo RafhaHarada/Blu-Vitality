@@ -21,7 +21,7 @@ import java.util.List;
 public class QuartoDAO {
     public List<QuartoBean> obterTodos() {
         List<QuartoBean> quartos = new ArrayList<>();
-        String sql = "SELECT id, id_usuario, id_funcionario, data_entrada, data_saida, status FROM quartos";
+        String sql = "SELECT * FROM quartos";
         
         try{
             Statement st = Conexao.abrirConexao().createStatement();
@@ -36,10 +36,11 @@ public class QuartoDAO {
                 quarto.setData_entrada(resultSet.getDate("data_entrada"));
                 quarto.setData_saida(resultSet.getDate("data_saida"));
                 quarto.setStatus(resultSet.getString("status"));
+                quartos.add(quarto);
             }
             }catch(SQLException e){
-                    e.printStackTrace();
-            }finally{
+            e.printStackTrace();
+        }finally{
             Conexao.fecharConexao();
         }return quartos;
     }
@@ -68,7 +69,7 @@ public class QuartoDAO {
         }return quarto;
     }
     
-    public int adicionar(QuartoBean quarto) {
+    public int adicionarQuarto(QuartoBean quarto) {
         String sql = "INSERT INTO quartos (numero_quarto, data_entrada, data_saida, status, tipo) "
                 + "VALUES(?,?,?,?,?,?)";//id_usuario, id_funcionario,
         try{
@@ -83,7 +84,7 @@ public class QuartoDAO {
             
             ps.execute();
             ResultSet resultSet = ps.getGeneratedKeys();
-            if(resultSet.last()){
+            if(resultSet.next()){
                 return resultSet.getInt(1);
             }
         }catch(SQLException e){

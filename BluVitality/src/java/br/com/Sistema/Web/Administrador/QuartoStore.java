@@ -24,12 +24,12 @@ public class QuartoStore extends HttpServlet {
             throws ServletException, IOException {
         
         QuartoBean quarto = new QuartoBean();
-        quarto.setNumero_quarto(Integer.parseInt(req.getParameter("Numero_quarto")));
-        quarto.setTipo(req.getParameter("Tipo"));
-        quarto.setStatus(req.getParameter("Status"));
-        quarto.setId(new QuartoDAO().adicionar(quarto));
+        quarto.setNumero_quarto(Integer.parseInt(req.getParameter("numeroQuarto")));
+        quarto.setTipo(req.getParameter("tipo"));
+        quarto.setStatus(req.getParameter("status"));
+        quarto.setId(new QuartoDAO().adicionarQuarto(quarto));
         
-            resp.sendRedirect("/quarto");
+            resp.sendRedirect("administrador/index.jsp");
                     
      
     }

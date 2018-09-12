@@ -8,6 +8,8 @@
 --%>
 
 
+<%@page import="br.com.Sistema.DAO.FuncionariosDAO"%>
+<%@page import="br.com.Sistema.Bean.FuncionariosBean"%>
 <%@page import="br.com.Sistema.DAO.QuartoDAO"%>
 <%@page import="br.com.Sistema.Bean.QuartoBean"%>
 <%@page import="java.util.List"%>
@@ -15,12 +17,14 @@
     <span class="chart-title white-text"><h5>Pacientes</h5></span>
     <div class="chart-revenue cyan darken-2 white-text">
         <% List<QuartoBean> quartos = new QuartoDAO().obterTodos();%>
+        <% List<FuncionariosBean> funcionarios = new FuncionariosDAO().obterTodos();%>
+
         <table class="responsive-table striped">
             <thead>
                 <tr>
                     <th>Quarto</th>
                     <th>Tipo</th>
-                    <th>STATUS</th>
+                    <th>Status</th>
                 </tr>
             </thead>
             <tbody>
@@ -32,6 +36,10 @@
                 </tr>
                 <% }%>
             </tbody>
-        </table>    
+            <tfoot>
+                <tr>
+                </tr>
+            </tfoot>
+        </table>     
     </div>
 </div>
