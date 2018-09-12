@@ -16,6 +16,10 @@
 </li>
 <%@include file="../model/headerEnd.jsp" %>
 <div class="row">
+ 
+    <h5>Seja Bem vindo</h5>
+    <span class="nome">Gustavo</span>
+  
     <div class="  center" style="margin-top: auto">
         <div class="divider"></div>
         <ul class="tabs tabs-transparent">
@@ -25,12 +29,9 @@
         </ul>
         <div class="divider"></div>
         <div id="InicioADM" class="col s12 container">
-            <h5>Seja Bem vindo</h5>
-            <span class="nome">Gustavo</span>
+
         </div>
-                <a class="waves-effect waves-light btn-large">Button</a>
-                <a class="waves-effect waves-light btn-large"><i class="material-icons left">cloud</i>button</a>
-                <a class="waves-effect waves-light btn-large"><i class="material-icons right">cloud</i>button</a>
+
         <div id="listapaciente" class="col s12 scrollBarOnDiv">
             <div class="col s12">
                 <%@include file="table-pacientes.jsp" %>   
@@ -42,5 +43,6 @@
             </div>
         </div>
     </div>
-    <div class="divider"></div>
-    <%@include file="../model/footer.jsp" %> 
+</div>
+
+<%@include file="../model/footer.jsp" %> 
