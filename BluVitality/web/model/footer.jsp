@@ -5,31 +5,31 @@
 --%>
 
 <!--Roda pé-->
-<div class="slider">
+<!--div class="slider">
     <ul class="slides">
         <li>
-            <img src="../resources/images/slider1.jpg" alt=''> <!-- random image -->
+            <img src="../resources/images/slider1.jpg" alt=''>
             <div class="caption left-align black-text">
                 <h3>Blu Vitality</h3>
                 <h5>Vital para você, vital para nós.</h5>
             </div>
         </li>
         <li>
-            <img src="../resources/images/slider2.png" alt=''> <!-- random image -->
+            <img src="../resources/images/slider2.png" alt=''>
             <div class="caption left-align black-text">
                 <h3>Alta Tecnologia e Gestão</h3>
                 <h5>Tenha mais mobilidade e eficiência.</h5>
             </div>
         </li>
         <li>
-            <img src="../resources/images/slider3.jpg" alt=''> <!-- random image -->
+            <img src="../resources/images/slider3.jpg" alt=''>
             <div class="caption left-align black-text">
                 <h3>Visite Nosso Hospital</h3>
                 <h5>Estruturado,organizado e preparado!</h5>
             </div>
         </li>
     </ul>
-</div>
+</div-->
 <footer class="page-footer teal accent-4">
     <div class="container">
         <div class="row">
