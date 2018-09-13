@@ -4,6 +4,9 @@
     Author     : Gus
 --%>
 
+<%@page import="java.util.List"%>
+<%@page import="br.com.Sistema.DAO.UsuariosDAO"%>
+<%@page import="br.com.Sistema.Bean.UsuariosBean"%>
 <nav>
     <div class="nav-wrapper teal lighten-4">
         <form>

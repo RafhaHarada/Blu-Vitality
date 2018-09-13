@@ -3,6 +3,9 @@
     Created on : 11/09/2018, 14:29:56
     Author     : Gus
 --%>
+<%@page import="br.com.Sistema.DAO.FuncionariosDAO"%>
+<%@page import="br.com.Sistema.Bean.FuncionariosBean"%>
+<%@page import="java.util.List"%>
 <nav>
     <div class="nav-wrapper teal lighten-4">
       <form>
