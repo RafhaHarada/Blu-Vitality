@@ -32,7 +32,7 @@ public class usuarioStore extends HttpServlet {
         usuario.setUf(req.getParameter("uf"));
         usuario.setCidade(req.getParameter("nome-completo"));
         usuario.setNaturalidade(req.getParameter("naturalidade"));
-        String dataBr[] = req.getParameter("data-nascimento").split("-");
+        String dataBr[] = req.getParameter("data-nascimento").split("/");
         String dataEn = dataBr[2]+"-"+dataBr[1]+"-"+dataBr[0];
         usuario.setData_nascimento(Date.valueOf(dataEn));
         usuario.setTipo_sanguineo(req.getParameter("tipo-sanguineo"));

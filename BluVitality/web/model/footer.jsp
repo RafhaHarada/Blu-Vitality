@@ -34,9 +34,9 @@
     <div class="container">
         <div class="row">
             <div class="col l6 s12">
-                <h5 class="white-text">Contatos Rápidos</h5>
-                <h2 class="white-text">Fale Conosco</h2>
-                <p class="grey-text text-lighten-4">Telefone: +55 (xx) xxxx-xxxx</p>
+                <h4 class="white-text">Contatos Rápidos</h4>
+                <h5 class="white-text">Fale Conosco</h5>
+                <p class="grey-text text-lighten-4">Telefone: +55 (47) 4002-8922</p>
                 <p class="grey-text text-lighten-4">E-mail: bluvitality@gmail.com</p>
             </div>
             <div class="col l4 offset-l2 s12">
@@ -64,8 +64,12 @@
 <script type="text/javascript" src="../resources/js/google-platform.js"></script>
 <script type="text/javascript" src="../resources/js/custom.js"></script>
 <script type="text/javascript" src="../resources/js/quarto-cadastro.js"></script>
+<<<<<<< HEAD
 <script type="text/javascript" src="../resources/js/quarto-cadastro.js"></script>
 <script src="../libs/select2/select2.min.js"></script>
 <script src="../libs/datatable/jquery.dataTables.min.js"></script>
+=======
+<script type="text/javascript" src="../funcionarios/jsfuncionarios/jsfuncionarios.js"></script>
+>>>>>>> 52bfe0e583d498f2c24d8b4381f63dfbe1a9fb3b
 </body>
 </html>

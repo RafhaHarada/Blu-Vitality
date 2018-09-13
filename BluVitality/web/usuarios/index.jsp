@@ -14,61 +14,50 @@
 </li>
 <%@include file="../model/headerEnd.jsp" %>
 
-<div class="row container">
-    <ul class="tabs tabs-transparent">
-        <li class="tab"><a href="#Sobre1" class="active teal-text">Paciente</a></li>
-        <li class="tab"><a href="#Sobre2" class="teal-text">Acompanhante</a></li>
-        <li class="tab"><a href="#Sobre3" class="teal-text">Observações</a></li>
-        <li class="tab"><a href="#Sobre4" class="teal-text">Consultas Anteriores</a></li>
-        <li class="tab"><a href="#Sobre5" class="teal-text">Exames Anteriores</a></li>
-        <li class="tab"><a href="#Sobre6" class="teal-text">Agendar Consultas/Exames</a></li>
-    </ul>
-    <div id="Sobre1" class="col s12">
-
+<ul class="tabs tabs-transparent">
+    <li class="tab"><a href="#Usuario1" class="active teal-text">Paciente</a></li>
+    <li class="tab"><a href="#Usuario2" class="teal-text">Acompanhante</a></li>
+    <li class="tab"><a href="#Usuario3" class="teal-text">Observações</a></li>
+    <li class="tab"><a href="#Usuario4" class="teal-text">Consultas Anteriores</a></li>
+    <li class="tab"><a href="#Usuario5" class="teal-text">Exames Anteriores</a></li>
+    <li class="tab"><a href="#Usuario6" class="teal-text">Agendar Consultas/Exames</a></li>
+</ul>
+<div id="Usuario1" class="col s12">
+    <div class="row">
         <ul class="collection col s6">
             <li class="collection-item avatar teal lighten-4">
                 <img src="" alt="" class="circle red">
                 <span class="nome">Nome:</span>
                 <span><%=usuario.getNome()%></span>
-
             </li>
             <li class="collection-item teal lighten-5">
                 <span class="data-nascimento">Data de nascimento:</span>
                 <span>
-                    <% String dataEn[] = usuario.getData_nascimento().toString().split("-"); 
-                       String dataBr = dataEn[2] + "/" + dataEn[1] + "/" + dataEn[0];
+                    <% String dataEn[] = usuario.getData_nascimento().toString().split("-");
+                        String dataBr = dataEn[2] + "/" + dataEn[1] + "/" + dataEn[0];
                     %>
                     <%=dataBr%>
                 </span>
-
-
             </li>
             <li class="collection-item teal lighten-4">
                 <span class="cpf">CPF:</span>
                 <span><%=usuario.getCpf()%></span>
-
-
             </li>
             <li class="collection-item teal lighten-5">
                 <span class="rg">RG:</span>
                 <span><%=usuario.getRg()%></span>
-
             </li>
             <li class="collection-item teal lighten-4">
                 <span class="naturalidade">Naturalidade:</span>
                 <span><%=usuario.getNaturalidade()%></span>
-
-
             </li>
             <li class="collection-item teal lighten-5">
                 <span class="sexo">Sexo:</span>
                 <span><%=usuario.getSexo()%></span>
-
             </li>
             <li class="collection-item teal lighten-4">
                 <span class="sanguineo">Tipo Sanguíneo:</span>
                 <span><%=usuario.getTipo_sanguineo()%></span>
-
             </li>
         </ul>
         <ul class="collection col s6">
@@ -81,25 +70,21 @@
                 <span class="uf">UF:</span>
                 <span><%=usuario.getUf()%></span>
                 <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
-
             </li>
             <li class="collection-item teal lighten-4">
                 <span class="endereco">Endereço</span>
                 <span><%=usuario.getEndereco()%></span>
                 <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
-
             </li>
             <li class="collection-item teal lighten-5">
                 <span class="email">Email:</span>
                 <span><%=usuario.getEmail()%></span>
                 <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
-
             </li>
             <li class="collection-item teal lighten-4">
                 <span class="telefone">Telefone:</span>
                 <span><%=usuario.getTelefone()%></span>
                 <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
-
             </li>
             <li class="collection-item teal lighten-5">
                 <span class="contato-emergencia">Contato de emergência:</span>
@@ -117,15 +102,12 @@
                 <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
             </li>
         </ul>
-
-
         <div class="col s1 right">
             <a class="btn-floating btn cyan pulse right margin-botao"><i class="material-icons">edit</i></a>
         </div>
     </div>
 </div>
-<div id="Sobre2" class="col s12 container ">
-
+<div id="Usuario2" class="col s12 container ">
     <nav>
         <div class="nav-wrapper">
             <form>
@@ -137,10 +119,8 @@
             </form>
         </div>
     </nav>
-
-
 </div>
-<div id="Sobre3" class="col s12 container white">
+<div id="Usuario3" class="col s12 container white">
     <ul class="collection teal-text teatl lighten-4">
         <ul class="collection with-header">
             <li class="collection-header"><h4>Observações:</h4></li>
@@ -149,15 +129,10 @@
             <li class="collection-item"></li>
             <li class="collection-item"></li>
             <li class="collection-item"></li>
-            <p> 
-            <ul class="col s1 right">
-
-            </ul>
         </ul>
-
+    </ul>
 </div>
-<div id="Sobre4" class="col s12 container white">
-
+<div id="Usuario4" class="col s12 container white">
     <table class="striped teal lighten-4">
         <thead>
             <tr>
@@ -168,7 +143,6 @@
                 <th>Sala</th>
             </tr>
         </thead>
-
         <tbody>
             <tr>
                 <td>Cardiologico</td>
@@ -198,17 +172,17 @@
                 <td>$7.00</td>
                 <td>$7.00</td>
             </tr>
-        <td>Jonathan</td>
-        <td>Lollipop</td>
-        <td>$7.00</td>
-        <td>$7.00</td>
-        <td>$7.00</td>
+            <tr>
+                <td>Jonathan</td>
+                <td>Lollipop</td>
+                <td>$7.00</td>
+                <td>$7.00</td>
+                <td>$7.00</td>
+            </tr>
         </tbody>
     </table>
 </div>
-
-<div id="Sobre5" class="col s12 container white">
-
+<div id="Usuario5" class="col s12 container white">
     <table class="striped teal lighten-4">
         <thead>
             <tr>
@@ -218,21 +192,18 @@
                 <th>Sala</th>
             </tr>
         </thead>
-
         <tbody>
             <tr>
                 <td>Alvin</td>
                 <td>Eclair</td>
                 <td>$0.87</td>
                 <td>$0.87</td>
-
             </tr>
             <tr>
                 <td>Alan</td>
                 <td>Jellybean</td>
                 <td>$3.76</td>
                 <td>$3.76</td>
-
             </tr>
             <tr>
                 <td>Jonathan</td>
@@ -254,49 +225,43 @@
             </tr>
         </tbody>
     </table>
+</div>
+<div id="Usuario6" class="col s12 container white scrollBarOnDiv">
+    <div class="card-panel teal lighten-4">
+        <span class="teal-text teatl lighten-4 ">Você deseja agendar<span class="red-text">*</span></span>
+    </div>
+    <div>
+        <label>
+            <input class="with-gap exameRadio" name="group1" type="radio" />
+            <span class="teal-text">Exame</span>
+        </label>
+    </div>
+
+    <div>
+        <label>
+            <input class="with-gap consultaRadio" name="group1" type="radio" />
+            <span class="teal-text">Consulta</span>
+        </label>
+    </div>
+    <div class="agendarE teal lighten-4">
+        <label></label>
+        <select class="browser-default">
+            <option value="" disabled selected>Agendar Exame</option>
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+        </select>
+    </div>
+    <div class="agendarC teal lighten-4">
+
+        <select class="browser-default">
+            <option value="" disabled selected>Agenda Consulta</option>
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+        </select>
 
 
-    <div id="Sobre6" class="col s12 container white scrollBarOnDiv">
-
-        <div class="card-panel teal lighten-4">
-            <span class="teal-text teatl lighten-4 ">Você deseja agendar<span class="red-text">*</span></span>
-        </div>
-
-        <p>
-            <label>
-                <input class="with-gap exameRadio" name="group1" type="radio" />
-                <span class="teal-text">Exame</span>
-            </label>
-        </p>
-
-        <p>
-            <label>
-                <input class="with-gap consultaRadio" name="group1" type="radio" />
-                <span class="teal-text">Consulta</span>
-            </label>
-        </p>
-        <div class="agendarE teal lighten-4">
-             <label></label>
-  <select class="browser-default">
-    <option value="" disabled selected>Agendar Exame</option>
-    <option value="1">Option 1</option>
-    <option value="2">Option 2</option>
-    <option value="3">Option 3</option>
-  </select>
-            
-            </div>
-        </div>
-        <div class="agendarC lighten-4">
-           
-            <select class="browser-default">
-                <option value="" disabled selected>Agenda Consulta</option>
-                <option value="1">Option 1</option>
-                <option value="2">Option 2</option>
-                <option value="3">Option 3</option>
-            </select>
-
-
-        </div>
     </div>
 </div>
 
