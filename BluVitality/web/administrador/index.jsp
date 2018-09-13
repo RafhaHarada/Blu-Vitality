@@ -14,11 +14,10 @@
     </ul>
 </li>
 <%@include file="../model/headerEnd.jsp" %>
-<div id="content">
 <div class=" row">
  
     <h5>Seja Bem vindo</h5>
-    <a class="waves-effect waves-light btn-small  right" id="btnFinancas">button</a>
+    <a class="waves-effect waves-light btn-small right" id="btnFinancas">button</a>
     
     <span class="nome">Gustavo</span>
     <div class="" style="margin-top: auto">
@@ -27,7 +26,7 @@
             <li class="tab"><a href="#InicioADM" class="active teal-text waves-effect">Bem vindo</a></li>
             <li class="tab"><a href="#listapaciente" class="teal-text waves-effect">Pacientes</a></li>
             <li class="tab"><a href="#lisfuncionarios" class="teal-text waves-effect">Funcionarios</a></li>
-            <li class="tab"><a href="#hospitalConfig" class="teal-text waves-effect">Quarto</a></li>
+            <li class="tab"><a href="#hospitalQuartos" class="teal-text waves-effect">Quarto</a></li>
             <li class="tab"><a href="#hospitalConfig" class="teal-text waves-effect">Configuração</a></li>
             <li class="tab"><a href="#hospitalEquipamentos" class="teal-text waves-effect">Equipamentos</a></li>
             <li class="tab"><a href="#hospitalEventos" class="teal-text waves-effect">Eventos</a></li>
@@ -47,6 +46,10 @@
                 <%@include file="table-funcionarios.jsp" %> 
             </div>
         </div>
+        <div id="hospitalQuartos" class="col s12 container">
+            <div class="">
+            </div>
+        </div>
         <div id="hospitalConfig" class="col s12 container">
             <div class="">
                 
@@ -62,12 +65,10 @@
                 
             </div>
         </div>
-            
     </div>
 </div>
-</div>
-<div id="loading" style="display: block">
+<!--<div id="loading" style="display: block">
     <i class="material-icons right ld ld-cycle" id="loading">loop</i>
-</div>
+</div>-->
 
 <%@include file="../model/footer.jsp" %> 

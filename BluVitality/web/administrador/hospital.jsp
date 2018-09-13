@@ -49,7 +49,7 @@
                                         <i class="material-icons"></i>
                                         Quartos
                                         <span class="badge"></span></div>
-                                        <%@include file="ListarQuartos.jsp" %>
+                                        <%@include file="quarto/ListarQuartos.jsp" %>
                                 </li>
                                 <li>
                                     <div class="collapsible-header">
@@ -77,13 +77,13 @@
                         <div class="collapsible-body">
                             <ul class="collapsible">
                                 <li>
-                                    <%@include file="quarto-formulario-cadastro.jsp" %>
+                                    <%@include file="quarto/quarto-formulario-cadastro.jsp" %>
                                 </li>
                                 <li>
-                                    <%@include file="quarto-formulario-remover.jsp" %>
+                                    <%@include file="quarto/quarto-formulario-remover.jsp" %>
                                 </li>
                                 <li>
-                                    <%@include file="quarto-formulario-quarentena.jsp" %>
+                                    <%@include file="quarto/quarto-formulario-quarentena.jsp" %>
                                 </li>
                             </ul>
                         </div>
