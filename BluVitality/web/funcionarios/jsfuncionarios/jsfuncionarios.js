@@ -1,7 +1,6 @@
 
 //Tabela Prontuário
 $(document).ready(function () {
-    $(".prontuarioBusca").hide();
     $(".prontuarioResultado").hide();
     
     $(".botaoBuscar").on("click", function () {

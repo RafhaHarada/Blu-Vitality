@@ -121,8 +121,8 @@
     <div id="Sobre2" class="col s12 container ">
 
     </div>
-    <div id="Servicos2" class="container">
-        <div class="row">
+    <div id="Servicos2" class="scrollBarOnDiv">
+        <div class="prontuarioBusca container">
             <form class="col s12">
                 <div class="row">
                     <div class="input-field col s6">
@@ -133,34 +133,65 @@
                         <input placeholder="Digite aqui" type="text" class="validate">
                         <label for="data-nascimento">Data de Nascimento</label>
                     </div>
-                    <div class="input-field col s6">
-                        <input placeholder="Digite aqui" id="telefone" type="text" class="validate">
-                        <label for="telefone">Telefone</label>
-                    </div>
-                    <div class="input-field col s5">
-                        <input placeholder="Digite aqui" id="convenio" type="text" class="validate">
-                        <label for="convenio">Convênio</label>
-                    </div>
-                    <div class="input-field col s12">
-                        <input id="email" type="email" class="validate">
-                        <label for="email">Email</label>
-                    <a class="waves-effect waves-light btn modal-trigger right" href="#modal1">OK</a>
-                    </div>
-                    <!-- Modal Trigger -->
 
-                    <!-- Modal Structure -->
-                    <div id="modal1" class="modal">
-                        <div class="modal-content">
-                            <h4>Modal Header</h4>
-                            <p>A bunch of text</p>
-                        </div>
-                        <div class="modal-footer">
-                            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                </div>  
+            </form> 
+            <div>
+                <a class="btn teal botaoBuscar">Busca Prontuário</a>
+            </div>
+        </div>
+        <div class="prontuarioResultado container">
+            <div class="col s12">
+                <div class="row">
+                    <div class="col s6">
+                        <div class="teal-text flow-text">
+                            <ul class="collapsible">
+                                <li>
+                                    <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
+                                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                                </li>
+                                <li>
+                                    <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+                                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                                </li>
+                                <li>
+                                    <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+                                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                                </li><li>
+                                    <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
+                                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                                </li>
+                                <li>
+                                    <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+                                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                                </li>
+                                <li>
+                                    <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+                                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                                </li><li>
+                                    <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
+                                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                                </li>
+                                <li>
+                                    <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+                                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                                </li>
+                                <li>
+                                    <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+                                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                                </li>
+                            </ul>
+
                         </div>
                     </div>
+
                 </div>  
-            </form>    
+            </div> 
+            <div>
+                <a class="btn teal botaoVoltar">Voltar as Buscas</a>
+            </div>
         </div>
+
     </div>
 </div>     
 <div id="Servicos3" class="col s12 container">
@@ -192,10 +223,5 @@
         </tbody>
     </table>
 </div>
-</div>
-</div>
 
-
-<div>
 <jsp:include page="../model/footer.jsp"/>
-</div>
