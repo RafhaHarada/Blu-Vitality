@@ -1,34 +1,32 @@
-var jQuery_2_1_1 = $.noConflict(true);
+$(document).ready(function () {
 
-jQuery_2_1_1(document).ready(function () {
-
-    jQuery_2_1_1('.slider').slider();
+    $('.slider').slider();
 
     //Menu retratil
-    jQuery_2_1_1('.collapsible').collapsible();
+    $('.collapsible').collapsible();
 
     //modal
-    jQuery_2_1_1('.modal').modal();
+    $('.modal').modal();
 
     //Efeito parallax
-    jQuery_2_1_1('.parallax').parallax();
+    $('.parallax').parallax();
 
-    jQuery_2_1_1('select').formSelect({
+    $('select').formSelect({
         direction: 'left'
 
     });
 
     //Mobile Nav Menu
-    jQuery_2_1_1('.sidenav').sidenav({
+    $('.sidenav').sidenav({
         preventScrolling: true
     });
 
-    jQuery_2_1_1('.fixed-action-btn').floatingActionButton({
+    $('.fixed-action-btn').floatingActionButton({
         direction: 'left',
         toolbarEnabled: true
     });
 
-    jQuery_2_1_1('.datepicker').datepicker({
+    $('.datepicker').datepicker({
         format: 'dd/mm/yyyy',
         i18n: {
             selectMonths: true, //Creates a dropdown to control month
@@ -58,53 +56,54 @@ jQuery_2_1_1(document).ready(function () {
 
     });
 
-    jQuery_2_1_1('.scrollspy').scrollSpy();
+    $('.scrollspy').scrollSpy();
 
-    jQuery_2_1_1('.dropdown-trigger').dropdown({
+    $('.dropdown-trigger').dropdown({
         hover: true,
         constrainWidth: false,
         coverTrigger: false
     });
 
-    jQuery_2_1_1('.tabs').tabs({
+    $('.tabs').tabs({
         swipeable: true,
         onShow: true
     });
 
-    jQuery_2_1_1(".botao-servicos").on("click", function () {
-        changeTab("Servicos" + jQuery_2_1_1(this).data("id"));
+    $(".botao-servicos").on("click", function () {
+        changeTab("Servicos" + $(this).data("id"));
     });
-    jQuery_2_1_1(".botao-exames").on("click", function () {
-        changeTab("Exames" + jQuery_2_1_1(this).data("id"));
-    });
-
-    jQuery_2_1_1(".botao-contatos").on("click", function () {
-        changeTab("Contatos" + jQuery_2_1_1(this).data("id"));
+    $(".botao-exames").on("click", function () {
+        changeTab("Exames" + $(this).data("id"));
     });
 
-    jQuery_2_1_1(".botao-sobre").on("click", function () {
-        changeTab("Sobre" + jQuery_2_1_1(this).data("id"));
+    $(".botao-contatos").on("click", function () {
+        changeTab("Contatos" + $(this).data("id"));
+    });
+
+    $(".botao-sobre").on("click", function () {
+        changeTab("Sobre" + $(this).data("id"));
     });
 
     function changeTab(id) {
-        var instance = M.Tabs.getInstance(jQuery_2_1_1('.tabs'));
+        var instance = M.Tabs.getInstance($('.tabs'));
         instance.select(id);
         instance.updateTabIndicator();
     }
 
-    jQuery_2_1_1(".agendarE").hide();
-    jQuery_2_1_1(".agendarC").hide();
+    $(".agendarE").hide();
+    $(".agendarC").hide();
 
-    jQuery_2_1_1(".exameRadio").on("click", function () {
-        jQuery_2_1_1(".agendarE").show();
-        jQuery_2_1_1(".agendarC").hide();
+    $(".exameRadio").on("click", function () {
+        $(".agendarE").show();
+        $(".agendarC").hide();
     });
-    jQuery_2_1_1(".consultaRadio").on("click", function () {
-        jQuery_2_1_1(".agendarC").show();
-        jQuery_2_1_1(".agendarE").hide();
+    $(".consultaRadio").on("click", function () {
+        $(".agendarC").show();
+        $(".agendarE").hide();
     });
     
-    jQuery_2_1_1('.g-signin2').click(function() {
+    
+    $('.g-signin2').click(function() {
     // signInCallback defined in step 6.
     auth2.grantOfflineAccess().then(signInCallback);
   });
