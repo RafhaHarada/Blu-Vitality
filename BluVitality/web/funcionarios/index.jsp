@@ -129,10 +129,7 @@
                         <input placeholder="Digite aqui" id="nome" type="text" class="validate">
                         <label for="nome">Nome</label>
                     </div>
-                    <div class="input-field col s4">
-                        <input placeholder="Digite aqui" type="text" class="validate">
-                        <label for="data-nascimento">Data de Nascimento</label>
-                    </div>
+                   
 
                 </div>  
             </form> 
@@ -147,39 +144,17 @@
                         <div class="teal-text flow-text">
                             <ul class="collapsible">
                                 <li>
-                                    <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
+                                    <div class="collapsible-header"><i class="material-icons">filter_drama</i>Dados Pessoais</div>
                                     <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
                                 </li>
                                 <li>
-                                    <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+                                    <div class="collapsible-header"><i class="material-icons"></i>Dados Clínicos</div>
                                     <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
                                 </li>
                                 <li>
-                                    <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+                                    <div class="collapsible-header"><i class="material-icons">whatshot</i>Histórico Clínico</div>
                                     <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                                </li><li>
-                                    <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
-                                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                                </li>
-                                <li>
-                                    <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
-                                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                                </li>
-                                <li>
-                                    <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
-                                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                                </li><li>
-                                    <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
-                                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                                </li>
-                                <li>
-                                    <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
-                                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                                </li>
-                                <li>
-                                    <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
-                                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                                </li>
+                            
                             </ul>
 
                         </div>
