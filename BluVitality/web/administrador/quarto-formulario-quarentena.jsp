@@ -2,7 +2,7 @@
     <i class="material-icons"></i>
     Quarentena
     <span class="badge "></span></div>
-<div class="collapsible-body">
+<div class="collapsible-body container">
     <form>
         <span>Numero do Quarto:</span>
         <input type="number" name="numero" id="quarentena-numero-quarto">
@@ -17,6 +17,6 @@
         <option value="consultorio">Consultorio</option>
         <option value="recuperacao">Sala de recuperação</option>
     </select>
-    <a class="waves-effect waves-light btn-small" id="quarto-mover-quarentena">Adicionar</a>
-    <a class="waves-effect waves-light btn-small" id="quarto-remover-quarentena">Remover</a>
+    <a class="waves-effect  btn-small" id="quarto-mover-quarentena">Adicionar</a>
+    <a class="waves-effect  btn-small" id="quarto-remover-quarentena">Remover</a>
 </div>

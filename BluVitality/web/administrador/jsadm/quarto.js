@@ -30,6 +30,7 @@ jQuery_2_1_1(function (){
     });
 });
 
+
 //Mover-Quarto-quarentena
 jQuery_2_1_1(function (){
     
@@ -61,8 +62,10 @@ jQuery_2_1_1(function (){
 });
 
 function validacao(){
-    var formulario = document.forms[fomularioCadastro]
+    var formulario = document.forms['fomularioCadastro']
     var numero = formulario.numero.value
     alert("Você cadastrou o quarto: " + numero)
     
 }
+
+

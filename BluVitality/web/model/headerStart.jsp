@@ -22,8 +22,14 @@
 
         <link rel='stylesheet' type='text/css' href='../resources/css/materialize.min.css'>
         <link rel='stylesheet' type='text/css' href='../resources/css/custom.css'>
+        <link rel='stylesheet' type='text/css' href='../resources/css/loading.css'>
     </head>
     <body>
+        <div  class = " preloader-wrapper " >
+        <div  class = " preloader " >
+            <i class="material-icons ld ld-cycle" >loop</i>
+        </div >
+        </div >
         <!--Cabeçalho-->
         <header>
             <nav class='nav-extended white lighten-2 z-depth-0'>

@@ -3,7 +3,7 @@
     Adicionar
     <span class="badge"></span>
 </div>
-<div class="collapsible-body">
+<div class="collapsible-body container">
     <form name="fomularioCadastro">
     <label for="numero">Numero do Quarto:</label>
     <input type="number" name="numero" id="quarto-cadastro-numero-quarto" onsubmit="return validacao()">
@@ -27,7 +27,7 @@
         <span>invativo</span>
       </label>
     </form>
-    <a class="waves-effect waves-light btn-small" id="quarto-cadastro-salvar">SALVAR</a>
+    <a class="waves-effect  btn-small" id="quarto-cadastro-salvar">SALVAR</a>
 </div>
 
 <script type="text/javascript" src="jsadm/quarto.js"></script>

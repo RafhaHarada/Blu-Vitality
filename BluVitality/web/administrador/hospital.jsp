@@ -23,7 +23,6 @@
             <li class="tab"><a href="#hospital1" class="active teal-text waves-effect">Hospital</a></li>
             <li class="tab"><a href="#hospitalConfig" class="teal-text waves-effect">Configuração</a></li>
             <li class="tab"><a href="#hospitalEquipamentos" class="teal-text waves-effect">Equipamentos</a></li>
-            <li class="tab"><a href="#hospitalFuncionarios" class="teal-text waves-effect">Funcionarios</a></li>
             <li class="tab"><a href="#hospitalEventos" class="teal-text waves-effect">Eventos</a></li>
         </ul>
         <div class="divider"></div>
