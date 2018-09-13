@@ -37,7 +37,7 @@ jQuery_2_1_1(document).ready(function () {
     });
 
     jQuery_2_1_1('.datepicker').datepicker({
-        format: 'dd-mm-yyyy',
+        format: 'dd/mm/yyyy',
         i18n: {
             selectMonths: true, //Creates a dropdown to control month
             selectYears: 15, //Creates a dropdown of 15 years to control year
