@@ -1,11 +1,3 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-// Or with jQuery
-
 var jQuery_2_1_1 = $.noConflict(true);
 
 jQuery_2_1_1(document).ready(function () {
@@ -40,7 +32,7 @@ jQuery_2_1_1(document).ready(function () {
         format: 'dd/mm/yyyy',
         i18n: {
             selectMonths: true, //Creates a dropdown to control month
-            selectYears: 15, //Creates a dropdown of 15 years to control year
+            selectYears: 20, //Creates a dropdown of 15 years to control year
             //The title label to use for the month nav buttons
             labelMonthNext: 'Proximo Mês',
             labelMonthPrev: 'Mês Anterior',
@@ -108,8 +100,8 @@ jQuery_2_1_1(document).ready(function () {
         jQuery_2_1_1(".agendarC").hide();
     });
     jQuery_2_1_1(".consultaRadio").on("click", function () {
-        jQuery_2_1_1(".agendarE").show();
-        jQuery_2_1_1(".agendarC").hide();
+        jQuery_2_1_1(".agendarC").show();
+        jQuery_2_1_1(".agendarE").hide();
     });
     
     jQuery_2_1_1('.g-signin2').click(function() {
