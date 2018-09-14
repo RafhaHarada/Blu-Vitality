@@ -64,9 +64,8 @@
 <script type="text/javascript" src="../resources/js/google-platform.js"></script>
 <script type="text/javascript" src="../resources/js/custom.js"></script>
 <script type="text/javascript" src="../resources/js/quarto-cadastro.js"></script>
-<script type="text/javascript" src="../resources/js/quarto-cadastro.js"></script>
-<script src="../libs/select2/select2.min.js"></script>
-<script src="../libs/datatable/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="../funcionarios/jsfuncionarios/jsfuncionarios.js"></script>
+<script type="text/javascript" src="../resources/js/select2.min.js"></script>
+<script type="text/javascript" src="../resources/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="../funcionario/jsfuncionarios/jsfuncionarios.js"></script>
 </body>
 </html>
