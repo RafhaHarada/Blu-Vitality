@@ -29,22 +29,17 @@ public class usuarioAutentication extends HttpServlet {
         UsuariosBean usuario = new UsuariosDAO().autenticar(login, senha);
 
         if (usuario != null) {
-            req.getSession().setAttribute("id", usuario.getId());
+            req.getSession().setAttribute("usuario", usuario);
             String tipoFuncionario = "";
-            List<FuncionariosBean> funcionarios = new FuncionariosDAO().obterTodos();
-            for (int i = 0; i < funcionarios.size(); i++) {
-                if (usuario.getId() == funcionarios.get(i).getId_usuario()) {
-                    tipoFuncionario = funcionarios.get(i).getTipo();
-                    break;
-                }
-            }
-            if(!tipoFuncionario.isEmpty()){
-                req.getRequestDispatcher("/"+tipoFuncionario);
+            FuncionariosBean funcionario = new FuncionariosDAO().obterPeloIdUsuario(usuario.getId());
+            tipoFuncionario = funcionario.getTipo();
+            if (!tipoFuncionario.isEmpty()) {
+                resp.sendRedirect("/" + tipoFuncionario);
             } else {
-                req.getRequestDispatcher("/usuarios");
+                req.getRequestDispatcher("/usuario");
             }
         } else {
-            resp.sendRedirect("/login?erro=login-invalido");
+            resp.sendRedirect("/usuario");
         }
 
     }

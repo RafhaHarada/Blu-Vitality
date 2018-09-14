@@ -16,7 +16,7 @@ CREATE TABLE usuarios(
     email VARCHAR(100) NOT NULL,
     endereco VARCHAR(100) NOT NULL,
     complemento VARCHAR(100),
-    cidade VARCHAR(100) NOT NULL,
+    cidade VARCHAR(100),
     uf VARCHAR(2) NOT NULL,
     naturalidade VARCHAR(100) NOT NULL,
     data_nascimento DATE NOT NULL,
@@ -58,11 +58,11 @@ CREATE TABLE funcionarios(
 );
 
 INSERT INTO funcionarios (id_usuario,id_cargo,tipo,ativo) VALUES
-(1,2,'Funcionario',TRUE),
-(2,1,'Administrador',TRUE),
+(1,2,'funcionario',TRUE),
+(2,1,'administrador',TRUE),
 (3,1,'',FALSE),
-(4,3,'Administrador',TRUE),
-(5,1,'Funcionario',TRUE);
+(4,3,'administrador',TRUE),
+(5,1,'funcionario',TRUE);
 
 CREATE TABLE servicos(
     id INT AUTO_INCREMENT PRIMARY KEY,

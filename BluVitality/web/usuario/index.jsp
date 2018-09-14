@@ -4,6 +4,7 @@
     Author     : Nattana Matos
 --%>
 
+<%@include file="../model/sessionConfirm.jsp" %>
 <jsp:include page="../model/headerStart.jsp"/>
 <li><a class='dropdown-trigger' href='#' data-target='dropdownCadastro'>Opções</a>
     <!-- Dropdown Structure -->
@@ -12,7 +13,6 @@
     </ul>
 </li>
 <%@include file="../model/headerEnd.jsp" %>
-<%@include file="../model/sessionConfirm.jsp" %>
 
 <ul class="tabs tabs-transparent">
     <li class="tab"><a href="#Usuario1" class="active teal-text">Paciente</a></li>

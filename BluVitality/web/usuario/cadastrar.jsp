@@ -55,7 +55,7 @@
 <!--Conteúdo-->
 <div class="row"></div>
 <div class="container col s12">
-    <form action="/usuarios/store" method="POST">
+    <form action="/usuario/store" method="POST">
         <div class="row">
             <div class="input-field col s12 m7">
                 <i class="material-icons prefix">account_circle</i>

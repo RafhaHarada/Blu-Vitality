@@ -91,7 +91,29 @@ public class FuncionariosDAO {
                 funcionario.setId(resultSet.getInt("id"));
                 funcionario.setId_cargo(resultSet.getInt("id_cargo"));
                 funcionario.setId_usuario(resultSet.getInt("id_usuario"));
-                funcionario.setTipo(resultSet.getString("fn.tipo"));
+                funcionario.setTipo(resultSet.getString("tipo"));
+            }
+        }catch(SQLException e){
+            e.printStackTrace();
+        }finally{
+            Conexao.fecharConexao();
+        }return funcionario;
+    }
+    
+    public FuncionariosBean obterPeloIdUsuario(int id){
+        FuncionariosBean funcionario = null;
+        String sql = "SELECT * FROM funcionarios WHERE id_usuario = ?";
+        try{
+            PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);
+            ps.setInt(1, id);
+            ps.execute();
+            ResultSet resultSet = ps.getResultSet();
+            while(resultSet.next()){
+                funcionario = new FuncionariosBean();
+                funcionario.setId(resultSet.getInt("id"));
+                funcionario.setId_cargo(resultSet.getInt("id_cargo"));
+                funcionario.setId_usuario(resultSet.getInt("id_usuario"));
+                funcionario.setTipo(resultSet.getString("tipo"));
             }
         }catch(SQLException e){
             e.printStackTrace();

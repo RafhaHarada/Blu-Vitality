@@ -65,7 +65,7 @@ public class UsuariosDAO {
     public int adicionar(UsuariosBean usuario) {
         String sql = "INSERT INTO usuarios(nome, estado_civil, idade, sexo, login, senha, "
                 + "cpf, rg, telefone, email, endereco, complemento, uf, cidade, naturalidade, data_nascimento, nome_fic, tipo_sanguineo, contato_emergencia, convenio)"
-                + "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?, ?, ?, ?)";
+                + "\nVALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?, ?, ?, ?)";
 
         try {
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql,

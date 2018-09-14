@@ -1,13 +1,14 @@
+
+<%@page import="br.com.Sistema.DAO.UsuariosDAO"%>
+<%@page import="br.com.Sistema.Bean.UsuariosBean"%>
 <%
-    if (session.getAttribute("id").toString().isEmpty()) {
-        response.sendRedirect("/login");
+    if (session.getAttribute("usuario") == null) {
+        response.sendRedirect("/usuario/login");
     } else {
-        int id_usuario = Integer.parseInt((String) session.getAttribute("id"));
-        UsuariosBean usuario = new UsuariosDAO().obterPeloId(id_usuario);
-        if (request.getParameter("erro").equals("login-invalido")) {
-        %>
-            <div onload="M.toast({html: 'Login bem sucedido!'})" class="rounded gren"></div>
-        <%
-        }
+        int id_usuario = ((UsuariosBean)session.getAttribute("usuario")).getId();
+        usuario = new UsuariosDAO().obterPeloId(id_usuario);
+%>
+<div onload="M.toast({html: 'Login bem sucedido!'})" class="rounded gren"></div>
+<%
     }
 %>

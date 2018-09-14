@@ -21,97 +21,38 @@ public class usuarioStore extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         UsuariosBean usuario = new UsuariosBean();
 
-        if (!req.getParameter("nome-completo").isEmpty()) {
-            usuario.setNome(req.getParameter("nome-completo"));
-        } else {
-            resp.sendRedirect("/usuario/cadastro?erro_no_cadastro=1");
-        }
+        usuario.setNome(req.getParameter("nome-completo"));
 
-        if (!req.getParameter("sexo").isEmpty()) {
-            usuario.setSexo(req.getParameter("sexo").charAt(0));
-        } else {
-            resp.sendRedirect("/usuario/cadastro?erro_no_cadastro=1");
-        }
+        usuario.setSexo(req.getParameter("sexo").charAt(0));
 
-        if (!req.getParameter("cpf").isEmpty()) {
-            usuario.setCpf(req.getParameter("cpf"));
-        } else {
-            resp.sendRedirect("/usuario/cadastro?erro_no_cadastro=1");
-        }
+        usuario.setCpf(req.getParameter("cpf"));
 
-        if (!req.getParameter("rg").isEmpty()) {
-            usuario.setRg(req.getParameter("rg"));
-        } else {
-            resp.sendRedirect("/usuario/cadastro?erro_no_cadastro=1");
-        }
+        usuario.setRg(req.getParameter("rg"));
 
-        if (!req.getParameter("estado-civil").isEmpty()) {
-            usuario.setEstado_civil(req.getParameter("estado-civil"));
-        } else {
-            resp.sendRedirect("/usuario/cadastro?erro_no_cadastro=1");
-        }
+        usuario.setEstado_civil(req.getParameter("estado-civil"));
 
-        if (!req.getParameter("telefone").isEmpty()) {
-            usuario.setTelefone(req.getParameter("telefone"));
-        } else {
-            resp.sendRedirect("/usuario/cadastro?erro_no_cadastro=1");
-        }
+        usuario.setTelefone(req.getParameter("telefone"));
 
-        if (!req.getParameter("email").isEmpty()) {
-            usuario.setEmail(req.getParameter("email"));
-        } else {
-            resp.sendRedirect("/usuario/cadastro?erro_no_cadastro=1");
-        }
+        usuario.setEmail(req.getParameter("email"));
 
-        if (!req.getParameter("endereco").isEmpty()) {
-            usuario.setEndereco(req.getParameter("endereco"));
-        } else {
-            resp.sendRedirect("/usuario/cadastro?erro_no_cadastro=1");
-        }
+        usuario.setEndereco(req.getParameter("endereco"));
 
         usuario.setComplemento(req.getParameter("complemento"));
-
-        if (!req.getParameter("uf").isEmpty()) {
-            usuario.setUf(req.getParameter("uf"));
-        } else {
-            resp.sendRedirect("/usuario/cadastro?erro_no_cadastro=1");
-        }
-
-        if (!req.getParameter("cidade").isEmpty()) {
-            usuario.setCidade(req.getParameter("cidade"));
-        } else {
-            resp.sendRedirect("/usuario/cadastro?erro_no_cadastro=1");
-        }
-
-        if (!req.getParameter("naturalidade").isEmpty()) {
-            usuario.setNaturalidade(req.getParameter("naturalidade"));
-        } else {
-            resp.sendRedirect("/usuario/cadastro?erro_no_cadastro=1");
-        }
-
-        if (!req.getParameter("data-nascimento").isEmpty()) {
-            String dataBr[] = req.getParameter("data-nascimento").split("/");
-            String dataEn = dataBr[2] + "-" + dataBr[1] + "-" + dataBr[0];
-            usuario.setData_nascimento(java.sql.Date.valueOf(dataEn));
-            int idade = Period.between(LocalDate.parse(dataEn), LocalDate.now()).getYears();
-            usuario.setIdade((byte) idade);
-        } else {
-            resp.sendRedirect("/usuario/cadastro?erro_no_cadastro=1");
-        }
-
-        if (!req.getParameter("tipo-sanguineo").isEmpty()) {
-            usuario.setTipo_sanguineo(req.getParameter("tipo-sanguineo"));
-        } else {
-            resp.sendRedirect("/usuario/cadastro?erro_no_cadastro=1");
-        }
-
         usuario.setContato_emergencia(req.getParameter("contato-emergencia"));
 
-        if (!req.getParameter("convenio").isEmpty()) {
-            usuario.setConvenio(req.getParameter("convenio"));
-        } else {
-            resp.sendRedirect("/usuario/cadastro?erro_no_cadastro=1");
-        }
+        usuario.setUf(req.getParameter("uf"));
+
+        usuario.setNaturalidade(req.getParameter("naturalidade"));
+
+        String dataBr[] = req.getParameter("data-nascimento").split("/");
+        String dataEn = dataBr[2] + "-" + dataBr[1] + "-" + dataBr[0];
+        usuario.setData_nascimento(java.sql.Date.valueOf(dataEn));
+        int idade = Period.between(LocalDate.parse(dataEn), LocalDate.now()).getYears();
+        usuario.setIdade((byte) idade);
+
+        usuario.setTipo_sanguineo(req.getParameter("tipo-sanguineo"));
+
+        usuario.setConvenio(req.getParameter("convenio"));
 
         usuario.setId(new UsuariosDAO().adicionar(usuario));
 
