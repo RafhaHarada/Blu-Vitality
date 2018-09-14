@@ -20,5 +20,6 @@ public class funcionarioIndex extends HttpServlet{
         
         resp.setContentType("text/html;charset=UTF-8");
         req.getRequestDispatcher("/funcionario/index.jsp").include(req, resp);
+    
     }
 }
