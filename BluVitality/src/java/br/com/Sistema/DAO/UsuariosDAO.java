@@ -202,4 +202,46 @@ public class UsuariosDAO {
         }
         return null;
     }
+    
+    public UsuariosBean autenticar(String login, String senha) {
+        String sql = "SELECT * FROM usuarios WHERE login = ? AND senha = ?";
+        try {
+            PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);
+            ps.setString(1, login);
+            ps.setString(2, senha);
+            ps.execute();
+            ResultSet resultSet = ps.getResultSet();
+            if (resultSet.next()) {
+                UsuariosBean usuario = new UsuariosBean();
+                usuario.setId(resultSet.getInt("id"));
+                usuario.setNome(resultSet.getString("nome"));
+                usuario.setEstado_civil(resultSet.getString("estado_civil"));
+                usuario.setIdade(resultSet.getByte("idade"));
+                usuario.setSexo(resultSet.getString("sexo").charAt(0));
+                usuario.setLogin(resultSet.getString("login"));
+                usuario.setSenha(resultSet.getString("senha"));
+                usuario.setCpf(resultSet.getString("cpf"));
+                usuario.setRg(resultSet.getString("rg"));
+                usuario.setTelefone(resultSet.getString("telefone"));
+                usuario.setEmail(resultSet.getString("email"));
+                usuario.setEndereco(resultSet.getString("endereco"));
+                usuario.setComplemento(resultSet.getString("complemento"));
+                usuario.setUf(resultSet.getString("uf"));
+                usuario.setCidade(resultSet.getString("cidade"));
+                usuario.setNaturalidade(resultSet.getString("naturalidade"));
+                usuario.setData_nascimento(resultSet.getDate("data_nascimento"));
+                usuario.setNome_fic(resultSet.getString("nome_fic"));
+                usuario.setTipo_sanguineo(resultSet.getString("tipo_sanguineo"));
+                usuario.setContato_emergencia(resultSet.getString("contato_emergencia"));
+                usuario.setConvenio(resultSet.getString("convenio"));
+                return usuario;
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            Conexao.abrirConexao();
+        }
+        return null;
+    }
 }
