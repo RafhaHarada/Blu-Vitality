@@ -51,16 +51,18 @@ CREATE TABLE funcionarios(
     id INT AUTO_INCREMENT PRIMARY KEY,
     id_usuario INT NOT NULL,
     id_cargo INT,
+    tipo VARCHAR(100),
     ativo BOOLEAN,
     FOREIGN KEY(id_usuario) REFERENCES usuarios(id),
     FOREIGN KEY(id_cargo) REFERENCES cargos(id)
 );
 
-INSERT INTO funcionarios (id_usuario,id_cargo,ativo) VALUES
-(1,2,TRUE),
-(3,1,TRUE),
-(4,1,TRUE),
-(5,1,TRUE);
+INSERT INTO funcionarios (id_usuario,id_cargo,tipo,ativo) VALUES
+(1,2,'Funcionario',TRUE),
+(2,1,'Administrador',TRUE),
+(3,0,'',FALSE),
+(4,3,'Administrador',TRUE),
+(5,1,'Funcionario',TRUE);
 
 CREATE TABLE servicos(
     id INT AUTO_INCREMENT PRIMARY KEY,
