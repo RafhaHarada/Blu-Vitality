@@ -11,13 +11,13 @@ import javax.servlet.http.HttpServletResponse;
  * @author YOU
  */
 
-@WebServlet("/usuarios")
+@WebServlet("/usuario")
 public class usuarioIndex extends HttpServlet{
     
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         
         resp.setContentType("text/html;charset=UTF-8");
-        req.getRequestDispatcher("/usuarios/index.jsp").include(req, resp);
+        req.getRequestDispatcher("/usuario/index.jsp").include(req, resp);
     }
 }

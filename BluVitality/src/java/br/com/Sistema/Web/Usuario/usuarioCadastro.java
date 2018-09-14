@@ -11,13 +11,13 @@ import javax.servlet.http.HttpServletResponse;
  * @author Rafael Alipio Harada (rafhaharada@gmail.com)
  */
 
-@WebServlet("/usuarios/cadastro")
+@WebServlet("/usuario/cadastro")
 public class usuarioCadastro extends HttpServlet{
     
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         
         resp.setContentType("text/html;charset=UTF-8");
-        req.getRequestDispatcher("/usuarios/Cadastrar.jsp").include(req, resp);
+        req.getRequestDispatcher("/usuario/cadastrar.jsp").include(req, resp);
     }
 }
