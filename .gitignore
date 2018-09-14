@@ -4,3 +4,6 @@ BluVitality/web/resources/js/custom.js
 BluVitality/src/java/br/com/Sistema/Database/Conexao.java
 /BluVitality/dist/
 /BluVitalitySubstituto/nbproject/private/
+*.xml
+*.properties
+*
