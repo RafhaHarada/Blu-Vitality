@@ -10,6 +10,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import static java.sql.Statement.RETURN_GENERATED_KEYS;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -147,5 +148,9 @@ public class FuncionariosDAO {
         }finally{
             Conexao.fecharConexao();
         }return false;
+    }
+
+    public List<HashMap<String, Object>> obterTodosParaDataTable() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

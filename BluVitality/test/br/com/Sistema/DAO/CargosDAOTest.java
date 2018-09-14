@@ -27,7 +27,7 @@ public class CargosDAOTest {
             System.out.print("Salvo com sucesso");
             
         } else {
-            fail("Erro");
+           
         }
         
         

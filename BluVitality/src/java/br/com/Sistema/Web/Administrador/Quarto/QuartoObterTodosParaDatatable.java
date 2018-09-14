@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.Sistema.Web.Administrador;
+package br.com.Sistema.Web.Administrador.Quarto;
 
 import br.com.Sistema.DAO.QuartoDAO;
 import com.google.gson.Gson;

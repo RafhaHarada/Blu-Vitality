@@ -1,5 +1,5 @@
 
-package br.com.Sistema.Web.Administrador;
+package br.com.Sistema.Web.Administrador.Quarto;
 
 import br.com.Sistema.Bean.FuncionariosBean;
 import br.com.Sistema.Bean.QuartoBean;

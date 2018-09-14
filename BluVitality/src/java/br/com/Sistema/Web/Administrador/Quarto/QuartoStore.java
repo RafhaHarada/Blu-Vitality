@@ -4,7 +4,7 @@
     Author     :@Gustavo Rodrigues (gugaaroodrigues@gmail.com)
 
  */
-package br.com.Sistema.Web.Administrador;
+package br.com.Sistema.Web.Administrador.Quarto;
 
 import br.com.Sistema.Bean.QuartoBean;
 import br.com.Sistema.DAO.QuartoDAO;
