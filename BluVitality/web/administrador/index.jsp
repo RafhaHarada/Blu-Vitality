@@ -15,10 +15,10 @@
 </li>
 <%@include file="../model/headerEnd.jsp" %>
 <div class=" row">
- 
+
     <h5>Seja Bem vindo</h5>
     <a class="waves-effect waves-light btn-small right" id="btnFinancas">button</a>
-    
+
     <span class="nome">Gustavo</span>
     <div class="" style="margin-top: auto">
         <div class="divider"></div>
@@ -47,22 +47,23 @@
             </div>
         </div>
         <div id="hospitalQuartos" class="col s12 container">
-            <div class="">
-            </div>
+            <%@include file="ListarQuartos.jsp" %>
+           <a class="waves-effect waves-light btn-small right" id="btnAdd">Adicionar</a>
+           <a class="waves-effect waves-light btn-small right" id="btnRemove">Remover</a>
         </div>
         <div id="hospitalConfig" class="col s12 container">
             <div class="">
-                
+
             </div>
         </div>
         <div id="hospitalEquipamentos" class="col s12 container">
             <div class="">
-                
+
             </div>
         </div>
         <div id="hospitalEventos" class="col s12 container">
             <div class="">
-                
+
             </div>
         </div>
     </div>

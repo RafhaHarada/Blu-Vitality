@@ -4,7 +4,8 @@
     <span class="badge"></span>
 </div>
 <div class="collapsible-body container">
-    <form name="fomularioCadastro">
+    
+    <form action="fomularioCadastro">
     <label for="numero">Numero do Quarto:</label>
     <input type="number" name="numero" id="quarto-cadastro-numero-quarto" onsubmit="return validacao()">
     <label>Tipo:</label>
