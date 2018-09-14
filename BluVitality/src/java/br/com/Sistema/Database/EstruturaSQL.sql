@@ -60,7 +60,7 @@ CREATE TABLE funcionarios(
 INSERT INTO funcionarios (id_usuario,id_cargo,tipo,ativo) VALUES
 (1,2,'Funcionario',TRUE),
 (2,1,'Administrador',TRUE),
-(3,0,'',FALSE),
+(3,1,'',FALSE),
 (4,3,'Administrador',TRUE),
 (5,1,'Funcionario',TRUE);
 
