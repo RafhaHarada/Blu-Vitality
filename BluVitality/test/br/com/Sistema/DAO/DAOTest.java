@@ -13,12 +13,12 @@ import static org.junit.Assert.*;
  *
  * @author Gus
  */
-public class CargosDAOTest {
+public class DAOTest {
     
-    public CargosDAOTest() {
+    public DAOTest() {
     }
 
-    @Test
+    @Test(expected=NullPointerException.class)
     public void inserir() {
         CargosBean cargo = new CargosBean();
         CargosDAO dao = new CargosDAO();
@@ -27,9 +27,8 @@ public class CargosDAOTest {
             System.out.print("Salvo com sucesso");
             
         } else {
-           
+            fail("Erro");
         }
-        
         
     }
     
