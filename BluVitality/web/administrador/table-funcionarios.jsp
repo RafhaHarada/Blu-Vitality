@@ -18,7 +18,7 @@
             <th scope=""></th>
             <th scope=""></th>
             <th scope=""></th>
-            <th scope="col"><i class="fas fa-cogs"></i></th>
+            <th scope="col"><i class=""></i></th>
 
         </tr>
     </tbody>
