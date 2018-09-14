@@ -8,6 +8,7 @@ public class FuncionariosBean {
     private int id;
     private int id_usuario;
     private int id_cargo;
+    private String tipo;
     private boolean ativo;
     private UsuariosBean usuario;
     private CargosBean cargo;
@@ -58,6 +59,14 @@ public class FuncionariosBean {
 
     public void setCargo(CargosBean cargo) {
         this.cargo = cargo;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
     
 }
