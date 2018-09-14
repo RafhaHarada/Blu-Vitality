@@ -8,11 +8,11 @@
 <li><a class='dropdown-trigger' href='#' data-target='dropdownCadastro'>Opções</a>
     <!-- Dropdown Structure -->
     <ul id='dropdownCadastro' class='dropdown-content'>
-        <li><a href="#Entrar">Login</a></li>
-        <li><a href="../">Voltar</a></li>
+        <li><a href="../" onclick="signOut();">Sair</a></li>
     </ul>
 </li>
 <%@include file="../model/headerEnd.jsp" %>
+<%@include file="../model/sessionConfirm.jsp" %>
 
 <ul class="tabs tabs-transparent">
     <li class="tab"><a href="#Usuario1" class="active teal-text">Paciente</a></li>
