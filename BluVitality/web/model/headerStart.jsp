@@ -23,6 +23,8 @@
         <link rel='stylesheet' type='text/css' href='../resources/css/materialize.min.css'>
         <link rel='stylesheet' type='text/css' href='../resources/css/custom.css'>
         <link rel='stylesheet' type='text/css' href='../resources/css/loading.css'>
+        <link rel='stylesheet' type='text/css' href='../libs/select2/select2.min.css'>
+        <link rel='stylesheet' type='text/css' href='../libs/datatable/jquery.dataTables.min.css'>
     </head>
     <body>
         <!--div  class = " preloader-wrapper " >

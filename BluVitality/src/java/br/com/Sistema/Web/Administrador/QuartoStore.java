@@ -29,7 +29,7 @@ public class QuartoStore extends HttpServlet {
         quarto.setStatus(req.getParameter("status"));
         quarto.setId(new QuartoDAO().adicionarQuarto(quarto));
         
-            resp.sendRedirect("administrador/index.jsp");
+            resp.sendRedirect("administrador/");
                     
      
     }

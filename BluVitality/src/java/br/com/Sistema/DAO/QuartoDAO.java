@@ -13,7 +13,10 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import static java.sql.Statement.RETURN_GENERATED_KEYS;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * @author Alunos
@@ -127,5 +130,31 @@ public class QuartoDAO {
         }finally{
             Conexao.fecharConexao();
         }return false;
+    }
+    public List<HashMap<String, Object>> obterTodosParaDataTable() {
+        List<HashMap<String, Object>> quartos = new ArrayList<>();
+        String sql = "SELECT * FROM quartos";
+        
+        try{
+            Statement st = Conexao.abrirConexao().createStatement();
+            st.execute(sql);
+            ResultSet resultSet = st.getResultSet();
+            while(resultSet.next()){
+                HashMap<String, Object> quarto = new HashMap<>();
+                quarto.put("id",resultSet.getInt("id"));
+                quarto.put("numero_quarto",resultSet.getInt("numero_quarto"));
+                quarto.put("id_usuario",resultSet.getInt("id_usuario"));
+                quarto.put("id_funcionario",resultSet.getInt("id_funcionario"));
+                quarto.put("tipo",resultSet.getString("tipo"));
+                quarto.put("data_entrada",resultSet.getDate("data_entrada"));
+                quarto.put("data_saida",resultSet.getDate("data_saida"));
+                quarto.put("status",resultSet.getString("status"));
+                quartos.add(quarto);
+            }
+            }catch(SQLException e){
+            e.printStackTrace();
+        }finally{
+            Conexao.fecharConexao();
+        }return quartos;
     }
 }

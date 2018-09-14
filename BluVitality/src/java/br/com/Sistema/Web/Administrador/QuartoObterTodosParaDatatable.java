@@ -5,26 +5,34 @@
  */
 package br.com.Sistema.Web.Administrador;
 
-/**
- *
- * @author Gus
- */
-
+import br.com.Sistema.DAO.QuartoDAO;
+import com.google.gson.Gson;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.HashMap;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(urlPatterns = "/quarto")
-public class QuartoIndex extends HttpServlet {
+/**
+ *
+ * @author Gus
+ */
+@WebServlet(name = "QuartoObterTodosParaDatatable", urlPatterns = {"/Quarto/ObterTodosParaDatatable"})
+public class QuartoObterTodosParaDatatable extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
+        HashMap<String, Object> resultado = new HashMap<>();
+        List<HashMap<String, Object>> registros = new QuartoDAO().obterTodosParaDataTable();
+        resultado.put("data", registros);
         resp.setContentType("text/html;charset=UTF-8");
-        req.getRequestDispatcher("administrador/").include(req, resp);
+        resp.getWriter().print((new Gson().toJson(resultado)));
     }
+
 
 }
