@@ -14,19 +14,15 @@
 <%@page import="java.util.List"%>
 <!--JSP IF implementation.-->
 <%
-    int id_usuario = Integer.parseInt(request.getParameter("id") == null ? "0" : request.getParameter("id"));
     String cargoDoFuncionario = "";
-    UsuariosBean usuario = new UsuariosDAO().obterPeloId(id_usuario);
-    if (id_usuario != 0) {
-        List<FuncionariosBean> funcionarios = new FuncionariosDAO().obterTodos();
-        for (int i = 0; i < funcionarios.size(); i++) {
-            if (id_usuario == funcionarios.get(i).getId_usuario()) {
-                int id_cargo = funcionarios.get(i).getId_cargo();
-                cargoDoFuncionario = new CargosDAO().obterPeloId(id_cargo).getNome();
-                break;
+            List<FuncionariosBean> funcionarios = new FuncionariosDAO().obterTodos();
+            for (int i = 0; i < funcionarios.size(); i++) {
+                if (usuario.getId() == funcionarios.get(i).getId_usuario()) {
+                    int id_cargo = funcionarios.get(i).getId_cargo();
+                    cargoDoFuncionario = new CargosDAO().obterPeloId(id_cargo).getNome();
+                    break;
+                }
             }
-        }
-    }
     if (cargoDoFuncionario.equals("Administração")) {
 %>
 <li>
@@ -41,16 +37,14 @@
             <!--%=usuario.getImage()%-->
             <!--%}%-->
         </a>
-        <a href="#EditarPerfil"><span class="white-text">
-                <%if (id_usuario != 0) {%>
+        <a href="#EditarPerfil">
+            <span class="white-text">
                 <%=usuario.getNome()%>
-                <%}%>
             </span>
         </a>
-        <a href="#EditarPerfil"><span class="white-text">
-                <%if (id_usuario != 0) {%>
+        <a href="#EditarPerfil">
+            <span class="white-text">
                 <%=usuario.getEmail()%>
-                <%}%>
             </span>
         </a>
     </div>
@@ -119,16 +113,14 @@
                     <!--%=usuario.getImage()%-->
                     <!--%}%-->
                 </a>
-                <a href="#EditarPerfil"><span class="white-text">
-                        <%if (id_usuario != 0) {%>
+                <a href="#EditarPerfil">
+                    <span class="white-text">
                         <%=usuario.getNome()%>
-                        <%}%>
                     </span>
                 </a>
-                <a href="#EditarPerfil"><span class="white-text">
-                        <%if (id_usuario != 0) {%>
+                <a href="#EditarPerfil">
+                    <span class="white-text">
                         <%=usuario.getEmail()%>
-                        <%}%>
                     </span>
                 </a>
             </div>
@@ -159,16 +151,14 @@
                             <!--%=usuario.getImage()%-->
                             <!--%}%-->
                         </a>
-                        <a href="#EditarPerfil"><span class="white-text">
-                                <%if (id_usuario != 0) {%>
+                        <a href="#EditarPerfil">
+                            <span class="white-text">
                                 <%=usuario.getNome()%>
-                                <%}%>
                             </span>
                         </a>
-                        <a href="#EditarPerfil"><span class="white-text">
-                                <%if (id_usuario != 0) {%>
+                        <a href="#EditarPerfil">
+                            <span class="white-text">
                                 <%=usuario.getEmail()%>
-                                <%}%>
                             </span>
                         </a>
                     </div>
@@ -200,15 +190,11 @@
                                     <!--%}%-->
                                 </a>
                                 <a href="#EditarPerfil"><span class="white-text">
-                                        <%if (id_usuario != 0) {%>
                                         <%=usuario.getNome()%>
-                                        <%}%>
                                     </span>
                                 </a>
                                 <a href="#EditarPerfil"><span class="white-text">
-                                        <%if (id_usuario != 0) {%>
                                         <%=usuario.getEmail()%>
-                                        <%}%>
                                     </span>
                                 </a>
                             </div>
@@ -237,15 +223,11 @@
                                             <!--%}%-->
                                         </a>
                                         <a href="#EditarPerfil"><span class="white-text">
-                                                <%if (id_usuario != 0) {%>
                                                 <%=usuario.getNome()%>
-                                                <%}%>
                                             </span>
                                         </a>
                                         <a href="#EditarPerfil"><span class="white-text">
-                                                <%if (id_usuario != 0) {%>
                                                 <%=usuario.getEmail()%>
-                                                <%}%>
                                             </span>
                                         </a>
                                     </div>
