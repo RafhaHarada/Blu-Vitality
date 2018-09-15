@@ -13,7 +13,7 @@
     </ul>
 </li>
 <%@include file="../model/headerEnd.jsp" %>
-<%@include file="../model/sessionConfirm.jsp" %>
+<!--%@include file="../model/sessionConfirm.jsp" %-->
 <div class=" row">
 
     <h5>Seja Bem vindo</h5>
@@ -53,7 +53,7 @@
         </div>
         <div id="hospitalConfig" class="col s12 container">
             <div class="">
-
+                <
             </div>
         </div>
         <div id="hospitalEquipamentos" class="col s12 container">
