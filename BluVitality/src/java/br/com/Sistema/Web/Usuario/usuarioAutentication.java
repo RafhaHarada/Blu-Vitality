@@ -36,7 +36,7 @@ public class usuarioAutentication extends HttpServlet {
             if (!tipoFuncionario.isEmpty()) {
                 resp.sendRedirect("/" + tipoFuncionario);
             } else {
-                req.getRequestDispatcher("/usuario");
+                resp.sendRedirect("/usuario");
             }
         } else {
             resp.sendRedirect("/usuario");
