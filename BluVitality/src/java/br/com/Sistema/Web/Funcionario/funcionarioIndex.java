@@ -1,6 +1,5 @@
 package br.com.Sistema.Web.Funcionario;
 
-import br.com.Sistema.Web.Usuario.*;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
