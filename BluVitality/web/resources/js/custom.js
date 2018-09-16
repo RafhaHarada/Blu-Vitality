@@ -120,7 +120,6 @@ function onSignIn(googleUser) {
     var userName = profile.getName();
     var userEmail = profile.getEmail();
     var userPicture = profile.getImageUrl();
-    var userPicture = profile.getImageUrl();
     document.getElementById('user-photo').src = userPicture;
     document.getElementById('user-name').innerText = userName;
     document.getElementById('user-email').innerText = userEmail;
