@@ -4,7 +4,7 @@
     Author     : Admin
 --%>
 
-</ul>
+                    </ul>
                 </div>
             </nav>
 
@@ -14,42 +14,40 @@
                     <a href="#" class="sidenav-close waves-effect waves-teal teal"><i class="material-icons white-text">arrow_back</i></a>
                 </li>
                 <%@include file="sidenavcard.jsp"%>
-                        <li>
-                            <a class="collapsible-header waves-effect waves-teal">Serviços<i class="material-icons">arrow_drop_down</i></a>
-                            <div class="collapsible-body">
-                                <ul>
-                                    <li><a href="#Servicos">Serviços</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <div class="divider"></div>
-                        <li>
-                            <a class="collapsible-header waves-effect waves-teal">Exames<i class="material-icons">arrow_drop_down</i></a>
-                            <div class="collapsible-body">
-                                <ul>
-                                    <li><a href="#Exames">Exames</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <div class="divider"></div>
-                        <li>
-                            <a class="collapsible-header waves-effect waves-teal">Contatos<i class="material-icons">arrow_drop_down</i></a>
-                            <div class="collapsible-body">
-                                <ul>
-                                    <li><a href="#Contatos">Contatos</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <div class="divider"></div>
-                        <li>
-                            <a class="collapsible-header waves-effect waves-teal">Sobre<i class="material-icons">arrow_drop_down</i></a>
-                            <div class="collapsible-body">
-                                <ul>
-                                    <li><a href="#Sobre">Sobre</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
+                <li>
+                    <a class="collapsible-header waves-effect waves-teal">Serviços<i class="material-icons">arrow_drop_down</i></a>
+                    <div class="collapsible-body">
+                        <ul>
+                            <li><a href="#Servicos">Serviços</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <div class="divider"></div>
+                <li>
+                    <a class="collapsible-header waves-effect waves-teal">Exames<i class="material-icons">arrow_drop_down</i></a>
+                    <div class="collapsible-body">
+                        <ul>
+                            <li><a href="#Exames">Exames</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <div class="divider"></div>
+                <li>
+                    <a class="collapsible-header waves-effect waves-teal">Contatos<i class="material-icons">arrow_drop_down</i></a>
+                    <div class="collapsible-body">
+                        <ul>
+                            <li><a href="#Contatos">Contatos</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <div class="divider"></div>
+                <li>
+                    <a class="collapsible-header waves-effect waves-teal">Sobre<i class="material-icons">arrow_drop_down</i></a>
+                    <div class="collapsible-body">
+                        <ul>
+                            <li><a href="#Sobre">Sobre</a></li>
+                        </ul>
+                    </div>
                 </li>
             </ul>
         </header>
