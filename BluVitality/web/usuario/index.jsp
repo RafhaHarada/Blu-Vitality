@@ -3,8 +3,6 @@
     Created on : 27/08/2018, 08:14:38
     Author     : Nattana Matos
 --%>
-
-<%@include file="../model/sessionConfirm.jsp" %>
 <jsp:include page="../model/headerStart.jsp"/>
 <li><a class='dropdown-trigger' href='#' data-target='dropdownCadastro'>Opções</a>
     <!-- Dropdown Structure -->
