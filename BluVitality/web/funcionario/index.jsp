@@ -6,8 +6,6 @@
     @Rafhael
 
 --%>
-<%@page import="br.com.Sistema.Bean.UsuariosBean"%>
-<% UsuariosBean usuario = new UsuariosBean(); %>
 <jsp:include page="../model/headerStart.jsp"/>
 <li><a class='dropdown-trigger' href='#' data-target='dropdownCadastro'>Opções</a>
     <!-- Dropdown Structure -->
@@ -15,7 +13,6 @@
         <li><a href="../" onclick="signOut();">Sair</a></li>
     </ul>
 </li>
-<%@include file="../model/sessionConfirm.jsp" %>
 <%@include file="../model/headerEnd.jsp" %>
 
 <div class="row">
