@@ -44,6 +44,7 @@ public class CargosDAO {
         try {
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);
             ps.setInt(1, id);
+            ps.execute();
             ResultSet resultSet = ps.getResultSet();
             while (resultSet.next()) {
                 cargo = new CargosBean();
