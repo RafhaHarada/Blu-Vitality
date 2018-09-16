@@ -4,26 +4,26 @@ USE bluVitalityDatabase;
 
 CREATE TABLE usuarios(
     id INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(100) NOT NULL,
+    nome VARCHAR(100),
     estado_civil VARCHAR(100),
-    idade TINYINT NOT NULL,
-    sexo CHAR NOT NULL,
+    idade TINYINT,
+    sexo CHAR,
     login VARCHAR(100),
     senha VARCHAR(100),
-    cpf VARCHAR(14) NOT NULL,
-    rg VARCHAR(100) NOT NULL,
-    telefone VARCHAR(100) NOT NULL,
-    email VARCHAR(100) NOT NULL,
-    endereco VARCHAR(100) NOT NULL,
+    cpf VARCHAR(14),
+    rg VARCHAR(100),
+    telefone VARCHAR(100),
+    email VARCHAR(100),
+    endereco VARCHAR(100),
     complemento VARCHAR(100),
     cidade VARCHAR(100),
-    uf VARCHAR(2) NOT NULL,
-    naturalidade VARCHAR(100) NOT NULL,
-    data_nascimento DATE NOT NULL,
+    uf VARCHAR(2),
+    naturalidade VARCHAR(100),
+    data_nascimento DATE,
     nome_fic VARCHAR(100),
     tipo_sanguineo VARCHAR(3),
-    contato_emergencia VARCHAR(100) NOT NULL,
-    convenio VARCHAR(100) NOT NULL
+    contato_emergencia VARCHAR(100),
+    convenio VARCHAR(100)
 );
 
 INSERT INTO usuarios (nome,estado_civil,idade,sexo,login,senha,cpf,rg,telefone,email,endereco,complemento,cidade,UF,naturalidade,data_nascimento,nome_fic,tipo_sanguineo,contato_emergencia,convenio) VALUES
@@ -35,8 +35,8 @@ INSERT INTO usuarios (nome,estado_civil,idade,sexo,login,senha,cpf,rg,telefone,e
 
 CREATE TABLE cargos(
     id INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(100) NOT NULL,
-    salario DOUBLE NOT NULL,
+    nome VARCHAR(100),
+    salario DOUBLE,
     carga_horaria TIME
 );
 
@@ -49,7 +49,7 @@ INSERT INTO cargos (nome,salario,carga_horaria) VALUES
 
 CREATE TABLE funcionarios(
     id INT AUTO_INCREMENT PRIMARY KEY,
-    id_usuario INT NOT NULL,
+    id_usuario INT,
     id_cargo INT,
     tipo VARCHAR(100),
     ativo BOOLEAN,
@@ -66,9 +66,9 @@ INSERT INTO funcionarios (id_usuario,id_cargo,tipo,ativo) VALUES
 
 CREATE TABLE servicos(
     id INT AUTO_INCREMENT PRIMARY KEY,
-    id_funcionario INT NOT NULL,
-    nome VARCHAR(100) NOT NULL,
-    descricao VARCHAR(100) NOT NULL,
+    id_funcionario INT,
+    nome VARCHAR(100),
+    descricao VARCHAR(100),
     tempo_execucao TIME,
     FOREIGN KEY(id_funcionario) REFERENCES funcionarios(id)
 );
@@ -81,10 +81,10 @@ INSERT INTO servicos (id_funcionario,nome,descricao,tempo_execucao) VALUES
 
 CREATE TABLE eventos(
     id INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(100) NOT NULL,
-    data_evento DATE NOT NULL,
-    custo DOUBLE NOT NULL,
-    receita DOUBLE NOT NULL
+    nome VARCHAR(100),
+    data_evento DATE,
+    custo DOUBLE,
+    receita DOUBLE
 );
 
 INSERT INTO eventos (nome,data_evento,custo,receita) VALUES
@@ -95,11 +95,11 @@ INSERT INTO eventos (nome,data_evento,custo,receita) VALUES
 
 CREATE TABLE expedicao(
     id INT AUTO_INCREMENT PRIMARY KEY,
-    id_usuario INT NOT NULL,
-    id_funcionario INT NOT NULL,
-    tipo VARCHAR(100) NOT NULL,
-    data_expedicao DATE NOT NULL,
-    custo DOUBLE NOT NULL,
+    id_usuario INT,
+    id_funcionario INT,
+    tipo VARCHAR(100),
+    data_expedicao DATE,
+    custo DOUBLE,
     FOREIGN KEY(id_usuario) REFERENCES usuarios(id),
     FOREIGN KEY(id_funcionario) REFERENCES funcionarios(id)
 );
@@ -112,13 +112,13 @@ INSERT INTO expedicao (id_usuario,id_funcionario,tipo,data_expedicao,custo) VALU
 
 CREATE TABLE quartos(
     id INT AUTO_INCREMENT PRIMARY KEY,
-    id_usuario INT NOT NULL,
-    id_funcionario INT NOT NULL,
-    numero_quarto INT NOT NULL,
-    tipo VARCHAR(100) NOT NULL,
+    id_usuario INT,
+    id_funcionario INT,
+    numero_quarto INT,
+    tipo VARCHAR(100),
     data_entrada DATE,
     data_saida DATE,
-    status VARCHAR(100) NOT NULL,
+    status VARCHAR(100),
     FOREIGN KEY(id_usuario) REFERENCES usuarios(id),
     FOREIGN KEY(id_funcionario) REFERENCES funcionarios(id)
 );
