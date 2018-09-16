@@ -58,17 +58,6 @@
         <h4 class="row">Login</h4>
         <div class="row">
             <form action="/usuario/autentication" method="post" class="col s12">
-                <%
-                    if (request.getParameter("erro").equals("login-invalido")) {
-                %>
-                <div onload="M.toast({html: 'Login não sucedido'})" class="rounded red"></div-->
-                <%
-                    } else {
-                        %>
-                        <h1></h1-->
-                <%
-                    }
-                %>
                 <div class="row">
                     <div class="g-signin2 waves-effect white-text" data-onsuccess="onSignIn"></div>
                 </div>
