@@ -1,4 +1,3 @@
-
 <%@page import="br.com.Sistema.DAO.UsuariosDAO"%>
 <%@page import="br.com.Sistema.Bean.UsuariosBean"%>
 <%
@@ -8,7 +7,7 @@
         int id_usuario = ((UsuariosBean)session.getAttribute("usuario")).getId();
         usuario = new UsuariosDAO().obterPeloId(id_usuario);
 %>
-<div onload="M.toast({html: 'Login bem sucedido!'})" class="rounded gren"></div>
+<div onpageshow="M.toast({html: 'Login bem sucedido!'})" class="rounded green"></div>
 <%
     }
 %>
