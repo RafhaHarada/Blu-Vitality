@@ -57,7 +57,7 @@ public class GastosFuncionariosDAO {
         String sql = "SELECT id, salario_mensal, ferias_anuais_remuneradas, um_terco_sobre_ferias, decimo_terceiro_salario, "
                 + "aviso_previo, fgts_sobre_salario_mensal, fgts_sobre_decimo_terceiro_aviso_previo_ferias, multa_fgts, "
                 + "ferias_sobre_aviso_previo, decimo_terceiro_sobre_aviso_previo, um_terco_ferias_sobre_aviso_previo, "
-                + "fgts_sobre_recisao, inss_sobre_salario, inss_sobre_ferias_e_decimo_terceiro, indenizacao_um_dia_de_salario, total";
+                + "fgts_sobre_recisao, inss_sobre_salario, inss_sobre_ferias_e_decimo_terceiro, indenizacao_um_dia_de_salario, total FROM gastosFuncionarios WHERE id = ?";
         try {
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);
             ps.setInt(1, id);
@@ -92,13 +92,86 @@ public class GastosFuncionariosDAO {
     }
 
     public int adicionar(GastosFuncionariosBean gastoFuncionario) {
-        String sql = "INSERT INTO gastoFuncioario(id, salario_mensal, ferias_anuais_remuneradas, um_terco_sobre_ferias, decimo_terceiro_salario, "
+        String sql = "INSERT INTO gastoFuncioario(salario_mensal, ferias_anuais_remuneradas, um_terco_sobre_ferias, decimo_terceiro_salario, "
                 + "aviso_previo, fgts_sobre_salario_mensal, fgts_sobre_decimo_terceiro_aviso_previo_ferias, multa_fgts, "
                 + "ferias_sobre_aviso_previo, decimo_terceiro_sobre_aviso_previo, um_terco_ferias_sobre_aviso_previo, "
-                + "fgts_sobre_recisao, inss_sobre_salario, inss_sobre_ferias_e_decimo_terceiro, indenizacao_um_dia_de_salario, total) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-        try{
+                + "fgts_sobre_recisao, inss_sobre_salario, inss_sobre_ferias_e_decimo_terceiro, indenizacao_um_dia_de_salario, total) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        try {
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql, RETURN_GENERATED_KEYS);
-            
+            ps.setDouble(1, gastoFuncionario.getSalario_mensal());
+            ps.setDouble(2, gastoFuncionario.getFerias_anuais_remuneradas());
+            ps.setDouble(3, gastoFuncionario.getUm_terco_sobre_ferias());
+            ps.setDouble(4, gastoFuncionario.getDecimo_terceiro_salario());
+            ps.setDouble(5, gastoFuncionario.getAviso_previo());
+            ps.setDouble(6, gastoFuncionario.getFgts_sobre_salario_mensal());
+            ps.setDouble(7, gastoFuncionario.getFgts_sobre_decimo_terceiro_aviso_previo_ferias());
+            ps.setDouble(8, gastoFuncionario.getMulta_fgts());
+            ps.setDouble(9, gastoFuncionario.getFerias_sobre_aviso_previo());
+            ps.setDouble(10, gastoFuncionario.getDecimo_terceiro_sobre_aviso_previo());
+            ps.setDouble(11, gastoFuncionario.getUm_terco_ferias_sobre_aviso_previo());
+            ps.setDouble(12, gastoFuncionario.getFgts_sobre_recisao());
+            ps.setDouble(13, gastoFuncionario.getInss_sobre_salario());
+            ps.setDouble(14, gastoFuncionario.getInss_sobre_ferias_e_decimo_terceiro());
+            ps.setDouble(15, gastoFuncionario.getIndenizacao_um_dia_de_salario());
+            ps.setDouble(16, gastoFuncionario.getTotal());
+            ps.execute();
+            ResultSet resultSet = ps.getGeneratedKeys();
+            if (resultSet.next()) {
+                return resultSet.getInt(1);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            Conexao.fecharConexao();
         }
+        return -1;
+    }
+
+    public boolean alterar(GastosFuncionariosBean gastoFuncionario) {
+        try {
+            String sql = "UPDATE gastoFuncionario SET salario_mensal = ?, ferias_anuais_remuneradas = ?, um_terco_sobre_ferias = ?, decimo_terceiro_salario = ?, "
+                    + "aviso_previo = ?, fgts_sobre_salario_mensal = ?, fgts_sobre_decimo_terceiro_aviso_previo_ferias = ?, multa_fgts = ?, "
+                    + "ferias_sobre_aviso_previo = ?, decimo_terceiro_sobre_aviso_previo = ?, um_terco_ferias_sobre_aviso_previo = ?, "
+                    + "fgts_sobre_recisao = ?, inss_sobre_salario, inss_sobre_ferias_e_decimo_terceiro = ?, indenizacao_um_dia_de_salario = ?, total = ? WHERE id = ?";
+            PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);
+            ps.setDouble(1, gastoFuncionario.getSalario_mensal());
+            ps.setDouble(2, gastoFuncionario.getFerias_anuais_remuneradas());
+            ps.setDouble(3, gastoFuncionario.getUm_terco_sobre_ferias());
+            ps.setDouble(4, gastoFuncionario.getDecimo_terceiro_salario());
+            ps.setDouble(5, gastoFuncionario.getAviso_previo());
+            ps.setDouble(6, gastoFuncionario.getFgts_sobre_salario_mensal());
+            ps.setDouble(7, gastoFuncionario.getFgts_sobre_decimo_terceiro_aviso_previo_ferias());
+            ps.setDouble(8, gastoFuncionario.getMulta_fgts());
+            ps.setDouble(9, gastoFuncionario.getFerias_sobre_aviso_previo());
+            ps.setDouble(10, gastoFuncionario.getDecimo_terceiro_sobre_aviso_previo());
+            ps.setDouble(11, gastoFuncionario.getUm_terco_ferias_sobre_aviso_previo());
+            ps.setDouble(12, gastoFuncionario.getFgts_sobre_recisao());
+            ps.setDouble(13, gastoFuncionario.getInss_sobre_salario());
+            ps.setDouble(14, gastoFuncionario.getInss_sobre_ferias_e_decimo_terceiro());
+            ps.setDouble(15, gastoFuncionario.getIndenizacao_um_dia_de_salario());
+            ps.setDouble(16, gastoFuncionario.getTotal());
+            ps.setInt(17, gastoFuncionario.getId());
+
+            return ps.executeUpdate() == 1;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            Conexao.fecharConexao();
+        }
+        return false;
+    }
+
+    public boolean excluir(int id) {
+        String sql = "DELETE FROM gastosFuncionarios WHERE id = ?";
+        try {
+            PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);
+            ps.setInt(1, id);
+            return ps.executeUpdate() == 1;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            Conexao.fecharConexao();
+        }
+        return false;
     }
 }

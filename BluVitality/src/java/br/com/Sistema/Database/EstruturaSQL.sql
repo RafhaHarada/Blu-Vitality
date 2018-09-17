@@ -125,3 +125,86 @@ CREATE TABLE quartos(
 INSERT INTO quartos (id_usuario, id_funcionario, numero_quarto, tipo ,data_entrada, data_saida, status) VALUES
 (1, 2, 1001,'UTI','2018-09-20','2018-09-10','ativo'),
 (3, 4, 1002,'UTI','2018-10-11','2018-10-03','inativo');
+
+CREATE TABLE gastosFuncionarios(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    salario_mensal  DOUBLE NOT NULL,
+    ferias_anuais_remuneradas  DOUBLE NOT NULL,
+    um_terco_sobre_ferias  DOUBLE NOT NULL,
+    decimo_terceiro_salario  DOUBLE NOT NULL,
+    aviso_previo  DOUBLE NOT NULL,
+    fgts_sobre_salario_mensal  DOUBLE NOT NULL,
+    fgts_sobre_decimo_terceiro_aviso_previo_ferias  DOUBLE NOT NULL,
+    multa_fgts  DOUBLE NOT NULL,
+    ferias_sobre_aviso_previo  DOUBLE NOT NULL,
+    decimo_terceiro_sobre_aviso_previo DOUBLE NOT NULL,
+    um_terco_ferias_sobre_aviso_previo DOUBLE NOT NULL,
+    fgts_sobre_recisao DOUBLE NOT NULL,
+    inss_sobre_salario DOUBLE NOT NULL,
+    inss_sobre_ferias_e_decimo_terceiro DOUBLE NOT NULL,
+    indenizacao_um_dia_de_salario DOUBLE NOT NULL,
+    total DOUBLE NOT NULL
+);
+
+CREATE TABLE contas(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    energia_eletrica  DOUBLE NOT NULL,
+    agua  DOUBLE NOT NULL,
+    gas  DOUBLE NOT NULL,
+    telefone_e_internet  DOUBLE NOT NULL,
+    aluguel  DOUBLE NOT NULL,
+    fornecedores  DOUBLE NOT NULL,
+    total  DOUBLE NOT NULL
+);
+
+CREATE TABLE gastosGerais(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    manutencao_equipamentos  DOUBLE NOT NULL,
+    limpeza  DOUBLE NOT NULL,
+    manutencao_estrutura  DOUBLE NOT NULL,
+    alimentacao  DOUBLE NOT NULL,
+    materiais_de_consumo  DOUBLE NOT NULL,
+    medicamentos  DOUBLE NOT NULL,
+    imprevistos  DOUBLE NOT NULL,
+    total  DOUBLE NOT NULL
+);
+
+CREATE TABLE investimentos(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    tipo VARCHAR(100) NOT NULL,
+    descricao VARCHAR(100) NOT NULL,
+    valor double NOT NULL
+);
+
+CREATE TABLE orcamento(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    orcamento  DOUBLE NOT NULL,
+    reserva_imprevistos  DOUBLE NOT NULL,
+    orcamento_investimentos  DOUBLE NOT NULL
+);
+
+CREATE TABLE custos(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_gastoFuncionario INT NOT NULL,
+    id_conta INT NOT NULL,
+    id_gastoGeral INT NOT NULL,
+    id_investimento INT NOT NULL,
+    total DOUBLE NOT NULL,
+    FOREIGN KEY(id_gastoFuncionario) REFERENCES gastosFuncionarios(id),
+    FOREIGN KEY(id_conta) REFERENCES contas(id),
+    FOREIGN KEY(id_gastoGeral) REFERENCES gastosGerais(id),
+    FOREIGN KEY(id_investimento) REFERENCES investimentos(id)
+);
+
+CREATE TABLE receita(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    clientes_particulares  DOUBLE NOT NULL,
+    convenio_sus  DOUBLE NOT NULL,
+    outros_convenios  DOUBLE NOT NULL,
+    servicos_a_faturar  DOUBLE NOT NULL,
+    diversos  DOUBLE NOT NULL,
+    adiantamentos_a_terceiros  DOUBLE NOT NULL,
+    arrecadacoes  DOUBLE NOT NULL,
+    bens_e_titulos_a_receber  DOUBLE NOT NULL,
+    total  DOUBLE NOT NULL
+);

@@ -4,21 +4,31 @@ package br.com.Sistema.Bean;
  * @author Cidmar
  */
 public class ReceitaBean {
-    private double servicos_particulares;
+    private int id;
+    private double clientes_particulares;
     private double convenio_sus;
-    private double convenios_diversos;
+    private double outros_convenios;
     private double servicos_a_faturar;
     private double diversos;
     private double adiantamentos_a_terceiros;
     private double arrecadacoes;
     private double bens_e_titulos_a_receber;
+    private double total;
 
-    public double getClientes_particulares() {
-        return servicos_particulares;
+    public int getId() {
+        return id;
     }
 
-    public void setClientes_particulares(double servicos_particulares) {
-        this.servicos_particulares = servicos_particulares;
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public double getClientes_particulares() {
+        return clientes_particulares;
+    }
+
+    public void setClientes_particulares(double clientes_particulares) {
+        this.clientes_particulares = clientes_particulares;
     }
 
     public double getConvenio_sus() {
@@ -30,11 +40,11 @@ public class ReceitaBean {
     }
 
     public double getOutros_convenios() {
-        return convenios_diversos;
+        return outros_convenios;
     }
 
-    public void setOutros_convenios(double convenios_diversos) {
-        this.convenios_diversos = convenios_diversos;
+    public void setOutros_convenios(double outros_convenios) {
+        this.outros_convenios = outros_convenios;
     }
 
     public double getServicos_a_faturar() {
@@ -75,5 +85,13 @@ public class ReceitaBean {
 
     public void setBens_e_titulos_a_receber(double bens_e_titulos_a_receber) {
         this.bens_e_titulos_a_receber = bens_e_titulos_a_receber;
+    }
+
+    public double getTotal() {
+        return total;
+    }
+
+    public void setTotal(double total) {
+        this.total = total;
     }
 }
