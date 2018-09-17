@@ -98,17 +98,18 @@ CREATE TABLE expedicao(
     id_usuario INT,
     id_funcionario INT,
     tipo VARCHAR(100),
+    nome VARCHAR(100),
     data_expedicao DATE,
     custo DOUBLE,
     FOREIGN KEY(id_usuario) REFERENCES usuarios(id),
     FOREIGN KEY(id_funcionario) REFERENCES funcionarios(id)
 );
 
-INSERT INTO expedicao (id_usuario,id_funcionario,tipo,data_expedicao,custo) VALUES
-(1,2,'Exame','2018-09-10',250000),
-(3,4,'Exame','2018-10-01',100000),
-(2,3,'Consulta','2018-10-16',350),
-(4,2,'Consulta','2018-10-21',590);
+INSERT INTO expedicao (id_usuario,id_funcionario,tipo,nome,data_expedicao,custo) VALUES
+(1,2,'Exame','blabla','2018-09-10',250000),
+(3,4,'Exame','blabla2','2018-10-01',100000),
+(2,3,'Consulta','blabla3','2018-10-16',350),
+(4,2,'Consulta','blabla4','2018-10-21',590);
 
 CREATE TABLE quartos(
     id INT AUTO_INCREMENT PRIMARY KEY,
