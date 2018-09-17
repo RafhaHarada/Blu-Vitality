@@ -1,3 +1,9 @@
 /BluVitality/build/
 /BluVitality/dist/
 /BluVitalitySubstituto/nbproject/
+*.class
+*.smap
+*.dpf
+*.gitkeep
+*.properties
+*.xml
