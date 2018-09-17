@@ -34,10 +34,10 @@ public class FuncionariosDAO {
                 funcionario.setId_usuario(resultSet.getInt("fn.id_usuario"));
                 funcionario.setTipo(resultSet.getString("fn.tipo"));
 
-                UsuariosBean usuario = new UsuariosDAO().obterPeloId(Integer.parseInt("us.id"));
+                UsuariosBean usuario = new UsuariosDAO().obterPeloId(resultSet.getInt("us.id"));
                 funcionario.setUsuario(usuario);
 
-                CargosBean cargo = new CargosDAO().obterPeloId(Integer.parseInt("cr.id"));
+                CargosBean cargo = new CargosDAO().obterPeloId(resultSet.getInt("cr.id"));
                 funcionario.setCargo(cargo);
 
                 funcionarios.add(funcionario);
