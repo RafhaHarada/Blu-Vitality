@@ -23,7 +23,7 @@ CREATE TABLE usuarios(
     nome_fic VARCHAR(100),
     tipo_sanguineo VARCHAR(3),
     contato_emergencia VARCHAR(100),
-    convenio VARCHAR(100)
+    convenio VARCHAR(100),
 );
 
 INSERT INTO usuarios (nome,estado_civil,idade,sexo,login,senha,cpf,rg,telefone,email,endereco,complemento,cidade,UF,naturalidade,data_nascimento,nome_fic,tipo_sanguineo,contato_emergencia,convenio) VALUES
@@ -43,7 +43,7 @@ CREATE TABLE cargos(
 INSERT INTO cargos (nome,salario,carga_horaria) VALUES
 ('Médico',99999.05,'20:00:00'),
 ('Gerente',999999.05,'10:00:00'),
-('Dono',9999999.05,'03:00:00'),
+('Administrador',9999999.05,'03:00:00'),
 ('Recepcionista',2100,'08:00:00'),
 ('Limpeza',1100,'08:00:00');
 
