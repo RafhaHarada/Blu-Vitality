@@ -27,16 +27,16 @@ public class ExpedicaoDAO {
             while(resultSet.next()){
                 ExpedicaoBean expedicao = new ExpedicaoBean();
                 expedicao.setId(resultSet.getInt("fn.id"));
-                expedicao.setId_usuario(resultSet.getInt("fn.id_usuario"));
-                expedicao.setTipo(resultSet.getString("tipo"));
-                expedicao.setData_expedicao(resultSet.getDate("data_expedicao"));
-                expedicao.setCusto(resultSet.getDouble("custo"));
+                expedicao.setTipo(resultSet.getString("fn.tipo"));
+                expedicao.setNome(resultSet.getString("fn.nome"));
+                expedicao.setData_expedicao(resultSet.getDate("fn.data_expedicao"));
+                expedicao.setCusto(resultSet.getDouble("fn.custo"));
                 
-                UsuariosBean usuario = new UsuariosBean();
-                usuario.setId(resultSet.getInt("us.id"));
+                UsuariosBean usuario = new UsuariosDAO().obterPeloId(Integer.parseInt("fn.id_usuario"));
+                expedicao.setUsuario(usuario);
                 
-                FuncionariosBean funcionario = new FuncionariosBean();
-                funcionario.setId(resultSet.getInt("cr.id"));
+                FuncionariosBean funcionario = new FuncionariosDAO().obterPeloIdUsuario(Integer.parseInt("fn.id"));
+                expedicao.setFuncionario(funcionario);
                 
                 expedicoes.add(expedicao);
             }
@@ -56,12 +56,17 @@ public class ExpedicaoDAO {
             ResultSet resultSet = ps.getResultSet();
             while(resultSet.next()){
                 expedicao = new ExpedicaoBean();
-                expedicao.setId(resultSet.getInt("fn.id"));
-                expedicao.setId_usuario(resultSet.getInt("fn.id_usuario"));
-                expedicao.setId_funcionario(resultSet.getInt("fn.id_funcionario"));
+                expedicao.setId(resultSet.getInt("id"));
+                expedicao.setNome(resultSet.getString("nome"));
                 expedicao.setTipo(resultSet.getString("tipo"));
                 expedicao.setData_expedicao(resultSet.getDate("data_expedicao"));
                 expedicao.setCusto(resultSet.getDouble("custo"));
+                
+                UsuariosBean usuario = new UsuariosDAO().obterPeloId(Integer.parseInt("fn.id_usuario"));
+                expedicao.setUsuario(usuario);
+                
+                FuncionariosBean funcionario = new FuncionariosDAO().obterPeloIdUsuario(Integer.parseInt("fn.id"));
+                expedicao.setFuncionario(funcionario);
             }
         }catch(SQLException e){
             e.printStackTrace();
@@ -69,14 +74,13 @@ public class ExpedicaoDAO {
             Conexao.fecharConexao();
         }return expedicao;
     }
-    
     public int adicionar(ExpedicaoBean expedicao) {
         String sql = "INSERT INTO expedicoes (id, id_usuario, id_funcionario, tipo, data_expedicao, custo) "
                 + "VALUES(?,?,?,?, ?, ?)";
         try{
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql, RETURN_GENERATED_KEYS);
-            ps.setInt(1, expedicao.getId_usuario());
-            ps.setInt(2, expedicao.getId_funcionario());
+            ps.setInt(1, expedicao.get_usuario());
+            ps.setInt(2, expedicao.get_funcionario());
             ps.setString(3, expedicao.getTipo());
             ps.setDate(4, expedicao.getData_expedicao());
             ps.setDouble(5, expedicao.getCusto());
@@ -96,8 +100,8 @@ public class ExpedicaoDAO {
         try{
             String sql = "UPDATE expedicoes SET id_usuario = ?, id_funcionario = ?, tipo = ?, data_expedicao = ?, custo = ? WHERE id = ?";
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);
-            ps.setInt(1, expedicao.getId_usuario());
-            ps.setInt(2, expedicao.getId_funcionario());
+            ps.setInt(1, expedicao.getid_usuario());
+            ps.setInt(2, expedicao.getid_funcionario());
             ps.setString(3, expedicao.getTipo());
             ps.setDate(4, expedicao.getData_expedicao());
             ps.setDouble(5, expedicao.getCusto());
