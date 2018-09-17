@@ -18,9 +18,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- *
- * @author Gus
+ * Document   : 
+ * Created on : 17/09/2018
+ * Author     : @Gustavo Rodrigues (gugaaroodrigues@gmail.com)
  */
+
 @WebServlet(name = "QuartoObterTodosParaDatatable", urlPatterns = {"/quarto/obtertodosparadatatable"})
 public class QuartoObterTodosParaDatatable extends HttpServlet {
     

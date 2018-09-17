@@ -1,7 +1,7 @@
 <%-- 
     Document   : tabela-funcionarios
     Created on : 17/09/2018, 00:08:08
-    Author     : Gus
+    Author     : @Gustavo Rodrigues (gugaaroodrigues@gmail.com)
 --%>
 
 <table class="table dataTable" id="tabela-funcionario">
