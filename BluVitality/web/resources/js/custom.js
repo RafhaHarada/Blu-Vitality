@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(function () {
 
     $('.slider').slider();
 
@@ -108,7 +108,6 @@ $(document).ready(function () {
     auth2.grantOfflineAccess().then(signInCallback);
   });
     
-});
 
 function onSignIn(googleUser) {
     var profile = googleUser.getBasicProfile();
@@ -138,12 +137,24 @@ function signOut() {
     });
 }
 
-$(document).ready(function($) {
+
+    $('#tabela-funcionario').DataTable({
+        'ajax': '/funcionarios/obtertodosparadatatable',
+        'columns': [
+            {'data': 'id'},
+            {'data': 'cargo'},
+            {'data': 'tipo'}
+        
+        ]
+    });
+    $('#quarto-index').DataTable({
+        'ajax': '/quarto/obtertodosparadatatable',
+        'columns': [
+            {'data': 'numero_quarto'},
+            {'data': 'tipo'},
+            {'data': 'status'}
+        ]
+    });
     var Body = $('body');
     Body.addClass('preloader-site');
 });
-$(window).load(function() {
-    $('.preloader-wrapper').fadeOut();
-    $('body').removeClass('preloader-site');
-});
-
