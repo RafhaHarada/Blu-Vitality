@@ -17,17 +17,17 @@
 <div class=" row">
 
     <h5>Seja Bem vindo</h5>
-    <a class="waves-effect waves-light btn-small right" id="btnFinancas">button</a>
+    <a class="waves-effect waves-light red btn-small right" id="btnFinancas">Finaceiro</a>
 
     <span class="nome">Gustavo</span>
     <div class="" style="margin-top: auto">
         <div class="divider"></div>
-        <ul class="tabs tabs-transparent">
+        <ul class="tabs tabs-transparent center">
             <li class="tab"><a href="#InicioADM" class="active teal-text waves-effect">Bem vindo</a></li>
             <li class="tab"><a href="#listapaciente" class="teal-text waves-effect">Pacientes</a></li>
             <li class="tab"><a href="#lisfuncionarios" class="teal-text waves-effect">Funcionarios</a></li>
             <li class="tab"><a href="#hospitalQuartos" class="teal-text waves-effect">Quarto</a></li>
-            <li class="tab"><a href="#hospitalConfig" class="teal-text waves-effect">Configuração</a></li>
+            <li class="tab"><a href="#hospitalPendencias" class="teal-text waves-effect">Pendências</a></li>
             <li class="tab"><a href="#hospitalEquipamentos" class="teal-text waves-effect">Equipamentos</a></li>
             <li class="tab"><a href="#hospitalEventos" class="teal-text waves-effect">Eventos</a></li>
         </ul>
@@ -38,22 +38,49 @@
 
         <div id="listapaciente" class="col s12 scrollBarOnDiv container">
             <div class="col s12">
-                <%@include file="table-pacientes.jsp" %>   
+                <%@include file="table-pacientes.jsp" %>
             </div>
         </div>
         <div id="lisfuncionarios" class="col s12 container">
             <div class="">
-                <%@include file="table-funcionarios.jsp" %> 
+                <%@include file="tabela-funcionarios.jsp" %> 
             </div>
         </div>
-        <div id="hospitalQuartos" class="col s12 container">
-            <%@include file="ListarQuartos.jsp" %>
-           <a class="waves-effect waves-light btn-small right" id="btnAdd">Adicionar</a>
-           <a class="waves-effect waves-light btn-small right" id="btnRemove">Remover</a>
+        <div id="hospitalQuartos" class="col s12 container scrollBarOnDiv">
+            <%@include file="table-quartos.jsp" %>
+            <a class="waves-effect waves-light btn-small right left" id="btnRemove">Nova Ala</a>
+            <a href="#" class="waves-effect waves-light btn-small right right-align" id="btnAdd">Adicionar</a>
+            <div class="col s12">
+                <ul class="collapsible"> 
+                    <li>
+                        <div class="collapsible-header section scrollspy">
+                            <i class="material-icons"></i>
+                            <span class="flow-text teal-text">Quartos</span>
+                            <span class="badge"></span>
+                        </div>
+                        <div class="collapsible-body">
+                            <ul class="collapsible ">
+                                <li>
+                                    <%@include file="quarto/quarto-formulario-cadastro.jsp" %>
+                                </li>
+                                <li>
+                                    <%@include file="quarto/quarto-formulario-remover.jsp" %>
+                                </li>
+                                <li>
+                                    <%@include file="quarto/quarto-formulario-quarentena.jsp" %>
+                                </li>
+                                <li>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
         </div>
-        <div id="hospitalConfig" class="col s12 container">
-            <div class="">
-                <
+        <div id="hospitalPendencias" class="col s12 container">
+            <div class=" row-border col s12 m6">
+                
             </div>
         </div>
         <div id="hospitalEquipamentos" class="col s12 container">

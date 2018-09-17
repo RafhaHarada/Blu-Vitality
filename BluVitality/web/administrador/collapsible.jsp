@@ -1,8 +1,7 @@
 <%-- 
     Document   : collapsible
     Created on : 13/09/2018, 18:06:53
-    Author     : Gus
---%>
+    Author     : @Gustavo Rodrigues (gugaaroodrigues@gmail.com)
 
 <div class="col s12">
                 <ul class="collapsible">

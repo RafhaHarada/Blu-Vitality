@@ -23,7 +23,7 @@ CREATE TABLE usuarios(
     nome_fic VARCHAR(100),
     tipo_sanguineo VARCHAR(3),
     contato_emergencia VARCHAR(100),
-    convenio VARCHAR(100),
+    convenio VARCHAR(100)
 );
 
 INSERT INTO usuarios (nome,estado_civil,idade,sexo,login,senha,cpf,rg,telefone,email,endereco,complemento,cidade,UF,naturalidade,data_nascimento,nome_fic,tipo_sanguineo,contato_emergencia,convenio) VALUES

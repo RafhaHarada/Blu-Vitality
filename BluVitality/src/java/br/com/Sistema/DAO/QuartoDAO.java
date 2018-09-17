@@ -134,27 +134,52 @@ public class QuartoDAO {
     public List<HashMap<String, Object>> obterTodosParaDataTable() {
         List<HashMap<String, Object>> quartos = new ArrayList<>();
         String sql = "SELECT * FROM quartos";
-        
-        try{
+
+        try {
             Statement st = Conexao.abrirConexao().createStatement();
             st.execute(sql);
             ResultSet resultSet = st.getResultSet();
-            while(resultSet.next()){
+            while (resultSet.next()) {
                 HashMap<String, Object> quarto = new HashMap<>();
-                quarto.put("id",resultSet.getInt("id"));
-                quarto.put("numero_quarto",resultSet.getInt("numero_quarto"));
-                quarto.put("id_usuario",resultSet.getInt("id_usuario"));
-                quarto.put("id_funcionario",resultSet.getInt("id_funcionario"));
-                quarto.put("tipo",resultSet.getString("tipo"));
-                quarto.put("data_entrada",resultSet.getDate("data_entrada"));
-                quarto.put("data_saida",resultSet.getDate("data_saida"));
-                quarto.put("status",resultSet.getString("status"));
+                quarto.put("id", resultSet.getInt("id"));
+                quarto.put("numero_quarto", resultSet.getInt("numero_quarto"));
+                quarto.put("id_usuario", resultSet.getInt("id_usuario"));
+                quarto.put("id_funcionario", resultSet.getInt("id_funcionario"));
+                quarto.put("tipo", resultSet.getString("tipo"));
+                quarto.put("data_entrada", resultSet.getDate("data_entrada"));
+                quarto.put("data_saida", resultSet.getDate("data_saida"));
+                quarto.put("status", resultSet.getString("status"));
                 quartos.add(quarto);
             }
-            }catch(SQLException e){
+        } catch (SQLException e) {
             e.printStackTrace();
-        }finally{
+        } finally {
             Conexao.fecharConexao();
-        }return quartos;
+        }
+        return quartos;
+    }
+
+    public List<HashMap<String, String>> obterTodosParaSelect2(String termo) {
+        List<HashMap<String, String>> quartos = new ArrayList<HashMap<String, String>>();
+        String sql = "SELECT * FROM quartos WHERE numero_quarto LIKE ? ORDER BY numero_quarto";
+
+        try {
+            PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);
+            ps.setString(1, "%" + termo + "%");
+            ps.execute();
+            ResultSet resultSet = ps.getResultSet();
+            while (resultSet.next()) {
+                HashMap<String, String> atual = new HashMap<>();
+                atual.put("id", String.valueOf(resultSet.getInt("id")));
+                atual.put("numero_quarto", String.valueOf(resultSet.getInt("numero_quarto")));
+                atual.put("tipo", resultSet.getString("tipo"));
+                quartos.add(atual);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            Conexao.fecharConexao();
+        }
+        return quartos;
     }
 }
