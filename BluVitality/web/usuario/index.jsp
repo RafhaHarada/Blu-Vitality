@@ -241,24 +241,75 @@
             <span class="teal-text">Consulta</span>
         </label>
     </div>
-    <div class="agendarE teal lighten-4">
-        <label></label>
-        <select class="browser-default">
-            <option value="" disabled selected>Agendar Exame</option>
-            <option value="1">Option 1</option>
-            <option value="2">Option 2</option>
-            <option value="3">Option 3</option>
-        </select>
-    </div>
-    <div class="agendarC teal lighten-4">
 
-        <select class="browser-default">
-            <option value="" disabled selected>Agenda Consulta</option>
-            <option value="1">Option 1</option>
-            <option value="2">Option 2</option>
-            <option value="3">Option 3</option>
-        </select>
+    <div class="agendarC container">
+        <div class="row">
+            <div class="col s12">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">textsms</i>
+                        <input type="text" id="autocomplete-input" class="autocomplete">
+                        <label for="autocomplete-input">Motivo da consulta</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="input-field col s12">
+            <select>
+                <option value="" disabled selected>Especialidades</option>
+                <option value="1">Clínico Geral </option>
+                <option value="2">Cardiologista</option>
+                <option value="3">Endocrinologista </option>
+                <option value="4">Ginecologista </option>
+                <option value="5">Oftamologista </option>
+                <option value="6">Ortopedico </option>
+                <option value="7">Otorrino </option>
+                <option value="8">Pediatra </option>
+                <option value="9">Psiquiatra </option>
 
+            </select>
+            <label></label>
+        </div>
+        <div class="input-field col s12">
+            <select>
+                <option value="" disabled selected>Médicos</option>
+                <option value="1">Dr:</option>
+                <option value="2">Dr:</option>
+                <option value="3">Dr:Nattana Alves Matos </option>
+                <option value="4">Dr:Luana Patricia Duarte</option>
+                <option value="5">Dr:Cidmar Pereira da Silva</option>
+                <option value="6">Dr:Gustavo Rodrigues</option>
+                <option value="7">Dr:Rafael Alipio Harada</option>
+                <option value="8">Dr: </option>
+                <option value="9">Dr: </option>
+
+            </select>
+            <label></label>
+        </div>
+        <input type="Data de preferencia" class="datepicker">
+        <div class="input-field col s12">
+            <select>
+                <option value="" disabled selected>Horario de preferencia</option>
+                <option value="1">8:00AM</option>
+                <option value="2">8:30AM</option>
+                <option value="3">9:00AM</option>
+                <option value="4">9:30AM</option>
+                <option value="5">10:00AM</option>
+                <option value="6">10:30AM</option>
+                <option value="7">11:00AM</option>
+                <option value="8">11:30AM</option>
+                <option value="9">1:30PM</option>
+                <option value="10">2:00PM</option>
+                <option value="11">2:30PM</option>
+                <option value="12">3:00PM</option>
+                <option value="13">3:30PM</option>
+                <option value="14">4:00PM</option>
+                <option value="15">4:30PM</option>
+                <option value="16">5:00PM</option>
+            </select>
+            <label></label>
+        </div>
+        
 
     </div>
 </div>
