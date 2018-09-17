@@ -7,6 +7,7 @@ package br.com.Sistema.Web.Administrador.Quarto;
 
 import br.com.Sistema.DAO.QuartoDAO;
 import com.google.gson.Gson;
+import com.sun.xml.rpc.processor.modeler.j2ee.xml.string;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.HashMap;
@@ -23,17 +24,21 @@ import javax.servlet.http.HttpServletResponse;
  * Author     : @Gustavo Rodrigues (gugaaroodrigues@gmail.com)
  */
 
-@WebServlet(name = "QuartoObterTodosParaDatatable", urlPatterns = {"/quarto/obtertodosparadatatable"})
-public class QuartoObterTodosParaDatatable extends HttpServlet {
-    
+@WebServlet(name = "QuartoObterTodosParaSelect2", urlPatterns = {"/quartos/obtertodosparaselect2"})
+public class QuartoObterTodosParaSelect2 extends HttpServlet {
 
+   
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.setContentType("text/html;charset=UTF-8");
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        String termo= request.getParameter("term") == null? "" : request.getParameter("term");
+        
+        response.setContentType("application/json");
+        
+        List<HashMap<String, String>> tipo = new QuartoDAO().obterTodosParaSelect2(termo);
         HashMap<String, Object> resultado = new HashMap<>();
-        List<HashMap<String, Object>> registros = new QuartoDAO().obterTodosParaDataTable();
-        resultado.put("data", registros);
-        resp.getWriter().print((new Gson().toJson(resultado)));
+        resultado.put("results", tipo);
+        response.getWriter().print(new Gson().toJson(resultado));
     }
 
 

@@ -25,7 +25,7 @@ public class AdministradorIndex extends HttpServlet{
         List<FuncionariosBean> funcionario = new FuncionariosDAO().obterTodos();
         
         resp.setContentType("text/html;charset=UTF-8");
-        req.getRequestDispatcher("/administrador/index.jsp").include(req, resp);
+        req.getRequestDispatcher("administrador/index.jsp").include(req, resp);
         
     }
     

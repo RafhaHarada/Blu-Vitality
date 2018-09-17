@@ -3,14 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.Sistema.Web.Administrador.Quarto;
-
-/**
- * Document   : 
- * Created on : 
- * Author     : @Gustavo Rodrigues (gugaaroodrigues@gmail.com)
- */
-
+package br.com.Sistema.Web.Administrador.Servicos;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -19,14 +12,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(urlPatterns = "/quarto")
-public class QuartoIndex extends HttpServlet {
+/**
+ * Document   : 
+ * Created on : 17/09/2018
+ * Author     : @Gustavo Rodrigues (gugaaroodrigues@gmail.com)
+ */
+@WebServlet("/servicos")
+public class ServicosIndex extends HttpServlet{
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         resp.setContentType("text/html;charset=UTF-8");
-        req.getRequestDispatcher("administrador/").include(req, resp);
+        req.getRequestDispatcher("/servicos/index.jsp").include(req, resp);
     }
-
 }

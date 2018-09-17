@@ -1,9 +1,12 @@
 <%-- 
     Document   : table-pacientes
     Created on : 11/09/2018, 14:10:53
-    Author     : Gus
+    Author     : @Gustavo Rodrigues (gugaaroodrigues@gmail.com)
 --%>
 
+<%@page import="br.com.Sistema.Bean.UsuariosBean"%>
+<%@page import="java.util.List"%>
+<%@page import="br.com.Sistema.DAO.UsuariosDAO"%>
 <nav>
     <div class="nav-wrapper teal lighten-4">
         <form>

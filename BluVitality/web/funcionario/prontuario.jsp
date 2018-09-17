@@ -15,7 +15,7 @@
     </ul>
 </li>
 <%@include file="../model/headerEnd.jsp" %>
-
+FUNCIONARIO PRONTUARIO
 <div class="row">
     <div class="">
         <ul class="tabs tabs-transparent center">
@@ -109,21 +109,42 @@
         </div>
     </div>
     <div id="Sobre2" class="col s12 container ">
+
     </div>
     <div id="Servicos2" class="scrollBarOnDiv">
         <div class="prontuarioBusca container">
-            <form  action="/funcionario/prontuario" method="GET">
+            <form class="col s12">
                 <div class="row">
                     <div class="input-field col s6">
                         <input placeholder="Digite aqui" id="nome" type="text" class="validate">
                         <label for="nome">Nome</label>
                     </div>
+
+
                 </div>  
             </form> 
             <div>
-                <a href="/funcionario/prontuario" class="btn teal botaoBuscar">Busca Prontuário</a>
+                <a class="btn teal botaoBuscar">Busca Prontuário</a>
             </div>
         </div>
+        <div class="prontuarioResultado container">
+            <div class="col s12">
+                <div class="row">
+                    <div class="col s6">
+                        <div class="teal-text flow-text">
+                          
+
+
+                        </div>
+                    </div>
+
+                </div>  
+            </div> 
+            <div>
+                <a class="btn teal botaoVoltar">Voltar as Buscas</a>
+            </div>
+        </div>
+
     </div>
 </div>     
 <div id="Servicos3" class="col s12 container">
