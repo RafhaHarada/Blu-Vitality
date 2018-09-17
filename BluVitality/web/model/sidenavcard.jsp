@@ -30,7 +30,7 @@
         FuncionariosBean funcionario = new FuncionariosDAO().obterPeloIdUsuario(usuario.getId());
         cargoDoFuncionario = funcionario.getCargo().getNome();
     }
-    if (cargoDoFuncionario.equals("Administração")) {
+    if (cargoDoFuncionario.equals("Administrador")) {
 %>
 <li>
     <div class="user-view">
@@ -111,7 +111,7 @@
 <div class="divider"></div>
 
 <%
-} else if (cargoDoFuncionario.equals("Médico")) {
+} else if (cargoDoFuncionario.equals("Medico")) {
 %>
 <li>
     <div class="user-view">
@@ -151,7 +151,7 @@
 </li>
 <div class="divider"></div>
 <%
-} else if (cargoDoFuncionario.equals("Recepção")) {
+} else if (cargoDoFuncionario.equals("Recepcao")) {
 %>
 <li>
     <div class="user-view">
