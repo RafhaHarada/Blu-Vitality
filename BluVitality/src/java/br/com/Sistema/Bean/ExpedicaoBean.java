@@ -14,19 +14,11 @@ import java.sql.Date;
 public class ExpedicaoBean {
     private int id;
     private String tipo;
+    private String nome;
     private Date data_expedicao;
     private double custo;
-    private int id_usuario;
-    private int Id_funcionario;
-
-    public int getId_funcionario() {
-        return Id_funcionario;
-    }
-
-    public void setId_funcionario(int Id_funcionario) {
-        this.Id_funcionario = Id_funcionario;
-    }
-
+    private UsuariosBean usuario;
+    private FuncionariosBean funcionario;
 
     public int getId() {
         return id;
@@ -60,11 +52,27 @@ public class ExpedicaoBean {
         this.custo = custo;
     }
 
-    public int getId_usuario() {
-        return id_usuario;
+    public String getNome() {
+        return nome;
     }
 
-    public void setId_usuario(int id_usuario) {
-        this.id_usuario = id_usuario;
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public UsuariosBean getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(UsuariosBean usuario) {
+        this.usuario = usuario;
+    }
+
+    public FuncionariosBean getFuncionario() {
+        return funcionario;
+    }
+
+    public void setFuncionario(FuncionariosBean funcionario) {
+        this.funcionario = funcionario;
     }
 }
