@@ -1,7 +1,7 @@
 <%-- 
     Document   : AdicionarAla
     Created on : 13/09/2018, 18:15:15
-    Author     : Gus
+    Author     : @Gustavo Rodrigues (gugaaroodrigues@gmail.com)
 --%>
 
 <div class="collapsible-header">
@@ -10,7 +10,7 @@
     <span class="badge"></span>
 </div>
 <div class="collapsible-body">
-    <form action="/categoria/store" method="post">
+    <form action="/ala/store" method="post">
         <div class="form-group">
 
             <label for="campo-categoria"><i class="material-icons"></i> Alas</label>

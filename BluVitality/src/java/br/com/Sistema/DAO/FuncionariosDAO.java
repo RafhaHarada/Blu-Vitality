@@ -195,7 +195,36 @@ public class FuncionariosDAO {
         return false;
     }
 
-    public List<HashMap<String, Object>> obterTodosParaDataTable() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+   public List<HashMap<String, Object>> obterTodosParaDataTable() {
+        List<HashMap<String, Object>> funcionarios = new ArrayList<>();
+        String sql = "SELECT * FROM funcionarios fn "
+                + "\nJOIN cargos cr ON cr.id = fn.id_cargo "
+                + "\nJOIN usuarios us ON us.id = fn.id_usuario";
+        
+        try {
+            Statement st = Conexao.abrirConexao().createStatement();
+            st.execute(sql);
+            ResultSet resultSet = st.getResultSet();
+            while (resultSet.next()) {
+                
+                HashMap<String, Object> funcionario = new HashMap<>();
+                funcionario.put("id", resultSet.getInt("fn.id"));
+                funcionario.put("cargo", resultSet.getString("cr.nome"));
+                funcionario.put("id_usuario", resultSet.getInt("fn.id_usuario"));
+                funcionario.put("tipo",resultSet.getString("fn.tipo"));
+                funcionario.put("ativo",resultSet.getBoolean("fn.ativo"));
+                //HashMap<String, Object> cargo = new HashMap<>();
+                //cargo.put("cr.nome", resultSet.getString("cr.nome"));
+                
+                
+                //funcionario.putAll(cargo);
+                funcionarios.add(funcionario);
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally{
+            Conexao.fecharConexao();
+        }return funcionarios;
     }
 }
