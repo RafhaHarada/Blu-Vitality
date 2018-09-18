@@ -205,20 +205,20 @@
         </div>
 
         <form action="#">
-            <p>
+            <div>
                 <label class="teal-text">
                     <input type="checkbox" />
                     <span>Telefoe</span>
                 </label>
-            </p>
+            </div>
 
             <form action="#">
-                <p>
+                <div>
                     <label class="teal-text">
                         <input type="checkbox" />
                         <span>Email</span>
                     </label>
-                </p>
+                </div>
                 <!-- Modal Trigger -->
                 <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Agendar</a>
 
@@ -289,80 +289,12 @@
         </table>
     </div>
     <div id="Usuario5" class="col s12 container white">
-        <table class="striped teal lighten-4">
-
-
-            <div class="card">
-                <div class="card-content">
-                    <p>Informações da suas últimas consultas e exames</p>
-                </div>
-                <div class="card-tabs">
-                    <ul class="tabs tabs-fixed-width">
-                        <li class="tab"><a href="#test4">Consultas realizadas</a></li>
-                        <li class="tab"><a class="active" href="#test5">Exames realizados</a></li>
-                    </ul>
-                </div>
-                <div class="card-content grey lighten-4">
-                    <div id="test4"></div><table class="striped teal lighten-4">
-                            <div></div>
-                            <thead>
-                                <tr>
-                                    <th>Especialidade</th>
-                                    <th>Médico</th>
-                                    <th>Data</th>
-                                    <th>Hora</th>
-                                    <th>Sala</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Cardiologico</td>
-                                    <td>Eclair</td>
-                                    <td>30/08/2018</td>
-                                    <td>10:00</td>
-                                    <td>12</td>
-                                </tr>
-                                <tr>
-                                    <td>Alan</td>
-                                    <td>Jellybean</td>
-                                    <td>$3.76</td>
-                                    <td>$3.76</td>
-                                    <td>$3.76</td>
-                                </tr>
-                                <tr>
-                                    <td>Jonathan</td>
-                                    <td>Lollipop</td>
-                                    <td>Lollipop</td>
-                                    <td>$7.00</td>
-                                    <td>$7.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Jonathan</td>
-                                    <td>Lollipop</td>
-                                    <td>$7.00</td>
-                                    <td>$7.00</td>
-                                    <td>$7.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Jonathan</td>
-                                    <td>Lollipop</td>
-                                    <td>$7.00</td>
-                                    <td>$7.00</td>
-                                    <td>$7.00</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    <div></div>
-</div>
-                    </div>
-                    </div>
+        
+                                   
     
-                
 
-
-                <div id="test5"></div>
-           
-
+              
+          
 
     <br>
     <br>
