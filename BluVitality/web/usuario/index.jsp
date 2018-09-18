@@ -352,15 +352,16 @@
                                 </tr>
                             </tbody>
                         </table>
+                    <div></div>
+</div>
                     </div>
                     </div>
-    </div>
+    
                 
 
 
-                <div id="test5">Consulta</div>
-            </div>
-    </div>
+                <div id="test5"></div>
+           
 
 
     <br>
@@ -368,6 +369,5 @@
     <br>
     <br>
     <br>
-</div>
 
 <jsp:include page="../model/footer.jsp"/>
