@@ -46,7 +46,7 @@ CREATE TABLE cargos(
 );
 
 INSERT INTO cargos (nome,salario,carga_horaria) VALUES
-('Médico',99999.05,'20:00:00'),
+('Medico',99999.05,'20:00:00'),
 ('Gerente',999999.05,'10:00:00'),
 ('Administrador',9999999.05,'03:00:00'),
 ('Recepcionista',2100,'08:00:00'),

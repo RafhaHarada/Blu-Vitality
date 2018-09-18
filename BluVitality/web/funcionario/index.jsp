@@ -6,6 +6,7 @@
                  @Rafael Alipio Harada (rafhaharada@gmail.com)
 
 --%>
+
 <jsp:include page="../model/headerStart.jsp"/>
 <li><a class='dropdown-trigger' href='#' data-target='dropdownCadastro'>Opções</a>
     <!-- Dropdown Structure -->
@@ -18,12 +19,12 @@
 <div class="row">
     <div class="">
         <ul class="tabs tabs-transparent center">
-            <li class="tab"><a href="#Servicos1" class="active teal-text">Perfil</a></li>
-            <li class="tab"><a href="#Servicos2" class="teal-text">Acesso ao Prontuário</a></li>
-            <li class="tab"><a href="#Servicos3" class="teal-text">Cursos e Eventos</a></li>
+            <li class="tab"><a href="#Funcionarios1" class="active teal-text">Perfil</a></li>
+            <li class="tab"><a href="#Funcionarios2" class="teal-text">Acesso ao Prontuário</a></li>
+            <li class="tab"><a href="#Funcionarios3" class="teal-text">Cursos e Eventos</a></li>
         </ul>
 
-        <div id="Servicos1" class="col s12 container">
+        <div id="Funcionarios1" class="col s12 container">
             <ul class="collection col s6">
                 <li class="collection-item avatar teal lighten-4">
                     <img src="" alt="" class="circle red">
@@ -106,38 +107,40 @@
                 <a class="btn-floating btn cyan pulse right margin-botao"><i class="material-icons">edit</i></a>
             </div>
         </div>
-    </div>
-    <div id="Sobre2" class="col s12 container ">
-    </div>
-    <div id="Servicos2" class="scrollBarOnDiv">
-        <div class="prontuarioBusca container">
-            <form  action="/funcionario/prontuario" method="GET">
-                <div class="row">
-                    <div class="input-field col s6">
-                        <input placeholder="Digite aqui" id="nome" type="text" class="validate">
-                        <label for="nome">Nome</label>
+        <div id="Funcionarios2" class="scrollBarOnDiv">
+            <div class="prontuarioBusca container">
+                <form  action="/funcionario/prontuario" method="GET">
+                    <div class="col s12">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">textsms</i>
+                                <input type="text" id="autocomplete-input" class="autocomplete">
+                                <label for="autocomplete-input">Nome</label>
+                            </div>
+                        </div>
                     </div>
-                </div>  
-            </form> 
-            <div>
-                <a href="/funcionario/prontuario" class="btn teal botaoBuscar">Busca Prontuário</a>
+                </form>  
+                <div>
+                    <a href="/funcionario/prontuario" class="btn teal botaoBuscar">Busca Prontuário</a>
+                </div>
             </div>
-        </div>
+        </div>  
     </div>
-</div>     
-<div id="Servicos3" class="col s12 container">
+</div>
+<div id="Funcionarios3" class="col s12 container">
     <table class="striped teal lighten-4">
         <thead>
             <tr>
-                <th>Cursos</th>
+                <th>Exames</th>
+                <th>Consultas</th>
                 <th>Data</th>
-                <th>Local</th>
+                <th>Horário</th>
             </tr>
         </thead>
 
         <tbody>
             <tr>
-                <td>Palestra 1</td>
+                <td>Palestra1</td>
                 <td>01/01/2019</td>
                 <td>Hospital Blu Vitality</td>
             </tr>
@@ -153,6 +156,8 @@
             </tr>
         </tbody>
     </table>
+</div>
+</div>
 </div>
 
 <jsp:include page="../model/footer.jsp"/>

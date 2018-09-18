@@ -12,5 +12,14 @@
     </ul>
 </li>
 <%@include file="../model/headerEnd.jsp" %>
-
+<div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea id="textarea1" class="materialize-textarea"></textarea>
+          <label for="textarea1">Energia elétrica</label>
+        </div>
+      </div>
+    </form>
+  </div>
 <jsp:include page="../model/footer.jsp"/>
