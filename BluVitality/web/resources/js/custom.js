@@ -1,16 +1,23 @@
 /* 
-    Created on : 16/08/2018, 12:01:12
-    Author     : @Rafael Alipio Harada (rafhaharada@gmail.com)
-                 @Nattana Matos
-                 @Luana Patricia Duarte
-                 @Gustavo Rodrigues (gugaaroodrigues@gmail.com)
-*/
-    $(function () {
+ Created on : 16/08/2018, 12:01:12
+ Author     : @Rafael Alipio Harada (rafhaharada@gmail.com)
+ @Nattana Matos
+ @Luana Patricia Duarte
+ @Gustavo Rodrigues (gugaaroodrigues@gmail.com)
+ */
+$(function () {
 
     $('.slider').slider();
 
     //Menu retratil
-    $('.collapsible').collapsible();
+    $('.collapsible').collapsible({
+        onOpenEnd: function () {
+            atualizaTab();
+        },
+        onCloseEnd: function () {
+            atualizaTab();
+        }
+    });
 
     //modal
     $('.modal').modal();
@@ -73,7 +80,13 @@
 
     $('.tabs').tabs({
         swipeable: true,
-        onShow: true
+        onShow: function () {
+            atualizaTab();
+        }
+    });
+    
+    $(".atualizaTabFunc").on("click", function () {
+        $('.collapsible').collapsible(".close()");
     });
 
     $(".botao-servicos").on("click", function () {
@@ -108,40 +121,41 @@
         $(".agendarC").show();
         $(".agendarE").hide();
     });
-    
-    
-    $('.g-signin2').click(function() {
-    // signInCallback defined in step 6.
-    auth2.grantOfflineAccess().then(signInCallback);
-  });
-    
 
-function onSignIn(googleUser) {
-    var profile = googleUser.getBasicProfile();
-    console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-    console.log('Name: ' + profile.getName());
-    console.log('Image URL: ' + profile.getImageUrl());
-    console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-    var userId = profile.getId();
-    var userName = profile.getName();
-    var userEmail = profile.getEmail();
-    var userPicture = profile.getImageUrl();
-    document.getElementById('user-photo').src = userPicture;
-    document.getElementById('user-name').innerText = userName;
-    document.getElementById('user-email').innerText = userEmail;
 
-    // Recebendo o TOKEN que você usará nas demais requisições à API:
-    var LoR = response.getAuthResponse().id_token;
-    console.log("~ le Tolkien: " + LoR);
-    response.getAuthResponse().sendRedirect(LoRName);
-    
-};
-
-function signOut() {
-    var auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut().then(function () {
+    $('.g-signin2').click(function () {
+        // signInCallback defined in step 6.
+        auth2.grantOfflineAccess().then(signInCallback);
     });
-}
+
+
+    function onSignIn(googleUser) {
+        var profile = googleUser.getBasicProfile();
+        console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+        console.log('Name: ' + profile.getName());
+        console.log('Image URL: ' + profile.getImageUrl());
+        console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+        var userId = profile.getId();
+        var userName = profile.getName();
+        var userEmail = profile.getEmail();
+        var userPicture = profile.getImageUrl();
+        document.getElementById('user-photo').src = userPicture;
+        document.getElementById('user-name').innerText = userName;
+        document.getElementById('user-email').innerText = userEmail;
+
+        // Recebendo o TOKEN que você usará nas demais requisições à API:
+        var LoR = response.getAuthResponse().id_token;
+        console.log("~ le Tolkien: " + LoR);
+        response.getAuthResponse().sendRedirect(LoRName);
+
+    }
+    ;
+
+    function signOut() {
+        var auth2 = gapi.auth2.getAuthInstance();
+        auth2.signOut().then(function () {
+        });
+    }
 
 
     $('#tabela-funcionario').DataTable({
@@ -150,7 +164,7 @@ function signOut() {
             {'data': 'id'},
             {'data': 'cargo'},
             {'data': 'tipo'}
-        
+
         ]
     });
     $('#quarto-index').DataTable({
@@ -163,4 +177,13 @@ function signOut() {
     });
     var Body = $('body');
     Body.addClass('preloader-site');
+
+    function atualizaTab() {
+        var maxHeight = 0;
+        $('.carousel-item').each(function () {
+            if ($(this).height() > maxHeight)
+                maxHeight = $(this).height();
+        });
+        $(".tabs-content").css('height', maxHeight + 'px');
+    }
 });
