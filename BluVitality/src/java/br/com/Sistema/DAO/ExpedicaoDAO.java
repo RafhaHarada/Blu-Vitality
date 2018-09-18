@@ -13,12 +13,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author Alunos
+ * @author @Rafael Alipio Harada (rafhaharada@gmail.com)
  */
 public class ExpedicaoDAO {
     public List<ExpedicaoBean> obterTodos() {
         List<ExpedicaoBean> expedicoes = new ArrayList<>();
-        String sql = "SELECT * FROM expedicoes fn JOIN usuarios cr ON cr.id = fn.id_usuario JOIN funcionarios us ON us.id =fn.id_funcionario";
+        String sql = "SELECT * FROM expedicoes ex JOIN usuarios us ON us.id = ex.id_usuario JOIN funcionarios fn ON fn.id = ex.id_funcionario";
         
         try{
             Statement st = Conexao.abrirConexao().createStatement();
@@ -26,16 +26,16 @@ public class ExpedicaoDAO {
             ResultSet resultSet = st.getResultSet();
             while(resultSet.next()){
                 ExpedicaoBean expedicao = new ExpedicaoBean();
-                expedicao.setId(resultSet.getInt("fn.id"));
-                expedicao.setTipo(resultSet.getString("fn.tipo"));
-                expedicao.setNome(resultSet.getString("fn.nome"));
-                expedicao.setData_expedicao(resultSet.getDate("fn.data_expedicao"));
-                expedicao.setCusto(resultSet.getDouble("fn.custo"));
+                expedicao.setId(resultSet.getInt("ex.id"));
+                expedicao.setTipo(resultSet.getString("ex.tipo"));
+                expedicao.setNome(resultSet.getString("ex.nome"));
+                expedicao.setData_expedicao(resultSet.getDate("ex.data_expedicao"));
+                expedicao.setCusto(resultSet.getDouble("ex.custo"));
                 
-                UsuariosBean usuario = new UsuariosDAO().obterPeloId(Integer.parseInt("fn.id_usuario"));
+                UsuariosBean usuario = new UsuariosDAO().obterPeloId(resultSet.getInt("ex.id_usuario"));
                 expedicao.setUsuario(usuario);
                 
-                FuncionariosBean funcionario = new FuncionariosDAO().obterPeloIdUsuario(Integer.parseInt("fn.id"));
+                FuncionariosBean funcionario = new FuncionariosDAO().obterPeloIdUsuario(resultSet.getInt("ex.id_funcionario"));
                 expedicao.setFuncionario(funcionario);
                 
                 expedicoes.add(expedicao);
@@ -49,23 +49,23 @@ public class ExpedicaoDAO {
     
     public ExpedicaoBean obterPeloId(int id){
         ExpedicaoBean expedicao = null;
-        String sql = "SELECT id, id_usuario, id_funcionario, tipo, data_expedicao, custo FROM expedicoes WHERE id = ?";
+        String sql = "SELECT id, id_usuario, id_funcionario, tipo, data_expedicao, custo FROM expedicoes ex JOIN usuarios us ON us.id = ex.id_usuario JOIN funcionarios fn ON fn.id = ex.id_funcionario WHERE id = ?";
         try{
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);
             ps.setInt(1, id);
             ResultSet resultSet = ps.getResultSet();
             while(resultSet.next()){
                 expedicao = new ExpedicaoBean();
-                expedicao.setId(resultSet.getInt("id"));
-                expedicao.setNome(resultSet.getString("nome"));
-                expedicao.setTipo(resultSet.getString("tipo"));
-                expedicao.setData_expedicao(resultSet.getDate("data_expedicao"));
-                expedicao.setCusto(resultSet.getDouble("custo"));
+                expedicao.setId(resultSet.getInt("ex.id"));
+                expedicao.setTipo(resultSet.getString("ex.tipo"));
+                expedicao.setNome(resultSet.getString("ex.nome"));
+                expedicao.setData_expedicao(resultSet.getDate("ex.data_expedicao"));
+                expedicao.setCusto(resultSet.getDouble("ex.custo"));
                 
-                UsuariosBean usuario = new UsuariosDAO().obterPeloId(Integer.parseInt("fn.id_usuario"));
+                UsuariosBean usuario = new UsuariosDAO().obterPeloId(resultSet.getInt("ex.id_usuario"));
                 expedicao.setUsuario(usuario);
                 
-                FuncionariosBean funcionario = new FuncionariosDAO().obterPeloIdUsuario(Integer.parseInt("fn.id"));
+                FuncionariosBean funcionario = new FuncionariosDAO().obterPeloIdUsuario(resultSet.getInt("ex.id_funcionario"));
                 expedicao.setFuncionario(funcionario);
             }
         }catch(SQLException e){
@@ -75,12 +75,12 @@ public class ExpedicaoDAO {
         }return expedicao;
     }
     public int adicionar(ExpedicaoBean expedicao) {
-        String sql = "INSERT INTO expedicoes (id, id_usuario, id_funcionario, tipo, data_expedicao, custo) "
-                + "VALUES(?,?,?,?, ?, ?)";
+        String sql = "INSERT INTO expedicoes (id_usuario, id_funcionario, tipo, data_expedicao, custo) "
+                + "VALUES(?, ?, ?, ?, ?)";
         try{
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql, RETURN_GENERATED_KEYS);
-            ps.setInt(1, expedicao.get_usuario());
-            ps.setInt(2, expedicao.get_funcionario());
+            ps.setInt(1, expedicao.getUsuario().getId());
+            ps.setInt(2, expedicao.getFuncionario().getId());
             ps.setString(3, expedicao.getTipo());
             ps.setDate(4, expedicao.getData_expedicao());
             ps.setDouble(5, expedicao.getCusto());
@@ -100,8 +100,8 @@ public class ExpedicaoDAO {
         try{
             String sql = "UPDATE expedicoes SET id_usuario = ?, id_funcionario = ?, tipo = ?, data_expedicao = ?, custo = ? WHERE id = ?";
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);
-            ps.setInt(1, expedicao.getid_usuario());
-            ps.setInt(2, expedicao.getid_funcionario());
+            ps.setInt(1, expedicao.getUsuario().getId());
+            ps.setInt(2, expedicao.getFuncionario().getId());
             ps.setString(3, expedicao.getTipo());
             ps.setDate(4, expedicao.getData_expedicao());
             ps.setDouble(5, expedicao.getCusto());
