@@ -1,7 +1,7 @@
 <%-- 
     Document   : sidenavcard
     Created on : 27/08/2018, 11:15:48
-    Author     : Rafael Alipio Harada
+    Author     : @Rafael Alipio Harada (rafhaharada@gmail.com)
 --%>
 <%@page import="br.com.Sistema.DAO.CargosDAO"%>
 <%@page import="br.com.Sistema.Bean.CargosBean"%>
@@ -14,11 +14,10 @@
 
 <!-- SESSION CONFIRM -->
 <%  UsuariosBean usuario = new UsuariosBean();
-    if (session.getAttribute("usuario") == null) {
+    if (session.getAttribute("usuario") == null || session.getAttribute("usuario") == "") {
         response.sendRedirect("/usuario/login");
     } else {
-        int id_usuario = ((UsuariosBean) session.getAttribute("usuario")).getId();
-        usuario = new UsuariosDAO().obterPeloId(id_usuario);
+        usuario = ((UsuariosBean) session.getAttribute("usuario"));
 %>
 <div onpageshow="M.toast({html: 'Login bem sucedido!'})" class="rounded green"></div>
 
