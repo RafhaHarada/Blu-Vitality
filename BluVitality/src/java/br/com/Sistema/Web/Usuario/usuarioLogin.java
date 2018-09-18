@@ -1,5 +1,8 @@
 package br.com.Sistema.Web.Usuario;
 
+import br.com.Sistema.Bean.FuncionariosBean;
+import br.com.Sistema.Bean.UsuariosBean;
+import br.com.Sistema.DAO.FuncionariosDAO;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,11 +16,22 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet("/usuario/login")
 public class usuarioLogin extends HttpServlet {
-    
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        
         resp.setContentType("text/html;charset=UTF-8");
-        req.getRequestDispatcher("/usuario/login.jsp").include(req, resp);
+        if ((UsuariosBean) req.getSession().getAttribute("usuario") != null) {
+            UsuariosBean usuario = ((UsuariosBean) req.getSession().getAttribute("usuario"));
+            String tipoFuncionario = "";
+            FuncionariosBean funcionario = new FuncionariosDAO().obterPeloIdUsuario(usuario.getId());
+            tipoFuncionario = funcionario.getTipo();
+            if (!tipoFuncionario.isEmpty()) {
+                resp.sendRedirect("/" + tipoFuncionario);
+            } else {
+                resp.sendRedirect("/usuario");
+            }
+        } else {
+            req.getRequestDispatcher("/usuario/login.jsp").include(req, resp);
+        }
     }
 }
