@@ -1,18 +1,33 @@
 <%--
-    Document   : Cadastrar
+    Document   : cadastrar
     Created on : 29/08/2018, 19:17:38
     Author     : Rafael Alipio Harada (rafhaharada@gmail.com)
 --%>
-
+<%@page import="br.com.Sistema.Bean.FuncionariosBean"%>
+<%@page import="br.com.Sistema.DAO.FuncionariosDAO"%>
+<%@page import="br.com.Sistema.Bean.UsuariosBean"%>
+<%
+    if (session.getAttribute("usuario") != null || session.getAttribute("usuario") != "") {
+        UsuariosBean usuario = ((UsuariosBean) session.getAttribute("usuario"));
+        String tipoFuncionario = "";
+        FuncionariosBean funcionario = new FuncionariosDAO().obterPeloIdUsuario(usuario.getId());
+        tipoFuncionario = funcionario.getTipo();
+        if (!tipoFuncionario.isEmpty()) {
+            response.sendRedirect("/" + tipoFuncionario);
+        } else {
+            response.sendRedirect("/usuario");
+        }
+    }
+%>
 <jsp:include page="../model/headerStart.jsp"/>
 <li><a class='dropdown-trigger' href='#' data-target='dropdownCadastro'>Opções</a>
     <!-- Dropdown Structure -->
     <ul id='dropdownCadastro' class='dropdown-content'>
         <li><a href="#Entrar">Login</a></li>
-        <li><a href="../">Voltar</a></li>
+        <li><a href="../">Voltar a página inicial</a></li>
     </ul>
 </li>
-<%@include file="../model/headerEnd.jsp" %>
+<jsp:include page="../model/headerEndNoSidenav.jsp"/>
 <!--Modal Login/Cadastro-->
 <div id="Entrar" class="modal">
     <div class="modal-content">

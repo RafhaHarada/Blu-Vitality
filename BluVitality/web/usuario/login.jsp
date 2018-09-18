@@ -1,57 +1,34 @@
+<%-- 
+    Document   : login
+    Created on : 29/08/2018, 23:52:42
+    Author     : @Rafael Alipio Harada (rafhaharada@gmail.com)
+--%>
+
+<%@page import="br.com.Sistema.Bean.FuncionariosBean"%>
+<%@page import="br.com.Sistema.DAO.FuncionariosDAO"%>
+<%@page import="br.com.Sistema.Bean.UsuariosBean"%>
+<%
+    if (session.getAttribute("usuario") != null || session.getAttribute("usuario") != "") {
+        UsuariosBean usuario = ((UsuariosBean) session.getAttribute("usuario"));
+        String tipoFuncionario = "";
+        FuncionariosBean funcionario = new FuncionariosDAO().obterPeloIdUsuario(usuario.getId());
+        tipoFuncionario = funcionario.getTipo();
+        if (!tipoFuncionario.isEmpty()) {
+            response.sendRedirect("/" + tipoFuncionario);
+        } else {
+            response.sendRedirect("/usuario");
+        }
+    }
+%>
+
 <jsp:include page="../model/headerStart.jsp"/>
 <li><a class='dropdown-trigger' href='#' data-target='dropdownLogin'>Opções</a>
     <!-- Dropdown Structure -->
     <ul id='dropdownLogin' class='dropdown-content'>
         <li><a href="../">Voltar a página inicial</a></li>
     </ul>
-</li></ul>
-</div>
-</nav>
-<!--mobile e tablet side nav-->
-<ul class='sidenav' id='mobile'>
-    <li>
-        <a href="#" class="sidenav-close waves-effect waves-teal teal"><i class="material-icons white-text">arrow_back</i></a>
-    </li>
-    <li>
-        <a class="collapsible-header waves-effect waves-teal">Serviços<i class="material-icons">arrow_drop_down</i></a>
-        <div class="collapsible-body">
-            <ul>
-                <li><a href="#Servicos">Serviços</a></li>
-            </ul>
-        </div>
-    </li>
-    <div class="divider"></div>
-    <li>
-        <a class="collapsible-header waves-effect waves-teal">Exames<i class="material-icons">arrow_drop_down</i></a>
-        <div class="collapsible-body">
-            <ul>
-                <li><a href="#Exames">Exames</a></li>
-            </ul>
-        </div>
-    </li>
-    <div class="divider"></div>
-    <li>
-        <a class="collapsible-header waves-effect waves-teal">Contatos<i class="material-icons">arrow_drop_down</i></a>
-        <div class="collapsible-body">
-            <ul>
-                <li><a href="#Contatos">Contatos</a></li>
-            </ul>
-        </div>
-    </li>
-    <div class="divider"></div>
-    <li>
-        <a class="collapsible-header waves-effect waves-teal">Sobre<i class="material-icons">arrow_drop_down</i></a>
-        <div class="collapsible-body">
-            <ul>
-                <li><a href="#Sobre">Sobre</a></li>
-            </ul>
-        </div>
-    </li>
-</ul>
 </li>
-</ul>
-</header>
-
+<jsp:include page="../model/headerEndNoSidenav.jsp"/>
 
 <div class="container">
     <div class="col s10 m8 center">
