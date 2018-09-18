@@ -5,6 +5,7 @@ import java.sql.Date;
 /**
  * @author Nattana Matos
  * @author Gustavo Rodrigues (gugaaroodrigues@gmail.com)
+ * @author Rafael Alipio Harada (rafhaharada@gmail.com)
  */
 
 public class UsuariosBean {

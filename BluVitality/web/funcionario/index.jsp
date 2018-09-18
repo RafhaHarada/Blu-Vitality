@@ -1,9 +1,9 @@
 <%-- 
-    Document   : headeradm
+    Document   : index (funcionario)
     Created on : 26/08/2018, 17:47:02
     Author     : @Luana Patricia Duarte
-    @Gustavo Rodrigues (gugaaroodrigues@gmail.com) 
-    @Rafhael
+                 @Gustavo Rodrigues (gugaaroodrigues@gmail.com)
+                 @Rafael Alipio Harada (rafhaharada@gmail.com)
 
 --%>
 <jsp:include page="../model/headerStart.jsp"/>
@@ -11,7 +11,6 @@
     <!-- Dropdown Structure -->
     <ul id='dropdownCadastro' class='dropdown-content'>
         <li><a href="/usuario/logout" onclick="signOut();">Sair</a></li>
-
     </ul>
 </li>
 <%@include file="../model/headerEnd.jsp" %>

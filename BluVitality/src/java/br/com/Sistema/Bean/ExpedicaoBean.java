@@ -8,7 +8,7 @@ package br.com.Sistema.Bean;
 import java.sql.Date;
 
 /**
- * @author 
+ * @author Rafael Alipio Harada (rafhaharada@gmail.com)
  * @author Gustavo Rodrigues (gugaaroodrigues@gmail.com)
  */
 public class ExpedicaoBean {

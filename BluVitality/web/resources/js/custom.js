@@ -1,4 +1,11 @@
-$(function () {
+/* 
+    Created on : 16/08/2018, 12:01:12
+    Author     : @Rafael Alipio Harada (rafhaharada@gmail.com)
+                 @Nattana Matos
+                 @Luana Patricia Duarte
+                 @Gustavo Rodrigues (gugaaroodrigues@gmail.com)
+*/
+    $(function () {
 
     $('.slider').slider();
 

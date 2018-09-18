@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Alunos
+ * @author Rafael Alipio Harada (rafhaharada@gmail.com)
  */
 @WebServlet("/funcionario/prontuario")
 public class funcionarioProntuario extends HttpServlet {

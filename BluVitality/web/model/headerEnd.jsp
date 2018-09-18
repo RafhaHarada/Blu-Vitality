@@ -1,7 +1,7 @@
 <%-- 
     Document   : headerEnd
     Created on : 29/08/2018, 19:22:27
-    Author     : Admin
+    Author     : @Rafael Alipio Harada (rafhaharada@gmail.com)
 --%>
 
                     </ul>

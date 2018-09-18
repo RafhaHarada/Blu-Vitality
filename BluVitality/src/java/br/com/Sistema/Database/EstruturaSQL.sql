@@ -1,3 +1,8 @@
+--  Author  @Rafael Alipio Harada (rafhaharada@gmail.com)
+--          @Luana Patricia Duarte
+--          @Gustavo Rodrigues (gugaaroodrigues@gmail.com)
+
+
 DROP DATABASE IF EXISTS bluVitalityDatabase;
 CREATE DATABASE IF NOT EXISTS bluVitalityDatabase;
 USE bluVitalityDatabase;

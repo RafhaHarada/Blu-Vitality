@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * @author YOU
+ * @author Rafael Alipio Harada (rafhaharada@gmail.com)
  */
 
 @WebServlet("/usuario")

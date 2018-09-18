@@ -15,6 +15,7 @@ import java.util.List;
 
 /**
  * @author Cidmar
+ * @author Rafael Alipio Harada (rafhaharada@gmail.com)
  */
 public class UsuariosDAO {
 

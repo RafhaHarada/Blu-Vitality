@@ -1,7 +1,8 @@
 <%-- 
     Document   : headerStart
     Created on : 29/08/2018, 19:20:41
-    Author     : Rafael Alipio Harada @Gustavo Rodrigues 
+    Author     : @Rafael Alipio Harada (rafhaharada@gmail.com) 
+                 @Gustavo Rodrigues (gugaaroodrigues@gmail.com)
 --%>
 
 

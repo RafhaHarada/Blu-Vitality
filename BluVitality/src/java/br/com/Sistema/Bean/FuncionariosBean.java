@@ -2,6 +2,7 @@ package br.com.Sistema.Bean;
 
 /**
  * @author Nattana Matos
+ * @author Rafael Alipio Harada (rafhaharada@gmail.com)
  */
 public class FuncionariosBean {
 

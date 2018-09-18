@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 /**
- * @author Alunos
+ * @author Rafael Alipio Harada (rafhaharada@gmail.com)
  */
 public class Conexao {
     
