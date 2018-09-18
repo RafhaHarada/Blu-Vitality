@@ -19,7 +19,7 @@
     </div>
 </nav>
 <% List<UsuariosBean> usuarios = new UsuariosDAO().obterTodos();%>
-<table class="responsive-table">
+<table class="responsive-table" onshow="atualizaTab()">
     <thead>
         <tr>
             <th>Paciente</th>

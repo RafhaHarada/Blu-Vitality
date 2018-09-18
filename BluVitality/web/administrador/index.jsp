@@ -1,7 +1,7 @@
 <%-- 
-    Document   : headeradm
-    Created on : 26/08/2018, 17:47:02
-    Author     :@Gustavo Rodrigues (gugaaroodrigues@gmail.com) Rafhael Harada
+   Document   : headeradm
+   Created on : 26/08/2018, 17:47:02
+   Author     :@Gustavo Rodrigues (gugaaroodrigues@gmail.com) Rafhael Harada
 
 --%>
 
@@ -26,7 +26,7 @@
             <li class="tab"><a href="#InicioADM" class="active teal-text waves-effect">Bem vindo</a></li>
             <li class="tab"><a href="#listapaciente" class="teal-text waves-effect">Pacientes</a></li>
             <li class="tab"><a href="#lisfuncionarios" class="teal-text waves-effect">Funcionarios</a></li>
-            <li class="tab"><a href="#hospitalQuartos" class="teal-text waves-effect">Quarto</a></li>
+            <li class="tab"><a href="#hospitalQuartos" class="teal-text waves-effect atualizaTabFunc">Quarto</a></li>
             <li class="tab"><a href="#hospitalPendencias" class="teal-text waves-effect">Pendências</a></li>
             <li class="tab"><a href="#hospitalEquipamentos" class="teal-text waves-effect">Equipamentos</a></li>
             <li class="tab"><a href="#hospitalEventos" class="teal-text waves-effect">Eventos</a></li>
@@ -47,12 +47,12 @@
             </div>
         </div>
         <div id="hospitalQuartos" class="col s12 container scrollBarOnDiv">
+            <a class="waves-effect waves-light btn-small right" id="btnRemove">Nova Ala</a>
+            <a href="#" class="waves-effect waves-light btn-small right" id="btnAdd">Adicionar</a>
             <%@include file="table-quartos.jsp" %>
-            <a class="waves-effect waves-light btn-small right left" id="btnRemove">Nova Ala</a>
-            <a href="#" class="waves-effect waves-light btn-small right right-align" id="btnAdd">Adicionar</a>
             <div class="col s12">
                 <ul class="collapsible"> 
-                    <li>
+                    <li class="atualiza">
                         <div class="collapsible-header section scrollspy">
                             <i class="material-icons"></i>
                             <span class="flow-text teal-text">Quartos</span>
@@ -61,13 +61,13 @@
                         <div class="collapsible-body">
                             <ul class="collapsible ">
                                 <li>
-                                    <%@include file="quarto/quarto-formulario-cadastro.jsp" %>
+                                    <%@include file="quarto/quarto-formulario-cadastro.jsp"%>
                                 </li>
                                 <li>
-                                    <%@include file="quarto/quarto-formulario-remover.jsp" %>
+                                    <%@include file="quarto/quarto-formulario-remover.jsp"%>
                                 </li>
                                 <li>
-                                    <%@include file="quarto/quarto-formulario-quarentena.jsp" %>
+                                    <%@include file="quarto/quarto-formulario-quarentena.jsp"%>
                                 </li>
                                 <li>
                                 </li>
@@ -80,7 +80,8 @@
         </div>
         <div id="hospitalPendencias" class="col s12 container">
             <div class=" row-border col s12 m6">
-                
+                <%@include file="formulario-pendencias.jsp"%>
+
             </div>
         </div>
         <div id="hospitalEquipamentos" class="col s12 container">

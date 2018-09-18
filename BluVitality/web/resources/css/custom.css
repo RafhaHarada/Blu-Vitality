@@ -45,6 +45,10 @@
     height: 60px;
 }
 
+.tabs-content.carousel .carousel-item {
+    height: min-content; 
+}
+
 .tabs-transparent .tab a {
     color: blue;
 }
