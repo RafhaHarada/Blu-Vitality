@@ -38,7 +38,7 @@
         </div>
         <a href="#EditarPerfil">
             <!--%if(usuario.getImage() == null){%-->
-            <img class="circle" src="../resources/images/cat6.gif">
+            <img class="circle" src="../resources/images/image1.gif">
             <!--%}else{%-->
             <!--%=usuario.getImage()%-->
             <!--%}%-->
@@ -115,11 +115,11 @@
 <li>
     <div class="user-view">
         <div class="background">
-            <img src="../resources/images/bg1.gif">
+            <img src="../resources/images/slide1.jpg">
         </div>
         <a href="#EditarPerfil">
             <!--%if(usuario.getImage() == null){%-->
-            <img class="circle" src="../resources/images/cat6.gif">
+            <img class="circle" src="../resources/images/image1.gif">
             <!--%}else{%-->
             <!--%=usuario.getImage()%-->
             <!--%}%-->
@@ -155,11 +155,11 @@
 <li>
     <div class="user-view">
         <div class="background">
-            <img src="../resources/images/bg1.gif">
+            <img src="../resources/images/slide1.jpg">
         </div>
         <a href="#EditarPerfil">
             <!--%if(usuario.getImage() == null){%-->
-            <img class="circle" src="../resources/images/cat6.gif">
+            <img class="circle" src="../resources/images/image1.gif">
             <!--%}else{%-->
             <!--%=usuario.getImage()%-->
             <!--%}%-->
@@ -195,11 +195,11 @@
 <li>
     <div class="user-view">
         <div class="background">
-            <img src="../resources/images/bg1.gif">
+            <img src="../resources/images/slide1.jpg">
         </div>
         <a href="#EditarPerfil">
             <!--%if(usuario.getImage() == null){%-->
-            <img class="circle" src="../resources/images/cat6.gif">
+            <img class="circle" src="../resources/images/image1.gif">
             <!--%}else{%-->
             <!--%=usuario.getImage()%-->
             <!--%}%-->
@@ -229,11 +229,11 @@
 <li>
     <div class="user-view">
         <div class="background">
-            <img src="../resources/images/bg1.gif">
+            <img src="../resources/images/slide1.jpg">
         </div>
         <a href="#EditarPerfil">
             <!--%if(usuario.getImage() == null){%-->
-            <img class="circle" src="../resources/images/cat6.gif">
+            <img class="circle" src="../resources/images/image1.gif">
             <!--%}else{%-->
             <!--%=usuario.getImage()%-->
             <!--%}%-->

@@ -7,7 +7,7 @@
 <%@page import="br.com.Sistema.Bean.FuncionariosBean"%>
 <%@page import="br.com.Sistema.DAO.FuncionariosDAO"%>
 <%@page import="br.com.Sistema.Bean.UsuariosBean"%>
-<%
+<!--%
     if (session.getAttribute("usuario") != null || session.getAttribute("usuario") != "") {
         UsuariosBean usuario = ((UsuariosBean) session.getAttribute("usuario"));
         String tipoFuncionario = "";
@@ -19,7 +19,7 @@
             response.sendRedirect("/usuario");
         }
     }
-%>
+%-->
 
 <jsp:include page="../model/headerStart.jsp"/>
 <li><a class='dropdown-trigger' href='#' data-target='dropdownLogin'>Opções</a>
