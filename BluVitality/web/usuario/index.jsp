@@ -1,13 +1,14 @@
 <%-- 
-    Document   : index
+    Document   : index (usuario)
     Created on : 27/08/2018, 08:14:38
-    Author     : Nattana Matos
+    Author     : @Nattana Matos
+                 @Rafael Alipio Harada (rafhaharada@gmail.com)
 --%>
 <jsp:include page="../model/headerStart.jsp"/>
 <li><a class='dropdown-trigger' href='#' data-target='dropdownCadastro'>Opções</a>
     <!-- Dropdown Structure -->
     <ul id='dropdownCadastro' class='dropdown-content'>
-        <li><a href="../" onclick="signOut();">Sair</a></li>
+        <li><a href="/usuario/logout" onclick="signOut();">Sair</a></li>
     </ul>
 </li>
 <%@include file="../model/headerEnd.jsp" %>
