@@ -16,10 +16,9 @@
 <ul class="tabs tabs-transparent">
     <li class="tab"><a href="#Usuario1" class="active teal-text">Paciente</a></li>
     <li class="tab"><a href="#Usuario2" class="teal-text">Acompanhante</a></li>
-    <li class="tab"><a href="#Usuario3" class="teal-text">Observações</a></li>
-    <li class="tab"><a href="#Usuario4" class="teal-text">Consultas Anteriores</a></li>
-    <li class="tab"><a href="#Usuario5" class="teal-text">Exames Anteriores</a></li>
-    <li class="tab"><a href="#Usuario6" class="teal-text">Agendar Consultas/Exames</a></li>
+    <li class="tab"><a href="#Usuario3" class="teal-text">Agendar Consultas/Exames</a></li>
+    <li class="tab"><a href="#Usuario4" class="teal-text">Consultas/Exames Futuros</a></li>
+    <li class="tab"><a href="#Usuario5" class="teal-text">Histórico clínico</a></li>
 </ul>
 <div id="Usuario1" class="col s12">
     <div class="row">
@@ -119,113 +118,7 @@
         </div>
     </nav>
 </div>
-<div id="Usuario3" class="col s12 container white">
-    <ul class="collection teal-text teatl lighten-4">
-        <ul class="collection with-header">
-            <li class="collection-header"><h4>Observações:</h4></li>
-            <li class="collection-item"></li>
-            <li class="collection-item"></li>
-            <li class="collection-item"></li>
-            <li class="collection-item"></li>
-            <li class="collection-item"></li>
-        </ul>
-    </ul>
-</div>
-<div id="Usuario4" class="col s12 container white">
-    <table class="striped teal lighten-4">
-        <thead>
-            <tr>
-                <th>Especialidade</th>
-                <th>Médico</th>
-                <th>Data</th>
-                <th>Hora</th>
-                <th>Sala</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Cardiologico</td>
-                <td>Eclair</td>
-                <td>30/08/2018</td>
-                <td>10:00</td>
-                <td>12</td>
-            </tr>
-            <tr>
-                <td>Alan</td>
-                <td>Jellybean</td>
-                <td>$3.76</td>
-                <td>$3.76</td>
-                <td>$3.76</td>
-            </tr>
-            <tr>
-                <td>Jonathan</td>
-                <td>Lollipop</td>
-                <td>Lollipop</td>
-                <td>$7.00</td>
-                <td>$7.00</td>
-            </tr>
-            <tr>
-                <td>Jonathan</td>
-                <td>Lollipop</td>
-                <td>$7.00</td>
-                <td>$7.00</td>
-                <td>$7.00</td>
-            </tr>
-            <tr>
-                <td>Jonathan</td>
-                <td>Lollipop</td>
-                <td>$7.00</td>
-                <td>$7.00</td>
-                <td>$7.00</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-<div id="Usuario5" class="col s12 container white">
-    <table class="striped teal lighten-4">
-        <thead>
-            <tr>
-                <th>Nome do exame</th>
-                <th>Dia da coleta</th>
-                <th>Dia recebido</th>
-                <th>Sala</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Alvin</td>
-                <td>Eclair</td>
-                <td>$0.87</td>
-                <td>$0.87</td>
-            </tr>
-            <tr>
-                <td>Alan</td>
-                <td>Jellybean</td>
-                <td>$3.76</td>
-                <td>$3.76</td>
-            </tr>
-            <tr>
-                <td>Jonathan</td>
-                <td>Lollipop</td>
-                <td>$7.00</td>
-                <td>$7.00</td>
-            </tr>
-            <tr>
-                <td>Jonathan</td>
-                <td>Lollipop</td>
-                <td>$7.00</td>
-                <td>$7.00</td>
-            </tr>
-            <tr>
-                <td>Jonathan</td>
-                <td>Lollipop</td>
-                <td>$7.00</td>
-                <td>$7.00</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-<div id="Usuario6" class="col s12 container white scrollBarOnDiv">
+<div id="Usuario3" class="col s12 container white scrollBarOnDiv">
     <div class="card-panel teal lighten-4">
         <span class="teal-text teatl lighten-4 ">Você deseja agendar<span class="red-text">*</span></span>
     </div>
@@ -236,6 +129,9 @@
         </label>
     </div>
 
+    <div class="agendarE container">
+
+    </div>
     <div>
         <label>
             <input class="with-gap consultaRadio" name="group1" type="radio" />
@@ -250,93 +146,228 @@
                     <div class="input-field col s12">
                         <i class="material-icons prefix">textsms</i>
                         <input type="text" id="autocomplete-input" class="autocomplete">
-                        <label for="autocomplete-input">Motivo da consulta (por ex:Dor de cabeça,tonturas etc...)</label>
+                        <label class="teal-text" for="autocomplete-input">Motivo da consulta (por ex:Dor de cabeça,tonturas etc...)</label>
                     </div>
                 </div>
             </div>
         </div>
-        
-         <label>Escolha a especialide</label>
-  <select class="browser-default">
-    <option value="" disabled selected>Especialidades</option>
-    <option value="1">Option 1</option>
-    <option value="2">Option 2</option>
-    <option value="3">Option 3</option>
-    <option value="3">Option 3</option>
-    <option value="3">Option 3</option>
-    <option value="3">Option 3</option>
-    <option value="3">Option 3</option>
-    <option value="3">Option 3</option>
-  </select>
-           
-        <label>Escolha o médico</label>
-  <select class="browser-default">
-    <option value="" disabled selected>Medicos</option>
-    <option value="1">Option 1</option>
-    <option value="2">Option 2</option>
-    <option value="3">Option 3</option>
-    <option value="3">Option 3</option>
-    <option value="3">Option 3</option>
-    <option value="3">Option 3</option>
-    <option value="3">Option 3</option>
-  </select>
-           
 
-            <label>Escolha o horário desejado</label>
-            <select class="browser-default">
-                <option value="" disabled selected>Horários</option>
-                <option value="1">Option 1</option>
-                <option value="2">Option 2</option>
-                <option value="3">Option 3</option>
-                <option value="3">Option 3</option>
-                <option value="3">Option 3</option>
-                <option value="3">Option 3</option>
-                <option value="3">Option 3</option>
-                <option value="3">Option 3</option>
-                <option value="3">Option 3</option>
-                <option value="3">Option 3</option>
-            </select>
+        <label class="teal-text">Escolha a especialide</label>
+        <select class="browser-default row">
+            <option value="" disabled selected>Especialidades</option>
+            <option value="1">Clínico geral</option>
+            <option value="2">Cardiologista</option>
+            <option value="3">Endocrinologista</option>
+            <option value="3">Ginecologista</option>
+            <option value="3">Oftalmologista</option>
+            <option value="3">Ortopedista</option>
+            <option value="3">Otorrinolaringologista</option>
+            <option value="3">Psiquiatra</option>
+        </select>
+
+        <label class="teal-text">Escolha o médico</label>
+        <select class="browser-default row">
+            <option value="" disabled selected>Médicos</option>
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+            <option value="3">Option 3</option>
+            <option value="3">Option 3</option>
+            <option value="3">Option 3</option>
+            <option value="3">Option 3</option>
+        </select>
+        <div class="row">
+            <div class="col s5 left">
+                <span class="teal-text teatl lighten-4">Qual a data de sua preferência?<span class="red-text">*</span></span>
+                <input type="text" class="datepicker">
+            </div>
             
-            <div class="card-panel">
-        <span class="teal-text teatl lighten-4 ">Como deseja sua resposta?<span class="red-text">*</span></span>
-    </div>
-      
-        <form action="#">
-    <p>
-      <label>
-        <input type="checkbox" />
-        <span>Telefoe</span>
-      </label>
-    </p>
-    
-    <form action="#">
-    <p>
-      <label>
-        <input type="checkbox" />
-        <span>Email</span>
-      </label>
-    </p>
-      <!-- Modal Trigger -->
-  <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Agendar</a>
-
-  <!-- Modal Structure -->
-  <div id="modal1" class="modal">
-    <div class="modal-content">
-      <h4></h4>
-      <p>A disponibilidade de médicos e horários está sujeito a alterações </p>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Concordo</a>
-    </div>
-  </div>
-          
+            <div class="col s5 right">
+                <label class="teal-text">Escolha o horário desejado</label>
+                <select class="browser-default row">
+                    <option value="" disabled selected>Horários</option>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                    <option value="3">Option 3</option>
+                    <option value="3">Option 3</option>
+                    <option value="3">Option 3</option>
+                    <option value="3">Option 3</option>
+                    <option value="3">Option 3</option>
+                    <option value="3">Option 3</option>
+                    <option value="3">Option 3</option>
+                </select>
+            </div>
         </div>
+
+        <div class="card-panel">
+            <span class="teal-text teatl lighten-4 ">Como deseja sua resposta?<span class="red-text">*</span></span>
+        </div>
+
+        <form action="#">
+            <p>
+                <label class="teal-text">
+                    <input type="checkbox" />
+                    <span>Telefoe</span>
+                </label>
+            </p>
+
+            <form action="#">
+                <p>
+                    <label class="teal-text">
+                        <input type="checkbox" />
+                        <span>Email</span>
+                    </label>
+                </p>
+                <!-- Modal Trigger -->
+                <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Agendar</a>
+
+                <!-- Modal Structure -->
+                <div id="modal1" class="modal">
+                    <div class="modal-content">
+                        <h4></h4>
+                        <p>A disponibilidade de médicos e horários está sujeito a alterações </p>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Concordo</a>
+                    </div>
+                </div>
+            </form>
     </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+</div>
+
+<div>
+
+    <div id="Usuario4" class="col s12 container white">
+        <table class="striped teal lighten-4">
+            <thead>
+                <tr>
+                    <th>Especialidade</th>
+                    <th>Médico</th>
+                    <th>Data</th>
+                    <th>Hora</th>
+                    <th>Sala</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Cardiologico</td>
+                    <td>Eclair</td>
+                    <td>30/08/2018</td>
+                    <td>10:00</td>
+                    <td>12</td>
+                </tr>
+                <tr>
+                    <td>Alan</td>
+                    <td>Jellybean</td>
+                    <td>$3.76</td>
+                    <td>$3.76</td>
+                    <td>$3.76</td>
+                </tr>
+                <tr>
+                    <td>Jonathan</td>
+                    <td>Lollipop</td>
+                    <td>Lollipop</td>
+                    <td>$7.00</td>
+                    <td>$7.00</td>
+                </tr>
+                <tr>
+                    <td>Jonathan</td>
+                    <td>Lollipop</td>
+                    <td>$7.00</td>
+                    <td>$7.00</td>
+                    <td>$7.00</td>
+                </tr>
+                <tr>
+                    <td>Jonathan</td>
+                    <td>Lollipop</td>
+                    <td>$7.00</td>
+                    <td>$7.00</td>
+                    <td>$7.00</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="Usuario5" class="col s12 container white">
+        <table class="striped teal lighten-4">
+
+
+            <div class="card">
+                <div class="card-content">
+                    <p>Informações da suas últimas consultas e exames</p>
+                </div>
+                <div class="card-tabs">
+                    <ul class="tabs tabs-fixed-width">
+                        <li class="tab"><a href="#test4">Consultas realizadas</a></li>
+                        <li class="tab"><a class="active" href="#test5">Exames realizados</a></li>
+                    </ul>
+                </div>
+                <div class="card-content grey lighten-4">
+                    <div id="test4"></div><table class="striped teal lighten-4">
+                            <div></div>
+                            <thead>
+                                <tr>
+                                    <th>Especialidade</th>
+                                    <th>Médico</th>
+                                    <th>Data</th>
+                                    <th>Hora</th>
+                                    <th>Sala</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Cardiologico</td>
+                                    <td>Eclair</td>
+                                    <td>30/08/2018</td>
+                                    <td>10:00</td>
+                                    <td>12</td>
+                                </tr>
+                                <tr>
+                                    <td>Alan</td>
+                                    <td>Jellybean</td>
+                                    <td>$3.76</td>
+                                    <td>$3.76</td>
+                                    <td>$3.76</td>
+                                </tr>
+                                <tr>
+                                    <td>Jonathan</td>
+                                    <td>Lollipop</td>
+                                    <td>Lollipop</td>
+                                    <td>$7.00</td>
+                                    <td>$7.00</td>
+                                </tr>
+                                <tr>
+                                    <td>Jonathan</td>
+                                    <td>Lollipop</td>
+                                    <td>$7.00</td>
+                                    <td>$7.00</td>
+                                    <td>$7.00</td>
+                                </tr>
+                                <tr>
+                                    <td>Jonathan</td>
+                                    <td>Lollipop</td>
+                                    <td>$7.00</td>
+                                    <td>$7.00</td>
+                                    <td>$7.00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    </div>
+    </div>
+                
+
+
+                <div id="test5">Consulta</div>
+            </div>
     </div>
 
-    <jsp:include page="../model/footer.jsp"/>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</div>
+
+<jsp:include page="../model/footer.jsp"/>
