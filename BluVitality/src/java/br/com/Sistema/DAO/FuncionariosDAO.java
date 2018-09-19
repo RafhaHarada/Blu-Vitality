@@ -66,7 +66,6 @@ public class FuncionariosDAO {
                 funcionario.setId_cargo(resultSet.getInt("fn.id_cargo"));
                 funcionario.setId_usuario(resultSet.getInt("fn.id_usuario"));
                 funcionario.setTipo(resultSet.getString("fn.tipo"));
-                funcionario.setAtivo(resultSet.getBoolean("fn.ativo"));
 
                 CargosBean cargo = new CargosBean();
                 cargo.setNome(resultSet.getString("cr.nome"));
@@ -97,7 +96,6 @@ public class FuncionariosDAO {
                 funcionario.setId_cargo(resultSet.getInt("fn.id_cargo"));
                 funcionario.setId_usuario(resultSet.getInt("fn.id_usuario"));
                 funcionario.setTipo(resultSet.getString("fn.tipo"));
-                funcionario.setAtivo(resultSet.getBoolean("fn.ativo"));
 
                 UsuariosBean usuario = new UsuariosDAO().obterPeloId(id);
                 funcionario.setUsuario(usuario);
@@ -126,7 +124,6 @@ public class FuncionariosDAO {
                 funcionario.setId_cargo(resultSet.getInt("id_cargo"));
                 funcionario.setId_usuario(resultSet.getInt("id_usuario"));
                 funcionario.setTipo(resultSet.getString("tipo"));
-                funcionario.setAtivo(resultSet.getBoolean("ativo"));
 
                 UsuariosBean usuario = new UsuariosDAO().obterPeloId(id);
                 funcionario.setUsuario(usuario);
@@ -143,13 +140,12 @@ public class FuncionariosDAO {
     }
 
     public int adicionar(FuncionariosBean funcionario) {
-        String sql = "INSERT INTO funcionarios(id_cargo, id_usuario, tipo, ativo) VALUES(?, ?, ?, ?)";
+        String sql = "INSERT INTO funcionarios(id_cargo, id_usuario, tipo) VALUES(?, ?, ?, ?)";
         try {
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql, RETURN_GENERATED_KEYS);
             ps.setInt(1, funcionario.getId_cargo());
             ps.setInt(2, funcionario.getId_usuario());
             ps.setString(3, funcionario.getTipo());
-            ps.setBoolean(4, funcionario.isAtivo());
             ps.execute();
             ResultSet resultSet = ps.getGeneratedKeys();
             if (resultSet.last()) {
@@ -165,12 +161,11 @@ public class FuncionariosDAO {
 
     public boolean alterar(FuncionariosBean funcionario) {
         try {
-            String sql = "UPDATE funcionarios SET id_cargo = ?, id_usuario = ?, tipo = ?, ativo = ? WHERE id = ?";
+            String sql = "UPDATE funcionarios SET id_cargo = ?, id_usuario = ?, tipo = ? WHERE id = ?";
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);
             ps.setInt(1, funcionario.getId_cargo());
             ps.setInt(2, funcionario.getId_usuario());
             ps.setString(3, funcionario.getTipo());
-            ps.setBoolean(4, funcionario.isAtivo());
             ps.setInt(5, funcionario.getId());
 
             return ps.executeUpdate() == 1;
@@ -213,7 +208,6 @@ public class FuncionariosDAO {
                 funcionario.put("cargo", resultSet.getString("cr.nome"));
                 funcionario.put("id_usuario", resultSet.getInt("fn.id_usuario"));
                 funcionario.put("tipo",resultSet.getString("fn.tipo"));
-                funcionario.put("ativo",resultSet.getBoolean("fn.ativo"));
                 //HashMap<String, Object> cargo = new HashMap<>();
                 //cargo.put("cr.nome", resultSet.getString("cr.nome"));
                 

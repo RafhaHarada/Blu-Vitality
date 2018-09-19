@@ -10,7 +10,6 @@ public class FuncionariosBean {
     private int id_usuario;
     private int id_cargo;
     private String tipo;
-    private boolean ativo;
     private UsuariosBean usuario;
     private CargosBean cargo;
 
@@ -36,14 +35,6 @@ public class FuncionariosBean {
 
     public void setId_cargo(int id_cargo) {
         this.id_cargo = id_cargo;
-    }
-
-    public boolean isAtivo() {
-        return ativo;
-    }
-
-    public void setAtivo(boolean ativo) {
-        this.ativo = ativo;
     }
 
     public UsuariosBean getUsuario() {

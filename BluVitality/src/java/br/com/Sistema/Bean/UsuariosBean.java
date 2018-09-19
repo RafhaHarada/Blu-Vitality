@@ -31,6 +31,7 @@ public class UsuariosBean {
     private String tipo_sanguineo;
     private String contato_emergencia;
     private String convenio;
+    private boolean colaborador;
     
     public String getTipo_sanguineo() {
         return tipo_sanguineo;
@@ -195,6 +196,14 @@ public class UsuariosBean {
 
     public void setIdade(byte idade) {
         this.idade = idade;
+    }
+
+    public boolean isColaborador() {
+        return colaborador;
+    }
+
+    public void setColaborador(boolean colaborador) {
+        this.colaborador = colaborador;
     }
     
 }

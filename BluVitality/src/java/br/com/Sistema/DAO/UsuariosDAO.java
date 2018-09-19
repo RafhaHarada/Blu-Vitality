@@ -52,6 +52,7 @@ public class UsuariosDAO {
                 usuario.setTipo_sanguineo(resultSet.getString("tipo_sanguineo"));
                 usuario.setContato_emergencia(resultSet.getString("contato_emergencia"));
                 usuario.setConvenio(resultSet.getString("convenio"));
+                usuario.setColaborador(resultSet.getBoolean("colaborador"));
                 usuarios.add(usuario);
             }
         } catch (SQLException e) {
@@ -65,8 +66,9 @@ public class UsuariosDAO {
 
     public int adicionar(UsuariosBean usuario) {
         String sql = "INSERT INTO usuarios(nome, estado_civil, idade, sexo, login, senha, "
-                + "cpf, rg, telefone, email, endereco, complemento, uf, cidade, naturalidade, data_nascimento, nome_fic, tipo_sanguineo, contato_emergencia, convenio)"
-                + "\nVALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?, ?, ?, ?)";
+                + "cpf, rg, telefone, email, endereco, complemento, uf, cidade, naturalidade, "
+                + "data_nascimento, nome_fic, tipo_sanguineo, contato_emergencia, convenio, colaborador)"
+                + "\nVALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?, ?, ?, ?, ?)";
 
         try {
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql,
@@ -93,6 +95,7 @@ public class UsuariosDAO {
             ps.setString(quantidade++, usuario.getTipo_sanguineo());
             ps.setString(quantidade++, usuario.getContato_emergencia());
             ps.setString(quantidade++, usuario.getConvenio());
+            ps.setBoolean(quantidade++, false);
             ps.execute();
             ResultSet resultSet = ps.getGeneratedKeys();
 
@@ -125,7 +128,9 @@ public class UsuariosDAO {
     public boolean alterar(UsuariosBean usuario) {
         String sql = "UPDATE usuarios SET nome = ?, estado_civil = ?, idade = ?, "
                 + "sexo = ?, login = ?, senha = ?, cpf = ?, rg = ?, telefone = ?, "
-                + "email = ?, endereco = ?, complemento = ?, uf = ?, cidade = ?, naturalidade = ?, data_nascimento = ?, nome_fic = ?, tipo_sanguineo = ?, contato_emergencia = ?, convenio = ? WHERE id = ?";
+                + "email = ?, endereco = ?, complemento = ?, uf = ?, cidade = ?, "
+                + "naturalidade = ?, data_nascimento = ?, nome_fic = ?, tipo_sanguineo = ?, "
+                + "contato_emergencia = ?, convenio = ?, colaborador = ? WHERE id = ?";
 
         try {
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);
@@ -151,6 +156,7 @@ public class UsuariosDAO {
             ps.setString(quantidade++, usuario.getTipo_sanguineo());
             ps.setString(quantidade++, usuario.getContato_emergencia());
             ps.setString(quantidade++, usuario.getConvenio());
+            ps.setBoolean(quantidade++, usuario.isColaborador());
             ps.setInt(quantidade++, usuario.getId());
 
             return ps.executeUpdate() == 1;
@@ -193,6 +199,7 @@ public class UsuariosDAO {
                 usuario.setTipo_sanguineo(resultSet.getString("tipo_sanguineo"));
                 usuario.setContato_emergencia(resultSet.getString("contato_emergencia"));
                 usuario.setConvenio(resultSet.getString("convenio"));
+                usuario.setColaborador(resultSet.getBoolean("colaborador"));
                 return usuario;
             }
 
@@ -235,6 +242,7 @@ public class UsuariosDAO {
                 usuario.setTipo_sanguineo(resultSet.getString("tipo_sanguineo"));
                 usuario.setContato_emergencia(resultSet.getString("contato_emergencia"));
                 usuario.setConvenio(resultSet.getString("convenio"));
+                usuario.setColaborador(resultSet.getBoolean("colaborador"));
                 return usuario;
             }
 
