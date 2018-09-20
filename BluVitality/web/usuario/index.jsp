@@ -126,6 +126,13 @@
             <span class="teal-text">Exame</span>
         </label>
     </div>
+    <div>
+        <label>
+            <input class="with-gap consultaRadio" name="group1" type="radio" />
+            <span class="teal-text">Consulta</span>
+        </label>
+    </div>
+    
 
     <div class="agendarE container">
         <div class="row">
@@ -138,7 +145,7 @@
                 </div>
             </form>
         </div>
- <div class="row">
+        <div class="row">
             <div class="col s5 left">
                 <span class="teal-text teatl lighten-4">Qual a data de sua preferência?<span class="red-text">*</span></span>
                 <input type="text" class="datepicker">
@@ -161,6 +168,31 @@
                 </select>
             </div>
         </div>
+        <div class="card-panel">
+            <span class="teal-text teatl lighten-4 ">Forma de atendimento<span class="red-text">*</span></span>
+        </div>
+        
+  <form action="#">
+            <div>
+                <label class="teal-text">
+                    <input type="checkbox" />
+                    <span>Convêio</span>
+                </label>
+            </div>
+  <form action="#">
+            <div>
+                <label class="teal-text">
+                    <input type="checkbox" />
+                    <span>Particular</span>
+                </label>
+            </div>
+  <form action="#">
+            <div>
+                <label class="teal-text">
+                    <input type="checkbox" />
+                    <span>SUS</span>
+                </label>
+            </div>
 
         <div class="card-panel">
             <span class="teal-text teatl lighten-4 ">Como deseja sua resposta?<span class="red-text">*</span></span>
@@ -196,13 +228,6 @@
                 </div>
             </form>
     </div>
-    <div>
-        <label>
-            <input class="with-gap consultaRadio" name="group1" type="radio" />
-            <span class="teal-text">Consulta</span>
-        </label>
-    </div>
-
     <div class="agendarC container">
         <div class="row">
             <div class="col s12">
@@ -263,6 +288,38 @@
                 </select>
             </div>
         </div>
+        
+             <div class="card-panel">
+            <span class="teal-text teatl lighten-4 ">Forma de atendimento<span class="red-text">*</span></span>
+        </div>
+        
+  <form action="#">
+            <div>
+                <label class="teal-text">
+                    <input type="checkbox" />
+                    <span>Convêio</span>
+                </label>
+            </div>
+  </form>
+        
+  <form action="#">
+            <div>
+                <label class="teal-text">
+                    <input type="checkbox" />
+                    <span>Particular</span>
+                </label>
+            </div>
+  </form>
+        
+  <form action="#">
+            <div>
+                <label class="teal-text">
+                    <input type="checkbox" />
+                    <span>SUS</span>
+                </label>
+            </div>
+  </form>
+
 
         <div class="card-panel">
             <span class="teal-text teatl lighten-4 ">Como deseja sua resposta?<span class="red-text">*</span></span>
@@ -275,14 +332,18 @@
                     <span>Telefoe</span>
                 </label>
             </div>
-
+        </form>
+        
             <form action="#">
                 <div>
                     <label class="teal-text">
                         <input type="checkbox" />
                         <span>Email</span>
                     </label>
-                </div>
+                </div
+                <div>
+            </form>
+                    <div>
                 <!-- Modal Trigger -->
                 <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Agendar</a>
 
@@ -296,11 +357,11 @@
                         <a href="#!" class="modal-close waves-effect waves-green btn-flat">Concordo</a>
                     </div>
                 </div>
-            </form>
+            
     </div>
 </div>
 
-<div>
+
 
     <div id="Usuario4" class="col s12 container white">
         <table class="striped teal lighten-4">
@@ -311,6 +372,8 @@
                     <th>Data</th>
                     <th>Hora</th>
                     <th>Sala</th>
+                    <th>Ações</th>
+                    
                 </tr>
             </thead>
             <tbody>
@@ -320,6 +383,8 @@
                     <td>30/08/2018</td>
                     <td>10:00</td>
                     <td>12</td>
+                    <td><i class="material-icons">edit</i></td>
+                    <td><i class="material-icons">delete_forever</i></td>
                 </tr>
                 <tr>
                     <td>Alan</td>
@@ -327,6 +392,8 @@
                     <td>$3.76</td>
                     <td>$3.76</td>
                     <td>$3.76</td>
+                    <td><i class="material-icons">edit</i></td>
+                    <td><i class="material-icons">delete_forever</i></td>
                 </tr>
                 <tr>
                     <td>Jonathan</td>
@@ -334,6 +401,9 @@
                     <td>Lollipop</td>
                     <td>$7.00</td>
                     <td>$7.00</td>
+                    <td><i class="material-icons">edit</i></td>
+                    <td> <a href="#!" class="secondary-content"><i class="material-icons">delete_forever</i></a></td>
+
                 </tr>
                 <tr>
                     <td>Jonathan</td>
@@ -341,6 +411,9 @@
                     <td>$7.00</td>
                     <td>$7.00</td>
                     <td>$7.00</td>
+                    <td><i class="material-icons">edit</i></td>
+                    <td><i class="material-icons">delete_forever</i></td>
+
                 </tr>
                 <tr>
                     <td>Jonathan</td>
@@ -348,7 +421,11 @@
                     <td>$7.00</td>
                     <td>$7.00</td>
                     <td>$7.00</td>
+                    <td><i class="material-icons">edit</i></td>
+                    <td><i class="material-icons">delete_forever</i></td>
+
                 </tr>
+
             </tbody>
         </table>
     </div>
@@ -393,7 +470,7 @@
 
     </div>
 
-
+                </div>
     <br>
     <br>
     <br>
