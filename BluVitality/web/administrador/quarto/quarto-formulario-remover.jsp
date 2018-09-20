@@ -1,8 +1,3 @@
-<div class="collapsible-header">
-    <i class="material-icons"></i>
-    Remover
-    <span class="badge "></span></div>
-<div class="collapsible-body container">
     <form>
         <span>Numero do Quarto:</span>
         <input type="number" name="numero" id="remover-numero-quarto">
@@ -18,4 +13,3 @@
         <option value="recuperacao">Sala de recuperação</option>
     </select>
     <a class="waves-effect  btn-small" id="quarto-cadastro-remover">Remover</a>
-</div>

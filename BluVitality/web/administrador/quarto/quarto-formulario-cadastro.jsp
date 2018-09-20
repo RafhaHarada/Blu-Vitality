@@ -1,10 +1,7 @@
 
 
 
-<div id="modal1" class="modal">
-    <div class="modal-content">
-        <h4 class="row">Cadastro Quarto</h4>
-        <div class="row">
+
             <form action="fomularioCadastro" class="col s12">
                 <label for="numero">Numero do Quarto:</label>
                 <input type="number" name="numero" id="quarto-cadastro-numero-quarto">
@@ -29,7 +26,4 @@
                 </label>
             </form>
             <a class="waves-effect  btn-small" id="quarto-cadastro-salvar">SALVAR</a>
-        </div>
-
-    </div>
-</div>
+       

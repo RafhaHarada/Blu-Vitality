@@ -1,8 +1,3 @@
-<div class="collapsible-header">
-    <i class="material-icons"></i>
-    Quarentena
-    <span class="badge "></span></div>
-<div class="collapsible-body container">
     <form>
         <span>Numero do Quarto:</span>
         <input type="number" name="numero" id="quarentena-numero-quarto">
@@ -29,4 +24,3 @@
 	
     <input class='btn btn-success' type="submit" value="Adicionar">
 </form>
-</div>
