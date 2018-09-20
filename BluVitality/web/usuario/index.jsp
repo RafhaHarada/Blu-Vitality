@@ -100,7 +100,7 @@
                 <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
             </li>
         </ul>
-        
+
     </div>
 </div>
 <div id="Usuario2" class="col s12 container ">
@@ -128,7 +128,73 @@
     </div>
 
     <div class="agendarE container">
+        <div class="row">
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <textarea id="textarea1" class="materialize-textarea"></textarea>
+                        <label class="teal-text lighten-4" for="textarea1">Informe o nome dos exames</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+ <div class="row">
+            <div class="col s5 left">
+                <span class="teal-text teatl lighten-4">Qual a data de sua preferência?<span class="red-text">*</span></span>
+                <input type="text" class="datepicker">
+            </div>
 
+            <div class="col s5 right">
+                <label class="teal-text">Escolha o horário desejado</label>
+                <select class="browser-default row">
+                    <option value="" disabled selected>Horários</option>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                    <option value="3">Option 3</option>
+                    <option value="3">Option 3</option>
+                    <option value="3">Option 3</option>
+                    <option value="3">Option 3</option>
+                    <option value="3">Option 3</option>
+                    <option value="3">Option 3</option>
+                    <option value="3">Option 3</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="card-panel">
+            <span class="teal-text teatl lighten-4 ">Como deseja sua resposta?<span class="red-text">*</span></span>
+        </div>
+
+        <form action="#">
+            <div>
+                <label class="teal-text">
+                    <input type="checkbox" />
+                    <span>Telefone</span>
+                </label>
+            </div>
+
+            <form action="#">
+                <div>
+                    <label class="teal-text">
+                        <input type="checkbox" />
+                        <span>Email</span>
+                    </label>
+                </div>
+                <!-- Modal Trigger -->
+                <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Agendar</a>
+
+                <!-- Modal Structure -->
+                <div id="modal1" class="modal">
+                    <div class="modal-content">
+                        <h4></h4>
+                        <p>A disponibilidade de médicos e horários está sujeito a alterações </p>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Concordo</a>
+                    </div>
+                </div>
+            </form>
     </div>
     <div>
         <label>
@@ -179,7 +245,7 @@
                 <span class="teal-text teatl lighten-4">Qual a data de sua preferência?<span class="red-text">*</span></span>
                 <input type="text" class="datepicker">
             </div>
-            
+
             <div class="col s5 right">
                 <label class="teal-text">Escolha o horário desejado</label>
                 <select class="browser-default row">
@@ -287,46 +353,46 @@
         </table>
     </div>
     <div id="Usuario5" class="col s12 container white">
-        
- <table class="striped teal lighten-4">
-        <thead>
-          <tr>
-              <th>Descrição</th>
-              <th>Médico | Especialidade</th>
-              <th>Data</th>
-              <th>Horário</th>
-              <th>Status</th>
-          </tr>
-        </thead>
 
-        <tbody>
-          <tr>
-            <td>Alvin</td>
-            <td>Eclair</td>
-            <td>$0.87</td>
-            <td>$0.87</td>
-            <td>$0.87</td>
-          </tr>
-          <tr>
-            <td>Alan</td>
-            <td>Jellybean</td>
-            <td>$3.76</td>
-            <td>$3.76</td>
-            <td>$3.76</td>
-          </tr>
-          <tr>
-            <td>Jonathan</td>
-            <td>Lollipop</td>
-            <td>$7.00</td>
-            <td>$7.00</td>
-            <td>$7.00</td>
-          </tr>
-        </tbody>
-      </table>                                   
-    
+        <table class="striped teal lighten-4">
+            <thead>
+                <tr>
+                    <th>Descrição</th>
+                    <th>Médico | Especialidade</th>
+                    <th>Data</th>
+                    <th>Horário</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>Alvin</td>
+                    <td>Eclair</td>
+                    <td>$0.87</td>
+                    <td>$0.87</td>
+                    <td>$0.87</td>
+                </tr>
+                <tr>
+                    <td>Alan</td>
+                    <td>Jellybean</td>
+                    <td>$3.76</td>
+                    <td>$3.76</td>
+                    <td>$3.76</td>
+                </tr>
+                <tr>
+                    <td>Jonathan</td>
+                    <td>Lollipop</td>
+                    <td>$7.00</td>
+                    <td>$7.00</td>
+                    <td>$7.00</td>
+                </tr>
+            </tbody>
+        </table>                                   
+
 
     </div>
-          
+
 
     <br>
     <br>
@@ -334,4 +400,4 @@
     <br>
     <br>
 
-<jsp:include page="../model/footer.jsp"/>
+    <jsp:include page="../model/footer.jsp"/>
