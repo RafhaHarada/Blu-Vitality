@@ -1,15 +1,16 @@
 <%-- 
-   Document   : index (administrador)
+   Document   : headeradm
    Created on : 26/08/2018, 17:47:02
    Author     :@Gustavo Rodrigues (gugaaroodrigues@gmail.com) Rafhael Harada
 
 --%>
+<%@page import="br.com.Sistema.Bean.UsuariosBean"%>
 
 <jsp:include page="../model/headerStart.jsp"/>
-<li><a class='dropdown-trigger' href='#' data-target='dropdownCadastro'>Opções</a>
+<li><a class='dropdown-trigger' href='#' data-target='dropdownCadastro'>opções</a>
     <!-- Dropdown Structure -->
     <ul id='dropdownCadastro' class='dropdown-content'>
-        <li><a href="/usuario/logout" onclick="signOut();">Sair</a></li>
+        <li><a href="../" onclick="signOut();">Sair</a></li>
     </ul>
 </li>
 <%@include file="../model/headerEnd.jsp" %>
@@ -33,12 +34,21 @@
         </ul>
         <div class="divider"></div>
         <div id="InicioADM" class="col s12 container">
-
+            <div class="col s6">
+                <div class="row "> 
+                    <h5>
+                        Seja bem vindo
+                    </h5> 
+                </div>
+            </div>
+            <div class="col s6 right">
+                <%@include file="ultimos-servicos.jsp" %>
+            </div>
         </div>
 
         <div id="listapaciente" class="col s12 scrollBarOnDiv container">
             <div class="col s12">
-                <%@include file="table-pacientes.jsp" %>
+                <%@include file="tabela-usuarios.jsp" %>
             </div>
         </div>
         <div id="lisfuncionarios" class="col s12 container">
@@ -47,36 +57,36 @@
             </div>
         </div>
         <div id="hospitalQuartos" class="col s12 container scrollBarOnDiv">
-            <a class="waves-effect waves-light btn-small right" id="btnRemove">Nova Ala</a>
-            <a href="#" class="waves-effect waves-light btn-small right" id="btnAdd">Adicionar</a>
-            <%@include file="table-quartos.jsp" %>
-            <div class="col s12">
-                <ul class="collapsible"> 
-                    <li class="atualiza">
-                        <div class="collapsible-header section scrollspy">
-                            <i class="material-icons"></i>
-                            <span class="flow-text teal-text">Quartos</span>
-                            <span class="badge"></span>
-                        </div>
-                        <div class="collapsible-body">
-                            <ul class="collapsible ">
-                                <li>
-                                    <%@include file="quarto/quarto-formulario-cadastro.jsp"%>
-                                </li>
-                                <li>
-                                    <%@include file="quarto/quarto-formulario-remover.jsp"%>
-                                </li>
-                                <li>
-                                    <%@include file="quarto/quarto-formulario-quarentena.jsp"%>
-                                </li>
-                                <li>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
+            <div class="col s6">
+                <div class="row teal lighten-3"> 
+                    <span class="flow-text ">Quartos</span><br>
+                    <a class="waves-effect waves-light btn-small right" id="btnRemove">Nova Ala</a>
+                    <a href="#" class="waves-effect waves-light btn-small right-align " id="btnAdd">Adicionar</a>
+                    <ul class="collapsible">
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">filter_drama</i>Cadastrar</div>
+                            <div class="collapsible-body">
+                                <%@include file="quarto/quarto-formulario-cadastro.jsp"%>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">place</i>Remover</div>
+                            <div class="collapsible-body">
+                                <%@include file="quarto/quarto-formulario-remover.jsp"%>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">whatshot</i>Quarentena</div>
+                            <div class="collapsible-body">
+                                <%@include file="quarto/quarto-formulario-quarentena.jsp"%>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
-
+            <div class="col s6 right">
+                <%@include file="table-quartos.jsp" %>
+            </div>
         </div>
         <div id="hospitalPendencias" class="col s12 container">
             <div class=" row-border col s12 m6">
@@ -99,5 +109,6 @@
 <!--<div id="loading" style="display: block">
     <i class="material-icons right ld ld-cycle" id="loading">loop</i>
 </div>-->
+<script type="text/javascript" src="js-adm/administracao.js"></script>
 
 <%@include file="../model/footer.jsp" %> 
