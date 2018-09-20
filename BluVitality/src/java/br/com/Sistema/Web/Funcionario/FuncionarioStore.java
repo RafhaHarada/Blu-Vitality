@@ -33,7 +33,6 @@ public class FuncionarioStore extends HttpServlet {
         funcionario.setId_usuario(Integer.parseInt(req.getParameter("id_usuario")));
         funcionario.setId_cargo(Integer.parseInt(req.getParameter("id_cargo")));
         funcionario.setTipo(req.getParameter("tipo"));
-        funcionario.setAtivo(Boolean.parseBoolean(req.getParameter("ativo")));
         funcionario.setId(new FuncionariosDAO().adicionar(funcionario));
         
         resp.sendRedirect("administrador/");
