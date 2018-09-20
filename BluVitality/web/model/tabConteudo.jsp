@@ -8,27 +8,34 @@
 <%
     if (cargoDoFuncionario.equals("Administrador")) {
 %>
-<%@include file="tabsCargos/perfil.jsp" %>>
-<%@include file="tabsCargos/prontuarioBusca.jsp" %>>
+<%@include file="tabsCargos/perfil.jsp" %>
+<%@include file="tabsCargos/prontuarioBusca.jsp" %>
+<%@include file="tabsCargos/agendamentos.jsp" %>
+<%@include file="tabsCargos/agendamentosfuturos.jsp" %>
 <%
 } else if (cargoDoFuncionario.equals("Medico")) {
 %>
-<%@include file="tabsCargos/perfil.jsp" %>>
-<%@include file="tabsCargos/prontuarioBusca.jsp" %>>
+<%@include file="tabsCargos/perfil.jsp" %>
+<%@include file="tabsCargos/prontuarioBusca.jsp" %>
+<%@include file="tabsCargos/agendamentosfuturos.jsp" %>
 <%
-}else if (cargoDoFuncionario.equals("Gerente")){
+} else if (cargoDoFuncionario.equals("Gerente")){
 %>
-<%@include file="tabsCargos/perfil.jsp" %>>
-<%@include file="tabsCargos/prontuarioBusca.jsp" %>>
+<%@include file="tabsCargos/perfil.jsp" %>
+<%@include file="tabsCargos/prontuarioBusca.jsp" %>
+<%@include file="tabsCargos/agendamentos.jsp" %>
+<%@include file="tabsCargos/agendamentosfuturos.jsp" %>
 <%
 } else if (cargoDoFuncionario.equals("Recepcao")) {
 %>
-<%@include file="tabsCargos/perfil.jsp" %>>
-<%@include file="tabsCargos/prontuarioBusca.jsp" %>>
+<%@include file="tabsCargos/perfil.jsp" %>
+<%@include file="tabsCargos/prontuarioBusca.jsp" %>
+<%@include file="tabsCargos/agendamentos.jsp" %>
+<%@include file="tabsCargos/agendamentosfuturos.jsp" %>
 <%
 } else if (cargoDoFuncionario.equals("Limpeza")) {
 %>
-<%@include file="tabsCargos/perfil.jsp" %>>
+<%@include file="tabsCargos/perfil.jsp" %>
 <%
 } else {
 %>

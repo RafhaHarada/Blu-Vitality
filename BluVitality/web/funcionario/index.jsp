@@ -25,7 +25,4 @@
     </div>
 </div>
 
-</div>
-</div>
-
 <jsp:include page="../model/footer.jsp"/>
