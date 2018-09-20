@@ -5,7 +5,7 @@ import java.sql.Date;
 /**
  * @author Nattana Matos
  */
-public class ServicoBean {
+public class ServicosBean {
 
     private int id;
     private int id_funcionario;

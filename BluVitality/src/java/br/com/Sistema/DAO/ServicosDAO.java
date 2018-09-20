@@ -1,6 +1,6 @@
 package br.com.Sistema.DAO;
 
-import br.com.Sistema.Bean.ServicoBean;
+import br.com.Sistema.Bean.ServicosBean;
 import br.com.Sistema.Database.Conexao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -8,14 +8,16 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import static java.sql.Statement.RETURN_GENERATED_KEYS;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
  * @author Cidmar
  */
-public class ServiçosDAO {
-    public List<ServicoBean> obterTodos(){
-        List<ServicoBean> servicos = new ArrayList<>();
+public class ServicosDAO {
+    
+    public List<ServicosBean> obterTodos(){
+        List<ServicosBean> servicos = new ArrayList<>();
         String sql = "SELECT FROM servicos id_fucionario, nome, decricao, tempo_execucao";
         try{
             Statement st = Conexao.abrirConexao().createStatement();
@@ -23,7 +25,7 @@ public class ServiçosDAO {
             ResultSet resultSet = st.getResultSet();
             
             while(resultSet.next()){
-                ServicoBean servico = new ServicoBean();
+                ServicosBean servico = new ServicosBean();
                 servico.setId(resultSet.getInt("id"));
                 servico.setId_funcionario(resultSet.getInt("id_funcionario"));
                 servico.setNome(resultSet.getString("nome"));
@@ -38,15 +40,15 @@ public class ServiçosDAO {
         }return servicos;
     }
     
-    public ServicoBean obterPeloId(int id){
-        ServicoBean servico = null;
+    public ServicosBean obterPeloId(int id){
+        ServicosBean servico = null;
         String sql = "SELECT id, id_funcionario, nome, descricao, tempo_execucao FROM servicos WHERE id = ?";
         try{
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);
             ps.setInt(1, id);
             ResultSet resultSet = ps.getResultSet();
             while(resultSet.next()){
-                servico = new ServicoBean();
+                servico = new ServicosBean();
                 servico.setId(resultSet.getInt("id"));
                 servico.setId_funcionario(resultSet.getInt("id_funcionario"));
                 servico.setNome(resultSet.getString("nome"));
@@ -60,7 +62,7 @@ public class ServiçosDAO {
         }return servico;
     }
     
-    public int adicionar(ServicoBean servico){
+    public int adicionar(ServicosBean servico){
         String sql = "INSERT INTO ervicos(id, id_funcionario, nome, descricao, tempo_execucao)"
                    + "VALUES(?,?,?,?,?)";
         try{
@@ -84,7 +86,7 @@ public class ServiçosDAO {
         }return -1;
     }
     
-    public boolean alterar(ServicoBean servico){
+    public boolean alterar(ServicosBean servico){
         try{
             String sql = "UPDATE servicos SET id_funcionario, nome, descricao, tempo_execucao WHERE id = ?";
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);
@@ -113,5 +115,54 @@ public class ServiçosDAO {
             Conexao.fecharConexao();
         }return false;
         
+    }
+    public  List<ServicosBean> obterUltimos(){
+        List<ServicosBean> servicos = new ArrayList<>();
+        String sql = "SELECT * FROM servicos ORDER BY id DESC LIMIT 5";
+        try {
+            Statement st = Conexao.abrirConexao().createStatement();
+            st.execute(sql);
+            ResultSet resultSet = st.getResultSet();
+            
+            while (resultSet.next()) {
+                ServicosBean servico = new ServicosBean();
+                servico.setId(resultSet.getInt("id"));
+                servico.setId_funcionario(resultSet.getInt("id_funcionario"));
+                servico.setNome(resultSet.getString("nome"));
+                servico.setDescricao(resultSet.getString("descricao"));
+                servico.setTempo_execucao(resultSet.getDate("tempo_execucao"));
+                servicos.add(servico);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally{
+            Conexao.fecharConexao();
+        }return servicos;
+    }
+
+    public List<HashMap<String, Object>> obterTodosParaDataTable() {
+        List<HashMap<String, Object>> servicos = new ArrayList<>();
+        String sql = "SELECT * FROM servicos ORDER BY id DESC LIMIT 5";
+        
+        try {
+            Statement st = Conexao.abrirConexao().createStatement();
+            st.execute(sql);
+            ResultSet resultSet = st.getResultSet();
+            
+            while (resultSet.next()) {
+                
+                HashMap<String, Object> servico = new HashMap<>();
+                servico.put("id", resultSet.getInt("id"));
+                servico.put("funcionario", resultSet.getInt("id_funcionario"));
+                servico.put("nome", resultSet.getString("nome"));
+                servico.put("descricao", resultSet.getString("descricao"));
+                servico.put("tempo_execucao", resultSet.getDate("tempo_execucao"));
+                servicos.add(servico);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally{
+            Conexao.fecharConexao();
+        }return servicos;
     }
 }

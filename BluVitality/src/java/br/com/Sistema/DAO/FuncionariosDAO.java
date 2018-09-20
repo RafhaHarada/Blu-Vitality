@@ -201,18 +201,17 @@ public class FuncionariosDAO {
             Statement st = Conexao.abrirConexao().createStatement();
             st.execute(sql);
             ResultSet resultSet = st.getResultSet();
+            
             while (resultSet.next()) {
                 
                 HashMap<String, Object> funcionario = new HashMap<>();
                 funcionario.put("id", resultSet.getInt("fn.id"));
                 funcionario.put("cargo", resultSet.getString("cr.nome"));
                 funcionario.put("id_usuario", resultSet.getInt("fn.id_usuario"));
+                funcionario.put("usuario", resultSet.getString("us.nome"));
                 funcionario.put("tipo",resultSet.getString("fn.tipo"));
-                //HashMap<String, Object> cargo = new HashMap<>();
-                //cargo.put("cr.nome", resultSet.getString("cr.nome"));
-                
-                
-                //funcionario.putAll(cargo);
+                funcionario.put("ativo",resultSet.getBoolean("fn.ativo"));
+                 
                 funcionarios.add(funcionario);
 
             }
