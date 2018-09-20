@@ -16,7 +16,7 @@
 <ul class="tabs tabs-transparent">
     <li class="tab"><a href="#Usuario1" class="active teal-text">Paciente</a></li>
     <li class="tab"><a href="#Usuario2" class="teal-text">Acompanhante</a></li>
-    <li class="tab"><a href="#Usuario3" class="teal-text">Agendar Consultas/Exames</a></li>
+    <li class="tab"><a href="#Usuario3" class="teal-text">Agendamentos</a></li>
     <li class="tab"><a href="#Usuario4" class="teal-text">Consultas/Exames Futuros</a></li>
     <li class="tab"><a href="#Usuario5" class="teal-text">Histórico clínico</a></li>
 </ul>
@@ -100,9 +100,7 @@
                 <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
             </li>
         </ul>
-        <div class="col s1 right">
-            <a class="btn-floating btn cyan pulse right margin-botao"><i class="material-icons">edit</i></a>
-        </div>
+        
     </div>
 </div>
 <div id="Usuario2" class="col s12 container ">
@@ -242,8 +240,8 @@
         <table class="striped teal lighten-4">
             <thead>
                 <tr>
-                    <th>Especialidade</th>
-                    <th>Médico</th>
+                    <th>Descrição</th>
+                    <th>Médico|Especialidade</th>
                     <th>Data</th>
                     <th>Hora</th>
                     <th>Sala</th>
@@ -251,8 +249,8 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>Cardiologico</td>
-                    <td>Eclair</td>
+                    <td>Consulta</td>
+                    <td>Dr. Eclair souza ramos | Cardiologista</td>
                     <td>30/08/2018</td>
                     <td>10:00</td>
                     <td>12</td>
@@ -290,10 +288,44 @@
     </div>
     <div id="Usuario5" class="col s12 container white">
         
-                                   
+ <table class="striped teal lighten-4">
+        <thead>
+          <tr>
+              <th>Descrição</th>
+              <th>Médico | Especialidade</th>
+              <th>Data</th>
+              <th>Horário</th>
+              <th>Status</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Alvin</td>
+            <td>Eclair</td>
+            <td>$0.87</td>
+            <td>$0.87</td>
+            <td>$0.87</td>
+          </tr>
+          <tr>
+            <td>Alan</td>
+            <td>Jellybean</td>
+            <td>$3.76</td>
+            <td>$3.76</td>
+            <td>$3.76</td>
+          </tr>
+          <tr>
+            <td>Jonathan</td>
+            <td>Lollipop</td>
+            <td>$7.00</td>
+            <td>$7.00</td>
+            <td>$7.00</td>
+          </tr>
+        </tbody>
+      </table>                                   
     
 
-              
+    </div>
           
 
     <br>
