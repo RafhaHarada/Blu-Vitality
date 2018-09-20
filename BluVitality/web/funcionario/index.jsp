@@ -20,10 +20,8 @@
     <div class="">
         <ul class="tabs tabs-transparent center">
             <li class="tab"><a href="#Funcionarios1" class="active teal-text">Perfil</a></li>
-            <li class="tab"><a href="#Funcionarios2" class="teal-text">Acesso ao Prontuário</a></li>
-            <li class="tab"><a href="#Funcionarios3" class="teal-text">Cursos e Eventos</a></li>
+                <%@include file="../model/tab.jsp" %>
         </ul>
-
         <div id="Funcionarios1" class="col s12 container">
             <ul class="collection col s6">
                 <li class="collection-item avatar teal lighten-4">
@@ -104,56 +102,10 @@
                 </li>
             </ul>
         </div>
-        <div id="Funcionarios2" class="scrollBarOnDiv">
-            <div class="prontuarioBusca container">
-                <form  action="/funcionario/prontuario" method="GET">
-                    <div class="col s12">
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <i class="material-icons prefix">textsms</i>
-                                <input type="text" id="autocomplete-input" class="autocomplete">
-                                <label for="autocomplete-input">Nome</label>
-                            </div>
-                        </div>
-                    </div>
-                </form>  
-                <div>
-                    <a href="/funcionario/prontuario" class="btn teal botaoBuscar">Busca Prontuário</a>
-                </div>
-            </div>
-        </div>  
+        <%@include file="../model/tabConteudo.jsp" %>
     </div>
 </div>
-<div id="Funcionarios3" class="col s12 container">
-    <table class="striped teal lighten-4">
-        <thead>
-            <tr>
-                <th>Exames</th>
-                <th>Consultas</th>
-                <th>Data</th>
-                <th>Horário</th>
-            </tr>
-        </thead>
 
-        <tbody>
-            <tr>
-                <td>Palestra1</td>
-                <td>01/01/2019</td>
-                <td>Hospital Blu Vitality</td>
-            </tr>
-            <tr>
-                <td>Palestra 2</td>
-                <td>05/10/2018</td>
-                <td>Hospital Blu Vitality</td>
-            </tr>
-            <tr>
-                <td>Palestra 3</td>
-                <td>10/12/2018</td>
-                <td>Hospital Blu Vitality</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
 </div>
 </div>
 

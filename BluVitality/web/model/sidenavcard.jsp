@@ -150,6 +150,46 @@
 </li>
 <div class="divider"></div>
 <%
+} else if (cargoDoFuncionario.equals("Gerente")) {
+%>
+<li>
+    <div class="user-view">
+        <div class="background">
+            <img src="../resources/images/slide1.jpg">
+        </div>
+        <a href="#EditarPerfil">
+            <!--%if(usuario.getImage() == null){%-->
+            <img class="circle" src="../resources/images/image1.gif">
+            <!--%}else{%-->
+            <!--%=usuario.getImage()%-->
+            <!--%}%-->
+        </a>
+        <a href="#EditarPerfil">
+            <span class="white-text">
+                <%=usuario.getNome()%>
+            </span>
+        </a>
+        <a href="#EditarPerfil">
+            <span class="white-text">
+                <%=usuario.getEmail()%>
+            </span>
+        </a>
+    </div>
+</li>
+<div class="divider"></div>
+<li>
+    <a href='#'>Perfil</a>
+</li>
+<div class="divider"></div>
+<li>
+    <a href='#'>Pendências</a>
+</li>
+<div class="divider"></div>
+<li>
+    <a href='#'>Pacientes</a>
+</li>
+<div class="divider"></div>
+<%
 } else if (cargoDoFuncionario.equals("Recepcao")) {
 %>
 <li>
