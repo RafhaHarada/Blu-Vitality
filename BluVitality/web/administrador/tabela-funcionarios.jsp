@@ -4,8 +4,8 @@
     Author     : @Gustavo Rodrigues (gugaaroodrigues@gmail.com)
 --%>
 
-<table class="table dataTable" id="tabela-funcionario">
-    <thead  class="thead-light">
+<table class="blue-grey display compact" style="width:100%"" id="tabela-funcionario">
+    <thead>
         <tr>
             <th scope="col">Nome</th>
             <th scope="col">Função</th>
@@ -15,3 +15,4 @@
     <tbody>
     </tbody>
 </table> 
+
