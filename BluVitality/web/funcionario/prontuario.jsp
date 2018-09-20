@@ -22,7 +22,8 @@ FUNCIONARIO PRONTUARIO
         <ul class="tabs tabs-transparent center">
             <li class="tab"><a href="#Funcionarios1" class="active teal-text">Dados Pessoais</a></li>
             <li class="tab"><a href="#Funcionarios2" class="teal-text">Anamnese</a></li>
-            <li class="tab"><a href="#Funcionarios3" class="teal-text">Histórico Clínico</a></li>
+            <li class="tab"><a href="#Funcionarios3" class="teal-text">Localizção</a></li>
+            <li class="tab"><a href="#Funcionarios4" class="teal-text">Histórico Clínico</a></li>
         </ul>
         <div id="Funcionarios1" class="col s12 container">
             <ul class="collection col s6">
@@ -112,34 +113,11 @@ FUNCIONARIO PRONTUARIO
                 <h5>This should be vertically aligned</h5>
             </div>
         </div>
-        <div id="Funcionarios3" class="col s12 container">
-            <table class="striped teal lighten-4">
-                <thead>
-                    <tr>
-                        <th>Cursos</th>
-                        <th>Data</th>
-                        <th>Local</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Palestra1</td>
-                        <td>01/01/2019</td>
-                        <td>Hospital Blu Vitality</td>
-                    </tr>
-                    <tr>
-                        <td>Palestra 2</td>
-                        <td>05/10/2018</td>
-                        <td>Hospital Blu Vitality</td>
-                    </tr>
-                    <tr>
-                        <td>Palestra 3</td>
-                        <td>10/12/2018</td>
-                        <td>Hospital Blu Vitality</td>
-                    </tr>
-                </tbody>
-            </table>
+        <div id="Funcionarios3" class="col s12 container">   
         </div>
+                  
+        <div id="Funcionarios4" class="col s12 container">
+        </div>            
     </div>
 </div>
 
