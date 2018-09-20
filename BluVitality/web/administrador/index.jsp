@@ -1,5 +1,5 @@
 <%-- 
-   Document   : headeradm
+   Document   : index (administrador)
    Created on : 26/08/2018, 17:47:02
    Author     :@Gustavo Rodrigues (gugaaroodrigues@gmail.com) Rafhael Harada
 
@@ -9,7 +9,7 @@
 <li><a class='dropdown-trigger' href='#' data-target='dropdownCadastro'>Opções</a>
     <!-- Dropdown Structure -->
     <ul id='dropdownCadastro' class='dropdown-content'>
-        <li><a href="../" onclick="signOut();">Sair</a></li>
+        <li><a href="/usuario/logout" onclick="signOut();">Sair</a></li>
     </ul>
 </li>
 <%@include file="../model/headerEnd.jsp" %>
