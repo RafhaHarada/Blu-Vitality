@@ -103,9 +103,6 @@
                     <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
                 </li>
             </ul>
-            <div class="col s1 right">
-                <a class="btn-floating btn cyan pulse right margin-botao"><i class="material-icons">edit</i></a>
-            </div>
         </div>
         <div id="Funcionarios2" class="scrollBarOnDiv">
             <div class="prontuarioBusca container">
