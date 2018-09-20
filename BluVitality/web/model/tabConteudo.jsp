@@ -16,7 +16,7 @@
 <%@include file="tabsCargos/perfil.jsp" %>>
 <%@include file="tabsCargos/prontuarioBusca.jsp" %>>
 <%
-}else if (cargosDoFuncionario.equal("Gerente")){
+}else if (cargoDoFuncionario.equals("Gerente")){
 %>
 <%@include file="tabsCargos/perfil.jsp" %>>
 <%@include file="tabsCargos/prontuarioBusca.jsp" %>>
