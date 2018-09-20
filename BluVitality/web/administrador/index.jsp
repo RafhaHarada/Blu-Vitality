@@ -1,11 +1,11 @@
 <%-- 
-   Document   : headeradm
+   Document   : index (administrador)
    Created on : 26/08/2018, 17:47:02
-   Author     :@Gustavo Rodrigues (gugaaroodrigues@gmail.com) Rafhael Harada
+   Author     : @Gustavo Rodrigues (gugaaroodrigues@gmail.com)
+                @Rafael Alipio Harada (rafhaharada@gmail.com)
 
 --%>
-<%@page import="br.com.Sistema.Bean.UsuariosBean"%>
-
+<%@include file="../model/validation.jsp" %>
 <jsp:include page="../model/headerStart.jsp"/>
 <li><a class='dropdown-trigger' href='#' data-target='dropdownCadastro'>opções</a>
     <!-- Dropdown Structure -->

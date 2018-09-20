@@ -116,10 +116,12 @@ $(function () {
     $(".exameRadio").on("click", function () {
         $(".agendarE").show();
         $(".agendarC").hide();
+        atualizaTab();
     });
     $(".consultaRadio").on("click", function () {
         $(".agendarC").show();
         $(".agendarE").hide();
+        atualizaTab();
     });
 
 
