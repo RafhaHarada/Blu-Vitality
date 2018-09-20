@@ -1,5 +1,5 @@
 <%-- 
-   Document   : headeradm
+   Document   : index (administrador)
    Created on : 26/08/2018, 17:47:02
    Author     :@Gustavo Rodrigues (gugaaroodrigues@gmail.com) Rafhael Harada
 
