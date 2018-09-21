@@ -35,25 +35,33 @@
         <div class="divider"></div>
         <div id="InicioADM" class="col s12 container">
             <div class="col s6">
-                <div class="row "> 
-                    <h5>
+                <div class="row teal lighten-4 center" id="btnacessorapido"> 
+                    <h3 class="center" style="font-family: verdana, arial;" >
                         Seja bem vindo
-                    </h5> 
+                    </h3> 
+                    <div class="row s12 left">
+                        <a href="#" class="waves-effect waves-light btn-small " id="acessoarapido1">Financeiro</a>
+                        <a href="#" class="waves-effect waves-light btn-small " id="acessoarapido2">Financeiro</a>
+                    </div>
+                    <a href="#" class="waves-effect waves-light btn-large " id="acessoarapido3">Financeiro</a>
+                    <a href="#" class="waves-effect waves-light btn-large " id="acessoarapido4">Funcionarios</a>
+                    <a href="#" class="waves-effect waves-light btn-large " id="acessoarapido5">Usuarios</a>
+                    <a href="#" class="waves-effect waves-light btn-large " id="acessoarapido6">Estoque</a>
                 </div>
             </div>
             <div class="col s6 right">
-                <%@include file="ultimos-servicos.jsp" %>
+                <%@include file="table/table-ultimos-servicos.jsp" %>
             </div>
         </div>
 
         <div id="listapaciente" class="col s12 scrollBarOnDiv container">
             <div class="col s12">
-                <%@include file="tabela-usuarios.jsp" %>
+                <%@include file="table/tabela-usuarios.jsp" %>
             </div>
         </div>
         <div id="lisfuncionarios" class="col s12 container">
             <div class="">
-                <%@include file="tabela-funcionarios.jsp" %> 
+                <%@include file="table/tabela-funcionarios.jsp" %> 
             </div>
         </div>
         <div id="hospitalQuartos" class="col s12 container scrollBarOnDiv">
@@ -85,7 +93,7 @@
                 </div>
             </div>
             <div class="col s6 right">
-                <%@include file="table-quartos.jsp" %>
+                <%@include file="table/table-quartos.jsp" %>
             </div>
         </div>
         <div id="hospitalPendencias" class="col s12 container">

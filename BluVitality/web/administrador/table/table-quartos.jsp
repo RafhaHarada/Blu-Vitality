@@ -4,7 +4,7 @@
     Author     :@Gustavo Rodrigues (gugaaroodrigues@gmail.com)  
 --%>
 
-<table class="table dataTable" id="quarto-index">
+<table class="blue-grey display compact" style="width:100%" id="quarto-index">
     <thead class="thead-light">
         <tr>
             <th scope="col">Numero</th>

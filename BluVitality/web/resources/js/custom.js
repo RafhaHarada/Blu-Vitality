@@ -159,24 +159,6 @@ $(function () {
         });
     }
 
-
-    $('#tabela-funcionario').DataTable({
-        'ajax': '/funcionarios/obtertodosparadatatable',
-        'columns': [
-            {'data': 'id'},
-            {'data': 'cargo'},
-            {'data': 'tipo'}
-
-        ]
-    });
-    $('#quarto-index').DataTable({
-        'ajax': '/quarto/obtertodosparadatatable',
-        'columns': [
-            {'data': 'numero_quarto'},
-            {'data': 'tipo'},
-            {'data': 'status'}
-        ]
-    });
     var Body = $('body');
     Body.addClass('preloader-site');
 

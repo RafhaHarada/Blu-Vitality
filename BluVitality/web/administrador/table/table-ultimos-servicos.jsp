@@ -4,11 +4,10 @@
     Author     : Gus
 --%>
 
-
-    <table class="dataTable blue-grey display compact "style="width:100%" id="ultimos-servicos">
-        <thead style="background-color: black; color: white">
+    <table class="blue-grey display compact" style="width:100%" id="ultimos-servicos">
+        <thead>
             <tr>
-                <th scope="col">Nome<a href="#"></a></th>
+                <th scope="col">Nome</th>
                 <th scope="col">Descrição</th>
             </tr>
         </thead>

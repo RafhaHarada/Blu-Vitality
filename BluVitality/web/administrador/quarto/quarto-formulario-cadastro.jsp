@@ -15,15 +15,6 @@
                     <option value="consultorio">Consultorio</option>
                     <option value="recuperacao">Sala de recuperação</option>
                 </select>
-                <span class="">Status:</span>
-                <label>
-                    <input id="quarto-cadastro-status" name="sexo" type="radio" checked />
-                    <span>Ativo</span>
-                </label>
-                <label>
-                    <input name="sexo" type="radio" />
-                    <span>invativo</span>
-                </label>
             </form>
             <a class="waves-effect  btn-small" id="quarto-cadastro-salvar">SALVAR</a>
        

@@ -4,7 +4,7 @@
     Author     : @Gustavo Rodrigues (gugaaroodrigues@gmail.com)
 --%>
 
-<table class="blue-grey display compact" style="width:100%"" id="tabela-funcionario">
+<table class="blue-grey display compact" style="width:100%" id="tabela-funcionario">
     <thead>
         <tr>
             <th scope="col">Nome</th>
