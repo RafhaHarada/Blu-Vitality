@@ -210,7 +210,7 @@ public class FuncionariosDAO {
                 funcionario.put("id_usuario", resultSet.getInt("fn.id_usuario"));
                 funcionario.put("usuario", resultSet.getString("us.nome"));
                 funcionario.put("tipo",resultSet.getString("fn.tipo"));
-                funcionario.put("ativo",resultSet.getBoolean("fn.ativo"));
+                funcionario.put("ativo",resultSet.getBoolean("fn.status"));
                  
                 funcionarios.add(funcionario);
 
