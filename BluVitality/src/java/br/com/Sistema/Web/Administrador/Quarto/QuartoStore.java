@@ -26,15 +26,15 @@ public class QuartoStore extends HttpServlet {
         
         QuartoBean quarto = new QuartoBean();
         quarto.setId(Integer.parseInt(req.getParameter("id")));
-        quarto.setNumero_quarto(Integer.parseInt(req.getParameter("numeroQuarto")));
+        quarto.setNumero_quarto(Integer.parseInt(req.getParameter("numero_quarto")));
         quarto.setId_usuario(Integer.parseInt(req.getParameter("id_usuario")));
         quarto.setId_funcionario(Integer.parseInt(req.getParameter("id_funcionario")));
         quarto.setTipo(req.getParameter("tipo"));
         quarto.setData_entrada(Date.valueOf(req.getParameter("data_entrada")));
         quarto.setData_entrada(Date.valueOf(req.getParameter("data_saida")));
-        quarto.setStatus(req.getParameter("status"));
         quarto.setId(new QuartoDAO().adicionarQuarto(quarto));
         
+        resp.setContentType("text/html;charset=UTF-8");
         resp.sendRedirect("administrador/");
                     
      
