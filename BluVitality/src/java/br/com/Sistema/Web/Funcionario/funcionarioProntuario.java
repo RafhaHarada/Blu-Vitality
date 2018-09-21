@@ -5,6 +5,7 @@
  */
 package br.com.Sistema.Web.Funcionario;
 
+import br.com.Sistema.Web.IndexRedirect;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -23,8 +24,7 @@ public class funcionarioProntuario extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)throws ServletException, IOException {
         
-        resp.setContentType("text/html;charset=UTF-8");
-        req.getRequestDispatcher("/funcionario/prontuario.jsp").include(req, resp);
+        IndexRedirect.redirecionarSubpasta(req, resp, "funcionario", "prontuario");
     }
 
 }
