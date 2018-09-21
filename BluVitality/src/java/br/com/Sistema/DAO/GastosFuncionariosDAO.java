@@ -17,7 +17,7 @@ public class GastosFuncionariosDAO {
 
     public List<GastosFuncionariosBean> obterTodos() {
         List<GastosFuncionariosBean> gastosFuncionarios = new ArrayList<>();
-        String sql = "SELECT * FROM gastosFuncioarios";
+        String sql = "SELECT * FROM gastosFuncionarios";
         try {
             Statement st = Conexao.abrirConexao().createStatement();
             st.execute(sql);
@@ -41,6 +41,8 @@ public class GastosFuncionariosDAO {
                 gastoFuncionario.setInss_sobre_salario(resultSet.getDouble("inss_sobre_salario"));
                 gastoFuncionario.setInss_sobre_ferias_e_decimo_terceiro(resultSet.getDouble("inss_sobre_ferias_e_decimo_terceiro"));
                 gastoFuncionario.setIndenizacao_um_dia_de_salario(resultSet.getDouble("indenizacao_um_dia_de_salario"));
+                gastoFuncionario.setVale_transporte(resultSet.getDouble("vale_transporte"));
+                gastoFuncionario.setVale_refeicao(resultSet.getDouble("vale_refeicao"));
                 gastoFuncionario.setTotal(resultSet.getDouble("total"));
                 gastosFuncionarios.add(gastoFuncionario);
             }
@@ -57,7 +59,7 @@ public class GastosFuncionariosDAO {
         String sql = "SELECT id, salario_mensal, ferias_anuais_remuneradas, um_terco_sobre_ferias, decimo_terceiro_salario, "
                 + "aviso_previo, fgts_sobre_salario_mensal, fgts_sobre_decimo_terceiro_aviso_previo_ferias, multa_fgts, "
                 + "ferias_sobre_aviso_previo, decimo_terceiro_sobre_aviso_previo, um_terco_ferias_sobre_aviso_previo, "
-                + "fgts_sobre_recisao, inss_sobre_salario, inss_sobre_ferias_e_decimo_terceiro, indenizacao_um_dia_de_salario, total FROM gastosFuncionarios WHERE id = ?";
+                + "fgts_sobre_recisao, inss_sobre_salario, inss_sobre_ferias_e_decimo_terceiro, indenizacao_um_dia_de_salario, vale_transporte, vale_refeicao, total FROM gastosFuncionarios WHERE id = ?";
         try {
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);
             ps.setInt(1, id);
@@ -81,6 +83,8 @@ public class GastosFuncionariosDAO {
                 gastoFuncionario.setInss_sobre_salario(resultSet.getDouble("inss_sobre_salario"));
                 gastoFuncionario.setInss_sobre_ferias_e_decimo_terceiro(resultSet.getDouble("inss_sobre_ferias_e_decimo_terceiro"));
                 gastoFuncionario.setIndenizacao_um_dia_de_salario(resultSet.getDouble("indenizacao_um_dia_de_salario"));
+                gastoFuncionario.setVale_transporte(resultSet.getDouble("vale_transporte"));
+                gastoFuncionario.setVale_refeicao(resultSet.getDouble("vale_refeicao"));
                 gastoFuncionario.setTotal(resultSet.getDouble("total"));
             }
         } catch (SQLException e) {
@@ -95,7 +99,7 @@ public class GastosFuncionariosDAO {
         String sql = "INSERT INTO gastoFuncioario(salario_mensal, ferias_anuais_remuneradas, um_terco_sobre_ferias, decimo_terceiro_salario, "
                 + "aviso_previo, fgts_sobre_salario_mensal, fgts_sobre_decimo_terceiro_aviso_previo_ferias, multa_fgts, "
                 + "ferias_sobre_aviso_previo, decimo_terceiro_sobre_aviso_previo, um_terco_ferias_sobre_aviso_previo, "
-                + "fgts_sobre_recisao, inss_sobre_salario, inss_sobre_ferias_e_decimo_terceiro, indenizacao_um_dia_de_salario, total) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                + "fgts_sobre_recisao, inss_sobre_salario, inss_sobre_ferias_e_decimo_terceiro, indenizacao_um_dia_de_salario, vale_transporte, vale_refeicao, total) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
         try {
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql, RETURN_GENERATED_KEYS);
             ps.setDouble(1, gastoFuncionario.getSalario_mensal());
@@ -113,7 +117,9 @@ public class GastosFuncionariosDAO {
             ps.setDouble(13, gastoFuncionario.getInss_sobre_salario());
             ps.setDouble(14, gastoFuncionario.getInss_sobre_ferias_e_decimo_terceiro());
             ps.setDouble(15, gastoFuncionario.getIndenizacao_um_dia_de_salario());
-            ps.setDouble(16, gastoFuncionario.getTotal());
+            ps.setDouble(16, gastoFuncionario.getVale_transporte());
+            ps.setDouble(17, gastoFuncionario.getVale_refeicao());
+            ps.setDouble(18, gastoFuncionario.getTotal());
             ps.execute();
             ResultSet resultSet = ps.getGeneratedKeys();
             if (resultSet.next()) {
@@ -132,7 +138,7 @@ public class GastosFuncionariosDAO {
             String sql = "UPDATE gastoFuncionario SET salario_mensal = ?, ferias_anuais_remuneradas = ?, um_terco_sobre_ferias = ?, decimo_terceiro_salario = ?, "
                     + "aviso_previo = ?, fgts_sobre_salario_mensal = ?, fgts_sobre_decimo_terceiro_aviso_previo_ferias = ?, multa_fgts = ?, "
                     + "ferias_sobre_aviso_previo = ?, decimo_terceiro_sobre_aviso_previo = ?, um_terco_ferias_sobre_aviso_previo = ?, "
-                    + "fgts_sobre_recisao = ?, inss_sobre_salario, inss_sobre_ferias_e_decimo_terceiro = ?, indenizacao_um_dia_de_salario = ?, total = ? WHERE id = ?";
+                    + "fgts_sobre_recisao = ?, inss_sobre_salario, inss_sobre_ferias_e_decimo_terceiro = ?, indenizacao_um_dia_de_salario = ?, vale_transporte = ?, vale_refeicao = ?, total = ? WHERE id = ?";
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);
             ps.setDouble(1, gastoFuncionario.getSalario_mensal());
             ps.setDouble(2, gastoFuncionario.getFerias_anuais_remuneradas());
@@ -149,8 +155,10 @@ public class GastosFuncionariosDAO {
             ps.setDouble(13, gastoFuncionario.getInss_sobre_salario());
             ps.setDouble(14, gastoFuncionario.getInss_sobre_ferias_e_decimo_terceiro());
             ps.setDouble(15, gastoFuncionario.getIndenizacao_um_dia_de_salario());
-            ps.setDouble(16, gastoFuncionario.getTotal());
-            ps.setInt(17, gastoFuncionario.getId());
+            ps.setDouble(16, gastoFuncionario.getVale_transporte());
+            ps.setDouble(17, gastoFuncionario.getVale_refeicao());
+            ps.setDouble(18, gastoFuncionario.getTotal());
+            ps.setInt(19, gastoFuncionario.getId());
 
             return ps.executeUpdate() == 1;
         } catch (SQLException e) {

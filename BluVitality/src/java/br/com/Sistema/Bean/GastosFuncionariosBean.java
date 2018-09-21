@@ -20,6 +20,8 @@ public class GastosFuncionariosBean {
     private double inss_sobre_salario;
     private double inss_sobre_ferias_e_decimo_terceiro;
     private double indenizacao_um_dia_de_salario;
+    private double vale_transporte;
+    private double vale_refeicao;
     private double total;
 
     public int getId() {
@@ -148,6 +150,22 @@ public class GastosFuncionariosBean {
 
     public void setIndenizacao_um_dia_de_salario(double indenizacao_um_dia_de_salario) {
         this.indenizacao_um_dia_de_salario = indenizacao_um_dia_de_salario;
+    }
+
+    public double getVale_transporte() {
+        return vale_transporte;
+    }
+
+    public void setVale_transporte(double vale_transporte) {
+        this.vale_transporte = vale_transporte;
+    }
+
+    public double getVale_refeicao() {
+        return vale_refeicao;
+    }
+
+    public void setVale_refeicao(double vale_refeicao) {
+        this.vale_refeicao = vale_refeicao;
     }
 
     public double getTotal() {
