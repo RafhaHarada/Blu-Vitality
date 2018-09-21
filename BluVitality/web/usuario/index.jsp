@@ -4,7 +4,7 @@
     Author     : @Nattana Matos
                  @Rafael Alipio Harada (rafhaharada@gmail.com)
 --%>
-<jsp:include page="../model/headerStart.jsp">
+<jsp:include page="../model/headerStart.jsp"/>
 <li><a class='dropdown-trigger' href='#' data-target='dropdownCadastro'>Opções</a>
     <!-- Dropdown Structure -->
     <ul id='dropdownCadastro' class='dropdown-content'>
@@ -169,8 +169,8 @@
                 <span class="teal-text teatl lighten-4 ">Forma de atendimento<span class="red-text">*</span></span>
             </div>
             <div>
-                <label class="teal-text">
-                    <input id="exame-convenio" name="convenio" type="checkbox" >
+               <label class="teal-text">
+                    <input id="exame-convenio" name ="convenio" type="checkbox" class="ativarConvenio">
                     <span>Convênio</span>
                 </label>
             </div>
@@ -452,4 +452,4 @@
 <br>
 <br>
 
-<jsp:include page="../model/footer.jsp">
+<jsp:include page="../model/footer.jsp"/>

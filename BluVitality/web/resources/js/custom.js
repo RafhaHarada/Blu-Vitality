@@ -117,7 +117,18 @@ $(function () {
         $(".agendarE").show();
         $(".agendarC").hide();
         atualizaTab();
+        
     });
+    
+    $(".tipoConvenio").hide();
+
+    if ($(".ativarConvenio").attr("checked")) {
+        $(".tipoConvenio").show();
+    } else {
+        $(".tipoConvenio").hide();
+    }
+    
+    
     $(".consultaRadio").on("click", function () {
         $(".agendarC").show();
         $(".agendarE").hide();
