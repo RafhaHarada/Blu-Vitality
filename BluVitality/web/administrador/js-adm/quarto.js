@@ -1,38 +1,47 @@
-//Adicionar-Quarto
 $(function () {
-
-    $('#quarto-cadastro-salvar').on('click', function () {
-        $.ajax({
-            url: '/quarto/store',
-            method: 'post',
-            data: {
-                'numeroQuarto': $('#quarto-cadastro-numero-quarto').val(),
-                'tipo': $('#quarto-cadastro-tipo').val(),
-                'status': $('#quarto-cadastro-status').val()
+    //Preencher a Tabela
+    $("#quarto-index").DataTable({
+        "ajax": "/quarto/obtertodosparadatatable",
+        "language": {
+            "sEmptyTable": "Nenhum registro encontrado",
+            "sInfo": "Mostrando de _START_ até _END_ de _TOTAL_ registros",
+            "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+            "sInfoFiltered": "(Filtrados de _MAX_ registros)",
+            "sInfoPostFix": "",
+            "sInfoThousands": ".",
+            "sLengthMenu": "_MENU_ resultados por página",
+            "sLoadingRecords": "Carregando...",
+            "sProcessing": "Processando...",
+            "sZeroRecords": "Nenhum registro encontrado",
+            "sSearch": "Pesquisar",
+            "oPaginate": {
+                "sNext": "Próximo",
+                "sPrevious": "Anterior",
+                "sFirst": "Primeiro",
+                "sLast": "Último"
+            },
+            "oAria": {
+                "sSortAscending": ": Ordenar colunas de forma ascendente",
+                "sSortDescending": ": Ordenar colunas de forma descendente"
+            },
+            "select": {
+                "rows": {
+                    "_": "Selecionado %d linhas",
+                    "0": "Nenhuma linha selecionada",
+                    "1": "Selecionado 1 linha"
+                }
             }
-        });
-    });
-//Remover-Quarto
-    $('#quarto-cadastro-remover').on('click', function () {
-        $.ajax({
-            url: '/',
-            method: 'post',
-            data: {
-                'numeroQuarto': $('#remover-numero-quarto').val(),
-                'tipo': $('#quarto-remover-tipo').val(),
+        },
+        "columns": [
+            {"data": "numero_quarto"},
+            {"data": "tipo"},
+            {"data": "status"},
+            {"data": null,
+                "render": function (data) {
+                    return "<a class='btn btn-info' href='/interno/ticket?id=" + data.id + "'><i class='icon wb-info-circle'></i> Consultar</a>";
+                }
             }
-        });
-    });
-//Mover-Quarto-quarentena
-    $('#quarto-mover-quarentena').on('click', function () {
-        $.ajax({
-            url: '/',
-            method: 'post',
-            data: {
-                'numeroQuarto': $('#remover-numero-quarto').val(),
-                'tipo': $('#quarto-remover-tipo').val(),
-            }
-        });
+        ]
     });
 });
 

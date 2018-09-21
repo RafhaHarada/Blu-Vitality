@@ -72,8 +72,8 @@
                     <a href="#" class="waves-effect waves-light btn-small right-align " id="btnAdd">Adicionar</a>
                     <ul class="collapsible">
                         <li>
-                            <div class="collapsible-header"><i class="material-icons">filter_drama</i>Cadastrar</div>
-                            <div class="collapsible-body">
+                            <div class="collapsible-header"><i class="material-icons">filter_drama</i>Adicionar</div>
+                            <div class="collapsible-body ">
                                 <%@include file="quarto/quarto-formulario-cadastro.jsp"%>
                             </div>
                         </li>
@@ -84,7 +84,7 @@
                             </div>
                         </li>
                         <li>
-                            <div class="collapsible-header"><i class="material-icons">whatshot</i>Quarentena</div>
+                            <div class="collapsible-header"><i class="material-icons">whatshot</i>Editar</div>
                             <div class="collapsible-body">
                                 <%@include file="quarto/quarto-formulario-quarentena.jsp"%>
                             </div>
@@ -117,6 +117,4 @@
 <!--<div id="loading" style="display: block">
     <i class="material-icons right ld ld-cycle" id="loading">loop</i>
 </div>-->
-<script type="text/javascript" src="js-adm/administracao.js"></script>
-
 <%@include file="../model/footer.jsp" %> 
