@@ -8,7 +8,6 @@ $(function () {
             data: {
                 'numeroQuarto': $('#quarto-cadastro-numero-quarto').val(),
                 'tipo': $('#quarto-cadastro-tipo').val(),
-                'status': $('#quarto-cadastro-status').val()
             }
 
         });
@@ -17,7 +16,7 @@ $(function () {
 //Remover-Quarto
     $('#quarto-cadastro-remover').on('click', function () {
         $.ajax({
-            url: '/',
+            url: '/quarto/excluir',
             method: 'post',
             data: {
                 'numeroQuarto': $('#remover-numero-quarto').val(),

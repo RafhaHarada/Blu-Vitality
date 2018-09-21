@@ -18,8 +18,6 @@ $('#form-pendencias').validate({
         tempoPendencia: {   
             required: true,
             date: true,
-            now = new Date,
-            mindate: now.getDay()
         },
         textarea2: {
             required: true,
@@ -34,7 +32,6 @@ $('#form-pendencias').validate({
             },
             tempoPendencia: {
                 required: 'Data deve ser preenchida',
-                mindate: 'Data não pode ser menor que' + now.getDay()
             },
             textarea2: {
                 required: 'Descrição deve ser preenchida',
