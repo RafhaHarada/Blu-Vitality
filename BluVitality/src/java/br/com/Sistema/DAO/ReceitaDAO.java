@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author Cidmar
+ * @author Cidmar da Silva Ribeiro (cidmardsr@gmail.com)
  */
 public class ReceitaDAO {
     public List<ReceitaBean> obterTodos() {

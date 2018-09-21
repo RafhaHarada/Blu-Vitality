@@ -160,8 +160,15 @@ CREATE TABLE contas(
     telefone_e_internet  DOUBLE NOT NULL,
     aluguel  DOUBLE NOT NULL,
     fornecedores  DOUBLE NOT NULL,
-    total  DOUBLE NOT NULL
+    total  DOUBLE
 );
+
+INSERT INTO contas(energia_eletrica, agua, gas, telefone_e_internet, aluguel, fornecedores) VALUES
+(1, 1, 1, 1, 1, 1),
+(1, 1, 1, 1, 1, 1),
+(1, 1, 1, 1, 1, 1),
+(1, 1, 1, 1, 1, 1),
+(1, 1, 1, 1, 1, 1);
 
 CREATE TABLE gastosGerais(
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -214,3 +221,19 @@ CREATE TABLE receita(
     bens_e_titulos_a_receber  DOUBLE NOT NULL,
     total  DOUBLE NOT NULL
 );
+
+CREATE TABLE equipamentos(
+	id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    descricao VARCHAR(100) NOT NULL,
+    status VARCHAR(100) NOT NULL,
+    quantidade INT NOT NULL,
+    valor DOUBLE NOT NULL,
+    tempo_de_uso VARCHAR(100) NOT NULL
+);
+
+INSERT INTO equipamentos(nome, descricao, status, quantidade, valor, tempo_de_uso) VALUES
+('Desfibrilador', 'marca/modelo', 'funcionando', 5, 540, '4 anos'),   
+('Aparelho de Raio-X', 'marca/modelo', 'em manutenção', 3, 1042, '6 meses'),
+('Aparelho de Ultrassonografia', 'marca/modelo', 'aguardando reparo', 5, 810, '2 anos'),
+('Desfibrilador', 'marca/modelo', 'aguardando reparo', 2, 490, '7 anos');

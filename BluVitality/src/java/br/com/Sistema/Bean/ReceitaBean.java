@@ -1,7 +1,7 @@
 package br.com.Sistema.Bean;
 
 /**
- * @author Cidmar
+ * @author Cidmar da Silva Ribeiro (cidmardsr@gmail.com)
  */
 public class ReceitaBean {
     private int id;

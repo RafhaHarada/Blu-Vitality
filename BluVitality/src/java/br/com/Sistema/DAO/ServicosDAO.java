@@ -12,7 +12,7 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
- * @author Cidmar
+ * @author Cidmar da Silva Ribeiro (cidmardsr@gmail.com)
  */
 public class ServicosDAO {
     

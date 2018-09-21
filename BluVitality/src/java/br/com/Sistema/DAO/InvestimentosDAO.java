@@ -17,7 +17,7 @@ import java.util.List;
 
 /**
  *
- * @author Edemar
+ * @author Cidmar da Silva Ribeiro (cidmardsr@gmail.com)
  */
 public class InvestimentosDAO {
     public List<InvestimentosBean> obterTodos() {

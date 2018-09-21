@@ -7,7 +7,7 @@ package br.com.Sistema.Bean;
 
 /**
  *
- * @author Edemar
+ * @author Cidmar da Silva Ribeiro (cidmardsr@gmail.com)
  */
 public class OrcamentoBean {
     private int id;

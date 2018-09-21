@@ -1,7 +1,7 @@
 package br.com.Sistema.Bean;
 
 /**
- * @author Alunos
+ * @author Cidmar da Silva Ribeiro (cidmardsr@gmail.com)
  */
 public class GastosFuncionariosBean {
     private int id;

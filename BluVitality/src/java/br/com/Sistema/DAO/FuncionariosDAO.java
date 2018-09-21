@@ -14,7 +14,7 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
- * @author Cidmar
+ * @author Cidmar da Silva Ribeiro (cidmardsr@gmail.com)
  * @author Gustavo Rodrigues (gugaaroodrigues@gmail.com)
  * @author Rafael Alipio Harada (rafhaharada@gmail.com)
  */

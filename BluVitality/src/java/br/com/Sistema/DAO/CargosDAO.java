@@ -11,7 +11,7 @@ import java.util.List;
 import static java.sql.Statement.RETURN_GENERATED_KEYS;
 
 /**
- * @author Cidmar
+ * @author Cidmar da Silva Ribeiro (cidmardsr@gmail.com)
  */
 public class CargosDAO {
 

@@ -17,7 +17,7 @@ import java.util.List;
 
 /**
  *
- * @author Edemar
+ * @author Cidmar da Silva Ribeiro (cidmardsr@gmail.com)
  */
 public class ContasDAO {
     public List<ContasBean> obterTodos() {
@@ -76,7 +76,7 @@ public class ContasDAO {
     }
 
     public int adicionar(ContasBean conta) {
-        String sql = "INSERT INTO conta(energia_eletrica, agua, gas, telefone_e_internet, aluguel, fornecedores, total) VALUES(?,?,?,?,?,?,?)";
+        String sql = "INSERT INTO contas(energia_eletrica, agua, gas, telefone_e_internet, aluguel, fornecedores, total) VALUES(?,?,?,?,?,?,?)";
         try {
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql, RETURN_GENERATED_KEYS);
             ps.setDouble(1, conta.getEnergia_eletrica());
@@ -101,7 +101,7 @@ public class ContasDAO {
 
     public boolean alterar(ContasBean conta) {
         try {
-            String sql = "UPDATE conta SET energia_eletrica = ?, agua = ?, gas = ?, telefone_e_internet = ?, aluguel = ?, fornecedores = ?, total = ? WHERE id = ?";
+            String sql = "UPDATE contas SET energia_eletrica = ?, agua = ?, gas = ?, telefone_e_internet = ?, aluguel = ?, fornecedores = ?, total = ? WHERE id = ?";
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);
             ps.setDouble(1, conta.getEnergia_eletrica());
             ps.setDouble(2, conta.getAgua());
@@ -134,4 +134,5 @@ public class ContasDAO {
         }
         return false;
     }
+    
 }

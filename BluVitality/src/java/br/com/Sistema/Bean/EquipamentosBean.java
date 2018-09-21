@@ -9,11 +9,14 @@ package br.com.Sistema.Bean;
  *
  * @author Cidmar da Silva Ribeiro (cidmardsr@gmail.com)
  */
-public class InvestimentosBean {
+public class EquipamentosBean {
     private int id;
-    private String tipo;
+    private String nome;
     private String descricao;
+    private String status;
+    private int quantidade;
     private double valor;
+    private String tempo_de_uso;
 
     public int getId() {
         return id;
@@ -23,12 +26,12 @@ public class InvestimentosBean {
         this.id = id;
     }
 
-    public String getTipo() {
-        return tipo;
+    public String getNome() {
+        return nome;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getDescricao() {
@@ -39,11 +42,35 @@ public class InvestimentosBean {
         this.descricao = descricao;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public int getQuantidade() {
+        return quantidade;
+    }
+
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
+    }
+
     public double getValor() {
         return valor;
     }
 
     public void setValor(double valor) {
         this.valor = valor;
+    }
+
+    public String getTempo_de_uso() {
+        return tempo_de_uso;
+    }
+
+    public void setTempo_de_uso(String tempo_de_uso) {
+        this.tempo_de_uso = tempo_de_uso;
     }
 }

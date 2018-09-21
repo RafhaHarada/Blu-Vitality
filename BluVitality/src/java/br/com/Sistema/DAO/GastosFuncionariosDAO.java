@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author Alunos
+ * @author Cidmar
  */
 public class GastosFuncionariosDAO {
 
