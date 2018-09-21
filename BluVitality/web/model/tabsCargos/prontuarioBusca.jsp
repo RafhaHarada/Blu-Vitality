@@ -1,7 +1,7 @@
 <%-- 
     Document   : prontuarioBusca
     Created on : 20/09/2018, 08:14:11
-    Author     : Alunos
+    Author     : Luana Patricia Duarte (luanapatricia.blu@hotmail.com)
 --%>
 
 <div id="Funcionarios2" class="scrollBarOnDiv">
@@ -11,7 +11,7 @@
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="material-icons prefix">textsms</i>
-                        <input type="text" id="autocomplete-input" class="autocomplete">
+                        <input type="text" id="autocomplete-input" class="autocomplete" name="nomePaciente">
                         <label for="autocomplete-input">Nome</label>
                     </div>
                 </div>

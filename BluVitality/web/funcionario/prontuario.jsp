@@ -16,7 +16,6 @@
 </li>
 <%@include file="../model/headerEnd.jsp" %>
 
-MÉDICO
 <div class="row">
     <div class="">
         <ul class="tabs tabs-transparent center">
