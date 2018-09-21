@@ -16,9 +16,7 @@
                     </div>
                 </div>
             </div>
-        </form>  
-        <div>
-            <a href="/funcionario/prontuario" class="btn teal botaoBuscar">Busca Prontuário</a>
-        </div>
+            <input type="submit" class="btn col s4" value="Buscar Prontuário">
+        </form>
     </div>
 </div> 

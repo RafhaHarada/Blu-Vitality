@@ -13,6 +13,8 @@ import java.sql.Date;
  */
 public class ExpedicaoBean {
     private int id;
+    private int id_usuario;
+    private int id_funcionario;
     private String tipo;
     private String nome;
     private Date data_expedicao;
@@ -74,5 +76,21 @@ public class ExpedicaoBean {
 
     public void setFuncionario(FuncionariosBean funcionario) {
         this.funcionario = funcionario;
+    }
+
+    public int getId_usuario() {
+        return id_usuario;
+    }
+
+    public void setId_usuario(int id_usuario) {
+        this.id_usuario = id_usuario;
+    }
+
+    public int getId_funcionario() {
+        return id_funcionario;
+    }
+
+    public void setId_funcionario(int id_funcionario) {
+        this.id_funcionario = id_funcionario;
     }
 }
