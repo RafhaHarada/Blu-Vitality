@@ -84,7 +84,7 @@ $(function () {
             atualizaTab();
         }
     });
-    
+
     $(".atualizaTabFunc").on("click", function () {
         $('.collapsible').collapsible(".close()");
     });
@@ -123,6 +123,14 @@ $(function () {
         $(".agendarE").hide();
         atualizaTab();
     });
+
+    $(".tipoConvenio").hide();
+
+    if ($(".ativarConvenio").attr("checked")) {
+        $(".tipoConvenio").show();
+    } else {
+        $(".tipoConvenio").hide();
+    }
 
 
     $('.g-signin2').click(function () {
