@@ -1,7 +1,7 @@
 <%-- 
     Document   : perfil
     Created on : 20/09/2018, 08:51:14
-    Author     : Alunos
+    Author     : Luana Patricia Duarte (luanapatricia.blu@hotmail.com)
 --%>
 
 <div id="Funcionarios1" class="col s12 container">
