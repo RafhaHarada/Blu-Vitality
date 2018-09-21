@@ -26,7 +26,7 @@ public class QuartoIndex extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         resp.setContentType("text/html;charset=UTF-8");
-        req.getRequestDispatcher("administrador/").include(req, resp);
+        req.getRequestDispatcher("/administrador").include(req, resp);
     }
 
 }

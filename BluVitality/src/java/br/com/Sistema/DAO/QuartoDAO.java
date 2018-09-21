@@ -79,17 +79,13 @@ public class QuartoDAO {
     }
 
     public int adicionarQuarto(QuartoBean quarto) {
-        String sql = "INSERT INTO quartos (id, numero_quarto, id_usuario, id_funcionario, tipo, data_entrada, data_saida, status) "
-                + "VALUES(?,?,?,?,?,?,?,?)";
+        String sql = "INSERT INTO quartos ( numero_quarto, tipo, status) "
+                + "VALUES(?,?,?)";
         try {
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql, RETURN_GENERATED_KEYS);
             ps.setInt(1, quarto.getNumero_quarto());
-            ps.setInt(2, quarto.getId_usuario());
-            ps.setInt(3, quarto.getId_funcionario());
-            ps.setString(4, quarto.getTipo());
-            ps.setDate(5, quarto.getData_entrada());
-            ps.setDate(6, quarto.getData_saida());
-            ps.setString(7, quarto.getStatus());
+            ps.setString(2, quarto.getTipo());
+            ps.setString(3, quarto.getStatus());
 
             ps.execute();
             ResultSet resultSet = ps.getGeneratedKeys();

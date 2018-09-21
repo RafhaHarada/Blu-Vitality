@@ -9,3 +9,4 @@
 <script type="text/javascript" src="../resources/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="../funcionario/jsfuncionarios/jsfuncionarios.js"></script>
 <script type="text/javascript" src="../administrador/js-adm/administracao.js"></script>
+<script type="text/javascript" src="../administrador/js-adm/vavidacao.js"></script>
