@@ -17,30 +17,27 @@
 <%@include file="../model/headerEnd.jsp" %>
 
 <div class="row">
-    <div class="">
-        <ul class="tabs tabs-transparent center">
-            <li class="tab"><a href="#Funcionarios1" class="active teal-text">Dados Pessoais</a></li>
-            <li class="tab"><a href="#Funcionarios6" class="teal-text">Observações</a></li>
-            <li class="tab"><a href="#Funcionarios7" class="teal-text">Anamnese</a></li>
-            <li class="tab"><a href="#Funcionarios8" class="teal-text">Localização</a></li>
-            <li class="tab"><a href="#Funcionarios9" class="teal-text">Histórico Clínico</a></li>
-        </ul>
-        <%@include file="../model/tabConteudo.jsp" %>
-        <div id="Funcionarios6" class="col s12 container">
-            <div class="row">
-                <div class="input-field col s12">
-                    <textarea id="textarea2" class="materialize-textarea" data-length="120"></textarea>
-                    <label for="textarea2">Textarea</label>
-                </div>
-                <a class="waves-effect waves-light btn-large" href="#">Salvar</a>
+    <ul class="tabs tabs-transparent center">
+        <li class="tab"><a href="#Funcionarios10" class="active teal-text">Dados Pessoais</a></li>
+        <li class="tab"><a href="#Funcionarios6" class="teal-text">Observações</a></li>
+        <li class="tab"><a href="#Funcionarios7" class="teal-text">Anamnese</a></li>
+        <li class="tab"><a href="#Funcionarios8" class="teal-text">Localização</a></li>
+        <li class="tab"><a href="#Funcionarios9" class="teal-text">Histórico Clínico</a></li>
+    </ul>
+    <%@include file="../model/tabsCargos/paciente.jsp" %>
+    <div id="Funcionarios6" class="col s12 container">
+        <div class="row">
+            <div class="input-field col s12">
+                <textarea id="textarea2" class="materialize-textarea" data-length="120"></textarea>
+                <label for="textarea2">Textarea</label>
             </div>
+            <a class="waves-effect waves-light btn-large" href="#">Salvar</a>
         </div>
     </div>
     <div id="Funcionarios7" class="col s12 container">   
     </div>
     <div id="Funcionarios8" class="col s12 container">   
     </div>
-
     <div id="Funcionarios9" class="col s12 container">
         <table class="striped teal lighten-4">
             <thead>
