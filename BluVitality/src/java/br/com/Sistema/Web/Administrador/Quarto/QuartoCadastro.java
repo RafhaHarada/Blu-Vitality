@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
     Created on : 26/08/2018, 17:47:02
     Author     :@Gustavo Rodrigues (gugaaroodrigues@gmail.com)
 */
-@WebServlet ("/quarto/lista")
+@WebServlet ("/quarto/adicionar")
 public class QuartoCadastro extends HttpServlet{
 
     @Override

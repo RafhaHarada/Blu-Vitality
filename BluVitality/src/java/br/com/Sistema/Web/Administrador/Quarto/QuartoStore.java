@@ -9,7 +9,6 @@ package br.com.Sistema.Web.Administrador.Quarto;
 import br.com.Sistema.Bean.QuartoBean;
 import br.com.Sistema.DAO.QuartoDAO;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.Date;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -25,17 +24,14 @@ public class QuartoStore extends HttpServlet {
             throws ServletException, IOException {
         
         QuartoBean quarto = new QuartoBean();
-        quarto.setId(Integer.parseInt(req.getParameter("id")));
-        quarto.setNumero_quarto(Integer.parseInt(req.getParameter("numero_quarto")));
-        quarto.setId_usuario(Integer.parseInt(req.getParameter("id_usuario")));
-        quarto.setId_funcionario(Integer.parseInt(req.getParameter("id_funcionario")));
+        quarto.setNumero_quarto(Integer.parseInt(req.getParameter("numeroQuarto")));
         quarto.setTipo(req.getParameter("tipo"));
-        quarto.setData_entrada(Date.valueOf(req.getParameter("data_entrada")));
-        quarto.setData_entrada(Date.valueOf(req.getParameter("data_saida")));
+        quarto.setStatus("ativo");
+        
         quarto.setId(new QuartoDAO().adicionarQuarto(quarto));
         
         resp.setContentType("text/html;charset=UTF-8");
-        resp.sendRedirect("administrador/");
+        resp.getWriter().write("certo");
                     
      
     }
