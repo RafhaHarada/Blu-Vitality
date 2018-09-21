@@ -4,7 +4,14 @@
     Author     : Alunos
 --%>
 
-<jsp:include page="../model/header.jsp"/>
+<jsp:include page="../model/headerStart.jsp"/>
+<li><a class='dropdown-trigger' href='#' data-target='dropdownCadastro'>Opções</a>
+    <!-- Dropdown Structure -->
+    <ul id='dropdownCadastro' class='dropdown-content'>
+        <li><a href="../">Voltar</a></li>
+    </ul>
+</li>
+<%@include file="../model/headerEnd.jsp" %>
 <div class="card transparent z-depth-5">
 </div>
 <div class="card-content">
