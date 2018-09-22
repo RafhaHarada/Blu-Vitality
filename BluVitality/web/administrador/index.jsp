@@ -36,17 +36,9 @@
         <div id="InicioADM" class="col s12 container">
             <div class="col s6">
                 <div class="row teal lighten-4 center" id="btnacessorapido"> 
-                    <h3 class="center" style="font-family: verdana, arial;" >
+                    <h3 class="center" >
                         Seja bem vindo
                     </h3> 
-                    <div class="row s12 left">
-                        <a href="#" class="waves-effect waves-light btn-small " id="acessoarapido1">Financeiro</a>
-                        <a href="#" class="waves-effect waves-light btn-small " id="acessoarapido2">Financeiro</a>
-                    </div>
-                    <a href="#" class="waves-effect waves-light btn-large " id="acessoarapido3">Financeiro</a>
-                    <a href="#" class="waves-effect waves-light btn-large " id="acessoarapido4">Funcionarios</a>
-                    <a href="#" class="waves-effect waves-light btn-large " id="acessoarapido5">Usuarios</a>
-                    <a href="#" class="waves-effect waves-light btn-large " id="acessoarapido6">Estoque</a>
                 </div>
             </div>
             <div class="col s6 right">
@@ -66,19 +58,19 @@
         </div>
         <div id="hospitalQuartos" class="col s12 container scrollBarOnDiv">
             <div class="col s6">
-                <div class="row teal lighten-3"> 
+                <div class="row "> 
                     <span class="flow-text ">Quartos</span><br>
                     <a class="waves-effect waves-light btn-small right" id="btnRemove">Nova Ala</a>
                     <a href="#" class="waves-effect waves-light btn-small right-align " id="btnAdd">Adicionar</a>
                     <ul class="collapsible">
                         <li>
-                            <div class="collapsible-header"><i class="material-icons">filter_drama</i>Adicionar</div>
-                            <div class="collapsible-body ">
+                            <div class="collapsible-header"><i class="material-icons">add</i>Adicionar</div>
+                            <div class="collapsible-body " id="add-quarto">
                                 <%@include file="quarto/quarto-formulario-cadastro.jsp"%>
                             </div>
                         </li>
                         <li>
-                            <div class="collapsible-header"><i class="material-icons">place</i>Remover</div>
+                            <div class="collapsible-header"><i class="material-icons">delete</i>Remover</div>
                             <div class="collapsible-body">
                                 <%@include file="quarto/quarto-formulario-remover.jsp"%>
                             </div>

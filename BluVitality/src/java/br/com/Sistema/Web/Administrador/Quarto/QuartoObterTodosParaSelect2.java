@@ -31,13 +31,14 @@ public class QuartoObterTodosParaSelect2 extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
         String termo= request.getParameter("term") == null? "" : request.getParameter("term");
         
         response.setContentType("application/json");
         
-        List<HashMap<String, String>> tipo = new QuartoDAO().obterTodosParaSelect2(termo);
+        List<HashMap<String, String>> numero = new QuartoDAO().obterTodosParaSelect2(termo);
         HashMap<String, Object> resultado = new HashMap<>();
-        resultado.put("results", tipo);
+        resultado.put("results", numero);
         response.getWriter().print(new Gson().toJson(resultado));
     }
 

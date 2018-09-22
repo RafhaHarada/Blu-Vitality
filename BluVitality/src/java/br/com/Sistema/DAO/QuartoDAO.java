@@ -148,11 +148,7 @@ public class QuartoDAO {
                 HashMap<String, Object> quarto = new HashMap<>();
                 quarto.put("id", resultSet.getInt("id"));
                 quarto.put("numero_quarto", resultSet.getInt("numero_quarto"));
-                quarto.put("id_usuario", resultSet.getInt("id_usuario"));
-                quarto.put("id_funcionario", resultSet.getInt("id_funcionario"));
                 quarto.put("tipo", resultSet.getString("tipo"));
-                quarto.put("data_entrada", resultSet.getDate("data_entrada"));
-                quarto.put("data_saida", resultSet.getDate("data_saida"));
                 quarto.put("status", resultSet.getString("status"));
                 quartos.add(quarto);
             }
@@ -176,8 +172,7 @@ public class QuartoDAO {
             while (resultSet.next()) {
                 HashMap<String, String> atual = new HashMap<>();
                 atual.put("id", String.valueOf(resultSet.getInt("id")));
-                atual.put("numero_quarto", String.valueOf(resultSet.getInt("numero_quarto")));
-                atual.put("tipo", resultSet.getString("tipo"));
+                atual.put("text", String.valueOf(resultSet.getInt("numero_quarto")));
                 quartos.add(atual);
             }
         } catch (SQLException e) {
