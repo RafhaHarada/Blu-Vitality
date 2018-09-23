@@ -18,7 +18,7 @@
 <div class=" row">
 
     <h5>Seja Bem vindo</h5>
-    <a class="waves-effect waves-light red btn-small right" id="btnFinancas">Finaceiro</a>
+    <a href="/financas.jsp" class="waves-effect waves-light red btn-small right" id="btnFinancas">Finaceiro</a>
 
     <span class="nome">Gustavo</span>
     <div class="" style="margin-top: auto">
@@ -34,16 +34,14 @@
         </ul>
         <div class="divider"></div>
         <div id="InicioADM" class="col s12 container">
-            <div class="col s6">
-                <div class="row teal lighten-4 center" id="btnacessorapido"> 
+            <div class="row" id="div-bemvindo"> 
                     <h3 class="center" >
                         Seja bem vindo
                     </h3> 
-                </div>
-            </div>
-            <div class="col s6 right">
                 <%@include file="table/table-ultimos-servicos.jsp" %>
-            </div>
+                </div>
+            <!--div class="col s6 right">
+            </div-->
         </div>
 
         <div id="listapaciente" class="col s12 scrollBarOnDiv container">
