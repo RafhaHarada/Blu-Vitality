@@ -17,10 +17,7 @@
 <!--%@include file="../model/sessionConfirm.jsp" %-->
 <div class=" row">
 
-    <h5>Seja Bem vindo</h5>
     <a href="/financas.jsp" class="waves-effect waves-light red btn-small right" id="btnFinancas">Finaceiro</a>
-
-    <span class="nome">Gustavo</span>
     <div class="" style="margin-top: auto">
         <div class="divider"></div>
         <ul class="tabs tabs-transparent center">
@@ -40,14 +37,10 @@
                     </h3> 
                 <%@include file="table/table-ultimos-servicos.jsp" %>
                 </div>
-            <!--div class="col s6 right">
-            </div-->
         </div>
 
         <div id="listapaciente" class="col s12 scrollBarOnDiv container">
-            <div class="col s12">
                 <%@include file="table/tabela-usuarios.jsp" %>
-            </div>
         </div>
         <div id="lisfuncionarios" class="col s12 container">
             <div class="">

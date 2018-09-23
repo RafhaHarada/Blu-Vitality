@@ -206,11 +206,9 @@ public class FuncionariosDAO {
                 
                 HashMap<String, Object> funcionario = new HashMap<>();
                 funcionario.put("id", resultSet.getInt("fn.id"));
+                funcionario.put("usuario", resultSet.getString("us.nome"));
                 funcionario.put("cargo", resultSet.getString("cr.nome"));
                 funcionario.put("id_usuario", resultSet.getInt("fn.id_usuario"));
-                funcionario.put("usuario", resultSet.getString("us.nome"));
-                funcionario.put("tipo",resultSet.getString("fn.tipo"));
-                funcionario.put("ativo",resultSet.getBoolean("fn.status"));
                  
                 funcionarios.add(funcionario);
 

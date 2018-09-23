@@ -23,14 +23,11 @@ public class QuartoExcluir extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
             throws ServletException, IOException {
-        int  id = Integer.parseInt(req.getParameter("id"));
-        boolean apagar = new QuartoDAO().apagar(id);
         
-        if(apagar == true){
-            resp.sendRedirect("administrador");
-        }else{
-            resp.getWriter().print("Houve um erro");
-        }
+        int id = Integer.parseInt(req.getParameter("id"));
+        new QuartoDAO().apagar(id);
+
+        resp.sendRedirect("/administrador");
     }
     
 }

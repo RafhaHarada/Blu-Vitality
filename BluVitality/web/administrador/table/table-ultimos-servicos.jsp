@@ -4,13 +4,13 @@
     Author     : Gus
 --%>
 
-    <table class="blue-grey display compact" style="width:100%" id="ultimos-servicos">
-        <thead>
-            <tr>
-                <th scope="col">Nome</th>
-                <th scope="col">Descrição</th>
-            </tr>
-        </thead>
-        <tbody>
-        </tbody>
-    </table>
+<table class="blue-grey display compact" id="ultimos-servicos">
+    <thead>
+        <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">Descrição</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>

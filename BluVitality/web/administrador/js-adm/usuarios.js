@@ -1,7 +1,11 @@
-
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 $(function () {
-    var tableQuarto = $('#quarto-index').DataTable({
-        "ajax": "/quarto/obtertodosparadatatable",
+     $('#tabela-usuario').DataTable({
+        'ajax': '/usuarios/obtertodosparadatatable',
         "language": {
             "sEmptyTable": "Nenhum registro encontrado",
             "sInfo": "Mostrando de _START_ até _END_ de _TOTAL_ registros",
@@ -32,14 +36,11 @@ $(function () {
                 }
             }
         },
-        "columns": [
-            {"data": "id"},
-            {"data": "numero_quarto"},
-            {"data": "tipo"},
-            {"data": "status"},
-            
+        'columns': [
+            {'data': 'nome'},
+            {'data': 'idade'},
+            {'data': 'cpf'},
+            {'data': 'telefone'}
         ]
     });
-    setInterval(function () {
-    }, 3000);
 });
