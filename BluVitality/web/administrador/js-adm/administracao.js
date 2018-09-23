@@ -8,7 +8,7 @@ $(function () {
                 'numeroQuarto': $('#quarto-cadastro-numero-quarto').val(),
             },
             success: function () {
-                alert("Excluido com sucesso");
+                alert("Enviado com sucesso");
             }
         });
     });
@@ -65,8 +65,8 @@ $(function () {
             {
                 "data": null,
                 "render": function (data) {
-                    return  "<a href='#/quarto/excluir?id=" + data.id + "'><i class='material-icons'>edit</i></a>\
-                    <a href='#/quarto/excluir?id=" + data.id + "'><i class='material-icons'>delete</i></a>"
+                    return  "<a href='/quarto/excluir?id=" + data.id + "'><i class='material-icons'>edit</i></a>\
+                    <a href='/quarto/excluir?id=" + data.id + "'><i class='material-icons'>delete</i></a>"
                     //caminho do icone para editar na coluna funcionario
                 }
             }

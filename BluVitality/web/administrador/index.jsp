@@ -32,9 +32,6 @@
         <div class="divider"></div>
         <div id="InicioADM" class="col s12 container">
             <div class="row" id="div-bemvindo"> 
-                    <h3 class="center" >
-                        Seja bem vindo
-                    </h3> 
                 <%@include file="table/table-ultimos-servicos.jsp" %>
                 </div>
         </div>
@@ -67,7 +64,7 @@
                             </div>
                         </li>
                         <li>
-                            <div class="collapsible-header"><i class="material-icons">whatshot</i>Editar</div>
+                            <div class="collapsible-header"><i class="material-icons">edit</i>Editar</div>
                             <div class="collapsible-body">
                                 <%@include file="quarto/quarto-formulario-quarentena.jsp"%>
                             </div>
