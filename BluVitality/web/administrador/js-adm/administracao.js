@@ -1,5 +1,17 @@
 //Adicionar-Quarto
 $(function () {
+    $('#quarto-cadastro-remover').on('click', function () {
+        $.ajax({
+            url: '/quarto/excluir',
+            method: 'POST',
+            data: {
+                'numeroQuarto': $('#quarto-cadastro-numero-quarto').val(),
+            },
+            success: function () {
+                alert("Excluido com sucesso");
+            }
+        });
+    });
     $('#quarto-cadastro-salvar').on('click', function () {
         $.ajax({
             url: '/quarto/store',
@@ -101,7 +113,13 @@ $(function () {
         'columns': [
             {'data': 'nome'},
             {'data': 'descricao'},
-            
+            {
+                "data": null,
+                "render": function (data) {
+                    return  "<a href='#/quarto/excluir?id=" + data.id + "'><i class='material-icons'>edit</i></a>\
+                    <a href='#/quarto/excluir?id=" + data.id + "'><i class='material-icons'>delete</i></a>"
+                }
+            }
         ]
     });
 
