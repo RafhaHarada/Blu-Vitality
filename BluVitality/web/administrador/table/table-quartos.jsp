@@ -4,7 +4,7 @@
     Author     :@Gustavo Rodrigues (gugaaroodrigues@gmail.com)  
 --%>
 
-<table class="blue-grey display compact" style="width:100%" id="quarto-index">
+<table class="mdl-data-table" id="quarto-index">
     <thead>
         <tr>
             <th scope="col">ID</th>
