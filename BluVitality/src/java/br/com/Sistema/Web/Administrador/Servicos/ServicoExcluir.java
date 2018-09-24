@@ -27,6 +27,4 @@ public class ServicoExcluir extends HttpServlet{
         new ServicosDAO().apagar(id);
     }
     
-    
-    
 }
