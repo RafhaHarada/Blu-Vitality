@@ -60,6 +60,7 @@
 
 <!--   JavaScript Setup  -->
 <script type="text/javascript" src="../resources/js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="../resources/md/dataTables.material.min.js"></script>
 <script type="text/javascript" src="../resources/js/materialize.min.js"></script>
 <script type="text/javascript" src="../resources/js/google-platform.js"></script>
 <script type="text/javascript" src="../resources/js/custom.js"></script>
