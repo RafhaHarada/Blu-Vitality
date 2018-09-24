@@ -17,7 +17,7 @@
 <!--%@include file="../model/sessionConfirm.jsp" %-->
 <div class=" row">
 
-    <a href="administrador/financas.jsp" class="waves-effect waves-light red btn-small right" id="btnFinancas">Finaceiro</a>
+    <a href="financas.jsp" class="waves-effect waves-light red btn-small right" id="btnFinancas">Financeiro</a>
     <div class="" style="margin-top: auto">
         <div class="divider"></div>
         <ul class="tabs tabs-transparent center ">

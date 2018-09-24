@@ -13,10 +13,9 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Alunos
  */
-public class consultaExcluir {
     
-    @WebServlet("/consulta/excluir")
-public class ProdutoExcluir extends HttpServlet {
+@WebServlet("/consulta/excluir")
+public class consultaExcluir extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
