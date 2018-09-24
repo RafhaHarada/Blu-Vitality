@@ -21,13 +21,17 @@ import javax.servlet.http.HttpServletResponse;
 public class QuartoExcluir extends HttpServlet{
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) 
             throws ServletException, IOException {
         
         int id = Integer.parseInt(req.getParameter("id"));
-        new QuartoDAO().apagar(id);
+        boolean apagou = new QuartoDAO().apagar(id);
+        if(apagou){
+            resp.getWriter().write("apagou");
+        }else{
+            resp.getWriter().write("erro");
+        }
 
-        resp.sendRedirect("/administrador");
     }
     
 }

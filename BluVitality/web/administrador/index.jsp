@@ -33,11 +33,11 @@
         <div id="InicioADM" class="col s12 container">
             <div class="row" id="div-bemvindo"> 
                 <%@include file="table/table-ultimos-servicos.jsp" %>
-                </div>
+            </div>
         </div>
 
         <div id="listapaciente" class="col s12 scrollBarOnDiv container">
-                <%@include file="table/tabela-usuarios.jsp" %>
+            <%@include file="table/tabela-usuarios.jsp" %>
         </div>
         <div id="lisfuncionarios" class="col s12 container">
             <div class="">
@@ -46,35 +46,16 @@
             </div>
         </div>
         <div id="hospitalQuartos" class="col s12 container scrollBarOnDiv">
-            <div class="col s6">
-                <div class="row "> 
-                    <span class="flow-text ">Quartos</span><br>
-                    <a class="waves-effect waves-light btn-small right" id="btnRemove">Nova Ala</a>
-                    <a href="#" class="waves-effect waves-light btn-small right-align " id="btnAdd">Adicionar</a>
-                    <ul class="collapsible">
-                        <li>
-                            <div class="collapsible-header"><i class="material-icons">add</i>Adicionar</div>
-                            <div class="collapsible-body " id="add-quarto">
-                                <%@include file="quarto/quarto-formulario-cadastro.jsp"%>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="collapsible-header"><i class="material-icons">delete</i>Remover</div>
-                            <div class="collapsible-body">
-                                <%@include file="quarto/quarto-formulario-remover.jsp"%>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="collapsible-header"><i class="material-icons">edit</i>Editar</div>
-                            <div class="collapsible-body">
-                                <%@include file="quarto/quarto-formulario-quarentena.jsp"%>
-                            </div>
-                        </li>
-                    </ul>
+            <div class="col s12">
+                <div class="row"> 
+                    <div class="col s12 m6 left">
+                        <span class="flow-text ">Quartos</span><br>
+                        <%@include file="quarto/quarto-formulario-cadastro.jsp"%>
+                    </div>
+                    <div class="col s12 m6 right">
+                        <%@include file="table/table-quartos.jsp" %>
+                    </div>
                 </div>
-            </div>
-            <div class="col s6 right">
-                <%@include file="table/table-quartos.jsp" %>
             </div>
         </div>
         <div id="hospitalPendencias" class="col s12 container">

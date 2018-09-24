@@ -22,8 +22,10 @@ public class IndexRedirect extends HttpServlet {
         if ((UsuariosBean) req.getSession().getAttribute("usuario") != null) {
             UsuariosBean usuario = ((UsuariosBean) req.getSession().getAttribute("usuario"));
             String tipoFuncionario = "";
-            FuncionariosBean funcionario = new FuncionariosDAO().obterPeloIdUsuario(usuario.getId());
-            tipoFuncionario = funcionario.getTipo();
+            if (usuario.isColaborador()) {
+                FuncionariosBean funcionario = new FuncionariosDAO().obterPeloIdUsuario(usuario.getId());
+                tipoFuncionario = funcionario.getTipo();
+            }
             String clientUrl = req.getRequestURL().toString();
             String url = "/usuario";
             if (tipoFuncionario.equals("")) {
@@ -51,8 +53,10 @@ public class IndexRedirect extends HttpServlet {
         if ((UsuariosBean) req.getSession().getAttribute("usuario") != null) {
             UsuariosBean usuario = ((UsuariosBean) req.getSession().getAttribute("usuario"));
             String tipoFuncionario = "";
-            FuncionariosBean funcionario = new FuncionariosDAO().obterPeloIdUsuario(usuario.getId());
-            tipoFuncionario = funcionario.getTipo();
+            if (usuario.isColaborador()) {
+                FuncionariosBean funcionario = new FuncionariosDAO().obterPeloIdUsuario(usuario.getId());
+                tipoFuncionario = funcionario.getTipo();
+            }
             String clientUrl = req.getRequestURL().toString();
             String url = "/usuario";
             if (tipoFuncionario.equals("")) {

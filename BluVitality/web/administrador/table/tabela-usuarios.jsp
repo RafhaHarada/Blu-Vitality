@@ -4,7 +4,7 @@
     Author     : Gus
 --%>
 
-<table class="blue-grey display compact" style="width:100%" id="tabela-usuario">
+<table class="mdl-data-table"  id="tabela-usuario">
     <thead>
         <tr>
             <th scope="col">Nome</th>
