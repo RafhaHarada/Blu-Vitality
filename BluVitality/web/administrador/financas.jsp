@@ -4,73 +4,18 @@
     Author     : Alunos
 --%>
 
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<%@include file="../model/validation.jsp" %>
 <jsp:include page="../model/headerStart.jsp"/>
-<li><a class='dropdown-trigger' href='#' data-target='dropdownCadastro'>Opções</a>
+<li><a class='dropdown-trigger' href='#' data-target='dropdownCadastro'>opÃ§Ãµes</a>
     <!-- Dropdown Structure -->
     <ul id='dropdownCadastro' class='dropdown-content'>
-        <li><a href="../">Voltar</a></li>
+        <li><a href="../" onclick="signOut();">Sair</a></li>
     </ul>
 </li>
 <%@include file="../model/headerEnd.jsp" %>
-<div class="card transparent z-depth-5">
-</div>
-<div class="card-content">
-    <h1>Finanças</h1>
-    <p >I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-</div>
-<div class="card-tabs container">
-    <ul class="tabs tabs-transparent red darken-3">
-        <li class="tab"><a href="#test1" class="white-text">Finanças Gerais</a></li>
-        <li class="tab"><a href="#test2" class="white-text">Finanças Funcionários</a></li>
-        <li class="tab"><a href="#test3" class="white-text">Finanças Pacientes</a></li>
-        <li class="tab"><a href="#test4" class="white-text">Finanças Hospital</a></li>
-    </ul>
-    <div class="card-content orange lighten-4 row">
-        <div id="test1"><a class="red darken-3 btn modal-trigger white-text row" href="#modal1">Lucro</a><div id="test1"><a class="red darken-3 btn modal-trigger white-text row" href="#modal2">Despesas</a>
-                <div id="test1"><a class="red darken-3 btn modal-trigger white-text" href="#modal3">Receita</a>
-                    <!-- Modal Structure -->
-                    <div id="modal1" class="modal">
-                        <div class="modal-content">
-                            <h4 class="center-align">Lucro</h4>
-                            <div class="card-image">
-                                <img src="../resources/images/grafico_teste3.png" >
-                            </div>
-                            <div class="modal-footer">
-                                <i class="modal-close material-icons right">close</i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="modal2" class="modal">
-                    <div class="modal-content">
-                        <h4>Despesas</h4>
-                        <div class="card-image">
-                            <img src="../resources/images/grafico_teste2.png" >
-                        </div>
-                        <div class="modal-footer">
-                            <i class="modal-close material-icons right">close</i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="modal3" class="modal">
-                <div class="modal-content">
-                    <h4>Receita</h4>
-                    <div class="card-image">
-                        <img src="../resources/images/grafico_teste.png" >
-                    </div>
-                    <div class="modal-footer">
-                        <i class="modal-close material-icons right">close</i>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="test2">Test 2</div>
-        <div id="test3">Test 3</div>
-        <div id="test4"><div class="card-image">
-                <img src="../resources/images/grafico_teste.png"> 
-            </div>
-        </div>
-    </div>
-</div>
-<jsp:include page="../model/footer.jsp"/>
+<!--%@include file="../model/sessionConfirm.jsp" %-->
+<h4>Bem vindo a Ã¡rea financeira</h4>
+
+<%@include file="../model/footer.jsp" %> 

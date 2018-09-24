@@ -6,19 +6,6 @@
 <%@page import="br.com.Sistema.Bean.FuncionariosBean"%>
 <%@page import="br.com.Sistema.DAO.FuncionariosDAO"%>
 <%@page import="br.com.Sistema.Bean.UsuariosBean"%>
-<%
-    if (session.getAttribute("usuario") != null || session.getAttribute("usuario") != "") {
-        UsuariosBean usuario = ((UsuariosBean) session.getAttribute("usuario"));
-        String tipoFuncionario = "";
-        FuncionariosBean funcionario = new FuncionariosDAO().obterPeloIdUsuario(usuario.getId());
-        tipoFuncionario = funcionario.getTipo();
-        if (!tipoFuncionario.isEmpty()) {
-            response.sendRedirect("/" + tipoFuncionario);
-        } else {
-            response.sendRedirect("/usuario");
-        }
-    }
-%>
 <jsp:include page="../model/headerStart.jsp"/>
 <li><a class='dropdown-trigger' href='#' data-target='dropdownCadastro'>Opções</a>
     <!-- Dropdown Structure -->
@@ -132,6 +119,16 @@
                 <i class="material-icons prefix">email</i>
                 <input id="cadastro-email" type="text" class="validate" name="email">
                 <label for="cadastro-email">Email</label>
+            </div>
+            <div class="input-field col s12 m7">
+                <i class="material-icons prefix">account_circle</i>
+                <input id="cadastro-login" type="text" class="validate" name="login">
+                <label for="cadastro-login">Login</label>
+            </div>
+            <div class="input-field col s12 m7">
+                <i class="material-icons prefix">account_circle</i>
+                <input id="cadastro-senha" type="password" class="validate" name="senha">
+                <label for="cadastro-senha">Senha</label>
             </div>
             <div class="input-field col s12 m3">
                 <i class="material-icons prefix">art_track</i>

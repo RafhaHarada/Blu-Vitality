@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Gus
  */
-@WebServlet( urlPatterns="servico/excluir")
+@WebServlet( urlPatterns="/servico/excluir")
 public class ServicoExcluir extends HttpServlet{
 
     @Override
