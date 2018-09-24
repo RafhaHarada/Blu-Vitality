@@ -6,6 +6,7 @@
 
 
 
+<%@page import="java.time.LocalDateTime"%>
 <div class="row">
     <form class="col s12" id="form-pendencias" >
         <div class="row">
@@ -16,7 +17,9 @@
         </div>
         <div class="row">
             <div class="input-field col s8">
-                <input type="text" class="datepicker" id="tempoPendencia">
+                <%!LocalDateTime now = LocalDateTime.now();%>
+                
+                <input type="text" class="datepicker" id="tempoPendencia" class="datepicker validate" min="<%=now%>" max="01/01/2130">
                 <label for="tempoPendencia1">Tempo Limite</label>
             </div>
         </div>

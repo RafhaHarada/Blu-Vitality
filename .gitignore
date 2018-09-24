@@ -3,3 +3,7 @@
 *.class
 *.gitkeep
 /BluVitality/dist/
+*.xml
+*.xml
+*.iml
+*.xml

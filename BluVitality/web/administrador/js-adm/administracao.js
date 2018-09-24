@@ -116,8 +116,7 @@ $(function () {
             {
                 "data": null,
                 "render": function (data) {
-                    return  "<a href='#/quarto/excluir?id=" + data.id + "'><i class='material-icons'>edit</i></a>\
-                    <a href='#/quarto/excluir?id=" + data.id + "'><i class='material-icons'>delete</i></a>"
+                    return  "<a href='/servico/excluir?id=" + data.id + "'><i class='material-icons'>delete</i></a>"
                 }
             }
         ]
@@ -175,4 +174,30 @@ $(function () {
             ]
         }
     });
+
+    $("#btn-salvar").on("click", function () {
+        $.ajax({
+            url: "/busca/usuario/cpf",
+            method: "post",
+            data: {
+                "nome": $("#adastro-nome-completo").val(),
+                "sexo": $("#cadastro-sexo").val(),
+                "email": $("#cadastro-emai").val(),
+                "cpf": $("#cadastro-cpf").val(),
+                "rg": $("#cadastro-rg").val(),
+                "idade": $("#cadastro-idade").val(),
+                "estado_civil": $("#cadastro-estado-civil").val(),
+                "telefone": $("#cadastro-telefone").val(),
+                "endereco": $("#cadastro-endereco").val(),
+                "cep": $("#cadastro-cep").val(),
+                "complemento": $("#cadastro-complemento").val(),
+                "naturalildade": $("#cadastro-naturalidade").val(),
+                "uf": $("#cadastro-uf").val(),
+            },
+            success: function (result) {
+                
+            }
+        });
+    });
+    
 });

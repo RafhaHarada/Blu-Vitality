@@ -3,12 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.Sistema.Web.Administrador.Servicos;
+package br.com.Sistema.Web.Usuario;
 
-import br.com.Sistema.DAO.ServicosDAO;
 import java.io.IOException;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,16 +15,14 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Gus
  */
-@WebServlet(urlPatterns="/servico/excluir")
-public class ServicoExcluir extends HttpServlet{
+public class UsuarioEditar extends HttpServlet{
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
             throws ServletException, IOException {
-        int id = Integer.parseInt(req.getParameter("id"));
-        new ServicosDAO().apagar(id);
+        resp.setContentType("text/html;metacharset=UTF-8");
+        req.getRequestDispatcher("/administrador/servicos/editar").include(req, resp);
+
     }
-    
-    
     
 }

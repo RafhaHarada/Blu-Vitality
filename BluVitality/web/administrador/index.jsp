@@ -20,7 +20,7 @@
     <a href="/financas.jsp" class="waves-effect waves-light red btn-small right" id="btnFinancas">Finaceiro</a>
     <div class="" style="margin-top: auto">
         <div class="divider"></div>
-        <ul class="tabs tabs-transparent center">
+        <ul class="tabs tabs-transparent center ">
             <li class="tab"><a href="#InicioADM" class="active teal-text waves-effect">Bem vindo</a></li>
             <li class="tab"><a href="#listapaciente" class="teal-text waves-effect">Pacientes</a></li>
             <li class="tab"><a href="#lisfuncionarios" class="teal-text waves-effect">Funcionarios</a></li>
@@ -41,6 +41,7 @@
         </div>
         <div id="lisfuncionarios" class="col s12 container">
             <div class="">
+                <a href="/administrador/cadastro-funcionario.jsp" target="_blank" class="btn-small" id="btn-cadastrar">Adicionar</a>
                 <%@include file="table/tabela-funcionarios.jsp" %> 
             </div>
         </div>
