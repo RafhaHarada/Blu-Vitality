@@ -115,7 +115,7 @@
 <li>
     <div class="user-view">
         <div class="background">
-            <img src="../resources/images/slide1.jpg">
+            <img src="../resources/images/slider1.jpg">
         </div>
         <a href="#EditarPerfil">
             <!--%if(usuario.getImage() == null){%-->
@@ -155,7 +155,7 @@
 <li>
     <div class="user-view">
         <div class="background">
-            <img src="../resources/images/slide1.jpg">
+            <img src="../resources/images/slider1.jpg">
         </div>
         <a href="#EditarPerfil">
             <!--%if(usuario.getImage() == null){%-->
@@ -195,7 +195,7 @@
 <li>
     <div class="user-view">
         <div class="background">
-            <img src="../resources/images/slide1.jpg">
+            <img src="../resources/images/slider1.jpg">
         </div>
         <a href="#EditarPerfil">
             <!--%if(usuario.getImage() == null){%-->
@@ -235,7 +235,7 @@
 <li>
     <div class="user-view">
         <div class="background">
-            <img src="../resources/images/slide1.jpg">
+            <img src="../resources/images/slider1.jpg">
         </div>
         <a href="#EditarPerfil">
             <!--%if(usuario.getImage() == null){%-->
@@ -269,7 +269,7 @@
 <li>
     <div class="user-view">
         <div class="background">
-            <img src="../resources/images/slide1.jpg">
+            <img src="../resources/images/slider1.jpg">
         </div>
         <a href="#EditarPerfil">
             <!--%if(usuario.getImage() == null){%-->
