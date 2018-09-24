@@ -40,11 +40,14 @@ $(function () {
         toolbarEnabled: true
     });
 
+    var d = new Date();
     $('.datepicker').datepicker({
         format: 'dd/mm/yyyy',
+        yearRange: 100,
+        maxYear: d.getFullYear(),
         i18n: {
             selectMonths: true, //Creates a dropdown to control month
-            selectYears: 20, //Creates a dropdown of 15 years to control year
+            selectYears: 30, //Creates a dropdown of 15 years to control year
             //The title label to use for the month nav buttons
             labelMonthNext: 'Proximo Mês',
             labelMonthPrev: 'Mês Anterior',
@@ -117,9 +120,9 @@ $(function () {
         $(".agendarE").show();
         $(".agendarC").hide();
         atualizaTab();
-        
+
     });
-    
+
     $(".tipoConvenio").hide();
 
     if ($(".ativarConvenio").attr("checked")) {
@@ -127,8 +130,8 @@ $(function () {
     } else {
         $(".tipoConvenio").hide();
     }
-    
-    
+
+
     $(".consultaRadio").on("click", function () {
         $(".agendarC").show();
         $(".agendarE").hide();
@@ -189,4 +192,6 @@ $(function () {
         });
         $(".tabs-content").css('height', maxHeight + 'px');
     }
+    
+    $('.tooltipped').tooltip();
 });
