@@ -24,14 +24,4 @@
         <%@include file="../model/tabConteudo.jsp" %>
     </div>
 </div>
-<%
-    
-    String clientUrl = request.getRequestURL().toString();
-    if(clientUrl.contains("usuarioNaoEncontrado")){
-    %>
-        <spam onload="usuarioNaoEncontrado()"></spam>
-     <%           
-    }
-    else
-%>
 <jsp:include page="../model/footer.jsp"/>
