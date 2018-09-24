@@ -28,6 +28,8 @@ public class usuarioStore extends HttpServlet {
         usuario.setEstado_civil(req.getParameter("estado-civil"));
         usuario.setTelefone(req.getParameter("telefone"));
         usuario.setEmail(req.getParameter("email"));
+        usuario.setLogin(req.getParameter("login"));
+        usuario.setSenha(req.getParameter("senha"));
         usuario.setEndereco(req.getParameter("endereco"));
         usuario.setComplemento(req.getParameter("complemento"));
         usuario.setContato_emergencia(req.getParameter("contato-emergencia"));

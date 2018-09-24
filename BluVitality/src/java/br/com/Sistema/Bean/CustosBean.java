@@ -9,6 +9,11 @@ public class CustosBean {
    private int id_conta;
    private int id_gastoGeral;
    private int id_investimento;
+   private String tipo;
+   private GastosFuncionariosBean gastoFuncionario;
+   private ContasBean conta;
+   private GastosGeraisBean gastoGeral;
+   private InvestimentosBean investimento;
    private double total;
 
     public int getId() {
@@ -49,6 +54,46 @@ public class CustosBean {
 
     public void setId_investimento(int id_investimento) {
         this.id_investimento = id_investimento;
+    }
+
+    public GastosFuncionariosBean getGastoFuncionario() {
+        return gastoFuncionario;
+    }
+
+    public void setGastoFuncionario(GastosFuncionariosBean gastoFuncionario) {
+        this.gastoFuncionario = gastoFuncionario;
+    }
+
+    public ContasBean getConta() {
+        return conta;
+    }
+
+    public void setConta(ContasBean conta) {
+        this.conta = conta;
+    }
+
+    public GastosGeraisBean getGastoGeral() {
+        return gastoGeral;
+    }
+
+    public void setGastoGeral(GastosGeraisBean gastoGeral) {
+        this.gastoGeral = gastoGeral;
+    }
+
+    public InvestimentosBean getInvestimento() {
+        return investimento;
+    }
+
+    public void setInvestimento(InvestimentosBean investimento) {
+        this.investimento = investimento;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 
     public double getTotal() {
