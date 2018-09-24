@@ -1,16 +1,20 @@
 //Adicionar-Quarto
 $(function () {
-    $('#quarto-cadastro-remover').on('click', function () {
+
+    $('#quarto-index').on('click', '.excluirtest', function () {
+        $id = $(this).data("id");
+        console.log($id);
         $.ajax({
             url: '/quarto/excluir',
             method: 'POST',
             data: {
-                'numeroQuarto': $('#quarto-cadastro-numero-quarto').val(),
+                id: $id
             },
-            success: function () {
-                alert("Enviado com sucesso");
+            success: function (data) {
+                tableQuarto.ajax.reload();
             }
         });
+        return false;
     });
     $('#quarto-cadastro-salvar').on('click', function () {
         $.ajax({
@@ -21,7 +25,7 @@ $(function () {
                 'tipo': $('#quarto-cadastro-tipo').val()
             },
             success: function () {
-                alert("Enviado com sucesso");
+                tableQuarto.ajax.reload();
             }
         });
     });
@@ -66,18 +70,14 @@ $(function () {
                 "data": null,
                 "render": function (data) {
                     return  "<a href='/quarto/excluir?id=" + data.id + "'><i class='material-icons'>edit</i></a>\
-                    <a href='/quarto/excluir?id=" + data.id + "'><i class='material-icons'>delete</i></a>"
+                    <a class='excluirtest' href='#' data-id='" + data.id + "'><i class='material-icons'>delete</i></a>"
                     //caminho do icone para editar na coluna funcionario
                 }
             }
 
         ]
     });
-    setInterval(function () {
-    }, 30000);
-
-
-
+    
     $('#ultimos-servicos').DataTable({
         'ajax': '/servicos/obtertodosparadatatable',
         "language": {
@@ -162,42 +162,17 @@ $(function () {
         ]
     });
 
-    $('#quarto-remover-numero').select2({
-        'ajax': {
-            url: '/quartos/obtertodosparaselect2',
-            dataType: 'Json',
-            results: [
-                {
-                    "id": 1,
-                    "text": "Option"
-                }
-            ]
-        }
-    });
+//    $('#quarto-remover-numero').select2({
+//        'ajax': {
+//            url: '/quartos/obtertodosparaselect2',
+//            dataType: 'Json',
+//            results: [
+//                {
+//                    "id": 1,
+//                    "text": "Option"
+//                }
+//            ]
+//        }
+//    });
 
-    $("#btn-salvar").on("click", function () {
-        $.ajax({
-            url: "/busca/usuario/cpf",
-            method: "post",
-            data: {
-                "nome": $("#adastro-nome-completo").val(),
-                "sexo": $("#cadastro-sexo").val(),
-                "email": $("#cadastro-emai").val(),
-                "cpf": $("#cadastro-cpf").val(),
-                "rg": $("#cadastro-rg").val(),
-                "idade": $("#cadastro-idade").val(),
-                "estado_civil": $("#cadastro-estado-civil").val(),
-                "telefone": $("#cadastro-telefone").val(),
-                "endereco": $("#cadastro-endereco").val(),
-                "cep": $("#cadastro-cep").val(),
-                "complemento": $("#cadastro-complemento").val(),
-                "naturalildade": $("#cadastro-naturalidade").val(),
-                "uf": $("#cadastro-uf").val(),
-            },
-            success: function (result) {
-                
-            }
-        });
-    });
-    
 });
