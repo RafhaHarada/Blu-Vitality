@@ -4,6 +4,8 @@
     Author     : @Nattana Matos
                  @Rafael Alipio Harada (rafhaharada@gmail.com)
 --%>
+<%@page import="br.com.Sistema.DAO.ExpedicaoDAO"%>
+<%@page import="br.com.Sistema.Bean.ExpedicaoBean"%>
 <jsp:include page="../model/headerStart.jsp"/>
 <li><a class='dropdown-trigger' href='#' data-target='dropdownCadastro'>Opções</a>
     <!-- Dropdown Structure -->
@@ -169,7 +171,7 @@
                 <span class="teal-text teatl lighten-4 ">Forma de atendimento<span class="red-text">*</span></span>
             </div>
             <div>
-               <label class="teal-text">
+                <label class="teal-text">
                     <input id="exame-convenio" name ="convenio" type="checkbox" class="ativarConvenio">
                     <span>Convênio</span>
                 </label>
@@ -363,45 +365,22 @@
                 <td> <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a></td>
                 <td> <a href="#!" class="secondary-content"><i class="material-icons">delete_forever</i></a></td>
             </tr>
+            <% 
+                List<ExpedicaoBean> expedicoes = new ExpedicaoDAO().obterTodos();
+                for (int i = 0; i < expedicoes.size(); i++) {
+            %>
             <tr>
-                <td>Alan</td>
-                <td>Jellybean</td>
-                <td>$3.76</td>
-                <td>$3.76</td>
-                <td>$3.76</td>
-                <td> <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a></td>
-                <td> <a href="#!" class="secondary-content"><i class="material-icons">delete_forever</i></a></td>
+            <td><%=expedicoes.get(i).getId()%></td>
+                <td><%=expedicoes.get(i).getId()%></td>
+                <td><%=expedicoes.get(i).getId()%></td>
+                <td><%=expedicoes.get(i).getId()%></td>
+                <td><%=expedicoes.get(i).getNome()%></td>
+                <td>
+                    <a href="/consulta/editar?id=<%=expedicoes.get(i).getId()%>">Editar</a>
+                    <a href="/consulta/excluir?id=<%=expedicoes.get(i).getId()%>">Excluir</a>
+                </td>
             </tr>
-            <tr>
-                <td>Jonathan</td>
-                <td>Lollipop</td>
-                <td>Lollipop</td>
-                <td>$7.00</td>
-                <td>$7.00</td>
-                <td> <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a></td>
-                <td> <a href="#!" class="secondary-content"><i class="material-icons">delete_forever</i></a></td>
-
-            </tr>
-            <tr>
-                <td>Jonathan</td>
-                <td>Lollipop</td>
-                <td>$7.00</td>
-                <td>$7.00</td>
-                <td>$7.00</td>
-                <td> <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a></td>
-                <td> <a href="#!" class="secondary-content"><i class="material-icons">delete_forever</i></a></td>
-
-            </tr>
-            <tr>
-                <td>Jonathan</td>
-                <td>Lollipop</td>
-                <td>$7.00</td>
-                <td>$7.00</td>
-                <td>$7.00</td>
-                <td> <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a></td>
-                <td> <a href="#!" class="secondary-content"><i class="material-icons">delete_forever</i></a></td>
-
-            </tr>
+            <%}%>
 
         </tbody>
     </table>

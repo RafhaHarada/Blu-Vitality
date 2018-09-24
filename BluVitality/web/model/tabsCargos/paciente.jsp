@@ -6,12 +6,12 @@
 <%
     UsuariosBean paciente = new UsuariosBean();
 
-    int id_paciente= Integer.parseInt(request.getParameter("id"));
+    int id_paciente = Integer.parseInt(request.getParameter("id"));
     paciente = new UsuariosDAO().obterPeloId(id_paciente);
 
 %>
 <div id="Funcionarios10" class="col s12 container">
-    <ul class="collection col s6">
+ <ul class="collection col s6">
         <li class="collection-item avatar teal lighten-4">
             <img src="" alt="" class="circle red">
             <span class="nome">Nome:</span>

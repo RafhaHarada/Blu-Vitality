@@ -18,7 +18,7 @@ import java.util.List;
 public class ExpedicaoDAO {
     public List<ExpedicaoBean> obterTodos() {
         List<ExpedicaoBean> expedicoes = new ArrayList<>();
-        String sql = "SELECT * FROM expedicoes ex JOIN usuarios us ON us.id = ex.id_usuario JOIN funcionarios fn ON fn.id = ex.id_funcionario";
+        String sql = "SELECT * FROM expedicao";
         
         try{
             Statement st = Conexao.abrirConexao().createStatement();
@@ -26,16 +26,16 @@ public class ExpedicaoDAO {
             ResultSet resultSet = st.getResultSet();
             while(resultSet.next()){
                 ExpedicaoBean expedicao = new ExpedicaoBean();
-                expedicao.setId(resultSet.getInt("ex.id"));
-                expedicao.setTipo(resultSet.getString("ex.tipo"));
-                expedicao.setNome(resultSet.getString("ex.nome"));
-                expedicao.setData_expedicao(resultSet.getDate("ex.data_expedicao"));
-                expedicao.setCusto(resultSet.getDouble("ex.custo"));
+                expedicao.setId(resultSet.getInt("id"));
+                expedicao.setTipo(resultSet.getString("tipo"));
+                expedicao.setNome(resultSet.getString("nome"));
+                expedicao.setData_expedicao(resultSet.getDate("data_expedicao"));
+                expedicao.setCusto(resultSet.getDouble("custo"));
                 
-                UsuariosBean usuario = new UsuariosDAO().obterPeloId(resultSet.getInt("ex.id_usuario"));
+                UsuariosBean usuario = new UsuariosDAO().obterPeloId(resultSet.getInt("id_usuario"));
                 expedicao.setUsuario(usuario);
                 
-                FuncionariosBean funcionario = new FuncionariosDAO().obterPeloIdUsuario(resultSet.getInt("ex.id_funcionario"));
+                FuncionariosBean funcionario = new FuncionariosDAO().obterPeloIdUsuario(resultSet.getInt("id_funcionario"));
                 expedicao.setFuncionario(funcionario);
                 
                 expedicoes.add(expedicao);
@@ -49,7 +49,7 @@ public class ExpedicaoDAO {
     
     public ExpedicaoBean obterPeloId(int id){
         ExpedicaoBean expedicao = null;
-        String sql = "SELECT id, id_usuario, id_funcionario, tipo, data_expedicao, custo FROM expedicoes ex JOIN usuarios us ON us.id = ex.id_usuario JOIN funcionarios fn ON fn.id = ex.id_funcionario WHERE id = ?";
+        String sql = "SELECT id, id_usuario, id_funcionario, tipo, data_expedicao, custo FROM expedicao ex JOIN usuarios us ON us.id = ex.id_usuario JOIN funcionarios fn ON fn.id = ex.id_funcionario WHERE id = ?";
         try{
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);
             ps.setInt(1, id);
@@ -75,7 +75,7 @@ public class ExpedicaoDAO {
         }return expedicao;
     }
     public int adicionar(ExpedicaoBean expedicao) {
-        String sql = "INSERT INTO expedicoes (id_usuario, id_funcionario, tipo, data_expedicao, custo) "
+        String sql = "INSERT INTO expedicao (id_usuario, id_funcionario, tipo, data_expedicao, custo) "
                 + "VALUES(?, ?, ?, ?, ?)";
         try{
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql, RETURN_GENERATED_KEYS);
@@ -98,7 +98,7 @@ public class ExpedicaoDAO {
     }
     public boolean alterar(ExpedicaoBean expedicao){
         try{
-            String sql = "UPDATE expedicoes SET id_usuario = ?, id_funcionario = ?, tipo = ?, data_expedicao = ?, custo = ? WHERE id = ?";
+            String sql = "UPDATE expedicao SET id_usuario = ?, id_funcionario = ?, tipo = ?, data_expedicao = ?, custo = ? WHERE id = ?";
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);
             ps.setInt(1, expedicao.getUsuario().getId());
             ps.setInt(2, expedicao.getFuncionario().getId());
@@ -116,7 +116,7 @@ public class ExpedicaoDAO {
     }
     
     public boolean apagar(int id){
-        String sql = "DELETE FROM expedicoes WHERE id = ?";
+        String sql = "DELETE FROM expedicao WHERE id = ?";
         try{
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);
             ps.setInt(1, id);
