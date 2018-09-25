@@ -31,11 +31,11 @@ public class GastosGeraisDAO {
             while (resultSet.next()) {
                 GastosGeraisBean gastoGeral = new GastosGeraisBean();
                 gastoGeral.setId(resultSet.getInt("id"));
-                gastoGeral.setManutencao_equipamentos(resultSet.getDouble("manutencao_equipamentos"));
+                gastoGeral.setManutencaoEquipamentos(resultSet.getDouble("manutencaoEquipamentos"));
                 gastoGeral.setLimpeza(resultSet.getDouble("limpeza"));
-                gastoGeral.setManutencao_estrutura(resultSet.getDouble("manutencao_estrutura"));
+                gastoGeral.setManutencaoEstrutura(resultSet.getDouble("manutencaoEstrutura"));
                 gastoGeral.setAlimentacao(resultSet.getDouble("alimentacao"));
-                gastoGeral.setMateriais_de_consumo(resultSet.getDouble("materiais_de_consumo"));
+                gastoGeral.setMateriaisDeConsumo(resultSet.getDouble("materiaisDeConsumo"));
                 gastoGeral.setMedicamentos(resultSet.getDouble("medicamentos"));
                 gastoGeral.setImprevistos(resultSet.getDouble("imprevistos"));
                 gastoGeral.setTotal(resultSet.getDouble("total"));
@@ -51,7 +51,7 @@ public class GastosGeraisDAO {
 
     public GastosGeraisBean obterPeloId(int id) {
         GastosGeraisBean gastoGeral = null;
-        String sql = "SELECT id, manutencao_equipamentos, limpeza, menutencao_estrutura, alimentacao, materiais_de_consumo, medicamentos, imprevistos, total FROM gastosGerais WHERE id = ?";
+        String sql = "SELECT id, manutencaoEquipamentos, limpeza, menutencaoEstrutura, alimentacao, materiaisDeConsumo, medicamentos, imprevistos, total FROM gastosGerais WHERE id = ?";
         try {
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);
             ps.setInt(1, id);
@@ -60,11 +60,11 @@ public class GastosGeraisDAO {
             while (resultSet.next()) {
                 gastoGeral = new GastosGeraisBean();
                 gastoGeral.setId(resultSet.getInt("id"));
-                gastoGeral.setManutencao_equipamentos(resultSet.getDouble("manutencao_equipamentos"));
+                gastoGeral.setManutencaoEquipamentos(resultSet.getDouble("manutencaoEquipamentos"));
                 gastoGeral.setLimpeza(resultSet.getDouble("limpeza"));
-                gastoGeral.setManutencao_estrutura(resultSet.getDouble("manutencao_estrutura"));
+                gastoGeral.setManutencaoEstrutura(resultSet.getDouble("manutencaoEstrutura"));
                 gastoGeral.setAlimentacao(resultSet.getDouble("alimentacao"));
-                gastoGeral.setMateriais_de_consumo(resultSet.getDouble("materiais_de_consumo"));
+                gastoGeral.setMateriaisDeConsumo(resultSet.getDouble("materiaisDeConsumo"));
                 gastoGeral.setMedicamentos(resultSet.getDouble("medicamentos"));
                 gastoGeral.setImprevistos(resultSet.getDouble("imprevistos"));
                 gastoGeral.setTotal(resultSet.getDouble("total"));
@@ -78,14 +78,14 @@ public class GastosGeraisDAO {
     }
 
     public int adicionar(GastosGeraisBean gastoGeral) {
-        String sql = "INSERT INTO gastoGeral(manutencao_equipamentos, limpeza, menutencao_estrutura, alimentacao, materiais_de_consumo, medicamentos, imprevistos, total) VALUES(?,?,?,?,?,?,?,?)";
+        String sql = "INSERT INTO gastoGeral(manutencaoEquipamentos, limpeza, menutencaoEstrutura, alimentacao, materiaisDeConsumo, medicamentos, imprevistos, total) VALUES(?,?,?,?,?,?,?,?)";
         try {
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql, RETURN_GENERATED_KEYS);
-            ps.setDouble(1, gastoGeral.getManutencao_equipamentos());
+            ps.setDouble(1, gastoGeral.getManutencaoEquipamentos());
             ps.setDouble(2, gastoGeral.getLimpeza());
-            ps.setDouble(3, gastoGeral.getManutencao_estrutura());
+            ps.setDouble(3, gastoGeral.getManutencaoEstrutura());
             ps.setDouble(4, gastoGeral.getAlimentacao());
-            ps.setDouble(5, gastoGeral.getMateriais_de_consumo());
+            ps.setDouble(5, gastoGeral.getMateriaisDeConsumo());
             ps.setDouble(6, gastoGeral.getMedicamentos());
             ps.setDouble(6, gastoGeral.getImprevistos());
             ps.setDouble(7, gastoGeral.getTotal());
@@ -104,13 +104,13 @@ public class GastosGeraisDAO {
 
     public boolean alterar(GastosGeraisBean gastoGeral) {
         try {
-            String sql = "UPDATE gastoGeral SET manutencao_equipamentos = ?, limpeza = ?, menutencao_estrutura = ?, alimentacao = ?, materiais_de_consumo = ?, medicamentos = ?, imprevistos = ?, total = ? WHERE id = ?";
+            String sql = "UPDATE gastoGeral SET manutencaoEquipamentos = ?, limpeza = ?, menutencaoEstrutura = ?, alimentacao = ?, materiaisDeConsumo = ?, medicamentos = ?, imprevistos = ?, total = ? WHERE id = ?";
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);
-            ps.setDouble(1, gastoGeral.getManutencao_equipamentos());
+            ps.setDouble(1, gastoGeral.getManutencaoEquipamentos());
             ps.setDouble(2, gastoGeral.getLimpeza());
-            ps.setDouble(3, gastoGeral.getManutencao_estrutura());
+            ps.setDouble(3, gastoGeral.getManutencaoEstrutura());
             ps.setDouble(4, gastoGeral.getAlimentacao());
-            ps.setDouble(5, gastoGeral.getMateriais_de_consumo());
+            ps.setDouble(5, gastoGeral.getMateriaisDeConsumo());
             ps.setDouble(6, gastoGeral.getMedicamentos());
             ps.setDouble(6, gastoGeral.getImprevistos());
             ps.setDouble(7, gastoGeral.getTotal());

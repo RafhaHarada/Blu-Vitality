@@ -16,18 +16,24 @@
 <%@include file="../model/headerEnd.jsp" %>
 <!--%@include file="../model/sessionConfirm.jsp" %-->
 <div class="row">
-<a href="index.jsp" class="waves-effect waves-light teal lighten-2 btn-small right" id="btnAdm">Voltar</a>
-<div class="" style="margin-top: auto">
-    <div class="divider"></div>
-    <ul class="tabs tabs-transparent center ">
-        <li class="tab"><a href="#InicioADM" class="active red-text waves-effect">Gastos funcionários</a></li>
-        <li class="tab"><a href="#listapaciente" class="red-text waves-effect">Contas</a></li>
-        <li class="tab"><a href="#lisfuncionarios" class="red-text waves-effect">Gastos gerais</a></li>
-        <li class="tab"><a href="#hospitalQuartos" class="red-text waves-effect atualizaTabFunc">Investimentos</a></li>
-        <li class="tab"><a href="#hospitalPendencias" class="red-text waves-effect">Orçamento</a></li>
-        <li class="tab"><a href="#hospitalEquipamentos" class="red-text waves-effect">Custo E Receita</a></li>
-        <li class="tab"><a href="#hospitalEventos" class="red-text waves-effect">Lucro</a></li>
-    </ul>
-</div>
+    <a href="index.jsp" class="waves-effect waves-light teal lighten-2 btn-small right" id="btnAdm">Voltar</a>
+    <div class="" style="margin-top: auto">
+        <div class="divider"></div>
+        <ul class="tabs tabs-transparent center ">
+            <li class="tab"><a href="#InicioADM" class="active red-text waves-effect">Gastos funcionários</a></li>
+            <li class="tab"><a href="#listapaciente" class="red-text waves-effect">Contas</a></li>
+            <li class="tab"><a href="#lisfuncionarios" class="red-text waves-effect">Gastos gerais</a></li>
+            <li class="tab"><a href="#hospitalQuartos" class="red-text waves-effect atualizaTabFunc">Investimentos</a></li>
+            <li class="tab"><a href="#hospitalPendencias" class="red-text waves-effect">Orçamento</a></li>
+            <li class="tab"><a href="#hospitalEquipamentos" class="red-text waves-effect">Custo E Receita</a></li>
+            <li class="tab"><a href="#hospitalEventos" class="red-text waves-effect">Lucro</a></li>
+        </ul>
+        <div class="divider"></div>
+        <div id="InicioADM" class="col s12 container">
+            <%@include file="financas/gastos-funcionarios.jsp" %>
+            <div class="row" id="div-bemvindo"> 
+            </div>
+        </div>
+    </div>
 </div>
 <%@include file="../model/footer.jsp" %> 

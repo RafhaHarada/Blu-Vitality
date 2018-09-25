@@ -26,16 +26,16 @@ public class GastosFuncionariosDAO {
             while (resultSet.next()) {
                 GastosFuncionariosBean gastoFuncionario = new GastosFuncionariosBean();
                 gastoFuncionario.setId(resultSet.getInt("id"));
-                gastoFuncionario.setSalario_mensal(resultSet.getDouble("salario_mensal"));
-                gastoFuncionario.setFerias_anuais_remuneradas(resultSet.getDouble("ferias_anuais_remuneradas"));
-                gastoFuncionario.setUm_terco_sobre_ferias(resultSet.getDouble("um_terco_sobre_ferias"));
-                gastoFuncionario.setDecimo_terceiro_salario(resultSet.getDouble("decimo_terceiro_salario"));
-                gastoFuncionario.setAviso_previo(resultSet.getDouble("aviso_previo"));
+                gastoFuncionario.setSalarioMensal(resultSet.getDouble("salarioMensal"));
+                gastoFuncionario.setFeriasAnuaisRemuneradas(resultSet.getDouble("feriasAnuaisRemuneradas"));
+                gastoFuncionario.setUmTercoSobreFerias(resultSet.getDouble("umTercoSobreFerias"));
+                gastoFuncionario.setDecimoTerceiroSalario(resultSet.getDouble("decimoTerceiroSalario"));
+                gastoFuncionario.setAvisoPrevio(resultSet.getDouble("avisoPrevio"));
                 gastoFuncionario.setFgts(resultSet.getDouble("fgts"));
-                gastoFuncionario.setMulta_fgts(resultSet.getDouble("multa_fgts"));
+                gastoFuncionario.setMultaFgts(resultSet.getDouble("multaFgts"));
                 gastoFuncionario.setInss(resultSet.getDouble("inss"));
-                gastoFuncionario.setVale_transporte(resultSet.getDouble("vale_transporte"));
-                gastoFuncionario.setVale_refeicao(resultSet.getDouble("vale_refeicao"));
+                gastoFuncionario.setValeTransporte(resultSet.getDouble("valeTransporte"));
+                gastoFuncionario.setValeRefeicao(resultSet.getDouble("valeRefeicao"));
                 gastoFuncionario.setTotal(resultSet.getDouble("total"));
                 gastosFuncionarios.add(gastoFuncionario);
             }
@@ -49,8 +49,8 @@ public class GastosFuncionariosDAO {
 
     public GastosFuncionariosBean obterPeloId(int id) {
         GastosFuncionariosBean gastoFuncionario = null;
-        String sql = "SELECT salario_mensal, ferias_anuais_remuneradas, um_terco_sobre_ferias, decimo_terceiro_salario, "
-                + "aviso_previo, fgts, multa_fgts, inss, vale_transporte, vale_refeicao, total FROM gastosFuncionarios WHERE id = ?";
+        String sql = "SELECT salarioMensal, feriasAnuaisRemuneradas, umTercoSobreFerias, decimoTerceiroSalario, "
+                + "avisoPrevio, fgts, multaFgts, inss, valeTransporte, valeRefeicao, total FROM gastosFuncionarios WHERE id = ?";
                 
         try {
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);
@@ -60,16 +60,16 @@ public class GastosFuncionariosDAO {
             while (resultSet.next()) {
                 gastoFuncionario = new GastosFuncionariosBean();
                 gastoFuncionario.setId(resultSet.getInt("id"));
-                gastoFuncionario.setSalario_mensal(resultSet.getDouble("salario_mensal"));
-                gastoFuncionario.setFerias_anuais_remuneradas(resultSet.getDouble("ferias_anuais_remuneradas"));
-                gastoFuncionario.setUm_terco_sobre_ferias(resultSet.getDouble("um_terco_sobre_ferias"));
-                gastoFuncionario.setDecimo_terceiro_salario(resultSet.getDouble("decimo_terceiro_salario"));
-                gastoFuncionario.setAviso_previo(resultSet.getDouble("aviso_previo"));
-                gastoFuncionario.setMulta_fgts(resultSet.getDouble("multa_fgts"));
+                gastoFuncionario.setSalarioMensal(resultSet.getDouble("salarioMensal"));
+                gastoFuncionario.setFeriasAnuaisRemuneradas(resultSet.getDouble("feriasAnuaisRemuneradas"));
+                gastoFuncionario.setUmTercoSobreFerias(resultSet.getDouble("umTercoSobreFerias"));
+                gastoFuncionario.setDecimoTerceiroSalario(resultSet.getDouble("decimoTerceiroSalario"));
+                gastoFuncionario.setAvisoPrevio(resultSet.getDouble("avisoPrevio"));
                 gastoFuncionario.setFgts(resultSet.getDouble("fgts"));
+                gastoFuncionario.setMultaFgts(resultSet.getDouble("multaFgts"));
                 gastoFuncionario.setInss(resultSet.getDouble("inss"));
-                gastoFuncionario.setVale_transporte(resultSet.getDouble("vale_transporte"));
-                gastoFuncionario.setVale_refeicao(resultSet.getDouble("vale_refeicao"));
+                gastoFuncionario.setValeTransporte(resultSet.getDouble("valeTransporte"));
+                gastoFuncionario.setValeRefeicao(resultSet.getDouble("valeRefeicao"));
                 gastoFuncionario.setTotal(resultSet.getDouble("total"));
             }
         } catch (SQLException e) {
@@ -81,22 +81,22 @@ public class GastosFuncionariosDAO {
     }
 
     public int adicionar(GastosFuncionariosBean gastoFuncionario) {
-        String sql = "INSERT INTO gastoFuncioario(salario_mensal, ferias_anuais_remuneradas, um_terco_sobre_ferias, decimo_terceiro_salario, "
-                + "aviso_previo, fgts, multa_fgts, inss, vale_transporte, vale_refeicao, total) VALUES(?,?,?,?,?,?,?,?,?,?,?)";
+        String sql = "INSERT INTO gastoFuncioario(salarioMensal, feriasAnuaisRemuneradas, umTercoSobreFerias, decimoTerceiroSalario, "
+                + "avisoPrevio, fgts, multaFgts, inss, valeTransporte, valeRefeicao, total) VALUES(?,?,?,?,?,?,?,?,?,?,?)";
                 
         try {
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql, RETURN_GENERATED_KEYS);
-            ps.setDouble(1, gastoFuncionario.getSalario_mensal());
-            ps.setDouble(2, gastoFuncionario.getFerias_anuais_remuneradas());
-            ps.setDouble(3, gastoFuncionario.getUm_terco_sobre_ferias());
-            ps.setDouble(4, gastoFuncionario.getDecimo_terceiro_salario());
-            ps.setDouble(5, gastoFuncionario.getAviso_previo());
-            ps.setDouble(8, gastoFuncionario.getMulta_fgts());
-            ps.setDouble(12, gastoFuncionario.getFgts());
-            ps.setDouble(14, gastoFuncionario.getInss());
-            ps.setDouble(16, gastoFuncionario.getVale_transporte());
-            ps.setDouble(17, gastoFuncionario.getVale_refeicao());
-            ps.setDouble(18, gastoFuncionario.getTotal());
+            ps.setDouble(1, gastoFuncionario.getSalarioMensal());
+            ps.setDouble(2, gastoFuncionario.getFeriasAnuaisRemuneradas());
+            ps.setDouble(3, gastoFuncionario.getUmTercoSobreFerias());
+            ps.setDouble(4, gastoFuncionario.getDecimoTerceiroSalario());
+            ps.setDouble(5, gastoFuncionario.getAvisoPrevio());
+            ps.setDouble(8, gastoFuncionario.getMultaFgts());
+            ps.setDouble(9, gastoFuncionario.getFgts());
+            ps.setDouble(10, gastoFuncionario.getInss());
+            ps.setDouble(11, gastoFuncionario.getValeTransporte());
+            ps.setDouble(12, gastoFuncionario.getValeRefeicao());
+            ps.setDouble(13, gastoFuncionario.getTotal());
             ps.execute();
             ResultSet resultSet = ps.getGeneratedKeys();
             if (resultSet.next()) {
@@ -112,22 +112,22 @@ public class GastosFuncionariosDAO {
 
     public boolean alterar(GastosFuncionariosBean gastoFuncionario) {
         try {
-            String sql = "UPDATE gastoFuncionario SET salario_mensal = ?, ferias_anuais_remuneradas = ?, um_terco_sobre_ferias = ?, decimo_terceiro_salario = ?, "
-                    + "aviso_previo = ?, fgts, multa_fgts = ?, inss = ?, vale_transporte = ?, vale_refeicao = ?, total = ? WHERE id = ?";
+            String sql = "UPDATE gastoFuncionario SET salarioMensal = ?, feriasAnuaisRemuneradas = ?, umTercoSobreFerias = ?, decimoTerceiroSalario = ?, "
+                    + "avisoPrevio = ?, fgts, multaFgts = ?, inss = ?, valeTransporte = ?, valeRefeicao = ?, total = ? WHERE id = ?";
                     
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);
-            ps.setDouble(1, gastoFuncionario.getSalario_mensal());
-            ps.setDouble(2, gastoFuncionario.getFerias_anuais_remuneradas());
-            ps.setDouble(3, gastoFuncionario.getUm_terco_sobre_ferias());
-            ps.setDouble(4, gastoFuncionario.getDecimo_terceiro_salario());
-            ps.setDouble(5, gastoFuncionario.getAviso_previo());
-            ps.setDouble(8, gastoFuncionario.getMulta_fgts());
-            ps.setDouble(12, gastoFuncionario.getFgts());
-            ps.setDouble(14, gastoFuncionario.getInss());
-            ps.setDouble(16, gastoFuncionario.getVale_transporte());
-            ps.setDouble(17, gastoFuncionario.getVale_refeicao());
-            ps.setDouble(18, gastoFuncionario.getTotal());
-            ps.setInt(19, gastoFuncionario.getId());
+            ps.setDouble(1, gastoFuncionario.getSalarioMensal());
+            ps.setDouble(2, gastoFuncionario.getFeriasAnuaisRemuneradas());
+            ps.setDouble(3, gastoFuncionario.getUmTercoSobreFerias());
+            ps.setDouble(4, gastoFuncionario.getDecimoTerceiroSalario());
+            ps.setDouble(5, gastoFuncionario.getAvisoPrevio());
+            ps.setDouble(8, gastoFuncionario.getMultaFgts());
+            ps.setDouble(9, gastoFuncionario.getFgts());
+            ps.setDouble(10, gastoFuncionario.getInss());
+            ps.setDouble(11, gastoFuncionario.getValeTransporte());
+            ps.setDouble(12, gastoFuncionario.getValeRefeicao());
+            ps.setDouble(13, gastoFuncionario.getTotal());
+            ps.setInt(14, gastoFuncionario.getId());
 
             return ps.executeUpdate() == 1;
         } catch (SQLException e) {

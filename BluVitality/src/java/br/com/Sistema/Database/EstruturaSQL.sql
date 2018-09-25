@@ -42,16 +42,17 @@ INSERT INTO usuarios (nome,estado_civil,idade,sexo,login,senha,cpf,rg,telefone,e
 CREATE TABLE cargos(
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100),
+    especialidade VARCHAR(100),
     salario DOUBLE,
     carga_horaria TIME
 );
 
-INSERT INTO cargos (nome,salario,carga_horaria) VALUES
-('Medico',99999.05,'20:00:00'),
-('Gerente',999999.05,'10:00:00'),
-('Administrador',9999999.05,'03:00:00'),
-('Recepcionista',2100,'08:00:00'),
-('Limpeza',1100,'08:00:00');
+INSERT INTO cargos (nome,especialidade,salario,carga_horaria) VALUES
+('Medico','Cadiologista',99999.05,'20:00:00'),
+('Gerente','',999999.05,'10:00:00'),
+('Administrador','',9999999.05,'03:00:00'),
+('Recepcionista','',2100,'08:00:00'),
+('Limpeza','',1100,'08:00:00');
 
 CREATE TABLE funcionarios(
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -105,16 +106,17 @@ CREATE TABLE expedicao(
     tipo VARCHAR(100),
     nome VARCHAR(100),
     data_expedicao DATE,
+    hora_expedicao TIME,
     custo DOUBLE,
     FOREIGN KEY(id_usuario) REFERENCES usuarios(id),
     FOREIGN KEY(id_funcionario) REFERENCES funcionarios(id)
 );
 
-INSERT INTO expedicao (id_usuario,id_funcionario,tipo,nome,data_expedicao,custo) VALUES
-(1,2,'Exame','blabla','2018-09-10',250000),
-(3,4,'Exame','blabla2','2018-10-01',100000),
-(2,3,'Consulta','blabla3','2018-10-16',350),
-(4,2,'Consulta','blabla4','2018-10-21',590);
+INSERT INTO expedicao (id_usuario,id_funcionario,tipo,nome,data_expedicao,hora_expedicao,custo) VALUES
+(1,5,'Exame','blabla','2018-09-10','10:00:00',250000),
+(2,5,'Exame','blabla2','2018-10-01','10:30:00',100000),
+(3,5,'Consulta','blabla3','2018-10-16','14:00:00',350),
+(4,5,'Consulta','blabla4','2018-10-21','16:00:00',590);
 
 CREATE TABLE quartos(
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -124,13 +126,15 @@ CREATE TABLE quartos(
     tipo VARCHAR(100),
     data_entrada DATE,
     data_saida DATE,
-    status VARCHAR(100),
+    estado VARCHAR(100),
     FOREIGN KEY(id_usuario) REFERENCES usuarios(id),
     FOREIGN KEY(id_funcionario) REFERENCES funcionarios(id)
 );
-INSERT INTO quartos (id_usuario, id_funcionario, numero_quarto, tipo ,data_entrada, data_saida, status) VALUES
-(1, 2, 1001,'UTI','2018-09-20','2018-09-10','ativo'),
-(3, 4, 1002,'UTI','2018-10-11','2018-10-03','inativo');
+INSERT INTO quartos (id_usuario, id_funcionario, numero_quarto, tipo ,data_entrada, data_saida, estado) VALUES
+(1, 5, 1001,'UTI','2018-09-20','2018-09-10','ativo'),
+(2, 5, 1002,'UTI','2018-09-20','2018-09-10','ativo'),
+(3, 5, 1003,'UTI','2018-10-11','2018-10-03','inativo'),
+(4, 5, 1004,'UTI','2018-10-11','2018-10-03','inativo');
 
 CREATE TABLE gastosFuncionarios(
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -139,16 +143,9 @@ CREATE TABLE gastosFuncionarios(
     um_terco_sobre_ferias  DOUBLE NOT NULL,
     decimo_terceiro_salario  DOUBLE NOT NULL,
     aviso_previo  DOUBLE NOT NULL,
-    fgts_sobre_salario_mensal  DOUBLE NOT NULL,
-    fgts_sobre_decimo_terceiro_aviso_previo_ferias  DOUBLE NOT NULL,
+    fgts  DOUBLE NOT NULL,
     multa_fgts  DOUBLE NOT NULL,
-    ferias_sobre_aviso_previo  DOUBLE NOT NULL,
-    decimo_terceiro_sobre_aviso_previo DOUBLE NOT NULL,
-    um_terco_ferias_sobre_aviso_previo DOUBLE NOT NULL,
-    fgts_sobre_recisao DOUBLE NOT NULL,
-    inss_sobre_salario DOUBLE NOT NULL,
-    inss_sobre_ferias_e_decimo_terceiro DOUBLE NOT NULL,
-    indenizacao_um_dia_de_salario DOUBLE NOT NULL,
+    inss DOUBLE NOT NULL,
     total DOUBLE NOT NULL
 );
 
