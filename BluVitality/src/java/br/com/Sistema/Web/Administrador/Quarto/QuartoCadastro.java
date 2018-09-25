@@ -27,7 +27,7 @@ public class QuartoCadastro extends HttpServlet{
         List<QuartoBean> quarto = new QuartoDAO().obterTodos();
         
         resp.setContentType("text/html;charset=UTF-8");
-        req.getRequestDispatcher("../administrador/hospital.jsp").include(req, resp);
+        req.getRequestDispatcher("../administrador").include(req, resp);
         
     }
     
