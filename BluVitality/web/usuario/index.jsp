@@ -4,6 +4,11 @@
     Author     : @Nattana Matos
                  @Rafael Alipio Harada (rafhaharada@gmail.com)
 --%>
+<%@page import="br.com.Sistema.Bean.QuartoBean"%>
+<%@page import="br.com.Sistema.DAO.QuartoDAO"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.Date"%>
+<%@page import="java.text.DateFormat"%>
 <%@page import="br.com.Sistema.DAO.ExpedicaoDAO"%>
 <%@page import="br.com.Sistema.Bean.ExpedicaoBean"%>
 <jsp:include page="../model/headerStart.jsp"/>
@@ -126,13 +131,13 @@
     </nav>
     <div>
         <label>
-            <input class="with-gap exameRadio" name="group1" type="radio" >
+            <input class="with-gap exameRadio" name="exame" type="radio" >
             <span class="teal-text">Exame</span>
         </label>
     </div>
     <div>
         <label>
-            <input class="with-gap consultaRadio" name="group1" type="radio" >
+            <input class="with-gap consultaRadio" name="consulta" type="radio" >
             <span class="teal-text">Consulta</span>
         </label>
     </div>
@@ -141,29 +146,29 @@
         <form action="" method="">
             <div class="row">
                 <div class="input-field col s12">
-                    <textarea id="textarea1" name="informeexames" class="materialize-textarea"></textarea>
+                    <textarea id="textarea1" name="informeExames" class="materialize-textarea"></textarea>
                     <label class="teal-text lighten-4" for="textarea1">Informe o nome dos exames</label>
                 </div>
             </div>
             <div class="row">
                 <div class="col s5 left">
                     <span class="teal-text teatl lighten-4">Qual a data de sua preferência?<span class="red-text">*</span></span>
-                    <input id="data-exame" type="text"name="dataexame" class="datepicker">
+                    <input id="data-exame" type="text"name="dataExame" class="datepicker">
                 </div>
                 <div class="col s5 right">
                     <label class="teal-text">Escolha o horário desejado</label>
-                    <select class="browser-default row">
+                    <select id="horario-exame" name="horarioExame" class="browser-default row">
                         <option value="" disabled selected>Horários</option>
-                        <option value="1">Option 1</option>
-                        <option value="2">Option 2</option>
-                        <option value="3">Option 3</option>
-                        <option value="3">Option 3</option>
-                        <option value="3">Option 3</option>
-                        <option value="3">Option 3</option>
-                        <option value="3">Option 3</option>
-                        <option value="3">Option 3</option>
-                        <option value="3">Option 3</option>
-                        <option value="3">Option 3</option>
+                        <option value="1">9:00</option>
+                        <option value="2">9:00</option>
+                        <option value="3">9:00</option>
+                        <option value="4">9:00</option>
+                        <option value="5">9:00</option>
+                        <option value="6">9:00</option>
+                        <option value="7">9:00</option>
+                        <option value="8">9:00</option>
+                        <option value="9">9:00</option>
+                        <option value="10">9:00</option>
                     </select>
                 </div>
             </div>
@@ -172,19 +177,19 @@
             </div>
             <div>
                 <label class="teal-text">
-                    <input id="exame-convenio" name ="convenio" type="checkbox" class="ativarConvenio">
+                    <input id="exame-convenio" name="convenio" type="checkbox" class="ativarConvenio">
                     <span>Convênio</span>
                 </label>
             </div>
             <div>
                 <label class="teal-text">
-                    <input id="exame-particular"name="particular" type="checkbox" >
+                    <input id="exame-particular" name="particular" type="checkbox" >
                     <span>Particular</span>
                 </label>
             </div>
             <div>
                 <label class="teal-text">
-                    <input id="exame-sus"name="sus" type="checkbox" >
+                    <input id="exame-sus" name="sus" type="checkbox" >
                     <span>SUS</span>
                 </label>
             </div>
@@ -193,13 +198,13 @@
             </div>
             <div>
                 <label class="teal-text">
-                    <input id="exame-telefone"name="telefone" type="checkbox">
+                    <input id="exame-telefone" name="telefone" type="checkbox">
                     <span>Telefone</span>
                 </label>
             </div>
             <div>
                 <label class="teal-text">
-                    <input id="exame-email"name="email" type="checkbox" >
+                    <input id="exame-email" name="email" type="checkbox" >
                     <span>Email</span>
                 </label>
             </div>
@@ -232,32 +237,32 @@
 
             <div class="row">
                 <div class="col s12">
-                    <label class="teal-text">Escolha a especialide</label>
-                    <select class="browser-default row">
+                    <label  class="teal-text">Escolha a especialide</label>
+                    <select id="especialidade-consulta" name="escolhaespecialidade" class="browser-default row">
                         <option value="" disabled selected>Especialidades</option>
                         <option value="1">Clínico geral</option>
                         <option value="2">Cardiologista</option>
                         <option value="3">Endocrinologista</option>
-                        <option value="3">Ginecologista</option>
-                        <option value="3">Oftalmologista</option>
-                        <option value="3">Ortopedista</option>
-                        <option value="3">Otorrinolaringologista</option>
-                        <option value="3">Psiquiatra</option>
+                        <option value="4">Ginecologista</option>
+                        <option value="5">Oftalmologista</option>
+                        <option value="6">Ortopedista</option>
+                        <option value="7">Otorrinolaringologista</option>
+                        <option value="8">Psiquiatra</option>
                     </select>
                 </div>
             </div>
             <div class="row">
                 <div class="col s12">
                     <label class="teal-text">Escolha o médico</label>
-                    <select class="browser-default row">
+                    <select id="medico-consulta" name="medicosconsulta" class="browser-default row">
                         <option value="" disabled selected>Médicos</option>
                         <option value="1">Option 1</option>
                         <option value="2">Option 2</option>
                         <option value="3">Option 3</option>
-                        <option value="3">Option 3</option>
-                        <option value="3">Option 3</option>
-                        <option value="3">Option 3</option>
-                        <option value="3">Option 3</option>
+                        <option value="4">Option 3</option>
+                        <option value="5">Option 3</option>
+                        <option value="6">Option 3</option>
+                        <option value="7">Option 3</option>
                     </select>
                 </div>
             </div>
@@ -269,18 +274,18 @@
 
                 <div class="col s5 right">
                     <label class="teal-text">Escolha o horário desejado</label>
-                    <select class="browser-default row">
+                    <select id="horario-consulta" name="horarioconsulta" class="browser-default row">
                         <option value="" disabled selected>Horários</option>
                         <option value="1">Option 1</option>
                         <option value="2">Option 2</option>
                         <option value="3">Option 3</option>
-                        <option value="3">Option 3</option>
-                        <option value="3">Option 3</option>
-                        <option value="3">Option 3</option>
-                        <option value="3">Option 3</option>
-                        <option value="3">Option 3</option>
-                        <option value="3">Option 3</option>
-                        <option value="3">Option 3</option>
+                        <option value="4">Option 3</option>
+                        <option value="5">Option 3</option>
+                        <option value="5">Option 3</option>
+                        <option value="6">Option 3</option>
+                        <option value="7">Option 3</option>
+                        <option value="8">Option 3</option>
+                        <option value="9">Option 3</option>
                     </select>
                 </div>
             </div>
@@ -290,7 +295,7 @@
             </div>
             <div>
                 <label class="teal-text">
-                    <input id="consulta-convenio" name ="convenio" type="checkbox" class="ativarConvenio">
+                    <input id="consulta-convenio" name="convenio" type="checkbox" class="ativarConvenio">
                     <span>Convênio</span>
                 </label>
             </div>
@@ -317,6 +322,7 @@
                     <span>Telefone</span>
                 </label>
             </div>
+
             <div>
                 <label class="teal-text">
                     <input id="consulta-email" name="email" type="checkbox" >
@@ -339,14 +345,11 @@
         </form>
     </div>
 </div>
-
-
-
 <div id="Usuario4" class="col s12 container white">
     <table class="striped teal lighten-4">
         <thead>
             <tr>
-                <th>Descrição</th>
+                <th>Tipo</th>
                 <th>Médico|Especialidade</th>
                 <th>Data</th>
                 <th>Hora</th>
@@ -356,37 +359,38 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Consulta</td>
-                <td>Dr. Eclair souza ramos | Cardiologista</td>
-                <td>30/08/2018</td>
-                <td>10:00</td>
-                <td>12</td>
-                <td> <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a></td>
-                <td> <a href="#!" class="secondary-content"><i class="material-icons">delete_forever</i></a></td>
-            </tr>
-            <% 
+            <%
+                DateFormat formatoEn = new SimpleDateFormat("yyyy/MM/dd");
+                DateFormat formatoBr = new SimpleDateFormat("dd/MM/yyyy");
+                Date hoje = new Date();
                 List<ExpedicaoBean> expedicoes = new ExpedicaoDAO().obterTodos();
                 for (int i = 0; i < expedicoes.size(); i++) {
+                    if (expedicoes.get(i).getData_expedicao().after(formatoEn.parse(formatoEn.format(hoje)))) {
+                        String especialidade = expedicoes.get(i).getFuncionario().getCargo().getEspecialidade();
+                        String medico = expedicoes.get(i).getFuncionario().getUsuario().getNome();
+                        String medicoEspecialidade = medico + "|" + especialidade;
+
+                        String data = formatoBr.format(expedicoes.get(i).getData_expedicao());
+                        QuartoBean quarto = new QuartoDAO().obterPeloId(usuario.getId());
+                        int numeroQuarto = quarto.getNumero_quarto();
             %>
             <tr>
-            <td><%=expedicoes.get(i).getId()%></td>
-                <td><%=expedicoes.get(i).getId()%></td>
-                <td><%=expedicoes.get(i).getId()%></td>
-                <td><%=expedicoes.get(i).getId()%></td>
-                <td><%=expedicoes.get(i).getNome()%></td>
+                <td><%=expedicoes.get(i).getTipo()%></td>
+                <td><%=medicoEspecialidade%></td>
+                <td><%=data%></td>
+                <td><%=expedicoes.get(i).getHora_expedicao()%></td>
+                <td><%=numeroQuarto%></td>
                 <td>
-                    <a href="/consulta/editar?id=<%=expedicoes.get(i).getId()%>">Editar</a>
-                    <a href="/consulta/excluir?id=<%=expedicoes.get(i).getId()%>">Excluir</a>
+                    <a href="/consulta/editar?id=<%=expedicoes.get(i).getId()%>"><i class="material-icons">edit</i></a>
+                    <a href="/consulta/excluir?id=<%=expedicoes.get(i).getId()%>"><i class="material-icons">delete_forever</i></a>
                 </td>
             </tr>
-            <%}%>
-
+            <%}
+                }%>
         </tbody>
     </table>
 </div>
 <div id="Usuario5" class="col s12 container white">
-
     <table class="striped teal lighten-4">
         <thead>
             <tr>
@@ -394,41 +398,30 @@
                 <th>Médico | Especialidade</th>
                 <th>Data</th>
                 <th>Horário</th>
-                <th>Status</th>
             </tr>
         </thead>
-
         <tbody>
             <tr>
-                <td>Alvin</td>
-                <td>Eclair</td>
-                <td>$0.87</td>
-                <td>$0.87</td>
-                <td>$0.87</td>
-            </tr>
+                <%
+                    for (int i = 0; i < expedicoes.size(); i++) {
+                        if (expedicoes.get(i).getData_expedicao().before(formatoEn.parse(formatoEn.format(hoje)))) {
+                            String especialidade = expedicoes.get(i).getFuncionario().getCargo().getEspecialidade();
+                            String medico = expedicoes.get(i).getFuncionario().getUsuario().getNome();
+                            String medicoEspecialidade = medico + "|" + especialidade;
+                            String data = formatoBr.format(expedicoes.get(i).getData_expedicao());
+                %>
             <tr>
-                <td>Alan</td>
-                <td>Jellybean</td>
-                <td>$3.76</td>
-                <td>$3.76</td>
-                <td>$3.76</td>
+                <td><%=expedicoes.get(i).getTipo()%></td>
+                <td><%=medicoEspecialidade%></td>
+                <td><%=data%></td>
+                <td><%=expedicoes.get(i).getHora_expedicao()%></td>
             </tr>
-            <tr>
-                <td>Jonathan</td>
-                <td>Lollipop</td>
-                <td>$7.00</td>
-                <td>$7.00</td>
-                <td>$7.00</td>
+            <%}
+                }%>
             </tr>
         </tbody>
     </table>                                   
 
 
 </div>
-<br>
-<br>
-<br>
-<br>
-<br>
-
 <jsp:include page="../model/footer.jsp"/>
