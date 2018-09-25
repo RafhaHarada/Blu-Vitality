@@ -9,7 +9,6 @@ $(function () {
 
     $('.slider').slider();
 
-    //Menu retratil
     $('.collapsible').collapsible({
         onOpenEnd: function () {
             atualizaTab();
@@ -19,18 +18,14 @@ $(function () {
         }
     });
 
-    //modal
     $('.modal').modal();
 
-    //Efeito parallax
     $('.parallax').parallax();
 
     $('select').formSelect({
         direction: 'left'
-
     });
 
-    //Mobile Nav Menu
     $('.sidenav').sidenav({
         preventScrolling: true
     });
@@ -113,40 +108,6 @@ $(function () {
         instance.updateTabIndicator();
     }
 
-    $(".agendarE").hide();
-    $(".agendarC").hide();
-
-    $(".exameRadio").on("click", function () {
-        $(".agendarE").show();
-        $(".agendarC").hide();
-        atualizaTab();
-
-    });
-
-    $(".tipoConvenio").hide();
-
-    if ($(".ativarConvenio").attr("checked")) {
-        $(".tipoConvenio").show();
-    } else {
-        $(".tipoConvenio").hide();
-    }
-
-
-    $(".consultaRadio").on("click", function () {
-        $(".agendarC").show();
-        $(".agendarE").hide();
-        atualizaTab();
-    });
-
-    $(".tipoConvenio").hide();
-
-    if ($(".ativarConvenio").attr("checked")) {
-        $(".tipoConvenio").show();
-    } else {
-        $(".tipoConvenio").hide();
-    }
-
-
     $('.g-signin2').click(function () {
         // signInCallback defined in step 6.
         auth2.grantOfflineAccess().then(signInCallback);
@@ -172,8 +133,7 @@ $(function () {
         console.log("~ le Tolkien: " + LoR);
         response.getAuthResponse().sendRedirect(LoRName);
 
-    }
-    ;
+    };
 
     function signOut() {
         var auth2 = gapi.auth2.getAuthInstance();

@@ -19,7 +19,26 @@ function validacaoTipoArquivo() {
 function validacaoEmBranco(id, campo) {
     var emBranco = document.getElementById(id).value;
     if (emBraco === "") {
-        M.toast({html: '<span class="red-text">O campo ' +campo+ ' não pode estar vazio<span>'});
+        M.toast({html: '<span class="red-text">O campo ' + campo + ' não pode estar vazio<span>'});
         return;
     }
 }
+
+
+$(function () {
+    $(".agendarE").hide();
+    $(".agendarC").hide();
+
+    $(".exameRadio").on("click", function () {
+        $(".agendarE").show();
+        $(".agendarC").hide();
+        atualizaTab();
+
+    });
+
+    $(".consultaRadio").on("click", function () {
+        $(".agendarC").show();
+        $(".agendarE").hide();
+        atualizaTab();
+    });
+});
