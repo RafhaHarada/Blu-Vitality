@@ -31,12 +31,7 @@
         <link rel='stylesheet' type='text/css' href='../resources/css/select2.min.css'>
         <link rel='stylesheet' type='text/css' href='../resources/css/jquery.dataTables.min.css'>
     </head>
-    <body>
-        <!--div  class = " preloader-wrapper " >
-        <div  class = " preloader " >
-            <i class="material-icons ld ld-cycle" >loop</i>
-        </div >
-        </div -->
+    <body onload="atualizaTab()">
         <!--Cabeçalho-->
         <header>
             <nav class='nav-extended white lighten-2 z-depth-0'>

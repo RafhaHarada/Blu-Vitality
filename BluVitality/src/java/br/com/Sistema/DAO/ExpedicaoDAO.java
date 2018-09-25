@@ -33,7 +33,7 @@ public class ExpedicaoDAO {
                 expedicao.setHora_expedicao(resultSet.getTime("hora_expedicao"));
                 expedicao.setCusto(resultSet.getDouble("custo"));
                 
-                UsuariosBean usuario = new UsuariosDAO().obterPeloId(resultSet.getInt("id_usuario"));
+                UsuariosBean usuario = new UsuarioDAO().obterPeloId(resultSet.getInt("id_usuario"));
                 expedicao.setUsuario(usuario);
                 
                 FuncionariosBean funcionario = new FuncionariosDAO().obterPeloIdUsuario(resultSet.getInt("id_funcionario"));
@@ -64,7 +64,7 @@ public class ExpedicaoDAO {
                 expedicao.setHora_expedicao(resultSet.getTime("ex.hora_expedicao"));
                 expedicao.setCusto(resultSet.getDouble("ex.custo"));
                 
-                UsuariosBean usuario = new UsuariosDAO().obterPeloId(resultSet.getInt("ex.id_usuario"));
+                UsuariosBean usuario = new UsuarioDAO().obterPeloId(resultSet.getInt("ex.id_usuario"));
                 expedicao.setUsuario(usuario);
                 
                 FuncionariosBean funcionario = new FuncionariosDAO().obterPeloIdUsuario(resultSet.getInt("ex.id_funcionario"));

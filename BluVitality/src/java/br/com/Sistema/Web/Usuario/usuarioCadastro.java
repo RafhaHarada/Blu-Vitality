@@ -1,7 +1,7 @@
 package br.com.Sistema.Web.Usuario;
 
 import br.com.Sistema.Bean.UsuariosBean;
-import br.com.Sistema.DAO.UsuariosDAO;
+import br.com.Sistema.DAO.UsuarioDAO;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.ServletException;
