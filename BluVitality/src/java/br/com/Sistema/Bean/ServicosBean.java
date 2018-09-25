@@ -11,7 +11,16 @@ public class ServicosBean {
     private int id_funcionario;
     private String nome;
     private String descricao;
-    private Date tempo_execucao;
+    private String tipo_de_urgencia;
+    //private Date tempo_execucao;
+
+    public String getTipo_de_urgencia() {
+        return tipo_de_urgencia;
+    }
+
+    public void setTipo_de_urgencia(String tipo_de_urgencia) {
+        this.tipo_de_urgencia = tipo_de_urgencia;
+    }
 
     public int getId() {
         return id;
@@ -45,12 +54,12 @@ public class ServicosBean {
         this.descricao = descricao;
     }
 
-    public Date getTempo_execucao() {
-        return tempo_execucao;
-    }
-
-    public void setTempo_execucao(Date tempo_execucao) {
-        this.tempo_execucao = tempo_execucao;
-    }
-    
+//    public Date getTempo_execucao() {
+//        return tempo_execucao;
+//    }
+//
+//    public void setTempo_execucao(Date tempo_execucao) {
+//        this.tempo_execucao = tempo_execucao;
+//    }
+//    
 }

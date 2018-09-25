@@ -23,10 +23,12 @@ public class ServicosUpdate extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        
         ServicosBean servico = new ServicosBean();
-        servico.setId(Integer.parseInt(req.getParameter("id")));
+        
         servico.setNome(req.getParameter("nome"));
         servico.setDescricao(req.getParameter("descricao"));
+        servico.setTipo_de_urgencia(req.getParameter("tipo_de_urgencia"));
 
         boolean alterou = new ServicosDAO().alterar(servico);
 

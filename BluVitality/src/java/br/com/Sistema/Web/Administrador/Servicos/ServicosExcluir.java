@@ -18,13 +18,20 @@ import javax.servlet.http.HttpServletResponse;
  * @author Gus
  */
 @WebServlet(urlPatterns="/servico/excluir")
-public class ServicoExcluir extends HttpServlet{
+public class ServicosExcluir extends HttpServlet{
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) 
             throws ServletException, IOException {
+        
         int id = Integer.parseInt(req.getParameter("id"));
-        new ServicosDAO().apagar(id);
+        boolean apagou = new ServicosDAO().apagar(id);
+        if(apagou){
+            resp.getWriter().write("apagou");
+        }else{
+            resp.getWriter().write("erro");
+        }
+
     }
     
 }
