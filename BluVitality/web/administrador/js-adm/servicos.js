@@ -4,7 +4,8 @@
  * and open the template in the editor.
  */
 $(function () {
-    $('#ultimos-servicos').DataTable({
+    
+        var tableServicos = $('#ultimos-servicos').DataTable({
         'ajax': '/servicos/obtertodosparadatatable',
         "language": {
             "sEmptyTable": "Nenhum registro encontrado",
@@ -38,8 +39,45 @@ $(function () {
         },
         'columns': [
             {'data': 'nome'},
-            {'data': 'descricao'}
+            {'data': 'tipo'},
+            {'data': 'descricao'},
+            {
+                "data": null,
+                "render": function (data) {
+                    return  "<a class='finalizar-servico' href='#' data-id='" + data.id + "'><i class='material-icons'>delete</i>Finalizar</a>"
+                }
+            }
         ]
+    });
+    $('#ultimos-servicos').on('click', '.finalizar-servico', function () {
+        $id = $(this).data("id");
+        console.log($id);
+        $.ajax({
+            url: '/servico/excluir',
+            method: 'POST',
+            data:{
+                id: $id
+            },
+            success: function (data) {
+                tableServicos.ajax.reload();
+            }
+        });
+        return false;
+    });
+    
+     $('#servico-cadastro-salvar').on('click', function () {
+        $.ajax({
+            url: '/servicos/store',
+            method: 'POST',
+            data:{
+                'nomeServico': $('#servico-cadastro').val(),
+                'descricao': $('#textarea2').val(),
+                'tipo': $('#servico-cadastro-tipo').val()
+            },
+            success: function () {
+                tableServicos.ajax.reload();
+            }
+        });
     });
 });
 

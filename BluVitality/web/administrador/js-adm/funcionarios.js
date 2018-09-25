@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 $(function () {
-$('#tabela-funcionario').DataTable({
+var tableFuncionario = $('#tabela-funcionario').DataTable({
         'ajax': '/funcionarios/obtertodosparadatatable',
         "language": {
             "sEmptyTable": "Nenhum registro encontrado",
@@ -37,11 +37,32 @@ $('#tabela-funcionario').DataTable({
             }
         },
         'columns': [
-            {'data': 'id'},
             {'data': 'usuario'},
             {'data': 'cargo'},
-            
+            {
+                "data": null,
+                "render": function (data) {
+                    return  "<a class='excluir-funcionario' href='#' data-id='" + data.id + "'><i class='material-icons'>delete</i></a>"
+                    
+                    //caminho do icone para editar na coluna funcionario
+                }
+            }
         ]
+    });
+    $('#tabela-funcionario').on('click', '.excluir-funcionario', function () {
+        $id = $(this).data("id");
+        console.log($id);
+        $.ajax({
+            url: '/funcionario/excluir',
+            method: 'POST',
+            data:{
+                id: $id
+            },
+            success: function (data) {
+                tableFuncionario.ajax.reload();
+            }
+        });
+        return false;
     });
 });
 

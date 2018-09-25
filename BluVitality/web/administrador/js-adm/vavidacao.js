@@ -5,52 +5,44 @@
  */
 
 $(function () {
-$('#form-pendencias').validate({
-    errorClass: 'text-red darken-4',
-    validElementClass: 'text-teal accent-3',
-    success: 'valid',
-    rules: {
-        input_text: {
-            required: true,
-            minlength: 4,
-            maxlength: 10
-        },
-        tempoPendencia: {   
-            required: true,
-            date: true,
-        },
-        textarea2: {
-            required: true,
-            minlength: 10,
-            maxlength: 250
-        },
-        messages: {
-            input_text: {
-                required: 'Nome é obrigatório',
-                minlength: 'Nome deve conter no mínimo {0} caracteres',
-                maxlength: 'Nome deve conter no máximo {0} caracteres'
-            },
-            tempoPendencia: {
-                required: 'Data deve ser preenchida',
-            },
-            textarea2: {
-                required: 'Descrição deve ser preenchida',
-                minlength: 'Minimo 10 caracteres',
-                maxlength: 'Maximo 250 caracteres'
+    $('#validateServicos').validate({
+        errorClass: "red-text",
 
+        errorElementClass: 'red-text ',
+        validElementClass: 'red-text ',
+        	validClass: "teal-text ",
+        rules: {
+            servicocadastro: {
+                required: true,
+                minlength: 4,
+                maxlength: 10
+            },
+
+            servicocadastrotipo: "required",
+            textarea2: {
+                required: true,
+                minlength: 15,
+            },
+            //Mensagens
+            messages: {
+                servicocadastro: {
+                    required: 'Nome é obrigatório',
+                    minlength: 'Nome deve conter no mínimo 2 caracteres',
+                },
+
+                textarea2: {
+                    required: 'Descrição deve ser preenchida',
+                    minlength: 'Minimo 10 caracteres',
+                }
             }
         }
+    });
+    $("#validateServicos").on('submit', function(e){
 
-    }
-});
-
-$("#form-pendencias").on('btnPendencia', function (e) {
-
-    if ($("#form-pendencias").valid() == false) {
-        e.preventDefault();
-    } else {
-        alert('asdaspdas');
-    }
-});
-
+    		if($("#validateServicos").valid() == false){
+				e.preventDefault();
+    		}else{
+    			alert('asdaspdas');
+    		}
+    	});
 });

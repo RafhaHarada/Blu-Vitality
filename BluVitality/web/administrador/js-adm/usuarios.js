@@ -4,7 +4,8 @@
  * and open the template in the editor.
  */
 $(function () {
-     $('#tabela-usuario').DataTable({
+     
+    var tableUsuario = $('#tabela-usuario').DataTable({
         'ajax': '/usuarios/obtertodosparadatatable',
         "language": {
             "sEmptyTable": "Nenhum registro encontrado",
@@ -38,9 +39,29 @@ $(function () {
         },
         'columns': [
             {'data': 'nome'},
-            {'data': 'idade'},
             {'data': 'cpf'},
-            {'data': 'telefone'}
+            {'data': 'telefone'},
+            {
+                "data": null,
+                "render": function (data) {
+                    return  "<a class='excluir-usuario' href='#' data-id='" + data.id + "'><i class='material-icons'>delete</i>Finalizar</a>"
+                }
+            }
         ]
+    });
+    $('#tabela-usuario').on('click', '.excluir-usuario', function () {
+        $id = $(this).data("id");
+        console.log($id);
+        $.ajax({
+            url: '/usuario/excluir',
+            method: 'POST',
+            data: {
+                id: $id
+            },
+            success: function (data) {
+                tableUsuario.ajax.reload();
+            }
+        });
+        return false;
     });
 });
