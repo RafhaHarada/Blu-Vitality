@@ -23,17 +23,17 @@
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="login_usuario" name="login" type="text" class="validate">
+                        <input required id="login_usuario" name="login" type="text" class="validate" minlength="5">
                         <label for="login_usuario">Login</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="senha_usuario" name="senha" type="password" class="validate">
+                        <input required id="senha_usuario" name="senha" type="password" class="validate">
                         <label for="senha_usuario">Senha</label>
                     </div>
                 </div>
-                <input type="submit" class="waves-effect btn-flat teal white-text" value="Entrar">
+                <input type="submit" class="waves-effect btn-flat teal white-text validate" value="Entrar">
             </form>
             <div class="col s6 left">
                 <a href="#TrocarSenha">Esqueci a senha..</a>

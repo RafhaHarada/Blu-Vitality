@@ -27,4 +27,4 @@ public class consultaExcluir extends HttpServlet {
         resp.sendRedirect("/usuario");
     }
 }
-}
+
