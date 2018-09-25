@@ -38,7 +38,7 @@
         </div>
         <a href="#EditarPerfil">
             <!--%if(usuario.getImage() == null){%-->
-            <img class="circle" src="../resources/images/image1.gif">
+            <img class="circle" src="../resources/images/usuario.png">
             <!--%}else{%-->
             <!--%=usuario.getImage()%-->
             <!--%}%-->
@@ -119,7 +119,7 @@
         </div>
         <a href="#EditarPerfil">
             <!--%if(usuario.getImage() == null){%-->
-            <img class="circle" src="../resources/images/image1.gif">
+            <img class="circle" src="../resources/images/usuario.png">
             <!--%}else{%-->
             <!--%=usuario.getImage()%-->
             <!--%}%-->
@@ -159,7 +159,7 @@
         </div>
         <a href="#EditarPerfil">
             <!--%if(usuario.getImage() == null){%-->
-            <img class="circle" src="../resources/images/image1.gif">
+            <img class="circle" src="../resources/images/usuario.png">
             <!--%}else{%-->
             <!--%=usuario.getImage()%-->
             <!--%}%-->
@@ -199,7 +199,7 @@
         </div>
         <a href="#EditarPerfil">
             <!--%if(usuario.getImage() == null){%-->
-            <img class="circle" src="../resources/images/image1.gif">
+            <img class="circle" src="../resources/images/usuario.png">
             <!--%}else{%-->
             <!--%=usuario.getImage()%-->
             <!--%}%-->
@@ -239,7 +239,7 @@
         </div>
         <a href="#EditarPerfil">
             <!--%if(usuario.getImage() == null){%-->
-            <img class="circle" src="../resources/images/image1.gif">
+            <img class="circle" src="../resources/images/usuario.png">
             <!--%}else{%-->
             <!--%=usuario.getImage()%-->
             <!--%}%-->
@@ -273,7 +273,7 @@
         </div>
         <a href="#EditarPerfil">
             <!--%if(usuario.getImage() == null){%-->
-            <img class="circle" src="../resources/images/image1.gif">
+            <img class="circle" src="../resources/images/usuario.png">
             <!--%}else{%-->
             <!--%=usuario.getImage()%-->
             <!--%}%-->
