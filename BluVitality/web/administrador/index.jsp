@@ -25,14 +25,13 @@
             <li class="tab"><a href="#listapaciente" class="teal-text waves-effect">Pacientes</a></li>
             <li class="tab"><a href="#lisfuncionarios" class="teal-text waves-effect">Funcionarios</a></li>
             <li class="tab"><a href="#hospitalQuartos" class="teal-text waves-effect atualizaTabFunc">Quarto</a></li>
-            <li class="tab"><a href="#hospitalPendencias" class="teal-text waves-effect">Pendências</a></li>
+            <li class="tab"><a href="#hospitalPendencias" class="teal-text waves-effect">Serviços</a></li>
             <li class="tab"><a href="#hospitalEquipamentos" class="teal-text waves-effect">Equipamentos</a></li>
             <li class="tab"><a href="#hospitalEventos" class="teal-text waves-effect">Eventos</a></li>
         </ul>
         <div class="divider"></div>
         <div id="InicioADM" class="col s12 container">
             <div class="row" id="div-bemvindo"> 
-                <%@include file="table/table-ultimos-servicos.jsp" %>
             </div>
         </div>
 
@@ -58,25 +57,33 @@
                 </div>
             </div>
         </div>
-        <div id="hospitalPendencias" class="col s12 container">
-            <div class=" row-border col s12 m6">
-                <%@include file="formulario-pendencias.jsp"%>
-
+        <div id="hospitalPendencias" class="col s12 container scrollBarOnDiv">
+            <div class="col s12">
+                <div class="row"> 
+                    <div class="col s12 m8 left">
+                        <span class="flow-text ">Serviços</span><br>
+                        <%@include file="formulario-servicos.jsp"%>                   
+                    </div>
+                    </div>
+                <div class="row"> 
+                    <div class="col s12">
+                        <%@include file="table/table-ultimos-servicos.jsp" %>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div id="hospitalEquipamentos" class="col s12 container">
-            <div class="">
+            <div id="hospitalEquipamentos" class="col s12 container">
+                <div class="">
 
+                </div>
             </div>
-        </div>
-        <div id="hospitalEventos" class="col s12 container">
-            <div class="">
+            <div id="hospitalEventos" class="col s12 container">
+                <div class="">
 
+                </div>
             </div>
         </div>
     </div>
-</div>
-<!--<div id="loading" style="display: block">
-    <i class="material-icons right ld ld-cycle" id="loading">loop</i>
-</div>-->
-<%@include file="../model/footer.jsp" %> 
+    <!--<div id="loading" style="display: block">
+        <i class="material-icons right ld ld-cycle" id="loading">loop</i>
+    </div>-->
+    <%@include file="../model/footer.jsp" %> 
