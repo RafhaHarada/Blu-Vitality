@@ -11,11 +11,11 @@ package br.com.Sistema.Bean;
  */
 public class GastosGeraisBean {
     private int id;
-    private double manutencao_equipamentos;
+    private double manutencaoEquipamentos;
     private double limpeza;
-    private double manutencao_estrutura;
+    private double manutencaoEstrutura;
     private double alimentacao;
-    private double materiais_de_consumo;
+    private double materiaisDeConsumo;
     private double medicamentos;
     private double imprevistos;
     private double total;
@@ -28,12 +28,12 @@ public class GastosGeraisBean {
         this.id = id;
     }
 
-    public double getManutencao_equipamentos() {
-        return manutencao_equipamentos;
+    public double getManutencaoEquipamentos() {
+        return manutencaoEquipamentos;
     }
 
-    public void setManutencao_equipamentos(double manutencao_equipamentos) {
-        this.manutencao_equipamentos = manutencao_equipamentos;
+    public void setManutencaoEquipamentos(double manutencaoEquipamentos) {
+        this.manutencaoEquipamentos = manutencaoEquipamentos;
     }
 
     public double getLimpeza() {
@@ -44,12 +44,12 @@ public class GastosGeraisBean {
         this.limpeza = limpeza;
     }
 
-    public double getManutencao_estrutura() {
-        return manutencao_estrutura;
+    public double getManutencaoEstrutura() {
+        return manutencaoEstrutura;
     }
 
-    public void setManutencao_estrutura(double manutencao_estrutura) {
-        this.manutencao_estrutura = manutencao_estrutura;
+    public void setManutencaoEstrutura(double manutencaoEstrutura) {
+        this.manutencaoEstrutura = manutencaoEstrutura;
     }
 
     public double getAlimentacao() {
@@ -60,12 +60,12 @@ public class GastosGeraisBean {
         this.alimentacao = alimentacao;
     }
 
-    public double getMateriais_de_consumo() {
-        return materiais_de_consumo;
+    public double getMateriaisDeConsumo() {
+        return materiaisDeConsumo;
     }
 
-    public void setMateriais_de_consumo(double materiais_de_consumo) {
-        this.materiais_de_consumo = materiais_de_consumo;
+    public void setMateriaisDeConsumo(double materiaisDeConsumo) {
+        this.materiaisDeConsumo = materiaisDeConsumo;
     }
 
     public double getMedicamentos() {
@@ -91,4 +91,5 @@ public class GastosGeraisBean {
     public void setTotal(double total) {
         this.total = total;
     }
+
 }

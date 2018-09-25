@@ -139,16 +139,9 @@ CREATE TABLE gastosFuncionarios(
     um_terco_sobre_ferias  DOUBLE NOT NULL,
     decimo_terceiro_salario  DOUBLE NOT NULL,
     aviso_previo  DOUBLE NOT NULL,
-    fgts_sobre_salario_mensal  DOUBLE NOT NULL,
-    fgts_sobre_decimo_terceiro_aviso_previo_ferias  DOUBLE NOT NULL,
+    fgts  DOUBLE NOT NULL,
     multa_fgts  DOUBLE NOT NULL,
-    ferias_sobre_aviso_previo  DOUBLE NOT NULL,
-    decimo_terceiro_sobre_aviso_previo DOUBLE NOT NULL,
-    um_terco_ferias_sobre_aviso_previo DOUBLE NOT NULL,
-    fgts_sobre_recisao DOUBLE NOT NULL,
-    inss_sobre_salario DOUBLE NOT NULL,
-    inss_sobre_ferias_e_decimo_terceiro DOUBLE NOT NULL,
-    indenizacao_um_dia_de_salario DOUBLE NOT NULL,
+    inss DOUBLE NOT NULL,
     total DOUBLE NOT NULL
 );
 
