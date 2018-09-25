@@ -1,7 +1,5 @@
 //Adicionar-Quarto
 $(function () {
-  
-
 
 
 //    $('#quarto-remover-numero').select2({

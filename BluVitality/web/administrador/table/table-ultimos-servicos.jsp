@@ -4,7 +4,7 @@
     Author     : Gus
 --%>
 
-<table class="mdl-data-table responsive-table stripe" id="ultimos-servicos">
+<table class="mdl-data-table stripe teal lighten-4" id="ultimos-servicos">
     <thead>
         <tr>
             <th scope="col">Nome</th>

@@ -5,7 +5,7 @@
 --%>
 <link rel='stylesheet' type='text/css' href='../resources/md/material.min.css'>
 <link rel='stylesheet' type='text/css' href='../resources/md/dataTables.material.min.css'>
-<table class="mdl-data-table striped teal light" style="width:100%" id="tabela-funcionario">
+<table class="mdl-data-table stripe teal lighten-4" style="width:100%" id="tabela-funcionario">
     <thead>
         <tr>
             <th scope="col">Nome</th>

@@ -70,7 +70,7 @@ $(function () {
             url: '/servicos/store',
             method: 'POST',
             data:{
-                'nomeServico': $('#servico-cadastro').val(),
+                'nome': $('#servico-cadastro').val(),
                 'descricao': $('#textarea2').val(),
                 'tipo': $('#servico-cadastro-tipo').val()
             },
