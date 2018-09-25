@@ -35,7 +35,7 @@ public class FuncionariosDAO {
                 funcionario.setId_usuario(resultSet.getInt("fn.id_usuario"));
                 funcionario.setTipo(resultSet.getString("fn.tipo"));
 
-                UsuariosBean usuario = new UsuariosDAO().obterPeloId(resultSet.getInt("us.id"));
+                UsuariosBean usuario = new UsuarioDAO().obterPeloId(resultSet.getInt("us.id"));
                 funcionario.setUsuario(usuario);
 
                 CargosBean cargo = new CargosDAO().obterPeloId(resultSet.getInt("cr.id"));
@@ -97,7 +97,7 @@ public class FuncionariosDAO {
                 funcionario.setId_usuario(resultSet.getInt("fn.id_usuario"));
                 funcionario.setTipo(resultSet.getString("fn.tipo"));
 
-                UsuariosBean usuario = new UsuariosDAO().obterPeloId(id);
+                UsuariosBean usuario = new UsuarioDAO().obterPeloId(id);
                 funcionario.setUsuario(usuario);
 
                 CargosBean cargo = new CargosDAO().obterPeloId(resultSet.getInt("id_cargo"));
@@ -125,7 +125,7 @@ public class FuncionariosDAO {
                 funcionario.setId_usuario(resultSet.getInt("id_usuario"));
                 funcionario.setTipo(resultSet.getString("tipo"));
 
-                UsuariosBean usuario = new UsuariosDAO().obterPeloId(id);
+                UsuariosBean usuario = new UsuarioDAO().obterPeloId(id);
                 funcionario.setUsuario(usuario);
 
                 CargosBean cargo = new CargosDAO().obterPeloId(resultSet.getInt("id_cargo"));

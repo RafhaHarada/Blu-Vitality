@@ -18,7 +18,7 @@ import java.util.List;
  * @author Cidmar da Silva Ribeiro (cidmardsr@gmail.com)
  * @author Rafael Alipio Harada (rafhaharada@gmail.com)
  */
-public class UsuariosDAO {
+public class UsuarioDAO {
 
     public List<UsuariosBean> obterTodos() {
         List<UsuariosBean> usuarios = new ArrayList<>();
@@ -335,5 +335,28 @@ public class UsuariosDAO {
         }finally{
             Conexao.fecharConexao();
         }return usuarios;
+    }
+
+    public List<HashMap<String, String>> obterTodosParaAutoComplete(String termo) {
+        List<HashMap<String, String>> usuarios = new ArrayList<>();
+        String sql = "SELECT * FROM usuarios WHERE nome LIKE ? ORDER BY nome";
+        
+        try{
+            PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);
+            ps.setString(1, "%" + termo + "%");
+            ps.execute();
+            ResultSet resultSet = ps.getResultSet();
+            while (resultSet.next()) {                
+                HashMap<String, String> atual = new HashMap<>();
+                atual.put("id", String.valueOf(resultSet.getInt("id")));
+                atual.put("text", resultSet.getString("nome"));
+                usuarios.add(atual);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            Conexao.fecharConexao();
+        }
+        return usuarios;
     }
 }

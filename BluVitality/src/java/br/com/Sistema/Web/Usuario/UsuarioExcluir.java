@@ -5,7 +5,7 @@
  */
 package br.com.Sistema.Web.Usuario;
 
-import br.com.Sistema.DAO.UsuariosDAO;
+import br.com.Sistema.DAO.UsuarioDAO;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -24,7 +24,7 @@ public class UsuarioExcluir extends HttpServlet{
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) 
             throws ServletException, IOException {
         int id = Integer.parseInt(req.getParameter("id"));
-        boolean apagou = new UsuariosDAO().excluir(id);
+        boolean apagou = new UsuarioDAO().excluir(id);
         if (apagou) {
             resp.getWriter().write("apagou");
         }else{

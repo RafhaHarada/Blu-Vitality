@@ -6,7 +6,7 @@
 package br.com.Sistema.Web.Funcionario;
 
 import br.com.Sistema.Bean.UsuariosBean;
-import br.com.Sistema.DAO.UsuariosDAO;
+import br.com.Sistema.DAO.UsuarioDAO;
 import br.com.Sistema.Web.IndexRedirect;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -26,7 +26,7 @@ public class funcionarioProntuario extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)throws ServletException, IOException {
-        List<UsuariosBean> usuarios = new UsuariosDAO().obterTodos();
+        List<UsuariosBean> usuarios = new UsuarioDAO().obterTodos();
         UsuariosBean paciente = new UsuariosBean();
         paciente = null;
 
