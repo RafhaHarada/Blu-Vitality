@@ -65,8 +65,8 @@ public class ServicosDAO {
     }
     
     public int adicionar(ServicosBean servico){
-        String sql = "INSERT INTO ervicos(id, id_funcionario, nome, descricao, tipo_de_urgencia)"
-                   + "VALUES(?,?,?,?,?)";
+        String sql = "INSERT INTO servicos(id_funcionario, nome, descricao, tipo_de_urgencia)"
+                   + "VALUES(?,?,?,?)";
         try{
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql, RETURN_GENERATED_KEYS);
             ps.setInt(1, servico.getId_funcionario());
