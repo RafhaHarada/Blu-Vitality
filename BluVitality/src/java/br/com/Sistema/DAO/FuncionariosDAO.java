@@ -42,7 +42,6 @@ public class FuncionariosDAO {
                 funcionario.setCargo(cargo);
 
                 funcionarios.add(funcionario);
-
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -67,10 +66,12 @@ public class FuncionariosDAO {
                 funcionario.setId_usuario(resultSet.getInt("fn.id_usuario"));
                 funcionario.setTipo(resultSet.getString("fn.tipo"));
 
-                CargosBean cargo = new CargosBean();
-                cargo.setNome(resultSet.getString("cr.nome"));
+                UsuariosBean usuario = new UsuariosDAO().obterPeloId(resultSet.getInt("fn.id_usuario"));
+                funcionario.setUsuario(usuario);
+                
+                CargosBean cargo = new CargosDAO().obterPeloId(resultSet.getInt("cr.id"));
                 funcionario.setCargo(cargo);
-
+                
                 funcionarios.add(funcionario);
 
             }

@@ -30,6 +30,7 @@ public class ExpedicaoDAO {
                 expedicao.setTipo(resultSet.getString("tipo"));
                 expedicao.setNome(resultSet.getString("nome"));
                 expedicao.setData_expedicao(resultSet.getDate("data_expedicao"));
+                expedicao.setHora_expedicao(resultSet.getTime("hora_expedicao"));
                 expedicao.setCusto(resultSet.getDouble("custo"));
                 
                 UsuariosBean usuario = new UsuarioDAO().obterPeloId(resultSet.getInt("id_usuario"));
@@ -49,7 +50,7 @@ public class ExpedicaoDAO {
     
     public ExpedicaoBean obterPeloId(int id){
         ExpedicaoBean expedicao = null;
-        String sql = "SELECT id, id_usuario, id_funcionario, tipo, data_expedicao, custo FROM expedicao ex JOIN usuarios us ON us.id = ex.id_usuario JOIN funcionarios fn ON fn.id = ex.id_funcionario WHERE id = ?";
+        String sql = "SELECT * FROM expedicao ex JOIN usuarios us ON us.id = ex.id_usuario JOIN funcionarios fn ON fn.id = ex.id_funcionario WHERE id = ?";
         try{
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);
             ps.setInt(1, id);
@@ -60,6 +61,7 @@ public class ExpedicaoDAO {
                 expedicao.setTipo(resultSet.getString("ex.tipo"));
                 expedicao.setNome(resultSet.getString("ex.nome"));
                 expedicao.setData_expedicao(resultSet.getDate("ex.data_expedicao"));
+                expedicao.setHora_expedicao(resultSet.getTime("ex.hora_expedicao"));
                 expedicao.setCusto(resultSet.getDouble("ex.custo"));
                 
                 UsuariosBean usuario = new UsuarioDAO().obterPeloId(resultSet.getInt("ex.id_usuario"));
@@ -75,15 +77,16 @@ public class ExpedicaoDAO {
         }return expedicao;
     }
     public int adicionar(ExpedicaoBean expedicao) {
-        String sql = "INSERT INTO expedicao (id_usuario, id_funcionario, tipo, data_expedicao, custo) "
-                + "VALUES(?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO expedicao (id_usuario, id_funcionario, tipo, data_expedicao, hora_expedicao, custo) "
+                + "VALUES(?, ?, ?, ?, ?, ?)";
         try{
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql, RETURN_GENERATED_KEYS);
             ps.setInt(1, expedicao.getUsuario().getId());
             ps.setInt(2, expedicao.getFuncionario().getId());
             ps.setString(3, expedicao.getTipo());
             ps.setDate(4, expedicao.getData_expedicao());
-            ps.setDouble(5, expedicao.getCusto());
+            ps.setTime(5, expedicao.getHora_expedicao());
+            ps.setDouble(6, expedicao.getCusto());
             
             ps.execute();
             ResultSet resultSet = ps.getGeneratedKeys();
@@ -98,16 +101,17 @@ public class ExpedicaoDAO {
     }
     public boolean alterar(ExpedicaoBean expedicao){
         try{
-            String sql = "UPDATE expedicao SET id_usuario = ?, id_funcionario = ?, tipo = ?, data_expedicao = ?, custo = ? WHERE id = ?";
+            String sql = "UPDATE expedicao SET id_usuario = ?, id_funcionario = ?, tipo = ?, data_expedicao = ?, hora_expedicao = ?, custo = ? WHERE id = ?";
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);
             ps.setInt(1, expedicao.getUsuario().getId());
             ps.setInt(2, expedicao.getFuncionario().getId());
             ps.setString(3, expedicao.getTipo());
             ps.setDate(4, expedicao.getData_expedicao());
-            ps.setDouble(5, expedicao.getCusto());
-            ps.setInt(6, expedicao.getId());
+            ps.setTime(5, expedicao.getHora_expedicao());
+            ps.setDouble(6, expedicao.getCusto());
+            ps.setInt(7, expedicao.getId());
             
-            return ps.executeUpdate() ==1;
+            return ps.executeUpdate()==1;
         }catch(SQLException e){
             e.printStackTrace();
         }finally{
@@ -120,7 +124,7 @@ public class ExpedicaoDAO {
         try{
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);
             ps.setInt(1, id);
-            return ps.executeUpdate() ==1;
+            return ps.executeUpdate()==1;
         }catch(SQLException e){
             e.printStackTrace();
         }finally{

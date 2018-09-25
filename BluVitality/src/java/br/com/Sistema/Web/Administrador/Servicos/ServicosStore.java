@@ -27,7 +27,7 @@ public class ServicosStore extends HttpServlet {
 
         ServicosBean servico = new ServicosBean();
         
-        servico.setNome(req.getParameter("nomeServico"));
+        servico.setNome(req.getParameter("nome"));
         servico.setDescricao(req.getParameter("descricao"));
         servico.setTipo_de_urgencia(req.getParameter("tipo"));
         

@@ -10,6 +10,7 @@ public class CargosBean {
 
     private int id;
     private String nome;
+    private String especialidade;
     private double salario;
     private Date carga_horaria;
 
@@ -43,6 +44,14 @@ public class CargosBean {
 
     public void setCarga_horaria(Date carga_horaria) {
         this.carga_horaria = carga_horaria;
+    }
+
+    public String getEspecialidade() {
+        return especialidade;
+    }
+
+    public void setEspecialidade(String especialidade) {
+        this.especialidade = especialidade;
     }
    
 }

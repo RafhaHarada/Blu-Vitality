@@ -17,7 +17,7 @@ public class CargosDAO {
 
     public List<CargosBean> obterTodos() {
         List<CargosBean> cargos = new ArrayList<>();
-        String sql = "SELECT id, nome, salario, carga_horaria FROM cargos";
+        String sql = "SELECT * FROM cargos";
 
         try {
             Statement st = Conexao.abrirConexao().createStatement();
@@ -27,6 +27,7 @@ public class CargosDAO {
                 CargosBean cargo = new CargosBean();
                 cargo.setId(resultSet.getInt("id"));
                 cargo.setNome(resultSet.getString("nome"));
+                cargo.setEspecialidade(resultSet.getString("especialidade"));
                 cargo.setSalario(resultSet.getDouble("salario"));
                 cargo.setCarga_horaria(resultSet.getDate("carga_horaria"));
             }
@@ -40,7 +41,7 @@ public class CargosDAO {
 
     public CargosBean obterPeloId(int id) {
         CargosBean cargo = null;
-        String sql = "SELECT id, nome, salario, carga_horaria FROM cargos WHERE id = ?";
+        String sql = "SELECT * FROM cargos WHERE id = ?";
         try {
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);
             ps.setInt(1, id);
@@ -50,6 +51,7 @@ public class CargosDAO {
                 cargo = new CargosBean();
                 cargo.setId(resultSet.getInt("id"));
                 cargo.setNome(resultSet.getString("nome"));
+                cargo.setEspecialidade(resultSet.getString("especialidade"));
                 cargo.setSalario(resultSet.getDouble("salario"));
                 cargo.setCarga_horaria(resultSet.getDate("carga_horaria"));
             }
@@ -62,14 +64,14 @@ public class CargosDAO {
     }
 
     public int adicionar(CargosBean cargo) {
-        String sql = "INSERT INTO cargos (id, nome, salario, carga_horaria) "
+        String sql = "INSERT INTO cargos (nome, especialidade, salario, carga_horaria)"
                 + "VALUES(?,?,?,?)";
         try {
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql, RETURN_GENERATED_KEYS);
             ps.setString(1, cargo.getNome());
-            ps.setDouble(2, cargo.getSalario());
-            ps.setDate(3, cargo.getCarga_horaria());
-
+            ps.setString(2, cargo.getEspecialidade());
+            ps.setDouble(3, cargo.getSalario());
+            ps.setDate(4, cargo.getCarga_horaria());
             ps.execute();
             ResultSet resultSet = ps.getGeneratedKeys();
             if (resultSet.last()) {
@@ -85,12 +87,13 @@ public class CargosDAO {
 
     public boolean alterar(CargosBean cargo) {
         try {
-            String sql = "UPDATE cargos SET nome = ?, salario = ?, carga_horaria = ? WHERE id = ?";
+            String sql = "UPDATE cargos SET nome = ?, especialidade = ?, salario = ?, carga_horaria = ? WHERE id = ?";
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);
             ps.setString(1, cargo.getNome());
-            ps.setDouble(2, cargo.getSalario());
-            ps.setDate(3, cargo.getCarga_horaria());
-            ps.setInt(4, cargo.getId());
+            ps.setString(2, cargo.getEspecialidade());
+            ps.setDouble(3, cargo.getSalario());
+            ps.setDate(4, cargo.getCarga_horaria());
+            ps.setInt(5, cargo.getId());
 
             return ps.executeUpdate() == 1;
         } catch (SQLException e) {
