@@ -41,7 +41,7 @@ public class QuartoDAO {
                 quarto.setTipo(resultSet.getString("tipo"));
                 quarto.setData_entrada(resultSet.getDate("data_entrada"));
                 quarto.setData_saida(resultSet.getDate("data_saida"));
-                quarto.setStatus(resultSet.getString("status"));
+                quarto.setStatus(resultSet.getString("estado"));
                 quartos.add(quarto);
             }
         } catch (SQLException e) {
@@ -53,14 +53,14 @@ public class QuartoDAO {
     }
 
     public QuartoBean obterPeloId(int id) {
-        QuartoBean quarto = null;
-        String sql = "SELECT id, numero_quarto, id_usuario, id_funcionario, tipo, data_entrada, data_saida, status FROM quartos WHERE id = ?";
+        String sql = "SELECT * FROM quartos WHERE id = ?";
         try {
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);
             ps.setInt(1, id);
+            ps.execute();
             ResultSet resultSet = ps.getResultSet();
-            while (resultSet.next()) {
-                quarto = new QuartoBean();
+            if(resultSet.next()) {
+                QuartoBean quarto = new QuartoBean();
                 quarto.setId(resultSet.getInt("id"));
                 quarto.setNumero_quarto(resultSet.getInt("numero_quarto"));
                 quarto.setId_usuario(resultSet.getInt("id_usuario"));
@@ -68,14 +68,15 @@ public class QuartoDAO {
                 quarto.setTipo(resultSet.getString("tipo"));
                 quarto.setData_entrada(resultSet.getDate("data_entrada"));
                 quarto.setData_saida(resultSet.getDate("data_saida"));
-                quarto.setStatus(resultSet.getString("status"));
+                quarto.setStatus(resultSet.getString("estado"));
+                return quarto;
             }
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
             Conexao.fecharConexao();
         }
-        return quarto;
+        return null;
     }
 
     public int adicionarQuarto(QuartoBean quarto) {
@@ -149,7 +150,7 @@ public class QuartoDAO {
                 quarto.put("id", resultSet.getInt("id"));
                 quarto.put("numero_quarto", resultSet.getInt("numero_quarto"));
                 quarto.put("tipo", resultSet.getString("tipo"));
-                quarto.put("status", resultSet.getString("status"));
+                quarto.put("estado", resultSet.getString("estado"));
                 quartos.add(quarto);
             }
         } catch (SQLException e) {
