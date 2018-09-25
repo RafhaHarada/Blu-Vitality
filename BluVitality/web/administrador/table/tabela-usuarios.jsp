@@ -4,7 +4,7 @@
     Author     : Gus
 --%>
 
-<table class="mdl-data-table striped teal light" style="width:100%" id="tabela-usuario">
+<table class="mdl-data-table stripe teal lighten-4" style="width:100%" id="tabela-usuario">
     <thead>
         <tr>
             <th scope="col">Nome</th>
