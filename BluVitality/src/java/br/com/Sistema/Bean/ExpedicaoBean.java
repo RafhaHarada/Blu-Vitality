@@ -6,6 +6,7 @@
 package br.com.Sistema.Bean;
 
 import java.sql.Date;
+import java.sql.Time;
 
 /**
  * @author Rafael Alipio Harada (rafhaharada@gmail.com)
@@ -21,6 +22,15 @@ public class ExpedicaoBean {
     private double custo;
     private UsuariosBean usuario;
     private FuncionariosBean funcionario;
+    private Time hora_expedicao;
+
+    public Time getHora_expedicao() {
+        return hora_expedicao;
+    }
+
+    public void setHora_expedicao(Time hora_expedicao) {
+        this.hora_expedicao = hora_expedicao;
+    }
 
     public int getId() {
         return id;

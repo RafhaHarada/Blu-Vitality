@@ -5,10 +5,13 @@
  */
 package br.com.Sistema.Web.Consultas;
 
+import javax.servlet.http.HttpServlet;
+
 /**
  *
  * @author Alunos
  */
-public class ConsultasCadastro {
+public class ConsultasCadastro extends HttpServlet{
+    
     
 }

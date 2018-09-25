@@ -18,13 +18,13 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Alunos
  */
-@WebServlet("/gastoFuncionario/update")
+@WebServlet("/gastosFuncionarios/update")
 public class GastosFuncionariosUpdate extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         GastosFuncionariosBean gastoFuncionario = new GastosFuncionariosBean();
-        
+
         gastoFuncionario.setId(Integer.parseInt(req.getParameter("id")));
         gastoFuncionario.setSalario_mensal(Double.parseDouble(req.getParameter("salarioMensal")));
         gastoFuncionario.setFerias_anuais_remuneradas(Double.parseDouble(req.getParameter("feriasAnuaisRemuneradas")));
@@ -36,9 +36,9 @@ public class GastosFuncionariosUpdate extends HttpServlet {
         gastoFuncionario.setInss(Double.parseDouble(req.getParameter("inss")));
         gastoFuncionario.setVale_transporte(Double.parseDouble(req.getParameter("valeTransporte")));
         gastoFuncionario.setVale_refeicao(Double.parseDouble(req.getParameter("valeRefeicao")));
-        
+
         new GastosFuncionariosDAO().alterar(gastoFuncionario);
-        resp.sendRedirect("/gastoFuncionario/editar?id=" + gastoFuncionario.getId());
+        resp.sendRedirect("/gastosFuncionarios/editar?id=" + gastoFuncionario.getId());
     }
 
 }

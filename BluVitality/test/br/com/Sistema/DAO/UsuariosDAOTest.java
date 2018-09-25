@@ -24,7 +24,7 @@ public class UsuariosDAOTest {
     @Test
     public void ObterTodos() {
         UsuariosBean usuario = new UsuariosBean();
-        UsuariosDAO dao = new UsuariosDAO();
+        UsuarioDAO dao = new UsuarioDAO();
         usuario.setNome("Gustavo");
         usuario.setEstado_civil("solteiro");
         usuario.setIdade(byteValue(21));
@@ -46,13 +46,13 @@ public class UsuariosDAOTest {
         usuario.setContato_emergencia("47997835153");
         usuario.setConvenio("000000358");
         
-        List<UsuariosBean> referencia = new UsuariosDAO().obterTodos();
+        List<UsuariosBean> referencia = new UsuarioDAO().obterTodos();
     }
 
     @Test
     public void Adicionar() {
         UsuariosBean usuarios = new UsuariosBean();
-        UsuariosDAO dao = new UsuariosDAO();
+        UsuarioDAO dao = new UsuarioDAO();
         usuarios.setNome("Gustavo");
         usuarios.setEstado_civil("solteiro");
         usuarios.setIdade(byteValue(21));
@@ -74,14 +74,14 @@ public class UsuariosDAOTest {
         usuarios.setContato_emergencia("47997835153");
         usuarios.setConvenio("000000358");
         
-        int referencia = new UsuariosDAO().adicionar(usuarios);
+        int referencia = new UsuarioDAO().adicionar(usuarios);
         usuarios.setId(referencia);
     }
 
     @Test
     public void Excluir() {
         UsuariosBean usuario = new UsuariosBean();
-        UsuariosDAO dao = new UsuariosDAO();
+        UsuarioDAO dao = new UsuarioDAO();
         usuario.setNome("Gustavo");
         usuario.setEstado_civil("solteiro");
         usuario.setIdade(byteValue(21));
@@ -103,15 +103,15 @@ public class UsuariosDAOTest {
         usuario.setContato_emergencia("47997835153");
         usuario.setConvenio("000000358");
         
-        int referencia = new UsuariosDAO().adicionar(usuario);
+        int referencia = new UsuarioDAO().adicionar(usuario);
         usuario.setId(referencia);
-        new UsuariosDAO().excluir(referencia);
+        new UsuarioDAO().excluir(referencia);
     }
 
     @Test
     public void Alterar() {
         UsuariosBean usuario = new UsuariosBean();
-        UsuariosDAO dao = new UsuariosDAO();
+        UsuarioDAO dao = new UsuarioDAO();
         usuario.setNome("Gustavo");
         usuario.setEstado_civil("solteiro");
         usuario.setIdade(byteValue(21));
@@ -133,16 +133,16 @@ public class UsuariosDAOTest {
         usuario.setContato_emergencia("47997835153");
         usuario.setConvenio("000000358");
         
-        int referencia = new UsuariosDAO().adicionar(usuario);
+        int referencia = new UsuarioDAO().adicionar(usuario);
         usuario.setId(referencia);
 
-        new UsuariosDAO().alterar(usuario);
+        new UsuarioDAO().alterar(usuario);
     }
 
     @Test
     public void ObterPeloId() {
         UsuariosBean usuario = new UsuariosBean();
-        UsuariosDAO dao = new UsuariosDAO();
+        UsuarioDAO dao = new UsuarioDAO();
         usuario.setNome("Gustavo");
         usuario.setEstado_civil("solteiro");
         usuario.setIdade(byteValue(21));
@@ -168,7 +168,7 @@ public class UsuariosDAOTest {
     @Test
     public void Autenticar() {
         UsuariosBean usuario = new UsuariosBean();
-        UsuariosDAO dao = new UsuariosDAO();
+        UsuarioDAO dao = new UsuarioDAO();
         usuario.setNome("Gustavo");
         usuario.setEstado_civil("solteiro");
         usuario.setIdade(byteValue(21));

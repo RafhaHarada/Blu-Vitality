@@ -10,7 +10,7 @@ import br.com.Sistema.Bean.FuncionariosBean;
 import br.com.Sistema.Bean.UsuariosBean;
 import br.com.Sistema.DAO.CargosDAO;
 import br.com.Sistema.DAO.FuncionariosDAO;
-import br.com.Sistema.DAO.UsuariosDAO;
+import br.com.Sistema.DAO.UsuarioDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -41,7 +41,7 @@ public class FuncionarioStore extends HttpServlet {
         funcionario.setId(new FuncionariosDAO().adicionar(funcionario));
         
         
-        UsuariosBean usuario = new UsuariosDAO().obterPeloId(funcionario.getId_usuario());
+        UsuariosBean usuario = new UsuarioDAO().obterPeloId(funcionario.getId_usuario());
         CargosBean cargo = new CargosDAO().obterPeloId(funcionario.getId_cargo());
         funcionario.setUsuario(usuario);
         funcionario.setCargo(cargo);

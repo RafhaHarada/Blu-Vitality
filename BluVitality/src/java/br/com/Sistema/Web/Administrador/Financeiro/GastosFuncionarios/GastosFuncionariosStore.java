@@ -6,9 +6,7 @@
 package br.com.Sistema.Web.Administrador.Financeiro.GastosFuncionarios;
 
 import br.com.Sistema.Bean.GastosFuncionariosBean;
-import br.com.Sistema.Bean.QuartoBean;
 import br.com.Sistema.DAO.GastosFuncionariosDAO;
-import br.com.Sistema.DAO.QuartoDAO;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

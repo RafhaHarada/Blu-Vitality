@@ -19,14 +19,15 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Alunos
  */
-@WebServlet("/GastosFuncionariosEditar/editar")
-public class GastosFuncionariosEditar extends HttpServlet{
-      @Override
+@WebServlet("/gastosFuncionarios/editar")
+public class GastosFuncionariosEditar extends HttpServlet {
+
+    @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html; charset=UTF-8");
-    GastosFuncionariosBean gastoFuncionario = new GastosFuncionariosDAO().obterPeloId(Integer.parseInt(req.getParameter("id")));
-        req.setAttribute("gastoFuncioario", gastoFuncionario);
-        
+        GastosFuncionariosBean gastoFuncionario = new GastosFuncionariosDAO().obterPeloId(Integer.parseInt(req.getParameter("id")));
+        req.setAttribute("gastoFuncionario", gastoFuncionario);
+
         req.getRequestDispatcher("/financas/gastos-funcionarios.jsp").include(req, resp);
     }
 }

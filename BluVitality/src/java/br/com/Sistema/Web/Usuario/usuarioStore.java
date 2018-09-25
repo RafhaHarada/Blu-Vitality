@@ -1,7 +1,7 @@
 package br.com.Sistema.Web.Usuario;
 
 import br.com.Sistema.Bean.UsuariosBean;
-import br.com.Sistema.DAO.UsuariosDAO;
+import br.com.Sistema.DAO.UsuarioDAO;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.Period;
@@ -43,7 +43,7 @@ public class usuarioStore extends HttpServlet {
         usuario.setTipo_sanguineo(req.getParameter("tipo-sanguineo"));
         usuario.setConvenio(req.getParameter("convenio"));
 
-        usuario.setId(new UsuariosDAO().adicionar(usuario));
+        usuario.setId(new UsuarioDAO().adicionar(usuario));
 
         resp.setContentType("text/html;charset=UTF-8");
         resp.sendRedirect("/usuario?id=" + usuario.getId());

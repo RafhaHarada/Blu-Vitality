@@ -10,19 +10,19 @@
     <form class="col s12">
         <div class="row container">
             <div class="input-field col s6">
-                <input placeholder="tipo de investimento" id="first_name" type="text" class="validate">
+                <input placeholder="tipo de investimento" id="tipo" type="text" class="validate">
                 <label for="tipo">Tipo</label>
             </div>
         </div>
         <div class="row container">
             <div class="input-field col s6">
-                <textarea placeholder="descrição do investimento" id="textarea1" class="materialize-textarea"></textarea>
+                <textarea placeholder="descrição do investimento" id="descricao" class="materialize-textarea"></textarea>
                 <label for="descricao">Descrição</label>
             </div>
         </div>
         <div class="row container">
             <div class="input-field col s6">
-                <input placeholder="0,00" id="first_name" type="text" class="validate">
+                <input placeholder="0,00" id="valor" type="text" class="validate">
                 <label for="valor">Valor do investimento</label>
             </div>
         </div>

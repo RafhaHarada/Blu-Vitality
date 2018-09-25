@@ -18,19 +18,24 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Document   : 
- * Created on : 17/09/2018
- * Author     :  @Gustavo Rodrigues (gugaaroodrigues@gmail.com)
+ *
+ * @author Alunos
  */
-@WebServlet(name = "UsuariosObterTodosParaDatatable", urlPatterns = {"/usuarios/obtertodosparadatatable"})
-public class UsuariosObterTodosParaDatatable extends HttpServlet {
+@WebServlet(name = "ObterTodosParaAutoComplete", urlPatterns = {"/ObterTodosPara/AutoComplete"})
+public class ObterTodosParaAutoComplete extends HttpServlet {
 
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+    
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        String termo= request.getParameter("term") == null? "" : request.getParameter("term");
+        
+        response.setContentType("application/json");
+        
+        List<HashMap<String, String>> numero = new UsuarioDAO().obterTodosParaAutoComplete(termo);
         HashMap<String, Object> resultado = new HashMap<>();
-        List<HashMap<String, Object>> registros = new UsuarioDAO().obterTodosParaDatatable();
-        resultado.put("data", registros);
-        resp.setContentType("text/html;charset=UTF-8");
-        resp.getWriter().print(new Gson().toJson(resultado));
+        resultado.put("results", numero);
+        response.getWriter().print(new Gson().toJson(resultado));
     }
 }
