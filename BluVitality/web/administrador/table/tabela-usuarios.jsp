@@ -4,13 +4,13 @@
     Author     : Gus
 --%>
 
-<table class="mdl-data-table"  id="tabela-usuario">
+<table class="mdl-data-table striped teal light" style="width:100%" id="tabela-usuario">
     <thead>
         <tr>
             <th scope="col">Nome</th>
-            <th scope="col">Idade</th>
             <th scope="col">CPF</th>
             <th scope="col">Telefone</th>
+            <th scope="col">Opção</th>
         </tr>
     </thead>
     <tbody>

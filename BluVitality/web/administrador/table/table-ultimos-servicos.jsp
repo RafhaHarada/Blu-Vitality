@@ -8,6 +8,7 @@
     <thead>
         <tr>
             <th scope="col">Nome</th>
+            <th scope="col">Status</th>
             <th scope="col">Descrição</th>
             <th scope="col">Opção</th>
         </tr>

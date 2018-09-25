@@ -3,16 +3,18 @@
     Created on : 17/09/2018, 00:08:08
     Author     : @Gustavo Rodrigues (gugaaroodrigues@gmail.com)
 --%>
-
-<table class="mdl-data-table" style="width:100%" id="tabela-funcionario">
+<link rel='stylesheet' type='text/css' href='../resources/md/material.min.css'>
+<link rel='stylesheet' type='text/css' href='../resources/md/dataTables.material.min.css'>
+<table class="mdl-data-table striped teal light" style="width:100%" id="tabela-funcionario">
     <thead>
         <tr>
-            <th scope="col">ID</th>
             <th scope="col">Nome</th>
             <th scope="col">Função</th>
+            <th scope="col">Opção</th>
         </tr>
     </thead>
     <tbody>
     </tbody>
 </table> 
+
 
