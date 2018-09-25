@@ -42,3 +42,12 @@ $(function () {
         atualizaTab();
     });
 });
+
+function atualizaTab() {
+    var maxHeight = 0;
+    $('.carousel-item').each(function () {
+        if ($(this).height() > maxHeight)
+            maxHeight = $(this).height();
+    });
+    $(".tabs-content").css('height', maxHeight + 'px');
+}
