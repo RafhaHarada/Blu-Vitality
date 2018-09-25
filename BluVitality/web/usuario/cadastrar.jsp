@@ -64,15 +64,15 @@
                 <div class="collapsible-body">
                     <div class="input-field col s12">
                         <i class="material-icons prefix">account_circle</i>
-                        <input required id="cadastro-login" type="text" class="validate tooltipped" name="login" data-position="top" data-tooltip="Este será usado apenas para acessar o site!">
+                        <input required id="cadastro-login" type="text" class="validate tooltipped" name="login" data-position="top" data-tooltip="Este será usado apenas para acessar o site!" minlength="5">
                         <label for="cadastro-login">Login</label>
-                        <span class="helper-text" data-error="Insira um login" data-success="Correto"></span>
+                        <span class="helper-text" data-error="Insira um login com pelo menos 5 caracteres" data-success="Correto"></span>
                     </div>
                     <div class="input-field col s12">
                         <i class="material-icons prefix">account_circle</i>
-                        <input required id="cadastro-senha" type="password" class="validate" name="senha">
+                        <input required id="cadastro-senha" type="password" class="validate" name="senha" minlength="8">
                         <label for="cadastro-senha">Senha</label>
-                        <span class="helper-text" data-error="Insira uma senha" data-success="Correto"></span>
+                        <span class="helper-text" data-error="Insira uma senha com pelo menos 8 caracteres" data-success="Correto"></span>
                     </div>
                 </div>
             </li>
@@ -93,7 +93,7 @@
                                 <div class="btn">
                                     <i class="material-icons left">photo</i>
                                     <span class="right">Foto</span>
-                                    <input type="file" id="cadastro-foto" name="foto">
+                                    <input type="file" id="cadastro-foto" name="foto" onchange="validacaoTipoArquivo()">
                                 </div>
                                 <div class="file-path-wrapper">
                                     <input class="file-path validate" type="text">
@@ -102,7 +102,7 @@
                         </div>
                         <div class="input-field col s12 m6">
                             <i class="material-icons prefix">date_range</i>
-                            <input required name="data-nascimento" id="cadastro-data-nascimento" type="text" class="datepicker validate" min="01/01/1905" max="01/01/2130">
+                            <input required name="data-nascimento" id="cadastro-data-nascimento" type="text" class="datepicker validate" min="01/01/1905" max="01/01/2018">
                             <label for="cadastro-data-nascimento">Data de Nascimento</label>
                             <span class="helper-text" data-error="Insira sua data de nascimento" data-success="Correto"></span>
                         </div>
