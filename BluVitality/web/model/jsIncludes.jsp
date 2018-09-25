@@ -14,3 +14,4 @@
 <script type="text/javascript" src="../resources/js/jquery.validate.min.js"></script>
 <script type="text/javascript" src="../resources/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="../funcionario/jsfuncionarios/jsfuncionarios.js"></script>
+<script type="text/javascript" src="../usuario/js-user/js-user.js"></script>
