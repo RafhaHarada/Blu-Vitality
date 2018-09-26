@@ -5,7 +5,7 @@
  */
 package br.com.Sistema.Web.Usuario;
 
-import br.com.Sistema.Bean.UsuariosBean;
+import br.com.Sistema.Bean.UsuarioBean;
 import br.com.Sistema.DAO.UsuarioDAO;
 import com.google.gson.Gson;
 import java.io.IOException;
@@ -28,7 +28,7 @@ public class UsuarioBuscaCPF extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         
-        UsuariosBean usuario = new UsuariosBean();
+        UsuarioBean usuario = new UsuarioBean();
         req.getParameter("id");
         req.setAttribute("usuario", usuario);
         req.setAttribute("title", "Cadastro Funcionario");

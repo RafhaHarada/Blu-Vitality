@@ -1,6 +1,6 @@
 package br.com.Sistema.Web.Usuario;
 
-import br.com.Sistema.Bean.UsuariosBean;
+import br.com.Sistema.Bean.UsuarioBean;
 import br.com.Sistema.DAO.UsuarioDAO;
 import br.com.Sistema.Web.IndexRedirect;
 import java.io.IOException;

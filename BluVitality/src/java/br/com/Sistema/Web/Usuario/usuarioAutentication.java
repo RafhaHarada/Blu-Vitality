@@ -1,7 +1,7 @@
 package br.com.Sistema.Web.Usuario;
 
 import br.com.Sistema.Bean.FuncionariosBean;
-import br.com.Sistema.Bean.UsuariosBean;
+import br.com.Sistema.Bean.UsuarioBean;
 import br.com.Sistema.DAO.FuncionariosDAO;
 import br.com.Sistema.DAO.UsuarioDAO;
 import br.com.Sistema.Web.IndexRedirect;
@@ -28,7 +28,7 @@ public class usuarioAutentication extends HttpServlet {
         String login = req.getParameter("login");
         String senha = req.getParameter("senha");
 
-        UsuariosBean usuario = new UsuarioDAO().autenticar(login, senha);
+        UsuarioBean usuario = new UsuarioDAO().autenticar(login, senha);
 
         if (usuario != null) {
             req.getSession().setAttribute("usuario", usuario);

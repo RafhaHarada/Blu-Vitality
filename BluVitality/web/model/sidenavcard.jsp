@@ -9,15 +9,15 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="br.com.Sistema.DAO.FuncionariosDAO"%>
 <%@page import="java.util.List"%>
-<%@page import="br.com.Sistema.Bean.UsuariosBean"%>
+<%@page import="br.com.Sistema.Bean.UsuarioBean"%>
 <%@page import="br.com.Sistema.DAO.UsuarioDAO"%>
 
 <!-- SESSION CONFIRM -->
-<%  UsuariosBean usuario = new UsuariosBean();
+<%  UsuarioBean usuario = new UsuarioBean();
     if (session.getAttribute("usuario") == null || session.getAttribute("usuario") == "") {
         response.sendRedirect("/usuario/login");
     } else {
-        usuario = ((UsuariosBean) session.getAttribute("usuario"));
+        usuario = ((UsuarioBean) session.getAttribute("usuario"));
 %>
 <div onpageshow="M.toast({html: 'Login bem sucedido!'})" class="rounded green"></div>
 

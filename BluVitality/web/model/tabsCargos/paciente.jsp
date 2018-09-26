@@ -4,7 +4,7 @@
     Author     : Luana Patricia Duarte (luanapatricia.blu@hotmail.com)
 --%>
 <%
-    UsuariosBean paciente = new UsuariosBean();
+    UsuarioBean paciente = new UsuarioBean();
 
     int id_paciente = Integer.parseInt(request.getParameter("id"));
     paciente = new UsuarioDAO().obterPeloId(id_paciente);

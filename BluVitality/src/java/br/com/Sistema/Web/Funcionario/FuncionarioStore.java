@@ -7,7 +7,7 @@ package br.com.Sistema.Web.Funcionario;
 
 import br.com.Sistema.Bean.CargosBean;
 import br.com.Sistema.Bean.FuncionariosBean;
-import br.com.Sistema.Bean.UsuariosBean;
+import br.com.Sistema.Bean.UsuarioBean;
 import br.com.Sistema.DAO.CargosDAO;
 import br.com.Sistema.DAO.FuncionariosDAO;
 import br.com.Sistema.DAO.UsuarioDAO;
@@ -41,7 +41,7 @@ public class FuncionarioStore extends HttpServlet {
         funcionario.setId(new FuncionariosDAO().adicionar(funcionario));
         
         
-        UsuariosBean usuario = new UsuarioDAO().obterPeloId(funcionario.getId_usuario());
+        UsuarioBean usuario = new UsuarioDAO().obterPeloId(funcionario.getId_usuario());
         CargosBean cargo = new CargosDAO().obterPeloId(funcionario.getId_cargo());
         funcionario.setUsuario(usuario);
         funcionario.setCargo(cargo);

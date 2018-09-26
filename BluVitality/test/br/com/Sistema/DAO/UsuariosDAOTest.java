@@ -5,7 +5,7 @@
  */
 package br.com.Sistema.DAO;
 
-import br.com.Sistema.Bean.UsuariosBean;
+import br.com.Sistema.Bean.UsuarioBean;
 import java.sql.Date;
 import java.util.List;
 import static oracle.jrockit.jfr.events.Bits.byteValue;
@@ -23,7 +23,7 @@ public class UsuariosDAOTest {
 
     @Test
     public void ObterTodos() {
-        UsuariosBean usuario = new UsuariosBean();
+        UsuarioBean usuario = new UsuarioBean();
         UsuarioDAO dao = new UsuarioDAO();
         usuario.setNome("Gustavo");
         usuario.setEstado_civil("solteiro");
@@ -46,12 +46,12 @@ public class UsuariosDAOTest {
         usuario.setContato_emergencia("47997835153");
         usuario.setConvenio("000000358");
         
-        List<UsuariosBean> referencia = new UsuarioDAO().obterTodos();
+        List<UsuarioBean> referencia = new UsuarioDAO().obterTodos();
     }
 
     @Test
     public void Adicionar() {
-        UsuariosBean usuarios = new UsuariosBean();
+        UsuarioBean usuarios = new UsuarioBean();
         UsuarioDAO dao = new UsuarioDAO();
         usuarios.setNome("Gustavo");
         usuarios.setEstado_civil("solteiro");
@@ -80,7 +80,7 @@ public class UsuariosDAOTest {
 
     @Test
     public void Excluir() {
-        UsuariosBean usuario = new UsuariosBean();
+        UsuarioBean usuario = new UsuarioBean();
         UsuarioDAO dao = new UsuarioDAO();
         usuario.setNome("Gustavo");
         usuario.setEstado_civil("solteiro");
@@ -110,7 +110,7 @@ public class UsuariosDAOTest {
 
     @Test
     public void Alterar() {
-        UsuariosBean usuario = new UsuariosBean();
+        UsuarioBean usuario = new UsuarioBean();
         UsuarioDAO dao = new UsuarioDAO();
         usuario.setNome("Gustavo");
         usuario.setEstado_civil("solteiro");
@@ -141,7 +141,7 @@ public class UsuariosDAOTest {
 
     @Test
     public void ObterPeloId() {
-        UsuariosBean usuario = new UsuariosBean();
+        UsuarioBean usuario = new UsuarioBean();
         UsuarioDAO dao = new UsuarioDAO();
         usuario.setNome("Gustavo");
         usuario.setEstado_civil("solteiro");
@@ -167,7 +167,7 @@ public class UsuariosDAOTest {
 
     @Test
     public void Autenticar() {
-        UsuariosBean usuario = new UsuariosBean();
+        UsuarioBean usuario = new UsuarioBean();
         UsuarioDAO dao = new UsuarioDAO();
         usuario.setNome("Gustavo");
         usuario.setEstado_civil("solteiro");

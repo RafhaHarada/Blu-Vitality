@@ -6,7 +6,7 @@
 package br.com.Sistema.Web.Administrador;
 
 import br.com.Sistema.Bean.FuncionariosBean;
-import br.com.Sistema.Bean.UsuariosBean;
+import br.com.Sistema.Bean.UsuarioBean;
 import br.com.Sistema.DAO.FuncionariosDAO;
 import java.io.IOException;
 import java.util.List;
@@ -24,8 +24,8 @@ public class AdministradorIndex extends HttpServlet {
         resp.setContentType("text/html;charset=UTF-8");
         List<FuncionariosBean> funcionario = new FuncionariosDAO().obterTodos();
 
-        if ((UsuariosBean) req.getSession().getAttribute("usuario") != null) {
-            UsuariosBean usuario = ((UsuariosBean) req.getSession().getAttribute("usuario"));
+        if ((UsuarioBean) req.getSession().getAttribute("usuario") != null) {
+            UsuarioBean usuario = ((UsuarioBean) req.getSession().getAttribute("usuario"));
             String tipoFuncionario = "";
             FuncionariosBean funcionario1 = new FuncionariosDAO().obterPeloIdUsuario(usuario.getId());
             tipoFuncionario = funcionario1.getTipo();

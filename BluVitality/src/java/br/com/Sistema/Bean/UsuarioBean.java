@@ -8,7 +8,7 @@ import java.sql.Date;
  * @author Rafael Alipio Harada (rafhaharada@gmail.com)
  */
 
-public class UsuariosBean {
+public class UsuarioBean {
     
     private int id ;
     private String nome;

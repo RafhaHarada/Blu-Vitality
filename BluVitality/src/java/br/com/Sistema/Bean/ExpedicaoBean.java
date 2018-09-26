@@ -20,7 +20,7 @@ public class ExpedicaoBean {
     private String nome;
     private Date data_expedicao;
     private double custo;
-    private UsuariosBean usuario;
+    private UsuarioBean usuario;
     private FuncionariosBean funcionario;
     private Time hora_expedicao;
 
@@ -72,11 +72,11 @@ public class ExpedicaoBean {
         this.nome = nome;
     }
 
-    public UsuariosBean getUsuario() {
+    public UsuarioBean getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(UsuariosBean usuario) {
+    public void setUsuario(UsuarioBean usuario) {
         this.usuario = usuario;
     }
 

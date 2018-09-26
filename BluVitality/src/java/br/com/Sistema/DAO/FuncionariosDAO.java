@@ -2,7 +2,7 @@ package br.com.Sistema.DAO;
 
 import br.com.Sistema.Bean.CargosBean;
 import br.com.Sistema.Bean.FuncionariosBean;
-import br.com.Sistema.Bean.UsuariosBean;
+import br.com.Sistema.Bean.UsuarioBean;
 import br.com.Sistema.Database.Conexao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -35,7 +35,7 @@ public class FuncionariosDAO {
                 funcionario.setId_usuario(resultSet.getInt("fn.id_usuario"));
                 funcionario.setTipo(resultSet.getString("fn.tipo"));
 
-                UsuariosBean usuario = new UsuarioDAO().obterPeloId(resultSet.getInt("us.id"));
+                UsuarioBean usuario = new UsuarioDAO().obterPeloId(resultSet.getInt("us.id"));
                 funcionario.setUsuario(usuario);
 
                 CargosBean cargo = new CargosDAO().obterPeloId(resultSet.getInt("cr.id"));
@@ -66,7 +66,7 @@ public class FuncionariosDAO {
                 funcionario.setId_usuario(resultSet.getInt("fn.id_usuario"));
                 funcionario.setTipo(resultSet.getString("fn.tipo"));
 
-                UsuariosBean usuario = new UsuarioDAO().obterPeloId(resultSet.getInt("fn.id_usuario"));
+                UsuarioBean usuario = new UsuarioDAO().obterPeloId(resultSet.getInt("fn.id_usuario"));
                 funcionario.setUsuario(usuario);
                 
                 CargosBean cargo = new CargosDAO().obterPeloId(resultSet.getInt("cr.id"));
@@ -98,7 +98,7 @@ public class FuncionariosDAO {
                 funcionario.setId_usuario(resultSet.getInt("fn.id_usuario"));
                 funcionario.setTipo(resultSet.getString("fn.tipo"));
 
-                UsuariosBean usuario = new UsuarioDAO().obterPeloId(id);
+                UsuarioBean usuario = new UsuarioDAO().obterPeloId(id);
                 funcionario.setUsuario(usuario);
 
                 CargosBean cargo = new CargosDAO().obterPeloId(resultSet.getInt("id_cargo"));
@@ -126,7 +126,7 @@ public class FuncionariosDAO {
                 funcionario.setId_usuario(resultSet.getInt("id_usuario"));
                 funcionario.setTipo(resultSet.getString("tipo"));
 
-                UsuariosBean usuario = new UsuarioDAO().obterPeloId(id);
+                UsuarioBean usuario = new UsuarioDAO().obterPeloId(id);
                 funcionario.setUsuario(usuario);
 
                 CargosBean cargo = new CargosDAO().obterPeloId(resultSet.getInt("id_cargo"));

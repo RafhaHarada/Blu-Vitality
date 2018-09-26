@@ -5,7 +5,7 @@
 --%>
 <%@page import="br.com.Sistema.Bean.FuncionariosBean"%>
 <%@page import="br.com.Sistema.DAO.FuncionariosDAO"%>
-<%@page import="br.com.Sistema.Bean.UsuariosBean"%>
+<%@page import="br.com.Sistema.Bean.UsuarioBean"%>
 <jsp:include page="../model/headerStart.jsp"/>
 <li><a class='dropdown-trigger' href='#' data-target='dropdownCadastro'>Opções</a>
     <!-- Dropdown Structure -->
