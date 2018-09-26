@@ -44,7 +44,7 @@ $(function () {
             {
                 "data": null,
                 "render": function (data) {
-                    return  "<a class='finalizar-servico' href='#' data-id='" + data.id + "'><i class='material-icons'>delete</i>Finalizar</a>"
+                    return  "<a class='finalizar-servico' href='#' data-id='" + data.id + "'><i class='material-icons'>delete</i></a>"
                 }
             }
         ]

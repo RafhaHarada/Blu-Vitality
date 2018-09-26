@@ -1,6 +1,6 @@
 //Adicionar-Quarto
 $(function () {
-
+$('.materialboxed').materialbox();
 
 //    $('#quarto-remover-numero').select2({
 //        'ajax': {
