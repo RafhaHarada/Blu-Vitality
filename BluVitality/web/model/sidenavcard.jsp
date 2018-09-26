@@ -7,17 +7,17 @@
 <%@page import="br.com.Sistema.Bean.CargosBean"%>
 <%@page import="br.com.Sistema.Bean.FuncionariosBean"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="br.com.Sistema.DAO.FuncionariosDAO"%>
+<%@page import="br.com.Sistema.DAO.FuncionarioDAO"%>
 <%@page import="java.util.List"%>
-<%@page import="br.com.Sistema.Bean.UsuariosBean"%>
-<%@page import="br.com.Sistema.DAO.UsuariosDAO"%>
+<%@page import="br.com.Sistema.Bean.UsuarioBean"%>
+<%@page import="br.com.Sistema.DAO.UsuarioDAO"%>
 
 <!-- SESSION CONFIRM -->
-<%  UsuariosBean usuario = new UsuariosBean();
+<%  UsuarioBean usuario = new UsuarioBean();
     if (session.getAttribute("usuario") == null || session.getAttribute("usuario") == "") {
         response.sendRedirect("/usuario/login");
     } else {
-        usuario = ((UsuariosBean) session.getAttribute("usuario"));
+        usuario = ((UsuarioBean) session.getAttribute("usuario"));
 %>
 <div onpageshow="M.toast({html: 'Login bem sucedido!'})" class="rounded green"></div>
 
@@ -26,7 +26,7 @@
     }
     String cargoDoFuncionario = "";
     if (usuario != null) {
-        FuncionariosBean funcionario = new FuncionariosDAO().obterPeloIdUsuario(usuario.getId());
+        FuncionariosBean funcionario = new FuncionarioDAO().obterPeloIdUsuario(usuario.getId());
         cargoDoFuncionario = funcionario.getCargo().getNome();
     }
     if (cargoDoFuncionario.equals("Administrador")) {

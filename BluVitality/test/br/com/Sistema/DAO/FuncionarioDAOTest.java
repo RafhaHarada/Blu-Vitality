@@ -12,9 +12,9 @@ import static org.junit.Assert.*;
  *
  * @author Gus
  */
-public class FuncionariosDAOTest {
+public class FuncionarioDAOTest {
     
-    public FuncionariosDAOTest() {
+    public FuncionarioDAOTest() {
     }
 
     @Test

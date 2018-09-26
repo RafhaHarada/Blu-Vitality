@@ -5,7 +5,7 @@
  */
 package br.com.Sistema.Web.Funcionario;
 
-import br.com.Sistema.Bean.UsuariosBean;
+import br.com.Sistema.Bean.UsuarioBean;
 import br.com.Sistema.DAO.UsuarioDAO;
 import br.com.Sistema.Web.IndexRedirect;
 import java.io.IOException;
@@ -26,8 +26,8 @@ public class funcionarioProntuario extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)throws ServletException, IOException {
-        List<UsuariosBean> usuarios = new UsuarioDAO().obterTodos();
-        UsuariosBean paciente = new UsuariosBean();
+        List<UsuarioBean> usuarios = new UsuarioDAO().obterTodos();
+        UsuarioBean paciente = new UsuarioBean();
         paciente = null;
 
         for (int i = 0; i < usuarios.size(); i++) {
@@ -49,8 +49,8 @@ public class funcionarioProntuario extends HttpServlet {
 //        expedicao.setId_funcionario(Integer.parseInt(req.getParameter("id_funcionario")));
 //        
 //        expedicao.setId(new ExpedicaoDAO().adicionar(expedicao));
-//        UsuariosBean usuario = new UsuariosDAO().obterPeloId(expedicao.getId_usuario());
-//        FuncionariosBean funcionario = new FuncionariosDAO().obterPeloId(expedicao.getId_funcionario());
+//        UsuarioBean usuario = new UsuarioDAO().obterPeloId(expedicao.getId_usuario());
+//        FuncionariosBean funcionario = new FuncionarioDAO().obterPeloId(expedicao.getId_funcionario());
           IndexRedirect.redirecionarSubpasta(req, resp, "funcionario", "prontuario.jsp?id="+paciente.getId());
     }
 

@@ -36,7 +36,7 @@ public class CustosDAO {
                 custo.setTipo(resultSet.getString("co.tipo"));
                 custo.setTotal(resultSet.getDouble("total"));
                 
-                GastosFuncionariosBean gasto_Funcionario = new GastosFuncionariosDAO().obterPeloId(resultSet.getInt("gf.id"));
+                GastosFuncionariosBean gasto_Funcionario = new GastoFuncionarioDAO().obterPeloId(resultSet.getInt("gf.id"));
                 custo.setGastoFuncionario(gasto_Funcionario);
                 
                  ContasBean conta = new ContasDAO().obterPeloId(resultSet.getInt("ct.id"));
@@ -76,7 +76,7 @@ public class CustosDAO {
                 custo.setTipo(resultSet.getString("co.tipo"));
                 custo.setTotal(resultSet.getDouble("total"));
                 
-                GastosFuncionariosBean gasto_Funcionario = new GastosFuncionariosDAO().obterPeloId(resultSet.getInt("gf.id"));
+                GastosFuncionariosBean gasto_Funcionario = new GastoFuncionarioDAO().obterPeloId(resultSet.getInt("gf.id"));
                 custo.setGastoFuncionario(gasto_Funcionario);
                 
                  ContasBean conta = new ContasDAO().obterPeloId(resultSet.getInt("ct.id"));

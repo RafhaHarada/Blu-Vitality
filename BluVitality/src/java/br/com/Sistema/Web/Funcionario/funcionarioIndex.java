@@ -1,8 +1,8 @@
 package br.com.Sistema.Web.Funcionario;
 
 import br.com.Sistema.Bean.FuncionariosBean;
-import br.com.Sistema.Bean.UsuariosBean;
-import br.com.Sistema.DAO.FuncionariosDAO;
+import br.com.Sistema.Bean.UsuarioBean;
+import br.com.Sistema.DAO.FuncionarioDAO;
 import br.com.Sistema.Web.IndexRedirect;
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -22,8 +22,9 @@ public class funcionarioIndex extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
             throws ServletException, IOException {
         
-//        IndexRedirect.redirecionar(req, resp, "funcionario");
-        resp.setContentType("text/html;charset=UTF-8");
-        req.getRequestDispatcher("/index.jsp").include(req, resp);
+        IndexRedirect.redirecionar(req, resp, "funcionario");
+//        resp.setContentType("text/html;charset=UTF-8");
+//        req.getRequestDispatcher("/index.jsp").include(req, resp);
+// I hate you GUSTAVO.  att: RAFAEL
     }
 }

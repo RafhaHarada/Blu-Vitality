@@ -7,8 +7,8 @@ package br.com.Sistema.Web.Administrador.Servicos;
 
 import br.com.Sistema.Bean.FuncionariosBean;
 import br.com.Sistema.Bean.ServicosBean;
-import br.com.Sistema.Bean.UsuariosBean;
-import br.com.Sistema.DAO.FuncionariosDAO;
+import br.com.Sistema.Bean.UsuarioBean;
+import br.com.Sistema.DAO.FuncionarioDAO;
 import br.com.Sistema.DAO.ServicosDAO;
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -28,8 +28,8 @@ public class ServicosStore extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
 
-        UsuariosBean usuario = (UsuariosBean) req.getSession().getAttribute("usuario");
-        FuncionariosBean funcionario = new FuncionariosDAO().obterPeloIdUsuario(usuario.getId());
+        UsuarioBean usuario = (UsuarioBean) req.getSession().getAttribute("usuario");
+        FuncionariosBean funcionario = new FuncionarioDAO().obterPeloIdUsuario(usuario.getId());
         ServicosBean servico = new ServicosBean();
         servico.setId_funcionario(funcionario.getId());
         servico.setNome(req.getParameter("nome"));

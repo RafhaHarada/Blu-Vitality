@@ -6,7 +6,7 @@
 package br.com.Sistema.Web.Usuario;
 
 import br.com.Sistema.Bean.FuncionariosBean;
-import br.com.Sistema.Bean.UsuariosBean;
+import br.com.Sistema.Bean.UsuarioBean;
 import br.com.Sistema.DAO.UsuarioDAO;
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -25,7 +25,7 @@ public class UsuarioUpdate extends HttpServlet{
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) 
             throws ServletException, IOException {
-        UsuariosBean usuario = new UsuariosBean();
+        UsuarioBean usuario = new UsuarioBean();
         
         
     }

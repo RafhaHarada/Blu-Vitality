@@ -2,7 +2,7 @@ package br.com.Sistema.DAO;
 
 import br.com.Sistema.Bean.ExpedicaoBean;
 import br.com.Sistema.Bean.FuncionariosBean;
-import br.com.Sistema.Bean.UsuariosBean;
+import br.com.Sistema.Bean.UsuarioBean;
 import br.com.Sistema.Database.Conexao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -33,10 +33,10 @@ public class ExpedicaoDAO {
                 expedicao.setHora_expedicao(resultSet.getTime("hora_expedicao"));
                 expedicao.setCusto(resultSet.getDouble("custo"));
                 
-                UsuariosBean usuario = new UsuarioDAO().obterPeloId(resultSet.getInt("id_usuario"));
+                UsuarioBean usuario = new UsuarioDAO().obterPeloId(resultSet.getInt("id_usuario"));
                 expedicao.setUsuario(usuario);
                 
-                FuncionariosBean funcionario = new FuncionariosDAO().obterPeloIdUsuario(resultSet.getInt("id_funcionario"));
+                FuncionariosBean funcionario = new FuncionarioDAO().obterPeloIdUsuario(resultSet.getInt("id_funcionario"));
                 expedicao.setFuncionario(funcionario);
                 
                 expedicoes.add(expedicao);
@@ -64,10 +64,10 @@ public class ExpedicaoDAO {
                 expedicao.setHora_expedicao(resultSet.getTime("ex.hora_expedicao"));
                 expedicao.setCusto(resultSet.getDouble("ex.custo"));
                 
-                UsuariosBean usuario = new UsuarioDAO().obterPeloId(resultSet.getInt("ex.id_usuario"));
+                UsuarioBean usuario = new UsuarioDAO().obterPeloId(resultSet.getInt("ex.id_usuario"));
                 expedicao.setUsuario(usuario);
                 
-                FuncionariosBean funcionario = new FuncionariosDAO().obterPeloIdUsuario(resultSet.getInt("ex.id_funcionario"));
+                FuncionariosBean funcionario = new FuncionarioDAO().obterPeloIdUsuario(resultSet.getInt("ex.id_funcionario"));
                 expedicao.setFuncionario(funcionario);
             }
         }catch(SQLException e){

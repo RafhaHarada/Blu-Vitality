@@ -10,7 +10,7 @@ public class FuncionariosBean {
     private int id_usuario;
     private int id_cargo;
     private String tipo;
-    private UsuariosBean usuario;
+    private UsuarioBean usuario;
     private CargosBean cargo;
 
     public int getId() {
@@ -37,11 +37,11 @@ public class FuncionariosBean {
         this.id_cargo = id_cargo;
     }
 
-    public UsuariosBean getUsuario() {
+    public UsuarioBean getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(UsuariosBean usuario) {
+    public void setUsuario(UsuarioBean usuario) {
         this.usuario = usuario;
     }
 

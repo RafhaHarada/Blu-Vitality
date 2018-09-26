@@ -5,8 +5,8 @@
 
 <%@page import="br.com.Sistema.DAO.QuartoDAO"%>
 <%@page import="br.com.Sistema.Bean.QuartoBean"%>
-<%@page import="br.com.Sistema.DAO.UsuariosDAO"%>
-<%@page import="br.com.Sistema.Bean.UsuariosBean"%>
+<%@page import="br.com.Sistema.DAO.UsuarioDAO"%>
+<%@page import="br.com.Sistema.Bean.UsuarioBean"%>
 <%@page import="java.util.List"%>
 <jsp:include page="../model/headerStart.jsp"/>
 <li><a class='dropdown-trigger' href='#' data-target='dropdownCadastro'>Opções</a>

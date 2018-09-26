@@ -2,7 +2,7 @@
     Document   : headeradm
     Created on : 26/08/2018, 17:47:02
     Author     : @Luana Patricia Duarte 
-    @Rafhael
+                 @Rafael Alipio Harada (rafhaharada@gmail.com)
 
 --%>
 <jsp:include page="../model/headerStart.jsp"/>

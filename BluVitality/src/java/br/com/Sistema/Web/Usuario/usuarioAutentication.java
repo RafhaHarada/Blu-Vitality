@@ -1,9 +1,10 @@
 package br.com.Sistema.Web.Usuario;
 
 import br.com.Sistema.Bean.FuncionariosBean;
-import br.com.Sistema.Bean.UsuariosBean;
-import br.com.Sistema.DAO.FuncionariosDAO;
+import br.com.Sistema.Bean.UsuarioBean;
+import br.com.Sistema.DAO.FuncionarioDAO;
 import br.com.Sistema.DAO.UsuarioDAO;
+import br.com.Sistema.Web.IndexRedirect;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,20 +18,23 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/usuario/autentication")
 public class usuarioAutentication extends HttpServlet {
 
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        IndexRedirect.redirecionar(req, resp, "usuario");
+    }
+    
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html;charset=UTF-8");
-
         String login = req.getParameter("login");
         String senha = req.getParameter("senha");
 
-        UsuariosBean usuario = new UsuarioDAO().autenticar(login, senha);
+        UsuarioBean usuario = new UsuarioDAO().autenticar(login, senha);
 
         if (usuario != null) {
             req.getSession().setAttribute("usuario", usuario);
             String tipoFuncionario = "";
-            if(new FuncionariosDAO().obterPeloIdUsuario(usuario.getId()) != null){
-                FuncionariosBean funcionario = new FuncionariosDAO().obterPeloIdUsuario(usuario.getId());
+            if (new FuncionarioDAO().obterPeloIdUsuario(usuario.getId()) != null) {
+                FuncionariosBean funcionario = new FuncionarioDAO().obterPeloIdUsuario(usuario.getId());
                 tipoFuncionario = funcionario.getTipo();
             }
             if (!tipoFuncionario.isEmpty()) {
@@ -41,6 +45,6 @@ public class usuarioAutentication extends HttpServlet {
         } else {
             resp.sendRedirect("/usuario/login");
         }
-
     }
+
 }

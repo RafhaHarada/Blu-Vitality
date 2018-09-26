@@ -4,7 +4,7 @@ package br.com.Sistema.DAO;
  * @author Cidimar
  * @author Gustavo Rodrigues (gugaaroodrigues@gmail.com)
  */
-import br.com.Sistema.Bean.UsuariosBean;
+import br.com.Sistema.Bean.UsuarioBean;
 import br.com.Sistema.Database.Conexao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -20,8 +20,8 @@ import java.util.List;
  */
 public class UsuarioDAO {
 
-    public List<UsuariosBean> obterTodos() {
-        List<UsuariosBean> usuarios = new ArrayList<>();
+    public List<UsuarioBean> obterTodos() {
+        List<UsuarioBean> usuarios = new ArrayList<>();
         String sql = "SELECT * FROM usuarios";
 
         try {
@@ -30,7 +30,7 @@ public class UsuarioDAO {
             ResultSet resultSet = st.getResultSet();
 
             while (resultSet.next()) {
-                UsuariosBean usuario = new UsuariosBean();
+                UsuarioBean usuario = new UsuarioBean();
 
                 usuario.setId(resultSet.getInt("id"));
                 usuario.setNome(resultSet.getString("nome"));
@@ -65,7 +65,7 @@ public class UsuarioDAO {
         return usuarios;
     }
 
-    public int adicionar(UsuariosBean usuario) {
+    public int adicionar(UsuarioBean usuario) {
         String sql = "INSERT INTO usuarios(nome, estado_civil, idade, sexo, login, senha, "
                 + "cpf, rg, telefone, email, endereco, complemento, uf, cidade, naturalidade, "
                 + "data_nascimento, nome_fic, tipo_sanguineo, contato_emergencia, convenio, colaborador)"
@@ -126,7 +126,7 @@ public class UsuarioDAO {
         return false;
     }
 
-    public boolean alterar(UsuariosBean usuario) {
+    public boolean alterar(UsuarioBean usuario) {
         String sql = "UPDATE usuarios SET nome = ?, estado_civil = ?, idade = ?, "
                 + "sexo = ?, login = ?, senha = ?, cpf = ?, rg = ?, telefone = ?, "
                 + "email = ?, endereco = ?, complemento = ?, uf = ?, cidade = ?, "
@@ -169,7 +169,7 @@ public class UsuarioDAO {
         return false;
     }
 
-    public UsuariosBean obterPeloId(int id) {
+    public UsuarioBean obterPeloId(int id) {
         String sql = "SELECT * FROM usuarios WHERE id = ?";
         try {
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);
@@ -177,7 +177,7 @@ public class UsuarioDAO {
             ps.execute();
             ResultSet resultSet = ps.getResultSet();
             if (resultSet.next()) {
-                UsuariosBean usuario = new UsuariosBean();
+                UsuarioBean usuario = new UsuarioBean();
 
                 usuario.setId(resultSet.getInt("id"));
                 usuario.setNome(resultSet.getString("nome"));
@@ -211,7 +211,7 @@ public class UsuarioDAO {
         }
         return null;
     }
-    public UsuariosBean obterPeloCPF(String cpf ) {
+    public UsuarioBean obterPeloCPF(String cpf ) {
         String sql = "SELECT * FROM usuarios WHERE cpf = ?";
         try {
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);
@@ -219,7 +219,7 @@ public class UsuarioDAO {
             ps.execute();
             ResultSet resultSet = ps.getResultSet();
             if (resultSet.next()) {
-                UsuariosBean usuario = new UsuariosBean();
+                UsuarioBean usuario = new UsuarioBean();
 
                 usuario.setId(resultSet.getInt("id"));
                 usuario.setNome(resultSet.getString("nome"));
@@ -254,7 +254,7 @@ public class UsuarioDAO {
         return null;
     }
     
-    public UsuariosBean autenticar(String login, String senha) {
+    public UsuarioBean autenticar(String login, String senha) {
         String sql = "SELECT * FROM usuarios WHERE login = ? AND senha = ?";
         try {
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);
@@ -263,7 +263,7 @@ public class UsuarioDAO {
             ps.execute();
             ResultSet resultSet = ps.getResultSet();
             if (resultSet.next()) {
-                UsuariosBean usuario = new UsuariosBean();
+                UsuarioBean usuario = new UsuarioBean();
                 usuario.setId(resultSet.getInt("id"));
                 usuario.setNome(resultSet.getString("nome"));
                 usuario.setEstado_civil(resultSet.getString("estado_civil"));

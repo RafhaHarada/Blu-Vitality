@@ -16,12 +16,11 @@
 <%@include file="../model/headerEnd.jsp" %>
 <!--%@include file="../model/sessionConfirm.jsp" %-->
 <div class=" row">
-
     <a href="financas.jsp" class="waves-effect waves-light red btn-small right" id="btnFinancas">Financeiro</a>
     <div class="" style="margin-top: auto">
+        <span class="text-bold"> Olá seja bem Vindo volta <%=usuario.getNome()%><span>
         <div class="divider"></div>
         <ul class="tabs tabs-transparent center ">
-            <li class="tab"><a href="#InicioADM" class="active teal-text waves-effect">Bem vindo</a></li>
             <li class="tab"><a href="#listapaciente" class="teal-text waves-effect">Pacientes</a></li>
             <li class="tab"><a href="#lisfuncionarios" class="teal-text waves-effect">Funcionarios</a></li>
             <li class="tab"><a href="#hospitalQuartos" class="teal-text waves-effect atualizaTabFunc">Quarto</a></li>
@@ -30,13 +29,9 @@
             <li class="tab"><a href="#hospitalEventos" class="teal-text waves-effect">Eventos</a></li>
         </ul>
         <div class="divider"></div>
-        <div id="InicioADM" class="col s12 container">
-            <div class="row" id="div-bemvindo"> 
-            </div>
-        </div>
-
         <div id="listapaciente" class="col s12 scrollBarOnDiv container">
             <%@include file="table/tabela-usuarios.jsp" %>
+            <%@include file="perfil-usuario.jsp"%>
         </div>
         <div id="lisfuncionarios" class="col s12 container">
             <div class="">

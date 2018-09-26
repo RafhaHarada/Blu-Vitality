@@ -4,10 +4,10 @@
     Author     : Luana Patricia Duarte (luanapatricia.blu@hotmail.com)
 --%>
 <%
-    UsuariosBean paciente = new UsuariosBean();
+    UsuarioBean paciente = new UsuarioBean();
 
     int id_paciente = Integer.parseInt(request.getParameter("id"));
-    paciente = new UsuariosDAO().obterPeloId(id_paciente);
+    paciente = new UsuarioDAO().obterPeloId(id_paciente);
 
 %>
 <div id="Funcionarios10" class="col s12 container">
