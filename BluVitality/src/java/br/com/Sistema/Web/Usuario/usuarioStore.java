@@ -2,6 +2,7 @@ package br.com.Sistema.Web.Usuario;
 
 import br.com.Sistema.Bean.UsuariosBean;
 import br.com.Sistema.DAO.UsuarioDAO;
+import br.com.Sistema.Web.IndexRedirect;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.Period;
@@ -17,6 +18,10 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/usuario/store")
 public class usuarioStore extends HttpServlet {
 
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        IndexRedirect.redirecionar(req, resp, "usuario");
+    }
+    
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         UsuariosBean usuario = new UsuariosBean();
