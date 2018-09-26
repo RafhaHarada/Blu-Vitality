@@ -1,7 +1,8 @@
 <%-- 
     Document   : funcionarioTab
     Created on : 20/09/2018, 08:04:22
-    Author     : Alunos
+    Author     : @Luana Patricia Duarte  
+                 @Rafael Alipio Harada (rafhaharada@gmail.com)
 --%>
 
 <%
