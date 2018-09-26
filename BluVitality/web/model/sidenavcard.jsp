@@ -10,7 +10,7 @@
 <%@page import="br.com.Sistema.DAO.FuncionariosDAO"%>
 <%@page import="java.util.List"%>
 <%@page import="br.com.Sistema.Bean.UsuariosBean"%>
-<%@page import="br.com.Sistema.DAO.UsuariosDAO"%>
+<%@page import="br.com.Sistema.DAO.UsuarioDAO"%>
 
 <!-- SESSION CONFIRM -->
 <%  UsuariosBean usuario = new UsuariosBean();
