@@ -3,7 +3,7 @@ package br.com.Sistema.Web.Administrador.Quarto;
 
 import br.com.Sistema.Bean.FuncionariosBean;
 import br.com.Sistema.Bean.QuartoBean;
-import br.com.Sistema.DAO.FuncionariosDAO;
+import br.com.Sistema.DAO.FuncionarioDAO;
 import br.com.Sistema.DAO.QuartoDAO;
 import java.io.IOException;
 import java.util.List;

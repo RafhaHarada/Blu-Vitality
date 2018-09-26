@@ -49,8 +49,8 @@ public class funcionarioProntuario extends HttpServlet {
 //        expedicao.setId_funcionario(Integer.parseInt(req.getParameter("id_funcionario")));
 //        
 //        expedicao.setId(new ExpedicaoDAO().adicionar(expedicao));
-//        UsuarioBean usuario = new UsuariosDAO().obterPeloId(expedicao.getId_usuario());
-//        FuncionariosBean funcionario = new FuncionariosDAO().obterPeloId(expedicao.getId_funcionario());
+//        UsuarioBean usuario = new UsuarioDAO().obterPeloId(expedicao.getId_usuario());
+//        FuncionariosBean funcionario = new FuncionarioDAO().obterPeloId(expedicao.getId_funcionario());
           IndexRedirect.redirecionarSubpasta(req, resp, "funcionario", "prontuario.jsp?id="+paciente.getId());
     }
 

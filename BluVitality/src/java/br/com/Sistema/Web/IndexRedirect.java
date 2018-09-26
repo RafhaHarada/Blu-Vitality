@@ -3,7 +3,7 @@ package br.com.Sistema.Web;
 import br.com.Sistema.Web.Usuario.*;
 import br.com.Sistema.Bean.FuncionariosBean;
 import br.com.Sistema.Bean.UsuarioBean;
-import br.com.Sistema.DAO.FuncionariosDAO;
+import br.com.Sistema.DAO.FuncionarioDAO;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -23,7 +23,7 @@ public class IndexRedirect extends HttpServlet {
             UsuarioBean usuario = ((UsuarioBean) req.getSession().getAttribute("usuario"));
             String tipoFuncionario = "";
             if (usuario.isColaborador()) {
-                FuncionariosBean funcionario = new FuncionariosDAO().obterPeloIdUsuario(usuario.getId());
+                FuncionariosBean funcionario = new FuncionarioDAO().obterPeloIdUsuario(usuario.getId());
                 tipoFuncionario = funcionario.getTipo();
             }
             String clientUrl = req.getRequestURL().toString();
@@ -54,7 +54,7 @@ public class IndexRedirect extends HttpServlet {
             UsuarioBean usuario = ((UsuarioBean) req.getSession().getAttribute("usuario"));
             String tipoFuncionario = "";
             if (usuario.isColaborador()) {
-                FuncionariosBean funcionario = new FuncionariosDAO().obterPeloIdUsuario(usuario.getId());
+                FuncionariosBean funcionario = new FuncionarioDAO().obterPeloIdUsuario(usuario.getId());
                 tipoFuncionario = funcionario.getTipo();
             }
             String clientUrl = req.getRequestURL().toString();

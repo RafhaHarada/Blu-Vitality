@@ -2,7 +2,7 @@ package br.com.Sistema.Web.Usuario;
 
 import br.com.Sistema.Bean.FuncionariosBean;
 import br.com.Sistema.Bean.UsuarioBean;
-import br.com.Sistema.DAO.FuncionariosDAO;
+import br.com.Sistema.DAO.FuncionarioDAO;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -23,7 +23,7 @@ public class usuarioLogin extends HttpServlet {
         if ((UsuarioBean) req.getSession().getAttribute("usuario") != null) {
             UsuarioBean usuario = ((UsuarioBean) req.getSession().getAttribute("usuario"));
             String tipoFuncionario = "";
-            FuncionariosBean funcionario = new FuncionariosDAO().obterPeloIdUsuario(usuario.getId());
+            FuncionariosBean funcionario = new FuncionarioDAO().obterPeloIdUsuario(usuario.getId());
             tipoFuncionario = funcionario.getTipo();
             if (!tipoFuncionario.isEmpty()) {
                 resp.sendRedirect("/" + tipoFuncionario);

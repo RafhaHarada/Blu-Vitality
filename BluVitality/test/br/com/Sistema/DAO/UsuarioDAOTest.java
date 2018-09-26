@@ -16,9 +16,9 @@ import static org.junit.Assert.*;
  * @author 
  * @author Gustavo Rodrigues (gugaaroodrigues@gmail.com)
  */
-public class UsuariosDAOTest {
+public class UsuarioDAOTest {
     
-    public UsuariosDAOTest() {
+    public UsuarioDAOTest() {
     }
 
     @Test

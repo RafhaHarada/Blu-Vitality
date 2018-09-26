@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * @author Cidmar
  */
-public class GastosFuncionariosDAO {
+public class GastoFuncionarioDAO {
 
     public List<GastosFuncionariosBean> obterTodos() {
         List<GastosFuncionariosBean> gastosFuncionarios = new ArrayList<>();

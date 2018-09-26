@@ -6,7 +6,7 @@
 package br.com.Sistema.Web.Administrador.Financeiro.GastosFuncionarios;
 
 import br.com.Sistema.Bean.GastosFuncionariosBean;
-import br.com.Sistema.DAO.GastosFuncionariosDAO;
+import br.com.Sistema.DAO.GastoFuncionarioDAO;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -37,7 +37,7 @@ public class GastosFuncionariosUpdate extends HttpServlet {
         gastoFuncionario.setVale_transporte(Double.parseDouble(req.getParameter("valeTransporte")));
         gastoFuncionario.setVale_refeicao(Double.parseDouble(req.getParameter("valeRefeicao")));
 
-        new GastosFuncionariosDAO().alterar(gastoFuncionario);
+        new GastoFuncionarioDAO().alterar(gastoFuncionario);
         resp.sendRedirect("/gastosFuncionarios/editar?id=" + gastoFuncionario.getId());
     }
 

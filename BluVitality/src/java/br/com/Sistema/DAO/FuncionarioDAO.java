@@ -18,7 +18,7 @@ import java.util.List;
  * @author Gustavo Rodrigues (gugaaroodrigues@gmail.com)
  * @author Rafael Alipio Harada (rafhaharada@gmail.com)
  */
-public class FuncionariosDAO {
+public class FuncionarioDAO {
 
     public List<FuncionariosBean> obterTodos() {
         List<FuncionariosBean> funcionarios = new ArrayList<>();

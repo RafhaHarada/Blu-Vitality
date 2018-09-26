@@ -5,7 +5,7 @@
 --%>
 
 <%@page import="br.com.Sistema.Bean.UsuarioBean"%>
-<%@page import="br.com.Sistema.DAO.UsuariosDAO"%>
+<%@page import="br.com.Sistema.DAO.UsuarioDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -21,7 +21,7 @@
         <div class="container col s12" id="cadastro-funcionario">
             <div class="row"></div>
             <%
-                UsuarioBean usuario = new UsuariosDAO().obterPeloId(1);
+                UsuarioBean usuario = new UsuarioDAO().obterPeloId(1);
             %>
             <form class="form-group" id="testform">
                 <div class="row">

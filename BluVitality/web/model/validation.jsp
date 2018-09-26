@@ -3,7 +3,7 @@
     Created on : 19/09/2018, 08:01:00
     Author     : Alunos
 --%>
-<%@page import="br.com.Sistema.DAO.FuncionariosDAO"%>
+<%@page import="br.com.Sistema.DAO.FuncionarioDAO"%>
 <%@page import="br.com.Sistema.Bean.FuncionariosBean"%>
 <%@page import="br.com.Sistema.Bean.UsuarioBean"%>
 <%
@@ -12,7 +12,7 @@
         String url = "/usuario/" + otherPages;
         UsuarioBean usuario = ((UsuarioBean) request.getSession().getAttribute("usuario"));
         if (usuario.isColaborador()) {
-            FuncionariosBean funcionario = new FuncionariosDAO().obterPeloIdUsuario(usuario.getId());
+            FuncionariosBean funcionario = new FuncionarioDAO().obterPeloIdUsuario(usuario.getId());
             String clientUrl = request.getRequestURL().toString();
             url = "/" + funcionario.getTipo() + "/" + otherPages;
             if (!url.contains("/" + funcionario.getTipo())) {

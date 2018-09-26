@@ -36,7 +36,7 @@ public class ExpedicaoDAO {
                 UsuarioBean usuario = new UsuarioDAO().obterPeloId(resultSet.getInt("id_usuario"));
                 expedicao.setUsuario(usuario);
                 
-                FuncionariosBean funcionario = new FuncionariosDAO().obterPeloIdUsuario(resultSet.getInt("id_funcionario"));
+                FuncionariosBean funcionario = new FuncionarioDAO().obterPeloIdUsuario(resultSet.getInt("id_funcionario"));
                 expedicao.setFuncionario(funcionario);
                 
                 expedicoes.add(expedicao);
@@ -67,7 +67,7 @@ public class ExpedicaoDAO {
                 UsuarioBean usuario = new UsuarioDAO().obterPeloId(resultSet.getInt("ex.id_usuario"));
                 expedicao.setUsuario(usuario);
                 
-                FuncionariosBean funcionario = new FuncionariosDAO().obterPeloIdUsuario(resultSet.getInt("ex.id_funcionario"));
+                FuncionariosBean funcionario = new FuncionarioDAO().obterPeloIdUsuario(resultSet.getInt("ex.id_funcionario"));
                 expedicao.setFuncionario(funcionario);
             }
         }catch(SQLException e){

@@ -5,7 +5,7 @@
  */
 package br.com.Sistema.Web.Funcionario;
 
-import br.com.Sistema.DAO.FuncionariosDAO;
+import br.com.Sistema.DAO.FuncionarioDAO;
 import com.google.gson.Gson;
 import java.io.IOException;
 import java.util.HashMap;
@@ -22,12 +22,12 @@ import javax.servlet.http.HttpServletResponse;
  * Author     :  @Gustavo Rodrigues (gugaaroodrigues@gmail.com)
  */
 @WebServlet(name = "FuncionarioObterTodosParaDatatable", urlPatterns = {"/funcionarios/obtertodosparadatatable"})
-public class FuncionariosObterTodosParaDatatable extends HttpServlet{
+public class FuncionarioObterTodosParaDatatable extends HttpServlet{
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HashMap<String, Object> resultado = new HashMap<>();
-        List<HashMap<String, Object>> registros = new FuncionariosDAO().obterTodosParaDataTable();
+        List<HashMap<String, Object>> registros = new FuncionarioDAO().obterTodosParaDataTable();
         resultado.put("data", registros);
         resp.setContentType("text/html;charset=UTF-8");
         resp.getWriter().print(new Gson().toJson(resultado));

@@ -7,7 +7,7 @@
 <%@page import="br.com.Sistema.Bean.CargosBean"%>
 <%@page import="br.com.Sistema.Bean.FuncionariosBean"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="br.com.Sistema.DAO.FuncionariosDAO"%>
+<%@page import="br.com.Sistema.DAO.FuncionarioDAO"%>
 <%@page import="java.util.List"%>
 <%@page import="br.com.Sistema.Bean.UsuarioBean"%>
 <%@page import="br.com.Sistema.DAO.UsuarioDAO"%>
@@ -26,7 +26,7 @@
     }
     String cargoDoFuncionario = "";
     if (usuario != null) {
-        FuncionariosBean funcionario = new FuncionariosDAO().obterPeloIdUsuario(usuario.getId());
+        FuncionariosBean funcionario = new FuncionarioDAO().obterPeloIdUsuario(usuario.getId());
         cargoDoFuncionario = funcionario.getCargo().getNome();
     }
     if (cargoDoFuncionario.equals("Administrador")) {

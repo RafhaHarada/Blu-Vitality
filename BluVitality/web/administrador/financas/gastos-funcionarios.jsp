@@ -5,7 +5,7 @@
 --%>
 
 <%@page import="br.com.Sistema.Bean.GastosFuncionariosBean"%>
-<%@page import="br.com.Sistema.DAO.GastosFuncionariosDAO"%>
+<%@page import="br.com.Sistema.DAO.GastosFuncionarioDAO"%>
 
 <form action="/gastosFuncionarios/store" id="validateGastosFuncionarios" class="col s12">
     <div class="row container">

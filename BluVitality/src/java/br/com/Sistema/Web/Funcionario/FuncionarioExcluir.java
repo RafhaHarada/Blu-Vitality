@@ -7,7 +7,7 @@ package br.com.Sistema.Web.Funcionario;
 
 import br.com.Sistema.Bean.FuncionariosBean;
 import br.com.Sistema.Bean.UsuarioBean;
-import br.com.Sistema.DAO.FuncionariosDAO;
+import br.com.Sistema.DAO.FuncionarioDAO;
 import br.com.Sistema.Web.IndexRedirect;
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -27,7 +27,7 @@ public class FuncionarioExcluir extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         UsuarioBean usuario = ((UsuarioBean) req.getSession().getAttribute("usuario"));
         String tipoFuncionario = "";
-        FuncionariosBean funcionario = new FuncionariosDAO().obterPeloIdUsuario(usuario.getId());
+        FuncionariosBean funcionario = new FuncionarioDAO().obterPeloIdUsuario(usuario.getId());
         tipoFuncionario = funcionario.getTipo();
         String clientUrl = req.getRequestURL().toString();
         String url = "/usuario";
@@ -37,7 +37,7 @@ public class FuncionarioExcluir extends HttpServlet {
             }
         } else {
             int id = Integer.parseInt(req.getParameter("id"));
-            boolean apagar = new FuncionariosDAO().apagar(id);
+            boolean apagar = new FuncionarioDAO().apagar(id);
             if (apagar == true) {
                 IndexRedirect.redirecionar(req, resp, "administrador");
             } else {
