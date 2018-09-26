@@ -2,6 +2,7 @@
     Document   : prontuarioBusca
     Created on : 20/09/2018, 08:14:11
     Author     : Luana Patricia Duarte (luanapatricia.blu@hotmail.com)
+                 Rafael Alipio Harada (rafhaharada@gmail.com)
 --%>
 
 <div id="Funcionarios2" class="scrollBarOnDiv">
@@ -12,7 +13,7 @@
                     <div class="input-field col s12">
                         <i class="material-icons prefix">textsms</i>
                         <input type="text" id="nomePaciente" class="autocomplete" name="nomePaciente">
-                        <label for="autocomplete-input">Nome</label>
+                        <label for="nomePaciente">Nome</label>
                     </div>
                 </div>
             </div>

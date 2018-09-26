@@ -22,8 +22,9 @@ public class funcionarioIndex extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
             throws ServletException, IOException {
         
-//        IndexRedirect.redirecionar(req, resp, "funcionario");
-        resp.setContentType("text/html;charset=UTF-8");
-        req.getRequestDispatcher("/index.jsp").include(req, resp);
+        IndexRedirect.redirecionar(req, resp, "funcionario");
+//        resp.setContentType("text/html;charset=UTF-8");
+//        req.getRequestDispatcher("/index.jsp").include(req, resp);
+// I hate you GUSTAVO.  att: RAFAEL
     }
 }

@@ -131,19 +131,19 @@
     </nav>
     <div>
         <label>
-            <input class="with-gap exameRadio" name="exame" type="radio" >
+            <input class="with-gap exameRadio" name="group1" type="radio">
             <span class="teal-text">Exame</span>
         </label>
     </div>
     <div>
         <label>
-            <input class="with-gap consultaRadio" name="consulta" type="radio" >
+            <input class="with-gap consultaRadio" name="group1" type="radio" >
             <span class="teal-text">Consulta</span>
         </label>
     </div>
     <!--Exame-->
     <div class="agendarE container">
-        <form action="" method="">
+        <form action="" method="GET">
             <div class="row">
                 <div class="input-field col s12">
                     <textarea id="textarea1" name="informeExames" class="materialize-textarea"></textarea>
