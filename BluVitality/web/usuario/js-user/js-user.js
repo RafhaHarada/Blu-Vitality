@@ -1,4 +1,4 @@
-/* 
+﻿/* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -24,25 +24,6 @@ function validacaoEmBranco(id, campo) {
     }
 }
 
-
-$(function () {
-    $(".agendarE").hide();
-    $(".agendarC").hide();
-
-    $(".exameRadio").on("click", function () {
-        $(".agendarE").show();
-        $(".agendarC").hide();
-        atualizaTab();
-
-    });
-
-    $(".consultaRadio").on("click", function () {
-        $(".agendarC").show();
-        $(".agendarE").hide();
-        atualizaTab();
-    });
-});
-
 function atualizaTab() {
     var maxHeight = 0;
     $('.carousel-item').each(function () {
@@ -51,3 +32,51 @@ function atualizaTab() {
     });
     $(".tabs-content").css('height', maxHeight + 'px');
 }
+
+var tipoAgendamento = 0;
+$(function () {
+    $(".agendarE").hide();
+    $(".agendarC").hide();
+
+    $(".exameRadio").on("click", function () {
+        $(".agendarE").show();
+        document.getElementById("exame-cadastro-tipo").value = "Exame";
+        $(".agendarC").hide();
+        document.getElementById("consulta-cadastro-id-usuario").value = "";
+        document.getElementById("consulta-cadastro-id-funcionario").value = "";
+        document.getElementById("consulta-cadastro-nome").value = "";
+        document.getElementById("consulta-cadastro-tipo").value = "";
+        document.getElementById("consulta-cadastro-data").value = "";
+        document.getElementById("consulta-cadastro-hora").value = "";
+        document.getElementById("consulta-cadastro-custo").value = "";
+        atualizaTab();
+    });
+
+    $(".consultaRadio").on("click", function () {
+        $(".agendarC").show();
+        document.getElementById("consulta-cadastro-tipo").value = "Consulta";
+        $(".agendarE").hide();
+        document.getElementById("exame-cadastro-id-usuario").value = "";
+        document.getElementById("exame-cadastro-id-funcionario").value = "";
+        document.getElementById("exame-cadastro-nome").value = "";
+        document.getElementById("exame-cadastro-tipo").value = "";
+        document.getElementById("exame-cadastro-data").value = "";
+        document.getElementById("exame-cadastro-hora").value = "";
+        document.getElementById("exame-cadastro-custo").value = "";
+        tipoAgendamento = 2;
+        atualizaTab();
+    });
+
+    $('#expedicao-cadastrar').on('click', function () {
+            if($('exame-cadastro-convenio').isChecked()){
+                var custo = 1000;
+        	document.getElementById("exame-cadastro-custo").value = custo;
+            } elseif($('consulta-cadastro-convenio').isChecked()){
+                var custo = 500;
+        	document.getElementById("consulta-cadastro-custo").value = custo;
+            } else {
+        	document.getElementById("exame-cadastro-custo").value = "0";
+        	document.getElementById("consulta-cadastro-custo").value = "0";
+		}
+    });
+});
