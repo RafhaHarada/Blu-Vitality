@@ -33,15 +33,15 @@ function atualizaTab() {
     $(".tabs-content").css('height', maxHeight + 'px');
 }
 
-var tipoAgendamento = 0;
 $(function () {
     $(".agendarE").hide();
     $(".agendarC").hide();
 
     $(".exameRadio").on("click", function () {
         $(".agendarE").show();
-        document.getElementById("exame-cadastro-tipo").value = "Exame";
         $(".agendarC").hide();
+        atualizaTab();
+        document.getElementById("exame-cadastro-tipo").value = "Exame";
         document.getElementById("consulta-cadastro-id-usuario").value = "";
         document.getElementById("consulta-cadastro-id-funcionario").value = "";
         document.getElementById("consulta-cadastro-nome").value = "";
@@ -49,13 +49,13 @@ $(function () {
         document.getElementById("consulta-cadastro-data").value = "";
         document.getElementById("consulta-cadastro-hora").value = "";
         document.getElementById("consulta-cadastro-custo").value = "";
-        atualizaTab();
     });
 
     $(".consultaRadio").on("click", function () {
         $(".agendarC").show();
-        document.getElementById("consulta-cadastro-tipo").value = "Consulta";
         $(".agendarE").hide();
+        atualizaTab();
+        document.getElementById("consulta-cadastro-tipo").value = "Consulta";
         document.getElementById("exame-cadastro-id-usuario").value = "";
         document.getElementById("exame-cadastro-id-funcionario").value = "";
         document.getElementById("exame-cadastro-nome").value = "";
@@ -63,8 +63,6 @@ $(function () {
         document.getElementById("exame-cadastro-data").value = "";
         document.getElementById("exame-cadastro-hora").value = "";
         document.getElementById("exame-cadastro-custo").value = "";
-        tipoAgendamento = 2;
-        atualizaTab();
     });
 
     $('#expedicao-cadastrar').on('click', function () {
