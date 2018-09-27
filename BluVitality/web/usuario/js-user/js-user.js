@@ -65,7 +65,7 @@ $(function () {
         document.getElementById("exame-cadastro-custo").value = "";
     });
 
-    $('#expedicao-cadastrar').on('click', function () {
+    $('#exame-cadastro-convenio').on('click', function () {
             if($('exame-cadastro-convenio').isChecked()){
                 var custo = 1000;
         	document.getElementById("exame-cadastro-custo").value = custo;

@@ -59,7 +59,7 @@
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <label for="id-funcionario" class="teal-text">Médico</label>
+                <label for="exame-cadastro-id-funcionario" class="teal-text">Médico</label>
                 <select id="exame-cadastro-id-funcionario" name="id-funcionario" class="browser-default row" required="required">
                     <option value="" disabled selected>Ser atendido por</option>
                     <%
@@ -114,7 +114,7 @@
             <input id="exame-cadastro-custo" name="custo" type="number" value="0" disabled>
         </div>
         <!-- Modal Trigger -->
-        <a class="waves-effect waves-light btn modal-trigger" id="expedicao-cadastrar" href="#modal1">Agendar</a>
+        <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Agendar</a>
 
         <!-- Modal Structure -->
         <div id="modal1" class="modal">
@@ -132,8 +132,8 @@
     <form action="/expedicao/store" method="GET">
         <div class="row">
             <div class="input-field col s12">
-                <input id="exame-cadastro-tipo" type="text" name="tipo" required="required" disabled></input>
-                <label class="teal-text lighten-4" for="exame-cadastro-tipo">Agendarei um</label>
+                <input id="consulta-cadastro-tipo" type="text" name="tipo" required="required" disabled></input>
+                <label class="teal-text lighten-4" for="consulta-cadastro-tipo">Agendarei um</label>
             </div>
         </div>
         <div class="row">
@@ -156,7 +156,7 @@
                 <%
                 } else {
                 %>
-                <select id="exame-cadastro-id-usuario" name="id-usuario" class="browser-default row" required="required">
+                <select id="consulta-cadastro-id-usuario" name="id-usuario" class="browser-default row" required="required">
                     <option value="<%=usuario.getId()%>" disabled selected><%=usuario.getNome()%></option>
                 </select>
                 <%
@@ -231,7 +231,7 @@
             <input id="consulta-cadastro-custo" name="custo" type="number" value="0" disabled>
         </div>
         <!-- Modal Trigger -->
-        <a class="waves-effect waves-light btn modal-trigger" id="expedicao-cadastrar" href="#modal2">Agendar</a>
+        <a class="waves-effect waves-light btn modal-trigger" href="#modal2">Agendar</a>
 
         <!-- Modal Structure -->
         <div id="modal2" class="modal">
