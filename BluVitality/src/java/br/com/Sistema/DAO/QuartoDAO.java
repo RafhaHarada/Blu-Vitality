@@ -80,13 +80,12 @@ public class QuartoDAO {
     }
 
     public int adicionarQuarto(QuartoBean quarto) {
-        String sql = "INSERT INTO quartos ( numero_quarto, tipo, status) "
-                + "VALUES(?,?,?)";
+        String sql = "INSERT INTO quartos ( numero_quarto, tipo) "
+                + "VALUES(?,?)";
         try {
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql, RETURN_GENERATED_KEYS);
             ps.setInt(1, quarto.getNumero_quarto());
             ps.setString(2, quarto.getTipo());
-            ps.setString(3, quarto.getStatus());
 
             ps.execute();
             ResultSet resultSet = ps.getGeneratedKeys();

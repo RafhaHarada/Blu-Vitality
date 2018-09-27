@@ -27,7 +27,6 @@ public class QuartoStore extends HttpServlet {
         
         quarto.setNumero_quarto(Integer.parseInt(req.getParameter("numeroQuarto")));
         quarto.setTipo(req.getParameter("tipo"));
-        quarto.setStatus("ativo");
         
         quarto.setId(new QuartoDAO().adicionarQuarto(quarto));
         
