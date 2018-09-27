@@ -1,6 +1,6 @@
 package br.com.Sistema.DAO;
 
-import br.com.Sistema.Bean.GastosFuncionariosBean;
+import br.com.Sistema.Bean.GastosFuncionarioBean;
 import br.com.Sistema.Database.Conexao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -15,8 +15,8 @@ import java.util.List;
  */
 public class GastoFuncionarioDAO {
 
-    public List<GastosFuncionariosBean> obterTodos() {
-        List<GastosFuncionariosBean> gastosFuncionarios = new ArrayList<>();
+    public List<GastosFuncionarioBean> obterTodos() {
+        List<GastosFuncionarioBean> gastosFuncionarios = new ArrayList<>();
         String sql = "SELECT * FROM gastosFuncionarios";
         try {
             Statement st = Conexao.abrirConexao().createStatement();
@@ -24,7 +24,7 @@ public class GastoFuncionarioDAO {
             ResultSet resultSet = st.getResultSet();
 
             while (resultSet.next()) {
-                GastosFuncionariosBean gastoFuncionario = new GastosFuncionariosBean();
+                GastosFuncionarioBean gastoFuncionario = new GastosFuncionarioBean();
                 gastoFuncionario.setId(resultSet.getInt("id"));
                 gastoFuncionario.setSalarioMensal(resultSet.getDouble("salarioMensal"));
                 gastoFuncionario.setFeriasAnuaisRemuneradas(resultSet.getDouble("feriasAnuaisRemuneradas"));
@@ -47,8 +47,8 @@ public class GastoFuncionarioDAO {
         return gastosFuncionarios;
     }
 
-    public GastosFuncionariosBean obterPeloId(int id) {
-        GastosFuncionariosBean gastoFuncionario = null;
+    public GastosFuncionarioBean obterPeloId(int id) {
+        GastosFuncionarioBean gastoFuncionario = null;
         String sql = "SELECT salarioMensal, feriasAnuaisRemuneradas, umTercoSobreFerias, decimoTerceiroSalario, "
                 + "avisoPrevio, fgts, multaFgts, inss, valeTransporte, valeRefeicao, total FROM gastosFuncionarios WHERE id = ?";
                 
@@ -58,7 +58,7 @@ public class GastoFuncionarioDAO {
             ResultSet resultSet = ps.getResultSet();
 
             while (resultSet.next()) {
-                gastoFuncionario = new GastosFuncionariosBean();
+                gastoFuncionario = new GastosFuncionarioBean();
                 gastoFuncionario.setId(resultSet.getInt("id"));
                 gastoFuncionario.setSalarioMensal(resultSet.getDouble("salarioMensal"));
                 gastoFuncionario.setFeriasAnuaisRemuneradas(resultSet.getDouble("feriasAnuaisRemuneradas"));
@@ -80,7 +80,7 @@ public class GastoFuncionarioDAO {
         return gastoFuncionario;
     }
 
-    public int adicionar(GastosFuncionariosBean gastoFuncionario) {
+    public int adicionar(GastosFuncionarioBean gastoFuncionario) {
         String sql = "INSERT INTO gastoFuncioario(salarioMensal, feriasAnuaisRemuneradas, umTercoSobreFerias, decimoTerceiroSalario, "
                 + "avisoPrevio, fgts, multaFgts, inss, valeTransporte, valeRefeicao, total) VALUES(?,?,?,?,?,?,?,?,?,?,?)";
                 
@@ -110,7 +110,7 @@ public class GastoFuncionarioDAO {
         return -1;
     }
 
-    public boolean alterar(GastosFuncionariosBean gastoFuncionario) {
+    public boolean alterar(GastosFuncionarioBean gastoFuncionario) {
         try {
             String sql = "UPDATE gastoFuncionario SET salarioMensal = ?, feriasAnuaisRemuneradas = ?, umTercoSobreFerias = ?, decimoTerceiroSalario = ?, "
                     + "avisoPrevio = ?, fgts, multaFgts = ?, inss = ?, valeTransporte = ?, valeRefeicao = ?, total = ? WHERE id = ?";

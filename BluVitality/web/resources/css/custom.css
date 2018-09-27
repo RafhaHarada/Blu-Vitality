@@ -46,7 +46,7 @@
 }
 
 .tabs-content.carousel .carousel-item {
-    height: min-content; 
+    height: auto; 
 }
 
 .tabs-transparent .tab a {
@@ -95,7 +95,4 @@ nav a.sidenav-trigger{
 .btnacessorapido btn{
     
     margin: 4px;
-    
-    
-    
 }

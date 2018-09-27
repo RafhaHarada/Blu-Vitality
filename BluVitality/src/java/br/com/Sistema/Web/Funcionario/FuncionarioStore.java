@@ -6,7 +6,7 @@
 package br.com.Sistema.Web.Funcionario;
 
 import br.com.Sistema.Bean.CargosBean;
-import br.com.Sistema.Bean.FuncionariosBean;
+import br.com.Sistema.Bean.FuncionarioBean;
 import br.com.Sistema.Bean.UsuarioBean;
 import br.com.Sistema.DAO.CargosDAO;
 import br.com.Sistema.DAO.FuncionarioDAO;
@@ -33,7 +33,7 @@ public class FuncionarioStore extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         
-        FuncionariosBean funcionario = new FuncionariosBean();
+        FuncionarioBean funcionario = new FuncionarioBean();
         
         funcionario.setId_usuario(Integer.parseInt(req.getParameter("id_usuario")));
         funcionario.setId_cargo(Integer.parseInt(req.getParameter("id_cargo")));

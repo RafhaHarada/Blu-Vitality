@@ -21,7 +21,7 @@ public class ExpedicaoBean {
     private Date data_expedicao;
     private double custo;
     private UsuarioBean usuario;
-    private FuncionariosBean funcionario;
+    private FuncionarioBean funcionario;
     private Time hora_expedicao;
 
     public Time getHora_expedicao() {
@@ -80,11 +80,11 @@ public class ExpedicaoBean {
         this.usuario = usuario;
     }
 
-    public FuncionariosBean getFuncionario() {
+    public FuncionarioBean getFuncionario() {
         return funcionario;
     }
 
-    public void setFuncionario(FuncionariosBean funcionario) {
+    public void setFuncionario(FuncionarioBean funcionario) {
         this.funcionario = funcionario;
     }
 

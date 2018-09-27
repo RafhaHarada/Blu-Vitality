@@ -34,8 +34,8 @@ public class expedicaoStore extends HttpServlet {
         
         ExpedicaoBean expedicao = new ExpedicaoBean();
         
-        expedicao.setId_usuario(Integer.parseInt(req.getParameter("id_usuario")));
-        expedicao.setId_funcionario(Integer.parseInt(req.getParameter("id_funcionario")));
+        expedicao.setId_usuario(Integer.parseInt(req.getParameter("exame-cadastro-id-usuario")));
+        expedicao.setId_funcionario(Integer.parseInt(req.getParameter("exame-cadastro-id-funcionario")));
         expedicao.setNome(req.getParameter("nome"));
         expedicao.setTipo(req.getParameter("tipo"));
         expedicao.setData_expedicao(Date.valueOf(req.getParameter("data")));

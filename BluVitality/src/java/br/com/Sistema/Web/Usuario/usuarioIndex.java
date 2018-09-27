@@ -1,6 +1,6 @@
 package br.com.Sistema.Web.Usuario;
 
-import br.com.Sistema.Bean.FuncionariosBean;
+import br.com.Sistema.Bean.FuncionarioBean;
 import br.com.Sistema.Bean.UsuarioBean;
 import br.com.Sistema.DAO.FuncionarioDAO;
 import br.com.Sistema.Web.IndexRedirect;

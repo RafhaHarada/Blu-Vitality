@@ -4,7 +4,7 @@
     Author     : Alunos
 --%>
 <%@page import="br.com.Sistema.DAO.FuncionarioDAO"%>
-<%@page import="br.com.Sistema.Bean.FuncionariosBean"%>
+<%@page import="br.com.Sistema.Bean.FuncionarioBean"%>
 <%@page import="br.com.Sistema.Bean.UsuarioBean"%>
 <%
     if ((UsuarioBean) request.getSession().getAttribute("usuario") != null) {
@@ -12,7 +12,7 @@
         String url = "/usuario/" + otherPages;
         UsuarioBean usuario = ((UsuarioBean) request.getSession().getAttribute("usuario"));
         if (usuario.isColaborador()) {
-            FuncionariosBean funcionario = new FuncionarioDAO().obterPeloIdUsuario(usuario.getId());
+            FuncionarioBean funcionario = new FuncionarioDAO().obterPeloIdUsuario(usuario.getId());
             String clientUrl = request.getRequestURL().toString();
             url = "/" + funcionario.getTipo() + "/" + otherPages;
             if (!url.contains("/" + funcionario.getTipo())) {

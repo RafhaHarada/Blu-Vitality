@@ -4,9 +4,11 @@
     Author     : Gus
 --%>
 
+<%@page import="br.com.Sistema.DAO.CargosDAO"%>
+<%@page import="br.com.Sistema.Bean.CargosBean"%>
 <%@page import="br.com.Sistema.DAO.FuncionarioDAO"%>
 <%@page import="java.util.List"%>
-<%@page import="br.com.Sistema.Bean.FuncionariosBean"%>
+<%@page import="br.com.Sistema.Bean.FuncionarioBean"%>
 <%@page import="br.com.Sistema.Bean.UsuarioBean"%>
 <%@page import="br.com.Sistema.DAO.UsuarioDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -16,12 +18,11 @@
         <option value="" disabled selected id="novofunc">Novo Funcionário</option>
         <%
             List<UsuarioBean> novoFuncionario = new UsuarioDAO().obterTodos();
-            FuncionariosBean funcionarioNovo = new FuncionariosBean();
+            FuncionarioBean funcionarioNovo = new FuncionarioBean();
 
-            for (int i = 0, i   < novoFuncionario.size  (), i++) {
-                funcionarioNovo = new FuncionarioDAO().obterPeloIdUsuario(novoFuncionario.get(i).getId();
-                If(funcionarioNovo.getTipo() == "")
-                {
+            for (int i = 0; i   < novoFuncionario.size(); i++) {
+                funcionarioNovo = new FuncionarioDAO().obterPeloIdUsuario(novoFuncionario.get(i).getId());
+                If(funcionarioNovo.getTipo() == ""){
         %>
         <option value="<%=funcionarioNovo.getId()%>"><%=funcionarioNovo.getNome()%></option>
         <%
@@ -44,15 +45,14 @@
     <select id="cargofunc">
         <option value="" disabled selected>Cargo</option>
         <%
-            List<CargoBean> cargoFuncionario = new CargoDAO().obterTodos;
+            List<CargosBean> cargoFuncionario = new CargosDAO().obterTodos();
 
-            for (int i = 0, i  < cargoFuncionario.size (), i++) {
+            for (int i = 0; i  < cargoFuncionario.size(); i++) {
 
 
         %>
-        <option value="<%=cargoFuncionario.get(i).getId()%>"><%=cargoFuncionario().get(i).getNome()%></option>
+        <option value="<%=cargoFuncionario.get(i).getId()%>"><%=cargoFuncionario.get(i).getNome()%></option>
         <%
-                }
             }
         %>
     </select>

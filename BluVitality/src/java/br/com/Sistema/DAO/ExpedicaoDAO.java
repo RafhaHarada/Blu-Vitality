@@ -1,7 +1,7 @@
 package br.com.Sistema.DAO;
 
 import br.com.Sistema.Bean.ExpedicaoBean;
-import br.com.Sistema.Bean.FuncionariosBean;
+import br.com.Sistema.Bean.FuncionarioBean;
 import br.com.Sistema.Bean.UsuarioBean;
 import br.com.Sistema.Database.Conexao;
 import java.sql.PreparedStatement;
@@ -36,7 +36,7 @@ public class ExpedicaoDAO {
                 UsuarioBean usuario = new UsuarioDAO().obterPeloId(resultSet.getInt("id_usuario"));
                 expedicao.setUsuario(usuario);
                 
-                FuncionariosBean funcionario = new FuncionarioDAO().obterPeloIdUsuario(resultSet.getInt("id_funcionario"));
+                FuncionarioBean funcionario = new FuncionarioDAO().obterPeloIdUsuario(resultSet.getInt("id_funcionario"));
                 expedicao.setFuncionario(funcionario);
                 
                 expedicoes.add(expedicao);
@@ -67,7 +67,7 @@ public class ExpedicaoDAO {
                 UsuarioBean usuario = new UsuarioDAO().obterPeloId(resultSet.getInt("ex.id_usuario"));
                 expedicao.setUsuario(usuario);
                 
-                FuncionariosBean funcionario = new FuncionarioDAO().obterPeloIdUsuario(resultSet.getInt("ex.id_funcionario"));
+                FuncionarioBean funcionario = new FuncionarioDAO().obterPeloIdUsuario(resultSet.getInt("ex.id_funcionario"));
                 expedicao.setFuncionario(funcionario);
             }
         }catch(SQLException e){

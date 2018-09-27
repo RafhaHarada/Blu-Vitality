@@ -3,12 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.Sistema.Web.Usuario;
+package br.com.Sistema.Web.Funcionario;
 
-import br.com.Sistema.Bean.FuncionarioBean;
-import br.com.Sistema.Bean.UsuarioBean;
-import br.com.Sistema.DAO.UsuarioDAO;
 import java.io.IOException;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,15 +17,15 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Gus
  */
-@WebServlet("/usuario/update")
-public class UsuarioUpdate extends HttpServlet{
+@WebServlet(name = "FuncionarioCadastro", urlPatterns = {"/funcionario/cadastro"})
+public class FuncionarioCadastro extends HttpServlet {
 
+   
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) 
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        UsuarioBean usuario = new UsuarioBean();
-        
-        
+        resp.setContentType("text/html;charset=UTF-8");
+        req.getRequestDispatcher("../administrador").include(req, resp);
     }
-    
+
 }

@@ -3,7 +3,7 @@
     Created on : 29/08/2018, 19:17:38
     Author     : Rafael Alipio Harada (rafhaharada@gmail.com)
 --%>
-<%@page import="br.com.Sistema.Bean.FuncionariosBean"%>
+<%@page import="br.com.Sistema.Bean.FuncionarioBean"%>
 <%@page import="br.com.Sistema.DAO.FuncionarioDAO"%>
 <%@page import="br.com.Sistema.Bean.UsuarioBean"%>
 <jsp:include page="../model/headerStart.jsp"/>

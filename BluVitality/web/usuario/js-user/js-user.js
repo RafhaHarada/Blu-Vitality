@@ -1,4 +1,4 @@
-﻿/* 
+/* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -71,10 +71,10 @@ $(function () {
             if($('exame-cadastro-convenio').isChecked()){
                 var custo = 1000;
         	document.getElementById("exame-cadastro-custo").value = custo;
-            } elseif($('consulta-cadastro-convenio').isChecked()){
+            }else if($('consulta-cadastro-convenio').isChecked()){
                 var custo = 500;
         	document.getElementById("consulta-cadastro-custo").value = custo;
-            } else {
+            }else{
         	document.getElementById("exame-cadastro-custo").value = "0";
         	document.getElementById("consulta-cadastro-custo").value = "0";
 		}
