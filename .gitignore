@@ -7,3 +7,7 @@
 *.xml
 *.iml
 *.xml
+/BluVitalityInterno/nbproject/private/
+/BluVitalityInterno/build/
+/BluVitality-2/nbproject/private/
+/BluVitality-2/build/
