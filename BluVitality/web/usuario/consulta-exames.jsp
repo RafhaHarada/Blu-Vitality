@@ -23,15 +23,15 @@
 <!--Exame-->
 <div class="agendarE container">
     <form action="/expedicao/store" method="GET">
-        <div class="row scrollBarOnDiv">
+        <div class="row">
             <div class="input-field col s12">
+                <label class="teal-text lighten-4" for="tipo">Agendarei um</label>
                 <input id="exame-cadastro-tipo" type="text" name="tipo" required="required" disabled></input>
-                <label class="teal-text lighten-4" for="exame-cadastro-tipo">Agendarei um</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <label for="exame-cadastro-id-usuario" class="teal-text">Paciente</label>
+                <label for="exame-cadastro-id-usuario" class="teal-text">Paciente</label><br>
                 <%
                     FuncionarioBean isFuncionario = new FuncionarioDAO().obterPeloIdUsuario(usuario.getId());
                     if (isFuncionario.getTipo() != "") {

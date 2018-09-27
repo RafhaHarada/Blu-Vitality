@@ -20,7 +20,7 @@
 </li>
 <%@include file="../model/headerEnd.jsp" %>
 
-<ul class="tabs tabs-transparent">
+<ul class="tabs tabs-transparent center">
     <li class="tab"><a href="#Usuario1" class="active teal-text">Paciente</a></li>
     <li class="tab"><a href="#Usuario3" class="teal-text">Agendamentos</a></li>
     <li class="tab"><a href="#Usuario4" class="teal-text">Consultas/Exames Futuros</a></li>
