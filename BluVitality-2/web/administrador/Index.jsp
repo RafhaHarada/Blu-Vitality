@@ -38,17 +38,17 @@
             <a class="nav-link" href="#">Usuarios</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Profile</a>
+            <a class="nav-link" href="#">Funcionarios</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Switch account</a>
+            <a class="nav-link" href="#">Quartos</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Settings</a>
+            <a class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Definir</a>
             <div class="dropdown-menu" aria-labelledby="dropdown01">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
+              <a class="dropdown-item" href="#">Opção1</a>
+              <a class="dropdown-item" href="#">--</a>
+              <a class="dropdown-item" href="#">não sei</a>
             </div>
           </li>
         </ul>
@@ -57,10 +57,9 @@
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
       </div>
-    </nav>
+    </nav><br>
 
-    <div class="nav-scroller bg-white shadow-sm">
-      <nav class="nav nav-underline">
+        <nav class="nav nav-underline mt-5 my-2 " >
         <a class="nav-link active" href="#">Dashboard</a>
         <a class="nav-link" href="#">
           Friends
@@ -74,15 +73,10 @@
         <a class="nav-link" href="#">Link</a>
         <a class="nav-link" href="#">Link</a>
       </nav>
-    </div>
 
     <main role="main" class="container">
       <div class="d-flex align-items-center p-3 my-3 text-white-50 bg-purple rounded shadow-sm">
           <img class="mr-3" src="../resources/images/logo.gif" alt="" width="90" height="48">
-        <div class="lh-100">
-          <h6 class="mb-0 text-white lh-100">Blu-Vitality</h6>
-          <small>Since 2018</small>
-        </div>
       </div>
 
       <div class="my-3 p-3 bg-white rounded shadow-sm">
