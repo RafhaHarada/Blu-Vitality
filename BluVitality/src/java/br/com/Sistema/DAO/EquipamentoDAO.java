@@ -5,7 +5,7 @@
  */
 package br.com.Sistema.DAO;
 
-import br.com.Sistema.Bean.EquipamentosBean;
+import br.com.Sistema.Bean.EquipamentoBean;
 import br.com.Sistema.Database.Conexao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -19,9 +19,9 @@ import java.util.List;
  *
  * @author Cidmar da Silva Ribeiro (cidmardsr@gmail.com)
  */
-public class EquipamentosDAO {
-    public List<EquipamentosBean> obterTodos() {
-        List<EquipamentosBean> equipamentos = new ArrayList<>();
+public class EquipamentoDAO {
+    public List<EquipamentoBean> obterTodos() {
+        List<EquipamentoBean> equipamentos = new ArrayList<>();
         String sql = "SELECT * FROM equipamentos";
         try {
             Statement st = Conexao.abrirConexao().createStatement();
@@ -29,7 +29,7 @@ public class EquipamentosDAO {
             ResultSet resultSet = st.getResultSet();
 
             while (resultSet.next()) {
-                EquipamentosBean equipamento = new EquipamentosBean();
+                EquipamentoBean equipamento = new EquipamentoBean();
                 equipamento.setId(resultSet.getInt("id"));
                 equipamento.setNome(resultSet.getString("nome"));
                 equipamento.setDescricao(resultSet.getString("descricao"));
@@ -47,8 +47,8 @@ public class EquipamentosDAO {
         return equipamentos;
     }
 
-    public EquipamentosBean obterPeloId(int id) {
-        EquipamentosBean equipamento = null;
+    public EquipamentoBean obterPeloId(int id) {
+        EquipamentoBean equipamento = null;
         String sql = "SELECT nome, descricao, status, quantidade, valor, tempo_de_uso FROM equipamentos WHERE id = ?";
         try {
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);
@@ -56,7 +56,7 @@ public class EquipamentosDAO {
             ResultSet resultSet = ps.getResultSet();
 
             while (resultSet.next()) {
-                equipamento = new EquipamentosBean();
+                equipamento = new EquipamentoBean();
                 equipamento.setId(resultSet.getInt("id"));
                 equipamento.setNome(resultSet.getString("nome"));
                 equipamento.setDescricao(resultSet.getString("descricao"));
@@ -73,7 +73,7 @@ public class EquipamentosDAO {
         return equipamento;
     }
 
-    public int adicionar(EquipamentosBean equipamento) {
+    public int adicionar(EquipamentoBean equipamento) {
         String sql = "INSERT INTO equipamentos(nome, descricao, status, quantidade, valor, tempo_de_uso) VALUES(?,?,?,?,?,?)";
         try {
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql, RETURN_GENERATED_KEYS);
@@ -96,7 +96,7 @@ public class EquipamentosDAO {
         return -1;
     }
 
-    public boolean alterar(EquipamentosBean equipamento) {
+    public boolean alterar(EquipamentoBean equipamento) {
         try {
             String sql = "UPDATE equipamentos SET nome = ?, descricao = ?, status = ?, quantidade = ?, valor = ?, tempo_de_uso = ? WHERE id = ?";
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);

@@ -1,7 +1,7 @@
 <%-- 
     Document   : receita
     Created on : 23/09/2018, 19:21:21
-    Author     : Edemar
+    Author     : Cidmar da Silva Ribeiro (cidmardsr@gmail.com)
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

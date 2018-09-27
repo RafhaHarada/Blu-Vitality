@@ -1,8 +1,8 @@
 <%-- 
     Document   : agendamentosfuturos
     Created on : 20/09/2018, 10:15:04
-    Author     : Luana Patricia Duarte
-                 Nattana Matos
+    Author     : Luana Patricia Duarte (luanapatricia.blu@hotmail.com)
+                 Nattana Matos (nattana.matos@Outlook.pt)
 --%>
 <div id="Funcionarios4" class="col s12 container white">
     <table class="striped teal lighten-4">

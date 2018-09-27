@@ -5,7 +5,7 @@
  */
 package br.com.Sistema.DAO;
 
-import br.com.Sistema.Bean.ContasBean;
+import br.com.Sistema.Bean.ContaBean;
 import br.com.Sistema.Database.Conexao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -19,9 +19,9 @@ import java.util.List;
  *
  * @author Cidmar da Silva Ribeiro (cidmardsr@gmail.com)
  */
-public class ContasDAO {
-    public List<ContasBean> obterTodos() {
-        List<ContasBean> contas = new ArrayList<>();
+public class ContaDAO {
+    public List<ContaBean> obterTodos() {
+        List<ContaBean> contas = new ArrayList<>();
         String sql = "SELECT * FROM contas";
         try {
             Statement st = Conexao.abrirConexao().createStatement();
@@ -29,7 +29,7 @@ public class ContasDAO {
             ResultSet resultSet = st.getResultSet();
 
             while (resultSet.next()) {
-                ContasBean conta = new ContasBean();
+                ContaBean conta = new ContaBean();
                 conta.setId(resultSet.getInt("id"));
                 conta.setEnergia_eletrica(resultSet.getDouble("energia_eletrica"));
                 conta.setAgua(resultSet.getDouble("agua"));
@@ -48,8 +48,8 @@ public class ContasDAO {
         return contas;
     }
 
-    public ContasBean obterPeloId(int id) {
-        ContasBean conta = null;
+    public ContaBean obterPeloId(int id) {
+        ContaBean conta = null;
         String sql = "SELECT id, energia_eletrica, agua, gas, telefone_e_internet, aluguel, fornecedores, total FROM contas WHERE id = ?";
         try {
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);
@@ -57,7 +57,7 @@ public class ContasDAO {
             ResultSet resultSet = ps.getResultSet();
 
             while (resultSet.next()) {
-                conta = new ContasBean();
+                conta = new ContaBean();
                 conta.setId(resultSet.getInt("id"));
                 conta.setEnergia_eletrica(resultSet.getDouble("energia_eletrica"));
                 conta.setAgua(resultSet.getDouble("agua"));
@@ -75,7 +75,7 @@ public class ContasDAO {
         return conta;
     }
 
-    public int adicionar(ContasBean conta) {
+    public int adicionar(ContaBean conta) {
         String sql = "INSERT INTO contas(energia_eletrica, agua, gas, telefone_e_internet, aluguel, fornecedores, total) VALUES(?,?,?,?,?,?,?)";
         try {
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql, RETURN_GENERATED_KEYS);
@@ -99,7 +99,7 @@ public class ContasDAO {
         return -1;
     }
 
-    public boolean alterar(ContasBean conta) {
+    public boolean alterar(ContaBean conta) {
         try {
             String sql = "UPDATE contas SET energia_eletrica = ?, agua = ?, gas = ?, telefone_e_internet = ?, aluguel = ?, fornecedores = ?, total = ? WHERE id = ?";
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);

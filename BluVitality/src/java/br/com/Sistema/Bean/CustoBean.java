@@ -3,17 +3,17 @@ package br.com.Sistema.Bean;
 /**
  * @author Cidmar da Silva Ribeiro (cidmardsr@gmail.com)
  */
-public class CustosBean {
+public class CustoBean {
    private int id;
    private int id_gastoFuncionario;
    private int id_conta;
    private int id_gastoGeral;
    private int id_investimento;
    private String tipo;
-   private GastosFuncionariosBean gastoFuncionario;
-   private ContasBean conta;
-   private GastosGeraisBean gastoGeral;
-   private InvestimentosBean investimento;
+   private GastoFuncionarioBean gastoFuncionario;
+   private ContaBean conta;
+   private GastoGeralBean gastoGeral;
+   private InvestimentoBean investimento;
    private double total;
 
     public int getId() {
@@ -56,35 +56,35 @@ public class CustosBean {
         this.id_investimento = id_investimento;
     }
 
-    public GastosFuncionariosBean getGastoFuncionario() {
+    public GastoFuncionarioBean getGastoFuncionario() {
         return gastoFuncionario;
     }
 
-    public void setGastoFuncionario(GastosFuncionariosBean gastoFuncionario) {
+    public void setGastoFuncionario(GastoFuncionarioBean gastoFuncionario) {
         this.gastoFuncionario = gastoFuncionario;
     }
 
-    public ContasBean getConta() {
+    public ContaBean getConta() {
         return conta;
     }
 
-    public void setConta(ContasBean conta) {
+    public void setConta(ContaBean conta) {
         this.conta = conta;
     }
 
-    public GastosGeraisBean getGastoGeral() {
+    public GastoGeralBean getGastoGeral() {
         return gastoGeral;
     }
 
-    public void setGastoGeral(GastosGeraisBean gastoGeral) {
+    public void setGastoGeral(GastoGeralBean gastoGeral) {
         this.gastoGeral = gastoGeral;
     }
 
-    public InvestimentosBean getInvestimento() {
+    public InvestimentoBean getInvestimento() {
         return investimento;
     }
 
-    public void setInvestimento(InvestimentosBean investimento) {
+    public void setInvestimento(InvestimentoBean investimento) {
         this.investimento = investimento;
     }
 

@@ -1,7 +1,7 @@
 <%-- 
     Document   : orcamento
     Created on : 23/09/2018, 19:27:14
-    Author     : Edemar
+    Author     : Cidmar da Silva Ribeiro (cidmardsr@gmail.com)
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

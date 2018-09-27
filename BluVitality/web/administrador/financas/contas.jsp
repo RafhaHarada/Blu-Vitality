@@ -1,7 +1,7 @@
 <%-- 
     Document   : contas
     Created on : 23/09/2018, 18:53:49
-    Author     : Edemar
+    Author     : Cidmar da Silva Ribeiro (cidmardsr@gmail.com)
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

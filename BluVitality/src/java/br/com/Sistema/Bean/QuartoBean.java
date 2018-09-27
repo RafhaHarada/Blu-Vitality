@@ -5,7 +5,7 @@ import java.sql.Date;
 
 /**
  *
- * @author Nattana Matos, nattana.matos@Outlook.pt
+ * @author Nattana Matos (nattana.matos@Outlook.pt)
  */
 public class QuartoBean {
     

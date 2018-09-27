@@ -9,7 +9,7 @@ package br.com.Sistema.Bean;
  *
  * @author Cidmar da Silva Ribeiro (cidmardsr@gmail.com)
  */
-public class ContasBean {
+public class ContaBean {
     private int id;
     private double energia_eletrica;
     private double agua;

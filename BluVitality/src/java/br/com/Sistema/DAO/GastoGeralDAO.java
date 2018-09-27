@@ -5,7 +5,7 @@
  */
 package br.com.Sistema.DAO;
 
-import br.com.Sistema.Bean.GastosGeraisBean;
+import br.com.Sistema.Bean.GastoGeralBean;
 import br.com.Sistema.Database.Conexao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -19,9 +19,9 @@ import java.util.List;
  *
  * @author Cidmar da Silva Ribeiro (cidmardsr@gmail.com)
  */
-public class GastosGeraisDAO {
-    public List<GastosGeraisBean> obterTodos() {
-        List<GastosGeraisBean> gastosGerais = new ArrayList<>();
+public class GastoGeralDAO {
+    public List<GastoGeralBean> obterTodos() {
+        List<GastoGeralBean> gastosGerais = new ArrayList<>();
         String sql = "SELECT * FROM gastosGerais";
         try {
             Statement st = Conexao.abrirConexao().createStatement();
@@ -29,7 +29,7 @@ public class GastosGeraisDAO {
             ResultSet resultSet = st.getResultSet();
 
             while (resultSet.next()) {
-                GastosGeraisBean gastoGeral = new GastosGeraisBean();
+                GastoGeralBean gastoGeral = new GastoGeralBean();
                 gastoGeral.setId(resultSet.getInt("id"));
                 gastoGeral.setManutencaoEquipamentos(resultSet.getDouble("manutencaoEquipamentos"));
                 gastoGeral.setLimpeza(resultSet.getDouble("limpeza"));
@@ -49,8 +49,8 @@ public class GastosGeraisDAO {
         return gastosGerais;
     }
 
-    public GastosGeraisBean obterPeloId(int id) {
-        GastosGeraisBean gastoGeral = null;
+    public GastoGeralBean obterPeloId(int id) {
+        GastoGeralBean gastoGeral = null;
         String sql = "SELECT id, manutencaoEquipamentos, limpeza, menutencaoEstrutura, alimentacao, materiaisDeConsumo, medicamentos, imprevistos, total FROM gastosGerais WHERE id = ?";
         try {
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);
@@ -58,7 +58,7 @@ public class GastosGeraisDAO {
             ResultSet resultSet = ps.getResultSet();
 
             while (resultSet.next()) {
-                gastoGeral = new GastosGeraisBean();
+                gastoGeral = new GastoGeralBean();
                 gastoGeral.setId(resultSet.getInt("id"));
                 gastoGeral.setManutencaoEquipamentos(resultSet.getDouble("manutencaoEquipamentos"));
                 gastoGeral.setLimpeza(resultSet.getDouble("limpeza"));
@@ -77,7 +77,7 @@ public class GastosGeraisDAO {
         return gastoGeral;
     }
 
-    public int adicionar(GastosGeraisBean gastoGeral) {
+    public int adicionar(GastoGeralBean gastoGeral) {
         String sql = "INSERT INTO gastoGeral(manutencaoEquipamentos, limpeza, menutencaoEstrutura, alimentacao, materiaisDeConsumo, medicamentos, imprevistos, total) VALUES(?,?,?,?,?,?,?,?)";
         try {
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql, RETURN_GENERATED_KEYS);
@@ -102,7 +102,7 @@ public class GastosGeraisDAO {
         return -1;
     }
 
-    public boolean alterar(GastosGeraisBean gastoGeral) {
+    public boolean alterar(GastoGeralBean gastoGeral) {
         try {
             String sql = "UPDATE gastoGeral SET manutencaoEquipamentos = ?, limpeza = ?, menutencaoEstrutura = ?, alimentacao = ?, materiaisDeConsumo = ?, medicamentos = ?, imprevistos = ?, total = ? WHERE id = ?";
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);

@@ -9,7 +9,7 @@ package br.com.Sistema.Bean;
  *
  * @author Cidmar da Silva Ribeiro (cidmardsr@gmail.com)
  */
-public class GastosGeraisBean {
+public class GastoGeralBean {
     private int id;
     private double manutencaoEquipamentos;
     private double limpeza;

@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.Sistema.Web.Administrador.Financeiro.Contas;
+package br.com.Sistema.Web.Administrador.Financeiro.Conta;
 
-import br.com.Sistema.Bean.ContasBean;
-import br.com.Sistema.DAO.ContasDAO;
+import br.com.Sistema.Bean.ContaBean;
+import br.com.Sistema.DAO.ContaDAO;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,13 +16,13 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Alunos
+ * @author Cidmar da Silva Ribeiro (cidmardsr@gmail.com)
  */
-@WebServlet("/contas/update")
-public class ContasUpdate extends HttpServlet {
+@WebServlet("/conta/update")
+public class Update extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        ContasBean conta = new ContasBean();
+        ContaBean conta = new ContaBean();
         
         conta.setId(Integer.parseInt(req.getParameter("id")));
         conta.setEnergia_eletrica(Double.parseDouble(req.getParameter("energiaEletrica")));
@@ -32,7 +32,7 @@ public class ContasUpdate extends HttpServlet {
         conta.setAluguel(Double.parseDouble(req.getParameter("aluguel")));
         conta.setFornecedores(Double.parseDouble(req.getParameter("fornecedores")));
         
-        new ContasDAO().alterar(conta);
+        new ContaDAO().alterar(conta);
         resp.sendRedirect("/conta/editar?id=" + conta.getId());
     }
 

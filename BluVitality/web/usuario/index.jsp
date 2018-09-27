@@ -1,7 +1,7 @@
 <%-- 
     Document   : index (usuario)
     Created on : 27/08/2018, 08:14:38
-    Author     : @Nattana Matos
+    Author     : @Nattana Matos (nattana.matos@Outlook.pt)
                  @Rafael Alipio Harada (rafhaharada@gmail.com)
 --%>
 <%@page import="br.com.Sistema.Bean.QuartoBean"%>

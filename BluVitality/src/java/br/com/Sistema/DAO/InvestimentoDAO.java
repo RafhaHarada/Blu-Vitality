@@ -5,7 +5,7 @@
  */
 package br.com.Sistema.DAO;
 
-import br.com.Sistema.Bean.InvestimentosBean;
+import br.com.Sistema.Bean.InvestimentoBean;
 import br.com.Sistema.Database.Conexao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -19,9 +19,9 @@ import java.util.List;
  *
  * @author Cidmar da Silva Ribeiro (cidmardsr@gmail.com)
  */
-public class InvestimentosDAO {
-    public List<InvestimentosBean> obterTodos() {
-        List<InvestimentosBean> investimentos = new ArrayList<>();
+public class InvestimentoDAO {
+    public List<InvestimentoBean> obterTodos() {
+        List<InvestimentoBean> investimentos = new ArrayList<>();
         String sql = "SELECT * FROM investimentos";
         try {
             Statement st = Conexao.abrirConexao().createStatement();
@@ -29,7 +29,7 @@ public class InvestimentosDAO {
             ResultSet resultSet = st.getResultSet();
 
             while (resultSet.next()) {
-                InvestimentosBean investimento = new InvestimentosBean();
+                InvestimentoBean investimento = new InvestimentoBean();
                 investimento.setId(resultSet.getInt("id"));
                 investimento.setTipo(resultSet.getString("tipo"));
                 investimento.setDescricao(resultSet.getString("descricao"));
@@ -44,8 +44,8 @@ public class InvestimentosDAO {
         return investimentos;
     }
 
-    public InvestimentosBean obterPeloId(int id) {
-        InvestimentosBean investimento = null;
+    public InvestimentoBean obterPeloId(int id) {
+        InvestimentoBean investimento = null;
         String sql = "SELECT id, tipo, descricao, valor FROM investimentos WHERE id = ?";
         try {
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);
@@ -53,7 +53,7 @@ public class InvestimentosDAO {
             ResultSet resultSet = ps.getResultSet();
 
             while (resultSet.next()) {
-                investimento = new InvestimentosBean();
+                investimento = new InvestimentoBean();
                 investimento.setId(resultSet.getInt("id"));
                 investimento.setTipo(resultSet.getString("tipo"));
                 investimento.setDescricao(resultSet.getString("descricao"));
@@ -67,7 +67,7 @@ public class InvestimentosDAO {
         return investimento;
     }
 
-    public int adicionar(InvestimentosBean investimento) {
+    public int adicionar(InvestimentoBean investimento) {
         String sql = "INSERT INTO investimento(tipo, descricao, valor) VALUES(?,?,?)";
         try {
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql, RETURN_GENERATED_KEYS);
@@ -87,7 +87,7 @@ public class InvestimentosDAO {
         return -1;
     }
 
-    public boolean alterar(InvestimentosBean investimento) {
+    public boolean alterar(InvestimentoBean investimento) {
         try {
             String sql = "UPDATE investimento SET tipo = ?, descricao = ?, valor = ? WHERE id = ?";
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);
