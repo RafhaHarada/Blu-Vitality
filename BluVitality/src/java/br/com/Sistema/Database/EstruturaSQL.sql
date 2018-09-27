@@ -1,5 +1,5 @@
 --  Author  @Rafael Alipio Harada (rafhaharada@gmail.com)
---          @Luana Patricia Duarte
+--          @Luana Patricia Duarte (luanapatricia.blu@hotmail.com)
 --          @Gustavo Rodrigues (gugaaroodrigues@gmail.com)
 
 
@@ -138,16 +138,18 @@ INSERT INTO quartos (id_usuario, id_funcionario, numero_quarto, tipo ,data_entra
 
 CREATE TABLE gastosFuncionarios(
     id INT AUTO_INCREMENT PRIMARY KEY,
-    salario_mensal  DOUBLE NOT NULL,
-    ferias_anuais_remuneradas  DOUBLE NOT NULL,
-    um_terco_sobre_ferias  DOUBLE NOT NULL,
-    decimo_terceiro_salario  DOUBLE NOT NULL,
-    aviso_previo  DOUBLE NOT NULL,
-    fgts  DOUBLE NOT NULL,
-    multa_fgts  DOUBLE NOT NULL,
-    inss DOUBLE NOT NULL,
-    total DOUBLE NOT NULL
+    salario_mensal  DOUBLE,
+    ferias_anuais_remuneradas  DOUBLE,
+    um_terco_sobre_ferias  DOUBLE,
+    decimo_terceiro_salario  DOUBLE,
+    aviso_previo  DOUBLE,
+    fgts  DOUBLE,
+    multa_fgts  DOUBLE,
+    inss DOUBLE,
+    total DOUBLE
 );
+
+
 
 CREATE TABLE contas(
     id INT AUTO_INCREMENT PRIMARY KEY,

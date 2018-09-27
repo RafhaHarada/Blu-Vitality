@@ -3,6 +3,8 @@
     Created on : 20/09/2018, 08:51:14
     Author     : Luana Patricia Duarte (luanapatricia.blu@hotmail.com)
 --%>
+<%@page import="br.com.Sistema.DAO.UsuarioDAO"%>
+<%@page import="br.com.Sistema.Bean.UsuarioBean"%>
 <%
     UsuarioBean paciente = new UsuarioBean();
 

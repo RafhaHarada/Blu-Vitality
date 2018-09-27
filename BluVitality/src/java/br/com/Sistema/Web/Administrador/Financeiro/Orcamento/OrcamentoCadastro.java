@@ -7,7 +7,7 @@ package br.com.Sistema.Web.Administrador.Financeiro.Orcamento;
 
 /**
  *
- * @author Alunos
+ * @author Cidmar da Silva Ribeiro (cidmardsr@gmail.com)
  */
 public class OrcamentoCadastro {
     

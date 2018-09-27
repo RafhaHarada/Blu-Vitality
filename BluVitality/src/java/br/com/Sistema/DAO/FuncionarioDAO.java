@@ -1,7 +1,7 @@
 package br.com.Sistema.DAO;
 
 import br.com.Sistema.Bean.CargosBean;
-import br.com.Sistema.Bean.FuncionariosBean;
+import br.com.Sistema.Bean.FuncionarioBean;
 import br.com.Sistema.Bean.UsuarioBean;
 import br.com.Sistema.Database.Conexao;
 import java.sql.PreparedStatement;
@@ -20,8 +20,8 @@ import java.util.List;
  */
 public class FuncionarioDAO {
 
-    public List<FuncionariosBean> obterTodos() {
-        List<FuncionariosBean> funcionarios = new ArrayList<>();
+    public List<FuncionarioBean> obterTodos() {
+        List<FuncionarioBean> funcionarios = new ArrayList<>();
         String sql = "SELECT * FROM funcionarios fn JOIN cargos cr ON cr.id = fn.id_cargo JOIN usuarios us ON us.id = fn.id_usuario";
         try {
             Statement st = Conexao.abrirConexao().createStatement();
@@ -29,7 +29,7 @@ public class FuncionarioDAO {
             ResultSet resultSet = st.getResultSet();
 
             while (resultSet.next()) {
-                FuncionariosBean funcionario = new FuncionariosBean();
+                FuncionarioBean funcionario = new FuncionarioBean();
                 funcionario.setId(resultSet.getInt("fn.id"));
                 funcionario.setId_cargo(resultSet.getInt("fn.id_cargo"));
                 funcionario.setId_usuario(resultSet.getInt("fn.id_usuario"));
@@ -51,8 +51,8 @@ public class FuncionarioDAO {
         return funcionarios;
     }
 
-    public List<FuncionariosBean> obterCargos() {
-        List<FuncionariosBean> funcionarios = new ArrayList<>();
+    public List<FuncionarioBean> obterCargos() {
+        List<FuncionarioBean> funcionarios = new ArrayList<>();
         String sql = "SELECT * FROM funcionarios fn JOIN cargos cr ON cr.id = fn.id_cargo JOIN usuarios us ON us.id = fn.id_usuario";
         try {
             Statement st = Conexao.abrirConexao().createStatement();
@@ -60,7 +60,7 @@ public class FuncionarioDAO {
             ResultSet resultSet = st.getResultSet();
 
             while (resultSet.next()) {
-                FuncionariosBean funcionario = new FuncionariosBean();
+                FuncionarioBean funcionario = new FuncionarioBean();
                 funcionario.setId(resultSet.getInt("fn.id"));
                 funcionario.setId_cargo(resultSet.getInt("fn.id_cargo"));
                 funcionario.setId_usuario(resultSet.getInt("fn.id_usuario"));
@@ -83,8 +83,8 @@ public class FuncionarioDAO {
         return funcionarios;
     }
 
-    public FuncionariosBean obterPeloId(int id) {
-        FuncionariosBean funcionario = null;
+    public FuncionarioBean obterPeloId(int id) {
+        FuncionarioBean funcionario = null;
         String sql = "SELECT * FROM funcionarios fn JOIN cargos cr ON cr.id = fn.id_cargo JOIN usuarios us ON us.id = fn.id_usuario WHERE id = ?";
         try {
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);
@@ -92,7 +92,7 @@ public class FuncionarioDAO {
             ps.execute();
             ResultSet resultSet = ps.getResultSet();
             while (resultSet.next()) {
-                funcionario = new FuncionariosBean();
+                funcionario = new FuncionarioBean();
                 funcionario.setId(resultSet.getInt("fn.id"));
                 funcionario.setId_cargo(resultSet.getInt("fn.id_cargo"));
                 funcionario.setId_usuario(resultSet.getInt("fn.id_usuario"));
@@ -111,8 +111,8 @@ public class FuncionarioDAO {
         }return funcionario;
     }
     
-    public FuncionariosBean obterPeloIdUsuario(int id){
-        FuncionariosBean funcionario = null;
+    public FuncionarioBean obterPeloIdUsuario(int id){
+        FuncionarioBean funcionario = null;
         String sql = "SELECT * FROM funcionarios WHERE id_usuario = ?";
         try{
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);
@@ -120,7 +120,7 @@ public class FuncionarioDAO {
             ps.execute();
             ResultSet resultSet = ps.getResultSet();
             while(resultSet.next()){
-                funcionario = new FuncionariosBean();
+                funcionario = new FuncionarioBean();
                 funcionario.setId(resultSet.getInt("id"));
                 funcionario.setId_cargo(resultSet.getInt("id_cargo"));
                 funcionario.setId_usuario(resultSet.getInt("id_usuario"));
@@ -140,7 +140,7 @@ public class FuncionarioDAO {
         return funcionario;
     }
 
-    public int adicionar(FuncionariosBean funcionario) {
+    public int adicionar(FuncionarioBean funcionario) {
         String sql = "INSERT INTO funcionarios(id_cargo, id_usuario, tipo) VALUES(?, ?, ?, ?)";
         try {
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql, RETURN_GENERATED_KEYS);
@@ -160,7 +160,7 @@ public class FuncionarioDAO {
         return -1;
     }
 
-    public boolean alterar(FuncionariosBean funcionario) {
+    public boolean alterar(FuncionarioBean funcionario) {
         try {
             String sql = "UPDATE funcionarios SET id_cargo = ?, id_usuario = ?, tipo = ? WHERE id = ?";
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);

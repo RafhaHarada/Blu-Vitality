@@ -3,7 +3,7 @@ package br.com.Sistema.Bean;
 import java.sql.Date;
 
 /**
- * @author Nattana Matos
+ * @author Nattana Matos (nattana.matos@Outlook.pt)
  * @author Gustavo Rodrigues (gugaaroodrigues@gmail.com)
  * @author Rafael Alipio Harada (rafhaharada@gmail.com)
  */

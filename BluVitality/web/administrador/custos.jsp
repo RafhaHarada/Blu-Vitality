@@ -1,7 +1,7 @@
 <%-- 
     Document   : custos
     Created on : 17/09/2018, 10:18:44
-    Author     : Cidmar
+    Author     : Cidmar da Silva Ribeiro (cidmardsr@gmail.com)
 --%>
 
 <jsp:include page="../model/headerStart.jsp"/>

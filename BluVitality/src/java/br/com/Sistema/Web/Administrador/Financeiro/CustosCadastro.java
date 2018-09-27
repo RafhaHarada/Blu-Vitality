@@ -7,7 +7,7 @@ package br.com.Sistema.Web.Administrador.Financeiro;
 
 /**
  *
- * @author Alunos
+ * @author Cidmar da Silva Ribeiro (cidmardsr@gmail.com)
  */
 public class CustosCadastro {
     

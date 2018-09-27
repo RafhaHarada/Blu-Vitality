@@ -1,10 +1,10 @@
 package br.com.Sistema.DAO;
 
-import br.com.Sistema.Bean.ContasBean;
-import br.com.Sistema.Bean.CustosBean;
-import br.com.Sistema.Bean.GastosFuncionariosBean;
-import br.com.Sistema.Bean.GastosGeraisBean;
-import br.com.Sistema.Bean.InvestimentosBean;
+import br.com.Sistema.Bean.ContaBean;
+import br.com.Sistema.Bean.CustoBean;
+import br.com.Sistema.Bean.GastoFuncionarioBean;
+import br.com.Sistema.Bean.GastoGeralBean;
+import br.com.Sistema.Bean.InvestimentoBean;
 import br.com.Sistema.Database.Conexao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -17,9 +17,9 @@ import java.util.List;
 /**
  * @author Cidmar da Silva Ribeiro (cidmardsr@gmail.com)
  */
-public class CustosDAO {
-    public List<CustosBean> obterTodos() {
-        List<CustosBean> custos = new ArrayList<>();
+public class CustoDAO {
+    public List<CustoBean> obterTodos() {
+        List<CustoBean> custos = new ArrayList<>();
         String sql = "SELECT * FROM custos co JOIN gastosFuncionarios gf ON gf.id = co.id_gastoFuncionario JOIN contas ct ON ct.id = co.id_conta JOIN gastosGerais gg ON gg.id = co.id_gastoGeral JOIN investimentos inv ON iv.id = co.id_investimento ";
         try {
             Statement st = Conexao.abrirConexao().createStatement();
@@ -27,7 +27,7 @@ public class CustosDAO {
             ResultSet resultSet = st.getResultSet();
 
             while (resultSet.next()) {
-                CustosBean custo = new CustosBean();
+                CustoBean custo = new CustoBean();
                 custo.setId(resultSet.getInt("co.id"));
                 custo.setId_gastoFuncionario(resultSet.getInt("co.id_gastoFuncionario"));
                 custo.setId_conta(resultSet.getInt("co.id_conta"));
@@ -36,16 +36,16 @@ public class CustosDAO {
                 custo.setTipo(resultSet.getString("co.tipo"));
                 custo.setTotal(resultSet.getDouble("total"));
                 
-                GastosFuncionariosBean gasto_Funcionario = new GastoFuncionarioDAO().obterPeloId(resultSet.getInt("gf.id"));
+                GastoFuncionarioBean gasto_Funcionario = new GastoFuncionarioDAO().obterPeloId(resultSet.getInt("gf.id"));
                 custo.setGastoFuncionario(gasto_Funcionario);
                 
-                 ContasBean conta = new ContasDAO().obterPeloId(resultSet.getInt("ct.id"));
+                 ContaBean conta = new ContaDAO().obterPeloId(resultSet.getInt("ct.id"));
                 custo.setConta(conta);
                 
-                GastosGeraisBean gasto_Geral = new GastosGeraisDAO().obterPeloId(resultSet.getInt("gg.id"));
+                GastoGeralBean gasto_Geral = new GastoGeralDAO().obterPeloId(resultSet.getInt("gg.id"));
                 custo.setGastoGeral(gasto_Geral);
                 
-                InvestimentosBean investimento = new InvestimentosDAO().obterPeloId(resultSet.getInt("iv.id"));
+                InvestimentoBean investimento = new InvestimentoDAO().obterPeloId(resultSet.getInt("iv.id"));
                 custo.setInvestimento(investimento);
                 
                 custos.add(custo);
@@ -58,8 +58,8 @@ public class CustosDAO {
         return custos;
     }
 
-    public CustosBean obterPeloId(int id) {
-        CustosBean custo = null;
+    public CustoBean obterPeloId(int id) {
+        CustoBean custo = null;
         String sql = "SELECT SELECT * FROM custos co JOIN gastosFuncionarios gf ON gf.id = co.id_gastoFuncionario JOIN contas ct ON ct.id = co.id_conta JOIN gastosGerais gg ON gg.id = co.id_gastoGeral JOIN investimentos inv ON iv.id = co.id_investimento FROM custos WHERE id = ?";
         try {
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);
@@ -67,7 +67,7 @@ public class CustosDAO {
             ResultSet resultSet = ps.getResultSet();
 
             while (resultSet.next()) {
-                custo = new CustosBean();
+                custo = new CustoBean();
                 custo.setId(resultSet.getInt("co.id"));
                 custo.setId_gastoFuncionario(resultSet.getInt("co.id_gastoFuncionario"));
                 custo.setId_conta(resultSet.getInt("co.id_conta"));
@@ -76,16 +76,16 @@ public class CustosDAO {
                 custo.setTipo(resultSet.getString("co.tipo"));
                 custo.setTotal(resultSet.getDouble("total"));
                 
-                GastosFuncionariosBean gasto_Funcionario = new GastoFuncionarioDAO().obterPeloId(resultSet.getInt("gf.id"));
+                GastoFuncionarioBean gasto_Funcionario = new GastoFuncionarioDAO().obterPeloId(resultSet.getInt("gf.id"));
                 custo.setGastoFuncionario(gasto_Funcionario);
                 
-                 ContasBean conta = new ContasDAO().obterPeloId(resultSet.getInt("ct.id"));
+                 ContaBean conta = new ContaDAO().obterPeloId(resultSet.getInt("ct.id"));
                 custo.setConta(conta);
                 
-                GastosGeraisBean gasto_Geral = new GastosGeraisDAO().obterPeloId(resultSet.getInt("gg.id"));
+                GastoGeralBean gasto_Geral = new GastoGeralDAO().obterPeloId(resultSet.getInt("gg.id"));
                 custo.setGastoGeral(gasto_Geral);
                 
-                InvestimentosBean investimento = new InvestimentosDAO().obterPeloId(resultSet.getInt("iv.id"));
+                InvestimentoBean investimento = new InvestimentoDAO().obterPeloId(resultSet.getInt("iv.id"));
                 custo.setInvestimento(investimento);
             }
         } catch (SQLException e) {
@@ -96,7 +96,7 @@ public class CustosDAO {
         return custo;
     }
 
-    public int adicionar(CustosBean custo) {
+    public int adicionar(CustoBean custo) {
         String sql = "INSERT INTO custo(id_gastoFuncionario, id_conta, id_gastoGeral, id_investimento, total) VALUES(?,?,?,?,?)";
         try {
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql, RETURN_GENERATED_KEYS);
@@ -118,7 +118,7 @@ public class CustosDAO {
         return -1;
     }
 
-    public boolean alterar(CustosBean custo) {
+    public boolean alterar(CustoBean custo) {
         try {
             String sql = "UPDATE custo SET id_gastoFuncionario = ?, id_conta = ?, id_gastoGeral = ?, id_investimento = ?, total = ? WHERE id = ?";
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);

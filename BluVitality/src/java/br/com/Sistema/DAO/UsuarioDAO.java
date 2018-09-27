@@ -1,7 +1,7 @@
 package br.com.Sistema.DAO;
 
 /**
- * @author Cidimar
+ * @author Cidmar da Silva Ribeiro (cidmardsr@gmail.com)
  * @author Gustavo Rodrigues (gugaaroodrigues@gmail.com)
  */
 import br.com.Sistema.Bean.UsuarioBean;

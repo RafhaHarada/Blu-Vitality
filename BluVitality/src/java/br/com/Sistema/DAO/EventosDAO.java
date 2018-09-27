@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author Cidimar
+ * @author Cidmar da Silva Ribeiro (cidmardsr@gmail.com)
  * @author Gustavo Rodrigues (gugaaroodrigues@gmail.com)
  */
 public class EventosDAO {

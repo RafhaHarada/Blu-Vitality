@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.Sistema.Web.Administrador.Financeiro.GastosFuncionarios;
+package br.com.Sistema.Web.Administrador.Financeiro.Conta;
 
-import br.com.Sistema.Bean.GastosFuncionariosBean;
-import br.com.Sistema.DAO.GastoFuncionarioDAO;
+import br.com.Sistema.Bean.ContaBean;
+import br.com.Sistema.DAO.ContaDAO;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.ServletException;
@@ -17,20 +17,17 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Edemar
+ * @author Cidmar da Silva Ribeiro (cidmardsr@gmail.com)
  */
-@WebServlet ("/gastosFuncionarios/adicionar")
-public class GastosFuncionariosCadastro extends HttpServlet{
+@WebServlet("/conta/adicionar")
+public class Cadastro extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-    
-        List<GastosFuncionariosBean> gastoFuncionario = new GastoFuncionarioDAO().obterTodos();
-        
+        List<ContaBean> conta = new ContaDAO().obterTodos();
+
         resp.setContentType("text/html;charset=UTF-8");
-        resp.sendRedirect("/administrador/financas.jsp");
-        
+        req.getRequestDispatcher("../administrador/financas.jsp").include(req, resp);
     }
-    
-  
+
 }

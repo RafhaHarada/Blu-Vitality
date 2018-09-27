@@ -1,7 +1,7 @@
 <%-- 
     Document   : index (funcionario)
     Created on : 26/08/2018, 17:47:02
-    Author     : @Luana Patricia Duarte
+    Author     : @Luana Patricia Duarte (luanapatricia.blu@hotmail.com)
                  @Gustavo Rodrigues (gugaaroodrigues@gmail.com)
                  @Rafael Alipio Harada (rafhaharada@gmail.com)
 

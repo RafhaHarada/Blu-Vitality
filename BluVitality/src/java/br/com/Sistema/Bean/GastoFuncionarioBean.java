@@ -3,7 +3,7 @@ package br.com.Sistema.Bean;
 /**
  * @author Cidmar da Silva Ribeiro (cidmardsr@gmail.com)
  */
-public class GastosFuncionariosBean {
+public class GastoFuncionarioBean {
     private int id;
     private double salarioMensal;
     private double feriasAnuaisRemuneradas;

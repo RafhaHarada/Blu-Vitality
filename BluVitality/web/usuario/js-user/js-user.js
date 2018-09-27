@@ -18,7 +18,7 @@ function validacaoTipoArquivo() {
 }
 function validacaoEmBranco(id, campo) {
     var emBranco = document.getElementById(id).value;
-    if (emBraco === "") {
+    if (emBranco === "") {
         M.toast({html: '<span class="red-text">O campo ' + campo + ' não pode estar vazio<span>'});
         return;
     }

@@ -1,8 +1,8 @@
 /* 
  Created on : 16/08/2018, 12:01:12
  Author     : @Rafael Alipio Harada (rafhaharada@gmail.com)
- @Nattana Matos
- @Luana Patricia Duarte
+ @Nattana Matos (nattana.matos@Outlook.pt)
+ @Luana Patricia Duarte (luanapatricia.blu@hotmail.com)
  @Gustavo Rodrigues (gugaaroodrigues@gmail.com)
  */
 $(function () {
@@ -133,7 +133,8 @@ $(function () {
         console.log("~ le Tolkien: " + LoR);
         response.getAuthResponse().sendRedirect(LoRName);
 
-    };
+    }
+    ;
 
     function signOut() {
         var auth2 = gapi.auth2.getAuthInstance();
@@ -152,6 +153,6 @@ $(function () {
         });
         $(".tabs-content").css('height', maxHeight + 'px');
     }
-    
+
     $('.tooltipped').tooltip();
 });
