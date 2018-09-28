@@ -3,6 +3,12 @@
     Created on : 27/09/2018, 05:38:19
     Author     : Gus
 --%>
+<%@page import="br.com.Sistema.DAO.UsuarioDAO"%>
+<%@page import="br.com.Sistema.Bean.UsuarioBean"%>
+<%@page import="br.com.Sistema.Bean.UsuarioBean"%>
+<%@page import="br.com.Sistema.DAO.FuncionarioDAO"%>
+<%@page import="br.com.Sistema.Bean.FuncionarioBean"%>
+<%@page import="java.util.List"%>
 <nav>
     <div class="nav-wrapper teal lighten-4">
         <span class="teal-text teatl lighten-4">Você deseja agendar<span class="red-text">*</span></span>
@@ -22,7 +28,7 @@
 </div>
 <!--Exame-->
 <div class="agendarE container">
-    <form action="/expedicao/store" method="GET">
+    <form action="/expedicao/store" method="POST">
         <div class="row">
             <div class="input-field col s12">
                 <label class="teal-text lighten-4" for="tipo">Agendarei um</label>
@@ -114,7 +120,7 @@
             <input id="exame-cadastro-custo" name="custo" type="number" value="0" disabled>
         </div>
         <!-- Modal Trigger -->
-        <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Agendar</a>
+        <button type="submit" class="waves-effect waves-light btn ">Agendar</button>
 
         <!-- Modal Structure -->
         <div id="modal1" class="modal">
@@ -129,7 +135,7 @@
 </div>
 <!--Consulta-->
 <div class="agendarC container">
-    <form action="/expedicao/store" method="GET">
+    <form action="/expedicao/store" method="POST">
         <div class="row">
             <div class="input-field col s12">
                 <input id="consulta-cadastro-tipo" type="text" name="tipo" required="required" disabled></input>
@@ -157,7 +163,7 @@
                 } else {
                 %>
                 <select id="consulta-cadastro-id-usuario" name="id-usuario" class="browser-default row" required="required">
-                    <option value="<%=usuario.getId()%>" disabled selected><%=usuario.getNome()%></option>
+                    <option value="<%= usuario.getId()%>" disabled selected><%=usuario.getNome()%></option>
                 </select>
                 <%
                     }
@@ -200,8 +206,8 @@
         </div>
         <div class="row">
             <div class="col s5 left">
-                <input id="consulta-cadastro-data" type="text" name="data" class="datepicker" required="required">
                 <label class="teal-text teatl lighten-4" for="consulta-cadastro-data">Qual a data de sua preferência?<span class="red-text">*</span></label>
+                <input id="consulta-cadastro-data" type="text" name="data" class="datepicker" required="required">
             </div>
             <div class="col s5 right">
                 <label for="consulta-cadastro-hora">Horário</label>
@@ -228,10 +234,10 @@
         </div>
         <div>
             <label for="consulta-cadastro-custo" class="teal-text">Custo</label>
-            <input id="consulta-cadastro-custo" name="custo" type="number" value="0" disabled>
+            <input id="consulta-cadastro-custo" name="custo" type="number" value="0" readonly>
         </div>
         <!-- Modal Trigger -->
-        <a class="waves-effect waves-light btn modal-trigger" href="#modal2">Agendar</a>
+        <button type="submit" class="waves-effect waves-light btn">Agendar</button>
 
         <!-- Modal Structure -->
         <div id="modal2" class="modal">
