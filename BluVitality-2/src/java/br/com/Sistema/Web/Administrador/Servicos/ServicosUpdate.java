@@ -28,7 +28,7 @@ public class ServicosUpdate extends HttpServlet {
         
         servico.setNome(req.getParameter("nome"));
         servico.setDescricao(req.getParameter("descricao"));
-        servico.setTipo_de_urgencia(req.getParameter("tipo_de_urgencia"));
+        servico.settipo(req.getParameter("tipo"));
 
         boolean alterou = new ServicosDAO().alterar(servico);
 

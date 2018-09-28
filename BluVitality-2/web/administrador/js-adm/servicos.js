@@ -4,8 +4,8 @@
  * and open the template in the editor.
  */
 $(function () {
-    
-        var tableServicos = $('#ultimos-servicos').DataTable({
+
+    var tableServicos = $('#ultimos-servicos').DataTable({
         'ajax': '/servicos/obtertodosparadatatable',
         "language": {
             "sEmptyTable": "Nenhum registro encontrado",
@@ -55,7 +55,7 @@ $(function () {
         $.ajax({
             url: '/servico/excluir',
             method: 'POST',
-            data:{
+            data: {
                 id: $id
             },
             success: function (data) {
@@ -64,12 +64,12 @@ $(function () {
         });
         return false;
     });
-    
-     $('#servico-cadastro-salvar').on('click', function () {
+
+    $('#servico-cadastro-salvar').on('click', function () {
         $.ajax({
             url: '/servicos/store',
             method: 'POST',
-            data:{
+            data: {
                 'nome': $('#servico-cadastro').val(),
                 'descricao': $('#textarea2').val(),
                 'tipo': $('#servico-cadastro-tipo').val()
@@ -79,5 +79,14 @@ $(function () {
             }
         });
     });
+
+    $(".divquarto").hide();
+    $(".addquarto").on("click", function () {
+        $(".divquarto").show();
+    });
+    $(".cancelarhide").on("click", function () {
+        $(".divquarto").hide();
+    });
+    
 });
 

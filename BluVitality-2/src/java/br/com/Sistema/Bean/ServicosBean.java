@@ -11,15 +11,15 @@ public class ServicosBean {
     private int id_funcionario;
     private String nome;
     private String descricao;
-    private String tipo_de_urgencia;
+    private String tipo;
     //private Date tempo_execucao;
 
-    public String getTipo_de_urgencia() {
-        return tipo_de_urgencia;
+    public String gettipo() {
+        return tipo;
     }
 
-    public void setTipo_de_urgencia(String tipo_de_urgencia) {
-        this.tipo_de_urgencia = tipo_de_urgencia;
+    public void settipo(String tipo) {
+        this.tipo = tipo;
     }
 
     public int getId() {

@@ -18,7 +18,7 @@ public class ServicosDAO {
     
     public List<ServicosBean> obterTodos(){
         List<ServicosBean> servicos = new ArrayList<>();
-        String sql = "SELECT FROM servicos id_fucionario, nome, decricao, tipo_de_urgencia";
+        String sql = "SELECT FROM servicos id_fucionario, nome, decricao, tipo";
         try{
             Statement st = Conexao.abrirConexao().createStatement();
             st.execute(sql);
@@ -30,7 +30,7 @@ public class ServicosDAO {
                 servico.setId_funcionario(resultSet.getInt("id_funcionario"));
                 servico.setNome(resultSet.getString("nome"));
                 servico.setDescricao(resultSet.getString("descricao"));
-                servico.setTipo_de_urgencia(resultSet.getString("tipo_de_urgencia"));
+                servico.settipo(resultSet.getString("tipo"));
                 //servico.setTempo_execucao(resultSet.getDate("tempo_execucao"));
                 servicos.add(servico);
             }
@@ -43,7 +43,7 @@ public class ServicosDAO {
     
     public ServicosBean obterPeloId(int id){
         ServicosBean servico = null;
-        String sql = "SELECT id, id_funcionario, nome, descricao, tipo_de_urgencia FROM servicos WHERE id = ?";
+        String sql = "SELECT id, id_funcionario, nome, descricao, tipo FROM servicos WHERE id = ?";
         try{
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);
             ps.setInt(1, id);
@@ -54,7 +54,7 @@ public class ServicosDAO {
                 servico.setId_funcionario(resultSet.getInt("id_funcionario"));
                 servico.setNome(resultSet.getString("nome"));
                 servico.setDescricao(resultSet.getString("descricao"));
-                servico.setTipo_de_urgencia(resultSet.getString("tipo_de_urgencia"));
+                servico.settipo(resultSet.getString("tipo"));
                // servico.setTempo_execucao(resultSet.getDate("tempo_execucao"));
             }
         }catch(SQLException e){
@@ -65,14 +65,14 @@ public class ServicosDAO {
     }
     
     public int adicionar(ServicosBean servico){
-        String sql = "INSERT INTO servicos(id_funcionario, nome, descricao, tipo_de_urgencia)"
+        String sql = "INSERT INTO servicos(id_funcionario, nome, descricao, tipo)"
                    + "VALUES(?,?,?,?)";
         try{
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql, RETURN_GENERATED_KEYS);
             ps.setInt(1, servico.getId_funcionario());
             ps.setString(2, servico.getNome());
             ps.setString(3, servico.getDescricao());
-            ps.setString(4, servico.getTipo_de_urgencia());
+            ps.setString(4, servico.gettipo());
             //ps.setDate(4, servico.getTempo_execucao());
             ps.execute();
             
@@ -91,12 +91,12 @@ public class ServicosDAO {
     
     public boolean alterar(ServicosBean servico){
         try{
-            String sql = "UPDATE servicos SET id_funcionario, nome, descricao, tipo_de_urgencia WHERE id = ?";
+            String sql = "UPDATE servicos SET id_funcionario, nome, descricao, tipo WHERE id = ?";
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);
             ps.setInt(1, servico.getId_funcionario());
             ps.setString(2, servico.getNome());
             ps.setString(3, servico.getDescricao());
-            ps.setString(4, servico.getTipo_de_urgencia());
+            ps.setString(4, servico.gettipo());
             ps.setInt(5, servico.getId());
             //ps.setDate(4, servico.getTempo_execucao());
             return ps.executeUpdate() ==1;
@@ -122,7 +122,7 @@ public class ServicosDAO {
     }
     public  List<ServicosBean> obterUltimos(){
         List<ServicosBean> servicos = new ArrayList<>();
-        String sql = "SELECT * FROM servicos ORDER BY id DESC LIMIT 5";
+        String sql = "SELECT * FROM servicos ORDER BY id";
         try {
             Statement st = Conexao.abrirConexao().createStatement();
             st.execute(sql);
@@ -134,7 +134,7 @@ public class ServicosDAO {
                 servico.setId_funcionario(resultSet.getInt("id_funcionario"));
                 servico.setNome(resultSet.getString("nome"));
                 servico.setDescricao(resultSet.getString("descricao"));
-                servico.setTipo_de_urgencia(resultSet.getString("tipo_de_urgencia"));
+                servico.settipo(resultSet.getString("tipo"));
                 servicos.add(servico);
                 //servico.setTempo_execucao(resultSet.getDate("tempo_execucao"));
             }
@@ -161,7 +161,7 @@ public class ServicosDAO {
                 servico.put("funcionario", resultSet.getInt("id_funcionario"));
                 servico.put("nome", resultSet.getString("nome"));
                 servico.put("descricao", resultSet.getString("descricao"));
-                servico.put("tipo", resultSet.getString("tipo_de_urgencia"));
+                servico.put("tipo", resultSet.getString("tipo"));
                 servicos.add(servico);
                 //servico.put("tempo_execucao", resultSet.getDate("tempo_execucao"));
             }

@@ -34,7 +34,7 @@ public class ServicosStore extends HttpServlet {
         servico.setId_funcionario(funcionario.getId());
         servico.setNome(req.getParameter("nome"));
         servico.setDescricao(req.getParameter("descricao"));
-        servico.setTipo_de_urgencia(req.getParameter("tipo"));
+        servico.settipo(req.getParameter("tipo"));
 
         servico.setId(new ServicosDAO().adicionar(servico));
 

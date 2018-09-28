@@ -75,14 +75,15 @@ CREATE TABLE servicos(
     id_funcionario INT,
     nome VARCHAR(100),
     descricao VARCHAR(100),
-    tipo_de_urgencia varchar(100),
+    tipo varchar(100),
     FOREIGN KEY(id_funcionario) REFERENCES funcionarios(id)
 );
 
-INSERT INTO servicos (id_funcionario,nome,descricao,tipo_de_urgencia) VALUES
+INSERT INTO servicos (id_funcionario,nome,descricao,tipo) VALUES
 (1,'Recrutar recrutadores','Recrutar recrutadores eficientes.','URGÊNTE'),
 (2,'"Trocar" um pulmão','Paciente levou um tiro de escopeta no pulmão direito, trocar o pulmão inteiro.','Semi - Urgênte'),
-(3,'Lavagem cerebral','Paciente jogou League of Legends, limpar toda a sujeira do cerebro, colocar Dark Souls no lugar.','URGÊNTE'),
+(3,'Lavagem cerebral','Paciente jogou League of Legends,
+ limpar toda a sujeira do cerebro, colocar Dark Souls no lugar.','URGÊNTE'),
 (4,'"Trocar" um coração','Paciente foi traido, dar remédios anti depressivos.','Não Urgênte');
 
 CREATE TABLE eventos(
