@@ -87,14 +87,14 @@
 <!--   JavaScript Setup  -->
 <script type="text/javascript" src="../resources/js/jquery-2.1.1.min.js"></script>
 <script type="text/javascript" src="../resources/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="../resources/js/select2.min.js"></script>
+<script type="text/javascript" src="../resources/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="../administrador/js-adm/servicos.js"></script>
 <script type="text/javascript" src="../administrador/js-adm/quarto.js"></script>
 <script type="text/javascript" src="../administrador/js-adm/funcionarios.js"></script>
 <script type="text/javascript" src="../administrador/js-adm/usuarios.js"></script>
 <script type="text/javascript" src="../administrador/js-adm/vavidacao.js"></script>
-<script type="text/javascript" src="../resources/bootstrap/js/bootstrap.js"></script>
 <script type="text/javascript" src="../resources/js/google-platform.js"></script>
-<script type="text/javascript" src="../resources/js/select2.min.js"></script>
 <script type="text/javascript" src="../resources/js/jquery.validate.min.js"></script>
 <script type="text/javascript" src="../resources/js/custom.js"></script>
 </body>

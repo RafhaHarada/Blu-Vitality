@@ -65,4 +65,16 @@ $(function () {
         });
         return false;
     });
+    $('#id_label_single').select2({
+        'ajax': {
+            url: '/usuarios/obterTodosParaSelect2',
+            dataType: 'Json',
+            results: [
+                {
+                    "id":1,
+                    "text": "Option"
+                }
+            ]
+        }
+    });
 });

@@ -4,7 +4,7 @@
     Author     : Gus
 --%>
 
-<table class="table table-striped "  style="width:100%" id="ultimos-servicos">
+<table class="table table-striped "   id="ultimos-servicos">
     <thead>
         <tr>
             <th scope="col">Nome</th>

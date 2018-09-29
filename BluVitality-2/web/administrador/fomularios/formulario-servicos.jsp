@@ -21,5 +21,5 @@
         </select>
     </div>
     <button class="btn btn-primary mt-4 my-3" type="submit" id="servico-cadastro-salvar">Salvar</button>
-    <button class="btn btn-primary mt-4 my-3 cancelarhide" id="servico-cadastro-salvar">Cancelar</button>
+    <button class="btn btn-primary mt-4 my-3 cancelarhide" id="servico-cadastro-cancelar">Cancelar</button>
 </form>

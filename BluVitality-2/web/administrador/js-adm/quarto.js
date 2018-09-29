@@ -79,5 +79,15 @@ $(function () {
             }
         });
     });
-
+    
+    $(".divquarto").hide();
+    $(".addquarto").on("click", function () {
+        $(".divquarto").show();
+        $(".addquarto").hide();
+    });
+    $(".cancelarhide").on("click", function () {
+        $(".divquarto").hide();
+        $(".addquarto").show();
+    });
+    
 });

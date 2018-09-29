@@ -80,14 +80,14 @@ $(function () {
         });
     });
 
-    $(".divquarto").hide();
-    $(".addquarto").on("click", function () {
-        $(".divquarto").show();
-        $(".addquarto").hide();
+    $(".divservico").hide();
+    $(".addservico").on("click", function () {
+        $(".divservico").show();
+        $(".addservico").hide();
     });
     $(".cancelarhide").on("click", function () {
-        $(".divquarto").hide();
-        $(".addquarto").show();
+        $(".divservico").hide();
+        $(".addservico").show();
     });
     
 });

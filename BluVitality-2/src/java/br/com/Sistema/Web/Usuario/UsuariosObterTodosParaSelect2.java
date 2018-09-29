@@ -3,11 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.Sistema.Web.Administrador.Quarto;
+package br.com.Sistema.Web.Usuario;
 
-import br.com.Sistema.DAO.QuartoDAO;
+import br.com.Sistema.DAO.UsuarioDAO;
 import com.google.gson.Gson;
-import com.sun.xml.rpc.processor.modeler.j2ee.xml.string;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.HashMap;
@@ -19,15 +18,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Document   : 
- * Created on : 17/09/2018
- * Author     : @Gustavo Rodrigues (gugaaroodrigues@gmail.com)
+ *
+ * @author Gus
  */
+@WebServlet(name = "UsuariosObterTodosParaSelect2", urlPatterns = {"/usuarios/obterTodosParaSelect2"})
+public class UsuariosObterTodosParaSelect2 extends HttpServlet {
 
-@WebServlet(name = "QuartoObterTodosParaSelect2", urlPatterns = {"/quartos/obtertodosparaselect2"})
-public class QuartoObterTodosParaSelect2 extends HttpServlet {
-
-   
+    
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
@@ -36,11 +33,9 @@ public class QuartoObterTodosParaSelect2 extends HttpServlet {
         
         resp.setContentType("application/json");
         
-        List<HashMap<String, String>> numero = new QuartoDAO().obterTodosParaSelect2(termo);
+        List<HashMap<String, String>> usuario = new UsuarioDAO().obterTodosParaSelect2(termo);
         HashMap<String, Object> resultado = new HashMap<>();
-        resultado.put("results", numero);
+        resultado.put("results", usuario);
         resp.getWriter().print(new Gson().toJson(resultado));
     }
-
-
 }

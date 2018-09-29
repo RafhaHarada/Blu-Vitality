@@ -64,5 +64,14 @@ var tableFuncionario = $('#tabela-funcionario').DataTable({
         });
         return false;
     });
+    $(".divfunc").hide();
+    $(".addfunc").on("click", function () {
+        $(".divfunc").show();
+        $(".addfunc").hide();
+    });
+    $(".funcionariocancelar").on("click", function () {
+        $(".divfunc").hide();
+        $(".addfunc").show();
+    });
 });
 

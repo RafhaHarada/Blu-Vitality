@@ -359,4 +359,29 @@ public class UsuarioDAO {
         }
         return usuarios;
     }
+    
+    public List<HashMap<String, String>> obterTodosParaSelect2(String termo){
+        List<HashMap<String, String>> usuarios = new ArrayList<HashMap<String, String>>();
+        String sql = "SELECT * FROM usuarios WHERE nome LIKE ? ORDER BY nome";
+        
+        try{
+            PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);
+            ps.setString(1, "%" + termo + "%");
+            ps.execute();
+            ResultSet resultSet = ps.getResultSet();
+            while (resultSet.next()) {
+                HashMap<String, String> atual = new HashMap<>();
+                atual.put("id", String.valueOf(resultSet.getInt("id")));
+                atual.put("text", resultSet.getString("nome"));
+                usuarios.add(atual);
+            }
+        }catch(SQLException e){
+            e.printStackTrace();
+        }finally{
+            Conexao.fecharConexao();
+        }
+        return usuarios;
+            
+            
+    }
 }
