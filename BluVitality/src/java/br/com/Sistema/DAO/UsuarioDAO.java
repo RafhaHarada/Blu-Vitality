@@ -287,7 +287,7 @@ public class UsuarioDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            Conexao.fecharConexao();
+            Conexao.abrirConexao();
         }
         return null;
     }
