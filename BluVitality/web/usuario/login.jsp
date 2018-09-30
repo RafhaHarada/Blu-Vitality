@@ -39,7 +39,7 @@
                 <a href="#TrocarSenha">Esqueci a senha..</a>
             </div>
             <div class="col s6 right">
-                <a href="usuarios/cadastrar">Não tem conta?</a>
+                <a href="/usuario/cadastro">Não tem conta?</a>
             </div>
         </div>
     </div>

@@ -33,7 +33,8 @@ public class usuarioAutentication extends HttpServlet {
         if (usuario != null) {
             req.getSession().setAttribute("usuario", usuario);
             String tipoFuncionario = "";
-            if (new FuncionarioDAO().obterPeloIdUsuario(usuario.getId()) != null) {
+            System.out.println(String.valueOf(usuario.isColaborador()));
+            if (usuario.isColaborador()) {
                 FuncionarioBean funcionario = new FuncionarioDAO().obterPeloIdUsuario(usuario.getId());
                 tipoFuncionario = funcionario.getTipo();
             }

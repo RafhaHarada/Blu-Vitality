@@ -53,10 +53,6 @@
                         <%
                         } else {
                         %>
-                        <select id="exame-cadastro-id-usuario" name="id-usuario" required="required">
-                            <option value="<%=usuario.getId()%>" selected><%=usuario.getNome()%></option>
-                        </select>
-                        
                         <input id="exame-cadastro-id-usuario" type="text" name="id-usuario" value="<%=usuario.getId()%>" readonly>
                         <label for="exame-cadastro-id-usuario" class="teal-text lighten-4">Agendarei um</label>
                         <%

@@ -20,6 +20,12 @@ public class usuarioCadastro extends HttpServlet{
     
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        IndexRedirect.redirecionarSubpasta(req, resp, "usuario", "cadastrar.jsp");
+        resp.setContentType("text/html;charset=UTF-8");
+        if ((UsuarioBean) req.getSession().getAttribute("usuario") != null) {
+            IndexRedirect.redirecionarSubpasta(req, resp, "usuario", "login.jsp");
+        }
+        else{
+            req.getRequestDispatcher("/usuario/cadastrar.jsp").include(req, resp);
+        }
     }
 }
