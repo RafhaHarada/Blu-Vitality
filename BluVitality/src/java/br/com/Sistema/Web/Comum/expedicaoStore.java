@@ -43,9 +43,9 @@ public class expedicaoStore extends HttpServlet {
         int mes = Integer.parseInt(numeros[1]);
         int dia = Integer.parseInt(numeros[0]);
 
-        expedicao.setData_expedicao(new Date(ano, mes, dia));
-        //expedicao.setHora_expedicao(Time.valueOf(req.getParameter("hora")));
-        expedicao.setCusto(Double.parseDouble(req.getParameter("custo")));
+        expedicao.setData_expedicao(new Date(ano - 1900, mes - 1, dia));
+        expedicao.setHora_expedicao(Time.valueOf(req.getParameter("hora")));
+        //expedicao.setCusto(Double.parseDouble(req.getParameter("custo")));
 
         expedicao.setFuncionario(new FuncionarioDAO().obterPeloId(expedicao.getId_funcionario()));
         expedicao.setUsuario(new UsuarioDAO().obterPeloId(expedicao.getId_usuario()));

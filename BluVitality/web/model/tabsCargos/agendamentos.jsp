@@ -5,6 +5,12 @@
                  Nattana Matos (nattana.matos@Outlook.pt)
 --%>
 
+<%@page import="br.com.Sistema.DAO.UsuarioDAO"%>
+<%@page import="br.com.Sistema.Bean.UsuarioBean"%>
+<%@page import="java.util.List"%>
+<%@page import="br.com.Sistema.DAO.FuncionarioDAO"%>
+<%@page import="br.com.Sistema.Bean.FuncionarioBean"%>
+
 <div id="Funcionarios3" class="scrollBarOnDiv">
     <nav>
         <div class="nav-wrapper teal lighten-4">
@@ -25,11 +31,11 @@
     </div>
     <!--Exame-->
     <div class="agendarE container">
-        <form action="/expedicao/store" method="GET">
+        <form action="/expedicao/store" method="POST">
             <div class="row">
                 <div class="input-field col s12">
                     <label class="teal-text lighten-4" for="tipo">Agendarei um</label>
-                    <input id="exame-cadastro-tipo" type="text" name="tipo" required="required" disabled></input>
+                    <input id="exame-cadastro-tipo" type="text" name="tipo" required="required" readonly></input>
                 </div>
             </div>
             <div class="row">
@@ -37,7 +43,7 @@
                     <label for="exame-cadastro-id-usuario" class="teal-text">Paciente</label><br>
                     <%
                         FuncionarioBean isFuncionario = new FuncionarioDAO().obterPeloIdUsuario(usuario.getId());
-                        if (isFuncionario.getTipo() != "") {
+                        if (isFuncionario.getCargo().getNome().equals("Medico")) {
                             List<UsuarioBean> usuariosE = new UsuarioDAO().obterTodos();
                     %>
                     <select id="exame-cadastro-id-usuario" name="id-usuario" class="browser-default row" required="required">
@@ -114,7 +120,7 @@
             </div>
             <div>
                 <label for="exame-cadastro-custo" class="teal-text">Custo</label>
-                <input id="exame-cadastro-custo" name="custo" type="number" value="0" disabled>
+                <input id="exame-cadastro-custo" name="custo" type="number" value="0" readonly>
             </div>
             <!-- Modal Trigger -->
             <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Agendar</a>
@@ -132,10 +138,10 @@
     </div>
     <!--Consulta-->
     <div class="agendarC container">
-        <form action="/expedicao/store" method="GET">
+        <form action="/expedicao/store" method="POST">
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="consulta-cadastro-tipo" type="text" name="tipo" required="required" disabled></input>
+                    <input id="consulta-cadastro-tipo" type="text" name="tipo" required="required" readonly></input>
                     <label class="teal-text lighten-4" for="consulta-cadastro-tipo">Agendarei um</label>
                 </div>
             </div>
@@ -144,7 +150,7 @@
                     <label for="consulta-cadastro-id-usuario" class="teal-text">paciente</label>
                     <%
                         FuncionarioBean isFuncionarioC = new FuncionarioDAO().obterPeloIdUsuario(usuario.getId());
-                        if (isFuncionarioC.getTipo() != "") {
+                        if (isFuncionarioC.getCargo().getNome().equals("Medico")) {
                             List<UsuarioBean> usuariosC = new UsuarioDAO().obterTodos();
                     %>
                     <select id="consulta-cadastro-id-usuario" name="id-usuario" class="browser-default row" required="required">
@@ -231,7 +237,7 @@
             </div>
             <div>
                 <label for="consulta-cadastro-custo" class="teal-text">Custo</label>
-                <input id="consulta-cadastro-custo" name="custo" type="number" value="0" disabled>
+                <input id="consulta-cadastro-custo" name="custo" type="number" value="0" readonly>
             </div>
             <!-- Modal Trigger -->
             <a class="waves-effect waves-light btn modal-trigger" href="#modal2">Agendar</a>

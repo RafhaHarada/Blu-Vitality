@@ -110,7 +110,7 @@
     </div>
 </div>
 <div id="Usuario3" class="col s12 container white scrollBarOnDiv">
-    <%@include file="consulta-exames.jsp"%>
+    <%@include file="/model/tabsCargos/agendamentos.jsp"%>
 </div>
 <div id="Usuario4" class="col s12 container white">
     <table class="striped teal lighten-4">
@@ -148,8 +148,8 @@
                 <td><%=expedicoes.get(i).getHora_expedicao()%></td>
                 <td><%=numeroQuarto%></td>
                 <td>
-                    <a href="/consulta/editar?id=<%=expedicoes.get(i).getId()%>"><i class="material-icons">edit</i></a>
-                    <a href="/consulta/excluir?id=<%=expedicoes.get(i).getId()%>"><i class="material-icons">delete_forever</i></a>
+                    <a href="/expedicao/editar?id=<%=expedicoes.get(i).getId()%>"><i class="material-icons">edit</i></a>
+                    <a href="/expedicao/excluir?id=<%=expedicoes.get(i).getId()%>"><i class="material-icons">delete_forever</i></a>
                 </td>
             </tr>
             <%}

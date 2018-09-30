@@ -32,7 +32,7 @@
         <div class="row">
             <div class="input-field col s12">
                 <label class="teal-text lighten-4" for="tipo">Agendarei um</label>
-                <input id="exame-cadastro-tipo" type="text" name="tipo" required="required" disabled></input>
+                <input id="exame-cadastro-tipo" type="text" name="tipo" required="required" readonly></input>
             </div>
         </div>
         <div class="row">
@@ -117,7 +117,7 @@
         </div>
         <div>
             <label for="exame-cadastro-custo" class="teal-text">Custo</label>
-            <input id="exame-cadastro-custo" name="custo" type="number" value="0" disabled>
+            <input id="exame-cadastro-custo" name="custo" type="number" value="0" readonly>
         </div>
         <!-- Modal Trigger -->
         <button type="submit" class="waves-effect waves-light btn ">Agendar</button>
@@ -138,7 +138,7 @@
     <form action="/expedicao/store" method="POST">
         <div class="row">
             <div class="input-field col s12">
-                <input id="consulta-cadastro-tipo" type="text" name="tipo" required="required" disabled></input>
+                <input id="consulta-cadastro-tipo" type="text" name="tipo" required="required" readonly></input>
                 <label class="teal-text lighten-4" for="consulta-cadastro-tipo">Agendarei um</label>
             </div>
         </div>

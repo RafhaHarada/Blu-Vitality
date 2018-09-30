@@ -91,7 +91,7 @@ public class FuncionarioDAO {
             ps.setInt(1, id);
             ps.execute();
             ResultSet resultSet = ps.getResultSet();
-            while (resultSet.next()) {
+            if (resultSet.next()) {
                 funcionario = new FuncionarioBean();
                 funcionario.setId(resultSet.getInt("fn.id"));
                 funcionario.setId_cargo(resultSet.getInt("fn.id_cargo"));
@@ -101,7 +101,7 @@ public class FuncionarioDAO {
                 UsuarioBean usuario = new UsuarioDAO().obterPeloId(id);
                 funcionario.setUsuario(usuario);
 
-                CargosBean cargo = new CargosDAO().obterPeloId(resultSet.getInt("id_cargo"));
+                CargosBean cargo = new CargosDAO().obterPeloId(id);
                 funcionario.setCargo(cargo);
             }
         }catch(SQLException e){
@@ -119,7 +119,7 @@ public class FuncionarioDAO {
             ps.setInt(1, id);
             ps.execute();
             ResultSet resultSet = ps.getResultSet();
-            while(resultSet.next()){
+            if(resultSet.next()){
                 funcionario = new FuncionarioBean();
                 funcionario.setId(resultSet.getInt("id"));
                 funcionario.setId_cargo(resultSet.getInt("id_cargo"));

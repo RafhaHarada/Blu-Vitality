@@ -55,7 +55,7 @@ public class ExpedicaoDAO {
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);
             ps.setInt(1, id);
             ResultSet resultSet = ps.getResultSet();
-            while(resultSet.next()){
+            if(resultSet.next()){
                 expedicao = new ExpedicaoBean();
                 expedicao.setId(resultSet.getInt("ex.id"));
                 expedicao.setTipo(resultSet.getString("ex.tipo"));
@@ -82,7 +82,7 @@ public class ExpedicaoDAO {
         try{
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql, RETURN_GENERATED_KEYS);
             ps.setInt(1, expedicao.getUsuario().getId());
-            ps.setInt(2, expedicao.getFuncionario().getId());
+            ps.setInt(2, expedicao.getId_funcionario());
             ps.setString(3, expedicao.getTipo());
             ps.setDate(4, expedicao.getData_expedicao());
             ps.setTime(5, expedicao.getHora_expedicao());

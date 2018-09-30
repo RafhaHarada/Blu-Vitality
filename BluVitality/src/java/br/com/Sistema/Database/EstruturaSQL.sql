@@ -66,7 +66,7 @@ CREATE TABLE funcionarios(
 INSERT INTO funcionarios (id_usuario,id_cargo,tipo) VALUES
 (1,2,'funcionario'),
 (2,1,'administrador'),
-(3,1,''),
+(3,5,''),
 (4,3,'administrador'),
 (5,1,'funcionario');
 
@@ -117,6 +117,8 @@ INSERT INTO expedicao (id_usuario,id_funcionario,tipo,nome,data_expedicao,hora_e
 (2,5,'Exame','blabla2','2018-10-01','10:30:00',100000),
 (3,5,'Consulta','blabla3','2018-10-16','14:00:00',350),
 (4,5,'Consulta','blabla4','2018-10-21','16:00:00',590);
+SELECT * FROM expedicao;
+
 
 CREATE TABLE quartos(
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -146,6 +148,8 @@ CREATE TABLE gastosFuncionarios(
     fgts  DOUBLE,
     multa_fgts  DOUBLE,
     inss DOUBLE,
+    vale_transporte DOUBLE,
+    vale_refeicao DOUBLE,
     total DOUBLE
 );
 
