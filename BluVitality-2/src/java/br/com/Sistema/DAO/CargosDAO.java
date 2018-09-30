@@ -74,7 +74,7 @@ public class CargosDAO {
             ps.setDate(4, cargo.getCarga_horaria());
             ps.execute();
             ResultSet resultSet = ps.getGeneratedKeys();
-            if (resultSet.last()) {
+            if (ResultSet.next()) {
                 return resultSet.getInt(1);
             }
         } catch (SQLException e) {

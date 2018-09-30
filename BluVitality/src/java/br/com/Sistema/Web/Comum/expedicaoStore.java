@@ -32,7 +32,7 @@ public class expedicaoStore extends HttpServlet {
             throws ServletException, IOException {
 
         ExpedicaoBean expedicao = new ExpedicaoBean();
-
+        
         expedicao.setId_usuario(Integer.parseInt(req.getParameter("id-usuario")));
         expedicao.setId_funcionario(Integer.parseInt(req.getParameter("id-funcionario")));
         expedicao.setNome(req.getParameter("nome"));

@@ -51,36 +51,23 @@ public class FuncionarioDAO {
         return funcionarios;
     }
 
-    public List<FuncionarioBean> obterCargos() {
-        List<FuncionarioBean> funcionarios = new ArrayList<>();
+    public List<CargosBean> obterCargos() {
+        List<CargosBean> cargos = new ArrayList<>();
         String sql = "SELECT * FROM funcionarios fn JOIN cargos cr ON cr.id = fn.id_cargo JOIN usuarios us ON us.id = fn.id_usuario";
         try {
             Statement st = Conexao.abrirConexao().createStatement();
             st.execute(sql);
             ResultSet resultSet = st.getResultSet();
-
             while (resultSet.next()) {
-                FuncionarioBean funcionario = new FuncionarioBean();
-                funcionario.setId(resultSet.getInt("fn.id"));
-                funcionario.setId_cargo(resultSet.getInt("fn.id_cargo"));
-                funcionario.setId_usuario(resultSet.getInt("fn.id_usuario"));
-                funcionario.setTipo(resultSet.getString("fn.tipo"));
-
-                UsuarioBean usuario = new UsuarioDAO().obterPeloId(resultSet.getInt("fn.id_usuario"));
-                funcionario.setUsuario(usuario);
-                
                 CargosBean cargo = new CargosDAO().obterPeloId(resultSet.getInt("cr.id"));
-                funcionario.setCargo(cargo);
-                
-                funcionarios.add(funcionario);
-
+                cargos.add(cargo);
             }
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
             Conexao.fecharConexao();
         }
-        return funcionarios;
+        return cargos;
     }
 
     public FuncionarioBean obterPeloId(int id) {
@@ -101,7 +88,7 @@ public class FuncionarioDAO {
                 UsuarioBean usuario = new UsuarioDAO().obterPeloId(id);
                 funcionario.setUsuario(usuario);
 
-                CargosBean cargo = new CargosDAO().obterPeloId(id);
+                CargosBean cargo = new CargosDAO().obterPeloId(resultSet.getInt("fn.id_cargo"));
                 funcionario.setCargo(cargo);
             }
         }catch(SQLException e){
@@ -149,7 +136,7 @@ public class FuncionarioDAO {
             ps.setString(3, funcionario.getTipo());
             ps.execute();
             ResultSet resultSet = ps.getGeneratedKeys();
-            if (resultSet.last()) {
+            if (resultSet.next()) {
                 return resultSet.getInt(1);
             }
         } catch (SQLException e) {
