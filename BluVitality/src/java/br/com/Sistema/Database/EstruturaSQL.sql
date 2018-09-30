@@ -28,16 +28,18 @@ CREATE TABLE usuarios(
     nome_fic VARCHAR(100),
     tipo_sanguineo VARCHAR(3),
     contato_emergencia VARCHAR(100),
-    convenio BOOLEAN,
     colaborador BOOLEAN
 );
 
-INSERT INTO usuarios (nome,estado_civil,idade,sexo,login,senha,cpf,rg,telefone,email,endereco,complemento,cidade,UF,naturalidade,data_nascimento,nome_fic,tipo_sanguineo,contato_emergencia,convenio,colaborador) VALUES
-('Rafael','solteiro',18,'M','func1','func1','123.456.789-09','54.321.987-2','47997835153','rafaelegal22@outlook.com','Rua Alguma Coisa Que Não Sei, 244, Jardim Inexistente','-','Blumenau','SC','SP','2000-03-24','-','A+','47997835153',TRUE,TRUE),
-('Cidmar','solteiro',19,'M','admin2','admin2','789.456.123-09','321.987.54-2','47978945612','cidmardeboa@outlook.com','Rua Alguma Coisa Que Não Sei, 255, Jardim Inexistente','Bl A Apto 100','Blumenau','SC','MS','1999-12-10','Kahoot Master','O+','47997835153',TRUE,TRUE),
-('Nattana','solteira',20,'F','user1','user1','456.123.789-09','32.154.987-2','47932165498','nattananalagoa@outlook.com','Rua Alguma Coisa Que Não Sei, 266, Jardim Inexistente','-','Blumenau','SC','MG','1998-05-25','-','A+','47997835153',TRUE,FALSE),
-('Gustavo','solteiro',21,'M','admin','admin','123.789.456-09','984.321.75-2','47974185296','gustavobeleza@outlook.com','Rua Alguma Coisa Que Não Sei, 277, Jardim Inexistente','-','Blumenau','SC','AC','1997-11-04','-','A+','47997835153',TRUE,TRUE),
-('Luana','solteira',22,'F','func2','func2','789.123.456-09','987.421.35-2','47936925814','luanajoinha@outlook.com','Rua Alguma Coisa Que Não Sei, 288, Jardim Inexistente','-','Blumenau','SC','PE','1996-08-30','-','A+','47997835153',TRUE,TRUE);
+INSERT INTO usuarios (nome,estado_civil,idade,sexo,login,senha,cpf,rg,telefone,email,endereco,complemento,cidade,UF,naturalidade,data_nascimento,nome_fic,tipo_sanguineo,contato_emergencia,colaborador) VALUES
+('Rafael','solteiro',18,'M','func1','func1','123.456.789-09','54.321.987-2','47997835153','rafaelegal22@outlook.com','Rua Alguma Coisa Que Não Sei, 244, Jardim Inexistente','-','Blumenau','SC','SP','2000-03-24','-','A+','47997835153',TRUE),
+('Cidmar','solteiro',19,'M','admin2','admin2','789.456.123-09','321.987.54-2','47978945612','cidmardeboa@outlook.com','Rua Alguma Coisa Que Não Sei, 255, Jardim Inexistente','Bl A Apto 100','Blumenau','SC','MS','1999-12-10','Kahoot Master','O+','47997835153',TRUE),
+('Nattana','solteira',20,'F','user1','user1','456.123.789-09','32.154.987-2','47932165498','nattananalagoa@outlook.com','Rua Alguma Coisa Que Não Sei, 266, Jardim Inexistente','-','Blumenau','SC','MG','1998-05-25','-','A+','47997835153',FALSE),
+('Gustavo','solteiro',21,'M','admin','admin','123.789.456-09','984.321.75-2','47974185296','gustavobeleza@outlook.com','Rua Alguma Coisa Que Não Sei, 277, Jardim Inexistente','-','Blumenau','SC','AC','1997-11-04','-','A+','47997835153',TRUE),
+('Luana','solteira',22,'F','func2','func2','789.123.456-09','987.421.35-2','47936925814','luanajoinha@outlook.com','Rua Alguma Coisa Que Não Sei, 288, Jardim Inexistente','-','Blumenau','SC','PE','1996-08-30','-','A+','47997835153',TRUE);
+
+UPDATE usuarios SET nome_fic = '-' WHERE id = 7;
+SELECT * FROM usuarios;
 
 CREATE TABLE cargos(
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -160,20 +162,3 @@ CREATE TABLE lucro(
     FOREIGN KEY(id_receita) REFERENCES receita(id),
     FOREIGN KEY(id_custo) REFERENCES custo(id)
 );
-
-CREATE TABLE convenio(
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    id_usuario INT,
-    data_convenio DATE,
-    pago BOOLEAN,
-    empresa_nome VARCHAR(100),
-    custo DOUBLE,
-    FOREIGN KEY(id_usuario) REFERENCES usuarios(id)
-);
-
-INSERT INTO convenio (id_usuario,data_convenio,pago,empresa_nome,custo) VALUES
-(1,'2018-10-25',TRUE,'SUS',1000),
-(2,'2018-10-20',TRUE,'SUS',1000),
-(3,'2018-10-15',TRUE,'SUS',1000),
-(4,'2018-10-10',TRUE,'SUS',1000),
-(5,'2018-10-05',TRUE,'SUS',1000);
