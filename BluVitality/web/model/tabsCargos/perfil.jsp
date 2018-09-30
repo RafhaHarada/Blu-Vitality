@@ -4,7 +4,7 @@
     Author     : Luana Patricia Duarte (luanapatricia.blu@hotmail.com)
 --%>
 
-<div id="Funcionarios1" class="col s12 container">
+<div id="Comum1" class="col s12 container">
     <ul class="collection col s6">
         <li class="collection-item avatar teal lighten-4">
             <img src="" alt="" class="circle red">
