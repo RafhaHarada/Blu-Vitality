@@ -5,11 +5,6 @@
                  Nattana Matos (nattana.matos@Outlook.pt)
 --%>
 
-<%@page import="br.com.Sistema.DAO.UsuarioDAO"%>
-<%@page import="br.com.Sistema.Bean.UsuarioBean"%>
-<%@page import="java.util.List"%>
-<%@page import="br.com.Sistema.DAO.FuncionarioDAO"%>
-<%@page import="br.com.Sistema.Bean.FuncionarioBean"%>
 
 <div id="Funcionarios3" class="scrollBarOnDiv">
     <nav>
@@ -43,7 +38,7 @@
                     <label for="exame-cadastro-id-usuario" class="teal-text">Paciente</label><br>
                     <%
                         FuncionarioBean isFuncionario = new FuncionarioDAO().obterPeloIdUsuario(usuario.getId());
-                        if (isFuncionario.getCargo().getNome().equals("Medico")) {
+                        if (isFuncionario.getTipo() != "") {
                             List<UsuarioBean> usuariosE = new UsuarioDAO().obterTodos();
                     %>
                     <select id="exame-cadastro-id-usuario" name="id-usuario" class="browser-default row" required="required">
@@ -150,7 +145,7 @@
                     <label for="consulta-cadastro-id-usuario" class="teal-text">paciente</label>
                     <%
                         FuncionarioBean isFuncionarioC = new FuncionarioDAO().obterPeloIdUsuario(usuario.getId());
-                        if (isFuncionarioC.getCargo().getNome().equals("Medico")) {
+                        if (isFuncionarioC.getTipo() != "") {
                             List<UsuarioBean> usuariosC = new UsuarioDAO().obterTodos();
                     %>
                     <select id="consulta-cadastro-id-usuario" name="id-usuario" class="browser-default row" required="required">

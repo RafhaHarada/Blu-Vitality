@@ -9,7 +9,7 @@ package br.com.Sistema.Bean;
  *
  * @author Cidmar da Silva Ribeiro (cidmardsr@gmail.com)
  */
-public class EquipamentosBean {
+public class EquipamentoBean {
     private int id;
     private String nome;
     private String descricao;
