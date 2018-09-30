@@ -87,7 +87,7 @@
         </li>
         <li class="collection-item teal lighten-5">
             <span class="convenio">Covenio:</span>
-            <span><%=paciente.getConvenio()%></span>
+            <span><%=paciente.%></span>
             <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
         </li>
     </ul>

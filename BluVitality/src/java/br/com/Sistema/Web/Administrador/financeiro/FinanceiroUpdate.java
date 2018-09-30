@@ -65,8 +65,8 @@ public class FinanceiroUpdate extends HttpServlet {
             double receitaTotal = 0.0;
             for (int i = 0; i < usuarios.size(); i++) {
                 if (usuarios.get(i).isUsaConvenio()) {
-                    convenios.add(usuarios.get(i).getConvenio());
-                    receitaTotal += usuarios.get(i).getConvenio().getCusto();
+                    convenios.add(usuarios.get(i).);
+                    receitaTotal += usuarios.get(i)..getCusto();
                 }
             }
             receita.setConvenios(convenios);
