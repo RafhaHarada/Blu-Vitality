@@ -87,11 +87,7 @@
                 <span><%=usuario.getEstado_civil()%></span>
                 <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
             </li>
-            <li class="collection-item teal lighten-5">
-                <span class="convenio">Covenio:</span>
-                <span><%=usuario.getConvenio()%></span>
-                <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
-            </li>
+           
         </ul>
         <div class="modal-footer">
             <a href="#!" class="modal-close waves-effect waves-green btn-flat">Fechar</a>

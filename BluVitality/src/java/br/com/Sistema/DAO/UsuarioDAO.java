@@ -65,19 +65,18 @@ public class UsuarioDAO {
     }
 
     public int adicionar(UsuarioBean usuario) {
-        String sql = "INSERT INTO usuarios(nome, estado_civil, idade, sexo, login, senha, "
+        String sql = "INSERT INTO usuarios(nome, estado_civil, sexo, login, senha, "
                 + "cpf, rg, telefone, email, endereco, complemento, uf, cidade, naturalidade, "
                 + "data_nascimento, nome_fic, tipo_sanguineo, contato_emergencia, colaborador)"
-                + "\nVALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                + "\nVALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try {
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql,
                     PreparedStatement.RETURN_GENERATED_KEYS);
-
+            
             int quantidade = 1;
             ps.setString(quantidade++, usuario.getNome());
             ps.setString(quantidade++, usuario.getEstado_civil());
-            ps.setByte(quantidade++, usuario.getIdade());
             ps.setString(quantidade++, String.valueOf(usuario.getSexo()));
             ps.setString(quantidade++, usuario.getLogin());
             ps.setString(quantidade++, usuario.getSenha());
@@ -97,11 +96,7 @@ public class UsuarioDAO {
             ps.setBoolean(quantidade++, false);
             ps.execute();
             ResultSet resultSet = ps.getGeneratedKeys();
-
-            if (resultSet.next()) {
-                return resultSet.getInt(1);
-            }
-
+            
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
@@ -125,7 +120,7 @@ public class UsuarioDAO {
     }
 
     public boolean alterar(UsuarioBean usuario) {
-        String sql = "UPDATE usuarios SET nome = ?, estado_civil = ?, idade = ?, "
+        String sql = "UPDATE usuarios SET nome = ?, estado_civil = ?, "
                 + "sexo = ?, login = ?, senha = ?, cpf = ?, rg = ?, telefone = ?, "
                 + "email = ?, endereco = ?, complemento = ?, uf = ?, cidade = ?, "
                 + "naturalidade = ?, data_nascimento = ?, nome_fic = ?, tipo_sanguineo = ?, "
@@ -179,7 +174,6 @@ public class UsuarioDAO {
                 usuario.setId(resultSet.getInt("id"));
                 usuario.setNome(resultSet.getString("nome"));
                 usuario.setEstado_civil(resultSet.getString("estado_civil"));
-                usuario.setIdade(resultSet.getByte("idade"));
                 usuario.setSexo(resultSet.getString("sexo").charAt(0));
                 usuario.setLogin(resultSet.getString("login"));
                 usuario.setSenha(resultSet.getString("senha"));
@@ -221,7 +215,6 @@ public class UsuarioDAO {
                 usuario.setId(resultSet.getInt("id"));
                 usuario.setNome(resultSet.getString("nome"));
                 usuario.setEstado_civil(resultSet.getString("estado_civil"));
-                usuario.setIdade(resultSet.getByte("idade"));
                 usuario.setSexo(resultSet.getString("sexo").charAt(0));
                 usuario.setLogin(resultSet.getString("login"));
                 usuario.setSenha(resultSet.getString("senha"));
@@ -263,7 +256,6 @@ public class UsuarioDAO {
                 usuario.setId(resultSet.getInt("id"));
                 usuario.setNome(resultSet.getString("nome"));
                 usuario.setEstado_civil(resultSet.getString("estado_civil"));
-                usuario.setIdade(resultSet.getByte("idade"));
                 usuario.setSexo(resultSet.getString("sexo").charAt(0));
                 usuario.setLogin(resultSet.getString("login"));
                 usuario.setSenha(resultSet.getString("senha"));
@@ -287,7 +279,7 @@ public class UsuarioDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            Conexao.abrirConexao();
+            Conexao.fecharConexao();
         }
         return null;
     }

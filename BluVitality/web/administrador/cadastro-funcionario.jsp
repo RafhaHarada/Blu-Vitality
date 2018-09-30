@@ -22,9 +22,9 @@
 
             for (int i = 0; i   < novoFuncionario.size(); i++) {
                 funcionarioNovo = new FuncionarioDAO().obterPeloIdUsuario(novoFuncionario.get(i).getId());
-                If(funcionarioNovo.getTipo() == ""){
+                if(funcionarioNovo.getTipo() == ""){
         %>
-        <option value="<%=funcionarioNovo.getId()%>"><%=funcionarioNovo.getNome()%></option>
+        <option value="<%=funcionarioNovo.getId()%>"><%=funcionarioNovo.getUsuario()%></option>
         <%
                 }
             }

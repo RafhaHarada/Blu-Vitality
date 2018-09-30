@@ -34,7 +34,7 @@ public class ReceitaDAO {
                 List<ConvenioBean> convenios = new ArrayList<>();
                 for (int i = 0; i < usuarios.size(); i++) {
                     if(usuarios.get(i).isUsaConvenio()){
-                        convenios.add(usuarios.get(i).getConvenio());
+                        convenios.add(usuarios.get(i).);
                     }
                 }
                 receita.setConvenios(convenios);
@@ -65,7 +65,7 @@ public class ReceitaDAO {
                 List<ConvenioBean> convenios = new ArrayList<>();
                 for (int i = 0; i < usuarios.size(); i++) {
                     if(usuarios.get(i).isUsaConvenio()){
-                        convenios.add(usuarios.get(i).getConvenio());
+                        convenios.add(usuarios.get(i).);
                     }
                 }
                 receita.setConvenios(convenios);
