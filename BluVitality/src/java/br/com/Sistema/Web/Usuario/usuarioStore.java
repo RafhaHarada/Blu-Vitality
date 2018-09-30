@@ -1,6 +1,8 @@
 package br.com.Sistema.Web.Usuario;
 
+import br.com.Sistema.Bean.ConvenioBean;
 import br.com.Sistema.Bean.UsuarioBean;
+import br.com.Sistema.DAO.ConvenioDAO;
 import br.com.Sistema.DAO.UsuarioDAO;
 import br.com.Sistema.Web.IndexRedirect;
 import java.io.IOException;
@@ -46,7 +48,11 @@ public class usuarioStore extends HttpServlet {
         int idade = Period.between(LocalDate.parse(dataEn), LocalDate.now()).getYears();
         usuario.setIdade((byte) idade);
         usuario.setTipo_sanguineo(req.getParameter("tipo-sanguineo"));
-        usuario.setConvenio(req.getParameter("convenio"));
+        usuario.setUsaConvenio(Boolean.valueOf(req.getParameter("convenio")));
+        if(usuario.isUsaConvenio()){
+            ConvenioBean convenio = new ConvenioDAO().obterPeloIdUsuario(usuario.getId());
+            usuario.setConvenio(convenio);
+        }
 
         usuario.setId(new UsuarioDAO().adicionar(usuario));
 

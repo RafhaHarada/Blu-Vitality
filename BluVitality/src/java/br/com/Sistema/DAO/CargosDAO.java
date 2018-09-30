@@ -47,7 +47,7 @@ public class CargosDAO {
             ps.setInt(1, id);
             ps.execute();
             ResultSet resultSet = ps.getResultSet();
-            while (resultSet.next()) {
+            if(resultSet.next()) {
                 cargo = new CargosBean();
                 cargo.setId(resultSet.getInt("id"));
                 cargo.setNome(resultSet.getString("nome"));
@@ -74,7 +74,7 @@ public class CargosDAO {
             ps.setDate(4, cargo.getCarga_horaria());
             ps.execute();
             ResultSet resultSet = ps.getGeneratedKeys();
-            if (resultSet.last()) {
+            if (resultSet.next()) {
                 return resultSet.getInt(1);
             }
         } catch (SQLException e) {
