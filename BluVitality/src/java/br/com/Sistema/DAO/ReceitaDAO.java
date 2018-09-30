@@ -1,39 +1,43 @@
 package br.com.Sistema.DAO;
 
+import br.com.Sistema.Bean.ConvenioBean;
 import br.com.Sistema.Bean.ReceitaBean;
+import br.com.Sistema.Bean.UsuarioBean;
 import br.com.Sistema.Database.Conexao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import static java.sql.Statement.RETURN_GENERATED_KEYS;
 import java.util.ArrayList;
 import java.util.List;
+import static java.sql.Statement.RETURN_GENERATED_KEYS;
 
 /**
- * @author Cidmar da Silva Ribeiro (cidmardsr@gmail.com)
+ * @author @Rafael Alipio Harada (rafhaharada@gmail.com)
  */
 public class ReceitaDAO {
+
     public List<ReceitaBean> obterTodos() {
         List<ReceitaBean> receitas = new ArrayList<>();
-        String sql = "SELECT * FROM receitas";
+        String sql = "SELECT * FROM receita";
         try {
             Statement st = Conexao.abrirConexao().createStatement();
             st.execute(sql);
             ResultSet resultSet = st.getResultSet();
-
             while (resultSet.next()) {
                 ReceitaBean receita = new ReceitaBean();
                 receita.setId(resultSet.getInt("id"));
-                receita.setClientes_particulares(resultSet.getDouble("clientes_particulares"));
-                receita.setConvenio_sus(resultSet.getDouble("convenio_sus"));
-                receita.setOutros_convenios(resultSet.getDouble("outros_convenios"));
-                receita.setServicos_a_faturar(resultSet.getDouble("servicos_a_faturar"));
-                receita.setDiversos(resultSet.getDouble("diversos"));
-                receita.setAdiantamentos_a_terceiros(resultSet.getDouble("adiantamentos_a_terceiros"));
-                receita.setArrecadacoes(resultSet.getDouble("arrecadacoes"));
-                receita.setBens_e_titulos_a_receber(resultSet.getDouble("bens_e_titulos_a_receber"));
-                receita.setTotal(resultSet.getDouble("total"));
+                receita.setPagamentoConvenio(resultSet.getInt("pagamento_convenio"));
+                receita.setPagamentoAVista(resultSet.getDouble("pagamento_a_vista"));
+                receita.setDataReceita(resultSet.getDate("data_receita"));
+                List<UsuarioBean> usuarios = new UsuarioDAO().obterTodos();
+                List<ConvenioBean> convenios = new ArrayList<>();
+                for (int i = 0; i < usuarios.size(); i++) {
+                    if(usuarios.get(i).isUsaConvenio()){
+                        convenios.add(usuarios.get(i).getConvenio());
+                    }
+                }
+                receita.setConvenios(convenios);
                 receitas.add(receita);
             }
         } catch (SQLException e) {
@@ -45,47 +49,45 @@ public class ReceitaDAO {
     }
 
     public ReceitaBean obterPeloId(int id) {
-        ReceitaBean receita = null;
-        String sql = "SELECT clientes_particulares, convenio_sus, outros_convenios, servicos_a_faturar, diversos, adiantamentos_a_terceiros, arrecadacoes, bens_e_titulos_a_receber, total FROM receitas WHERE id = ?";
+        String sql = "SELECT * FROM receita WHERE id = ?";
         try {
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);
             ps.setInt(1, id);
+            ps.execute();
             ResultSet resultSet = ps.getResultSet();
-
-            while (resultSet.next()) {
-                receita = new ReceitaBean();
-                receita.setId(resultSet.getInt("id"));
-                receita.setClientes_particulares(resultSet.getDouble("clientes_particulares"));
-                receita.setConvenio_sus(resultSet.getDouble("convenio_sus"));
-                receita.setOutros_convenios(resultSet.getDouble("outros_convenios"));
-                receita.setServicos_a_faturar(resultSet.getDouble("servicos_a_faturar"));
-                receita.setDiversos(resultSet.getDouble("diversos"));
-                receita.setAdiantamentos_a_terceiros(resultSet.getDouble("adiantamentos_a_terceiros"));
-                receita.setArrecadacoes(resultSet.getDouble("arrecadacoes"));
-                receita.setBens_e_titulos_a_receber(resultSet.getDouble("bens_e_titulos_a_receber"));
-                receita.setTotal(resultSet.getDouble("total"));
+            if(resultSet.next()) {
+                ReceitaBean receita = new ReceitaBean();
+                receita.setId(resultSet.getInt(id));
+                receita.setPagamentoConvenio(resultSet.getInt("pagamento_convenio"));
+                receita.setPagamentoAVista(resultSet.getDouble("pagamento_a_vista"));
+                receita.setDataReceita(resultSet.getDate("data_receita"));
+                List<UsuarioBean> usuarios = new UsuarioDAO().obterTodos();
+                List<ConvenioBean> convenios = new ArrayList<>();
+                for (int i = 0; i < usuarios.size(); i++) {
+                    if(usuarios.get(i).isUsaConvenio()){
+                        convenios.add(usuarios.get(i).getConvenio());
+                    }
+                }
+                receita.setConvenios(convenios);
+                return receita;
             }
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
             Conexao.fecharConexao();
         }
-        return receita;
+        return null;
     }
 
     public int adicionar(ReceitaBean receita) {
-        String sql = "INSERT INTO receita(clientes_particulares, convenio_sus, outros_convenios, servicos_a_faturar, diversos, adiantamentos_a_terceiros, arrecadacoes, bens_e_titulos_a_receber, total) VALUES(?,?,?,?,?,?,?,?,?)";
+        String sql = "INSERT INTO receita (pagamento_convenio,pagamento_a_vista,data_receita)"
+                + "VALUES(?,?,?)";
         try {
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql, RETURN_GENERATED_KEYS);
-            ps.setDouble(1, receita.getClientes_particulares());
-            ps.setDouble(2, receita.getConvenio_sus());
-            ps.setDouble(3, receita.getOutros_convenios());
-            ps.setDouble(4, receita.getServicos_a_faturar());
-            ps.setDouble(5, receita.getDiversos());
-            ps.setDouble(6, receita.getAdiantamentos_a_terceiros());
-            ps.setDouble(7, receita.getArrecadacoes());
-            ps.setDouble(8, receita.getBens_e_titulos_a_receber());
-            ps.setDouble(9, receita.getTotal());
+            int quantidade = 1;
+            ps.setDouble(quantidade++, receita.getPagamentoConvenio());
+            ps.setDouble(quantidade++, receita.getPagamentoAVista());
+            ps.setDate(quantidade++, receita.getDataReceita());
             ps.execute();
             ResultSet resultSet = ps.getGeneratedKeys();
             if (resultSet.next()) {
@@ -101,19 +103,13 @@ public class ReceitaDAO {
 
     public boolean alterar(ReceitaBean receita) {
         try {
-            String sql = "UPDATE receita SET energia_eletrica = ?, agua = ?, gas = ?, telefone_e_internet = ?, aluguel = ?, fornecedores = ?, total = ? WHERE id = ?";
+            String sql = "UPDATE receita SET pagamento_convenio = ?, pagamento_a_vista = ?, data_receita = ? WHERE id = ?";
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);
-            ps.setDouble(1, receita.getClientes_particulares());
-            ps.setDouble(2, receita.getConvenio_sus());
-            ps.setDouble(3, receita.getOutros_convenios());
-            ps.setDouble(4, receita.getServicos_a_faturar());
-            ps.setDouble(5, receita.getDiversos());
-            ps.setDouble(6, receita.getAdiantamentos_a_terceiros());
-            ps.setDouble(7, receita.getArrecadacoes());
-            ps.setDouble(8, receita.getBens_e_titulos_a_receber());
-            ps.setDouble(9, receita.getTotal());
-            ps.setInt(10, receita.getId());
-
+            int quantidade = 1;
+            ps.setDouble(quantidade++, receita.getPagamentoConvenio());
+            ps.setDouble(quantidade++, receita.getPagamentoAVista());
+            ps.setDate(quantidade++, receita.getDataReceita());
+            ps.setInt(quantidade++, receita.getId());
             return ps.executeUpdate() == 1;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -123,8 +119,8 @@ public class ReceitaDAO {
         return false;
     }
 
-    public boolean excluir(int id) {
-        String sql = "DELETE FROM receitas WHERE id = ?";
+    public boolean apagar(int id) {
+        String sql = "DELETE FROM receita WHERE id = ?";
         try {
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);
             ps.setInt(1, id);
