@@ -96,7 +96,11 @@ public class UsuarioDAO {
             ps.setBoolean(quantidade++, false);
             ps.execute();
             ResultSet resultSet = ps.getGeneratedKeys();
-            
+
+            if (resultSet.next()) {
+                return resultSet.getInt(1);
+            }
+
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
