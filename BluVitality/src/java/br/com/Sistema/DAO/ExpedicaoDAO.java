@@ -48,6 +48,39 @@ public class ExpedicaoDAO {
         }return expedicoes;
     }
     
+    public List<ExpedicaoBean> obterTodosPorUsuario(int id_usuario) {
+        List<ExpedicaoBean> expedicoes = new ArrayList<>();
+        String sql = "SELECT * FROM expedicao WHERE id_usuario = ?";
+        
+        try{
+            PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);
+            ps.setInt(1, id_usuario);
+            ps.execute();
+            ResultSet resultSet = ps.getResultSet();
+            while(resultSet.next()){
+                ExpedicaoBean expedicao = new ExpedicaoBean();
+                expedicao.setId(resultSet.getInt("id"));
+                expedicao.setTipo(resultSet.getString("tipo"));
+                expedicao.setNome(resultSet.getString("nome"));
+                expedicao.setData_expedicao(resultSet.getDate("data_expedicao"));
+                expedicao.setHora_expedicao(resultSet.getTime("hora_expedicao"));
+                expedicao.setCusto(resultSet.getDouble("custo"));
+                
+                UsuarioBean usuario = new UsuarioDAO().obterPeloId(resultSet.getInt("id_usuario"));
+                expedicao.setUsuario(usuario);
+                
+                FuncionarioBean funcionario = new FuncionarioDAO().obterPeloIdUsuario(resultSet.getInt("id_funcionario"));
+                expedicao.setFuncionario(funcionario);
+                
+                expedicoes.add(expedicao);
+            }
+            }catch(SQLException e){
+                    e.printStackTrace();
+            }finally{
+            Conexao.fecharConexao();
+        }return expedicoes;
+    }
+    
     public ExpedicaoBean obterPeloId(int id){
         ExpedicaoBean expedicao = null;
         String sql = "SELECT * FROM expedicao ex JOIN usuarios us ON us.id = ex.id_usuario JOIN funcionarios fn ON fn.id = ex.id_funcionario WHERE id = ?";
@@ -55,7 +88,7 @@ public class ExpedicaoDAO {
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);
             ps.setInt(1, id);
             ResultSet resultSet = ps.getResultSet();
-            while(resultSet.next()){
+            if(resultSet.next()){
                 expedicao = new ExpedicaoBean();
                 expedicao.setId(resultSet.getInt("ex.id"));
                 expedicao.setTipo(resultSet.getString("ex.tipo"));
@@ -81,8 +114,8 @@ public class ExpedicaoDAO {
                 + "VALUES(?, ?, ?, ?, ?, ?)";
         try{
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql, RETURN_GENERATED_KEYS);
-            ps.setInt(1, expedicao.getUsuario().getId());
-            ps.setInt(2, expedicao.getFuncionario().getId());
+            ps.setInt(1, expedicao.getId_usuario());
+            ps.setInt(2, expedicao.getId_funcionario());
             ps.setString(3, expedicao.getTipo());
             ps.setDate(4, expedicao.getData_expedicao());
             ps.setTime(5, expedicao.getHora_expedicao());
@@ -90,7 +123,7 @@ public class ExpedicaoDAO {
             
             ps.execute();
             ResultSet resultSet = ps.getGeneratedKeys();
-            if(resultSet.last()){
+            if(resultSet.next()){
                 return resultSet.getInt(1);
             }
         }catch(SQLException e){

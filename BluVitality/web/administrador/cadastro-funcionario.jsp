@@ -13,48 +13,46 @@
 <%@page import="br.com.Sistema.DAO.UsuarioDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-<div class="input-field col s12">
-    <select>
-        <option value="" disabled selected id="novofunc">Novo Funcionário</option>
-        <%
-            List<UsuarioBean> novoFuncionario = new UsuarioDAO().obterTodos();
-            FuncionarioBean funcionarioNovo = new FuncionarioBean();
-
-            for (int i = 0; i   < novoFuncionario.size(); i++) {
-                funcionarioNovo = new FuncionarioDAO().obterPeloIdUsuario(novoFuncionario.get(i).getId());
-                If(funcionarioNovo.getTipo() == ""){
-        %>
-        <option value="<%=funcionarioNovo.getId()%>"><%=funcionarioNovo.getNome()%></option>
-        <%
-                }
-            }
-        %>
-    </select>
-    <label for="functipo">Novo Funcionário</label>
-</div>
-<div class="input-field col s12">
-    <select id="functipo">
-        <option value="" disabled selected>Escolha o tipo de funcionário</option>
-        <option value="funcionario">Funcionario</option>
-        <option value="administrador">Funcionario</option>
-
-    </select>
-    <label>Tipo</label>
-</div>
-<div class="input-field col s12">
-    <select id="cargofunc">
-        <option value="" disabled selected>Cargo</option>
-        <%
-            List<CargosBean> cargoFuncionario = new CargosDAO().obterTodos();
-
-            for (int i = 0; i  < cargoFuncionario.size(); i++) {
-
-
-        %>
-        <option value="<%=cargoFuncionario.get(i).getId()%>"><%=cargoFuncionario.get(i).getNome()%></option>
-        <%
-            }
-        %>
-    </select>
-    <label>Novo Funcionário</label>
-</div>
+<form action="/funcionario/store" method="get">
+    <div class="container">
+        <div class="input-field col s12">
+            <select id="cadastro-funcionario-id-usuario" name="id-usuario">
+                <option value="" disabled selected>Novo Funcionário</option>
+                <%
+                    List<UsuarioBean> novoFuncionario = new UsuarioDAO().obterTodos();
+                    for (int i = 0; i < novoFuncionario.size(); i++) {
+                        if (!novoFuncionario.get(i).isColaborador()) {
+                %>
+                <option value="<%=novoFuncionario.get(i).getId()%>"><%=novoFuncionario.get(i).getNome()%></option>
+                <%
+                        }
+                    }
+                %>
+            </select>
+            <label for="cadastro-funcionario-id-usuario">Novo Funcionário</label>
+        </div>
+        <div class="input-field col s12">
+            <select id="cadastro-funcionario-tipo" name="tipo">
+                <option value="" disabled selected>Escolha o tipo de funcionário</option>
+                <option value="funcionario">Funcionario</option>
+                <option value="administrador">Administrador</option>
+            </select>
+            <label for="cadastro-funcionario-tipo">Tipo</label>
+        </div>
+        <div class="input-field col s12">
+            <select id="cadastro-funcionario-id-cargo" name="id-cargo">
+                <option value="" disabled selected>Cargo</option>
+                <%
+                    List<CargosBean> cargoFuncionario = new CargosDAO().obterTodos();
+                    for (int i = 0; i < cargoFuncionario.size(); i++) {
+                %>
+                <option value="<%=cargoFuncionario.get(i).getId()%>"><%=cargoFuncionario.get(i).getNome()%></option>
+                <%
+                    }
+                %>
+            </select>
+            <label for="cadastro-funcionario-id-cargo">Novo Funcionário</label>
+        </div>
+        <input type="submit" class="btn btn-flat white-text teal center" value="Cadastrar novo funcionário">
+    </div>
+</form>

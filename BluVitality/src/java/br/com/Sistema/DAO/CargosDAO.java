@@ -29,7 +29,8 @@ public class CargosDAO {
                 cargo.setNome(resultSet.getString("nome"));
                 cargo.setEspecialidade(resultSet.getString("especialidade"));
                 cargo.setSalario(resultSet.getDouble("salario"));
-                cargo.setCarga_horaria(resultSet.getDate("carga_horaria"));
+                cargo.setCarga_horaria(resultSet.getTime("carga_horaria"));
+                cargos.add(cargo);
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -47,13 +48,13 @@ public class CargosDAO {
             ps.setInt(1, id);
             ps.execute();
             ResultSet resultSet = ps.getResultSet();
-            while (resultSet.next()) {
+            if(resultSet.next()) {
                 cargo = new CargosBean();
                 cargo.setId(resultSet.getInt("id"));
                 cargo.setNome(resultSet.getString("nome"));
                 cargo.setEspecialidade(resultSet.getString("especialidade"));
                 cargo.setSalario(resultSet.getDouble("salario"));
-                cargo.setCarga_horaria(resultSet.getDate("carga_horaria"));
+                cargo.setCarga_horaria(resultSet.getTime("carga_horaria"));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -71,10 +72,10 @@ public class CargosDAO {
             ps.setString(1, cargo.getNome());
             ps.setString(2, cargo.getEspecialidade());
             ps.setDouble(3, cargo.getSalario());
-            ps.setDate(4, cargo.getCarga_horaria());
+            ps.setTime(4, cargo.getCarga_horaria());
             ps.execute();
             ResultSet resultSet = ps.getGeneratedKeys();
-            if (resultSet.last()) {
+            if (resultSet.next()) {
                 return resultSet.getInt(1);
             }
         } catch (SQLException e) {
@@ -92,7 +93,7 @@ public class CargosDAO {
             ps.setString(1, cargo.getNome());
             ps.setString(2, cargo.getEspecialidade());
             ps.setDouble(3, cargo.getSalario());
-            ps.setDate(4, cargo.getCarga_horaria());
+            ps.setTime(4, cargo.getCarga_horaria());
             ps.setInt(5, cargo.getId());
 
             return ps.executeUpdate() == 1;

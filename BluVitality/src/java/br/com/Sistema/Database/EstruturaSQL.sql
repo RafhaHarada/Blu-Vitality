@@ -28,16 +28,15 @@ CREATE TABLE usuarios(
     nome_fic VARCHAR(100),
     tipo_sanguineo VARCHAR(3),
     contato_emergencia VARCHAR(100),
-    convenio VARCHAR(100),
     colaborador BOOLEAN
 );
 
-INSERT INTO usuarios (nome,estado_civil,idade,sexo,login,senha,cpf,rg,telefone,email,endereco,complemento,cidade,UF,naturalidade,data_nascimento,nome_fic,tipo_sanguineo,contato_emergencia,convenio,colaborador) VALUES
-('Rafael','solteiro',18,'M','func1','func1','123.456.789-09','54.321.987-2','47997835153','rafaelegal22@outlook.com','Rua Alguma Coisa Que Não Sei, 244, Jardim Inexistente','-','Blumenau','SC','SP','2000-03-24','-','A+','47997835153','000000009',TRUE),
-('Cidmar','solteiro',19,'M','admin2','admin2','789.456.123-09','321.987.54-2','47978945612','cidmardeboa@outlook.com','Rua Alguma Coisa Que Não Sei, 255, Jardim Inexistente','Bl A Apto 100','Blumenau','SC','MS','1999-12-10','Kahoot Master','O+','47997835153','000000238',TRUE),
-('Nattana','solteira',20,'F','user1','user1','456.123.789-09','32.154.987-2','47932165498','nattananalagoa@outlook.com','Rua Alguma Coisa Que Não Sei, 266, Jardim Inexistente','-','Blumenau','SC','MG','1998-05-25','-','A+','47997835153','000001598',FALSE),
-('Gustavo','solteiro',21,'M','admin','admin','123.789.456-09','984.321.75-2','47974185296','gustavobeleza@outlook.com','Rua Alguma Coisa Que Não Sei, 277, Jardim Inexistente','-','Blumenau','SC','AC','1997-11-04','-','A+','47997835153','000000358',TRUE),
-('Luana','solteira',22,'F','func2','func2','789.123.456-09','987.421.35-2','47936925814','luanajoinha@outlook.com','Rua Alguma Coisa Que Não Sei, 288, Jardim Inexistente','-','Blumenau','SC','PE','1996-08-30','-','A+','47997835153','000000025',TRUE);
+INSERT INTO usuarios (nome,estado_civil,idade,sexo,login,senha,cpf,rg,telefone,email,endereco,complemento,cidade,UF,naturalidade,data_nascimento,nome_fic,tipo_sanguineo,contato_emergencia,colaborador) VALUES
+('Rafael','solteiro',18,'M','func1','func1','123.456.789-09','54.321.987-2','47997835153','rafaelegal22@outlook.com','Rua Alguma Coisa Que Não Sei, 244, Jardim Inexistente','-','Blumenau','SC','SP','2000-03-24','-','A+','47997835153',TRUE),
+('Cidmar','solteiro',19,'M','admin2','admin2','789.456.123-09','321.987.54-2','47978945612','cidmardeboa@outlook.com','Rua Alguma Coisa Que Não Sei, 255, Jardim Inexistente','Bl A Apto 100','Blumenau','SC','MS','1999-12-10','Kahoot Master','O+','47997835153',TRUE),
+('Nattana','solteira',20,'F','user1','user1','456.123.789-09','32.154.987-2','47932165498','nattananalagoa@outlook.com','Rua Alguma Coisa Que Não Sei, 266, Jardim Inexistente','-','Blumenau','SC','MG','1998-05-25','-','A+','47997835153',FALSE),
+('Gustavo','solteiro',21,'M','admin','admin','123.789.456-09','984.321.75-2','47974185296','gustavobeleza@outlook.com','Rua Alguma Coisa Que Não Sei, 277, Jardim Inexistente','-','Blumenau','SC','AC','1997-11-04','-','A+','47997835153',TRUE),
+('Luana','solteira',22,'F','func2','func2','789.123.456-09','987.421.35-2','47936925814','luanajoinha@outlook.com','Rua Alguma Coisa Que Não Sei, 288, Jardim Inexistente','-','Blumenau','SC','PE','1996-08-30','-','A+','47997835153',TRUE);
 
 CREATE TABLE cargos(
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -66,7 +65,6 @@ CREATE TABLE funcionarios(
 INSERT INTO funcionarios (id_usuario,id_cargo,tipo) VALUES
 (1,2,'funcionario'),
 (2,1,'administrador'),
-(3,1,''),
 (4,3,'administrador'),
 (5,1,'funcionario');
 
@@ -130,109 +128,33 @@ CREATE TABLE quartos(
     FOREIGN KEY(id_usuario) REFERENCES usuarios(id),
     FOREIGN KEY(id_funcionario) REFERENCES funcionarios(id)
 );
+
 INSERT INTO quartos (id_usuario, id_funcionario, numero_quarto, tipo ,data_entrada, data_saida, estado) VALUES
 (1, 5, 1001,'UTI','2018-09-20','2018-09-10','ativo'),
 (2, 5, 1002,'UTI','2018-09-20','2018-09-10','ativo'),
 (3, 5, 1003,'UTI','2018-10-11','2018-10-03','inativo'),
 (4, 5, 1004,'UTI','2018-10-11','2018-10-03','inativo');
 
-CREATE TABLE gastosFuncionarios(
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    salario_mensal  DOUBLE,
-    ferias_anuais_remuneradas  DOUBLE,
-    um_terco_sobre_ferias  DOUBLE,
-    decimo_terceiro_salario  DOUBLE,
-    aviso_previo  DOUBLE,
-    fgts  DOUBLE,
-    multa_fgts  DOUBLE,
-    inss DOUBLE,
-    total DOUBLE
-);
-
-
-
-CREATE TABLE contas(
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    energia_eletrica  DOUBLE NOT NULL,
-    agua  DOUBLE NOT NULL,
-    gas  DOUBLE NOT NULL,
-    telefone_e_internet  DOUBLE NOT NULL,
-    aluguel  DOUBLE NOT NULL,
-    fornecedores  DOUBLE NOT NULL,
-    total  DOUBLE
-);
-
-INSERT INTO contas(energia_eletrica, agua, gas, telefone_e_internet, aluguel, fornecedores) VALUES
-(1, 1, 1, 1, 1, 1),
-(1, 1, 1, 1, 1, 1),
-(1, 1, 1, 1, 1, 1),
-(1, 1, 1, 1, 1, 1),
-(1, 1, 1, 1, 1, 1);
-
-CREATE TABLE gastosGerais(
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    manutencao_equipamentos  DOUBLE NOT NULL,
-    limpeza  DOUBLE NOT NULL,
-    manutencao_estrutura  DOUBLE NOT NULL,
-    alimentacao  DOUBLE NOT NULL,
-    materiais_de_consumo  DOUBLE NOT NULL,
-    medicamentos  DOUBLE NOT NULL,
-    imprevistos  DOUBLE NOT NULL,
-    total  DOUBLE NOT NULL
-);
-
-CREATE TABLE investimentos(
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    tipo VARCHAR(100) NOT NULL,
-    descricao VARCHAR(100) NOT NULL,
-    valor double NOT NULL
-);
-
-CREATE TABLE orcamento(
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    orcamento  DOUBLE NOT NULL,
-    reserva_imprevistos  DOUBLE NOT NULL,
-    orcamento_investimentos  DOUBLE NOT NULL
-);
-
-CREATE TABLE custos(
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    id_gastoFuncionario INT NOT NULL,
-    id_conta INT NOT NULL,
-    id_gastoGeral INT NOT NULL,
-    id_investimento INT NOT NULL,
-    total DOUBLE NOT NULL,
-    FOREIGN KEY(id_gastoFuncionario) REFERENCES gastosFuncionarios(id),
-    FOREIGN KEY(id_conta) REFERENCES contas(id),
-    FOREIGN KEY(id_gastoGeral) REFERENCES gastosGerais(id),
-    FOREIGN KEY(id_investimento) REFERENCES investimentos(id)
-);
-
 CREATE TABLE receita(
     id INT AUTO_INCREMENT PRIMARY KEY,
-    clientes_particulares  DOUBLE NOT NULL,
-    convenio_sus  DOUBLE NOT NULL,
-    outros_convenios  DOUBLE NOT NULL,
-    servicos_a_faturar  DOUBLE NOT NULL,
-    diversos  DOUBLE NOT NULL,
-    adiantamentos_a_terceiros  DOUBLE NOT NULL,
-    arrecadacoes  DOUBLE NOT NULL,
-    bens_e_titulos_a_receber  DOUBLE NOT NULL,
-    total  DOUBLE NOT NULL
+    pagamento_convenio DOUBLE,
+    pagamento_a_vista DOUBLE,
+    data_receita DATE
 );
 
-CREATE TABLE equipamentos(
-	id INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(100) NOT NULL,
-    descricao VARCHAR(100) NOT NULL,
-    status VARCHAR(100) NOT NULL,
-    quantidade INT NOT NULL,
-    valor DOUBLE NOT NULL,
-    tempo_de_uso VARCHAR(100) NOT NULL
+CREATE TABLE custo(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    manutencao DOUBLE,
+    salario_funcionarios DOUBLE,
+    data_custo DATE
 );
 
-INSERT INTO equipamentos(nome, descricao, status, quantidade, valor, tempo_de_uso) VALUES
-('Desfibrilador', 'marca/modelo', 'funcionando', 5, 540, '4 anos'),   
-('Aparelho de Raio-X', 'marca/modelo', 'em manutenção', 3, 1042, '6 meses'),
-('Aparelho de Ultrassonografia', 'marca/modelo', 'aguardando reparo', 5, 810, '2 anos'),
-('Desfibrilador', 'marca/modelo', 'aguardando reparo', 2, 490, '7 anos');
+CREATE TABLE lucro(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_receita DOUBLE,
+    id_custo DOUBLE,
+    data_lucro DATE,
+    total DOUBLE,
+    FOREIGN KEY(id_receita) REFERENCES receita(id),
+    FOREIGN KEY(id_custo) REFERENCES custo(id)
+);

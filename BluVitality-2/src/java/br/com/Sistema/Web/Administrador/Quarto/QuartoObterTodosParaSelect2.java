@@ -29,17 +29,17 @@ public class QuartoObterTodosParaSelect2 extends HttpServlet {
 
    
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         
-        String termo= request.getParameter("term") == null? "" : request.getParameter("term");
+        String termo= req.getParameter("term") == null? "" : req.getParameter("term");
         
-        response.setContentType("application/json");
+        resp.setContentType("application/json");
         
         List<HashMap<String, String>> numero = new QuartoDAO().obterTodosParaSelect2(termo);
         HashMap<String, Object> resultado = new HashMap<>();
         resultado.put("results", numero);
-        response.getWriter().print(new Gson().toJson(resultado));
+        resp.getWriter().print(new Gson().toJson(resultado));
     }
 
 

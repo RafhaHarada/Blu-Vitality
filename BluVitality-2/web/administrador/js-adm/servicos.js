@@ -80,12 +80,14 @@ $(function () {
         });
     });
 
-    $(".divquarto").hide();
-    $(".addquarto").on("click", function () {
-        $(".divquarto").show();
+    $(".divservico").hide();
+    $(".addservico").on("click", function () {
+        $(".divservico").show();
+        $(".addservico").hide();
     });
     $(".cancelarhide").on("click", function () {
-        $(".divquarto").hide();
+        $(".divservico").hide();
+        $(".addservico").show();
     });
     
 });

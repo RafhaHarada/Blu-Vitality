@@ -30,12 +30,14 @@ public class usuarioStore extends HttpServlet {
         usuario.setSexo(req.getParameter("sexo").charAt(0));
         usuario.setCpf(req.getParameter("cpf"));
         usuario.setRg(req.getParameter("rg"));
-        usuario.setEstado_civil(req.getParameter("estado-civil"));
+        char sexo = usuario.getSexo();
+        usuario.setEstado_civil(req.getParameter("estado-civil")+(sexo == 'M'? "o" : sexo == 'F' ? "a" : "o (a)"));
         usuario.setTelefone(req.getParameter("telefone"));
         usuario.setEmail(req.getParameter("email"));
         usuario.setLogin(req.getParameter("login"));
         usuario.setSenha(req.getParameter("senha"));
         usuario.setEndereco(req.getParameter("endereco"));
+        usuario.setCidade(req.getParameter("cidade"));
         usuario.setComplemento(req.getParameter("complemento"));
         usuario.setContato_emergencia(req.getParameter("contato-emergencia"));
         usuario.setUf(req.getParameter("uf"));
@@ -43,14 +45,14 @@ public class usuarioStore extends HttpServlet {
         String dataBr[] = req.getParameter("data-nascimento").split("/");
         String dataEn = dataBr[2] + "-" + dataBr[1] + "-" + dataBr[0];
         usuario.setData_nascimento(java.sql.Date.valueOf(dataEn));
-        int idade = Period.between(LocalDate.parse(dataEn), LocalDate.now()).getYears();
-        usuario.setIdade((byte) idade);
+        byte idade = (byte) Period.between(LocalDate.parse(dataEn), LocalDate.now()).getYears();
+        usuario.setIdade(idade);
         usuario.setTipo_sanguineo(req.getParameter("tipo-sanguineo"));
-        usuario.setConvenio(req.getParameter("convenio"));
+        usuario.setNome_fic("");
 
         usuario.setId(new UsuarioDAO().adicionar(usuario));
 
         resp.setContentType("text/html;charset=UTF-8");
-        resp.sendRedirect("/usuario?id=" + usuario.getId());
+        resp.sendRedirect("/usuario");
     }
 }

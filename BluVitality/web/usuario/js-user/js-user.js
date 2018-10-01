@@ -34,6 +34,7 @@ function atualizaTab() {
 }
 
 $(function () {
+    var exameConsulta = 0;
     $(".agendarE").hide();
     $(".agendarC").hide();
 
@@ -49,6 +50,7 @@ $(function () {
         document.getElementById("consulta-cadastro-data").value = "";
         document.getElementById("consulta-cadastro-hora").value = "";
         document.getElementById("consulta-cadastro-custo").value = "";
+        exameConsulta = 1;
     });
 
     $(".consultaRadio").on("click", function () {
@@ -63,6 +65,7 @@ $(function () {
         document.getElementById("exame-cadastro-data").value = "";
         document.getElementById("exame-cadastro-hora").value = "";
         document.getElementById("exame-cadastro-custo").value = "";
+        exameConsulta = 2;
     });
 
     $('#exame-cadastro-convenio').on('click', function () {

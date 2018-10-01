@@ -16,7 +16,7 @@
 <%@include file="../model/headerEnd.jsp" %>
 <!--%@include file="../model/sessionConfirm.jsp" %-->
 <div class=" row">
-    <a href="/financas.jsp" class="waves-effect waves-light red btn-small right" id="btnFinancas">Financeiro</a>
+    <a href="/administrador/financeiro.jsp" class="waves-effect waves-light red btn-small right" id="btnFinancas">Financeiro</a>
     <div class="" style="margin-top: auto">
         <span class="text-bold"> Olá seja bem Vindo volta <%=usuario.getNome()%><span>
                 <div class="divider"></div>
@@ -65,9 +65,8 @@
                         </div>
                     </div>
                     <div id="cadastrofunc" class="col s12 container">
-                        <div class="">
+                        <div class="row">
                             <%@include file="cadastro-funcionario.jsp"%>
-
                         </div>
                     </div>
                 </div>

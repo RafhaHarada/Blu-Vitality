@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 public class expedicaoExcluir extends HttpServlet {
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         if ((UsuarioBean) req.getSession().getAttribute("usuario") == null) {
             IndexRedirect.redirecionar(req, resp, "usuario");
         } else {

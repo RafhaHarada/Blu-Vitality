@@ -77,7 +77,7 @@ public class ServicosDAO {
             ps.execute();
             
             ResultSet resultSet = ps.getGeneratedKeys();
-            if(resultSet.last()){
+            if(ResultSet.next()){
                 return resultSet.getInt(1);
             }
             

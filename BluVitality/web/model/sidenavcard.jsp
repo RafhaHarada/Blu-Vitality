@@ -26,8 +26,10 @@
     }
     String cargoDoFuncionario = "";
     if (usuario != null) {
-        FuncionarioBean funcionario = new FuncionarioDAO().obterPeloIdUsuario(usuario.getId());
-        cargoDoFuncionario = funcionario.getCargo().getNome();
+        if (usuario.isColaborador()) {
+            FuncionarioBean funcionario = new FuncionarioDAO().obterPeloIdUsuario(usuario.getId());
+            cargoDoFuncionario = funcionario.getCargo().getNome();
+        }
     }
     if (cargoDoFuncionario.equals("Administrador")) {
 %>

@@ -68,10 +68,10 @@ public class FuncionarioDAO {
 
                 UsuarioBean usuario = new UsuarioDAO().obterPeloId(resultSet.getInt("fn.id_usuario"));
                 funcionario.setUsuario(usuario);
-                
+
                 CargosBean cargo = new CargosDAO().obterPeloId(resultSet.getInt("cr.id"));
                 funcionario.setCargo(cargo);
-                
+
                 funcionarios.add(funcionario);
 
             }
@@ -104,22 +104,23 @@ public class FuncionarioDAO {
                 CargosBean cargo = new CargosDAO().obterPeloId(resultSet.getInt("id_cargo"));
                 funcionario.setCargo(cargo);
             }
-        }catch(SQLException e){
+        } catch (SQLException e) {
             e.printStackTrace();
-        }finally{
+        } finally {
             Conexao.fecharConexao();
-        }return funcionario;
+        }
+        return funcionario;
     }
-    
-    public FuncionarioBean obterPeloIdUsuario(int id){
+
+    public FuncionarioBean obterPeloIdUsuario(int id) {
         FuncionarioBean funcionario = null;
         String sql = "SELECT * FROM funcionarios WHERE id_usuario = ?";
-        try{
+        try {
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);
             ps.setInt(1, id);
             ps.execute();
             ResultSet resultSet = ps.getResultSet();
-            while(resultSet.next()){
+            while (resultSet.next()) {
                 funcionario = new FuncionarioBean();
                 funcionario.setId(resultSet.getInt("id"));
                 funcionario.setId_cargo(resultSet.getInt("id_cargo"));
@@ -141,15 +142,16 @@ public class FuncionarioDAO {
     }
 
     public int adicionar(FuncionarioBean funcionario) {
-        String sql = "INSERT INTO funcionarios(id_cargo, id_usuario, tipo) VALUES(?, ?, ?, ?)";
+        String sql = "INSERT INTO funcionarios(id_cargo, id_usuario, tipo) VALUES(?, ?, ?)";
         try {
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql, RETURN_GENERATED_KEYS);
             ps.setInt(1, funcionario.getId_cargo());
             ps.setInt(2, funcionario.getId_usuario());
             ps.setString(3, funcionario.getTipo());
+            
             ps.execute();
             ResultSet resultSet = ps.getGeneratedKeys();
-            if (resultSet.last()) {
+            if(resultSet.next()){
                 return resultSet.getInt(1);
             }
         } catch (SQLException e) {
@@ -192,32 +194,33 @@ public class FuncionarioDAO {
         return false;
     }
 
-   public List<HashMap<String, Object>> obterTodosParaDataTable() {
+    public List<HashMap<String, Object>> obterTodosParaDataTable() {
         List<HashMap<String, Object>> funcionarios = new ArrayList<>();
         String sql = "SELECT * FROM funcionarios fn "
                 + "\nJOIN cargos cr ON cr.id = fn.id_cargo "
                 + "\nJOIN usuarios us ON us.id = fn.id_usuario";
-        
+
         try {
             Statement st = Conexao.abrirConexao().createStatement();
             st.execute(sql);
             ResultSet resultSet = st.getResultSet();
-            
+
             while (resultSet.next()) {
-                
+
                 HashMap<String, Object> funcionario = new HashMap<>();
                 funcionario.put("id", resultSet.getInt("fn.id"));
                 funcionario.put("usuario", resultSet.getString("us.nome"));
                 funcionario.put("cargo", resultSet.getString("cr.nome"));
                 funcionario.put("id_usuario", resultSet.getInt("fn.id_usuario"));
-                 
+
                 funcionarios.add(funcionario);
 
             }
         } catch (SQLException e) {
             e.printStackTrace();
-        }finally{
+        } finally {
             Conexao.fecharConexao();
-        }return funcionarios;
+        }
+        return funcionarios;
     }
 }

@@ -4,7 +4,7 @@
     Author     :@Gustavo Rodrigues (gugaaroodrigues@gmail.com)  
 --%>
 
-<table class="mdl-data-table stripe teal lighten-4" style="width:100%" id="quarto-index">
+<table class="table table-striped"  style="width:100%" id="quarto-index">
     <thead>
         <tr>
             <th scope="col">ID</th>

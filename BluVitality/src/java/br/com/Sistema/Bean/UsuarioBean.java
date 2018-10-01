@@ -30,7 +30,6 @@ public class UsuarioBean {
     private String nome_fic;
     private String tipo_sanguineo;
     private String contato_emergencia;
-    private String convenio;
     private boolean colaborador;
     
     public String getTipo_sanguineo() {
@@ -47,13 +46,7 @@ public class UsuarioBean {
     public void setContato_emergencia(String contato_emergencia) {
         this.contato_emergencia = contato_emergencia;
     }
-    public String getConvenio() {
-        return convenio;
-    }
-
-    public void setConvenio(String convenio) {
-        this.convenio = convenio;
-    }
+    
     public String getComplemento() {
         return complemento;
     }

@@ -10,50 +10,12 @@
 <li><a class='dropdown-trigger' href='#' data-target='dropdownCadastro'>Opções</a>
     <!-- Dropdown Structure -->
     <ul id='dropdownCadastro' class='dropdown-content'>
-        <li><a href="#Entrar">Login</a></li>
+        <li><a href="/usuario/login">Login</a></li>
         <li><a href="../">Voltar a página inicial</a></li>
     </ul>
 </li>
 <jsp:include page="../model/headerEndNoSidenav.jsp"/>
 <!--Modal Login/Cadastro-->
-<div id="Entrar" class="modal">
-    <div class="modal-content">
-        <h4 class="row">Login</h4>
-        <div class="row">
-            <form class="col s12">
-                <div class="row">
-                    <div class="col s12 m5 btn white left">
-                        <div class="g-signin2 modal-close" data-onsuccess="onSignIn"></div>
-                    </div>
-                    <div class="col s12 m5 btn white right">
-                        <a href="#" class="blue-text">Login com Facebook</a>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input required id="email_user" type="email"  class="validate" name="">
-                        <label for="email_user">Email</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input required id="password_user" type="password"  class="validate" name="">
-                        <label for="password_user">Senha</label>
-                    </div>
-                </div>
-            </form>
-            <div class="col s6 left">
-                <a href="#TrocarSenha">Esqueci a senha..</a>
-            </div>
-            <div class="col s6 right">
-                <a href="usuarios/cadastrar">Não tem conta?</a>
-            </div>
-        </div>
-    </div>
-    <div class="modal-footer">
-        <a href="#!" class="modal-close waves-effect btn-flat teal white-text">Entrar</a>
-    </div>
-</div>
 <!--Conteúdo-->
 <div class="row"></div>
 <div class="container col s12">
@@ -111,9 +73,9 @@
                         <div class="input-field col s12 m4 left">
                             <select required id="cadastro-sexo" name="sexo">
                                 <option value="" disabled selected>Selecione o sexo</option>
-                                <option value="1">Feminino</option>
-                                <option value="2">Masculino</option>
-                                <option value="3">Indefinido</option>
+                                <option value="F">Feminino</option>
+                                <option value="M">Masculino</option>
+                                <option value="I">Indefinido</option>
                             </select>
                             <label for="cadastro-sexo">Sexo</label>
                             <span class="helper-text" data-error="Insira seu sexo" data-success="Correto"></span>
@@ -121,11 +83,11 @@
                         <div class="input-field col s12 m4 center">
                             <select required name="estado-civil" id="cadastro-estado-civil">
                                 <option value="" disabled selected>Selecione seu estado civil</option>
-                                <option value="1">Solteiro(a)</option>
-                                <option value="2">Casado(a)</option>
-                                <option value="3">Divorciado(a)</option>
-                                <option value="4">Viúvo(a)</option>
-                                <option value="5">Separado(a)</option>
+                                <option value="Solteir">Solteiro(a)</option>
+                                <option value="Casad">Casado(a)</option>
+                                <option value="Divorciad">Divorciado(a)</option>
+                                <option value="Viúv">Viúvo(a)</option>
+                                <option value="Separad">Separado(a)</option>
                             </select>
                             <label for="cadastro-estado-civil">Estado Civil</label>
                             <span class="helper-text" data-error="Insira seu estado civil" data-success="Correto"></span>
@@ -133,14 +95,14 @@
                         <div class="input-field col s12 m4 right">
                             <select required id="cadastro-tipo-sanguineo" name="tipo-sanguineo">
                                 <option value="" disabled selected>Selecione seu tipo sanguíneo</option>
-                                <option value="1">A+</option>
-                                <option value="2">A-</option>
-                                <option value="3">B+</option>
-                                <option value="4">B-</option>
-                                <option value="5">AB+</option>
-                                <option value="6">AB-</option>
-                                <option value="7">O+</option>
-                                <option value="8">O-</option>
+                                <option value="A+">A+</option>
+                                <option value="A-">A-</option>
+                                <option value="B+">B+</option>
+                                <option value="B-">B-</option>
+                                <option value="AB+">AB+</option>
+                                <option value="AB-">AB-</option>
+                                <option value="O+">O+</option>
+                                <option value="O-">O-</option>
                             </select>
                             <label for="cadastro-tipo-sanguineo">Tipo Sanguíneo</label>
                             <span class="helper-text" data-error="Insira seu tipo sanguíneo" data-success="Correto"></span>
@@ -188,11 +150,17 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="input-field col s12">
+                        <div class="input-field col s12 m8">
                             <i class="material-icons prefix">location_on</i>
                             <input required id="cadastro-endereco" type="tel"  class="validate" name="endereco">
                             <label for="cadastro-endereco">Endereço</label>
                             <span class="helper-text" data-error="Insira seu endereço" data-success="Correto"></span>
+                        </div>
+                        <div class="input-field col s12 m4">
+                            <i class="material-icons prefix">location_on</i>
+                            <input required id="cadastro-cidade" type="tel"  class="validate" name="cidade">
+                            <label for="cadastro-cidade">Cidade</label>
+                            <span class="helper-text" data-error="Insira sua cidade" data-success="Correto"></span>
                         </div>
                     </div>
                     <div class="row">
@@ -210,16 +178,8 @@
                         </div>
                         <div class="input-field col s12 m6">
                             <i class="material-icons prefix">location_on</i>
-                            <input id="cadastro-complemento" type="tel"  class="validate" name="complemento">
+                            <input id="cadastro-complemento" type="text"  class="validate" name="complemento">
                             <label for="cadastro-complemento">Complemento</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <i class="material-icons prefix">phone</i>
-                            <input required id="cadastro-convenio" type="tel"  class="validate" name="convenio">
-                            <label for="cadastro-convenio">Convênio</label>
-                            <span class="helper-text" data-error="Insira seu tipo de convênio" data-success="Correto"></span>
                         </div>
                     </div>
                 </div>

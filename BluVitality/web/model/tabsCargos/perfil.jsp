@@ -4,7 +4,7 @@
     Author     : Luana Patricia Duarte (luanapatricia.blu@hotmail.com)
 --%>
 
-<div id="Funcionarios1" class="col s12 container">
+<div id="Comum1" class="col s12 container">
     <ul class="collection col s6">
         <li class="collection-item avatar teal lighten-4">
             <img src="" alt="" class="circle red">
@@ -75,11 +75,6 @@
         <li class="collection-item teal lighten-4">
             <span class="estado-civil">Estado Civil:</span>
             <span><%=usuario.getEstado_civil()%></span>
-            <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
-        </li>
-        <li class="collection-item teal lighten-5">
-            <span class="convenio">Covenio:</span>
-            <span><%=usuario.getConvenio()%></span>
             <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a>
         </li>
     </ul>

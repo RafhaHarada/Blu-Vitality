@@ -1,6 +1,6 @@
 
 <form action="/quarto/adicionar" id="validateQuarto">
-    <label for="numero">Numero do Quarto:</label>
+    <label for="quarto-cadastro-numero-quarto">Numero do Quarto:</label>
     <input type="number" name="numero_quarto" id="quarto-cadastro-numero-quarto" required="required">
     <label>Tipo:</label>
     <select class="browser-default" id="quarto-cadastro-tipo" name="tipo">
@@ -14,3 +14,9 @@
     </select>
     <a class="waves-effect  btn-small" id="quarto-cadastro-salvar">SALVAR</a>
 </form>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#serviso-cadastro').mask('0000');
+
+    });
+</script>

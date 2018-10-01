@@ -64,5 +64,6 @@ var tableFuncionario = $('#tabela-funcionario').DataTable({
         });
         return false;
     });
+    
 });
 

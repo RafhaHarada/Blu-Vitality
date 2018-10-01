@@ -4,53 +4,56 @@
     Author     : Luana Patricia Duarte (luanapatricia.blu@hotmail.com)
                  Nattana Matos (nattana.matos@Outlook.pt)
 --%>
-<div id="Funcionarios4" class="col s12 container white">
+
+<%@page import="java.util.List"%>
+<%@page import="br.com.Sistema.Bean.QuartoBean"%>
+<%@page import="br.com.Sistema.DAO.QuartoDAO"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.Date"%>
+<%@page import="java.text.DateFormat"%>
+<%@page import="br.com.Sistema.DAO.ExpedicaoDAO"%>
+<%@page import="br.com.Sistema.Bean.ExpedicaoBean"%>
+<div id="Comum3" class="col s12 container white">
     <table class="striped teal lighten-4">
         <thead>
             <tr>
-                <th>Descrição</th>
+                <th>Tipo</th>
                 <th>Médico|Especialidade</th>
                 <th>Data</th>
                 <th>Hora</th>
                 <th>Sala</th>
+                <th></th>
+
             </tr>
         </thead>
         <tbody>
+            <%                DateFormat formatoEn = new SimpleDateFormat("yyyy/MM/dd");
+                DateFormat formatoBr = new SimpleDateFormat("dd/MM/yyyy");
+                Date hoje = new Date();
+                List<ExpedicaoBean> expedicoes = new ExpedicaoDAO().obterTodosPorUsuario(usuario.getId());
+                for (int i = 0; i < expedicoes.size(); i++) {
+                    if (expedicoes.get(i).getData_expedicao().after(formatoEn.parse(formatoEn.format(hoje)))) {
+                        String especialidade = expedicoes.get(i).getFuncionario().getCargo().getEspecialidade();
+                        String medico = expedicoes.get(i).getFuncionario().getUsuario().getNome();
+                        String medicoEspecialidade = medico + "|" + especialidade;
+
+                        String data = formatoBr.format(expedicoes.get(i).getData_expedicao());
+                        QuartoBean quarto = new QuartoDAO().obterPeloId(usuario.getId());
+                        int numeroQuarto = quarto.getNumero_quarto();
+            %>
             <tr>
-                <td>Consulta</td>
-                <td>Dr. Eclair souza ramos | Cardiologista</td>
-                <td>30/08/2018</td>
-                <td>10:00</td>
-                <td>12</td>
+                <td><%=expedicoes.get(i).getTipo()%></td>
+                <td><%=medicoEspecialidade%></td>
+                <td><%=data%></td>
+                <td><%=expedicoes.get(i).getHora_expedicao()%></td>
+                <td><%=numeroQuarto%></td>
+                <td>
+                    <a href="/expedicao/editar?id=<%=expedicoes.get(i).getId()%>"><i class="material-icons">edit</i></a>
+                    <a href="/expedicao/excluir?id=<%=expedicoes.get(i).getId()%>"><i class="material-icons">delete_forever</i></a>
+                </td>
             </tr>
-            <tr>
-                <td>Alan</td>
-                <td>Jellybean</td>
-                <td>$3.76</td>
-                <td>$3.76</td>
-                <td>$3.76</td>
-            </tr>
-            <tr>
-                <td>Jonathan</td>
-                <td>Lollipop</td>
-                <td>Lollipop</td>
-                <td>$7.00</td>
-                <td>$7.00</td>
-            </tr>
-            <tr>
-                <td>Jonathan</td>
-                <td>Lollipop</td>
-                <td>$7.00</td>
-                <td>$7.00</td>
-                <td>$7.00</td>
-            </tr>
-            <tr>
-                <td>Jonathan</td>
-                <td>Lollipop</td>
-                <td>$7.00</td>
-                <td>$7.00</td>
-                <td>$7.00</td>
-            </tr>
+            <%}
+                }%>
         </tbody>
     </table>
 </div>

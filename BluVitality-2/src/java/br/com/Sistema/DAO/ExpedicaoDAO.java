@@ -90,7 +90,7 @@ public class ExpedicaoDAO {
             
             ps.execute();
             ResultSet resultSet = ps.getGeneratedKeys();
-            if(resultSet.last()){
+            if(ResultSet.next()){
                 return resultSet.getInt(1);
             }
         }catch(SQLException e){
