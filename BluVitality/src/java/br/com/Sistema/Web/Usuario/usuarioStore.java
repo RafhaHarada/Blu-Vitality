@@ -1,6 +1,8 @@
 package br.com.Sistema.Web.Usuario;
 
+import br.com.Sistema.Bean.FuncionarioBean;
 import br.com.Sistema.Bean.UsuarioBean;
+import br.com.Sistema.DAO.FuncionarioDAO;
 import br.com.Sistema.DAO.UsuarioDAO;
 import br.com.Sistema.Web.IndexRedirect;
 import java.io.IOException;
@@ -51,6 +53,12 @@ public class usuarioStore extends HttpServlet {
         usuario.setNome_fic("");
 
         usuario.setId(new UsuarioDAO().adicionar(usuario));
+        
+        FuncionarioBean funcionario = new FuncionarioBean();
+        funcionario.setId_cargo(5);
+        funcionario.setId_usuario(usuario.getId());
+        funcionario.setTipo("");
+        funcionario.setId(new FuncionarioDAO().adicionar(funcionario));
 
         resp.setContentType("text/html;charset=UTF-8");
         resp.sendRedirect("/usuario");
