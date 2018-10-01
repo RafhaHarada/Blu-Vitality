@@ -1,8 +1,6 @@
 package br.com.Sistema.DAO;
 
-import br.com.Sistema.Bean.ConvenioBean;
 import br.com.Sistema.Bean.ReceitaBean;
-import br.com.Sistema.Bean.UsuarioBean;
 import br.com.Sistema.Database.Conexao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -30,14 +28,6 @@ public class ReceitaDAO {
                 receita.setPagamentoConvenio(resultSet.getInt("pagamento_convenio"));
                 receita.setPagamentoAVista(resultSet.getDouble("pagamento_a_vista"));
                 receita.setDataReceita(resultSet.getDate("data_receita"));
-                List<UsuarioBean> usuarios = new UsuarioDAO().obterTodos();
-                List<ConvenioBean> convenios = new ArrayList<>();
-                for (int i = 0; i < usuarios.size(); i++) {
-                    if(usuarios.get(i).isUsaConvenio()){
-                        convenios.add(usuarios.get(i).);
-                    }
-                }
-                receita.setConvenios(convenios);
                 receitas.add(receita);
             }
         } catch (SQLException e) {
@@ -61,14 +51,6 @@ public class ReceitaDAO {
                 receita.setPagamentoConvenio(resultSet.getInt("pagamento_convenio"));
                 receita.setPagamentoAVista(resultSet.getDouble("pagamento_a_vista"));
                 receita.setDataReceita(resultSet.getDate("data_receita"));
-                List<UsuarioBean> usuarios = new UsuarioDAO().obterTodos();
-                List<ConvenioBean> convenios = new ArrayList<>();
-                for (int i = 0; i < usuarios.size(); i++) {
-                    if(usuarios.get(i).isUsaConvenio()){
-                        convenios.add(usuarios.get(i).);
-                    }
-                }
-                receita.setConvenios(convenios);
                 return receita;
             }
         } catch (SQLException e) {

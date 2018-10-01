@@ -19,7 +19,7 @@
         <div class="row">
             <form action="/usuario/autentication" method="post" class="col s12">
                 <div class="row">
-                    <div class="g-signin2 waves-effect white-text" data-onsuccess="onSignIn"></div>
+                    <!--div class="g-signin2 waves-effect white-text" data-onsuccess="onSignIn"></div-->
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
@@ -35,9 +35,6 @@
                 </div>
                 <input type="submit" class="waves-effect btn-flat teal white-text validate" value="Entrar">
             </form>
-            <div class="col s6 left">
-                <a href="#TrocarSenha">Esqueci a senha..</a>
-            </div>
             <div class="col s6 right">
                 <a href="/usuario/cadastro">Não tem conta?</a>
             </div>

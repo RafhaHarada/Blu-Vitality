@@ -14,7 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/administrador/financeiro")
 public class FinanceiroIndex extends HttpServlet {
+    @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        IndexRedirect.redirecionarSubpasta(req, resp, "administrador","financeiro/index.jsp");
+        IndexRedirect.redirecionarSubpasta(req, resp, "administrador","financeiro.jsp");
     }
 }

@@ -9,7 +9,6 @@ import java.util.List;
 public class ReceitaBean {
     private int id;
     private double pagamentoConvenio;
-    private List<ConvenioBean> convenios;
     private double pagamentoAVista;
     private Date dataReceita;
 
@@ -45,11 +44,4 @@ public class ReceitaBean {
         this.dataReceita = dataReceita;
     }
 
-    public List<ConvenioBean> getConvenios() {
-        return convenios;
-    }
-
-    public void setConvenios(List<ConvenioBean> convenios) {
-        this.convenios = convenios;
-    }
 }

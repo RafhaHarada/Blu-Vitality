@@ -1,21 +1,16 @@
 package br.com.Sistema.Web.Administrador.financeiro;
 
 import br.com.Sistema.Bean.CargosBean;
-import br.com.Sistema.Bean.ConvenioBean;
 import br.com.Sistema.Bean.CustoBean;
 import br.com.Sistema.Bean.LucroBean;
 import br.com.Sistema.Bean.ReceitaBean;
-import br.com.Sistema.Bean.UsuarioBean;
 import br.com.Sistema.DAO.CustoDAO;
 import br.com.Sistema.DAO.FuncionarioDAO;
 import br.com.Sistema.DAO.LucroDAO;
 import br.com.Sistema.DAO.ReceitaDAO;
-import br.com.Sistema.DAO.UsuarioDAO;
 import br.com.Sistema.Web.IndexRedirect;
 import java.io.IOException;
 import java.sql.Date;
-import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import javax.servlet.ServletException;
@@ -30,6 +25,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/administrador/financeiro/update")
 public class FinanceiroUpdate extends HttpServlet {
 
+    @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         IndexRedirect.redirecionar(req, resp, "usuario");
     }
@@ -60,17 +56,8 @@ public class FinanceiroUpdate extends HttpServlet {
             resp.sendRedirect("/administrador/financeiro/cadastro");
         } else {
             //-----------------------RECEITA
-            List<UsuarioBean> usuarios = new UsuarioDAO().obterTodos();
-            List<ConvenioBean> convenios = new ArrayList<>();
             double receitaTotal = 0.0;
-            for (int i = 0; i < usuarios.size(); i++) {
-                if (usuarios.get(i).isUsaConvenio()) {
-                    convenios.add(usuarios.get(i).);
-                    receitaTotal += usuarios.get(i)..getCusto();
-                }
-            }
-            receita.setConvenios(convenios);
-            receita.setPagamentoConvenio(receitaTotal);
+            receita.setPagamentoConvenio(Double.parseDouble(req.getParameter("pagamento-convenio")));
             receita.setPagamentoAVista(Double.parseDouble(req.getParameter("pagamento-a-vista")));
             receitaTotal += receita.getPagamentoAVista();
             receita.setDataReceita(java.sql.Date.valueOf(dataEn));
