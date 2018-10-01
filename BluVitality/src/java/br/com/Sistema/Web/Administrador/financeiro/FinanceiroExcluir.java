@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/administrador/financeiro/excluir")
 public class FinanceiroExcluir extends HttpServlet {
+    @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         IndexRedirect.redirecionar(req, resp, "usuario");
     }
@@ -33,5 +34,6 @@ public class FinanceiroExcluir extends HttpServlet {
         }else{
             resp.getWriter().write("erro");
         }
+        resp.sendRedirect("/administrador/financeiro");
     }
 }
