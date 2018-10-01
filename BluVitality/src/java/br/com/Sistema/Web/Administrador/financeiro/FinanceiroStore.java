@@ -82,8 +82,10 @@ public class FinanceiroStore extends HttpServlet {
                 lucro.setReceita(receita);
                 lucro.setCusto(custo);
                 lucro.setId(new LucroDAO().adicionar(lucro));
-                resp.sendRedirect("/administrador/financeiro");
+                
             }
         }
+                resp.sendRedirect("/administrador/financeiro.jsp");
+                resp.setContentType("text/html;charset=UTF-8");
     }
 }

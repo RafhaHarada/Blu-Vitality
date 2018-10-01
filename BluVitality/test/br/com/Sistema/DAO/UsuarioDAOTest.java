@@ -44,7 +44,6 @@ public class UsuarioDAOTest {
         usuario.setNome_fic("Gus");
         usuario.setTipo_sanguineo("A+");
         usuario.setContato_emergencia("47997835153");
-        usuario.setConvenio("000000358");
         
         List<UsuarioBean> referencia = new UsuarioDAO().obterTodos();
     }
@@ -72,7 +71,6 @@ public class UsuarioDAOTest {
         usuarios.setNome_fic("Gus");
         usuarios.setTipo_sanguineo("A+");
         usuarios.setContato_emergencia("47997835153");
-        usuarios.setConvenio("000000358");
         
         int referencia = new UsuarioDAO().adicionar(usuarios);
         usuarios.setId(referencia);
@@ -101,7 +99,6 @@ public class UsuarioDAOTest {
         usuario.setNome_fic("Gus");
         usuario.setTipo_sanguineo("A+");
         usuario.setContato_emergencia("47997835153");
-        usuario.setConvenio("000000358");
         
         int referencia = new UsuarioDAO().adicionar(usuario);
         usuario.setId(referencia);
@@ -131,7 +128,6 @@ public class UsuarioDAOTest {
         usuario.setNome_fic("Gus");
         usuario.setTipo_sanguineo("A+");
         usuario.setContato_emergencia("47997835153");
-        usuario.setConvenio("000000358");
         
         int referencia = new UsuarioDAO().adicionar(usuario);
         usuario.setId(referencia);
@@ -162,7 +158,6 @@ public class UsuarioDAOTest {
         usuario.setNome_fic("Gus");
         usuario.setTipo_sanguineo("A+");
         usuario.setContato_emergencia("47997835153");
-        usuario.setConvenio("000000358");
     }
 
     @Test
@@ -188,7 +183,6 @@ public class UsuarioDAOTest {
         usuario.setNome_fic("Gus");
         usuario.setTipo_sanguineo("A+");
         usuario.setContato_emergencia("47997835153");
-        usuario.setConvenio("000000358");
     }
     
 }

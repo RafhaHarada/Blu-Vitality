@@ -14,3 +14,9 @@
     </select>
     <a class="waves-effect  btn-small" id="quarto-cadastro-salvar">SALVAR</a>
 </form>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#serviso-cadastro').mask('0000');
+
+    });
+</script>
