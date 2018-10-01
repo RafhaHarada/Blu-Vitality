@@ -1,5 +1,6 @@
  
 $(function () {
+    
 
     var tableQuarto = $('#quarto-index').DataTable({
         "ajax": "/quarto/obtertodosparadatatable",

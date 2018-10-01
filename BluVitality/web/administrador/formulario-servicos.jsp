@@ -8,11 +8,13 @@
 
 <form action="seila" method="post" id="validateServicos">
         <label for="servico-cadastro">Nome serviço:</label>
-        <input type="text" id="servico-cadastro" >
+        <input type="text" id="servico-cadastro" class="validate" required="">
+        <span class="helper-text" data-error="Digite o nome do serviço" data-success=""></span>
         <label for="textarea2">Descrição</label>
-        <textarea id="textarea2" class="materialize-textarea"></textarea>
+        <textarea id="textarea2" class="materialize-textarea validate"></textarea>
+        <span class="helper-text" data-error="Digite a descrição" data-success=""></span>
         <label>Status</label>
-        <select class="browser-default" id="servico-cadastro-tipo" required="required">
+        <select class="browser-default validate" id="servico-cadastro-tipo" required="" >
             <option value=""></option>
             <option value="Urgente">Urgente</option>
             <option value="Semi - Urgente">Semi - Urgente</option>
@@ -20,5 +22,9 @@
         </select>
         <a class="waves-effect  btn-small" type="submit" id="servico-cadastro-salvar">SALVAR</a>
     </form>
-
-<div class="red-text"></div>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#serviso-cadastro').mask('0000');
+        
+    });
+ </script>
