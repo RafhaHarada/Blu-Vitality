@@ -111,10 +111,9 @@ CREATE TABLE expedicao(
 );
 
 INSERT INTO expedicao (id_usuario,id_funcionario,tipo,nome,data_expedicao,hora_expedicao,custo) VALUES
-(1,5,'Exame','blabla','2018-09-10','10:00:00',250000),
-(2,5,'Exame','blabla2','2018-10-01','10:30:00',100000),
-(3,5,'Consulta','blabla3','2018-10-16','14:00:00',350),
-(4,5,'Consulta','blabla4','2018-10-21','16:00:00',590);
+(1,4,'Exame','blabla','2018-09-10','10:00:00',250000),
+(2,4,'Exame','blabla2','2018-10-01','10:30:00',100000),
+(3,4,'Consulta','blabla3','2018-10-16','14:00:00',350);
 
 CREATE TABLE quartos(
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -130,10 +129,9 @@ CREATE TABLE quartos(
 );
 
 INSERT INTO quartos (id_usuario, id_funcionario, numero_quarto, tipo ,data_entrada, data_saida, estado) VALUES
-(1, 5, 1001,'UTI','2018-09-20','2018-09-10','ativo'),
-(2, 5, 1002,'UTI','2018-09-20','2018-09-10','ativo'),
-(3, 5, 1003,'UTI','2018-10-11','2018-10-03','inativo'),
-(4, 5, 1004,'UTI','2018-10-11','2018-10-03','inativo');
+(1, 4, 1001,'UTI','2018-09-20','2018-09-10','ativo'),
+(2, 4, 1002,'UTI','2018-09-20','2018-09-10','ativo'),
+(3, 4, 1003,'UTI','2018-10-11','2018-10-03','inativo');
 
 CREATE TABLE receita(
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -151,8 +149,8 @@ CREATE TABLE custo(
 
 CREATE TABLE lucro(
     id INT AUTO_INCREMENT PRIMARY KEY,
-    id_receita DOUBLE,
-    id_custo DOUBLE,
+    id_receita INT,
+    id_custo INT,
     data_lucro DATE,
     total DOUBLE,
     FOREIGN KEY(id_receita) REFERENCES receita(id),
