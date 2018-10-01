@@ -49,7 +49,6 @@ $(function () {
         document.getElementById("consulta-cadastro-tipo").value = "";
         document.getElementById("consulta-cadastro-data").value = "";
         document.getElementById("consulta-cadastro-hora").value = "";
-        document.getElementById("consulta-cadastro-custo").value = "";
         exameConsulta = 1;
     });
 
@@ -64,20 +63,9 @@ $(function () {
         document.getElementById("exame-cadastro-tipo").value = "";
         document.getElementById("exame-cadastro-data").value = "";
         document.getElementById("exame-cadastro-hora").value = "";
-        document.getElementById("exame-cadastro-custo").value = "";
         exameConsulta = 2;
     });
 
     $('#exame-cadastro-convenio').on('click', function () {
-            if($('exame-cadastro-convenio').isChecked()){
-                var custo = 1000;
-        	document.getElementById("exame-cadastro-custo").value = custo;
-            }else if($('consulta-cadastro-convenio').isChecked()){
-                var custo = 500;
-        	document.getElementById("consulta-cadastro-custo").value = custo;
-            }else{
-        	document.getElementById("exame-cadastro-custo").value = "0";
-        	document.getElementById("consulta-cadastro-custo").value = "0";
-		}
     });
 });

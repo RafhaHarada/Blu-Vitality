@@ -32,7 +32,7 @@
 <li class="tab"><a href="#Comum4" class="teal-text">Histórico clínico</a></li>
 
 <%
-} else if (cargoDoFuncionario.equals("Recepcao")) {
+} else if (cargoDoFuncionario.equals("Recepcionista")) {
 %>
 <li class="tab"><a href="#Comum1" class="active teal-text">Perfil</a></li>
 <li class="tab"><a href="#Funcionarios2" class="teal-text">Acesso ao Prontuário</a></li>

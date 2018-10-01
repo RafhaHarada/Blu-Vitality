@@ -192,7 +192,7 @@
 </li>
 <div class="divider"></div>
 <%
-} else if (cargoDoFuncionario.equals("Recepcao")) {
+} else if (cargoDoFuncionario.equals("Recepcionista")) {
 %>
 <li>
     <div class="user-view">

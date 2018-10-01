@@ -37,9 +37,10 @@
                 <div class="row">
                     <div class="input-field col s12">
                         <%
-                            FuncionarioBean isFuncionario = new FuncionarioDAO().obterPeloIdUsuario(usuario.getId());
-                            if (isFuncionario.getTipo() == "Recepcao") {
-                                List<UsuarioBean> usuariosE = new UsuarioDAO().obterTodos();
+                            if (usuario.isColaborador()) {
+                                
+                                if (cargoDoFuncionario.equals("Recepcionista")) {
+                                    List<UsuarioBean> usuariosE = new UsuarioDAO().obterTodos();
                         %>
                         <select id="exame-cadastro-id-usuario" name="id-usuario" required="required">
                             <option value="" disabled selected>Agende aqui para</option>
@@ -48,13 +49,21 @@
                             <option value="<%=usuariosE.get(i).getId()%>"><%=usuariosE.get(i).getNome()%></option>
                             <%
                                 }
+                            } else {
+                            %>
+                            <select id="exame-cadastro-id-usuario" name="id-usuario" required="required">
+                                <option value="<%=usuario.getId()%>" selected ><%=usuario.getNome()%></option>
+                            </select>
+                            <%
+                                }
                             %>
                         </select>
                         <%
                         } else {
                         %>
-                        <input id="exame-cadastro-id-usuario" type="text" name="id-usuario" value="<%=usuario.getId()%>" readonly>
-                        <label for="exame-cadastro-id-usuario" class="teal-text lighten-4">Agendarei um</label>
+                        <select id="exame-cadastro-id-usuario" name="id-usuario" required="required">
+                            <option value="<%=usuario.getId()%>" selected ><%=usuario.getNome()%></option>
+                        </select>
                         <%
                             }
                         %>
@@ -80,9 +89,15 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="input-field col s12">
-                        <input id="exame-cadastro-nome" type="text" name="nome" required="required">
-                        <label class="teal-text lighten-4" for="exame-cadastro-nome">Informe o nome do exame</label>
+                    <div class="col s12">
+                        <label class="teal-text teatl lighten-4" for="exame-cadastro-nome">Escolha o Exame<span class="red-text">*</span></label>
+                        <select id="exame-cadastro-nome" name="nome" >
+                            <option value="" disabled selected>Exame</option>
+                            <option value="Cardiológico">Cardiológico</option>
+                            <option value="Diagnóstico por Imagem">Diagnóstico por Imagem</option>
+                            <option value="Endoscopia">Endoscopia</option>
+                            <option value="Laboratoriais">Laboratoriais</option>
+                        </select>
                     </div>
                 </div>
                 <div class="row">
@@ -104,18 +119,11 @@
                         </select>
                     </div>
                 </div>
-                <div class="card-panel">
-                    <span class="teal-text teatl lighten-4 ">Forma de atendimento<span class="red-text">*</span></span>
-                </div>
-                <div>
-                    <label class="teal-text">
-                        <input id="exame-cadastro-convenio" type="checkbox">
-                        <span>Convênio</span>
-                    </label>
-                </div>
-                <div>
-                    <label for="exame-cadastro-custo" class="teal-text">Custo</label>
-                    <input id="exame-cadastro-custo" name="custo" type="number" value="0" readonly>
+                <div class="row">
+                    <div class="col s12">
+                        <label for="exame-cadastro-custo" class="teal-text">Custo</label>
+                        <input id="exame-cadastro-custo" name="custo" type="number" value="0" readonly>
+                    </div>
                 </div>
                 <!-- Modal Trigger -->
                 <button type="submit" class="waves-effect waves-light btn ">Agendar</button>
@@ -142,17 +150,24 @@
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <label for="consulta-cadastro-id-usuario" class="teal-text">paciente</label>
                         <%
-                            FuncionarioBean isFuncionarioC = new FuncionarioDAO().obterPeloIdUsuario(usuario.getId());
-                            if (isFuncionarioC.getTipo() != "") {
-                                List<UsuarioBean> usuariosC = new UsuarioDAO().obterTodos();
+                            if (usuario.isColaborador()) {
+                                
+                                if (cargoDoFuncionario.equals("Recepcionista")) {
+                                    List<UsuarioBean> usuariosE = new UsuarioDAO().obterTodos();
                         %>
-                        <select id="consulta-cadastro-id-usuario" name="id-usuario" class="browser-default row" required="required">
+                        <select id="exame-cadastro-id-usuario" name="id-usuario" required="required">
                             <option value="" disabled selected>Agende aqui para</option>
-                            <% for (int i = 0; i < usuariosC.size(); i++) {
+                            <% for (int i = 0; i < usuariosE.size(); i++) {
                             %>
-                            <option value="<%=usuariosC.get(i).getId()%>"><%=usuariosC.get(i).getNome()%></option>
+                            <option value="<%=usuariosE.get(i).getId()%>"><%=usuariosE.get(i).getNome()%></option>
+                            <%
+                                }
+                            } else {
+                            %>
+                            <select id="exame-cadastro-id-usuario" name="id-usuario" required="required">
+                                <option value="<%=usuario.getId()%>" selected ><%=usuario.getNome()%></option>
+                            </select>
                             <%
                                 }
                             %>
@@ -160,18 +175,18 @@
                         <%
                         } else {
                         %>
-                        <select id="consulta-cadastro-id-usuario" name="id-usuario" class="browser-default row" required="required">
-                            <option value="<%= usuario.getId()%>" disabled selected><%=usuario.getNome()%></option>
+                        <select id="exame-cadastro-id-usuario" name="id-usuario" required="required">
+                            <option value="<%=usuario.getId()%>" selected ><%=usuario.getNome()%></option>
                         </select>
                         <%
                             }
                         %>
+                        <label for="consulta-cadastro-id-usuario" class="teal-text">Paciente</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <label for="consulta-cadastro-id-funcionario" class="teal-text">Médico</label>
-                        <select id="consulta-cadastro-id-funcionario" name="id-funcionario" class="browser-default row" required="required">
+                        <select id="consulta-cadastro-id-funcionario" name="id-funcionario" required="required">
                             <option value="" disabled selected>Ser atendido por</option>
                             <%
                                 List<FuncionarioBean> funcionariosC = new FuncionarioDAO().obterTodos();
@@ -184,13 +199,14 @@
                                 }
                             %>
                         </select>
+                        <label for="consulta-cadastro-id-funcionario" class="teal-text">Médico</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col s12">
-                        <label for="consulta-cadastro-nome">Especialide</label>
-                        <select id="consulta-cadastro-nome" name="nome" class="browser-default row">
-                            <option value="" disabled selected>Escolha a especialide</option>
+                        <label class="teal-text teatl lighten-4" for="consulta-cadastro-nome">Escolha a especialide<span class="red-text">*</span></label>
+                        <select id="consulta-cadastro-nome" name="nome" >
+                            <option value="" disabled selected>Especialidade</option>
                             <option value="Clínico geral">Clínico geral</option>
                             <option value="Cardiologista">Cardiologista</option>
                             <option value="Endocrinologista">Endocrinologista</option>
@@ -208,8 +224,8 @@
                         <input id="consulta-cadastro-data" type="text" name="data" class="datepicker" required="required">
                     </div>
                     <div class="col s5 right">
-                        <label for="consulta-cadastro-hora">Horário</label>
-                        <select id="consulta-cadastro-hora" name="hora" class="browser-default row teal-text lighten-4" required="required">
+                        <label for="consulta-cadastro-hora" class="teal-text">Horário</label>
+                        <select id="consulta-cadastro-hora" name="hora" class="browser-default row" required="required">
                             <option value="" disabled selected>Escolha o horário desejado</option>
                             <% for (int i = 5; i <= 20; i++) {
                             %>
@@ -221,18 +237,11 @@
                         </select>
                     </div>
                 </div>
-                <div class="card-panel">
-                    <span class="teal-text teatl lighten-4 ">Forma de atendimento<span class="red-text">*</span></span>
-                </div>
-                <div>
-                    <label class="teal-text">
-                        <input id="consulta-convenio" type="checkbox">
-                        <span>Convênio</span>
-                    </label>
-                </div>
-                <div>
-                    <label for="consulta-cadastro-custo" class="teal-text">Custo</label>
-                    <input id="consulta-cadastro-custo" name="custo" type="number" value="0" readonly>
+                <div class="row">
+                    <div class="col s12">
+                        <label for="consulta-cadastro-custo" class="teal-text">Custo</label>
+                        <input id="consulta-cadastro-custo" name="custo" type="number" value="0" readonly>
+                    </div>
                 </div>
                 <!-- Modal Trigger -->
                 <button type="submit" class="waves-effect waves-light btn">Agendar</button>

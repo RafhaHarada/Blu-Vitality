@@ -29,7 +29,7 @@
 <%@include file="tabsCargos/agendamentosfuturos.jsp" %>
 <%@include file="tabsCargos/historico.jsp" %>
 <%
-} else if (cargoDoFuncionario.equals("Recepcao")) {
+} else if (cargoDoFuncionario.equals("Recepcionista")) {
 %>
 <%@include file="tabsCargos/perfil.jsp" %>
 <%@include file="tabsCargos/prontuarioBusca.jsp" %>

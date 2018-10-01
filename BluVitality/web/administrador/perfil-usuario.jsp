@@ -11,8 +11,6 @@
 <%@page import="br.com.Sistema.DAO.UsuarioDAO"%>
 <%@page import="br.com.Sistema.Bean.UsuarioBean"%>
 
-<%=usuario.getId()%>
-<%%>
 <div class="modal modal-overlay" style="background-color: white;" id="modalPerfil">
     <div class="modal-content">
         <ul class="collection col s6">

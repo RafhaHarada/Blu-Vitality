@@ -38,8 +38,6 @@ INSERT INTO usuarios (nome,estado_civil,idade,sexo,login,senha,cpf,rg,telefone,e
 ('Gustavo','solteiro',21,'M','admin','admin','123.789.456-09','984.321.75-2','47974185296','gustavobeleza@outlook.com','Rua Alguma Coisa Que Não Sei, 277, Jardim Inexistente','-','Blumenau','SC','AC','1997-11-04','-','A+','47997835153',TRUE),
 ('Luana','solteira',22,'F','func2','func2','789.123.456-09','987.421.35-2','47936925814','luanajoinha@outlook.com','Rua Alguma Coisa Que Não Sei, 288, Jardim Inexistente','-','Blumenau','SC','PE','1996-08-30','-','A+','47997835153',TRUE);
 
-
-SELECT * FROM usuarios;
 CREATE TABLE cargos(
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100),
@@ -70,7 +68,7 @@ INSERT INTO funcionarios (id_usuario,id_cargo,tipo) VALUES
 (1,2,'funcionario'),
 (2,1,'administrador'),
 (4,3,'administrador'),
-(5,1,'funcionario');
+(5,4,'funcionario');
 
 CREATE TABLE servicos(
     id INT AUTO_INCREMENT PRIMARY KEY,
