@@ -124,7 +124,7 @@ public class UsuarioDAO {
     }
 
     public boolean alterar(UsuarioBean usuario) {
-        String sql = "UPDATE usuarios SET nome = ?, estado_civil = ?, "
+        String sql = "UPDATE usuarios SET nome = ?, estado_civil = ?, idade = ?,"
                 + "sexo = ?, login = ?, senha = ?, cpf = ?, rg = ?, telefone = ?, "
                 + "email = ?, endereco = ?, complemento = ?, uf = ?, cidade = ?, "
                 + "naturalidade = ?, data_nascimento = ?, nome_fic = ?, tipo_sanguineo = ?, "

@@ -128,7 +128,7 @@ public class FuncionarioDAO {
     }
 
     public int adicionar(FuncionarioBean funcionario) {
-        String sql = "INSERT INTO funcionarios(id_cargo, id_usuario, tipo) VALUES(?, ?, ?, ?)";
+        String sql = "INSERT INTO funcionarios(id_cargo, id_usuario, tipo) VALUES(?, ?, ?)";
         try {
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql, RETURN_GENERATED_KEYS);
             ps.setInt(1, funcionario.getId_cargo());
