@@ -65,9 +65,8 @@
                         </div>
                     </div>
                     <div id="cadastrofunc" class="col s12 container">
-                        <div class="">
+                        <div class="row">
                             <%@include file="cadastro-funcionario.jsp"%>
-
                         </div>
                     </div>
                 </div>

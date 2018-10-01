@@ -25,28 +25,22 @@ import javax.servlet.http.HttpServletResponse;
  * Author     : @Gustavo Rodrigues (gugaaroodrigues@gmail.com)
  */
 
-@WebServlet("/funcionario/Store")
+@WebServlet("/funcionario/store")
 public class FuncionarioStore extends HttpServlet {
 
    
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
-        
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.setContentType("text/html;charset=UTF-8");
         FuncionarioBean funcionario = new FuncionarioBean();
-        
-        funcionario.setId_usuario(Integer.parseInt(req.getParameter("id_usuario")));
-        funcionario.setId_cargo(Integer.parseInt(req.getParameter("id_cargo")));
+        funcionario.setId_cargo(Integer.parseInt(req.getParameter("id-cargo")));
+        funcionario.setId_usuario(Integer.parseInt(req.getParameter("id-usuario")));
         funcionario.setTipo(req.getParameter("tipo"));
-        funcionario.setId(new FuncionarioDAO().adicionar(funcionario));
-        
-        
         UsuarioBean usuario = new UsuarioDAO().obterPeloId(funcionario.getId_usuario());
-        CargosBean cargo = new CargosDAO().obterPeloId(funcionario.getId_cargo());
-        funcionario.setUsuario(usuario);
-        funcionario.setCargo(cargo);
-        
-        resp.sendRedirect("/administrador");
+        usuario.setColaborador(true);
+        new UsuarioDAO().alterar(usuario);
+        funcionario.setId(new FuncionarioDAO().adicionar(funcionario));
+        resp.sendRedirect("/administrador#lisfuncionarios");
         
     }
 

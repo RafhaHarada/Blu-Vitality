@@ -52,7 +52,6 @@ public class UsuarioDAO {
                 usuario.setNome_fic(resultSet.getString("nome_fic"));
                 usuario.setTipo_sanguineo(resultSet.getString("tipo_sanguineo"));
                 usuario.setContato_emergencia(resultSet.getString("contato_emergencia"));
-                usuario.setConvenio(resultSet.getString("convenio"));
                 usuario.setColaborador(resultSet.getBoolean("colaborador"));
                 usuarios.add(usuario);
             }
@@ -68,8 +67,8 @@ public class UsuarioDAO {
     public int adicionar(UsuarioBean usuario) {
         String sql = "INSERT INTO usuarios(nome, estado_civil, idade, sexo, login, senha, "
                 + "cpf, rg, telefone, email, endereco, complemento, uf, cidade, naturalidade, "
-                + "data_nascimento, nome_fic, tipo_sanguineo, contato_emergencia, convenio, colaborador)"
-                + "\nVALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?, ?, ?, ?, ?)";
+                + "data_nascimento, nome_fic, tipo_sanguineo, contato_emergencia, colaborador)"
+                + "\nVALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try {
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql,
@@ -95,7 +94,6 @@ public class UsuarioDAO {
             ps.setString(quantidade++, usuario.getNome_fic());
             ps.setString(quantidade++, usuario.getTipo_sanguineo());
             ps.setString(quantidade++, usuario.getContato_emergencia());
-            ps.setString(quantidade++, usuario.getConvenio());
             ps.setBoolean(quantidade++, false);
             ps.execute();
             ResultSet resultSet = ps.getGeneratedKeys();
@@ -131,7 +129,7 @@ public class UsuarioDAO {
                 + "sexo = ?, login = ?, senha = ?, cpf = ?, rg = ?, telefone = ?, "
                 + "email = ?, endereco = ?, complemento = ?, uf = ?, cidade = ?, "
                 + "naturalidade = ?, data_nascimento = ?, nome_fic = ?, tipo_sanguineo = ?, "
-                + "contato_emergencia = ?, convenio = ?, colaborador = ? WHERE id = ?";
+                + "contato_emergencia = ?, colaborador = ? WHERE id = ?";
 
         try {
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);
@@ -156,7 +154,6 @@ public class UsuarioDAO {
             ps.setString(quantidade++, usuario.getNome_fic());
             ps.setString(quantidade++, usuario.getTipo_sanguineo());
             ps.setString(quantidade++, usuario.getContato_emergencia());
-            ps.setString(quantidade++, usuario.getConvenio());
             ps.setBoolean(quantidade++, usuario.isColaborador());
             ps.setInt(quantidade++, usuario.getId());
 
@@ -164,7 +161,7 @@ public class UsuarioDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            Conexao.abrirConexao();
+            Conexao.fecharConexao();
         }
         return false;
     }
@@ -199,7 +196,6 @@ public class UsuarioDAO {
                 usuario.setNome_fic(resultSet.getString("nome_fic"));
                 usuario.setTipo_sanguineo(resultSet.getString("tipo_sanguineo"));
                 usuario.setContato_emergencia(resultSet.getString("contato_emergencia"));
-                usuario.setConvenio(resultSet.getString("convenio"));
                 usuario.setColaborador(resultSet.getBoolean("colaborador"));
                 return usuario;
             }
@@ -241,7 +237,6 @@ public class UsuarioDAO {
                 usuario.setNome_fic(resultSet.getString("nome_fic"));
                 usuario.setTipo_sanguineo(resultSet.getString("tipo_sanguineo"));
                 usuario.setContato_emergencia(resultSet.getString("contato_emergencia"));
-                usuario.setConvenio(resultSet.getString("convenio"));
                 usuario.setColaborador(resultSet.getBoolean("colaborador"));
                 return usuario;
             }
@@ -284,7 +279,6 @@ public class UsuarioDAO {
                 usuario.setNome_fic(resultSet.getString("nome_fic"));
                 usuario.setTipo_sanguineo(resultSet.getString("tipo_sanguineo"));
                 usuario.setContato_emergencia(resultSet.getString("contato_emergencia"));
-                usuario.setConvenio(resultSet.getString("convenio"));
                 usuario.setColaborador(resultSet.getBoolean("colaborador"));
                 return usuario;
             }
@@ -327,7 +321,6 @@ public class UsuarioDAO {
                 usuario.put("nome_fic", resultSet.getString("nome_fic"));
                 usuario.put("tipo_sanguineo", resultSet.getString("tipo_sanguineo"));
                 usuario.put("contato_emergencia", resultSet.getString("contato_emergencia"));
-                usuario.put("convenio", resultSet.getString("convenio"));
                 usuarios.add(usuario);
             }
         } catch (SQLException e) {

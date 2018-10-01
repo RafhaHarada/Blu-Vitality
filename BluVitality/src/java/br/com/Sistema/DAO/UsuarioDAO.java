@@ -164,6 +164,24 @@ public class UsuarioDAO {
         }
         return false;
     }
+    
+    public boolean alterarColaborador(UsuarioBean usuario) {
+        String sql = "UPDATE usuarios SET colaborador = ? WHERE id = ?";
+
+        try {
+            PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);
+            int quantidade = 1;
+            ps.setBoolean(quantidade++, usuario.isColaborador());
+            ps.setInt(quantidade++, usuario.getId());
+
+            return ps.executeUpdate() == 1;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            Conexao.fecharConexao();
+        }
+        return false;
+    }
 
     public UsuarioBean obterPeloId(int id) {
         String sql = "SELECT * FROM usuarios WHERE id = ?";

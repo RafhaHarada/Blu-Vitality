@@ -65,7 +65,6 @@ CREATE TABLE funcionarios(
 INSERT INTO funcionarios (id_usuario,id_cargo,tipo) VALUES
 (1,2,'funcionario'),
 (2,1,'administrador'),
-(3,5,''),
 (4,3,'administrador'),
 (5,1,'funcionario');
 

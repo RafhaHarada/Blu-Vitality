@@ -1,6 +1,6 @@
 package br.com.Sistema.Bean;
 
-import java.sql.Date;
+import java.sql.Time;
 
 /**
  * @author Nattana Matos
@@ -12,7 +12,7 @@ public class CargosBean {
     private String nome;
     private String especialidade;
     private double salario;
-    private Date carga_horaria;
+    private Time carga_horaria;
 
     public int getId() {
         return id;
@@ -38,11 +38,11 @@ public class CargosBean {
         this.salario = salario;
     }
 
-    public Date getCarga_horaria() {
+    public Time getCarga_horaria() {
         return carga_horaria;
     }
 
-    public void setCarga_horaria(Date carga_horaria) {
+    public void setCarga_horaria(Time carga_horaria) {
         this.carga_horaria = carga_horaria;
     }
 
