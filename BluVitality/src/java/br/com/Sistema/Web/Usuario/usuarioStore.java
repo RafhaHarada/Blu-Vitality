@@ -55,7 +55,7 @@ public class usuarioStore extends HttpServlet {
         usuario.setId(new UsuarioDAO().adicionar(usuario));
         
         FuncionarioBean funcionario = new FuncionarioBean();
-        funcionario.setId_cargo(1);
+        funcionario.setId_cargo(5);
         funcionario.setId_usuario(usuario.getId());
         funcionario.setTipo("");
         funcionario.setId(new FuncionarioDAO().adicionar(funcionario));
