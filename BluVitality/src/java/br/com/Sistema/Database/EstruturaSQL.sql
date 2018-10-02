@@ -129,10 +129,10 @@ CREATE TABLE quartos(
 );
 
 INSERT INTO quartos (id_usuario, id_funcionario, numero_quarto, tipo ,data_entrada, data_saida, estado) VALUES
-(1, 5, 1001,'UTI','2018-09-20','2018-09-10','ativo'),
-(2, 5, 1002,'UTI','2018-09-20','2018-09-10','ativo'),
-(3, 5, 1003,'UTI','2018-10-11','2018-10-03','inativo'),
-(4, 5, 1004,'UTI','2018-10-11','2018-10-03','inativo');
+(1, 4, 1001,'UTI','2018-09-20','2018-09-10','ativo'),
+(2, 4, 1002,'UTI','2018-09-20','2018-09-10','ativo'),
+(3, 4, 1003,'UTI','2018-10-11','2018-10-03','inativo'),
+(5, 4, 1004,'UTI','2018-10-11','2018-10-03','inativo');
 
 CREATE TABLE receita(
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -150,8 +150,8 @@ CREATE TABLE custo(
 
 CREATE TABLE lucro(
     id INT AUTO_INCREMENT PRIMARY KEY,
-    id_receita DOUBLE,
-    id_custo DOUBLE,
+    id_receita INT,
+    id_custo INT,
     data_lucro DATE,
     total DOUBLE,
     FOREIGN KEY(id_receita) REFERENCES receita(id),
