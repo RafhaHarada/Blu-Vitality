@@ -68,4 +68,5 @@ $(function () {
 
     $('#exame-cadastro-convenio').on('click', function () {
     });
+    
 });

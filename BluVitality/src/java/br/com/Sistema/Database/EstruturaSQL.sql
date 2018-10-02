@@ -32,11 +32,11 @@ CREATE TABLE usuarios(
 );
 
 INSERT INTO usuarios (nome,estado_civil,idade,sexo,login,senha,cpf,rg,telefone,email,endereco,complemento,cidade,UF,naturalidade,data_nascimento,nome_fic,tipo_sanguineo,contato_emergencia,colaborador) VALUES
-('Rafael','solteiro',18,'M','func1','func1','123.456.789-09','54.321.987-2','47997835153','rafaelegal22@outlook.com','Rua Alguma Coisa Que Não Sei, 244, Jardim Inexistente','-','Blumenau','SC','SP','2000-03-24','-','A+','47997835153',TRUE),
-('Cidmar','solteiro',19,'M','admin2','admin2','789.456.123-09','321.987.54-2','47978945612','cidmardeboa@outlook.com','Rua Alguma Coisa Que Não Sei, 255, Jardim Inexistente','Bl A Apto 100','Blumenau','SC','MS','1999-12-10','Kahoot Master','O+','47997835153',TRUE),
-('Nattana','solteira',20,'F','user1','user1','456.123.789-09','32.154.987-2','47932165498','nattananalagoa@outlook.com','Rua Alguma Coisa Que Não Sei, 266, Jardim Inexistente','-','Blumenau','SC','MG','1998-05-25','-','A+','47997835153',FALSE),
-('Gustavo','solteiro',21,'M','admin','admin','123.789.456-09','984.321.75-2','47974185296','gustavobeleza@outlook.com','Rua Alguma Coisa Que Não Sei, 277, Jardim Inexistente','-','Blumenau','SC','AC','1997-11-04','-','A+','47997835153',TRUE),
-('Luana','solteira',22,'F','func2','func2','789.123.456-09','987.421.35-2','47936925814','luanajoinha@outlook.com','Rua Alguma Coisa Que Não Sei, 288, Jardim Inexistente','-','Blumenau','SC','PE','1996-08-30','-','A+','47997835153',TRUE);
+('Rafael','solteiro',18,'M','func1','3a78e0f3b66aacdc6416a39a7a42e07a','123.456.789-09','54.321.987-2','47997835153','rafaelegal22@outlook.com','Rua Alguma Coisa Que Não Sei, 244, Jardim Inexistente','-','Blumenau','SC','SP','2000-03-24','-','A+','47997835153',TRUE),
+('Cidmar','solteiro',19,'M','admin2','c84258e9c39059a89ab77d846ddab909','789.456.123-09','321.987.54-2','47978945612','cidmardeboa@outlook.com','Rua Alguma Coisa Que Não Sei, 255, Jardim Inexistente','Bl A Apto 100','Blumenau','SC','MS','1999-12-10','Kahoot Master','O+','47997835153',TRUE),
+('Nattana','solteira',20,'F','user1','24c9e15e52afc47c225b757e7bee1f9d','456.123.789-09','32.154.987-2','47932165498','nattananalagoa@outlook.com','Rua Alguma Coisa Que Não Sei, 266, Jardim Inexistente','-','Blumenau','SC','MG','1998-05-25','-','A+','47997835153',FALSE),
+('Gustavo','solteiro',21,'M','admin','21232f297a57a5a743894a0e4a801fc3','123.789.456-09','984.321.75-2','47974185296','gustavobeleza@outlook.com','Rua Alguma Coisa Que Não Sei, 277, Jardim Inexistente','-','Blumenau','SC','AC','1997-11-04','-','A+','47997835153',TRUE),
+('Luana','solteira',22,'F','func2','e55e8c1383d33fc3e11fbb6141dc467a','789.123.456-09','987.421.35-2','47936925814','luanajoinha@outlook.com','Rua Alguma Coisa Que Não Sei, 288, Jardim Inexistente','-','Blumenau','SC','PE','1996-08-30','-','A+','47997835153',TRUE);
 
 CREATE TABLE cargos(
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -62,13 +62,11 @@ CREATE TABLE funcionarios(
     FOREIGN KEY(id_cargo) REFERENCES cargos(id)
 );
 
-SELECT * FROM funcionarios;
-
 INSERT INTO funcionarios (id_usuario,id_cargo,tipo) VALUES
 (1,2,'funcionario'),
 (2,1,'administrador'),
 (4,3,'administrador'),
-(5,4,'funcionario');
+(5,1,'funcionario');
 
 CREATE TABLE servicos(
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -113,9 +111,10 @@ CREATE TABLE expedicao(
 );
 
 INSERT INTO expedicao (id_usuario,id_funcionario,tipo,nome,data_expedicao,hora_expedicao,custo) VALUES
-(1,4,'Exame','blabla','2018-09-10','10:00:00',250000),
-(2,4,'Exame','blabla2','2018-10-01','10:30:00',100000),
-(3,4,'Consulta','blabla3','2018-10-16','14:00:00',350);
+(1,5,'Exame','blabla','2018-09-10','10:00:00',250000),
+(2,5,'Exame','blabla2','2018-10-01','10:30:00',100000),
+(3,5,'Consulta','blabla3','2018-10-16','14:00:00',350),
+(4,5,'Consulta','blabla4','2018-10-21','16:00:00',590);
 
 CREATE TABLE quartos(
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -131,9 +130,10 @@ CREATE TABLE quartos(
 );
 
 INSERT INTO quartos (id_usuario, id_funcionario, numero_quarto, tipo ,data_entrada, data_saida, estado) VALUES
-(1, 4, 1001,'UTI','2018-09-20','2018-09-10','ativo'),
-(2, 4, 1002,'UTI','2018-09-20','2018-09-10','ativo'),
-(3, 4, 1003,'UTI','2018-10-11','2018-10-03','inativo');
+(1, 5, 1001,'UTI','2018-09-20','2018-09-10','ativo'),
+(2, 5, 1002,'UTI','2018-09-20','2018-09-10','ativo'),
+(3, 5, 1003,'UTI','2018-10-11','2018-10-03','inativo'),
+(4, 5, 1004,'UTI','2018-10-11','2018-10-03','inativo');
 
 CREATE TABLE receita(
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -151,8 +151,8 @@ CREATE TABLE custo(
 
 CREATE TABLE lucro(
     id INT AUTO_INCREMENT PRIMARY KEY,
-    id_receita INT,
-    id_custo INT,
+    id_receita DOUBLE,
+    id_custo DOUBLE,
     data_lucro DATE,
     total DOUBLE,
     FOREIGN KEY(id_receita) REFERENCES receita(id),
