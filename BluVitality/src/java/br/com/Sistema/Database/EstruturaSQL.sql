@@ -111,10 +111,9 @@ CREATE TABLE expedicao(
 );
 
 INSERT INTO expedicao (id_usuario,id_funcionario,tipo,nome,data_expedicao,hora_expedicao,custo) VALUES
-(1,5,'Exame','blabla','2018-09-10','10:00:00',250000),
-(2,5,'Exame','blabla2','2018-10-01','10:30:00',100000),
-(3,5,'Consulta','blabla3','2018-10-16','14:00:00',350),
-(4,5,'Consulta','blabla4','2018-10-21','16:00:00',590);
+(1,4,'Exame','blabla','2018-09-10','10:00:00',250000),
+(2,4,'Exame','blabla2','2018-10-01','10:30:00',100000),
+(3,4,'Consulta','blabla3','2018-10-16','14:00:00',350);
 
 CREATE TABLE quartos(
     id INT AUTO_INCREMENT PRIMARY KEY,
