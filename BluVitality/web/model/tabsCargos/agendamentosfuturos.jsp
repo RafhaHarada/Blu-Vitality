@@ -3,6 +3,7 @@
     Created on : 20/09/2018, 10:15:04
     Author     : Luana Patricia Duarte (luanapatricia.blu@hotmail.com)
                  Nattana Matos (nattana.matos@Outlook.pt)
+                 Rafael Alipio Harada (rafhaharada@gmail.com)
 --%>
 
 <%@page import="java.util.List"%>
@@ -18,10 +19,10 @@
         <thead>
             <tr>
                 <th>Tipo</th>
-                <th>Médico|Especialidade</th>
+                <th>Médico</th>
+                <th>Exame/Consulta</th>
                 <th>Data</th>
                 <th>Hora</th>
-                <th>Sala</th>
                 <th></th>
 
             </tr>
@@ -38,18 +39,15 @@
                         String medicoEspecialidade = medico + "|" + especialidade;
 
                         String data = formatoBr.format(expedicoes.get(i).getData_expedicao());
-                        QuartoBean quarto = new QuartoDAO().obterPeloId(usuario.getId());
-                        int numeroQuarto = quarto.getNumero_quarto();
             %>
             <tr>
                 <td><%=expedicoes.get(i).getTipo()%></td>
-                <td><%=medicoEspecialidade%></td>
+                <td><%=medico%></td>
+                <td><%=expedicoes.get(i).getNome()%></td>
                 <td><%=data%></td>
                 <td><%=expedicoes.get(i).getHora_expedicao()%></td>
-                <td><%=numeroQuarto%></td>
                 <td>
-                    <a href="/expedicao/editar?id=<%=expedicoes.get(i).getId()%>"><i class="material-icons">edit</i></a>
-                    <a href="/expedicao/excluir?id=<%=expedicoes.get(i).getId()%>"><i class="material-icons">delete_forever</i></a>
+                    <a href="/expedicao/excluir?id=<%=expedicoes.get(i).getId()%>"  class="tooltipped" data-position="left" data-tooltip="Cancelar registro?"><i class="material-icons">delete_forever</i></a>
                 </td>
             </tr>
             <%}

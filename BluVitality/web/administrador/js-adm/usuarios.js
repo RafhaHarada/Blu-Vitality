@@ -44,8 +44,7 @@ $(function () {
             {
                 "data": null,
                 "render": function (data) {
-                    return  "<a class='modal-trigger' href='#modalPerfil'><i class='material-icons'>face</i></a>\
-                    <a class='excluir-usuario' href='#' data-id='" + data.id + "'><i class='material-icons'>delete</i></a>";
+                    return  "<a class='excluir-usuario' href='#' data-id='" + data.id + "'><i class='material-icons'>delete</i></a>";
                 }
             }
         ]

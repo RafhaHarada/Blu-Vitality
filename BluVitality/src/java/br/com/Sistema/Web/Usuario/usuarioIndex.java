@@ -1,8 +1,5 @@
 package br.com.Sistema.Web.Usuario;
 
-import br.com.Sistema.Bean.FuncionarioBean;
-import br.com.Sistema.Bean.UsuarioBean;
-import br.com.Sistema.DAO.FuncionarioDAO;
 import br.com.Sistema.Web.IndexRedirect;
 import java.io.IOException;
 import javax.servlet.ServletException;

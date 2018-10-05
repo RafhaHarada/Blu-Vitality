@@ -130,7 +130,7 @@
                     <div class="row">
                         <div class="input-field col s12">
                             <i class="material-icons prefix">email</i>
-                            <input id="cadastro-email" type="text" class="validate" name="email">
+                            <input required id="cadastro-email" type="email" class="validate" name="email">
                             <label for="cadastro-email">Email</label>
                             <span class="helper-text" data-error="Formato inválido" data-success="Correto"></span>
                         </div>
@@ -185,7 +185,7 @@
                 </div>
             </li>
         </ul>
-            <input type="submit" class="btn col s4 validate" value="Cadastrar">
+            <input type="submit" class="btn col s4 validate" value="Cadastrar" onclick="validarCampos()">
     </form>
 </div>
 

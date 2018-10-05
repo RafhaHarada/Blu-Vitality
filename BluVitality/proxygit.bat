@@ -1,1 +1,0 @@
-git config --global http.proxy 10.33.3.254:8080

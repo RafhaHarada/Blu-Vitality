@@ -4,6 +4,7 @@ import br.com.Sistema.Bean.FuncionarioBean;
 import br.com.Sistema.Bean.UsuarioBean;
 import br.com.Sistema.DAO.FuncionarioDAO;
 import br.com.Sistema.DAO.UsuarioDAO;
+import br.com.Sistema.Web.Comum.Criptografar;
 import br.com.Sistema.Web.IndexRedirect;
 import java.io.IOException;
 import java.time.LocalDate;
@@ -37,7 +38,7 @@ public class usuarioStore extends HttpServlet {
         usuario.setTelefone(req.getParameter("telefone"));
         usuario.setEmail(req.getParameter("email"));
         usuario.setLogin(req.getParameter("login"));
-        usuario.setSenha(req.getParameter("senha"));
+        usuario.setSenha(Criptografar.encriptografar(req.getParameter("senha")));
         usuario.setEndereco(req.getParameter("endereco"));
         usuario.setCidade(req.getParameter("cidade"));
         usuario.setComplemento(req.getParameter("complemento"));
@@ -55,7 +56,7 @@ public class usuarioStore extends HttpServlet {
         usuario.setId(new UsuarioDAO().adicionar(usuario));
         
         FuncionarioBean funcionario = new FuncionarioBean();
-        funcionario.setId_cargo(5);
+        funcionario.setId_cargo(6);
         funcionario.setId_usuario(usuario.getId());
         funcionario.setTipo("");
         funcionario.setId(new FuncionarioDAO().adicionar(funcionario));

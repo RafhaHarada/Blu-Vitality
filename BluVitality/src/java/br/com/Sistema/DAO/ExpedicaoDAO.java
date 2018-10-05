@@ -81,6 +81,39 @@ public class ExpedicaoDAO {
         }return expedicoes;
     }
     
+    public List<ExpedicaoBean> obterTodosPorFuncionario(int id_funcionario) {
+        List<ExpedicaoBean> expedicoes = new ArrayList<>();
+        String sql = "SELECT * FROM expedicao WHERE id_funcionario = ?";
+        
+        try{
+            PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql);
+            ps.setInt(1, id_funcionario);
+            ps.execute();
+            ResultSet resultSet = ps.getResultSet();
+            while(resultSet.next()){
+                ExpedicaoBean expedicao = new ExpedicaoBean();
+                expedicao.setId(resultSet.getInt("id"));
+                expedicao.setTipo(resultSet.getString("tipo"));
+                expedicao.setNome(resultSet.getString("nome"));
+                expedicao.setData_expedicao(resultSet.getDate("data_expedicao"));
+                expedicao.setHora_expedicao(resultSet.getTime("hora_expedicao"));
+                expedicao.setCusto(resultSet.getDouble("custo"));
+                
+                UsuarioBean usuario = new UsuarioDAO().obterPeloId(resultSet.getInt("id_usuario"));
+                expedicao.setUsuario(usuario);
+                
+                FuncionarioBean funcionario = new FuncionarioDAO().obterPeloIdUsuario(resultSet.getInt("id_funcionario"));
+                expedicao.setFuncionario(funcionario);
+                
+                expedicoes.add(expedicao);
+            }
+            }catch(SQLException e){
+                    e.printStackTrace();
+            }finally{
+            Conexao.fecharConexao();
+        }return expedicoes;
+    }
+    
     public ExpedicaoBean obterPeloId(int id){
         ExpedicaoBean expedicao = null;
         String sql = "SELECT * FROM expedicao ex JOIN usuarios us ON us.id = ex.id_usuario JOIN funcionarios fn ON fn.id = ex.id_funcionario WHERE id = ?";
@@ -110,16 +143,17 @@ public class ExpedicaoDAO {
         }return expedicao;
     }
     public int adicionar(ExpedicaoBean expedicao) {
-        String sql = "INSERT INTO expedicao (id_usuario, id_funcionario, tipo, data_expedicao, hora_expedicao, custo) "
-                + "VALUES(?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO expedicao (id_usuario, id_funcionario, tipo, nome, data_expedicao, hora_expedicao, custo) "
+                + "VALUES(?, ?, ?, ?, ?, ?, ?)";
         try{
             PreparedStatement ps = Conexao.abrirConexao().prepareStatement(sql, RETURN_GENERATED_KEYS);
             ps.setInt(1, expedicao.getId_usuario());
             ps.setInt(2, expedicao.getId_funcionario());
             ps.setString(3, expedicao.getTipo());
-            ps.setDate(4, expedicao.getData_expedicao());
-            ps.setTime(5, expedicao.getHora_expedicao());
-            ps.setDouble(6, expedicao.getCusto());
+            ps.setString(4, expedicao.getNome());
+            ps.setDate(5, expedicao.getData_expedicao());
+            ps.setTime(6, expedicao.getHora_expedicao());
+            ps.setDouble(7, expedicao.getCusto());
             
             ps.execute();
             ResultSet resultSet = ps.getGeneratedKeys();

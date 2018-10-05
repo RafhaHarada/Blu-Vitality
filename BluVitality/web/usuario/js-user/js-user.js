@@ -16,13 +16,79 @@ function validacaoTipoArquivo() {
         document.getElementById("cadastro-foto").value = "";
     }
 }
-function validacaoEmBranco(id, campo) {
+
+function validacaoEmBranco(id) {
     var emBranco = document.getElementById(id).value;
+    var campo = id.replace("cadastro-","").replace("-"," ");
     if (emBranco === "") {
-        M.toast({html: '<span class="red-text">O campo ' + campo + ' não pode estar vazio<span>'});
-        return;
+        M.toast({html: '<span class="red-text">O campo ' + campo + ' nao pode estar vazio<span>',inDuration: 2000,classes: 'rounded'});
+        return true;
+    } else {
+        return false;
     }
 }
+
+function validarCampos(){
+    if(validacaoEmBranco('cadastro-login')){
+        return;
+    };
+    if(validacaoEmBranco('cadastro-senha')){
+        return;
+    };
+    if(validacaoEmBranco('cadastro-nome-completo')){
+        return;
+    };
+    if(validacaoEmBranco('cadastro-data-nascimento')){
+        return;
+    };
+    if(validacaoEmBranco('cadastro-sexo')){
+        return;
+    };
+    if(validacaoEmBranco('cadastro-estado-civil')){
+        return;
+    };
+    if(validacaoEmBranco('cadastro-tipo-sanguineo')){
+        return;
+    };
+    if(validacaoEmBranco('cadastro-cpf')){
+        return;
+    };
+    if(validacaoEmBranco('cadastro-rg')){
+        return;
+    };
+    if(validacaoEmBranco('cadastro-email')){
+        return;
+    };
+    if(validacaoEmBranco('cadastro-telefone')){
+        return;
+    };
+    if(validacaoEmBranco('cadastro-contato-emergencia')){
+        return;
+    };
+    if(validacaoEmBranco('cadastro-endereco')){
+        return;
+    };
+    if(validacaoEmBranco('cadastro-cidade')){
+        return;
+    };
+    if(validacaoEmBranco('cadastro-naturalidade')){
+        return;
+    };
+    if(validacaoEmBranco('cadastro-uf')){
+        return;
+    };
+    if(validacaoEmBranco('cadastro-complemento')){
+        return;
+    };
+}
+
+$(document).ready(function(){
+    $('#cadastro-uf').mask('AA');
+    $('#cadastro-naturalidade').mask('AA');
+    $('#cadastro-contato-emergencia').mask('(00)0 0000-0000');
+    $('#cadastro-telefone').mask('(00)0 0000-0000');
+    $('#cadastro-cpf').mask('000.000.000-00');
+});
 
 function atualizaTab() {
     var maxHeight = 0;
@@ -34,7 +100,6 @@ function atualizaTab() {
 }
 
 $(function () {
-    var exameConsulta = 0;
     $(".agendarE").hide();
     $(".agendarC").hide();
 
@@ -49,7 +114,6 @@ $(function () {
         document.getElementById("consulta-cadastro-tipo").value = "";
         document.getElementById("consulta-cadastro-data").value = "";
         document.getElementById("consulta-cadastro-hora").value = "";
-        exameConsulta = 1;
     });
 
     $(".consultaRadio").on("click", function () {
@@ -63,9 +127,9 @@ $(function () {
         document.getElementById("exame-cadastro-tipo").value = "";
         document.getElementById("exame-cadastro-data").value = "";
         document.getElementById("exame-cadastro-hora").value = "";
-        exameConsulta = 2;
     });
 
     $('#exame-cadastro-convenio').on('click', function () {
     });
+    
 });

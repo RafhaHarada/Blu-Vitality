@@ -12,7 +12,17 @@
     </ul>
 </li>
 <jsp:include page="../model/headerEndNoSidenav.jsp"/>
-
+<%
+    String clientUrl = request.getRequestURL().toString();
+    if (clientUrl.contains("msg=1")) {
+%>
+<script type="text/javascript">
+    var $conteudo = $('<span class="red-text">Usuário ou senha incorreta!</span>')
+    Materialize.toast($conteudo,6000,'rounded');
+</script>
+<%
+    }
+%>
 <div class="container">
     <div class="col s10 m8 center">
         <h4 class="row">Login</h4>

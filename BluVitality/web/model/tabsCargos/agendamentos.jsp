@@ -93,8 +93,8 @@
                         <label class="teal-text teatl lighten-4" for="exame-cadastro-nome">Escolha o Exame<span class="red-text">*</span></label>
                         <select id="exame-cadastro-nome" name="nome" >
                             <option value="" disabled selected>Exame</option>
-                            <option value="Cardiológico">Cardiológico</option>
-                            <option value="Diagnóstico por Imagem">Diagnóstico por Imagem</option>
+                            <option value="Cardiologico">Cardiológico</option>
+                            <option value="Diagnostico por Imagem">Diagnóstico por Imagem</option>
                             <option value="Endoscopia">Endoscopia</option>
                             <option value="Laboratoriais">Laboratoriais</option>
                         </select>
@@ -207,7 +207,7 @@
                         <label class="teal-text teatl lighten-4" for="consulta-cadastro-nome">Escolha a especialide<span class="red-text">*</span></label>
                         <select id="consulta-cadastro-nome" name="nome" >
                             <option value="" disabled selected>Especialidade</option>
-                            <option value="Clínico geral">Clínico geral</option>
+                            <option value="Clinico geral">Clínico geral</option>
                             <option value="Cardiologista">Cardiologista</option>
                             <option value="Endocrinologista">Endocrinologista</option>
                             <option value="Ginecologista">Ginecologista</option>

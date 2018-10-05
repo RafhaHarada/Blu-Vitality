@@ -18,6 +18,7 @@
 %>
 <%@include file="tabsCargos/perfil.jsp" %>
 <%@include file="tabsCargos/prontuarioBusca.jsp" %>
+<%@include file="tabsCargos/pendenciasFuturas.jsp" %>
 <%@include file="tabsCargos/agendamentosfuturos.jsp" %>
 <%@include file="tabsCargos/historico.jsp" %>
 <%
@@ -34,7 +35,7 @@
 <%@include file="tabsCargos/perfil.jsp" %>
 <%@include file="tabsCargos/prontuarioBusca.jsp" %>
 <%@include file="tabsCargos/agendamentos.jsp" %>
-<%@include file="tabsCargos/agendamentosfuturos.jsp" %>
+<%@include file="tabsCargos/pendenciasFuturas2.jsp" %>
 <%@include file="tabsCargos/historico.jsp" %>
 <%
 } else if (cargoDoFuncionario.equals("Limpeza")) {
