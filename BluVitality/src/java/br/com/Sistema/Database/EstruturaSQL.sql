@@ -67,7 +67,7 @@ INSERT INTO funcionarios (id_usuario,id_cargo,tipo) VALUES
 (1,2,'funcionario'),
 (2,1,'administrador'),
 (4,3,'administrador'),
-(5,4,'funcionario');
+(5,1,'funcionario');
 
 CREATE TABLE servicos(
     id INT AUTO_INCREMENT PRIMARY KEY,
